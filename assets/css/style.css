@@ -45,30 +45,6 @@ body {
     text-align: justify;
 }
 
-.theme-toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--sidebar-bg);
-    border: 2px solid var(--sidebar-border);
-    color: var(--text-color);
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.theme-toggle-btn:hover {
-    transform: scale(1.1);
-}
-
 .sidebar {
     width: 320px;
     height: 100vh;
@@ -78,7 +54,12 @@ body {
     left: 0;
     overflow-y: auto;
     border-right: 1px solid var(--sidebar-border);
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+body.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
 }
 
 .sidebar::-webkit-scrollbar {
@@ -173,7 +154,12 @@ body {
     width: calc(100% - 320px);
     background-color: var(--bg-color);
     min-height: 100vh;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+}
+
+body.sidebar-collapsed .main-content {
+    margin-left: 0;
+    width: 100%;
 }
 
 .hero-image {
@@ -324,6 +310,54 @@ textarea:focus {
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 1.6;
+}
+
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--sidebar-bg);
+    border: 2px solid var(--sidebar-border);
+    color: var(--text-color);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+.sidebar-toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 340px;
+    background-color: var(--sidebar-bg);
+    border: 2px solid var(--sidebar-border);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.sidebar-collapsed .sidebar-toggle-btn {
+    left: 20px;
 }
 
 .intro-text p {

@@ -1,10 +1,18 @@
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', function() {
+    window.scrollTo(0, 0);
+
     const sidebarContainer = document.getElementById('sidebar-container');
     if (sidebarContainer) {
         sidebarContainer.innerHTML = `
+    <button id="sidebar-toggle" class="sidebar-toggle-btn">☰</button>
     <aside class="sidebar">
         <div class="logo-container">
-            <div class="logo-text"><a href="index.html">New Seas OP</a></div>
+            <div class="logo-text"><a href="index.html" style="color: inherit; text-decoration: none;">New Seas OP</a></div>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">INÍCIO</a></li>
@@ -73,12 +81,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="submundo.html" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li><a href="escravos.html">ESCRAVOS</a></li>
-                    <a href="#" class="toggle-btn">AKUMA NO MI <span class="arrow">▼</span></a>
-                    <ul class="sub-menu">
-                    <li><a href="logia.html">LOGIA</a></li>
-                    <li><a href="paramecia.html">PARAMECIA</a></li>
-                    <li><a href="zoan.html">ZOAN</a></li>
-                    </ul>
+                    <li>
+                        <a href="#" class="toggle-btn">AKUMA NO MI <span class="arrow">▼</span></a>
+                        <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
+                            <li><a href="logia.html">LOGIA</a></li>
+                            <li><a href="paramecia.html">PARAMECIA</a></li>
+                            <li><a href="zoan.html">ZOAN</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li>
@@ -89,10 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="loja-de-carpinteiro.html">LOJA DE CARPINTEIRO</a></li>
                     <li><a href="loja-de-criadores.html">LOJA DE CRIADORES</a></li>
                     <li><a href="loja-especial.html">LOJA ESPECIAL</a></li>
-                    <a href="loja-de-ferreiros.html" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
-                    <ul class="sub-menu">
-                    <li><a href="escudos.html">ESCUDOS</a></li>
-                    </ul>
+                    <li>
+                        <a href="loja-de-ferreiros.html" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
+                        <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
+                            <li><a href="escudos.html">ESCUDOS</a></li>
+                        </ul>
+                    </li>
                     <li><a href="loja-de-meitous.html">LOJA DE MEITOUS</a></li>
                 </ul>
             </li>
@@ -125,6 +137,13 @@ document.addEventListener('DOMContentLoaded', function() {
         </ul>
     </aside>
         `;
+    }
+
+    const sidebarToggleBtn = document.getElementById('sidebar-toggle');
+    if (sidebarToggleBtn) {
+        sidebarToggleBtn.addEventListener('click', function() {
+            document.body.classList.toggle('sidebar-collapsed');
+        });
     }
 
     const path = window.location.pathname.split('/').pop() || 'index.html';
