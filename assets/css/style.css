@@ -1,3 +1,34 @@
+:root {
+    --bg-color: #f0f8ff;
+    --text-color: #2d3748;
+    --sidebar-bg: #ffffff;
+    --sidebar-border: #e2e8f0;
+    --link-color: #4a5568;
+    --link-hover-bg: #edf2f7;
+    --link-hover-color: #d32f2f;
+    --accent-color: #d32f2f;
+    --button-text: #ffffff;
+    --textarea-bg: #ffffff;
+    --textarea-border: #cbd5e0;
+    --submenu-bg: #f8fafc;
+    --border-radius: 12px;
+}
+
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --sidebar-bg: #1e1e1e;
+    --sidebar-border: #333333;
+    --link-color: #b0b0b0;
+    --link-hover-bg: #2d3748;
+    --link-hover-color: #f1c40f;
+    --accent-color: #f1c40f;
+    --button-text: #121212;
+    --textarea-bg: #1a1a1a;
+    --textarea-border: #4a5568;
+    --submenu-bg: #1a1a1a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,22 +36,49 @@
 }
 
 body {
-    background-color: #1e1e1e;
-    color: #f9f9f9;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: Verdana, Arial, sans-serif;
     line-height: 1.5;
     display: flex;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: justify;
+}
+
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--sidebar-bg);
+    border: 2px solid var(--sidebar-border);
+    color: var(--text-color);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
 }
 
 .sidebar {
     width: 280px;
     height: 100vh;
-    background-color: #282828;
+    background-color: var(--sidebar-bg);
     position: fixed;
     top: 0;
     left: 0;
     overflow-y: auto;
-    border-right: 1px solid #333;
+    border-right: 1px solid var(--sidebar-border);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -34,13 +92,13 @@ body {
 
 .logo-container {
     padding: 30px 20px;
-    border-bottom: 1px solid #3a3a3a;
+    border-bottom: 1px solid var(--sidebar-border);
 }
 
 .logo-text {
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--accent-color);
     line-height: 1.2;
 }
 
@@ -56,16 +114,19 @@ body {
 .nav-links a {
     display: block;
     padding: 12px 20px;
-    color: #e0e0e0;
+    color: var(--link-color);
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
-    transition: background 0.2s;
+    transition: all 0.2s;
+    border-radius: var(--border-radius);
+    margin: 0 10px;
+    width: calc(100% - 20px);
 }
 
 .nav-links a:hover, .nav-links a.active {
-    background-color: #3d3d3d;
-    color: #ffffff;
+    background-color: var(--link-hover-bg);
+    color: var(--link-hover-color);
 }
 
 .arrow {
@@ -84,7 +145,10 @@ body {
 .sub-menu {
     list-style: none;
     display: none;
-    background-color: #202020;
+    background-color: var(--submenu-bg);
+    border-radius: var(--border-radius);
+    margin: 5px 10px;
+    overflow: hidden;
 }
 
 .sub-menu.show {
@@ -95,17 +159,21 @@ body {
     padding: 10px 20px 10px 40px;
     font-size: 12px;
     font-weight: normal;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
 }
 
 .sub-menu a.active {
-    color: #007BFF; 
+    color: var(--accent-color); 
 }
 
 .main-content {
     margin-left: 280px;
     width: calc(100% - 280px);
-    background-color: #1e1e1e;
+    background-color: var(--bg-color);
     min-height: 100vh;
+    transition: background-color 0.3s;
 }
 
 .hero-image {
@@ -133,7 +201,7 @@ body {
     font-family: 'Quantico', Arial, sans-serif;
     font-weight: 700;
     font-size: 30pt;
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: 24pt;
 }
 
@@ -169,19 +237,22 @@ body {
 }
 
 .highlight-text {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--accent-color);
+    text-align: center;
 }
 
-.accent-link {
-    color: #007BFF;
+.accent-link, .content-section a {
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-.accent-link:hover {
+.accent-link:hover, .content-section a:hover {
     text-decoration: underline;
+    opacity: 0.8;
 }
 
 .warning-text {
@@ -202,16 +273,17 @@ textarea {
     padding: 15px;
     font-size: 14px;
     resize: none;
-    border-radius: 8px;
-    border: 2px solid #333;
-    background-color: #282828;
-    color: #f9f9f9;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--textarea-border);
+    background-color: var(--textarea-bg);
+    color: var(--text-color);
     font-family: monospace;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 textarea:focus {
     outline: none;
-    border-color: #007BFF;
+    border-color: var(--accent-color);
 }
 
 .copy-btn {
@@ -219,18 +291,18 @@ textarea:focus {
     top: 15px;
     right: 25px;
     padding: 8px 16px;
-    background-color: #007BFF;
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--button-text);
     border: none;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     font-size: 14px;
     font-weight: bold;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
 }
 
 .copy-btn:hover {
-    background-color: #0056b3;
+    opacity: 0.8;
 }
 
 .tutorial-section p {
@@ -240,7 +312,7 @@ textarea:focus {
 }
 
 .tutorial-section strong {
-    color: #bb86fc;
+    color: var(--accent-color);
 }
 
 .tutorial-section ul {
