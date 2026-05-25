@@ -387,11 +387,36 @@ body.sidebar-collapsed .sidebar-toggle-btn {
     transform: translateY(-5px);
 }
 
-.gallery-img {
+.gallery-img, .gallery-img-container {
     width: 100%;
     height: 300px;
-    object-fit: cover;
     border-bottom: 1px solid var(--sidebar-border);
+}
+
+.gallery-img {
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-img-container {
+    position: relative;
+}
+
+.gallery-img-container .gallery-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-bottom: none;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-img.secundaria {
+    opacity: 0;
+}
+
+.gallery-item:hover .gallery-img.secundaria {
+    opacity: 1;
 }
 
 .gallery-info {
