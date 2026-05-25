@@ -12,128 +12,128 @@ document.addEventListener('DOMContentLoaded', function() {
     <button id="sidebar-toggle" class="sidebar-toggle-btn">☰</button>
     <aside class="sidebar">
         <div class="logo-container">
-            <div class="logo-text"><a href="index.html" style="color: inherit; text-decoration: none;">New Seas OP</a></div>
+            <div class="logo-text"><a href="index" style="color: inherit; text-decoration: none;">New Seas OP</a></div>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">INÍCIO</a></li>
+            <li><a href="index">INÍCIO</a></li>
             <li>
-                <a href="criacao-de-personagem.html" class="toggle-btn">CRIAÇÃO DE PERSONAGEM <span class="arrow">▼</span></a>
+                <a href="criacao-de-personagem" class="toggle-btn">CRIAÇÃO DE PERSONAGEM <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="aparencias.html">APARÊNCIAS</a></li>
-                    <li><a href="classes.html">CLASSES</a></li>
-                    <li><a href="estilos-de-luta.html">ESTILOS DE LUTA</a></li>
-                    <li><a href="habilidades-unicas.html">HABILIDADES ÚNICAS</a></li>
-                    <li><a href="linhagens.html">LINHAGENS</a></li>
-                    <li><a href="racas.html">RAÇAS</a></li>
+                    <li><a href="aparencias">APARÊNCIAS</a></li>
+                    <li><a href="classes">CLASSES</a></li>
+                    <li><a href="estilos-de-luta">ESTILOS DE LUTA</a></li>
+                    <li><a href="habilidades-unicas">HABILIDADES ÚNICAS</a></li>
+                    <li><a href="linhagens">LINHAGENS</a></li>
+                    <li><a href="racas">RAÇAS</a></li>
                     <li><a href="https://herikliz.github.io/new-seas/">SALVAR FICHA</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="toggle-btn">ORGANIZAÇÕES <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="governo-mundial.html">GOVERNO MUNDIAL</a></li>
-                    <li><a href="marinha.html">MARINHA</a></li>
-                    <li><a href="pirata.html">PIRATA</a></li>
-                    <li><a href="revolucionarios.html">REVOLUCIONÁRIOS</a></li>
-                    <li><a href="tripulacoes.html">TRIPULAÇÕES</a></li>
+                    <li><a href="governo-mundial">GOVERNO MUNDIAL</a></li>
+                    <li><a href="marinha">MARINHA</a></li>
+                    <li><a href="pirata">PIRATA</a></li>
+                    <li><a href="revolucionarios">REVOLUCIONÁRIOS</a></li>
+                    <li><a href="tripulacoes">TRIPULAÇÕES</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="toggle-btn">FORÇA VITAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="atributos.html">ATRIBUTOS</a></li>
-                    <li><a href="akuma-no-mi.html">AKUMA NO MI</a></li>
-                    <li><a href="estamina.html">ESTAMINA</a></li>
-                    <li><a href="haki.html">HAKI</a></li>
+                    <li><a href="atributos">ATRIBUTOS</a></li>
+                    <li><a href="akuma-no-mi">AKUMA NO MI</a></li>
+                    <li><a href="estamina">ESTAMINA</a></li>
+                    <li><a href="haki">HAKI</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="toggle-btn">EVOLUÇÃO <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="extra-narrada.html">EXTRA-NARRADA</a></li>
-                    <li><a href="missoes.html">MISSÕES</a></li>
-                    <li><a href="npcs-especiais.html">NPCS ESPECIAIS</a></li>
-                    <li><a href="recrutar-npcs.html">RECRUTAR NPCS</a></li>
-                    <li><a href="trabalho.html">TRABALHO</a></li>
-                    <li><a href="treino.html">TREINO</a></li>
+                    <li><a href="extra-narrada">EXTRA-NARRADA</a></li>
+                    <li><a href="missoes">MISSÕES</a></li>
+                    <li><a href="npcs-especiais">NPCS ESPECIAIS</a></li>
+                    <li><a href="recrutar-npcs">RECRUTAR NPCS</a></li>
+                    <li><a href="trabalho">TRABALHO</a></li>
+                    <li><a href="treino">TREINO</a></li>
                 </ul>
             </li>
             <li>
-                <a href="geografia.html" class="toggle-btn">GEOGRAFIA <span class="arrow">▼</span></a>
+                <a href="geografia" class="toggle-btn">GEOGRAFIA <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="ilhas.html" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
+                        <a href="ilhas" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="east-blue.html">EAST BLUE</a></li>
-                            <li><a href="south-blue.html">SOUTH BLUE</a></li>
-                            <li><a href="west-blue.html">WEST BLUE</a></li>
-                            <li><a href="north-blue.html">NORTH BLUE</a></li>
-                            <li><a href="paraiso.html">PARAÍSO</a></li>
-                            <li><a href="novo-mundo.html">NOVO MUNDO</a></li>
-                            <li><a href="calm-belt.html">CALM BELT</a></li>
-                            <li><a href="ilhas-sem-localizacao-exata.html">ILHAS SEM LOCALIZAÇÃO EXATA</a></li>
+                            <li><a href="east-blue">EAST BLUE</a></li>
+                            <li><a href="south-blue">SOUTH BLUE</a></li>
+                            <li><a href="west-blue">WEST BLUE</a></li>
+                            <li><a href="north-blue">NORTH BLUE</a></li>
+                            <li><a href="paraiso">PARAÍSO</a></li>
+                            <li><a href="novo-mundo">NOVO MUNDO</a></li>
+                            <li><a href="calm-belt">CALM BELT</a></li>
+                            <li><a href="ilhas-sem-localizacao-exata">ILHAS SEM LOCALIZAÇÃO EXATA</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li><a href="historia.html">HISTÓRIA</a></li>
+            <li><a href="historia">HISTÓRIA</a></li>
             <li>
-                <a href="submundo.html" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
+                <a href="submundo" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="escravos.html">ESCRAVOS</a></li>
+                    <li><a href="escravos">ESCRAVOS</a></li>
                     <li>
                         <a href="#" class="toggle-btn">AKUMA NO MI <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="logia.html">LOGIA</a></li>
-                            <li><a href="paramecia.html">PARAMECIA</a></li>
-                            <li><a href="zoan.html">ZOAN</a></li>
+                            <li><a href="logia">LOGIA</a></li>
+                            <li><a href="paramecia">PARAMECIA</a></li>
+                            <li><a href="zoan">ZOAN</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="loja.html" class="toggle-btn">LOJA <span class="arrow">▼</span></a>
+                <a href="loja" class="toggle-btn">LOJA <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="itens-exclusivos.html">ITENS EXCLUSIVOS</a></li>
-                    <li><a href="loja-de-barcos.html">LOJA DE BARCOS</a></li>
-                    <li><a href="loja-de-carpinteiro.html">LOJA DE CARPINTEIRO</a></li>
-                    <li><a href="loja-de-criadores.html">LOJA DE CRIADORES</a></li>
-                    <li><a href="loja-especial.html">LOJA ESPECIAL</a></li>
+                    <li><a href="itens-exclusivos">ITENS EXCLUSIVOS</a></li>
+                    <li><a href="loja-de-barcos">LOJA DE BARCOS</a></li>
+                    <li><a href="loja-de-carpinteiro">LOJA DE CARPINTEIRO</a></li>
+                    <li><a href="loja-de-criadores">LOJA DE CRIADORES</a></li>
+                    <li><a href="loja-especial">LOJA ESPECIAL</a></li>
                     <li>
-                        <a href="loja-de-ferreiros.html" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
+                        <a href="loja-de-ferreiros" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="escudos.html">ESCUDOS</a></li>
+                            <li><a href="escudos">ESCUDOS</a></li>
                         </ul>
                     </li>
-                    <li><a href="loja-de-meitous.html">LOJA DE MEITOUS</a></li>
+                    <li><a href="loja-de-meitous">LOJA DE MEITOUS</a></li>
                 </ul>
             </li>
             <li>
-                <a href="impel-down.html" class="toggle-btn">IMPEL DOWN <span class="arrow">▼</span></a>
+                <a href="impel-down" class="toggle-btn">IMPEL DOWN <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="adaptacao.html">ADAPTAÇÃO</a></li>
+                    <li><a href="adaptacao">ADAPTAÇÃO</a></li>
                 </ul>
             </li>
             <li>
-                <a href="jornal.html" class="toggle-btn">JORNAL <span class="arrow">▼</span></a>
+                <a href="jornal" class="toggle-btn">JORNAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="procurados.html">PROCURADOS</a></li>
-                    <li><a href="younkous.html">YOUNKOUS</a></li>
+                    <li><a href="procurados">PROCURADOS</a></li>
+                    <li><a href="younkous">YOUNKOUS</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="toggle-btn">MECÂNICAS DO RPG <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="cacadas.html">CAÇADAS</a></li>
-                    <li><a href="criacao-de-experimentos.html">CRIAÇÃO DE EXPERIMENTOS</a></li>
-                    <li><a href="criacao-de-meitos.html">CRIAÇÃO DE MEITOS</a></li>
-                    <li><a href="descoberta-de-artefatos.html">DESCOBERTA DE ARTEFATOS</a></li>
-                    <li><a href="dominacoes.html">DOMINAÇÕES</a></li>
-                    <li><a href="investimento.html">INVESTIMENTO</a></li>
-                    <li><a href="sangue.html">SANGUE</a></li>
+                    <li><a href="cacadas">CAÇADAS</a></li>
+                    <li><a href="criacao-de-experimentos">CRIAÇÃO DE EXPERIMENTOS</a></li>
+                    <li><a href="criacao-de-meitos">CRIAÇÃO DE MEITOS</a></li>
+                    <li><a href="descoberta-de-artefatos">DESCOBERTA DE ARTEFATOS</a></li>
+                    <li><a href="dominacoes">DOMINAÇÕES</a></li>
+                    <li><a href="investimento">INVESTIMENTO</a></li>
+                    <li><a href="sangue">SANGUE</a></li>
                 </ul>
             </li>
-            <li><a href="regras.html">REGRAS</a></li>
+            <li><a href="regras">REGRAS</a></li>
         </ul>
     </aside>
         `;
@@ -146,7 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const path = window.location.pathname.split('/').pop() || 'index.html';
+    let path = window.location.pathname.split('/').pop() || 'index';
+    path = path.replace('.html', '');
+    if (path === '') path = 'index';
     const sidebarElement = sidebarContainer || document.body;
     const currentLink = sidebarElement.querySelector(`a[href="${path}"]`);
     if (currentLink) {
@@ -218,14 +220,14 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             const pageName = this.textContent.replace('▼', '').trim();
-            const isIndexFile = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname === '';
-            const isCriacaoFile = window.location.pathname.endsWith('criacao-de-personagem.html');
+            const isIndexFile = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('index') || window.location.pathname.endsWith('/') || window.location.pathname === '';
+            const isCriacaoFile = window.location.pathname.endsWith('criacao-de-personagem.html') || window.location.pathname.endsWith('criacao-de-personagem');
 
             if (href === '#') {
                 return;
             }
 
-            if ((href === 'index.html' && isIndexFile) || (href === 'criacao-de-personagem.html' && isCriacaoFile)) {
+            if ((href === 'index' && isIndexFile) || (href === 'criacao-de-personagem' && isCriacaoFile)) {
                 if (this.classList.contains('toggle-btn') && !e.target.closest('.arrow')) {
                     return;
                 }
