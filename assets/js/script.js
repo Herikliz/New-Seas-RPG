@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="habilidades-unicas.html">HABILIDADES ÚNICAS</a></li>
                     <li><a href="linhagens.html">LINHAGENS</a></li>
                     <li><a href="racas.html">RAÇAS</a></li>
-                    <li><a href="https://herikliz.github.io/new-seas/">SALVAR FICHA</a></li>
+                    <li><a href="https://herikliz.github.io/New-Seas-RPG-Ficha/">SALVAR FICHA</a></li>
                 </ul>
             </li>
             <li>
