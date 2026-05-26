@@ -158,6 +158,11 @@ body.sidebar-collapsed .main-content {
     padding: 48px;
     max-width: 1000px;
     margin: 0 auto;
+    transition: max-width 0.3s ease;
+}
+
+body.sidebar-collapsed .content-wrapper {
+    max-width: 1300px;
 }
 
 .content-section {
@@ -236,6 +241,11 @@ body.sidebar-collapsed .main-content {
     width: 100%;
     max-width: 800px;
     margin: 20px auto;
+    transition: max-width 0.3s ease;
+}
+
+body.sidebar-collapsed .textarea-container {
+    max-width: 1100px;
 }
 
 textarea {
