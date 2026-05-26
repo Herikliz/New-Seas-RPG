@@ -582,3 +582,24 @@ body.sidebar-collapsed .sidebar-toggle-btn {
         grid-template-columns: 1fr;
     }
 }
+
+.toggle-content {
+    display: block;
+    overflow: hidden;
+}
+
+.toggle-content.collapsed {
+    display: none;
+}
+
+.toggle-icon {
+    display: inline-block;
+    font-size: 0.6em;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.toggle-title.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}

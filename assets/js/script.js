@@ -387,3 +387,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleTitles = document.querySelectorAll('.toggle-title');
+    
+    toggleTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            title.classList.toggle('collapsed');
+            const content = title.nextElementSibling;
+            if (content && content.classList.contains('toggle-content')) {
+                content.classList.toggle('collapsed');
+            }
+        });
+    });
+
+    const toggleAllBtn = document.getElementById('toggle-all-btn');
+    let isAllCollapsed = false;
+
+    if (toggleAllBtn) {
+        toggleAllBtn.addEventListener('click', () => {
+            isAllCollapsed = !isAllCollapsed;
+            toggleAllBtn.textContent = isAllCollapsed ? 'Expandir Tudo' : 'Retrair Tudo';
+
+            toggleTitles.forEach(title => {
+                const content = title.nextElementSibling;
+                if (content && content.classList.contains('toggle-content')) {
+                    if (isAllCollapsed) {
+                        title.classList.add('collapsed');
+                        content.classList.add('collapsed');
+                    } else {
+                        title.classList.remove('collapsed');
+                        content.classList.remove('collapsed');
+                    }
+                }
+            });
+        });
+    }
+});
