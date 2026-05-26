@@ -11,6 +11,10 @@
     <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
     <div id="sidebar-container"></div>
 
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
     <main class="main-content">
         <div class="content-wrapper">
             <section class="content-section text-center">
@@ -26,36 +30,137 @@
             <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
 
             <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Arte da Esgrima</h2>
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Arte da Esgrima <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <img src="assets/img/Imagem de Arte da Esgrima.png" alt="Arte da Esgrima" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Um estilo refinado focado em precisão, leitura de combate e economia de movimento.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+10% em Destreza (passivo);</li>
+                            <li style="margin-bottom: 8px;">Ataques com espada possuem maior precisão e -20% gasto de Estamina;</li>
+                            <li style="margin-bottom: 8px;">Pode aparar ataques físicos com armas brancas.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+15% em Destreza (passivo);</li>
+                            <li style="margin-bottom: 8px;">Após observar 2 golpes do oponente, recebe +10% de chance de acerto contra ele;</li>
+                            <li style="margin-bottom: 8px;">Aparos bem-sucedidos reduzem em 20% o dano recebido.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+20% em Destreza (passivo);</li>
+                            <li style="margin-bottom: 8px;">O primeiro ataque após um aparo perfeito causa +20% de Dano;</li>
+                            <li style="margin-bottom: 8px;">Pode redirecionar golpes inimigos, forçando o oponente a sofrer penalidade de –15% em Velocidade no turno seguinte.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Batedor de Carteiras <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <p style="margin-bottom: 15px;">Um estilo refinado focado em precisão, leitura de combate e economia de movimento.</p>
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Os descendentes da família Capone herdaram uma destreza quase sobrenatural, fruto de gerações vivendo entre sombras e disfarces. Sua habilidade em manipular armas pequenas, esconder intenções e agir em silêncio os torna mestres do furto e da trapaça. Mesmo diante do olhar mais atento, suas mãos parecem dançar sem deixar rastros.</p>
 
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+10% em Destreza (passivo);</li>
-                        <li style="margin-bottom: 8px;">Ataques com espada possuem maior precisão e -20% gasto de Estamina;</li>
-                        <li style="margin-bottom: 8px;">Pode aparar ataques físicos com armas brancas.</li>
-                    </ul>
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Capacidade de ocultar armas pequenas sob a roupa sem ser percebido. Realiza furtos simples (bolsos, bolsas, documentos) com quase nenhuma chance de detecção fora de combate;</li>
+                            <li style="margin-bottom: 8px;">+15% em Destreza (passivo).</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Pode desarmar inimigos em curta distância com movimentos rápidos e sutis (a Velocidade do usuário precisa ser igual ou superior ao Reflexo do oponente);</li>
+                            <li style="margin-bottom: 8px;">Furtos realizados durante combate ou distração possuem 75% de chance de sucesso;</li>
+                            <li style="margin-bottom: 8px;">Pode esconder até duas armas leves (adagas, pistolas, lâminas curtas) sem comprometer a mobilidade;</li>
+                            <li style="margin-bottom: 8px;">+20% em Destreza (passivo).</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Suas mãos tornam-se um borrão aos olhos comuns: pode furtar ou trocar objetos em meio à luta sem ser notado;</li>
+                            <li style="margin-bottom: 8px;">Pode ocultar armamentos de porte médio com técnicas de disfarce ou manipulação de roupas;</li>
+                            <li style="margin-bottom: 8px;">O primeiro ataque com arma oculta causa +20% de Dano;</li>
+                            <li style="margin-bottom: 8px;">Furtos contra NPCs importantes ou inimigos do mesmo nível só podem ser percebidos se o alvo tiver +30% de Reflexo a mais que a Velocidade do usuário;</li>
+                            <li style="margin-bottom: 8px;">+25% em Destreza (passivo).</li>
+                        </ul>
+                    </div>
                 </div>
+            </section>
 
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+15% em Destreza (passivo);</li>
-                        <li style="margin-bottom: 8px;">Após observar 2 golpes do oponente, recebe +10% de chance de acerto contra ele;</li>
-                        <li style="margin-bottom: 8px;">Aparos bem-sucedidos reduzem em 20% o dano recebido.</li>
-                    </ul>
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Caminho do Atirador <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Quem trilha esse caminho abandona o combate convencional e vive pela mira, pelo tempo e pela precisão.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Domínio completo de pistolas e mosquetes;</li>
+                            <li style="margin-bottom: 8px;">+5% em Destreza (passivo);</li>
+                            <li style="margin-bottom: 8px;">+10% em Destreza ao atirar com armas de fogo;</li>
+                            <li style="margin-bottom: 8px;">Reduz em 50% o tempo de recarga de pistolas.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+10% em Destreza (passivo);</li>
+                            <li style="margin-bottom: 8px;">+15% em Destreza ao atirar com armas de fogo;</li>
+                            <li style="margin-bottom: 8px;">A recarga torna-se instantânea entre disparos;</li>
+                            <li style="margin-bottom: 8px;">Pode realizar uma Intercepção Improvável uma vez por cena — reagindo a um ataque à distância inimigo com seu próprio disparo. Se o disparo do usuário for superior, o ataque inimigo é anulado;</li>
+                            <li style="margin-bottom: 8px;">O primeiro tiro de cada confronto causa +15% de Dano.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (20.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+15% em Destreza (passivo);</li>
+                            <li style="margin-bottom: 8px;">+20% em Destreza ao atirar com armas de fogo;</li>
+                            <li style="margin-bottom: 8px;">Pode realizar duas Intercepções Improváveis por cena, sem penalidade;</li>
+                            <li style="margin-bottom: 8px;">Após mirar por 1 turno completo, o próximo disparo é considerado um Tiro Infalível — um golpe crítico garantido que ignora armaduras e bloqueios. Esse disparo exige um curto período de recuperação de 2 turnos.</li>
+                        </ul>
+                    </div>
                 </div>
+            </section>
 
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+20% em Destreza (passivo);</li>
-                        <li style="margin-bottom: 8px;">O primeiro ataque após um aparo perfeito causa +20% de Dano;</li>
-                        <li style="margin-bottom: 8px;">Pode redirecionar golpes inimigos, forçando o oponente a sofrer penalidade de –15% em Velocidade no turno seguinte.</li>
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Constituição Única <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Uma anomalia genética rara em humanos, que torna os músculos mais resistentes e poderosos que o normal. O usuário se torna um verdadeiro monstro em força e resistência física.</p>
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li style="margin-bottom: 8px;"><strong>Buffs:</strong> +10% de Força e +15% de Resistência.</li>
                     </ul>
                 </div>
             </section>
@@ -63,38 +168,47 @@
             <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
 
             <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Batedor de Carteiras</h2>
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Contração Muscular <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <img src="assets/img/Imagem de Batedor de Carteiras.png" alt="Batedor de Carteiras" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Permite ao usuário contrair os músculos para estancar sangramentos ou conter órgãos internos. Não funciona em áreas sem articulações (como coxas ou antebraços).</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+10% de Força e Resistência (passivo);</li>
+                            <li style="margin-bottom: 8px;">Pode estancar sangramentos e resistir a ferimentos leves e médios.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+20% de Força e Resistência (passivo);</li>
+                            <li style="margin-bottom: 8px;">Ignora ferimentos leves;</li>
+                            <li style="margin-bottom: 8px;">O inimigo só escapa se tiver 20% a mais de Força que o usuário;</li>
+                            <li style="margin-bottom: 8px;">Pode lutar com órgãos travados por até 2 turnos;</li>
+                            <li style="margin-bottom: 8px;">Pode prender inimigos com músculos contraídos, recebendo +25% de Força para segurar;</li>
+                            <li style="margin-bottom: 8px;">Reduz pela metade os debuffs de ferimentos médios.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Espírito Contagiante <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <p style="margin-bottom: 15px;">Os descendentes da família Capone herdaram uma destreza quase sobrenatural, fruto de gerações vivendo entre sombras e disfarces. Sua habilidade em manipular armas pequenas, esconder intenções e agir em silêncio os torna mestres do furto e da trapaça. Mesmo diante do olhar mais atento, suas mãos parecem dançar sem deixar rastros.</p>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Capacidade de ocultar armas pequenas sob a roupa sem ser percebido. Realiza furtos simples (bolsos, bolsas, documentos) com quase nenhuma chance de detecção fora de combate;</li>
-                        <li style="margin-bottom: 8px;">+15% em Destreza (passivo).</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Pode desarmar inimigos em curta distância com movimentos rápidos e sutis (a Velocidade do usuário precisa ser igual ou superior ao Reflexo do oponente);</li>
-                        <li style="margin-bottom: 8px;">Furtos realizados durante combate ou distração possuem 75% de chance de sucesso;</li>
-                        <li style="margin-bottom: 8px;">Pode esconder até duas armas leves (adagas, pistolas, lâminas curtas) sem comprometer a mobilidade;</li>
-                        <li style="margin-bottom: 8px;">+20% em Destreza (passivo).</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Suas mãos tornam-se um borrão aos olhos comuns: pode furtar ou trocar objetos em meio à luta sem ser notado;</li>
-                        <li style="margin-bottom: 8px;">Pode ocultar armamentos de porte médio com técnicas de disfarce ou manipulação de roupas;</li>
-                        <li style="margin-bottom: 8px;">O primeiro ataque com arma oculta causa +20% de Dano;</li>
-                        <li style="margin-bottom: 8px;">Furtos contra NPCs importantes ou inimigos do mesmo nível só podem ser percebidos se o alvo tiver +30% de Reflexo a mais que a Velocidade do usuário;</li>
-                        <li style="margin-bottom: 8px;">+25% em Destreza (passivo).</li>
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Concedida àqueles que carregam uma determinação invejável em seus corações, servindo de exemplo e inspiração aos mais jovens. Sua experiência transmite tranquilidade e confiança, auxiliando companheiros em combates contra inimigos formidáveis.</p>
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li style="margin-bottom: 8px;">Aliados ignoram debuffs ocasionados por ferimentos leves e médios;</li>
+                        <li style="margin-bottom: 8px;">Aliados recebem um bônus passivo de +5% em todos os atributos.</li>
                     </ul>
                 </div>
             </section>
@@ -102,40 +216,224 @@
             <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
 
             <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Caminho do Atirador</h2>
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Favoritismo Armista <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <img src="assets/img/Imagem de Caminho do Atirador.png" alt="Caminho do Atirador" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">A família Kozuki é famosa pelo seu manuseio de armas. Existem tantos guerreiros poderosos devido ao laço que forjam com suas armas, como ferreiros lendários, com conhecimento aprofundado na forja e manutenção delas. É uma família responsável por manter a tradição de uma ótima forja e de incríveis usuários.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <p style="margin-bottom: 15px;">Você pode escolher uma arma favorita. Sua arma favorita dará +10% em Força ou Destreza e Resistência enquanto estiver a empunhando. No entanto, qualquer outra arma se torna sem graça para você. Você dá -10% de dano final com qualquer arma que não seja a sua favorita. Você pode mudar de arma favorita uma vez. Armas iniciais contarão como armas favoritas até serem substituídas e não entram na contagem do limite de trocas.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Armas criadas possuem +25% de durabilidade e +10% em Força ou Destreza;</li>
+                            <li style="margin-bottom: 8px;">Criação e reparo de armas com o dobro de eficiência (Metade das cenas).</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">O vínculo com a arma favorita torna-se sensorial. Você sabe exatamente onde sua arma favorita está;</li>
+                            <li style="margin-bottom: 8px;">Ao empunhar suas criações: +10% em Força ou Destreza, Resistência e Velocidade.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
+                        <p style="margin-bottom: 15px;"><strong>Ao empunhar sua arma favorita:</strong> +15% em Resistência e Velocidade, +10% de Dano total e +10% de redução de dano recebido.</p>
+                        <p style="margin-bottom: 15px;"><strong>Ao empunhar suas criações:</strong> +20% em Resistência and Velocidade, +15% de Dano total e +15% de Redução de dano recebido.</p>
+                        <p style="margin-bottom: 15px;"><strong>Ao empunhar uma criação sua e ela for sua arma favorita:</strong> +25% em Resistência e Velocidade, +20% de Dano total e +20% de Redução de dano recebido.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Qualquer outra arma te repele. Você não pode empunhar nenhuma outra arma que não seja a sua favorita ou uma criação sua. Caso faça, recebe -90% em todos os atributos;</li>
+                            <li style="margin-bottom: 8px;">Armas existentes mas alteradas pelas mãos de um Kozuki contam como criações, afinal, a criação dela foi ressignificada.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Filho do Mar <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <p style="margin-bottom: 15px;">Quem trilha esse caminho abandona o combate convencional e vive pela mira, pelo tempo e pela precisão.</p>
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Nascidos e abençoados pelas marés, esses lutadores possuem uma afinidade predatória com o oceano. Seus movimentos são fluidos e difíceis de prever, e, quando estão em seu habitat aquático, tornam-se verdadeiros monstros usando o fluxo e a pressão da água a seu favor.</p>
 
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Domínio completo de pistolas e mosquetes;</li>
-                        <li style="margin-bottom: 8px;">+5% em Destreza (passivo);</li>
-                        <li style="margin-bottom: 8px;">+10% em Destreza ao atirar com armas de fogo;</li>
-                        <li style="margin-bottom: 8px;">Reduz em 50% o tempo de recarga de pistolas.</li>
-                    </ul>
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+5% em Reflexo e Resistência (passivo);</li>
+                            <li style="margin-bottom: 8px;">Em ambientes aquáticos ou sob chuva, seus ataques ganham +5% de Dano Final, pois ele usa o próprio fluxo da água para impulsionar o golpe.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+10% em Reflexo e Resistência (passivo);</li>
+                            <li style="margin-bottom: 8px;">Acostumado com a pressão esmagadora do fundo do mar, seu corpo suporta impactos pesados. Reduz passivamente em 10% o Dano Final recebido por ataques de impacto contundente (socos, clavas, etc.). Se estiver debaixo d'água, essa redução sobe para 20%.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+15% em Reflexo e Resistência (passivo);</li>
+                            <li style="margin-bottom: 8px;">Enquanto estiver total ou parcialmente submerso (ou sob chuva torrencial), o usuário ganha +15% de Força e ignora 10% da Resistência do alvo.</li>
+                        </ul>
+                    </div>
                 </div>
+            </section>
 
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+10% em Destreza (passivo);</li>
-                        <li style="margin-bottom: 8px;">+15% em Destreza ao atirar com armas de fogo;</li>
-                        <li style="margin-bottom: 8px;">A recarga torna-se instantânea entre disparos;</li>
-                        <li style="margin-bottom: 8px;">Pode realizar uma Intercepção Improvável uma vez por cena — reagindo a um ataque à distância inimigo com seu próprio disparo. Se o disparo do usuário for superior, o ataque inimigo é anulado;</li>
-                        <li style="margin-bottom: 8px;">O primeiro tiro de cada confronto causa +15% de Dano.</li>
-                    </ul>
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Flexibilidade <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Permite que o corpo seja torcido e manipulado sem sofrer danos físicos, prevenindo deslocamentos e torções. Oferece agilidade e resistência a ferimentos estruturais.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Envolve apenas membros, abdômen e costas;</li>
+                            <li style="margin-bottom: 8px;">Permite realizar movimentos difíceis sem complicações;</li>
+                            <li style="margin-bottom: 8px;">+10% em Velocidade (passivo).</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Compressão muscular total para atravessar espaços minúsculos;</li>
+                            <li style="margin-bottom: 8px;">Permite manipular praticamente qualquer região superficial do corpo, incluindo o pescoço;</li>
+                            <li style="margin-bottom: 8px;">Pode torcer o corpo em ângulos de até 180°;</li>
+                            <li style="margin-bottom: 8px;">+20% em Velocidade (passivo).</li>
+                        </ul>
+                    </div>
                 </div>
+            </section>
 
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (20.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+15% em Destreza (passivo);</li>
-                        <li style="margin-bottom: 8px;">+20% em Destreza ao atirar com armas de fogo;</li>
-                        <li style="margin-bottom: 8px;">Pode realizar duas Intercepções Improváveis por cena, sem penalidade;</li>
-                        <li style="margin-bottom: 8px;">Após mirar por 1 turno completo, o próximo disparo é considerado um Tiro Infalível — um golpe crítico garantido que ignora armaduras e bloqueios. Esse disparo exige um curto período de recuperação de 2 turnos.</li>
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Fúria Ardente <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Um estado de transe focado na raiva. Diferente do descontrole de um berserker, a Fúria Ardente é um combustível que o lutador queima para superar a dor e bater mais forte à medida que o combate fica mais difícil.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+5% em Força (passivo);</li>
+                            <li style="margin-bottom: 8px;">Toda vez que receber dano, seu próximo ataque no turno seguinte recebe +5% de Dano.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+10% em Força (passivo);</li>
+                            <li style="margin-bottom: 8px;">Se um aliado cair desmaiado no campo de visão do usuário, recebe um bônus de +10% em Velocidade por 2 turnos para tentar vingá-lo. Se ele cair morto, o buff se torna +20%.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+15% em Força (passivo);</li>
+                            <li style="margin-bottom: 8px;">Ao cair abaixo de 50% de Vida, entra em estado de ebulição. Nesse estado, seus golpes causam um impacto explosivo que empurra inimigos do mesmo tamanho ou menores para trás, e recebe +10% de Resistência contra dano físico contundente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    O Escolhido <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content">
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+5% em todos os tipos de Haki;</li>
+                            <li style="margin-bottom: 8px;">Pequena chance narrativa de manifestar o Haki do Rei;</li>
+                            <li style="margin-bottom: 8px;">Inimigos com Vontade inferior sofrem –5% em Velocidade.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+10% em todos os tipos de Haki (passivo);</li>
+                            <li style="margin-bottom: 8px;">Pode dobrar o efeito de um Haki ativo por 2 turnos (recarga: 3 turnos);</li>
+                            <li style="margin-bottom: 8px;">Resistência natural ao Haki do Rei de inimigos até 20% superiores.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (20.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+15% em todos os tipos de Haki (passivo);</li>
+                            <li style="margin-bottom: 8px;">Ativa o Estado do Escolhido por 3 turnos: concede +25% na eficácia de todos os Hakis. Após o término, o usuário sofre –10% em todos os atributos por 3 turnos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Pensamento Acelerado <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Capacidade de raciocínio e reação extremamente acelerada, útil tanto em combate quanto no dia a dia.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+20% em Reflexo;</li>
+                            <li style="margin-bottom: 8px;">Após analisar 5 técnicas inimigas, entende seus padrões e pontos fracos;</li>
+                            <li style="margin-bottom: 8px;">Pode desviar instintivamente de golpes mesmo possuindo até 10% a menos de Velocidade que o oponente.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Perfeito (10.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+25% em Reflexo;</li>
+                            <li style="margin-bottom: 8px;">O corpo reage instintivamente a golpes de inimigos com até 20% mais Velocidade;</li>
+                            <li style="margin-bottom: 8px;">Precisa analisar apenas 2 técnicas inimigas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    QI Avançado <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">O usuário possui uma mente que opera em múltiplas camadas simultaneamente, permitindo analisar batalhas, prever ações e manipular o campo como um verdadeiro estrategista. Ele consegue decifrar pistas, possui uma bela memória fotográfica e ainda possui um talento nato na batalha. Pode ler movimentos, perceber armadilhas sutis, assim como detalhes que normalmente não se podem descobrir.</p>
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li style="margin-bottom: 8px;">Gasta apenas 50% de Estamina;</li>
+                        <li style="margin-bottom: 8px;">Caso o usuário consiga durar mais de três turnos na batalha, seu Reflexo é ampliado em +5%.</li>
                     </ul>
                 </div>
             </section>
@@ -143,339 +441,77 @@
             <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
 
             <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Constituição Única</h2>
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Treinamento de Cavaleiro <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <img src="assets/img/Imagem de Constituicao Unica.png" alt="Constituição Única" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Uma anomalia genética rara em humanos, que torna os músculos mais resistentes e poderosos que o normal. O usuário se torna um verdadeiro monstro em força e resistência física.</p>
-                <ul style="margin-left: 40px; margin-bottom: 35px;">
-                    <li style="margin-bottom: 8px;"><strong>Buffs:</strong> +10% de Força e +15% de Resistência.</li>
-                </ul>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Contração Muscular</h2>
-                
-                <img src="assets/img/Imagem de Contracao Muscular.png" alt="Contração Muscular" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Permite ao usuário contrair os músculos para estancar sangramentos ou conter órgãos internos. Não funciona em áreas sem articulações (como coxas ou antebraços).</p>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+10% de Força e Resistência (passivo);</li>
-                        <li style="margin-bottom: 8px;">Pode estancar sangramentos e resistir a ferimentos leves e médios.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+20% de Força e Resistência (passivo);</li>
-                        <li style="margin-bottom: 8px;">Ignora ferimentos leves;</li>
-                        <li style="margin-bottom: 8px;">O inimigo só escapa se tiver 20% a mais de Força que o usuário;</li>
-                        <li style="margin-bottom: 8px;">Pode lutar com órgãos travados por até 2 turnos;</li>
-                        <li style="margin-bottom: 8px;">Pode prender inimigos com músculos contraídos, recebendo +25% de Força para segurar;</li>
-                        <li style="margin-bottom: 8px;">Reduz pela metade os debuffs de ferimentos médios.</li>
-                    </ul>
+                <div class="toggle-content">
+                    <p style="text-align: center; font-style: italic; color: var(--accent-color);">EM ANDAMENTO</p>
                 </div>
             </section>
 
             <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
 
             <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Espírito Contagiante</h2>
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Último Recurso <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <img src="assets/img/Imagem de Espirito Contagiante.png" alt="Espírito Contagiante" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Concedida àqueles que carregam uma determinação invejável em seus corações, servindo de exemplo e inspiração aos mais jovens. Sua experiência transmite tranquilidade e confiança, auxiliando companheiros em combates contra inimigos formidáveis.</p>
-                <ul style="margin-left: 40px; margin-bottom: 35px;">
-                    <li style="margin-bottom: 8px;">Aliados ignoram debuffs ocasionados por ferimentos leves e médios;</li>
-                    <li style="margin-bottom: 8px;">Aliados recebem um bônus passivo de +5% em todos os atributos.</li>
-                </ul>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Favoritismo Armista</h2>
-                
-                <img src="assets/img/Imagem de Favoritismo Armista.png" alt="Favoritismo Armista" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">A família Kozuki é famosa pelo seu manuseio de armas. Existem tantos guerreiros poderosos devido ao laço que forjam com suas armas, como ferreiros lendários, com conhecimento aprofundado na forja e manutenção delas. É uma família responsável por manter a tradição de uma ótima forja e de incríveis usuários.</p>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <p style="margin-bottom: 15px;">Você pode escolher uma arma favorita. Sua arma favorita dará +10% em Força ou Destreza e Resistência enquanto estiver a empunhando. No entanto, qualquer outra arma se torna sem graça para você. Você dá -10% de dano final com qualquer arma que não seja a sua favorita. Você pode mudar de arma favorita uma vez. Armas iniciais contarão como armas favoritas até serem substituídas e não entram na contagem do limite de trocas.</p>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Armas criadas possuem +25% de durabilidade e +10% em Força ou Destreza;</li>
-                        <li style="margin-bottom: 8px;">Criação e reparo de armas com o dobro de eficiência (Metade das cenas).</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">O vínculo com a arma favorita torna-se sensorial. Você sabe exatamente onde sua arma favorita está;</li>
-                        <li style="margin-bottom: 8px;">Ao empunhar suas criações: +10% em Força ou Destreza, Resistência and Velocidade.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
-                    <p style="margin-bottom: 15px;"><strong>Ao empunhar sua arma favorita:</strong> +15% em Resistência e Velocidade, +10% de Dano total e +10% de redução de dano recebido.</p>
-                    <p style="margin-bottom: 15px;"><strong>Ao empunhar suas criações:</strong> +20% em Resistência e Velocidade, +15% de Dano total e +15% de Redução de dano recebido.</p>
-                    <p style="margin-bottom: 15px;"><strong>Ao empunhar uma criação sua e ela for sua arma favorita:</strong> +25% em Resistência e Velocidade, +20% de Dano total e +20% de Redução de dano recebido.</p>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Qualquer outra arma te repele. Você não pode empunhar nenhuma outra arma que não seja a sua favorita ou uma criação sua. Caso faça, recebe -90% em todos os atributos;</li>
-                        <li style="margin-bottom: 8px;">Armas existentes mas alteradas pelas mãos de um Kozuki contam como criações, afinal, a criação dela foi ressignificada.</li>
-                    </ul>
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Capacidade de liberar todas as forças restantes em um único movimento decisivo. Emana uma aura ameaçadora e concentra tudo em um golpe final.</p>
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Por 1 turno:</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">+15% de Dano;</li>
+                            <li style="margin-bottom: 8px;">+10% de Velocidade;</li>
+                            <li style="margin-bottom: 8px;">Ignora a dor de ferimentos que enfraqueceriam o usuário.</li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Após o uso:</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">O usuário desmaia por 1 dia, ficando incapaz de se mover.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
             <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
 
             <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Filho do Mar</h2>
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    Vontade Inabalável <span class="toggle-icon">▼</span>
+                </h2>
                 
-                <img src="assets/img/Imagem de Filho do Mar.png" alt="Filho do Mar" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Nascidos e abençoados pelas marés, esses lutadores possuem uma afinidade predatória com o oceano. Seus movimentos são fluidos e difíceis de prever, e, quando estão em seu habitat aquático, tornam-se verdadeiros monstros usando o fluxo e a pressão da água a seu favor.</p>
+                <div class="toggle-content">
+                    <p style="margin-bottom: 15px;">Quem nasce com esse trejeito parece abençoado e amaldiçoado ao mesmo tempo. Nunca se dobra diante da morte, mesmo ferido além do limite. Sua presença inspira aliados e oprime inimigos.</p>
 
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+5% em Reflexo e Resistência (passivo);</li>
-                        <li style="margin-bottom: 8px;">Em ambientes aquáticos ou sob chuva, seus ataques ganham +5% de Dano Final, pois ele usa o próprio fluxo da água para impulsionar o golpe.</li>
-                    </ul>
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Ignora 100% dos debuffs de ferimentos leves e médios e 50% dos debuffs de ferimentos graves;</li>
+                            <li style="margin-bottom: 8px;">Ao cair abaixo de 45% da Estamina ou Vida, recebe +25% de Resistência até o fim da cena;</li>
+                            <li style="margin-bottom: 8px;">Sofre 50% a menos de efeitos do Haki do Rei de inimigos do mesmo nível;</li>
+                            <li style="margin-bottom: 8px;">Pequena chance narrativa de ter lampejos de Haki do Rei em momentos de grande risco.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
+                        <p style="margin-bottom: 15px;">Ao cair em 30% ou menos de Estamina ou Vida, ativa o Estado Inabalável por 2 turnos: +10% de Força ou Destreza e +10% de Resistência ou Velocidade. Continua lutando mesmo com 0 de Estamina.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">Ao atingir esse estado, recebe +35% da Estamina total, que só pode ser usada para sobreviver — seja para fugir de uma batalha ou finalizar como último recurso. Após usar essa Estamina extra, o indivíduo fica exausto, incapaz de lutar por horas ou dias, dependendo do quanto se forçou.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">O Estado Inabalável agora dura até 3 turnos mesmo com 0 de Estamina. Ao ativá-lo, uma onda de presença é liberada;</li>
+                            <li style="margin-bottom: 8px;">Resistência ao Haki do Rei: Apenas inimigos com +100% de superioridade conseguem derrubar o usuário pela pressão.</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+10% em Reflexo e Resistência (passivo);</li>
-                        <li style="margin-bottom: 8px;">Acostumado com a pressão esmagadora do fundo do mar, seu corpo suporta impactos pesados. Reduz passivamente em 10% o Dano Final recebido por ataques de impacto contundente (socos, clavas, etc.). Se estiver debaixo d'água, essa redução sobe para 20%.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+15% em Reflexo e Resistência (passivo);</li>
-                        <li style="margin-bottom: 8px;">Enquanto estiver total ou parcialmente submerso (ou sob chuva torrencial), o usuário ganha +15% de Força e ignora 10% da Resistência do alvo.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Flexibilidade</h2>
-                
-                <img src="assets/img/Imagem de Flexibilidade.png" alt="Flexibilidade" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Permite que o corpo seja torcido e manipulado sem sofrer danos físicos, prevenindo deslocamentos e torções. Oferece agilidade e resistência a ferimentos estruturais.</p>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Envolve apenas membros, abdômen e costas;</li>
-                        <li style="margin-bottom: 8px;">Permite realizar movimentos difíceis sem complicações;</li>
-                        <li style="margin-bottom: 8px;">+10% em Velocidade (passivo).</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Compressão muscular total para atravessar espaços minúsculos;</li>
-                        <li style="margin-bottom: 8px;">Permite manipular praticamente qualquer região superficial do corpo, incluindo o pescoço;</li>
-                        <li style="margin-bottom: 8px;">Pode torcer o corpo em ângulos de até 180°;</li>
-                        <li style="margin-bottom: 8px;">+20% em Velocidade (passivo).</li>
-                    </ul>
-                </div>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Fúria Ardente</h2>
-                
-                <img src="assets/img/Imagem de Furia Ardente.png" alt="Fúria Ardente" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Um estado de transe focado na raiva. Diferente do descontrole de um berserker, a Fúria Ardente é um combustível que o lutador queima para superar a dor e bater mais forte à medida que o combate fica mais difícil.</p>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+5% em Força (passivo);</li>
-                        <li style="margin-bottom: 8px;">Toda vez que receber dano, seu próximo ataque no turno seguinte recebe +5% de Dano.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+10% em Força (passivo);</li>
-                        <li style="margin-bottom: 8px;">Se um aliado cair desmaiado no campo de visão do usuário, recebe um bônus de +10% em Velocidade por 2 turnos para tentar vingá-lo. Se ele cair morto, o buff se torna +20%.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+15% em Força (passivo);</li>
-                        <li style="margin-bottom: 8px;">Ao fazer o HP cair abaixo de 50%, entra em estado de ebulição. Nesse estado, seus golpes causam um impacto explosivo que empurra inimigos do mesmo tamanho ou menores para trás, e recebe +10% de Resistência contra dano físico contundente.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">O Escolhido</h2>
-                
-                <img src="assets/img/Imagem de O Escolhido.png" alt="O Escolhido" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+5% em todos os tipos de Haki;</li>
-                        <li style="margin-bottom: 8px;">Pequena chance narrativa de manifestar o Haki do Rei;</li>
-                        <li style="margin-bottom: 8px;">Inimigos com Vontade inferior sofrem –5% em Velocidade.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+10% em todos os tipos de Haki (passivo);</li>
-                        <li style="margin-bottom: 8px;">Pade dobrar o efeito de um Haki ativo por 2 turnos (recarga: 3 turnos);</li>
-                        <li style="margin-bottom: 8px;">Resistência natural ao Haki do Rei de inimigos até 20% superiores.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (20.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+15% em todos os tipos de Haki (passivo);</li>
-                        <li style="margin-bottom: 8px;">Ativa o Estado do Escolhido por 3 turnos: concede +25% na eficácia de todos os Hakis. Após o término, o usuário sofre –10% em todos os atributos por 3 turnos.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Pensamento Acelerado</h2>
-                
-                <img src="assets/img/Imagem de Pensamento Acelerado.png" alt="Pensamento Acelerado" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Capacidade de raciocínio e reação extremamente acelerada, útil tanto em combate quanto no dia a dia.</p>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+20% em Reflexo;</li>
-                        <li style="margin-bottom: 8px;">Após analisar 5 técnicas inimigas, entende seus padrões e pontos fracos;</li>
-                        <li style="margin-bottom: 8px;">Pode desviar instintivamente de golpes mesmo possuindo até 10% a menos de Velocidade que o oponente.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Perfeito (10.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+25% em Reflexo;</li>
-                        <li style="margin-bottom: 8px;">O corpo reage instintivamente a golpes de inimigos com até 20% mais Velocidade;</li>
-                        <li style="margin-bottom: 8px;">Precisa analisar apenas 2 técnicas inimigas.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">QI Avançado</h2>
-                
-                <img src="assets/img/Imagem de QI Avanzado.png" alt="QI Avançado" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">O usuário possui uma mente que opera em múltiplas camadas simultaneamente, permitindo analisar batalhas, prever ações e manipular o campo como um verdadeiro estrategista. Ele consegue decifrar pistas, possui uma bela memória fotográfica e ainda possui um talento nato na batalha. Pode ler movimentos, perceber armadilhas sutis, assim como detalhes que normalmente não se podem descobrir.</p>
-                <ul style="margin-left: 40px; margin-bottom: 35px;">
-                    <li style="margin-bottom: 8px;">Gasta apenas 50% de Estamina;</li>
-                    <li style="margin-bottom: 8px;">Caso o usuário consiga durar mais de três turnos na batalha, seu Reflexo é ampliado em +5%.</li>
-                </ul>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Último Recurso</h2>
-                
-                <img src="assets/img/Imagem de Ultimo Recurso.png" alt="Último Recurso" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Capacidade de liberar todas as forças restantes em um único movimento decisivo. Emana uma aura ameaçadora e concentra tudo em um golpe final.</p>
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Por 1 turno:</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">+15% de Dano;</li>
-                        <li style="margin-bottom: 8px;">+10% de Velocidade;</li>
-                        <li style="margin-bottom: 8px;">Ignora a dor de ferimentos que enfraqueceriam o usuário.</li>
-                    </ul>
-                </div>
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Após o uso:</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">O usuário desmaia por 1 dia, ficando incapaz de se mover.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Vontade Inabalável</h2>
-                
-                <img src="assets/img/Imagem de Vontade Inabalavel.png" alt="Vontade Inabalável" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="margin-bottom: 15px;">Quem nasce com esse trejeito parece abençoado e amaldiçoado ao mesmo tempo. Nunca se dobra diante da morte, mesmo ferido além do limite. Sua presença inspira aliados e oprime inimigos.</p>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Básico (5.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Ignora 100% dos debuffs de ferimentos leves e médios e 50% dos debuffs de ferimentos graves;</li>
-                        <li style="margin-bottom: 8px;">Ao cair abaixo de 45% da Estamina ou Vida, recebe +25% de Resistência até o fim da cena;</li>
-                        <li style="margin-bottom: 8px;">Sofre 50% a menos de efeitos do Haki do Rei de inimigos do mesmo nível;</li>
-                        <li style="margin-bottom: 8px;">Pequena chance narrativa de ter lampejos de Haki do Rei em momentos de grande risco.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Intermediário (10.000 pontos)</h4>
-                    <p style="margin-bottom: 15px;">Ao cair em 30% ou menos de Estamina ou Vida, ativa o Estado Inabalável por 2 turnos: +10% de Força ou Destreza e +10% de Resistência ou Velocidade. Continua lutando mesmo com 0 de Estamina.</p>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">Ao atingir esse estado, recebe +35% da Estamina total, que só pode ser usada para sobreviver — seja para fugir de uma batalha ou finalizar como último recurso. Após usar essa Estamina extra, o indivíduo fica exausto, incapaz de lutar por horas ou dias, dependendo do quanto se forçou.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h4 class="highlight-text" style="margin-bottom: 15px;">Nível Avançado (15.000 pontos)</h4>
-                    <ul style="margin-left: 40px;">
-                        <li style="margin-bottom: 8px;">O Estado Inabalável agora dura até 3 turnos mesmo com 0 de Estamina. Ao ativá-lo, uma onda de presença é liberada;</li>
-                        <li style="margin-bottom: 8px;">Resistência ao Haki do Rei: Apenas inimigos com +100% de superioridade conseguem derrubar o usuário pela pressão.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
-
-            <section class="content-section">
-                <h2 class="title-quantico" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px;">Treinamento de Cavaleiro</h2>
-                
-                <img src="assets/img/Imagem de Treinamento de Cavaleiro.png" alt="Treinamento de Cavaleiro" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                
-                <p style="text-align: center; font-style: italic; color: var(--accent-color);">EM ANDAMENTO</p>
             </section>
         </div>
     </main>
