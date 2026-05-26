@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="aparencias.html">APARÊNCIAS</a></li>
                     <li><a href="classes.html">CLASSES</a></li>
                     <li><a href="estilos-de-luta.html">ESTILOS DE LUTA</a></li>
-                    <li><a href="habilidades-únicas.html">HABILIDADES ÚNICAS</a></li>
+                    <li><a href="habilidades-unicas.html">HABILIDADES ÚNICAS</a></li>
                     <li><a href="linhagens.html">LINHAGENS</a></li>
                     <li><a href="racas.html">RAÇAS</a></li>
                     <li><a href="https://herikliz.github.io/new-seas/">SALVAR FICHA</a></li>
