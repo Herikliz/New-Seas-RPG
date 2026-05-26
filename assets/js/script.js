@@ -39,6 +39,8 @@ function loadSavedTheme() {
         if (customColors) applyTheme(customColors);
     } else if (savedTheme && presetThemes[savedTheme]) {
         applyTheme(presetThemes[savedTheme]);
+    } else {
+        applyTheme(presetThemes['escuro']);
     }
 }
 loadSavedTheme();
