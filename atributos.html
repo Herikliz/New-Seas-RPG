@@ -3,26 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estilos de Luta - New Seas OP</title>
+    <title>Atributos - New Seas OP</title>
     <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --accent-color: #2e7d32;
+            --sidebar-bg: #ffffff;
+            --sidebar-border: #2e7d32;
+            --border-radius: 12px;
+        }
+
+        body.dark-mode {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-color: #4caf50;
+            --sidebar-bg: #141414;
+            --sidebar-border: #4caf50;
+        }
+
+        .wg-emblem {
+            font-size: 80px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .wg-subtitle {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+
+        .toggle-content.collapsed {
+            display: none;
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.6em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.15);
+        }
+
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .highlight-text {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .calc-box {
+            background-color: rgba(46, 125, 50, 0.05);
+            border: 2px dashed var(--accent-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        body.dark-mode .calc-box {
+            background-color: rgba(76, 175, 80, 0.05);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-family: 'Quantico', sans-serif;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--sidebar-border);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 16px;
+            font-family: 'Comfortaa', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            box-shadow: 0 0 8px var(--accent-color);
+        }
+
+        .result-display {
+            background-color: var(--sidebar-border);
+            color: var(--bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-family: 'Quantico', sans-serif;
+            text-align: center;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .sub-attr {
+            margin-left: 40px;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .sub-attr h3 {
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    <button id="theme-toggle" class="theme-toggle-btn">⚖️</button>
     <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); padding: 10px 15px; font-size: 16px; cursor: pointer; border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--accent-color); border: 2px solid var(--accent-color); font-family: 'Quantico', sans-serif;">Retrair Tudo</button>
+    </div>
 
     <main class="main-content">
         <div class="content-wrapper">
             <section class="content-section text-center">
-                <h1 class="title-quantico">ESTILOS DE LUTA</h1>
+                <div class="wg-emblem">📊</div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">ATRIBUTOS</h1>
             </section>
 
             <section class="content-section">
-                <p>É AQUI QUE TEM OS ESTILOS DE LUTA DISPONÍVEIS</p>
+                <h2 class="title-quantico toggle-title rank-title">
+                    Atributos Ofensivos e Energia <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <h3 style="color: var(--accent-color); font-family: 'Quantico', sans-serif; font-size: 24px; margin-bottom: 10px;">DESTREZA</h3>
+                    <p style="margin-bottom: 20px;">Destreza é a medida de precisão, coordenação e habilidade com armas (corte, perfuração ou disparo). Esse atributo define o dano de ataques baseados nestas armas. Para <strong>Atiradores</strong>, serve como base principal para dano e eficiência técnica.</p>
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">O Dano Bruto é calculado a partir do seu atributo dominante (Força ou Destreza) somado aos buffs ativos.</li>
+                        <li style="margin-bottom: 8px;">A cada <strong>1.000 pontos em Destreza</strong>, o personagem adquire <strong>5m² de capacidade destrutiva ambiental</strong> (cortar/perfurar estruturas).</li>
+                    </ul>
+
+                    <h3 style="color: var(--accent-color); font-family: 'Quantico', sans-serif; font-size: 24px; margin-bottom: 10px;">FORÇA</h3>
+                    <p style="margin-bottom: 20px;">Representa o poder físico bruto. Utilizada em ataques corpo a corpo, impactos diretos, arremessos, rompimento de estruturas e disputas físicas (agarrões, empurrões e ondas de impacto).</p>
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">Pode ser o atributo dominante no cálculo de dano bruto (junto com os buffs).</li>
+                        <li style="margin-bottom: 8px;">A cada <strong>1.000 pontos em Força</strong>, adquire <strong>5m² de capacidade destrutiva ambiental</strong> através de impacto direto.</li>
+                    </ul>
+
+                    <h3 style="color: var(--accent-color); font-family: 'Quantico', sans-serif; font-size: 24px; margin-bottom: 10px;">ESPÍRITO</h3>
+                    <p style="margin-bottom: 15px;">É a fonte da sua força interior, relacionada diretamente ao uso e controle dos três tipos de Haki (Armamento, Observação e Rei). Os pontos de Espírito são distribuídos entre essas categorias para definir a profundidade do seu domínio. Só é possível investir pontos após o despertar do Haki respectivo.</p>
+                </div>
             </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Resistência e Vitalidade <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A Resistência representa a durabilidade do corpo e a capacidade de suportar dano e esforço. Ela está ligada ao <strong>HP (Pontos de Vida)</strong> e atua como uma armadura passiva natural.</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;"><strong>HP Total:</strong> Calculado apenas com a Resistência Passiva (sem buffs ativos). O cálculo é: <strong>Resistência + 10.000</strong>.</li>
+                        <li style="margin-bottom: 8px;"><strong>Redução de Dano:</strong> O dano não é ignorado, mas reduzido. Quanto maior a resistência (incluindo buffs), menor o dano final sofrido. 25.000 de Resistência corta o dano recebido exatamente pela metade.</li>
+                    </ul>
+
+                    <div class="calc-box">
+                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de HP e Dano</h4>
+                        
+                        <div style="border-bottom: 1px dashed var(--accent-color); padding-bottom: 20px; margin-bottom: 20px;">
+                            <div class="input-group">
+                                <label>Resistência Passiva (Para calcular HP):</label>
+                                <input type="text" id="hp-res-passiva" class="auto-calc" placeholder="Ex: 5.000">
+                            </div>
+                            <div class="result-display" style="background-color: transparent; color: var(--text-color); border: 2px solid var(--sidebar-border); box-shadow: none;">
+                                HP Total: <span id="out-hp" style="font-weight: bold; color: var(--accent-color);">10.000</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="input-group">
+                                <label>Dano Bruto Recebido (Ataque inimigo):</label>
+                                <input type="text" id="dmg-bruto" class="auto-calc" placeholder="Ex: 20.000">
+                            </div>
+                            <div class="input-group">
+                                <label>Sua Resistência Total (Com Buffs):</label>
+                                <input type="text" id="dmg-res-total" class="auto-calc" placeholder="Ex: 15.000">
+                            </div>
+                            <div class="result-display">
+                                Dano Final Recebido: <span id="out-dano-final">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Velocidade e Movimentação <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A <strong>Velocidade</strong> é um atributo tático essencial, dividido em duas subcategorias funcionais no sistema:</p>
+
+                    <div class="sub-attr">
+                        <h3>REFLEXO</h3>
+                        <p style="margin-bottom: 10px;">Mede sua capacidade de perceber e reagir a ataques e eventos. Um Reflexo alto ajuda a antecipar ações inimigas e evita que o personagem seja pego desprevenido.</p>
+                        <p>É a chave principal para <strong>esquivas baseadas em percepção</strong>. Notar o golpe a tempo define a diferença entre levar o dano ou escapar.</p>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3>VELOCIDADE CORPORAL</h3>
+                        <p style="margin-bottom: 10px;">Determina o quão rápido você se movimenta fisicamente do ponto A ao ponto B (avanços, recuos e reposicionamentos).</p>
+                        <p>Quem tem <strong>0 de Velocidade Corporal</strong> se move a <strong>5 m/s</strong>. A cada <strong>100 pontos investidos</strong>, a velocidade aumenta em <strong>1 m/s</strong>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Esquiva e Diferença de Velocidade <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A esquiva não é automática nem puramente narrativa. É baseada na diferença percentual entre a <strong>Velocidade do Ataque</strong> (Velocidade Corporal do inimigo ou Velocidade do Projétil) e o <strong>Reflexo do Defensor</strong>.</p>
+
+                    <div class="calc-box">
+                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Simulador de Esquiva</h4>
+                        
+                        <div class="input-group">
+                            <label>Velocidade do Ataque ou Projétil (Atacante):</label>
+                            <input type="text" id="esq-atk" class="auto-calc" placeholder="Ex: 15.000">
+                        </div>
+                        <div class="input-group">
+                            <label>Reflexo (Defensor):</label>
+                            <input type="text" id="esq-def" class="auto-calc" placeholder="Ex: 12.000">
+                        </div>
+                        
+                        <div class="result-display" style="padding: 20px;">
+                            <div style="font-size: 16px; margin-bottom: 10px;">Diferença: <span id="out-esq-perc" style="color: #ffeb3b; font-size: 22px;">0%</span></div>
+                            <div id="out-esq-status" style="font-size: 18px; line-height: 1.4;">Igualdade ou Valores Parelhos. O combate é equilibrado.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Projéteis e Armas <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A velocidade e o alcance de ataques com armas dependem do atributo principal (<strong>Força ou Destreza</strong>) investido e do tipo de armamento escolhido. Utilize o painel abaixo para encontrar as capacidades exatas do seu armamento.</p>
+
+                    <div class="calc-box">
+                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de Velocidade e Alcance</h4>
+                        
+                        <div class="input-group">
+                            <label>Atributo Total (Força ou Destreza + Buffs):</label>
+                            <input type="text" id="proj-attr" class="auto-calc" placeholder="Ex: 8.000">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Tipo de Arma/Ataque:</label>
+                            <select id="proj-tipo" class="auto-calc">
+                                <option value="forca">Armas baseadas em Força (Martelos, Socos de Pressão)</option>
+                                <option value="corte">Armas de Destreza - Corte (Katanas, Foices)</option>
+                                <option value="arco">Destreza - Disparo (Arcos, Bestas, Estilingues)</option>
+                                <option value="fogo">Destreza - Disparo (Armas de Fogo)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group" id="container-classe" style="display: none;">
+                            <label>Classe do Personagem:</label>
+                            <select id="proj-classe" class="auto-calc">
+                                <option value="atirador">Atirador</option>
+                                <option value="nao-atirador">Não-Atirador</option>
+                            </select>
+                        </div>
+
+                        <div class="result-display" style="display: flex; flex-direction: column; gap: 10px;">
+                            <div>Velocidade do Ataque: <span id="out-proj-vel" style="color: #ffeb3b;">0</span> pontos</div>
+                            <div>Alcance Máximo: <span id="out-proj-dist" style="color: #03a9f4;">0</span>m</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Avisos e Regras Gerais <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li style="margin-bottom: 15px;">
+                            <strong>Limite de Buffs:</strong> A somatória de qualquer buff ativo aplicado por técnicas próprias em uma pessoa tem um limite máximo de <strong>+100%</strong>.
+                            <br><em>Exceção:</em> Se outra pessoa (como um usuário da Horu Horu no Mi) aplicar buffs em você, esse limite de 100% pode ser ultrapassado.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Sobreposição em Velocidade:</strong> Velocidade <strong>NÃO</strong> acumula buffs próprios simultâneos. É impossível ter mais de um buff ativo em Velocidade ao mesmo tempo (prevalece o maior), a menos que as técnicas sejam explicitamente criadas para se complementarem.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Limites de Atributo:</strong> O teto máximo de um personagem é <strong>50.000 pontos</strong>. Você pode treinar livremente apenas até os <strong>40.000 pontos</strong>. Personagens com 40.000 pontos ou mais não podem ganhar pontos com cenas no ON (incluindo <a href="extra-narrada.html">Extra-Narrada</a>). A partir desse teto, os pontos adicionais só são conquistados via Eventos, Caçadas ou Dominações.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Distribuição de Pontos (Jogadores com 40.000+ pontos):</strong> Para jogadores que já atingiram 40.000 pontos normais ou mais, todos os pontos recebidos devem ser alocados livremente entre Haki ou Akuma no Mi, da forma que o jogador preferir. Por exemplo: se em uma recompensa o ganho total for de 450 pontos, o jogador pode colocar 400 em Haki e 50 em Akuma no Mi, ou os 450 inteiros em Akuma no Mi, sem poder adicionar aos pontos normais de atributo. Caso o jogador com mais de 40.000 não possua Haki nem Akuma no Mi, esses pontos serão perdidos.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
         </div>
     </main>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const toggleTitles = document.querySelectorAll('.toggle-title');
+            const toggleAllBtn = document.getElementById('toggle-all-btn');
+            let isAllCollapsed = false;
+
+            if (toggleAllBtn) {
+                toggleAllBtn.addEventListener('click', () => {
+                    isAllCollapsed = !isAllCollapsed;
+                    toggleAllBtn.textContent = isAllCollapsed ? 'Expandir Tudo' : 'Retrair Tudo';
+
+                    toggleTitles.forEach(title => {
+                        const content = title.nextElementSibling;
+                        if (content && content.classList.contains('toggle-content')) {
+                            if (isAllCollapsed) {
+                                title.classList.add('collapsed');
+                                content.classList.add('collapsed');
+                            } else {
+                                title.classList.remove('collapsed');
+                                content.classList.remove('collapsed');
+                            }
+                        }
+                    });
+                });
+            }
+
+            const autoCalcInputs = document.querySelectorAll('.auto-calc');
+
+            function formatNumber(inputField) {
+                if(inputField.tagName.toLowerCase() !== 'input') return;
+                
+                let val = inputField.value.replace(/\D/g, '');
+                if (val === '') {
+                    inputField.value = '';
+                    return;
+                }
+                let num = parseInt(val, 10);
+                inputField.value = num.toLocaleString('pt-BR');
+            }
+
+            function getVal(elementId) {
+                let val = document.getElementById(elementId).value.replace(/\./g, '');
+                return val ? parseInt(val, 10) : 0;
+            }
+
+            function runCalculations() {
+                let resPassiva = getVal('hp-res-passiva');
+                document.getElementById('out-hp').innerText = (resPassiva + 10000).toLocaleString('pt-BR');
+
+                let dmgBruto = getVal('dmg-bruto');
+                let dmgResTotal = getVal('dmg-res-total');
+                let dmgFinal = Math.floor(dmgBruto * (25000 / (25000 + dmgResTotal)));
+                document.getElementById('out-dano-final').innerText = dmgFinal.toLocaleString('pt-BR');
+
+                let esqAtk = getVal('esq-atk');
+                let esqDef = getVal('esq-def');
+                let diffLabel = document.getElementById('out-esq-perc');
+                let statusLabel = document.getElementById('out-esq-status');
+
+                if (esqDef === 0 && esqAtk === 0) {
+                    diffLabel.innerText = "0%";
+                    diffLabel.style.color = "#ffeb3b";
+                    statusLabel.innerText = "Igualdade ou Valores Parelhos. Combate equilibrado. A esquiva é plenamente possível de forma coerente.";
+                } else if (esqDef === 0 && esqAtk > 0) {
+                    diffLabel.innerText = "∞ (Incalculável)";
+                    diffLabel.style.color = "#f44336";
+                    statusLabel.innerText = "Speedblitz Absoluto: Disparidade esmagadora. O defensor sequer consegue ver o ataque chegar.";
+                } else {
+                    let diff = ((esqAtk - esqDef) / esqDef) * 100;
+                    diffLabel.innerText = diff.toFixed(1) + "%";
+
+                    if (diff <= 10) {
+                        diffLabel.style.color = "#4caf50";
+                        if(diff < -10) {
+                            statusLabel.innerText = "Vantagem Clara do Defensor: O ataque é lido e evitado com extrema facilidade.";
+                        } else {
+                            statusLabel.innerText = "Igualdade ou Valores Parelhos: Ambos conseguem atacar, reagir e se defender normalmente.";
+                        }
+                    } else if (diff <= 25) {
+                        diffLabel.style.color = "#ff9800";
+                        statusLabel.innerText = "Dificuldade Perceptível (10% a 25%): O defensor acompanha os movimentos com esforço. A esquiva exige boa descrição e movimentação estratégica.";
+                    } else if (diff <= 50) {
+                        diffLabel.style.color = "#ff5722";
+                        statusLabel.innerText = "Desvantagem (25% a 50%): O defensor reage, mas está claramente em apuros. Erros de tempo ou posicionamento serão punidos com o acerto.";
+                    } else if (diff <= 75) {
+                        diffLabel.style.color = "#e91e63";
+                        statusLabel.innerText = "Situação Crítica (50% a 75%): Reagir exige uso estratégico do terreno, antecipação perfeita ou recurso de build. Esquivas comuns não funcionam mais.";
+                    } else {
+                        diffLabel.style.color = "#f44336";
+                        statusLabel.innerText = "Speedblitz (> 75%): Disparidade esmagadora. O defensor não consegue acompanhar. Salvo por habilidades passivas específicas, o golpe acertará.";
+                    }
+                }
+
+                let pAttr = getVal('proj-attr');
+                let pTipo = document.getElementById('proj-tipo').value;
+                let pClasse = document.getElementById('proj-classe').value;
+                
+                let classBox = document.getElementById('container-classe');
+                if(pTipo === 'arco' || pTipo === 'fogo') {
+                    classBox.style.display = 'block';
+                } else {
+                    classBox.style.display = 'none';
+                }
+
+                let pVel = 0;
+                let pDist = 0;
+
+                if(pTipo === 'forca' || pTipo === 'corte') {
+                    pVel = Math.floor(pAttr * 0.50);
+                } else if(pTipo === 'arco') {
+                    pVel = Math.floor(pAttr * 0.60);
+                } else if(pTipo === 'fogo') {
+                    pVel = Math.floor(pAttr * 0.70);
+                }
+
+                if(pTipo === 'forca' || pTipo === 'corte') {
+                    pDist = Math.floor(pAttr / 100);
+                } else if(pTipo === 'fogo') {
+                    if(pClasse === 'atirador') pDist = Math.floor(pAttr / 10);
+                    else pDist = Math.floor(pAttr / 100);
+                } else if(pTipo === 'arco') {
+                    if(pClasse === 'atirador') pDist = Math.floor(pAttr / 100) * 5;
+                    else pDist = Math.floor(pAttr / 1000) * 5;
+                }
+
+                document.getElementById('out-proj-vel').innerText = pVel.toLocaleString('pt-BR');
+                document.getElementById('out-proj-dist').innerText = pDist.toLocaleString('pt-BR');
+            }
+
+            autoCalcInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    formatNumber(this);
+                    runCalculations();
+                });
+                
+                if(input.tagName.toLowerCase() === 'select') {
+                    input.addEventListener('change', runCalculations);
+                }
+            });
+
+            runCalculations();
+        });
+    </script>
 </body>
 </html>
