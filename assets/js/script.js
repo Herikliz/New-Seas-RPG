@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="habilidades-unicas.html">HABILIDADES ÚNICAS</a></li>
                     <li><a href="linhagens.html">LINHAGENS</a></li>
                     <li><a href="racas.html">RAÇAS</a></li>
-                    <li><a href="https://herikliz.github.io/new-seas/">SALVAR FICHA</a></li>
+                    <li><a href="https://herikliz.github.io/New-Seas-RPG-Ficha/">SALVAR FICHA</a></li>
                 </ul>
             </li>
             <li>
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="governo-mundial.html">GOVERNO MUNDIAL</a></li>
                     <li><a href="marinha.html">MARINHA</a></li>
                     <li><a href="pirata.html">PIRATA</a></li>
-                    <li><a href="revolucionarios.html">REVOLUCIONÁRIOS</a></li>
+                    <li><a href="vanguarda-popular-revolucionaria.html">VANGUARDA POPULAR REVOLUCIONÁRIA</a></li>
                     <li><a href="tripulacoes.html">TRIPULAÇÕES</a></li>
                 </ul>
             </li>
