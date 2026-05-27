@@ -84,98 +84,108 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="#" class="toggle-btn">FORÇA VITAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li><a href="atributos.html">ATRIBUTOS</a></li>
-                    <li><a href="akuma-no-mi.html">AKUMA NO MI</a></li>
-                    <li><a href="estamina.html">ESTAMINA</a></li>
-                    <li><a href="haki.html">HAKI</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/força-vital/akuma-no-mi">AKUMA NO MI</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/força-vital/estamina">ESTAMINA</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/força-vital/haki">HAKI</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="toggle-btn">EVOLUÇÃO <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="extra-narrada.html">EXTRA-NARRADA</a></li>
-                    <li><a href="missoes.html">MISSÕES</a></li>
-                    <li><a href="npcs-especiais.html">NPCS ESPECIAIS</a></li>
-                    <li><a href="recrutar-npcs.html">RECRUTAR NPCS</a></li>
-                    <li><a href="trabalho.html">TRABALHO</a></li>
-                    <li><a href="treino.html">TREINO</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/extra-narrada">EXTRA-NARRADA</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/missões">MISSÕES</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/npcs-especiais">NPCS ESPECIAIS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/recrutar-npcs">RECRUTAR NPCS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/trabalho">TRABALHO</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/treino">TREINO</a></li>
                 </ul>
             </li>
             <li>
-                <a href="geografia.html" class="toggle-btn">GEOGRAFIA <span class="arrow">▼</span></a>
+                <a href="https://sites.google.com/view/new-seas-op/geografia" class="toggle-btn">GEOGRAFIA <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="ilhas.html" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
+                        <a href="https://sites.google.com/view/new-seas-op/geografia/ilhas" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="east-blue.html">EAST BLUE</a></li>
-                            <li><a href="south-blue.html">SOUTH BLUE</a></li>
-                            <li><a href="west-blue.html">WEST BLUE</a></li>
-                            <li><a href="north-blue.html">NORTH BLUE</a></li>
-                            <li><a href="paraiso.html">PARAÍSO</a></li>
-                            <li><a href="novo-mundo.html">NOVO MUNDO</a></li>
-                            <li><a href="calm-belt.html">CALM BELT</a></li>
-                            <li><a href="ilhas-sem-localizacao-exata.html">ILHAS SEM LOCALIZAÇÃO EXATA</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/east-blue">EAST BLUE</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/south-blue">SOUTH BLUE</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/west-blue">WEST BLUE</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/north-blue">NORTH BLUE</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/paraíso">PARAÍSO</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/novo-mundo">NOVO MUNDO</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/calm-belt">CALM BELT</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/ilhas-sem-localização-exata">ILHAS SEM LOCALIZAÇÃO EXATA</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li><a href="historia.html">HISTÓRIA</a></li>
+            <li><a href="https://sites.google.com/view/new-seas-op/história">HISTÓRIA</a></li>
             <li>
-                <a href="submundo.html" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
+                <a href="https://sites.google.com/view/new-seas-op/submundo" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="escravos.html">ESCRAVOS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/submundo/escravos">ESCRAVOS</a></li>
                     <li>
                         <a href="#" class="toggle-btn">AKUMA NO MI <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="logia.html">LOGIA</a></li>
-                            <li><a href="paramecia.html">PARAMECIA</a></li>
-                            <li><a href="zoan.html">ZOAN</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/logia">LOGIA</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/paramecia">PARAMECIA</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/zoan">ZOAN</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="loja.html" class="toggle-btn">LOJA <span class="arrow">▼</span></a>
+                <a href="https://sites.google.com/view/new-seas-op/loja" class="toggle-btn">LOJA <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="itens-exclusivos.html">ITENS EXCLUSIVOS</a></li>
-                    <li><a href="loja-de-barcos.html">LOJA DE BARCOS</a></li>
-                    <li><a href="loja-de-carpinteiro.html">LOJA DE CARPINTEIRO</a></li>
-                    <li><a href="loja-de-criadores.html">LOJA DE CRIADORES</a></li>
-                    <li><a href="loja-especial.html">LOJA ESPECIAL</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/loja/itens-exclusivos">ITENS EXCLUSIVOS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-barcos">LOJA DE BARCOS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-carpinteiro">LOJA DE CARPINTEIRO</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-criadores">LOJA DE CRIADORES</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-especial">LOJA ESPECIAL</a></li>
                     <li>
-                        <a href="loja-de-ferreiros.html" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
+                        <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-ferreiro" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="escudos.html">ESCUDOS</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-ferreiro/escudos">ESCUDOS</a></li>
                         </ul>
                     </li>
-                    <li><a href="loja-de-meitous.html">LOJA DE MEITOUS</a></li>
+                    <li>
+                        <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous" class="toggle-btn">LOJA DE MEITOUS <span class="arrow">▼</span></a>
+                        <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
+                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/grau-desconhecido">GRAU DESCONHECIDO</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/armas-do-mundo">ARMAS DO MUNDO</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/wazamono">WAZAMONO</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/ryō-wazamono">RYŌ WAZAMONO</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/ō-wazamono">Ō WAZAMONO</a></li>
+                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/saijō-ō-wazamono">SAIJŌ Ō WAZAMONO</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li>
-                <a href="impel-down.html" class="toggle-btn">IMPEL DOWN <span class="arrow">▼</span></a>
+                <a href="https://sites.google.com/view/new-seas-op/impel-down" class="toggle-btn">IMPEL DOWN <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="adaptacao.html">ADAPTAÇÃO</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/impel-down/adaptação">ADAPTAÇÃO</a></li>
                 </ul>
             </li>
             <li>
-                <a href="jornal.html" class="toggle-btn">JORNAL <span class="arrow">▼</span></a>
+                <a href="https://sites.google.com/view/new-seas-op/jornal" class="toggle-btn">JORNAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="procurados.html">PROCURADOS</a></li>
-                    <li><a href="younkous.html">YOUNKOUS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/jornal/procurados">PROCURADOS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/jornal/younkous">YOUNKOUS</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="toggle-btn">MECÂNICAS DO RPG <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="cacadas.html">CAÇADAS</a></li>
-                    <li><a href="criacao-de-experimentos.html">CRIAÇÃO DE EXPERIMENTOS</a></li>
-                    <li><a href="criacao-de-meitos.html">CRIAÇÃO DE MEITOS</a></li>
-                    <li><a href="descoberta-de-artefatos.html">DESCOBERTA DE ARTEFATOS</a></li>
-                    <li><a href="dominacoes.html">DOMINAÇÕES</a></li>
-                    <li><a href="investimento.html">INVESTIMENTO</a></li>
-                    <li><a href="sangue.html">SANGUE</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/caçadas">CAÇADAS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/criação-de-experimentos">CRIAÇÃO DE EXPERIMENTOS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/criação-de-meitos">CRIAÇÃO DE MEITOUS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/descoberta-de-aterfatos">DESCOBERTA DE ARTEFATOS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/dominações">DOMINAÇÕES</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/investimento">INVESTIMENTO</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/sangue">SANGUE</a></li>
                 </ul>
             </li>
-            <li><a href="regras.html">REGRAS</a></li>
+            <li><a href="https://sites.google.com/view/new-seas-op/regras">REGRAS</a></li>
         </ul>
     </aside>
         `;
