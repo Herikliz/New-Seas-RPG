@@ -3,26 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estilos de Luta - New Seas OP</title>
+    <title>Governo Mundial - New Seas OP</title>
     <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --accent-color: #c5a059;
+            --sidebar-bg: #ffffff;
+            --sidebar-border: #c5a059;
+            --border-radius: 12px;
+        }
+
+        body.dark-mode {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-color: #8b0000;
+            --sidebar-bg: #141414;
+            --sidebar-border: #8b0000;
+        }
+
+        .wg-emblem {
+            font-size: 80px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .wg-subtitle {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .copy-btn {
+            border-radius: var(--border-radius);
+            background-color: var(--sidebar-bg);
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--sidebar-bg);
+        }
+
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+
+        .toggle-content.collapsed {
+            display: none;
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.6em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.15);
+        }
+
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .rank-info-label {
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    <button id="theme-toggle" class="theme-toggle-btn">⚖️</button>
     <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); padding: 10px 15px; font-size: 16px; cursor: pointer;">Retrair Tudo</button>
+    </div>
 
     <main class="main-content">
         <div class="content-wrapper">
             <section class="content-section text-center">
-                <h1 class="title-quantico">ESTILOS DE LUTA</h1>
+                <div class="wg-emblem">✚</div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">GOVERNO MUNDIAL</h1>
+                <p class="wg-subtitle" id="wg-theme-name">Base: Mary Geoise</p>
+            </section>
+
+            <section class="content-section intro-text rank-box">
+                <ul style="margin-left: 20px;">
+                    <li style="margin-bottom: 12px;">Os navios da organização, assim como os NPCs, não são acumulativos. Eles são recebidos na devida patente e depois recolhidos pela organização quando se alcança uma patente diferente.</li>
+                    <li style="margin-bottom: 12px;">Os NPCs dessa organização são todos humanos, salvo exceções quando forem NPCs Especiais com justificativas plausíveis.</li>
+                    <li style="margin-bottom: 12px;">O salário é recebido pelo personagem nos dias 1 e 15 do mês, sendo assim dois salários por mês.</li>
+                </ul>
             </section>
 
             <section class="content-section">
-                <p>É AQUI QUE TEM OS ESTILOS DE LUTA DISPONÍVEIS</p>
+                <h2 class="title-quantico toggle-title rank-title">
+                    AGENTE JUDICIAL <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Acaba de iniciar sua jornada como agente do Governo. Essa patente é responsável por parar qualquer tipo de pequena movimentação contra o Governo. Não há uma área definida de atuação, iniciando em uma ilha de sua escolha em um dos Blues, à sua escolha.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿10.000.000</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-1 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Um agente frio e agora mais responsável. Sua morte é forjada e ninguém sabe mais nada sobre você. Agora, você age pela organização, atacando e destruindo aqueles que vão contra o Governo Mundial. Os membros da Cipher Pol One atuam no East Blue, sendo o Mar mais fraco para o nível mais baixo da organização.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿20.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">2.500 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">2.250 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">2.750 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">25 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "C-15 Kenpachi"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-2 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Agora um pouco mais forte, você, como um membro da Cipher Pol Two, é designado para o South Blue, agindo de acordo com as ordens do Governo Mundial e seus superiores.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿30.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">5.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">4.500 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">5.500 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">50 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "C-15 Kenpachi"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-3 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Um cargo mais avançado neste ramo, os Cipher Pol Three são enviados para o West Blue. Têm a missão de cuidar dos nobres que pagam ao Governo por proteção e lutam para protegê-los com a própria vida. Também combatem pessoas que querem manchar a reputação do Governo.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿40.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">7.500 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">6.750 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">8.250 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">100 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "Z-10 Perci"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-4 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Normalmente, membros desta área da Cipher Pol, a Cipher Pol Four, agem para destruir por dentro as organizações do North Blue, como os bandos piratas. Também podem ser enviados para escoltar prisioneiros até Enies Lobby em raras ocasiões.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿50.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">10.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">9.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">11.000 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">300 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "B-47 Hajime"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-5 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Com a Cipher Pol Five sendo uma ramificação da área de inteligência da Cipher Pol, os membros são designados para missões secretas com o objetivo de descobrir novas áreas ou informações. Elevando um patamar acima, estes homens agora são enviados para atuar no Paraíso, e recebem um professor para que aprendam a arte do Haki.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿60.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">15.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">13.500 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">16.500 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">500 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "T-33 Apollo"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-6 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Atuando no Paraíso, a Cipher Pol Six é a elite deste Mar. Sendo eles designados para missões mais complicadas, agindo em território inimigo diretamente.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿70.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">20.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">18.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">22.000 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">800 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "B-47 Hajime"</li>
+                        <li style="margin-bottom: 8px;">1 "T-33 Apollo"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-7 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Estando agora em um patamar elevado, os agentes da Cipher Pol Seven são enviados para atuar nas áreas menos complicadas do Novo Mundo. Agentes extremamente poderosos, já dominando grande parte da arte especial exclusiva do Governo.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿80.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">25.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">22.500 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">27.500 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">1.000 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "Z-10 Perci"</li>
+                        <li style="margin-bottom: 8px;">1 "B-47 Hajime"</li>
+                        <li style="margin-bottom: 8px;">1 "T-33 Apollo"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-8 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Atuando no Novo Mundo como a elite desse Mar e agindo em missões especiais, os membros da Cipher Pol Eight são a patente mais alta antes das especiais do Governo. Os atuantes desta patente estão a um passo de se tornar alguém dentre os mais fortes do Governo.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿100.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">30.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">27.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">33.000 pontos de atributo <i>(Desvantagem)</i></li>
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">1.800 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "Z-10 Perci"</li>
+                        <li style="margin-bottom: 8px;">1 "B-47 Hajime"</li>
+                        <li style="margin-bottom: 8px;">1 "T-33 Apollo"</li>
+                        <li style="margin-bottom: 8px;">1 "K-55 Mereoleona"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-9 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Chegando à elite dos assassinos, a um passo de serem convidados para a maior elite do Governo, estes são os 9 membros designados para a recuperação de ilhas atacadas, entre outras missões mais perigosas. Dos 9 membros, um deles assume a liderança, sendo responsável por designar as missões para os demais. Esta é a Cipher Pol Nine.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿150.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">40.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">36.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">44.000 pontos de atributo <i>(Desvantagem)</i></li>
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">2.500 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">2 "K-55 Mereoleona"</li>
+                        <li style="margin-bottom: 8px;">1 "A-1 Atlas"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CP-0 <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Os membros da Cipher Pol Aigis Zero são os 8 membros escolhidos para morar em Mary Geoise, na terra dos Tenryuubitos. Eles os protegem o tempo todo de quaisquer perigos, sendo esta a patente mais poderosa dentre as demais. São o último recurso dos Dragões Celestiais em caso de necessidade de proteção.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿200.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">50.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">45.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">55.000 pontos de atributo <i>(Desvantagem)</i></li>
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">5.000 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">4 "K-55 Mereoleona"</li>
+                        <li style="margin-bottom: 8px;">2 "A-1 Atlas"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    GOROSEI <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Os Cinco Anciões são os Dragões Celestiais de maior ranking e as cabeças do Governo Mundial. Eles essencialmente dominam o mundo inteiro, respondendo apenas a um único indivíduo de autoridade superior, o misterioso líder do Governo Mundial.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿500.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li>Esta patente não recebe navios nem homens, já que ficam quase sempre em seus escritórios.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="border-bottom: 1px solid var(--accent-color);">
+                    LÍDER DO GOVERNO <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box" style="border: 2px solid var(--accent-color);">
+                    <p style="margin-bottom: 15px; text-align: center; font-style: italic; font-size: 18px;">Existe um Trono, dizem estar vazio. Fazem alguns milhares de anos que um Século todo sumiu! Segredos e verdades, não sabem de nada! O que aconteceu no Século Perdido? Quem é Imu-sama?</p>
+                </div>
             </section>
         </div>
     </main>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const toggleTitles = document.querySelectorAll('.toggle-title');
+            
+            toggleTitles.forEach(title => {
+                title.addEventListener('click', () => {
+                    title.classList.toggle('collapsed');
+                    const content = title.nextElementSibling;
+                    if (content && content.classList.contains('toggle-content')) {
+                        content.classList.toggle('collapsed');
+                    }
+                });
+            });
+
+            const toggleAllBtn = document.getElementById('toggle-all-btn');
+            let isAllCollapsed = false;
+
+            if (toggleAllBtn) {
+                toggleAllBtn.addEventListener('click', () => {
+                    isAllCollapsed = !isAllCollapsed;
+                    toggleAllBtn.textContent = isAllCollapsed ? 'Expandir Tudo' : 'Retrair Tudo';
+
+                    toggleTitles.forEach(title => {
+                        const content = title.nextElementSibling;
+                        if (content && content.classList.contains('toggle-content')) {
+                            if (isAllCollapsed) {
+                                title.classList.add('collapsed');
+                                content.classList.add('collapsed');
+                            } else {
+                                title.classList.remove('collapsed');
+                                content.classList.remove('collapsed');
+                            }
+                        }
+                    });
+                });
+            }
+
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeNameLabel = document.getElementById('wg-theme-name');
+            
+            if (themeToggleBtn && themeNameLabel) {
+                themeToggleBtn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        if (document.body.classList.contains('dark-mode')) {
+                            themeNameLabel.innerText = "Base Cipher Pol";
+                        } else {
+                            themeNameLabel.innerText = "Base: Mary Geoise";
+                        }
+                    }, 50);
+                });
+
+                if (document.body.classList.contains('dark-mode')) {
+                    themeNameLabel.innerText = "Base Cipher Pol";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
