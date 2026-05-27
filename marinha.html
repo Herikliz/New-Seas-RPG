@@ -3,26 +3,538 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estilos de Luta - New Seas OP</title>
+    <title>Marinha - New Seas OP</title>
     <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --accent-color: #1e3a8a; /* Azul marinho para representar a Marinha */
+            --sidebar-bg: #ffffff;
+            --sidebar-border: #1e3a8a;
+            --border-radius: 12px;
+        }
+
+        body.dark-mode {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-color: #3b82f6; /* Azul mais claro para o dark mode */
+            --sidebar-bg: #141414;
+            --sidebar-border: #3b82f6;
+        }
+
+        .wg-emblem {
+            font-size: 80px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .wg-subtitle {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .copy-btn {
+            border-radius: var(--border-radius);
+            background-color: var(--sidebar-bg);
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--sidebar-bg);
+        }
+
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+
+        .toggle-content.collapsed {
+            display: none;
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.6em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+        }
+
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .rank-info-label {
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    <button id="theme-toggle" class="theme-toggle-btn">⚖️</button>
     <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); padding: 10px 15px; font-size: 16px; cursor: pointer;">Retrair Tudo</button>
+    </div>
 
     <main class="main-content">
         <div class="content-wrapper">
             <section class="content-section text-center">
-                <h1 class="title-quantico">ESTILOS DE LUTA</h1>
+                <div class="wg-emblem">⚓</div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">MARINHA</h1>
+                <p class="wg-subtitle" id="wg-theme-name">Base: Marineford</p>
+            </section>
+
+            <section class="content-section intro-text rank-box">
+                <ul style="margin-left: 20px;">
+                    <li style="margin-bottom: 12px;">Os navios da organização, assim como os NPCs, não são acumulativos. Eles são recebidos na devida patente e depois recolhidos pela organização quando se alcança uma patente diferente.</li>
+                    <li style="margin-bottom: 12px;">Os NPCs dessa organização são todos humanos, salvo exceções quando forem NPCs Especiais com justificativas plausíveis.</li>
+                    <li style="margin-bottom: 12px;">O salário é recebido pelo personagem nos dias 1 e 15 do mês, sendo assim dois salários por mês.</li>
+                </ul>
             </section>
 
             <section class="content-section">
-                <p>É AQUI QUE TEM OS ESTILOS DE LUTA DISPONÍVEIS</p>
+                <h2 class="title-quantico toggle-title rank-title">
+                    APRENDIZ <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Recém-aceitos na Marinha, os aprendizes são responsáveis por tarefas básicas, como limpeza, apoio em operações de rotina e patrulhamento das bases menos importantes. Sendo a patente inicial, eles ainda estão em fase de aprendizado e observação.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>Não recebem salário</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    RECRUTA <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Responsáveis por patrulhas, manutenção da ordem e apoio em missões rotineiras. Estão em fase inicial, ainda aprendendo e sendo supervisionados.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿10.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">1.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">900 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">1.100 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CABO <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Soldados promovidos, os cabos supervisionam recrutas e soldados, orientando-os nas tarefas do dia a dia. Também podem liderar pequenas patrulhas e garantir o bom andamento das operações locais.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿20.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">2.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">1.800 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">2.200 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">50 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "C-15 Kenpachi"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    SARGENTO <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Com maior autonomia, os sargentos comandam grupos em missões mais complexas e atuam em áreas de maior risco. Ainda participam de patrulhas, mas também lideram operações específicas e têm mais liberdade no uso do uniforme.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿30.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">3.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">2.700 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">3.300 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">100 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "Z-10 Perci"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    TENENTE <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Com mais experiência, os tenentes lideram pequenos destacamentos e coordenam missões de médio porte. Atuam como elo entre sargentos e comandantes, garantindo a ordem em zonas de maior abrangência.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿40.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">5.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">4.500 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">5.500 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">300 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "B-47 Hajime"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    COMANDANTE <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Lideram grandes batalhões e executam missões estratégicas, especialmente no combate a piratas e ameaças navais. Reconhecidos por sua força e tática, estão à frente das operações mais críticas da Marinha.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿50.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">10.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">9.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">11.000 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">500 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "C-15 Kenpachi"</li>
+                        <li style="margin-bottom: 8px;">1 "Z-10 Perci"</li>
+                        <li style="margin-bottom: 8px;">1 "B-47 Hajime"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CAPITÃO <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Comandam frotas maiores e atuam em zonas perigosas e estratégicas. Lideram operações cruciais da Marinha, sendo figuras de autoridade tanto em terra quanto no mar.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿60.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">15.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">13.500 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">16.500 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">800 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">4 "C-15 Kenpachi"</li>
+                        <li style="margin-bottom: 8px;">3 "Z-10 Perci"</li>
+                        <li style="margin-bottom: 8px;">1 "B-47 Hajime"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    COMODORO <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Comodoros são líderes estratégicos de grande influência, controlando frotas significativas e protegendo áreas-chave nos Blues. Além de seus deveres militares, eles têm uma presença mais política, representando a Marinha em negociações importantes e, às vezes, atuando como conselheiros.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿80.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">20.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">18.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">22.000 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">1.500 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">2 "C-15 Kenpachi"</li>
+                        <li style="margin-bottom: 8px;">2 "Z-10 Perci"</li>
+                        <li style="margin-bottom: 8px;">2 "B-47 Hajime"</li>
+                        <li style="margin-bottom: 8px;">1 "T-33 Apollo"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    CONTRA-ALMIRANTE <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Agora parte da elite da Marinha, os Contra-Almirantes têm autoridade sobre vastas regiões e são responsáveis por coordenar grandes frotas e operações em larga escala. Com acesso a recursos significativos, eles lidam com as maiores ameaças em mares como a Grand Line.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿90.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">25.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">22.500 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">27.500 pontos de atributo <i>(Desvantagem)</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">2.500 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">2 "Z-10 Perci"</li>
+                        <li style="margin-bottom: 8px;">1 "B-47 Hajime"</li>
+                        <li style="margin-bottom: 8px;">2 "T-33 Apollo"</li>
+                        <li style="margin-bottom: 8px;">1 "K-55 Mereoleona"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    VICE-ALMIRANTE <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Os Vice-Almirantes são temidos em todo o mundo por seu poder e autoridade. Comandam operações nas regiões mais perigosas, como o Novo Mundo, e têm acesso a uma vasta frota. Eles são poucos e altamente respeitados, com capacidade de destruir grandes ameaças com sua força e estratégia.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿100.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">30.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">27.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">33.000 pontos de atributo <i>(Desvantagem)</i></li>
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">5.000 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">4 "C-15 Kenpachi"</li>
+                        <li style="margin-bottom: 8px;">4 "Z-10 Perci"</li>
+                        <li style="margin-bottom: 8px;">2 "B-47 Hajime"</li>
+                        <li style="margin-bottom: 8px;">2 "T-33 Apollo"</li>
+                        <li style="margin-bottom: 8px;">2 "K-55 Mereoleona"</li>
+                        <li style="margin-bottom: 8px;">1 "A-1 Atlas"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    ALMIRANTE <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Os Almirantes estão entre os três maiores oficiais da Marinha, com poder e influência extraordinários. Suas decisões podem mudar o curso de uma guerra e eles têm o respeito de todos os marinheiros. Eles possuem a capacidade de convocar o Buster Call, uma das maiores demonstrações de poder da Marinha.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿150.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">45.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">40.500 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">49.500 pontos de atributo <i>(Desvantagem)</i></li>
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">10.000 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">Pode chamar o Buster Call</li>
+                        <li style="margin-bottom: 8px;">5 "T-33 Apollo"</li>
+                        <li style="margin-bottom: 8px;">5 "K-55 Mereoleona"</li>
+                        <li style="margin-bottom: 8px;">3 "A-1 Atlas"</li>
+                    </ul>
+
+                    <p class="rank-info-label" style="border-top: 1px solid var(--sidebar-border); padding-top: 15px;">Almirantes Atuais:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;"><strong>Dracule Urahara</strong> - Reconhecimento</li>
+                        <li style="margin-bottom: 8px;"><strong>Galan'd Von Antares</strong> - Combate</li>
+                        <li style="margin-bottom: 8px;"><strong>Fascia Figarland</strong> - Inteligência</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="border-bottom: 1px solid var(--accent-color);">
+                    ALMIRANTE-DE-FROTA <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box" style="border: 2px solid var(--accent-color);">
+                    <p style="margin-bottom: 15px;">A mais alta patente na Marinha, o Almirante-de-Frota tem controle total sobre a organização e responde diretamente ao Governo Mundial. Ele é responsável por organizar expedições, liderar campanhas militares globais, e tomar decisões políticas que afetam o futuro da Marinha e do mundo.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿200.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">50.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">45.000 pontos de atributo <i>(Vantagem)</i></li>
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                        <li style="margin-bottom: 8px;"><i>Desvantajosos não conseguem atingir esse mérito.</i></li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">50.000 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">Pode comandar toda a Marinha</li>
+                        <li style="margin-bottom: 8px;">35 "T-33 Apollo"</li>
+                        <li style="margin-bottom: 8px;">25 "K-55 Mereoleona"</li>
+                        <li style="margin-bottom: 8px;">10 "A-1 Atlas"</li>
+                    </ul>
+
+                    <div style="padding: 15px; background-color: rgba(30, 58, 138, 0.1); border-left: 4px solid var(--accent-color); border-radius: 4px; margin-top: 20px;">
+                        <p style="margin-bottom: 15px;">O antigo Almirante-de-Frota da Marinha, <strong>Siddhartha D. Butsu</strong>, governava toda a instituição com uma crença rígida e inabalável. Devoto absoluto do budismo, ele conduzia suas decisões com base em princípios de ordem, disciplina e justiça inflexível. Mais do que um seguidor da fé, era visto por muitos como a própria representação viva de Buda nos mares, alguém que acreditava encarnar o equilíbrio entre punição e iluminação. Sob seu comando, a Marinha atuava com mão firme, guiada por uma visão quase religiosa de dever e autoridade absoluta.</p>
+                        
+                        <p class="rank-info-label" style="margin-bottom: 0;">Almirante-de-Frota Atual:</p>
+                        <p style="margin-left: 20px; font-weight: bold; font-size: 20px;">Astarion Ancunín</p>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const toggleTitles = document.querySelectorAll('.toggle-title');
+            
+            toggleTitles.forEach(title => {
+                title.addEventListener('click', () => {
+                    title.classList.toggle('collapsed');
+                    const content = title.nextElementSibling;
+                    if (content && content.classList.contains('toggle-content')) {
+                        content.classList.toggle('collapsed');
+                    }
+                });
+            });
+
+            const toggleAllBtn = document.getElementById('toggle-all-btn');
+            let isAllCollapsed = false;
+
+            if (toggleAllBtn) {
+                toggleAllBtn.addEventListener('click', () => {
+                    isAllCollapsed = !isAllCollapsed;
+                    toggleAllBtn.textContent = isAllCollapsed ? 'Expandir Tudo' : 'Retrair Tudo';
+
+                    toggleTitles.forEach(title => {
+                        const content = title.nextElementSibling;
+                        if (content && content.classList.contains('toggle-content')) {
+                            if (isAllCollapsed) {
+                                title.classList.add('collapsed');
+                                content.classList.add('collapsed');
+                            } else {
+                                title.classList.remove('collapsed');
+                                content.classList.remove('collapsed');
+                            }
+                        }
+                    });
+                });
+            }
+
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeNameLabel = document.getElementById('wg-theme-name');
+            
+            if (themeToggleBtn && themeNameLabel) {
+                themeToggleBtn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        if (document.body.classList.contains('dark-mode')) {
+                            themeNameLabel.innerText = "Base: Nova Marineford";
+                        } else {
+                            themeNameLabel.innerText = "Base: Marineford";
+                        }
+                    }, 50);
+                });
+
+                if (document.body.classList.contains('dark-mode')) {
+                    themeNameLabel.innerText = "Base: Nova Marineford";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
