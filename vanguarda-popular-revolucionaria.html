@@ -3,26 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estilos de Luta - New Seas OP</title>
+    <title>Vanguarda Popular Revolucionária - New Seas OP</title>
     <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --accent-color: #8b0000;
+            --sidebar-bg: #ffffff;
+            --sidebar-border: #8b0000;
+            --border-radius: 12px;
+        }
+
+        body.dark-mode {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-color: #d32f2f;
+            --sidebar-bg: #141414;
+            --sidebar-border: #d32f2f;
+        }
+
+        .wg-emblem {
+            font-size: 80px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .wg-subtitle {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .copy-btn {
+            border-radius: var(--border-radius);
+            background-color: var(--sidebar-bg);
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--sidebar-bg);
+        }
+
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+
+        .toggle-content.collapsed {
+            display: none;
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.6em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.15);
+        }
+
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .rank-info-label {
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    <button id="theme-toggle" class="theme-toggle-btn">⚖️</button>
     <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); padding: 10px 15px; font-size: 16px; cursor: pointer;">Retrair Tudo</button>
+    </div>
 
     <main class="main-content">
         <div class="content-wrapper">
             <section class="content-section text-center">
-                <h1 class="title-quantico">ESTILOS DE LUTA</h1>
+                <div class="wg-emblem">✊</div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">VANGUARDA POPULAR REVOLUCIONÁRIA</h1>
+                <p class="wg-subtitle" id="wg-theme-name">Base: Shitsurakujima</p>
+            </section>
+
+            <section class="content-section intro-text rank-box">
+                <p style="margin-bottom: 20px;">A Vanguarda Popular Revolucionária é uma organização a que busca enfrentar o Governo Mundial de igual para igual, fortalecendo-se por meio da criação de formas de vida artificiais e mutações biotecnológicas. Formada por cientistas, engenheiros e especialistas brilhantes, conduz experimentos em instalações avançadas para desenvolver armas orgânicas, aprimoramentos humanos e fontes de energia. Suas pesquisas não afetam civis, sendo testadas apenas em agentes do governo capturados, combatentes conscientes do lado que escolheram. Os experimentos falhos são aproveitadas como combustível biológico. A organização vê a ciência como meio de libertação, sacrificando convenções éticas em nome da resistência e da autossuficiência tecnológica.</p>
+                
+                <ul style="margin-left: 20px;">
+                    <li style="margin-bottom: 12px;">Os navios da organização, assim como os NPCs, não são acumulativos. Eles são recebidos na devida patente e depois recolhidos pela organização quando se alcança uma patente diferente.</li>
+                    <li style="margin-bottom: 12px;">O salário é recebido pelo personagem nos dias 1 e 15 do mês, sendo assim dois salários por mês.</li>
+                </ul>
             </section>
 
             <section class="content-section">
-                <p>É AQUI QUE TEM OS ESTILOS DE LUTA DISPONÍVEIS</p>
+                <h2 class="title-quantico toggle-title rank-title">
+                    Iniciado <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Revolucionários novatos e jovens cientistas em formação. Auxiliam em funções simples, tanto no campo quanto nos laboratórios. São a base da organização.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿5.000.000</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Operador <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Participa de missões mais arriscadas, representando a maior quantidade de membros da Revolução. Por isso, sempre estão sendo supervisionados por segurança da integridade do exército.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿10.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">1.000 pontos de atributo</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Infiltrador <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Agentes especialistas em infiltração e manipulação de informação. São os principais informantes sobre as ações do Governo Mundial, frequentemente operando de dentro, sem serem detectados. Coletam dados sensíveis do Governo Mundial e testam tecnologias de camuflagem e mutação em campo.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿20.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">2.500 pontos de atributo</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">1 Escuna</li>
+                        <li style="margin-bottom: 8px;">25 NPCs Comuns</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Soldado Revolucionário <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Agindo de forma independente, os Soldados Revolucionários são líderes de pequenas rebeliões, conquistando sua primeira frota e homens para lutar pela liberdade do mundo. Lideram pequenas células revolucionárias ou laboratórios móveis. Já possuem autonomia para desenvolver mutações e aplicar estratégias de guerrilha avançada.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿30.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">5.000 pontos de atributo</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">1 "5-01 Sparkle"</li>
+                        <li style="margin-bottom: 8px;">50 NPCs Comuns</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Coordenador de Operações <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Encarregados de liderar as tropas junto com os esquadrões, os coordenadores de operações obedecem aos seus superiores e já possuem um grande reconhecimento, inclusive entre as outras tropas. Responsáveis pela execução de missões ou pela aplicação prática de pesquisas em armamentos biológicos.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿50.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">10.000 pontos de atributo</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">100 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "5-01 Sparkle"</li>
+                        <li style="margin-bottom: 8px;">1 "4-01 Dream"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Esquadrão <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Após alcançarem um certo nível de habilidade, os membros esquadrão têm a oportunidade de optar por uma especialização, podendo escolher entre: "Combate", "Operações", "Inteligência" e "Defesa". Eles trabalham diretamente para os Comandantes Táticos da organização, desempenhando funções específicas nessas áreas.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿60.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">15.000 pontos de atributo</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">500 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "3-01 Scream"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Comandante Tático <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Lideram rebeliões em regiões inteiras ou projetos científicos de larga escala. Coordenam tropas e cientistas em grandes frentes de combate ou pesquisa.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿80.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">20.000 pontos de atributo</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">800 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">4 "4-01 Dream"</li>
+                        <li style="margin-bottom: 8px;">2 "3-01 Scream"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Capitão Tático <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Os capitães táticos das divisões especiais são os braços direitos dos pilares da organização. Estes membros obedecem apenas aos 6 líderes da revolução. Todas as tropas estão sob seu comando. São eles que lideram as grandes tropas em busca da liberdade no mundo. São designados 3 capitães táticos para cada pilar.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿100.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">25.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;">1.000 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">1 "2-01 Liberty"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Os Pilares <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Os pilares são considerados uns dos homens e mulheres mais poderosos da revolução, sendo os quatro líderes das divisões especiais da organização. Estes membros obedecem exclusivamente aos líderes da revolução. Todas as tropas estão sob seu comando e o de seus capitães táticos. Cada pilar possui 3 capitães táticos sob suas ordens.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿150.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">30.000 pontos de atributo</li>
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">3.000 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">2 "2-01 Liberty"</li>
+                        <li style="margin-bottom: 8px;">1 "1-01 Hope"</li>
+                    </ul>
+
+                    <p class="rank-info-label" style="border-top: 1px solid var(--sidebar-border); padding-top: 15px;">Comandantes Atuais:</p>
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 8px;"><strong>Comandante de Combate:</strong> ???</li>
+                        <li style="margin-bottom: 8px;"><strong>Comandante de Defesa:</strong> ???</li>
+                        <li style="margin-bottom: 8px;"><strong>Comandante de Inteligência:</strong> ???</li>
+                        <li style="margin-bottom: 8px;"><strong>Comandante de Operações:</strong> ???</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Vice-Líder <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">O segundo membro mais poderoso da revolução e o braço direito do Líder. Auxilia muito O Eixo da Revolução, tendo a mesma influência sobre os demais.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿175.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">5.000 NPCs Comuns</li>
+                        <li style="margin-bottom: 8px;">5 "2-01 Liberty"</li>
+                        <li style="margin-bottom: 8px;">3 "1-01 Hope"</li>
+                    </ul>
+
+                    <p class="rank-info-label" style="border-top: 1px solid var(--sidebar-border); padding-top: 15px;">Vice-Líder Atual:</p>
+                    <p style="margin-left: 40px; margin-bottom: 8px;">???</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="border-bottom: 1px solid var(--accent-color);">
+                    O Eixo <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box" style="border: 2px solid var(--accent-color);">
+                    <p style="margin-bottom: 15px;">Aquele que lidera e controla toda a revolução. É um pilar da liberdade e da igualdade, visto como uma esperança para todos que acreditam em seu movimento. Poucos sabem seu rosto ou paradeiro.</p>
+                    
+                    <p class="rank-info-label">Salário:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li>฿200.000.000</li>
+                    </ul>
+
+                    <p class="rank-info-label">Requisitos de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">Merecimento</li>
+                    </ul>
+
+                    <p class="rank-info-label">Recompensas de Promoção:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">Controle de todas as tropas da Vanguarda Popular Revolucionária.</li>
+                        <li style="margin-bottom: 8px;">5 "2-01 Liberty"</li>
+                        <li style="margin-bottom: 8px;">3 "1-01 Hope"</li>
+                    </ul>
+
+                    <div style="padding: 15px; background-color: rgba(139, 0, 0, 0.1); border-left: 4px solid var(--accent-color); border-radius: 4px; margin-top: 20px;">
+                        <p class="rank-info-label" style="margin-bottom: 0;">Líder Atual:</p>
+                        <p style="margin-left: 20px; font-weight: bold; font-size: 20px;">Franze Pierre</p>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeNameLabel = document.getElementById('wg-theme-name');
+            
+            if (themeToggleBtn && themeNameLabel) {
+                themeToggleBtn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        if (document.body.classList.contains('dark-mode')) {
+                            themeNameLabel.innerText = "Base: Desconhecida";
+                        } else {
+                            themeNameLabel.innerText = "Base: Shitsurakujima";
+                        }
+                    }, 50);
+                });
+
+                if (document.body.classList.contains('dark-mode')) {
+                    themeNameLabel.innerText = "Base: Desconhecida";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
