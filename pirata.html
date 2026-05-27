@@ -3,23 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estilos de Luta - New Seas OP</title>
+    <title>Piratas - New Seas OP</title>
     <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --accent-color: #2c3e50;
+            --sidebar-bg: #ffffff;
+            --sidebar-border: #2c3e50;
+            --border-radius: 12px;
+        }
+
+        body.dark-mode {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-color: #7f8c8d;
+            --sidebar-bg: #141414;
+            --sidebar-border: #7f8c8d;
+        }
+
+        .wg-emblem {
+            font-size: 80px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .wg-subtitle {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(127, 140, 141, 0.15);
+        }
+
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .rank-info-label {
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    <button id="theme-toggle" class="theme-toggle-btn">⚖️</button>
     <div id="sidebar-container"></div>
 
     <main class="main-content">
         <div class="content-wrapper">
             <section class="content-section text-center">
-                <h1 class="title-quantico">ESTILOS DE LUTA</h1>
+                <div class="wg-emblem">🏴‍☠️</div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">PIRATAS</h1>
+                <p class="wg-subtitle" id="wg-theme-name">Base: Variável</p>
             </section>
 
-            <section class="content-section">
-                <p>É AQUI QUE TEM OS ESTILOS DE LUTA DISPONÍVEIS</p>
+            <section class="content-section intro-text rank-box">
+                <p style="margin-bottom: 15px;">Diferente das outras opções, os piratas são os únicos que não são uma organização propriamente dita, e não têm graus de hierarquia natural e ganho de salário. Por serem independentes disso, os piratas também não recebem bônus de acordo com suas patentes. Sejam livres para navegarem por este vasto mundo. Saqueiem e construam riquezas sem taxação do Governo Mundial.</p>
             </section>
+
+            <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">VARIANTE: CAÇADOR DE RECOMPENSAS</h1>
+            <p class="wg-subtitle" id="wg-theme-name">Base: Variável</p>
+
+            <section class="content-section intro-text rank-box">
+                <p style="margin-bottom: 15px;">Caçadores de Recompensas são aqueles que caçam criminosos para lucrar com suas cabeças, atuando de forma independente ou em nome da justiça. Diferente dos piratas, eles não são criminosos. Seu sucesso é definido pela sua força, estratégia e capacidade de rastrear fugitivos, tornando-os temidos e respeitados em igual medida. Ao terminar uma Caçada, ele não recebe aumento de valor na própria cabeça.</p>
+            </section>
+
         </div>
     </main>
 
