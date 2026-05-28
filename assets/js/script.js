@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="#" class="toggle-btn">FORÇA VITAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li><a href="atributos.html">ATRIBUTOS</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/força-vital/akuma-no-mi">AKUMA NO MI</a></li>
+                    <li><a href="akuma-no-mi.html">AKUMA NO MI</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/força-vital/estamina">ESTAMINA</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/força-vital/haki">HAKI</a></li>
                 </ul>
