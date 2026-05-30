@@ -56,6 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="logo-container">
             <div class="logo-text"><a href="index.html" style="color: inherit; text-decoration: none;">New Seas OP</a></div>
         </div>
+        <div class="search-container" style="padding: 10px 20px;">
+            <input type="text" id="menu-search" placeholder="Pesquisar no menu..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif; outline: none; transition: border-color 0.3s ease;">
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">INÍCIO</a></li>
             <li>
@@ -189,6 +192,44 @@ document.addEventListener('DOMContentLoaded', function() {
         </ul>
     </aside>
         `;
+    }
+
+    const menuSearch = document.getElementById('menu-search');
+    if (menuSearch) {
+        menuSearch.addEventListener('input', function() {
+            const term = this.value.toLowerCase().trim();
+            const allListItems = document.querySelectorAll('.nav-links li');
+
+            if (term === '') {
+                allListItems.forEach(li => {
+                    li.style.display = '';
+                    const subMenu = li.querySelector('.sub-menu');
+                    if (subMenu) subMenu.classList.remove('show');
+                    const arrow = li.querySelector('.arrow');
+                    if (arrow) arrow.classList.remove('rotate');
+                });
+                return;
+            }
+
+            allListItems.forEach(li => li.style.display = 'none');
+
+            allListItems.forEach(li => {
+                const link = li.querySelector('a');
+                if (link && link.textContent.toLowerCase().includes(term)) {
+                    li.style.display = '';
+                    
+                    let parent = li.parentElement.closest('li');
+                    while (parent) {
+                        parent.style.display = '';
+                        const subMenu = parent.querySelector('.sub-menu');
+                        if (subMenu) subMenu.classList.add('show');
+                        const arrow = parent.querySelector('.arrow');
+                        if (arrow) arrow.classList.add('rotate');
+                        parent = parent.parentElement.closest('li');
+                    }
+                }
+            });
+        });
     }
 
     const themeModalHTML = `
