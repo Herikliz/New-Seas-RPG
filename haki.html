@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haki - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+        .toggle-content.collapsed {
+            display: none;
+        }
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.8em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+        .toggle-title {
+            cursor: pointer;
+        }
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15);
+        }
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+        .highlight-text {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .sub-attr {
+            margin-left: 40px;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .sub-attr h3 {
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); padding: 10px 15px; font-size: 16px; cursor: pointer; border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--accent-color); border: 2px solid var(--accent-color); font-family: 'Quantico', sans-serif;">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">HAKI</h1>
+            </section>
+            
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    O que é Haki? <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Haki é um poder latente em todas as criaturas do mundo, denominado "Presença", "Espírito de Luta" e "Intimidação", e não difere dos sentidos humanos. No entanto, a maioria das pessoas não percebe esse poder dentro de si, e aqueles que tentam despertá-lo muitas vezes acabam morrendo no processo. O ato de não duvidar é o que desperta o Haki.</p>
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">O <strong>Haki do Armamento (Busoshoku)</strong> é usar sua força vital para atacar;</li>
+                        <li style="margin-bottom: 8px;">O <strong>Haki da Observação (Kenbunshoku)</strong> é a capacidade de sentir a energia espiritual;</li>
+                        <li style="margin-bottom: 8px;">O <strong>Haki do Rei (Haoshoku)</strong> é impor sua vontade sobre a dos inimigos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Regras e Pontuação <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">O atributo Haki é separado dos pontos recebidos pelo atributo físico, sendo possível ganhar pontos em Haki das seguintes formas; é importante ressaltar que os pontos listados aqui são exclusivos para o Haki:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;"><strong>Treino Padrão:</strong> 200 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Missão Auto-Narrada:</strong> 200 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Treino de Técnicas:</strong> 20 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Interação 5/5 (Jogador com Jogador):</strong> 125 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Interação 5/5 (Jogador com NPC):</strong> 50 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Interação 10/10 (Jogador com Jogador):</strong> 250 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Interação 10/10 (Jogador com NPC):</strong> 100 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Caçadas, Dominações, Eventos e Extra-Narradas:</strong> pontos variados</li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Como Despertar e Aprender</h3>
+                    <p style="margin-bottom: 10px;">Para iniciar o treinamento em Haki, é necessário estar na Grand Line e possuir no mínimo 15.000 pontos nos atributos. Para treinar o desbloqueio do Haki, você deve treinar usando os treinos descritos na página <a href="https://sites.google.com/view/new-seas-op/evolução/treino">Treino</a> (não pode treinar em missões, como as descritas na página <a href="https://sites.google.com/view/new-seas-op/evolução/missões">Missões</a>).</p>
+                    <p style="margin-bottom: 15px;">Para aprender o Haki, é necessário aprender com um NPC ou jogador que já o conheça. Cada organização possui NPCs específicos para ensinar os jogadores, que será narrado quando eles estiverem prontos:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;"><strong>Governo Mundial:</strong> Terão membros da CP-9 designados para ensinar-lhes no momento em que forem designados a entrar na Grand Line, quando forem membros da CP-5.</li>
+                        <li style="margin-bottom: 8px;"><strong>Marinha:</strong> Poderão aprender quando chegarem em Sabaody com algum NPC específico da Marinha.</li>
+                        <li style="margin-bottom: 8px;"><strong>Piratas:</strong> Na maior parte dos casos, piratas possuem dificuldade em aprender Haki, pois a maioria não conhece ninguém que possa lhes ensinar, mas alguns poderão aprender com NPCs específicos que estarão espalhados pelo Paraíso, normalmente sendo necessário gastar um Vale Treino para conseguir encontrá-los, mas ainda sendo possível encontrá-los normalmente.</li>
+                    </ul>
+
+                    <p style="margin-bottom: 25px;">⚠ Não pode treinar Haki e <a href="akuma-no-mi.html">Akuma no Mi</a> ao mesmo tempo; isso significa que ao fazer um Treino Padrão, você vai ganhar 250 pontos de atributo normais, e também 200 pontos de Akuma no Mi/Haki (apenas um desses dois por vez).</p>
+
+                    <h3 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Limites de Haki e Estamina</h3>
+                    <p style="margin-bottom: 10px;">Usuários de Haki sem Akuma no Mi podem atingir o máximo de 30.000 pontos em Haki. Só é possível ultrapassar esse valor se sua <a href="linhagens.html">Linhagem</a> permitir. Ao ingerir uma Akuma no Mi, ocorre um balanceamento que reduz o limite de Haki:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;"><strong>Sem Akuma no Mi:</strong> 30.000 pontos de Haki.</li>
+                        <li style="margin-bottom: 8px;"><strong>Com Akuma no Mi:</strong> 25.000 pontos de Haki.</li>
+                    </ul>
+                    <p style="margin-bottom: 10px;"><strong>Gasto de Estamina:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;"><strong>Haki do Armamento:</strong> cada cena ativa consome 300 de Estamina.</li>
+                        <li style="margin-bottom: 8px;"><strong>Haki da Observação:</strong> cada turno ativo consome 200 de Estamina.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="color: #4a4a4a;">
+                    HAKI DO ARMAMENTO <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">O Haki do Armamento é o segundo Haki mais desejado no RPG. Sem ele, você não consegue desferir golpes contra usuários de Akuma no Mi do tipo <a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/logia">Logia</a> (há algumas <a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/paramecia">Paramecia</a> que também limitam o dano). Para usar esse Haki, é necessário passar por quatro treinamentos aprendendo com alguém.</p>
+                    <p style="margin-bottom: 15px;">Ele potencializa seu dano e defesa (somando seu Haki com sua Força e Resistência) e anula certos poderes de usuários de Akuma no Mi. Para os espadachins, o Armamento é extremamente importante, pois espadas imbuídas com Haki raramente quebram.</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 25px; list-style-type: square;">
+                        <li style="margin-bottom: 8px;"><strong>Armamento Invisível:</strong> Consegue usar a habilidade de forma invisível. Bônus de pontos fixos no dano equivalente a 25% do seu Haki do Armamento. <i>Requer 2 treinos aprendendo a usar.</i></li>
+                        <li style="margin-bottom: 8px;"><strong>Armamento Visível:</strong> Consegue tornar o Armamento visível. Bônus de pontos fixos no dano equivalente a 50% do seu Haki do Armamento. <i>Requer 2 treinos aprimorando o Invisível.</i></li>
+                    </ul>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">IMBUIÇÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Etapa avançada onde o usuário imbui um objeto com seu próprio Haki ao tocá-lo, aumentando significativamente seu poder e resistência. Qualquer item aprimorado se torna mais eficaz e suporta maiores danos. É possível inserir o Armamento em objetos sem contato físico direto se houver uma conexão (ex: objetos criados por Akuma no Mi).</p>
+                            <p style="margin-bottom: 10px;"><strong>Requerimentos:</strong> Armamento Visível | 3.000 pontos em Haki do Armamento | 2 treinos</p>
+                            <p><strong>Buff:</strong> Soma um bônus de pontos fixos no dano equivalente a 80% do seu Haki do Armamento diretamente no dano do item imbuído.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">FULL BODY <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">O praticante pode endurecer seu corpo até que esteja completamente revestido, experimentando uma melhoria considerável em sua Força e Resistência. No entanto, o revestimento extenso resulta num esgotamento mais rápido (cada cena ativa gasta o dobro de Resistência).</p>
+                            <p style="margin-bottom: 10px;"><strong>Requerimentos:</strong> Armamento Visível | 5.000 pontos em Haki do Armamento | 2 treinos</p>
+                            <p><strong>Buff:</strong> Concede um bônus de pontos fixos no dano equivalente a 100% do total que você possui na sua reserva de Haki do Armamento.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">EMISSÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Permite projetar o fluxo de Haki a uma curta distância do corpo sem um meio físico. Danifica o alvo sem fazer contato direto e pode ser combinada com o Endurecimento, repelindo inimigos através da canalização do excesso de Haki.</p>
+                            <p style="margin-bottom: 10px;"><strong>Requerimentos:</strong> Armamento Visível | 7.000 pontos em Haki do Armamento | 4 treinos (necessita de professor após cumprir os requisitos)</p>
+                            <p><strong>Buff:</strong> Concede um bônus de pontos fixos no dano equivalente a 100% do total que você possui na sua reserva de Haki do Armamento.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">AVANÇADO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Um grau mais avançado da Emissão. O Ryuo permite que o Haki do usuário penetre no corpo do alvo e o destrua de dentro para fora.</p>
+                            <p style="margin-bottom: 10px;"><strong>Requerimentos:</strong> Emissão | 8.000 pontos em Haki do Armamento | 4 treinos (pode treinar apenas em Wano sem professor ou com professor em qualquer lugar do Novo Mundo)</p>
+                            <p><strong>Buff:</strong> Concede um bônus de pontos fixos no dano equivalente a 100% do total de Haki do Armamento e ignora 25% da Resistência do oponente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="color: #2b6cb0;">
+                    HAKI DA OBSERVAÇÃO <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">O Haki da Observação permite sentir a presença no ambiente e as emoções do adversário, além de prever os ataques. Com 7.000 pontos, é ativado automaticamente contra ameaças. Com 8.000, ele permanece ativo permanentemente na forma básica, a menos que o usuário o desative.</p>
+                    <p style="margin-bottom: 20px;"><strong>Escala:</strong> A cada 10 pontos em Haki da Observação, o alcance aumenta em 1 metro. <br> <strong>Requerimentos iniciais:</strong> 4 treinos aprendendo a usar (necessário estar na Grand Line).</p>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">INTENÇÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Libera a capacidade de pressentir intenções assassinas direcionadas à pessoa. É possível desenvolver empatia com as emoções, sentir a força e o Haki de outras pessoas, e ter leve capacidade de previsão ao visualizar diretamente.</p>
+                            <p><strong>Requerimentos:</strong> 3.000 pontos em Haki da Observação | 2 treinos</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">PREMONIÇÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Libera a capacidade de ver com mais proficiência premonições muito repentinas do futuro, vislumbrando futuros nos quais o usuário seria gravemente ferido ou alvo de golpes fatais.</p>
+                            <p><strong>Requerimentos:</strong> Observação de Intenção | 5.000 pontos em Haki da Observação | 4 treinos <br> <i>(Aplica-se em combate uma vez a cada 4 turnos)</i></p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">AVANÇADO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Permite vislumbrar pequenos resquícios do futuro antes do evento acontecer. Para adquirir, é necessário estar em situações de risco extremo ou quase morte, forçando o corpo ao limite.</p>
+                            <p style="margin-bottom: 10px;">A cada experiência de quase morte, ganha-se 0,5 segundos de visão. Após 4 experiências, ganha-se mais 0,5s e recomeça a contagem. O limite é de 5 segundos. A cada 0,5s ganhos, acumula-se 250 pontos de reflexo falsos (máximo 2.500), usados uma vez por cena para ataque ou defesa.</p>
+                            <p><strong>Requerimentos:</strong> Observação de Premonição | 8.000 pontos em Haki da Observação | Merecimento | Situação de risco de morte | 4 treinos no Novo Mundo com professor <br> <i>(Previsão se aplica uma vez a cada 2 turnos)</i></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="color: #9b2c2c;">
+                    HAKI DO REI <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">O Haki mais poderoso, raro e desejado do RPG. Não possui treinamento específico de despertar; a administração decide se o personagem é digno, avaliando sua personalidade e situação narrativa. Ele permite emitir sua vontade de forma tão intensa que adversários com vontade mais fraca desmaiam.</p>
+                    <p style="margin-bottom: 15px;">Para despertar, é necessário presenciar a morte de alguém importante ou estar em situação de morte certa. Está ligado à intimidação e pode causar danos a objetos inanimados.</p>
+                    <p style="margin-bottom: 20px;"><strong>Requerimentos de Despertar:</strong> Merecimento | Feitos | Boa personalidade | Situação de quase morte/trauma presenciado | 4 treinos de domínio</p>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">DOMINAÇÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Pode ser usada para temporariamente dominar, controlar ou intimidar a vontade da vítima, como domar animais. Animais afetados tornam-se submissos e o efeito pode culminar na perda de consciência.</p>
+                            <p><strong>Requerimentos:</strong> 1.000 pontos em Haki do Rei | 2 treinos</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">INCAPACITAÇÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Dominando a vontade dos arredores, o usuário nocauteia pessoas e animais de vontade fraca. Cidadãos normais, piratas e marinheiros comuns são presas fáceis, o que evita batalhas desnecessárias.</p>
+                            <p><strong>Requerimentos:</strong> Dominação | 3.000 pontos em Haki do Rei | 4 treinos</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">PRESSÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Se usado com poder suficiente, o Haki pode danificar objetos inanimados ou estruturas ao redor. Quando dois usuários poderosos se chocam, geram raios negros de energia, podendo até "dividir os céus".</p>
+                            <p><strong>Requerimentos:</strong> Incapacitação | 5.000 pontos em Haki do Rei | 2 treinos</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">ASSASSINATO DE OBSERVAÇÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Técnica que permite o controle da própria aura ou presença, anulando a capacidade do oponente de ver o futuro usando o Haki da Observação.</p>
+                            <p><strong>Requerimentos:</strong> Observação Avançada | 7.500 pontos em Haki do Rei</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">INFUSÃO <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">O usuário infunde o corpo e armas com o espírito conquistador (semelhante ao Haki do Armamento), gerando um impulso de dano avassalador marcado por raios negros avermelhados ou roxos. No nível máximo, o usuário pode atacar o alvo sem contato físico direto.</p>
+                            <p><strong>Requerimentos:</strong> 10.000 pontos em Haki do Rei | Maestria nos outros Hakis | Só desperta em eventos/trama por aprovação da staff.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
