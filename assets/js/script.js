@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="atributos.html">ATRIBUTOS</a></li>
                     <li><a href="akuma-no-mi.html">AKUMA NO MI</a></li>
                     <li><a href="haki.html">HAKI</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/força-vital/estamina">ESTAMINA</a></li>
+                    <li><a href="estamina.html">ESTAMINA</a></li>
                 </ul>
             </li>
             <li>
