@@ -434,3 +434,181 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function formatCalcInput(inputField) {
+    if (inputField.tagName.toLowerCase() !== 'input' || inputField.type !== 'text') return;
+    let val = inputField.value.replace(/\D/g, '');
+    if (val === '') {
+        inputField.value = '';
+        return;
+    }
+    let num = parseInt(val, 10);
+    inputField.value = num.toLocaleString('pt-BR');
+}
+
+function getCalcVal(elementId) {
+    let el = document.getElementById(elementId);
+    if (!el) return 0;
+    if (el.type === 'number') return parseFloat(el.value) || 0;
+    let val = el.value.replace(/\./g, '');
+    return val ? parseInt(val, 10) : 0;
+}
+
+function runAtributosCalc() {
+    if (!document.getElementById('hp-res-passiva')) return;
+
+    let resPassiva = getCalcVal('hp-res-passiva');
+    let outHp = document.getElementById('out-hp');
+    if (outHp) outHp.innerText = (resPassiva + 10000).toLocaleString('pt-BR');
+
+    let dmgBruto = getCalcVal('dmg-bruto');
+    let dmgResTotal = getCalcVal('dmg-res-total');
+    let dmgFinal = Math.floor(dmgBruto * (25000 / (25000 + dmgResTotal)));
+    let outDanoFinal = document.getElementById('out-dano-final');
+    if (outDanoFinal) outDanoFinal.innerText = dmgFinal.toLocaleString('pt-BR');
+
+    let esqAtk = getCalcVal('esq-atk');
+    let esqDef = getCalcVal('esq-def');
+    let diffLabel = document.getElementById('out-esq-perc');
+    let statusLabel = document.getElementById('out-esq-status');
+
+    if (diffLabel && statusLabel) {
+        if (esqDef === 0 && esqAtk === 0) {
+            diffLabel.innerText = "0%";
+            diffLabel.style.color = "#ffeb3b";
+            statusLabel.innerText = "Igualdade ou Valores Parelhos. Combate equilibrado. A esquiva é plenamente possível de forma coerente.";
+        } else if (esqDef === 0 && esqAtk > 0) {
+            diffLabel.innerText = "∞ (Incalculável)";
+            diffLabel.style.color = "#f44336";
+            statusLabel.innerText = "Speedblitz Absoluto: Disparidade esmagadora. O defensor sequer consegue ver o ataque chegar.";
+        } else {
+            let diff = ((esqAtk - esqDef) / esqDef) * 100;
+            diffLabel.innerText = diff.toFixed(1) + "%";
+
+            if (diff <= 10) {
+                diffLabel.style.color = "#4caf50";
+                if(diff < -10) {
+                    statusLabel.innerText = "Vantagem Clara do Defensor: O ataque é lido e evitado com extrema facilidade.";
+                } else {
+                    statusLabel.innerText = "Igualdade ou Valores Parelhos: Ambos conseguem atacar, reagir e se defender normalmente.";
+                }
+            } else if (diff <= 25) {
+                diffLabel.style.color = "#ff9800";
+                statusLabel.innerText = "Dificuldade Perceptível (10% a 25%): O defensor acompanha os movimentos com esforço. A esquiva exige boa descrição e movimentação estratégica.";
+            } else if (diff <= 50) {
+                diffLabel.style.color = "#ff5722";
+                statusLabel.innerText = "Desvantagem (25% a 50%): O defensor reage, mas está claramente em apuros. Erros de tempo ou posicionamento serão punidos com o acerto.";
+            } else if (diff <= 75) {
+                diffLabel.style.color = "#e91e63";
+                statusLabel.innerText = "Situação Crítica (50% a 75%): Reagir exige uso estratégico do terreno, antecipação perfeita ou recurso de build. Esquivas comuns não funcionam mais.";
+            } else {
+                diffLabel.style.color = "#f44336";
+                statusLabel.innerText = "Speedblitz (> 75%): Disparidade esmagadora. O defensor não consegue acompanhar. Salvo por habilidades passivas específicas, o golpe acertará.";
+            }
+        }
+    }
+
+    let pAttr = getCalcVal('proj-attr');
+    let pTipoEl = document.getElementById('proj-tipo');
+    let pClasseEl = document.getElementById('proj-classe');
+    
+    if (pTipoEl) {
+        let pTipo = pTipoEl.value;
+        let pClasse = pClasseEl ? pClasseEl.value : '';
+        
+        let classBox = document.getElementById('container-classe');
+        if (classBox) {
+            if (pTipo === 'arco' || pTipo === 'fogo') {
+                classBox.style.display = 'block';
+            } else {
+                classBox.style.display = 'none';
+            }
+        }
+
+        let pVel = 0;
+        let pDist = 0;
+
+        if (pTipo === 'forca' || pTipo === 'corte') {
+            pVel = Math.floor(pAttr * 0.50);
+        } else if (pTipo === 'arco') {
+            pVel = Math.floor(pAttr * 0.60);
+        } else if (pTipo === 'fogo') {
+            pVel = Math.floor(pAttr * 0.70);
+        }
+
+        if (pTipo === 'forca' || pTipo === 'corte') {
+            pDist = Math.floor(pAttr / 100);
+        } else if (pTipo === 'fogo') {
+            if (pClasse === 'atirador') pDist = Math.floor(pAttr / 10);
+            else pDist = Math.floor(pAttr / 100);
+        } else if (pTipo === 'arco') {
+            if (pClasse === 'atirador') pDist = Math.floor(pAttr / 100) * 5;
+            else pDist = Math.floor(pAttr / 1000) * 5;
+        }
+
+        let outProjVel = document.getElementById('out-proj-vel');
+        let outProjDist = document.getElementById('out-proj-dist');
+        if (outProjVel) outProjVel.innerText = pVel.toLocaleString('pt-BR');
+        if (outProjDist) outProjDist.innerText = pDist.toLocaleString('pt-BR');
+    }
+}
+
+function runEstaminaCalc() {
+    if (!document.getElementById('calc-res')) return;
+
+    let res = getCalcVal('calc-res');
+    let estaminaTotal = res * 2;
+    let elEstaminaTotal = document.getElementById('res-estamina-total');
+    if (elEstaminaTotal) elEstaminaTotal.innerText = estaminaTotal.toLocaleString('pt-BR');
+
+    let buff = getCalcVal('calc-buff');
+    let gastoBuff = Math.floor(buff * 15);
+    let elGastoBuff = document.getElementById('res-gasto-buff');
+    if (elGastoBuff) elGastoBuff.innerText = gastoBuff.toLocaleString('pt-BR');
+
+    let vel = getCalcVal('calc-vel');
+    let gastoVel = Math.floor(vel * 0.1);
+    let elGastoVel = document.getElementById('res-gasto-vel');
+    if (elGastoVel) elGastoVel.innerText = gastoVel.toLocaleString('pt-BR');
+
+    let dano = getCalcVal('calc-dano');
+    let gastoDano = Math.floor(dano * 0.1);
+    let elGastoDano = document.getElementById('res-gasto-dano');
+    if (elGastoDano) elGastoDano.innerText = gastoDano.toLocaleString('pt-BR');
+
+    let hakiArm = getCalcVal('calc-haki-arm');
+    let hakiObs = getCalcVal('calc-haki-obs');
+    let gastoHaki = (hakiArm * 300) + (hakiObs * 200);
+    let elGastoHaki = document.getElementById('res-gasto-haki');
+    if (elGastoHaki) elGastoHaki.innerText = gastoHaki.toLocaleString('pt-BR');
+
+    let gastoTotal = gastoBuff + gastoVel + gastoDano + gastoHaki;
+    let elGastoTotal = document.getElementById('res-gasto-total');
+    if (elGastoTotal) elGastoTotal.innerText = gastoTotal.toLocaleString('pt-BR');
+
+    let estaminaRestante = estaminaTotal - gastoTotal;
+    let elEstaminaRestante = document.getElementById('res-estamina-restante');
+    if (elEstaminaRestante) elEstaminaRestante.innerText = estaminaRestante.toLocaleString('pt-BR');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const autoCalcInputs = document.querySelectorAll('.auto-calc');
+
+    autoCalcInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            formatCalcInput(this);
+            runAtributosCalc();
+            runEstaminaCalc();
+        });
+        
+        if (input.tagName.toLowerCase() === 'select') {
+            input.addEventListener('change', () => {
+                runAtributosCalc();
+                runEstaminaCalc();
+            });
+        }
+    });
+
+    runAtributosCalc();
+    runEstaminaCalc();
+});
