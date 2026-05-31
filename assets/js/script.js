@@ -95,12 +95,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <li>
                 <a href="#" class="toggle-btn">EVOLUÇÃO <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/extra-narrada">EXTRA-NARRADA</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/missões">MISSÕES</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/npcs-especiais">NPCS ESPECIAIS</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/recrutar-npcs">RECRUTAR NPCS</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/trabalho">TRABALHO</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/evolução/treino">TREINO</a></li>
+                    <li><a href="extra-narrada.html">EXTRA-NARRADA</a></li>
+                    <li><a href="missoes.html">MISSÕES</a></li>
+                    <li><a href="npcs-especiais.html">NPCS ESPECIAIS</a></li>
+                    <li><a href="recrutar-npcs.html">RECRUTAR NPCS</a></li>
+                    <li><a href="trabalho.html">TRABALHO</a></li>
+                    <li><a href="treino.html">TREINO</a></li>
                 </ul>
             </li>
             <li>
@@ -652,4 +652,211 @@ document.addEventListener('DOMContentLoaded', () => {
 
     runAtributosCalc();
     runEstaminaCalc();
+});
+
+function updateSceneStats(textarea) {
+    if (!textarea) return;
+    let sceneTxt = textarea.value;
+    let sChars = sceneTxt.length;
+    let sParas = sceneTxt.trim() === "" ? 0 : sceneTxt.split(/\n+/).filter(p => p.trim().length > 0).length;
+    
+    let wrapper = textarea.closest('.box-content');
+    if(!wrapper) return;
+
+    let minChars = parseInt(textarea.getAttribute('data-min-chars')) || 12000;
+    
+    let charsEl = wrapper.querySelector('.scene-chars');
+    let parasEl = wrapper.querySelector('.scene-paras');
+    let statusEl = wrapper.querySelector('.scene-status');
+    
+    if(charsEl) charsEl.textContent = sChars.toLocaleString('pt-BR');
+    if(parasEl) parasEl.textContent = sParas.toLocaleString('pt-BR');
+    
+    if(statusEl) {
+        if (sChars >= minChars) { 
+            statusEl.textContent = `(✔️ Alcançou o mínimo de ${minChars.toLocaleString('pt-BR')})`; 
+            statusEl.style.color = "#4caf50"; 
+        } else { 
+            let faltam = minChars - sChars;
+            statusEl.textContent = `(❌ Faltam ${faltam.toLocaleString('pt-BR')})`; 
+            statusEl.style.color = "#f44336"; 
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const textareas = document.querySelectorAll('.contador-textarea');
+    textareas.forEach(ta => {
+        ta.addEventListener('input', function() {
+            updateSceneStats(this);
+        });
+        updateSceneStats(ta);
+    });
+
+    document.querySelectorAll('.btn-copiar-contador').forEach(btn => {
+        btn.addEventListener('click', function() {
+            let wrapper = this.closest('.box-content');
+            if(!wrapper) return;
+            let textarea = wrapper.querySelector('textarea');
+            if (!textarea || !textarea.value) return;
+            
+            navigator.clipboard.writeText(textarea.value).then(() => {
+                let originalText = this.textContent;
+                let originalBg = this.style.backgroundColor;
+                let originalColor = this.style.color;
+
+                this.textContent = "Texto Copiado!";
+                this.style.backgroundColor = "#4caf50";
+                this.style.color = "#fff";
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.backgroundColor = originalBg;
+                    this.style.color = originalColor;
+                }, 2000);
+            });
+        });
+    });
+});
+
+
+function formatarEVerificar(el) {
+    let valor = el.value.replace(/\D/g, "");
+    el.value = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    verificarTrabalho();
+}
+
+function verificarTrabalho() {
+    let elPontos = document.getElementById('pontos-atuais');
+    if (!elPontos) return;
+
+    let pontosStr = elPontos.value.replace(/\D/g, "");
+    let pontos = parseInt(pontosStr) || 0;
+    let tipoDesejado = document.getElementById('tipo-desejado').value;
+    let resultadoEl = document.getElementById('resultado');
+    let textarea = document.getElementById('info-sceneText');
+    let tiposFeitos = Array.from(document.querySelectorAll('.tipo-feito:checked')).map(cb => cb.value);
+
+    let reqPontos = { "1": 1000, "2": 2500, "3": 5000 };
+    let reqPontosFormatados = { "1": "1.000", "2": "2.500", "3": "5.000" };
+
+    if (tiposFeitos.includes(tipoDesejado)) {
+        resultadoEl.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
+        resultadoEl.style.border = "1px dashed var(--danger)";
+        resultadoEl.style.color = "var(--danger)";
+        resultadoEl.innerHTML = "Negado. Você já realizou um Trabalho Tipo " + tipoDesejado + " neste mês. Não é permitido repetir o mesmo tipo de trabalho dentro do mesmo mês.";
+        resultadoEl.classList.add("active");
+        if(textarea) {
+            textarea.disabled = true;
+            updateTextareaStats(textarea);
+        }
+        return;
+    }
+
+    if (pontos < reqPontos[tipoDesejado]) {
+        resultadoEl.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
+        resultadoEl.style.border = "1px dashed var(--danger)";
+        resultadoEl.style.color = "var(--danger)";
+        resultadoEl.innerHTML = "Negado. O Trabalho Tipo " + tipoDesejado + " exige que você tenha no mínimo " + reqPontosFormatados[tipoDesejado] + " pontos acumulados. Atualmente, você possui apenas " + pontos.toLocaleString('pt-BR') + " pontos.";
+        resultadoEl.classList.add("active");
+        if(textarea) {
+            textarea.disabled = true;
+            updateTextareaStats(textarea);
+        }
+        return;
+    }
+
+    resultadoEl.style.backgroundColor = "rgba(25, 135, 84, 0.1)";
+    resultadoEl.style.border = "1px dashed var(--success)";
+    resultadoEl.style.color = "var(--success)";
+    resultadoEl.innerHTML = "Aprovado! Você atende aos requisitos de " + reqPontosFormatados[tipoDesejado] + " pontos e está liberado para iniciar o seu Trabalho Tipo " + tipoDesejado + ".";
+    resultadoEl.classList.add("active");
+    if(textarea) {
+        textarea.disabled = false;
+        updateTextareaStats(textarea);
+    }
+}
+
+
+function updateTextareaStats(textarea) {
+    if (!textarea) return;
+    
+    const wrapper = textarea.closest('.box-content') || textarea.closest('.verificador-box');
+    if (!wrapper) return;
+
+    let sceneTxt = textarea.value;
+    let sChars = sceneTxt.length;
+    let sParas = sceneTxt.trim() === "" ? 0 : sceneTxt.split(/\n+/).filter(p => p.trim().length > 0).length;
+    
+    let minC = parseInt(textarea.getAttribute('data-min-chars')) || 0;
+
+    const tipoDesejadoEl = document.getElementById('tipo-desejado');
+    if (tipoDesejadoEl && textarea.id === 'info-sceneText') {
+        let typeMin = { "1": 1200, "2": 1800, "3": 3000 };
+        minC = typeMin[tipoDesejadoEl.value] || minC;
+    }
+    
+    let charsEl = wrapper.querySelector('.scene-chars');
+    let parasEl = wrapper.querySelector('.scene-paras');
+    let statusEl = wrapper.querySelector('.scene-status');
+    
+    if(charsEl) charsEl.textContent = sChars.toLocaleString('pt-BR');
+    if(parasEl) parasEl.textContent = sParas.toLocaleString('pt-BR');
+    
+    if(statusEl && minC > 0) {
+        if (textarea.disabled) {
+            statusEl.textContent = "(Bloqueado)";
+            statusEl.style.color = "#f44336";
+        } else {
+            if (sChars >= minC) { 
+                statusEl.textContent = `(✔️ Alcançou o mínimo de ${minC.toLocaleString('pt-BR')})`; 
+                statusEl.style.color = "#4caf50"; 
+            } else { 
+                let faltam = minC - sChars;
+                statusEl.textContent = `(❌ Faltam ${faltam.toLocaleString('pt-BR')})`; 
+                statusEl.style.color = "#f44336"; 
+            }
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const textareas = document.querySelectorAll('.contador-textarea, #info-sceneText');
+    textareas.forEach(ta => {
+        ta.addEventListener('input', function() {
+            updateTextareaStats(this);
+        });
+        
+        updateTextareaStats(ta);
+    });
+
+    document.querySelectorAll('.btn-copiar-contador').forEach(btn => {
+        btn.addEventListener('click', function() {
+            let wrapper = this.closest('.box-content') || this.closest('.verificador-box');
+            if(!wrapper) return;
+            
+            let textarea = wrapper.querySelector('textarea');
+            if (!textarea || !textarea.value) return;
+            
+            navigator.clipboard.writeText(textarea.value).then(() => {
+                let originalText = this.textContent;
+                let originalBg = this.style.backgroundColor;
+                let originalColor = this.style.color;
+
+                this.textContent = "Texto Copiado!";
+                this.style.backgroundColor = "#4caf50";
+                this.style.color = "#fff";
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.backgroundColor = originalBg;
+                    this.style.color = originalColor;
+                }, 2000);
+            });
+        });
+    });
+    
+    if (document.getElementById('pontos-atuais')) {
+        verificarTrabalho();
+    }
 });

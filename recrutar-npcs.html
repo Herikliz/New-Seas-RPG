@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutar NPCs - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+        .toggle-content.collapsed {
+            display: none;
+        }
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.8em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+        .toggle-title {
+            cursor: pointer;
+        }
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15);
+        }
+        .rank-title {
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .contador-textarea {
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            border: 2px solid var(--sidebar-border); 
+            border-radius: var(--border-radius); 
+            padding: 15px; 
+            width: 100%; 
+            font-size: 14px; 
+            box-sizing: border-box; 
+            font-family: 'Comfortaa', sans-serif; 
+            resize: vertical; 
+            text-align: justify; 
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .contador-textarea:focus { 
+            outline: none; 
+            border-color: var(--accent-color); 
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+
+        .stats-bar {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 16px; 
+            font-weight: bold; 
+            background: var(--bg-color); 
+            padding: 15px; 
+            border-radius: var(--border-radius); 
+            border: 2px solid var(--sidebar-border);
+            margin-top: 15px;
+        }
+
+        .btn-copiar-contador {
+            width: 100%; 
+            margin-top: 20px; 
+            padding: 15px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: var(--border-radius); 
+            background-color: var(--sidebar-bg); 
+            color: var(--accent-color); 
+            border: 2px solid var(--accent-color); 
+            font-family: 'Quantico', sans-serif; 
+            transition: all 0.3s ease;
+        }
+
+        .btn-copiar-contador:hover {
+            background-color: var(--accent-color);
+            color: var(--sidebar-bg);
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico">RECRUTAR NPCs</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p style="margin-bottom: 25px; text-align: center; font-size: 1.1em;">Forme sua tripulação e expanda sua influência pelos mares. Abaixo você encontra todas as regras para o recrutamento de NPCs Comuns e a expansão da sua frota.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="highlight-text toggle-title rank-title" style="font-size: 24px; text-align: center; margin-bottom: 25px; color: var(--accent-color);">BÁSICO E LIMITES <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Os NPCs Comuns formam a base de uma frota. Eles possuem atributos e capacidades padronizadas que podem evoluir através de treinamentos.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Pontuação Inicial e Máxima:</strong> Cada NPC Comum inicia com 100 pontos em cada atributo, exceto em Espírito. Eles podem evoluir até atingir no máximo 500 pontos em cada atributo, totalizando um limite absoluto de 2.000 pontos.</li>
+                        <li style="margin-bottom: 10px;"><strong>Limite Padrão:</strong> Um jogador comum pode ter até <strong>5.000 NPCs Comuns</strong>.</li>
+                    </ul>
+
+                    <p style="margin-bottom: 15px;">Conforme seu personagem se torna mais reconhecido no mundo, sua capacidade de liderar e atrair seguidores aumenta:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 10px;">
+                        <li style="margin-bottom: 10px;"><strong>Supernova:</strong> Seu limite aumenta para 6.000 NPCs.</li>
+                        <li style="margin-bottom: 10px;"><strong>Shichibukai:</strong> Seu limite aumenta para 8.000 NPCs.</li>
+                        <li style="margin-bottom: 10px;"><strong>Yonkou:</strong> Seu limite aumenta para 10.000 NPCs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="highlight-text toggle-title rank-title" style="font-size: 24px; text-align: center; margin-bottom: 25px; color: var(--accent-color);">COMO RECRUTAR E RAÇAS <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Para recrutar uma raça específica, você deve obrigatoriamente estar na ilha de origem ou região nativa dessa raça.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 10px;"><strong>Humanos</strong> (qualquer tribo, dependendo da ilha): 25 NPCs por recrutamento.</li>
+                        <li style="margin-bottom: 10px;"><strong>Tontattas</strong> (Dressrosa ou Green Bit): 25 NPCs por recrutamento.</li>
+                        <li style="margin-bottom: 10px;"><strong>Tritões</strong> (Ilha dos Homens-Peixe): 25 NPCs por recrutamento.</li>
+                        <li style="margin-bottom: 10px;"><strong>Sereianos</strong> (Ilha dos Homens-Peixe): 20 NPCs por recrutamento.</li>
+                        <li style="margin-bottom: 10px;"><strong>Minks</strong> (Zou): 20 NPCs por recrutamento.</li>
+                    </ul>
+
+                    <h4 class="highlight-text" style="margin-bottom: 15px;">Mecânica de Recrutamento</h4>
+                    <ul style="margin-left: 40px; margin-bottom: 10px;">
+                        <li style="margin-bottom: 10px;">Apenas personagens de organizações que não dão NPCs Comuns podem realizar essas cenas ativas de recrutamento, como Piratas e Caçadores de Recompensa.</li>
+                        <li style="margin-bottom: 10px;">Você deve realizar uma cena no ON contendo no mínimo <strong>1.200 caracteres</strong> para validar o recrutamento.</li>
+                        <li style="margin-bottom: 10px;">Essa ação pode ser realizada até <strong>duas vezes por semana</strong>.</li>
+                    </ul>
+
+                    <div style="border-top: 1px dashed var(--sidebar-border); padding-top: 30px; margin-top: 30px;" class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Cena de Recrutamento</h3>
+                        <textarea class="contador-textarea" data-min-chars="1200" placeholder="Escreva sua cena de recrutamento aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="highlight-text toggle-title rank-title" style="font-size: 24px; text-align: center; margin-bottom: 25px; color: var(--accent-color);">ORGANIZAÇÕES E TREINAMENTO <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <h4 class="highlight-text" style="margin-bottom: 15px;">Regras para Organizações Oficiais e Traições</h4>
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 10px;">Organizações governamentais, como a <strong>Marinha</strong> ou o <strong>Governo Mundial</strong>, não realizam cenas de recrutamento abertas para obter NPCs. O valor total de NPCs e navios de sua frota é estritamente atrelado à sua patente.</li>
+                        <li style="margin-bottom: 10px;">A progressão dessas frotas <strong>não é acumulativa</strong>. Se sua patente atual fornece 25 NPCs, e ao ser promovido a cota muda para 50, sua frota passará a ter um total de 50 (e não 25 + 50).</li>
+                        <li style="margin-bottom: 10px;">Ao trair uma organização, o jogador perde automaticamente <strong>50%</strong> de toda a frota adquirida nela.</li>
+                    </ul>
+
+                    <h4 class="highlight-text" style="margin-bottom: 15px;">Treinamento de NPCs</h4>
+                    <ul style="margin-left: 40px; margin-bottom: 10px;">
+                        <li style="margin-bottom: 10px;">Caso um jogador possua a classe <strong>Combatente</strong>, ele ganha a habilidade especial de treinar seus NPCs Especiais e Comuns.</li>
+                        <li style="margin-bottom: 10px;">Durante os treinos, esses NPCs ganham 50% de todos os pontos que o jogador conquistar em treinos e interações.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const textareas = document.querySelectorAll('.contador-textarea');
+        textareas.forEach(ta => {
+            const wrapper = ta.closest('.box-content');
+            if (!wrapper) return;
+            const charsEl = wrapper.querySelector('.scene-chars');
+            const parasEl = wrapper.querySelector('.scene-paras');
+            const statusEl = wrapper.querySelector('.scene-status');
+            const minChars = parseInt(ta.getAttribute('data-min-chars')) || 0;
+
+            const update = () => {
+                const text = ta.value;
+                const chars = text.length;
+                const paras = text.trim() === "" ? 0 : text.split(/\n+/).filter(p => p.trim().length > 0).length;
+
+                if (charsEl) charsEl.textContent = chars.toLocaleString('pt-BR');
+                if (parasEl) parasEl.textContent = paras.toLocaleString('pt-BR');
+
+                if (statusEl && minChars > 0) {
+                    if (chars >= minChars) {
+                        statusEl.textContent = `(✔️ Alcançou o mínimo de ${minChars.toLocaleString('pt-BR')})`;
+                        statusEl.style.color = "#4caf50";
+                    } else {
+                        const faltam = minChars - chars;
+                        statusEl.textContent = `(❌ Faltam ${faltam.toLocaleString('pt-BR')})`;
+                        statusEl.style.color = "#f44336";
+                    }
+                }
+            };
+
+            ta.addEventListener('input', update);
+            update();
+        });
+
+        const copyButtons = document.querySelectorAll('.btn-copiar-contador');
+        copyButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const wrapper = this.closest('.box-content');
+                if (!wrapper) return;
+                const textarea = wrapper.querySelector('textarea');
+                if (!textarea || !textarea.value) return;
+
+                navigator.clipboard.writeText(textarea.value).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = "Texto Copiado!";
+                    this.style.backgroundColor = "#4caf50";
+                    this.style.color = "#fff";
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.backgroundColor = "";
+                        this.style.color = "";
+                    }, 2000);
+                });
+            });
+        });
+    });
+    </script>
+</body>
+</html>

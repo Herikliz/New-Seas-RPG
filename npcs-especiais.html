@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPCs Especiais - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+        .toggle-content.collapsed {
+            display: none;
+        }
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.8em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+        .toggle-title {
+            cursor: pointer;
+        }
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15);
+        }
+        .rank-title {
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico">NPCs ESPECIAIS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p style="margin-bottom: 25px; text-align: center; font-size: 1.1em;">O sistema de NPCs Especiais foi feito para explicar melhor o funcionamento de tais NPCs, que são ganhos e controlados pelos jogadores, como um personagem extra na sua lore.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="highlight-text toggle-title rank-title" style="font-size: 24px; text-align: center; margin-bottom: 25px; color: var(--accent-color);">O QUE É UM NPC ESPECIAL? <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Um NPC Especial é a versão mais avançada dos NPCs Comuns do RPG, que podem ser recrutados semanalmente (Veja a página: <a href="recrutar-npcs.html">Recrutar NPCs</a>). Diferente dos tradicionais, os NPCs Especiais possuem mais pontos, habilidades e profundidade de personagem, tendo uma personalidade própria e uma história própria.</p>
+                    
+                    <p style="margin-bottom: 15px;">NPCs Especiais podem subir de nível com você em Eventos, Caçadas e Dominações em que ele for junto, além de subir de nível mais rapidamente com a ajuda de um Combatente; fora esses métodos, ele não pode aumentar seus pontos. Também podem portar <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous">Meitōs</a> de nível <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/grau-desconhecido">Desconhecido</a>, <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/wazamono">Wazamono</a> e <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/ryō-wazamono">Ryō Wazamono</a>, e até mesmo comer Frutas do tipo <a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/paramecia">Paramecia</a> e <a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/zoan">Zoan</a> Comum/Ancestral, desde que custem no máximo ฿1.000.000.000.</p>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="highlight-text toggle-title rank-title" style="font-size: 24px; text-align: center; margin-bottom: 25px; color: var(--accent-color);">REGRAS E EXPLICAÇÕES <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">NPCs Especiais só podem ser ganhos em Eventos, Dominações e Extra-Narradas, caso o avaliador considere o jogador merecedor;</li>
+                        <li style="margin-bottom: 10px;">O NPC Especial que for ganho em Extra-Narrada começará sempre com 1.000 pontos e não pode ser de raças exclusivas, enquanto os NPCs Especiais de Eventos e Dominações podem ser mais avançados e raros;</li>
+                        <li style="margin-bottom: 10px;">Tudo que for comprado para o NPC Especial, terá que ser com o dinheiro do jogador que o ganhou;</li>
+                        <li style="margin-bottom: 10px;">O NPC Especial nem sempre será uma pessoa ou alguma criatura de One Piece, podendo muitas vezes ser uma espécie totalmente nova e rara com habilidades especiais, mas nada que viole as regras do jogo ou que já exista como poderes de Akuma no Mi;</li>
+                        <li style="margin-bottom: 10px;">Cada jogador pode ter até no máximo 3 NPCs conseguidos em Extra-Narrada e 3 NPCs de Dominações, já o número para NPCs de Eventos é ilimitado, sendo também mais difícil de conseguir;</li>
+                        <li style="margin-bottom: 10px;">Caso queira adquirir um NPC Especial com sua Extra-Narrada, deverá desenvolver bem o mesmo durante a Extra, e informar ao ADM que for avaliar para que ele considere como uma tentativa de ganhar NPC, e avalie de acordo. Se você não avisar ao ADM antecipadamente, então não ganhará o NPC;</li>
+                        <li style="margin-bottom: 10px;">Um NPC Especial ganha metade dos pontos ganhos pelo seu personagem em Eventos, Caçadas, Dominações e Extra-Narradas;</li>
+                        <li style="margin-bottom: 10px;">Caso um jogador seja da classe Combatente, ele pode treinar seus NPCs Especiais e Comuns, os fazendo ganhar metade de todos os pontos ganhos em treinos e interações.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+        .toggle-content.collapsed {
+            display: none;
+        }
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.8em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+        .toggle-title {
+            cursor: pointer;
+        }
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15);
+        }
+        .rank-title {
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+            font-size: 24px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+        .box-content {
+            border-top: 1px dashed var(--sidebar-border);
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+        .contador-textarea {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            width: 100%;
+            font-size: 14px;
+            box-sizing: border-box;
+            font-family: 'Comfortaa', sans-serif;
+            resize: vertical;
+            text-align: justify;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        .contador-textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            background: var(--bg-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--sidebar-border);
+            margin-top: 15px;
+        }
+        .btn-copiar-contador {
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: var(--border-radius);
+            background-color: var(--sidebar-bg);
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .btn-copiar-contador:hover {
+            background-color: var(--accent-color);
+            color: var(--sidebar-bg);
+        }
+        @media (max-width: 768px) {
+            .stats-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">TREINOS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p style="margin-bottom: 25px; text-align: center; font-size: 1.1em; line-height: 1.6;">O desenvolvimento dos seus atributos ocorre primariamente através de três métodos de treinamento: <strong>Interação</strong> (1 por semana), <strong>Treino Padrão</strong> (1 por semana) e <strong>Treino de Técnicas</strong> (6 por semana).</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title">TREINOS ACUMULADOS <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Caso o personagem não possua, no momento, nenhuma técnica disponível para treinamento, os treinos realizados poderão ser acumulados para utilização futura. Assim, quando houver técnicas a serem desenvolvidas, elas poderão ser aprendidas por meio do uso de treinos previamente acumulados.</p>
+                    <ul style="margin-left: 40px; margin-bottom: 10px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Treino Padrão:</strong> Concede 2 treinos acumulados.</li>
+                        <li style="margin-bottom: 10px;"><strong>Interação:</strong> Concede 4 treinos acumulados.</li>
+                        <li style="margin-bottom: 10px;"><strong>Treino de Técnica:</strong> Concede 1 treino acumulado.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title">TREINO PADRÃO <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Este método de treinamento consiste em descrever de forma livre o seu personagem realizando um treino focado em fortalecer suas capacidades físicas ou mentais.</p>
+                    <ul style="margin-left: 40px; margin-bottom: 25px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Limite:</strong> 1 por semana.</li>
+                        <li style="margin-bottom: 10px;"><strong>Recompensa:</strong> 250 pontos de atributos.</li>
+                        <li style="margin-bottom: 10px;"><strong>Mínimo exigido:</strong> 1.500 caracteres.</li>
+                    </ul>
+
+                    <div class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Treino Padrão</h3>
+                        <textarea class="contador-textarea" data-min-chars="1500" placeholder="Escreva seu treinamento aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span style="color: var(--text-color);"><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title">INTERAÇÃO <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Consiste em interagir com alguém próximo a você, preferencialmente na sua própria ilha. Pode ser realizando qualquer atividade em conjunto: lutando, conversando, trabalhando, etc.</p>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">As interações podem ser feitas quantas vezes quiser durante a semana, porém <strong>a recompensa só pode ser recebida 1 vez por semana</strong>. Você não é obrigado a terminar em pouco tempo — se começar numa semana, pode terminar em outra, mas só adicione os pontos na ficha após concluir toda a interação.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 25px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Mínimo exigido:</strong> 300 caracteres <strong>por cena</strong>.</li>
+                        <li style="margin-bottom: 10px;"><strong>Jogador × Jogador (10 cenas de cada):</strong> 300 pontos de atributo.</li>
+                        <li style="margin-bottom: 10px;"><strong>Jogador × NPC Especial (10 cenas de cada):</strong> 100 pontos de atributo.</li>
+                        <li style="margin-bottom: 10px;"><strong>Jogador × Jogador (5 cenas de cada):</strong> 150 pontos de atributo.</li>
+                        <li style="margin-bottom: 10px;"><strong>Jogador × NPC Especial (5 cenas de cada):</strong> 50 pontos de atributo.</li>
+                    </ul>
+
+                    <div class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Cena de Interação</h3>
+                        <textarea class="contador-textarea" data-min-chars="300" placeholder="Escreva seu turno de interação aqui..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span style="color: var(--text-color);"><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title">TREINO DE TÉCNICAS <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Dedicado ao desbloqueio de técnicas e estilos de luta. Consiste em descrever o seu personagem efetuando o treinamento daquela técnica específica.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 25px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Limite:</strong> 6 por semana.</li>
+                        <li style="margin-bottom: 10px;"><strong>Recompensa:</strong> 25 pontos de atributos por cada treino (Totalizando 150 pontos semanais caso faça os 6).</li>
+                        <li style="margin-bottom: 10px;"><strong>Mínimo exigido:</strong> 360 caracteres.</li>
+                    </ul>
+
+                    <div class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Treino de Técnicas</h3>
+                        <textarea class="contador-textarea" data-min-chars="360" placeholder="Escreva seu treino de técnica aqui..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span style="color: var(--text-color);"><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title" style="color: #FFD700;">HAKI & AKUMA NO MI NOS TREINOS <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Para complementar sua evolução, ao realizar os treinamentos listados acima, você também adquire pontos exclusivos para seu <strong>Haki</strong> ou sua <strong>Akuma no Mi</strong>. No entanto, é fundamental lembrar da regra de ouro: <strong>Você deve escolher apenas UM dos dois para ganhar em cada treinamento</strong> (não é possível ganhar ambos simultaneamente no mesmo treino).</p>
+                    
+                    <p style="margin-bottom: 15px; line-height: 1.6; font-weight: bold; color: var(--accent-color);">Tabela de Ganhos Extras (Haki / Akuma no Mi):</p>
+                    <ul style="margin-left: 40px; margin-bottom: 15px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Treino Padrão:</strong> 200 pontos</li>
+                        <li style="margin-bottom: 10px;"><strong>Treino de Técnicas:</strong> 20 pontos</li>
+                        <li style="margin-bottom: 10px;"><strong>Interação 5/5 (Jogador × Jogador):</strong> 125 pontos</li>
+                        <li style="margin-bottom: 10px;"><strong>Interação 5/5 (Jogador × NPC Especial):</strong> 50 pontos</li>
+                        <li style="margin-bottom: 10px;"><strong>Interação 10/10 (Jogador × Jogador):</strong> 250 pontos</li>
+                        <li style="margin-bottom: 10px;"><strong>Interação 10/10 (Jogador × NPC Especial):</strong> 100 pontos</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

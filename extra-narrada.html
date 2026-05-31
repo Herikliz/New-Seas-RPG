@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra-Narrada - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .wg-emblem {
+            font-size: 80px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .highlight-text {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .info-box {
+            background-color: rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .contador-textarea {
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            border: 2px solid var(--sidebar-border); 
+            border-radius: var(--border-radius); 
+            padding: 15px; 
+            width: 100%; 
+            font-size: 14px; 
+            box-sizing: border-box; 
+            font-family: 'Comfortaa', sans-serif; 
+            resize: vertical; 
+            text-align: justify; 
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .contador-textarea:focus { 
+            outline: none; 
+            border-color: var(--accent-color); 
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+
+        .stats-bar {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 16px; 
+            font-weight: bold; 
+            background: var(--bg-color); 
+            padding: 15px; 
+            border-radius: var(--border-radius); 
+            border: 2px solid var(--sidebar-border);
+            margin-top: 15px;
+        }
+
+        .btn-copiar-contador {
+            width: 100%; 
+            margin-top: 20px; 
+            padding: 15px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: var(--border-radius); 
+            background-color: var(--sidebar-bg); 
+            color: var(--accent-color); 
+            border: 2px solid var(--accent-color); 
+            font-family: 'Quantico', sans-serif; 
+            transition: all 0.3s ease;
+        }
+
+        .btn-copiar-contador:hover {
+            background-color: var(--accent-color);
+            color: var(--sidebar-bg);
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <div class="wg-emblem">📜</div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">EXTRA-NARRADA</h1>
+            </section>
+            
+            <section class="content-section">
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title" style="font-size: 26px;">REGRAS E PREMIAÇÕES</h2>
+                    
+                    <div class="info-box">
+                        <p style="text-align: center; font-weight: bold;" class="highlight-text">PODE FAZER SOMENTE APÓS ESTAR NO RPG POR CINCO DIAS</p>
+                        <p style="text-align: center; font-size: 14px; margin-top: 5px;">A regra acima é válida apenas para jogadores novatos. Jogadores antigos de temporadas anteriores não precisam esperar esse tempo.</p>
+                    </div>
+
+                    <p style="margin-bottom: 20px;">Uma Extra-Narrada é uma história atemporal em que você desenvolve o backstory e a trama do seu personagem. Por ser atemporal, você pode tanto fazer uma que se passe nos dias atuais do RPG, como também no passado do seu personagem, mas <strong>não pode fazer uma que se passe no futuro</strong>.</p>
+                    <p style="margin-bottom: 20px;">O tema é livre, mas não exagere; não faça coisas absurdas, como atacar um Nobre Celestial sem contexto. Ao terminar de escrever, envie no privado de qualquer ADM e espere pela avaliação; não peça permissão para enviar, apenas envie e informe qual é o seu personagem (vá até a página inicial do site para ter acesso ao link direto para o WhatsApp de cada ADM). As recompensas máximas possíveis são APENAS essas:</p>
+
+                    <ul style="margin-left: 20px; margin-bottom: 25px; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;"><strong>Berries:</strong> ฿100.000.000</li>
+                        <li style="margin-bottom: 8px;"><strong>Atributos:</strong> 2.000 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Haki:</strong> 1.000 pontos. <em>(O jogador só poderá ganhar pontos de Haki caso o personagem já o tenha desbloqueado. Caso contrário, os pontos não poderão ser acumulados. Veja a página <a href="haki.html" class="highlight-text" style="font-size: 16px;">Haki</a>)</em>.</li>
+                        <li style="margin-bottom: 8px;"><strong>Akuma no Mi:</strong> 1.000 pontos. <em>(Apenas se o personagem já tiver comido uma Fruta)</em>.</li>
+                        <li style="margin-bottom: 8px;"><strong>Técnicas:</strong> Pode aprender até duas técnicas.</li>
+                        <li style="margin-bottom: 8px;"><strong>Navio:</strong> No máximo no nível de uma Caravela.</li>
+                        <li style="margin-bottom: 8px;"><strong>NPC Especial:</strong> Você mesmo deve apresentar o personagem novo durante a Extra-Narrada, desenvolvê-lo bem, torná-lo camarada do seu personagem principal e avisar ao ADM que deseja recrutá-lo.</li>
+                    </ul>
+
+                    <div style="border-top: 1px dashed var(--sidebar-border); padding-top: 20px; margin-top: 20px;">
+                        <ul style="margin-left: 20px; font-weight: bold; color: var(--accent-color);">
+                            <li style="margin-bottom: 8px;">Limite: Apenas 1 Extra-Narrada por mês.</li>
+                            <li style="margin-bottom: 8px;">Exigência: Mínimo de 12.000 caracteres.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box" style="border-left-color: #f44336; background-color: rgba(244, 67, 54, 0.05); margin-top: 25px;">
+                        <h3 style="color: #f44336; font-family: 'Quantico', sans-serif; font-size: 18px; margin-bottom: 10px;">REAVALIAÇÃO</h3>
+                        <p style="font-size: 14px;">Caso você não fique satisfeito com a nota, pode pedir para que a sua Extra-Narrada seja reavaliada por outro ADM (fica a critério do ADM aceitar ou não reavaliar). Se a reavaliação ocorrer, a <strong>segunda nota recebida será a definitiva</strong>, seja ela melhor ou pior. Apenas uma reavaliação é permitida por Extra-Narrada. Em certos meses, os ADMs permitem que 2 Extra-Narradas sejam enviadas, e no caso desses meses, a reavaliação não é permitida.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title" style="font-size: 26px;">ESCRITOR DE CENAS</h2>
+                    
+                    <div class="box-content">
+                        <p style="text-align: center; margin-bottom: 20px; font-size: 14px;">Utilize o bloco abaixo para redigir sua história. O sistema avaliará automaticamente se a meta de caracteres foi atingida.</p>
+                        
+                        <textarea class="contador-textarea" data-min-chars="12000" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 250px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

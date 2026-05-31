@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missões - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .wg-emblem {
+            font-size: 80px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+            cursor: pointer;
+        }
+
+        .highlight-text {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .info-box {
+            background-color: rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            line-height: 1.6;
+        }
+
+        .sub-attr {
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .sub-attr h3 {
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .contador-textarea {
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            border: 2px solid var(--sidebar-border); 
+            border-radius: var(--border-radius); 
+            padding: 15px; 
+            width: 100%; 
+            font-size: 14px; 
+            box-sizing: border-box; 
+            font-family: 'Comfortaa', sans-serif; 
+            resize: vertical; 
+            text-align: justify; 
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .contador-textarea:focus { 
+            outline: none; 
+            border-color: var(--accent-color); 
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+
+        .stats-bar {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 16px; 
+            font-weight: bold; 
+            background: var(--bg-color); 
+            padding: 15px; 
+            border-radius: var(--border-radius); 
+            border: 2px solid var(--sidebar-border);
+            margin-top: 15px;
+        }
+
+        .btn-copiar-contador {
+            width: 100%; 
+            margin-top: 20px; 
+            padding: 15px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: var(--border-radius); 
+            background-color: var(--sidebar-bg); 
+            color: var(--accent-color); 
+            border: 2px solid var(--accent-color); 
+            font-family: 'Quantico', sans-serif; 
+            transition: all 0.3s ease;
+        }
+
+        .btn-copiar-contador:hover {
+            background-color: var(--accent-color);
+            color: var(--sidebar-bg);
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <div class="wg-emblem">🎯</div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">MISSÕES</h1>
+            </section>
+            
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 26px;">
+                    MISSÕES AUTO-NARRADAS <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">As missões auto-narradas são aventuras ou serviços escritos pelo próprio jogador. Nelas, o jogador narra o personagem realizando algo relacionado à sua organização específica. Façam as missões de acordo com sua organização, executando suas funções semanais para garantir um bom serviço. Independente da quantidade de caracteres, o ganho continua o mesmo.</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 25px; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">É permitido realizar apenas 1 missão auto-narrada por semana.</li>
+                        <li style="margin-bottom: 8px;">Recompensas:
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li style="margin-bottom: 8px;">฿50.000.000</li>
+                                <li style="margin-bottom: 8px;">250 pontos de atributos.</li>
+                                <li style="margin-bottom: 8px;">200 pontos de Haki <strong>OU</strong> Akuma no Mi (se já tiver liberado).</li>
+                            </ul>
+                        </li>
+                        <li style="margin-bottom: 8px;">Mínimo de 1.500 caracteres.</li>
+                    </ul>
+
+                    <h3 style="font-family: 'Quantico', sans-serif; font-size: 22px; margin-bottom: 15px; text-align: center;">Exemplos de Temas por Organização</h3>
+                    
+                    <div class="sub-attr">
+                        <h3>Caçadores de Recompensa</h3>
+                        <p style="margin-bottom: 10px; line-height: 1.6;">Busquem piratas, capturem-nos, levem-nos à justiça e reivindiquem suas recompensas. Também é permitido atacar navios piratas e roubar suas embarcações. Caso escolham essa última opção, receberão um Escuna, mas apenas uma vez por mês.</p>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3>Marinheiros ou Governo Mundial</h3>
+                        <p style="margin-bottom: 10px; line-height: 1.6;">Devem proteger um nobre (exceto Celestial), escoltando-o até o destino ou impedindo ataques de piratas e outros criminosos. Outras missões incluem evitar crimes na sua ilha, atender chamados de ajuda da população, entre outros.</p>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3>Vanguarda Popular Revolucionária</h3>
+                        <p style="margin-bottom: 10px; line-height: 1.6;">Invadam postos avançados, laboratórios de campo ou navios de carga de insumos tecnológicos do Governo Mundial para confiscar materiais científicos necessários. Também é permitido realizar resgates de prisioneiros políticos ou cobaias humanas capturadas pelo governo, ou realizar testes biotecnológicos de campo com novos protótipos de armas ou mutações orgânicas de forma totalmente sigilosa contra patrulhas isoladas.</p>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3>Piratas</h3>
+                        <p style="margin-bottom: 10px; line-height: 1.6;">Podem atacar navios da Marinha ou eliminar piratas rivais, usando a criatividade (sem exageros, como encontrar uma Akuma no Mi ou itens extremamente valiosos). Também podem roubar cargas de dinheiro ou joias, atacando lojas ou navios. Uma vez por mês, caso escolham essa última opção, receberão uma Escuna no inventário.</p>
+                    </div>
+
+                    <div style="border-top: 1px dashed var(--sidebar-border); padding-top: 30px; margin-top: 30px;" class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Missões Auto-Narradas</h3>
+                        <textarea class="contador-textarea" data-min-chars="1500" placeholder="Escreva sua missão auto-narrada aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 26px;">
+                    MISSÕES NARRADAS <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">As missões narradas serão adicionadas conforme a organização, podendo ser realizadas individualmente ou em grupo. De acordo com o nível da organização e o grau de periculosidade da missão, será estabelecido um prazo para sua conclusão, geralmente de até 15 dias.</p>
+                    
+                    <p style="margin-bottom: 15px; line-height: 1.6;">As missões contarão com narrações em determinados momentos, mas pode haver períodos sem intervenção direta. Ainda assim, a equipe administrativa estará sempre atenta ao progresso dos participantes, garantindo que as missões sejam finalizadas dentro do prazo. Cada organização deverá enviar um relatório de andamento uma ou duas vezes por semana, permitindo o acompanhamento do desempenho. Essas missões são destinadas a jogadores com até 10.000 pontos, favorecendo uma evolução equilibrada.</p>
+
+                    <div class="info-box">
+                        <p style="margin-bottom: 10px;"><strong>Malefício:</strong> Atrasos no prazo estimado resultarão em descontos no salário.</p>
+                        <p><strong>Benefício:</strong> Ganhos em pontos e dinheiro proporcionais ao desempenho na missão.</p>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+                        <div style="border: 2px solid var(--sidebar-border); padding: 20px; border-radius: var(--border-radius); background-color: rgba(0,0,0,0.02);">
+                            <h3 style="font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Ranking B – Nível Intermediário<br><span style="font-size: 14px; font-family: 'Comfortaa', sans-serif; font-weight: normal;">(Desafios Moderados)</span></h3>
+                            <ul style="list-style-type: none; margin-left: 0; line-height: 1.6;">
+                                <li style="margin-bottom: 8px;"><strong>Pontos recomendados:</strong> 3.500 a 7.000</li>
+                                <li><strong>Recompensa:</strong> 300 pontos + ฿10.000.000 de berries + drops da missão (possível)</li>
+                            </ul>
+                        </div>
+
+                        <div style="border: 2px solid var(--sidebar-border); padding: 20px; border-radius: var(--border-radius); background-color: rgba(0,0,0,0.02);">
+                            <h3 style="font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Ranking A – Nível Avançado<br><span style="font-size: 14px; font-family: 'Comfortaa', sans-serif; font-weight: normal;">(Desafios de Alto Risco)</span></h3>
+                            <ul style="list-style-type: none; margin-left: 0; line-height: 1.6;">
+                                <li style="margin-bottom: 8px;"><strong>Pontos recomendados:</strong> 7.000 a 10.000</li>
+                                <li><strong>Recompensa:</strong> 500 pontos + ฿15.000.000 de berries + drops da missão (possível)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px dashed var(--sidebar-border); padding-top: 30px; margin-top: 30px;" class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Cenas</h3>
+                        <textarea class="contador-textarea" data-min-chars="0" placeholder="Escreva sua narrativa da missão aqui..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const textareas = document.querySelectorAll('.contador-textarea');
+        textareas.forEach(ta => {
+            const wrapper = ta.closest('.box-content');
+            if (!wrapper) return;
+            const charsEl = wrapper.querySelector('.scene-chars');
+            const parasEl = wrapper.querySelector('.scene-paras');
+            const statusEl = wrapper.querySelector('.scene-status');
+            const minChars = parseInt(ta.getAttribute('data-min-chars')) || 0;
+
+            const update = () => {
+                const text = ta.value;
+                const chars = text.length;
+                const paras = text.trim() === "" ? 0 : text.split(/\n+/).filter(p => p.trim().length > 0).length;
+
+                if (charsEl) charsEl.textContent = chars.toLocaleString('pt-BR');
+                if (parasEl) parasEl.textContent = paras.toLocaleString('pt-BR');
+
+                if (statusEl && minChars > 0) {
+                    if (chars >= minChars) {
+                        statusEl.textContent = `(✔️ Alcançou o mínimo de ${minChars.toLocaleString('pt-BR')})`;
+                        statusEl.style.color = "#4caf50";
+                    } else {
+                        const faltam = minChars - chars;
+                        statusEl.textContent = `(❌ Faltam ${faltam.toLocaleString('pt-BR')})`;
+                        statusEl.style.color = "#f44336";
+                    }
+                }
+            };
+
+            ta.addEventListener('input', update);
+            update();
+        });
+
+        const copyButtons = document.querySelectorAll('.btn-copiar-contador');
+        copyButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const wrapper = this.closest('.box-content');
+                if (!wrapper) return;
+                const textarea = wrapper.querySelector('textarea');
+                if (!textarea || !textarea.value) return;
+
+                navigator.clipboard.writeText(textarea.value).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = "Texto Copiado!";
+                    this.style.backgroundColor = "#4caf50";
+                    this.style.color = "#fff";
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.backgroundColor = "";
+                        this.style.color = "";
+                    }, 2000);
+                });
+            });
+        });
+    });
+    </script>
+</body>
+</html>
