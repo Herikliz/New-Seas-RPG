@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn"> </button>
+    <div id="sidebar-container"></div>
+
+    <div class="calc-floating">
+        <div class="calc-title">Calculadora de Rota ▲</div>
+        
+        <div class="input-group">
+            <label>Distância (Quadrados selecionados)</label>
+            <input type="text" id="quadrados" value="0" readonly>
+        </div>
+
+        <div class="input-group">
+            <label>Meio de Transporte</label>
+            <select id="barco">
+                <option value="0" disabled selected>Selecione...</option>
+                <optgroup label="Barcos Civis">
+                    <option value="12">Bote (12h/q)</option>
+                    <option value="10">Barco Pesqueiro (10h/q)</option>
+                    <option value="8">Escuna (8h/q)</option>
+                    <option value="8">Brigue (8h/q)</option>
+                    <option value="7">Caravela (7h/q)</option>
+                    <option value="6">Fragata (6h/q)</option>
+                    <option value="5">Gran General (5h/q)</option>
+                </optgroup>
+                <optgroup label="Marinha/Governo">
+                    <option value="9">C-15 Kenpachi (9h/q)</option>
+                    <option value="7">Z-10 Perci (7h/q)</option>
+                    <option value="6">B-47 Hajime (6h/q)</option>
+                    <option value="5">T-33 Apollo (5h/q)</option>
+                    <option value="4">K-55 Mereoleona (4h/q)</option>
+                    <option value="3">A-1 Atlas (3h/q)</option>
+                </optgroup>
+                <optgroup label="Especiais">
+                    <option value="2">Pérola Negra (2h/q)</option>
+                    <option value="5">Holandês Voador (5h/q)</option>
+                    <option value="4">Vingança da Rainha Ana (4h/q)</option>
+                    <option value="4">Silent Mary (4h/q)</option>
+                    <option value="4">Pequod (4h/q)</option>
+                </optgroup>
+                <optgroup label="Individual">
+                    <option value="18">Nado Comum (18h/q)</option>
+                    <option value="11">Nado Tritão/Sereiano (11h/q)</option>
+                    <option value="5">Voo (5h/q)</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="input-group checkbox-group" id="timoneiro-container">
+            <input type="checkbox" id="timoneiro">
+            <label for="timoneiro">Com Timoneiro (-50% tempo)</label>
+        </div>
+
+        <div class="resultado-nav" id="resultadoTexto">Tempo Total: 0h</div>
+
+        <button class="btn-copy-relatorio" onclick="copiarRelatorio(this)">Copiar Relatório</button>
+        <button class="btn-clear" onclick="limparQuadrados()">Limpar Quadrados</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">GEOGRAFIA E NAVEGAÇÃO</h1>
+            </section>
+
+            <div class="geo-layout">
+                <div class="rank-box">
+                    <p style="margin-bottom: 15px;">O sistema de navegação do nosso RPG é bem simples. Abaixo estarão as informações sobre quais navios, quantos caracteres e qual Log Pose vocês irão precisar para navegar pelos mares. Aproveite!</p>
+                    <h2 class="title-quantico rank-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px;">SISTEMA DE LOCOMOÇÃO</h2>
+
+                    <div class="maps-grid" style="margin-bottom: 25px;">
+                        <div>
+                            <div class="map-title">North Blue</div>
+                            <div class="map-container">
+                                <img src="assets/img/North Blue.png" alt="North Blue">
+                                <div class="grid-overlay" data-group="left" data-index="0"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">East Blue</div>
+                            <div class="map-container">
+                                <img src="assets/img/East Blue.png" alt="East Blue">
+                                <div class="grid-overlay" data-group="right" data-index="0"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="map-title">Calm Belt (North Blue)</div>
+                            <div class="map-container">
+                                <img src="assets/img/Calm Belt (North Blue).png" alt="Calm Belt North Blue">
+                                <div class="grid-overlay" data-group="left" data-index="1"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">Calm Belt (East Blue)</div>
+                            <div class="map-container">
+                                <img src="assets/img/Calm Belt (East Blue).png" alt="Calm Belt East Blue">
+                                <div class="grid-overlay" data-group="right" data-index="1"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="map-title">Novo Mundo</div>
+                            <div class="map-container">
+                                <img src="assets/img/Novo Mundo.png" alt="Novo Mundo">
+                                <div class="grid-overlay" data-group="left" data-index="2"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">Paraíso</div>
+                            <div class="map-container">
+                                <img src="assets/img/Paraíso.png" alt="Paraíso">
+                                <div class="grid-overlay" data-group="right" data-index="2"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="map-title">Calm Belt (West Blue)</div>
+                            <div class="map-container">
+                                <img src="assets/img/Calm Belt (West Blue).png" alt="Calm Belt West Blue">
+                                <div class="grid-overlay" data-group="left" data-index="3"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">Calm Belt (South Blue)</div>
+                            <div class="map-container">
+                                <img src="assets/img/Calm Belt (South Blue).png" alt="Calm Belt South Blue">
+                                <div class="grid-overlay" data-group="right" data-index="3"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="map-title">West Blue</div>
+                            <div class="map-container">
+                                <img src="assets/img/West Blue.png" alt="West Blue">
+                                <div class="grid-overlay" data-group="left" data-index="4"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">South Blue</div>
+                            <div class="map-container">
+                                <img src="assets/img/South Blue.png" alt="South Blue">
+                                <div class="grid-overlay" data-group="right" data-index="4"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">O mapa do mundo de One Piece é dividido em mares, que são: Blues, Grand Line, Novo Mundo e Calm Belt. Para se locomover nesse mapa, você pode escolher entre diferentes navios para executar a travessia entre os mares.</p>
+
+                    <p style="margin-bottom: 15px;">Para viajar, basta informar sua localização atual e o destino desejado usando as coordenadas do mapa (clicando em Copiar Mapa e enviando no <a href="https://chat.whatsapp.com/FHkr8XCRYx1EGloW474rAn">Deғιɴιçα̃o de Roтαѕ ⋮⋮ Oɴe pιece</a>; além disso, antes de enviar isso lá, precisa mandar a cena de navegação no <a href="https://chat.whatsapp.com/Jw5S6zJecDx1FwJzPCcMns">Neɯ Seαs O.P (Ꮻɴ)</a>). Por exemplo, se você está em Toroa no mar West Blue e quer ir para Ohara, também no West Blue, pode escolher o meio de transporte e calcular o tempo de deslocamento de acordo. O sistema funciona com o método de plano quadriculado. Cada quadradinho representará um tempo necessário para ser percorrido, podendo ser aéreo ou marítimo.</p>
+
+                    <p style="margin-bottom: 20px;">O modo de navegação aérea (no caso de Frutas) dependerá da velocidade de deslocamento ou do tipo de Fruta. Peça a um ADM que calcule o tempo necessário para percorrer cada quadradinho com o sistema de viagem de sua Fruta.</p>
+
+                    <h3 class="title-quantico" style="color: var(--accent-color); font-size: 22px; margin-bottom: 15px;">Rolagem de Dados</h3>
+                    <p>Quando mandar o cálculo de tempo no Deғιɴιçα̃o de Roтαѕ ⋮⋮ Oɴe pιece, entre <a href="https://www.rolldicewithfriends.com/rooms/newseas">nesse link</a> e preencha o nome de seu personagem lá, e então clique para girar 1d20, tire print do resultado e mande no grupo.</p>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title">BLUES</h2>
+                    <p style="margin-bottom: 15px;">Os Blues são os mares mais calmos e suaves que existem no mundo, sendo divididos em quatro partes: North Blue, East Blue, South Blue e West Blue. Para navegar entre eles, você precisa:</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;"><strong>Se não é Navegador:</strong> Escrever 1.200 caracteres. Se não tiver um NPC Especial Navegador, tem uma chance de 50% de acabar indo pra ilha errada.</li>
+                        <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 720 caracteres e não precisa de um NPC Especial.</li>
+                    </ul>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado (d20)</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>01–05</td><td>Tempestade súbita: Navio perde 3 vidas ao invés de 1.</td></tr>
+                            <tr><td>06–09</td><td>Bateu numa pedra: Navio perde 2 vidas ao invés de 1.</td></tr>
+                            <tr><td>10</td><td>A viagem segue normalmente.</td></tr>
+                            <tr><td>11–15</td><td>Boas correntes: menos 1 hora de viagem.</td></tr>
+                            <tr><td>16–19</td><td>Ótima navegação: menos 2 horas de viagem.</td></tr>
+                            <tr><td>20</td><td>Navegação perfeita: menos 3 horas de viagem e o navio não perde vidas.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title">PARAÍSO</h2>
+                    <p style="margin-bottom: 15px;">A Grand Line é uma corrente oceânica cercada pelos Calm Belt, que se estende ao longo de uma linha imaginária do noroeste ao sudeste pelo meio do mundo e é perpendicular à Red Line. A Red Line é um vasto continente que circunda o globo de nordeste a sudoeste. Essas duas linhas dividem o resto do mar em North Blue, East Blue, West Blue e South Blue.</p>
+                    
+                    <p style="margin-bottom: 15px;">Para atravessar a Red Line, é necessário ser um Navegador (ou ter um NPC Especial Navegador) com um Log Pose. Ao chegarem na Grand Line, os mesmos requisitos são exigidos, mas:</p>
+
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;"><strong>Se não é Navegador:</strong> Escrever 2.400 caracteres e ter um NPC Especial que é Navegador. Sem Navegador é impossível velejar por lá.</li>
+                        <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 1.440 caracteres e não precisa de um NPC Especial.</li>
+                    </ul>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado (d20)</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>01</td><td>Rei dos Mares aparece.</td></tr>
+                            <tr><td>02–05</td><td>Clima caótico: Perde 4 vidas.</td></tr>
+                            <tr><td>06–09</td><td>Corrente traiçoeira: Perde 2 vidas.</td></tr>
+                            <tr><td>10</td><td>Desvio leve de rota: Sem perdas, mas viagem atrasa 1 hora.</td></tr>
+                            <tr><td>11–15</td><td>Corrente instável controlada: Sem perdas, sem bônus de tempo.</td></tr>
+                            <tr><td>16–19</td><td>Atalho acidental eficiente: Menos 1 hora de viagem.</td></tr>
+                            <tr><td>20</td><td>Caminho limpo e estável: Menos 2 horas e sem perda de vidas.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title">NOVO MUNDO</h2>
+                    <p style="margin-bottom: 15px;">Algumas ilhas no Novo Mundo alteram ou ocultam completamente seus campos magnéticos, tornando necessário um novo tipo de Log Pose para evitar se perder. Além disso, a estabilidade do campo magnético de uma ilha geralmente indica sua estabilidade geral. Existem também ilhas raras no Novo Mundo que não são detectadas de forma alguma por um Log Pose.</p>
+                    
+                    <p style="margin-bottom: 15px;">Um revestimento especial é necessário para alcançar a Ilha dos Homens-Peixe, a principal entrada para o Novo Mundo para os piratas. Para obter o revestimento, ele deve ser feito no Arquipélago Sabaody. O custo do revestimento é variável de acordo com a qualidade do Carpinteiro que revestirá o navio.</p>
+                    
+                    <p style="margin-bottom: 15px;">Existe uma maneira de atravessar sem o revestimento, mas é exclusiva para navios da Marinha e do Governo Mundial. Para navegar neste Mar:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;"><strong>Se não é Navegador:</strong> Escrever 3.600 caracteres e ter um NPC Especial que é Navegador. Sem Navegador é impossível velejar por lá.</li>
+                        <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 2.400 caracteres e não precisa de um NPC Especial.</li>
+                    </ul>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado (d20)</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>01–05</td><td>Reis do Mar aparecem.</td></tr>
+                            <tr><td>06–09</td><td>Mar revolto e ataque inesperado: Perde 4 vidas.</td></tr>
+                            <tr><td>10</td><td>Clima ameaçador: Sem perdas, mas atraso de 2 horas.</td></tr>
+                            <tr><td>11–15</td><td>Condições severas, mas controladas: Sem perdas, mas atraso de 1 hora.</td></tr>
+                            <tr><td>16–19</td><td>Comando de elite: Menos 1 hora de viagem.</td></tr>
+                            <tr><td>20</td><td>Sorte rara: Menos 2 horas de viagem e nenhuma perda de vida.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title">CALM BELT</h2>
+                    <p style="margin-bottom: 15px;">O Calm Belt é uma região situada ao norte e ao sul do Paraíso e do Novo Mundo. Devido à ausência quase total de correntes oceânicas e ventos, e à presença de muitos Reis dos Mares, estas áreas são barreiras muito eficazes para aqueles que tentam entrar na Grand Line.</p>
+                    
+                    <p style="margin-bottom: 15px;">No entanto, cientistas da Marinha descobriram uma forma de atravessar essas áreas revestindo os cascos dos navios com kairoseki. Esse minério possui propriedades semelhantes às do mar, o que dificulta a percepção das criaturas marinhas em relação ao navio. Contra-Almirantes e patentes acima possuem acesso a essa tecnologia, assim como os CP-6 em diante.</p>
+                    
+                    <p style="margin-bottom: 20px;">Devido à falta de correntes marítimas, navios sem propulsores ou remos não conseguem navegar nessas águas.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado (d20)</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>01–09</td><td>Ataque de Rei do Mar.</td></tr>
+                            <tr><td>10</td><td>Calmaria total: Viagem prossegue com atraso de 1 hora.</td></tr>
+                            <tr><td>11–15</td><td>Navegação tensa: Sem perdas, mas sem bônus de tempo.</td></tr>
+                            <tr><td>16–19</td><td>Caminho seguro e oculto: Menos 1 hora de viagem.</td></tr>
+                            <tr><td>20</td><td>Passagem perfeita: Menos 2 horas de viagem.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title">NAVEGAÇÃO INDIVIDUAL</h2>
+                    <p style="margin-bottom: 15px;">Para cruzar os mares sem o auxílio de uma embarcação, o personagem enfrentará um teste extremo de resistência onde precisará gastar 2.000 pontos de Estamina para cada quadrado avançado no mapa. Como a vastidão e as correntes marítimas são implacáveis, o tempo exigido para essa travessia individual varia estritamente de acordo com o método de locomoção utilizado.</p>
+                    
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;"><strong>Nado Comum:</strong> 18 horas por quadrado;</li>
+                        <li style="margin-bottom: 8px;"><strong>Nado de Tritões e Sereianos:</strong> 11 horas por quadrado;</li>
+                        <li style="margin-bottom: 8px;"><strong>Voo:</strong> 5 horas por quadrado.</li>
+                    </ul>
+                </div>
+
+                <div class="rank-box" style="border-color: #f44336;">
+                    <h2 class="title-quantico rank-title" style="color: #f44336; border-color: #f44336;">ATENÇÃO</h2>
+                    <p style="margin-bottom: 15px;">Não há limite ou requisito mínimo de pontos para atravessar os mares, tampouco necessidade de um barco; basta confiar na sua sorte. Se desejar tentar qualquer tipo de navegação, avise um ADM e ele irá narrar caso surjam adversidades durante a jornada marítima.</p>
+                    
+                    <p>Knock Up Stream é a rampa de acesso para Skypiea, que abre todas as segundas e sextas-feiras às 8:00 e encerra às 18:00. Essa é a única forma de chegar em Skypiea, a menos que você tenha um meio alternativo para voar.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

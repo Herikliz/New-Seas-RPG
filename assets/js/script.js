@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
             </li>
             <li>
-                <a href="https://sites.google.com/view/new-seas-op/geografia" class="toggle-btn">GEOGRAFIA <span class="arrow">▼</span></a>
+                <a href="geografia.html" class="toggle-btn">GEOGRAFIA <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li>
                         <a href="https://sites.google.com/view/new-seas-op/geografia/ilhas" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
@@ -860,3 +860,376 @@ document.addEventListener('DOMContentLoaded', () => {
         verificarTrabalho();
     }
 });
+
+// ==========================================
+// SISTEMA DE GEOGRAFIA E NAVEGAÇÃO
+// ==========================================
+const mapGrids = document.querySelectorAll('.grid-overlay');
+if (mapGrids.length > 0) {
+    const inputQuadrados = document.getElementById('quadrados');
+    const selectBarco = document.getElementById('barco');
+    const checkboxTimoneiro = document.getElementById('timoneiro');
+    const timoneiroContainer = document.getElementById('timoneiro-container');
+    const resultadoTexto = document.getElementById('resultadoTexto');
+    const cols = 21;
+    const rows = 14;
+
+    const redLineZones = [
+        { group: 'left', index: 0, x: 20, y: 0 }, { group: 'left', index: 0, x: 20, y: 1 }, { group: 'left', index: 0, x: 20, y: 2 }, { group: 'left', index: 0, x: 20, y: 3 }, { group: 'left', index: 0, x: 20, y: 4 }, { group: 'left', index: 0, x: 20, y: 5 }, { group: 'left', index: 0, x: 20, y: 6 }, { group: 'left', index: 0, x: 20, y: 7 }, { group: 'left', index: 0, x: 20, y: 8 }, { group: 'left', index: 0, x: 20, y: 9 }, { group: 'left', index: 0, x: 20, y: 10 }, { group: 'left', index: 0, x: 20, y: 11 }, { group: 'left', index: 0, x: 20, y: 12 }, { group: 'left', index: 0, x: 20, y: 13 },
+        { group: 'right', index: 0, x: 0, y: 0 }, { group: 'right', index: 0, x: 0, y: 1 }, { group: 'right', index: 0, x: 0, y: 2 }, { group: 'right', index: 0, x: 0, y: 3 }, { group: 'right', index: 0, x: 0, y: 4 }, { group: 'right', index: 0, x: 0, y: 5 }, { group: 'right', index: 0, x: 0, y: 6 }, { group: 'right', index: 0, x: 0, y: 7 }, { group: 'right', index: 0, x: 0, y: 8 }, { group: 'right', index: 0, x: 0, y: 9 }, { group: 'right', index: 0, x: 0, y: 10 }, { group: 'right', index: 0, x: 0, y: 11 }, { group: 'right', index: 0, x: 0, y: 12 }, { group: 'right', index: 0, x: 0, y: 13 },
+        { group: 'left', index: 1, x: 20, y: 0 }, { group: 'left', index: 1, x: 20, y: 1 }, { group: 'left', index: 1, x: 20, y: 2 }, { group: 'left', index: 1, x: 20, y: 3 }, { group: 'left', index: 1, x: 20, y: 4 }, { group: 'left', index: 1, x: 20, y: 5 }, { group: 'left', index: 1, x: 20, y: 6 }, { group: 'left', index: 1, x: 20, y: 7 }, { group: 'left', index: 1, x: 20, y: 8 }, { group: 'left', index: 1, x: 20, y: 9 }, { group: 'left', index: 1, x: 20, y: 10 }, { group: 'left', index: 1, x: 20, y: 11 }, { group: 'left', index: 1, x: 20, y: 12 }, { group: 'left', index: 1, x: 20, y: 13 },
+        { group: 'right', index: 1, x: 0, y: 0 }, { group: 'right', index: 1, x: 0, y: 1 }, { group: 'right', index: 1, x: 0, y: 2 }, { group: 'right', index: 1, x: 0, y: 3 }, { group: 'right', index: 1, x: 0, y: 4 }, { group: 'right', index: 1, x: 0, y: 5 }, { group: 'right', index: 1, x: 0, y: 6 }, { group: 'right', index: 1, x: 0, y: 7 }, { group: 'right', index: 1, x: 0, y: 8 }, { group: 'right', index: 1, x: 0, y: 9 }, { group: 'right', index: 1, x: 0, y: 10 }, { group: 'right', index: 1, x: 0, y: 11 }, { group: 'right', index: 1, x: 0, y: 12 }, { group: 'right', index: 1, x: 0, y: 13 },
+        { group: 'left', index: 2, x: 20, y: 0 }, { group: 'left', index: 2, x: 20, y: 1 }, { group: 'left', index: 2, x: 20, y: 2 }, { group: 'left', index: 2, x: 20, y: 3 }, { group: 'left', index: 2, x: 20, y: 4 }, { group: 'left', index: 2, x: 20, y: 5 }, { group: 'left', index: 2, x: 20, y: 6 }, { group: 'left', index: 2, x: 20, y: 7 }, { group: 'left', index: 2, x: 20, y: 8 }, { group: 'left', index: 2, x: 20, y: 9 }, { group: 'left', index: 2, x: 20, y: 10 }, { group: 'left', index: 2, x: 20, y: 11 }, { group: 'left', index: 2, x: 20, y: 12 }, { group: 'left', index: 2, x: 20, y: 13 },
+        { group: 'right', index: 2, x: 0, y: 0 }, { group: 'right', index: 2, x: 0, y: 1 }, { group: 'right', index: 2, x: 0, y: 2 }, { group: 'right', index: 2, x: 0, y: 3 }, { group: 'right', index: 2, x: 0, y: 4 }, { group: 'right', index: 2, x: 0, y: 5 }, { group: 'right', index: 2, x: 0, y: 6 }, { group: 'right', index: 2, x: 0, y: 7 }, { group: 'right', index: 2, x: 0, y: 8 }, { group: 'right', index: 2, x: 0, y: 9 }, { group: 'right', index: 2, x: 0, y: 10 }, { group: 'right', index: 2, x: 0, y: 11 }, { group: 'right', index: 2, x: 0, y: 12 }, { group: 'right', index: 2, x: 0, y: 13 },
+        { group: 'left', index: 3, x: 20, y: 0 }, { group: 'left', index: 3, x: 20, y: 1 }, { group: 'left', index: 3, x: 20, y: 2 }, { group: 'left', index: 3, x: 20, y: 3 }, { group: 'left', index: 3, x: 20, y: 4 }, { group: 'left', index: 3, x: 20, y: 5 }, { group: 'left', index: 3, x: 20, y: 6 }, { group: 'left', index: 3, x: 20, y: 7 }, { group: 'left', index: 3, x: 20, y: 8 }, { group: 'left', index: 3, x: 20, y: 9 }, { group: 'left', index: 3, x: 20, y: 10 }, { group: 'left', index: 3, x: 20, y: 11 }, { group: 'left', index: 3, x: 20, y: 12 }, { group: 'left', index: 3, x: 20, y: 13 },
+        { group: 'right', index: 3, x: 0, y: 0 }, { group: 'right', index: 3, x: 0, y: 1 }, { group: 'right', index: 3, x: 0, y: 2 }, { group: 'right', index: 3, x: 0, y: 3 }, { group: 'right', index: 3, x: 0, y: 4 }, { group: 'right', index: 3, x: 0, y: 5 }, { group: 'right', index: 3, x: 0, y: 6 }, { group: 'right', index: 3, x: 0, y: 7 }, { group: 'right', index: 3, x: 0, y: 8 }, { group: 'right', index: 3, x: 0, y: 9 }, { group: 'right', index: 3, x: 0, y: 10 }, { group: 'right', index: 3, x: 0, y: 11 }, { group: 'right', index: 3, x: 0, y: 12 }, { group: 'right', index: 3, x: 0, y: 13 },
+        { group: 'left', index: 4, x: 20, y: 0 }, { group: 'left', index: 4, x: 20, y: 1 }, { group: 'left', index: 4, x: 20, y: 2 }, { group: 'left', index: 4, x: 20, y: 3 }, { group: 'left', index: 4, x: 20, y: 4 }, { group: 'left', index: 4, x: 20, y: 5 }, { group: 'left', index: 4, x: 20, y: 6 }, { group: 'left', index: 4, x: 20, y: 7 }, { group: 'left', index: 4, x: 20, y: 8 }, { group: 'left', index: 4, x: 20, y: 9 }, { group: 'left', index: 4, x: 20, y: 10 }, { group: 'left', index: 4, x: 20, y: 11 }, { group: 'left', index: 4, x: 20, y: 12 }, { group: 'left', index: 4, x: 20, y: 13 },
+        { group: 'right', index: 4, x: 0, y: 0 }, { group: 'right', index: 4, x: 0, y: 1 }, { group: 'right', index: 4, x: 0, y: 2 }, { group: 'right', index: 4, x: 0, y: 3 }, { group: 'right', index: 4, x: 0, y: 4 }, { group: 'right', index: 4, x: 0, y: 5 }, { group: 'right', index: 4, x: 0, y: 6 }, { group: 'right', index: 4, x: 0, y: 7 }, { group: 'right', index: 4, x: 0, y: 8 }, { group: 'right', index: 4, x: 0, y: 9 }, { group: 'right', index: 4, x: 0, y: 10 }, { group: 'right', index: 4, x: 0, y: 11 }, { group: 'right', index: 4, x: 0, y: 12 }, { group: 'right', index: 4, x: 0, y: 13 }
+    ];
+
+    function isRedZone(group, index, x, y) {
+        return redLineZones.some(z => z.group === group && z.index === index && z.x === x && z.y === y);
+    }
+
+    document.querySelectorAll('.geo-layout .map-container').forEach(container => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-map-btn';
+        btn.innerText = '📸 Copiar Mapa';
+        btn.onclick = () => copiarMapa(container, btn);
+        container.parentElement.insertBefore(btn, container);
+    });
+
+    function atualizarContagemQuadrados() {
+        const totalSelected = document.querySelectorAll('.grid-cell.selected').length;
+        inputQuadrados.value = totalSelected;
+        calcularTempo();
+    }
+
+    window.limparQuadrados = function() {
+        document.querySelectorAll('.grid-cell.selected').forEach(c => c.classList.remove('selected'));
+        inputQuadrados.value = "0";
+        calcularTempo();
+    }
+
+    mapGrids.forEach(grid => {
+        const group = grid.dataset.group;
+        const index = parseInt(grid.dataset.index);
+
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                const cell = document.createElement('div');
+                cell.className = 'grid-cell';
+                cell.dataset.x = x;
+                cell.dataset.y = y;
+                cell.dataset.group = group;
+                cell.dataset.index = index;
+                
+                if (isRedZone(group, index, x, y)) {
+                    cell.classList.add('red-zone');
+                }
+                
+                cell.addEventListener('click', function() {
+                    if (this.classList.contains('selected')) {
+                        this.classList.remove('selected');
+                        atualizarContagemQuadrados();
+                        return;
+                    }
+
+                    const selectedElements = document.querySelectorAll('.grid-cell.selected');
+                    
+                    if (selectedElements.length === 0) {
+                        this.classList.add('selected');
+                    } else {
+                        let cx = parseInt(this.dataset.x);
+                        let cy = parseInt(this.dataset.y);
+                        let cg = this.dataset.group;
+                        let ci = parseInt(this.dataset.index);
+                        
+                        let isAdjacent = false;
+                        let isCurrentRedZone = isRedZone(cg, ci, cx, cy);
+
+                        selectedElements.forEach(el => {
+                            let sx = parseInt(el.dataset.x);
+                            let sy = parseInt(el.dataset.y);
+                            let sg = el.dataset.group;
+                            let si = parseInt(el.dataset.index);
+
+                            if (isCurrentRedZone && isRedZone(sg, si, sx, sy)) {
+                                isAdjacent = true;
+                                return;
+                            }
+
+                            if (cg === sg) {
+                                if (ci === si) {
+                                    if (Math.abs(cx - sx) <= 1 && Math.abs(cy - sy) <= 1) {
+                                        isAdjacent = true;
+                                    }
+                                } else if (ci === si + 1) {
+                                    if (cy === 0 && sy === rows - 1 && Math.abs(cx - sx) <= 1) {
+                                        isAdjacent = true;
+                                    }
+                                } else if (ci === si - 1) {
+                                    if (cy === rows - 1 && sy === 0 && Math.abs(cx - sx) <= 1) {
+                                        isAdjacent = true;
+                                    }
+                                }
+                            }
+                        });
+
+                        if (isAdjacent) {
+                            this.classList.add('selected');
+                        }
+                    }
+                    atualizarContagemQuadrados();
+                });
+
+                grid.appendChild(cell);
+            }
+        }
+    });
+
+    function calcularTempo() {
+        const quadrados = parseInt(inputQuadrados.value) || 0;
+        const tempoPorQuadrado = parseInt(selectBarco.value) || 0;
+        
+        let isIndividual = false;
+        if (selectBarco.selectedIndex > 0) {
+            isIndividual = selectBarco.options[selectBarco.selectedIndex].parentNode.label === "Individual";
+        }
+
+        if (isIndividual) {
+            timoneiroContainer.style.display = 'none';
+            checkboxTimoneiro.checked = false;
+        } else {
+            timoneiroContainer.style.display = 'flex';
+        }
+
+        if (quadrados > 0 && tempoPorQuadrado > 0) {
+            let horasTotais = quadrados * tempoPorQuadrado;
+            
+            if (checkboxTimoneiro.checked) {
+                horasTotais = horasTotais / 2;
+            }
+
+            const agora = new Date();
+            const dataChegada = new Date(agora.getTime() + (horasTotais * 60 * 60 * 1000));
+            
+            const dia = String(dataChegada.getDate()).padStart(2, '0');
+            const mes = String(dataChegada.getMonth() + 1).padStart(2, '0');
+            const ano = dataChegada.getFullYear();
+            const hora = String(dataChegada.getHours()).padStart(2, '0');
+            const minuto = String(dataChegada.getMinutes()).padStart(2, '0');
+            
+            const stringData = `${hora}h${minuto} do dia ${dia}/${mes}/${ano}`;
+
+            const totalMinutos = horasTotais * 60;
+            const totalHorasFloor = Math.floor(totalMinutos / 60);
+            const minutosRestantes = totalMinutos % 60;
+
+            const dias = Math.floor(totalHorasFloor / 24);
+            const horasRestantesDias = totalHorasFloor % 24;
+            
+            let textoDuracaoBase = "";
+            if (dias > 0) {
+                let strDias = dias === 1 ? "1 dia" : dias + " dias";
+                let strHoras = horasRestantesDias === 1 ? "1 hora" : horasRestantesDias + " horas";
+                
+                if (horasRestantesDias === 0 && minutosRestantes === 0) {
+                    textoDuracaoBase = strDias;
+                } else if (minutosRestantes === 0) {
+                    textoDuracaoBase = `${strDias} e ${strHoras}`;
+                } else {
+                    textoDuracaoBase = `${strDias}, ${strHoras} e ${minutosRestantes} minutos`;
+                }
+            } else {
+                let strHoras = totalHorasFloor === 1 ? "1 hora" : totalHorasFloor + " horas";
+                if (minutosRestantes === 0) {
+                    textoDuracaoBase = strHoras;
+                } else {
+                    textoDuracaoBase = `${strHoras} e ${minutosRestantes} minutos`;
+                }
+            }
+
+            let textoFormatadoExtra = `(${totalHorasFloor}h ${minutosRestantes}m)`;
+            let textoDuracao = `${textoDuracaoBase} ${textoFormatadoExtra}`;
+
+            const estaminaTotal = (quadrados * 2000).toLocaleString('pt-BR');
+            let infoEstamina = "";
+            if (isIndividual) {
+                infoEstamina = `<br>Custo de Estamina: ${estaminaTotal}`;
+            }
+
+            resultadoTexto.innerHTML = `Chegada: ${stringData}<br><small>Duração: ${textoDuracao}${infoEstamina}</small>`;
+        } else {
+            resultadoTexto.innerHTML = `Tempo Total: 0h`;
+        }
+    }
+
+    window.copiarRelatorio = function(btn) {
+        const quadrados = parseInt(inputQuadrados.value) || 0;
+        const tempoPorQuadrado = parseInt(selectBarco.value) || 0;
+        
+        if (quadrados <= 0 || tempoPorQuadrado <= 0) {
+            const originalText = btn.innerText;
+            btn.innerText = '❌ Rota Inválida!';
+            btn.style.backgroundColor = '#d32f2f';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = 'var(--accent-color)';
+            }, 1000);
+            return;
+        }
+
+        let isIndividual = false;
+        if (selectBarco.selectedIndex > 0) {
+            isIndividual = selectBarco.options[selectBarco.selectedIndex].parentNode.label === "Individual";
+        }
+        
+        let horasTotais = quadrados * tempoPorQuadrado;
+        if (!isIndividual && checkboxTimoneiro.checked) {
+            horasTotais = horasTotais / 2;
+        }
+
+        const agora = new Date();
+        const dataChegada = new Date(agora.getTime() + (horasTotais * 60 * 60 * 1000));
+        
+        const diaSaida = String(agora.getDate()).padStart(2, '0');
+        const mesSaida = String(agora.getMonth() + 1).padStart(2, '0');
+        const anoSaida = agora.getFullYear();
+        const horaSaida = String(agora.getHours()).padStart(2, '0');
+        const minSaida = String(agora.getMinutes()).padStart(2, '0');
+        const stringSaida = `${horaSaida}h${minSaida} do dia ${diaSaida}/${mesSaida}/${anoSaida}`;
+
+        const dia = String(dataChegada.getDate()).padStart(2, '0');
+        const mes = String(dataChegada.getMonth() + 1).padStart(2, '0');
+        const ano = dataChegada.getFullYear();
+        const hora = String(dataChegada.getHours()).padStart(2, '0');
+        const minuto = String(dataChegada.getMinutes()).padStart(2, '0');
+        const stringChegada = `${hora}h${minuto} do dia ${dia}/${mes}/${ano}`;
+
+        const estaminaTotal = (quadrados * 2000).toLocaleString('pt-BR');
+        const nomeBarco = selectBarco.options[selectBarco.selectedIndex].text;
+
+        let papel = "Navegador";
+        if (!isIndividual && checkboxTimoneiro.checked) {
+            papel = "Timoneiro";
+        }
+
+        let relatorio = `*Saindo de:* _______ [${stringSaida}]\n`;
+        relatorio += `*Destino Final:* _______ [${stringChegada}]\n\n`;
+        relatorio += `*Meio de Transporte:* ${nomeBarco}\n\n`;
+        
+        if (isIndividual) {
+            relatorio += `*Custo de Estamina:* ${estaminaTotal}\n`;
+        }
+        
+        relatorio += `*${papel}:* _______\n`;
+        relatorio += `*Tripulantes:* _______`;
+
+        navigator.clipboard.writeText(relatorio).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = '✅ Relatório Copiado!';
+            btn.style.backgroundColor = '#00b37e';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = 'var(--accent-color)';
+            }, 2000);
+        }).catch(err => {
+            const originalText = btn.innerText;
+            btn.innerText = '❌ Erro ao copiar';
+            btn.style.backgroundColor = '#d32f2f';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = 'var(--accent-color)';
+            }, 2000);
+        });
+    }
+
+    function copiarMapa(container, btn) {
+        const img = container.querySelector('img');
+        if (!img || !img.complete) {
+            const originalText = btn.innerText;
+            btn.innerText = '❌ Aguarde carregar';
+            btn.style.backgroundColor = '#d32f2f';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = 'var(--accent-color)';
+            }, 1000);
+            return;
+        }
+
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        
+        const hasGrid = container.querySelector('.grid-overlay');
+        
+        if (hasGrid) {
+            const cellWidth = canvas.width / cols;
+            const cellHeight = canvas.height / rows;
+            
+            ctx.lineWidth = Math.max(1, canvas.width / 1500); 
+            ctx.strokeStyle = 'rgba(0, 0, 0, 0.4)';
+            ctx.beginPath();
+            for(let i = 1; i < cols; i++) {
+                ctx.moveTo(i * cellWidth, 0);
+                ctx.lineTo(i * cellWidth, canvas.height);
+            }
+            for(let i = 1; i < rows; i++) {
+                ctx.moveTo(0, i * cellHeight);
+                ctx.lineTo(canvas.width, i * cellHeight);
+            }
+            ctx.stroke();
+            
+            const gridCells = container.querySelectorAll('.grid-cell.selected');
+            const radius = Math.min(cellWidth, cellHeight) * 0.15; 
+            
+            gridCells.forEach(cell => {
+                const x = parseInt(cell.dataset.x);
+                const y = parseInt(cell.dataset.y);
+                const cx = (x + 0.5) * cellWidth;
+                const cy = (y + 0.5) * cellHeight;
+                
+                ctx.fillStyle = 'rgba(103, 58, 183, 0.4)';
+                ctx.fillRect(x * cellWidth, y * cellHeight, cellWidth, cellHeight);
+                
+                ctx.beginPath();
+                ctx.arc(cx, cy, radius, 0, 2 * Math.PI);
+                ctx.fillStyle = '#ffffff';
+                ctx.fill();
+                ctx.lineWidth = radius * 0.3;
+                ctx.strokeStyle = '#000000';
+                ctx.stroke();
+            });
+        }
+        
+        canvas.toBlob(async function(blob) {
+            try {
+                const item = new ClipboardItem({ "image/png": blob });
+                await navigator.clipboard.write([item]);
+                const originalText = btn.innerText;
+                btn.innerText = '✅ Copiado!';
+                btn.style.backgroundColor = '#00b37e';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = 'var(--accent-color)';
+                }, 2000);
+            } catch (err) {
+                const originalText = btn.innerText;
+                btn.innerText = '❌ Erro ao copiar';
+                btn.style.backgroundColor = '#d32f2f';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = 'var(--accent-color)';
+                }, 2000);
+            }
+        }, 'image/png');
+    }
+
+    selectBarco.addEventListener('change', calcularTempo);
+    checkboxTimoneiro.addEventListener('change', calcularTempo);
+}
