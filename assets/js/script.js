@@ -1115,16 +1115,16 @@ if (mapGrids.length > 0) {
             papel = "Timoneiro";
         }
 
-        let relatorio = `*Saindo de:* _______ [${stringSaida}]\n`;
-        relatorio += `*Destino Final:* _______ [${stringChegada}]\n\n`;
+        let relatorio = `*Saindo de:* [${stringSaida}]\n`;
+        relatorio += `*Destino Final:* [${stringChegada}]\n\n`;
         relatorio += `*Meio de Transporte:* ${nomeBarco}\n\n`;
         
         if (isIndividual) {
             relatorio += `*Custo de Estamina:* ${estaminaTotal}\n`;
         }
         
-        relatorio += `*${papel}:* _______\n`;
-        relatorio += `*Tripulantes:* _______`;
+        relatorio += `*${papel}:* \n`;
+        relatorio += `*Tripulantes:* `;
 
         navigator.clipboard.writeText(relatorio).then(() => {
             const originalText = btn.innerText;
