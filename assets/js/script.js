@@ -890,8 +890,73 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 const mapGrids = document.querySelectorAll('.grid-overlay');
 if (mapGrids.length > 0) {
+    const calcContainer = document.getElementById('calculadora-rota-container');
+    if (calcContainer) {
+        calcContainer.innerHTML = `
+    <div class="calc-floating">
+        <div class="calc-title">Calculadora de Rota ▲</div>
+        
+        <div class="input-group">
+            <label>Distância (Quadrados selecionados)</label>
+            <input type="text" id="quadrados" value="0" readonly>
+        </div>
+
+        <div class="input-group">
+            <label>Meio de Transporte</label>
+            <select id="barco">
+                <option value="0" disabled selected>Selecione...</option>
+                <optgroup label="Barcos Civis">
+                    <option value="12">Bote (12h/q)</option>
+                    <option value="10">Barco Pesqueiro (10h/q)</option>
+                    <option value="8">Escuna (8h/q)</option>
+                    <option value="8">Brigue (8h/q)</option>
+                    <option value="7">Caravela (7h/q)</option>
+                    <option value="6">Fragata (6h/q)</option>
+                    <option value="5">Gran General (5h/q)</option>
+                </optgroup>
+                <optgroup label="Marinha/Governo">
+                    <option value="9">C-15 Kenpachi (9h/q)</option>
+                    <option value="7">Z-10 Perci (7h/q)</option>
+                    <option value="6">B-47 Hajime (6h/q)</option>
+                    <option value="5">T-33 Apollo (5h/q)</option>
+                    <option value="4">K-55 Mereoleona (4h/q)</option>
+                    <option value="3">A-1 Atlas (3h/q)</option>
+                </optgroup>
+                <optgroup label="Especiais">
+                    <option value="2">Pérola Negra (2h/q)</option>
+                    <option value="5">Holandês Voador (5h/q)</option>
+                    <option value="4">Vingança da Rainha Ana (4h/q)</option>
+                    <option value="4">Silent Mary (4h/q)</option>
+                    <option value="4">Pequod (4h/q)</option>
+                </optgroup>
+                <optgroup label="Individual">
+                    <option value="18">Nado Comum (18h/q)</option>
+                    <option value="11">Nado Tritão/Sereiano (11h/q)</option>
+                    <option value="5">Voo (5h/q)</option>
+                </optgroup>
+                <optgroup label="Outros">
+                    <option value="custom">Personalizado</option>
+                </optgroup>
+            </select>
+            <input type="number" id="tempo-custom" placeholder="Horas por quadrado" min="1" style="display: none; margin-top: 10px; width: 100%; padding: 10px; border-radius: var(--border-radius); border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif; box-sizing: border-box;">
+        </div>
+
+        <div class="input-group checkbox-group" id="timoneiro-container">
+            <input type="checkbox" id="timoneiro">
+            <label for="timoneiro">Com Timoneiro (-50% tempo)</label>
+        </div>
+
+        <div class="resultado-nav" id="resultadoTexto">Tempo Total: 0h</div>
+
+        <button class="btn-copy-relatorio" onclick="copiarRelatorio(this)">Copiar Relatório</button>
+        <button class="btn-clear" onclick="limparQuadrados()">Limpar Quadrados</button>
+    </div>
+        `;
+    }
+
     const inputQuadrados = document.getElementById('quadrados');
     const selectBarco = document.getElementById('barco');
+    const tempoCustomInput = document.getElementById('tempo-custom');
     const checkboxTimoneiro = document.getElementById('timoneiro');
     const timoneiroContainer = document.getElementById('timoneiro-container');
     const resultadoTexto = document.getElementById('resultadoTexto');
@@ -1014,11 +1079,16 @@ if (mapGrids.length > 0) {
 
     function calcularTempo() {
         const quadrados = parseInt(inputQuadrados.value) || 0;
-        const tempoPorQuadrado = parseInt(selectBarco.value) || 0;
-        
+        let tempoPorQuadrado = 0;
         let isIndividual = false;
-        if (selectBarco.selectedIndex > 0) {
-            isIndividual = selectBarco.options[selectBarco.selectedIndex].parentNode.label === "Individual";
+
+        if (selectBarco.value === 'custom') {
+            tempoPorQuadrado = parseInt(tempoCustomInput.value) || 0;
+        } else {
+            tempoPorQuadrado = parseInt(selectBarco.value) || 0;
+            if (selectBarco.selectedIndex > 0) {
+                isIndividual = selectBarco.options[selectBarco.selectedIndex].parentNode.label === "Individual";
+            }
         }
 
         if (isIndividual) {
@@ -1091,7 +1161,12 @@ if (mapGrids.length > 0) {
 
     window.copiarRelatorio = function(btn) {
         const quadrados = parseInt(inputQuadrados.value) || 0;
-        const tempoPorQuadrado = parseInt(selectBarco.value) || 0;
+        let tempoPorQuadrado = 0;
+        if (selectBarco.value === 'custom') {
+            tempoPorQuadrado = parseInt(tempoCustomInput.value) || 0;
+        } else {
+            tempoPorQuadrado = parseInt(selectBarco.value) || 0;
+        }
         
         if (quadrados <= 0 || tempoPorQuadrado <= 0) {
             const originalText = btn.innerText;
@@ -1132,7 +1207,10 @@ if (mapGrids.length > 0) {
         const stringChegada = `${hora}h${minuto} do dia ${dia}/${mes}/${ano}`;
 
         const estaminaTotal = (quadrados * 2000).toLocaleString('pt-BR');
-        const nomeBarco = selectBarco.options[selectBarco.selectedIndex].text;
+        let nomeBarco = selectBarco.options[selectBarco.selectedIndex].text;
+        if (selectBarco.value === 'custom') {
+            nomeBarco = `Personalizado (${tempoPorQuadrado}h/q)`;
+        }
 
         let papel = "Navegador";
         if (!isIndividual && checkboxTimoneiro.checked) {
@@ -1254,7 +1332,18 @@ if (mapGrids.length > 0) {
         }, 'image/png');
     }
 
-    selectBarco.addEventListener('change', calcularTempo);
+    selectBarco.addEventListener('change', function() {
+        if (this.value === 'custom') {
+            tempoCustomInput.style.display = 'block';
+        } else {
+            tempoCustomInput.style.display = 'none';
+            tempoCustomInput.value = '';
+        }
+        calcularTempo();
+    });
+    if (tempoCustomInput) {
+        tempoCustomInput.addEventListener('input', calcularTempo);
+    }
     checkboxTimoneiro.addEventListener('change', calcularTempo);
 }
 
