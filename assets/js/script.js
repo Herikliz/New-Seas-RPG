@@ -60,7 +60,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <input type="text" id="menu-search" placeholder="Pesquisar no menu..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif; outline: none; transition: border-color 0.3s ease;">
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">INÍCIO</a></li>
+            <li>
+                <a href="index.html" class="toggle-btn">INÍCIO <span class="arrow">▼</span></a>
+                <ul class="sub-menu">
+                    <li><a href="area-restrita.html">ÁREA RESTRITA ADMINISTRATIVA</a></li>
+                </ul>
+            </li>
             <li>
                 <a href="criacao-de-personagem.html" class="toggle-btn">CRIAÇÃO DE PERSONAGEM <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
@@ -1423,5 +1428,105 @@ document.querySelectorAll('.geo-writer-box').forEach(box => {
                 }, 2000);
             });
         });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const adminBox = document.getElementById('admin-generator-extra');
+    if (adminBox) {
+        const inputBase = document.getElementById('pontosBase');
+        const checkHaki = document.getElementById('checkHaki');
+        const checkAkuma = document.getElementById('checkAkuma');
+        const selectLinhagem = document.getElementById('linhagem');
+        const inputNpc = document.getElementById('npcNome');
+        const radiosBarco = document.querySelectorAll('input[name="barco"]');
+        const btnClearBarco = document.getElementById('btn-clear-barco');
+        const preResultado = document.getElementById('resultado');
+        const btnCopiar = document.getElementById('btn-copiar-resultado');
+
+        function formatarNum(num) {
+            return num.toLocaleString('pt-BR');
+        }
+
+        function gerarTextoRecompensa() {
+            let valorInput = inputBase.value.replace(/\D/g, '');
+            let valorBase = parseInt(valorInput, 10) || 0;
+            
+            const calcHakiAkuma = Math.floor(valorBase / 2);
+            const calcBerries = valorBase * 50000;
+            
+            const npcNomeStr = inputNpc.value.trim();
+            const barcoSelecionado = document.querySelector('input[name="barco"]:checked');
+            const linhagemSelecionada = selectLinhagem.value;
+            
+            let textoFinal = "\u0060\u0060\u0060Recompensas da Extra-Narrada:\n";
+            textoFinal += "Pontos de Atributo: " + formatarNum(valorBase) + "\n";
+            
+            if (checkHaki.checked) {
+                textoFinal += "Pontos de Haki: " + formatarNum(calcHakiAkuma) + "\n";
+            }
+            if (checkAkuma.checked) {
+                textoFinal += "Pontos de Akuma no Mi: " + formatarNum(calcHakiAkuma) + "\n";
+            }
+            
+            textoFinal += "Berries: ฿" + formatarNum(calcBerries);
+            
+            if (npcNomeStr !== '') {
+                textoFinal += "\nNPC Especial: " + npcNomeStr;
+            }
+            if (barcoSelecionado) {
+                textoFinal += "\nBarco: " + barcoSelecionado.value;
+            }
+            if (linhagemSelecionada !== '') {
+                textoFinal += "\nLinhagem Descoberta: " + linhagemSelecionada;
+            }
+
+            textoFinal += "\u0060\u0060\u0060";
+            
+            preResultado.textContent = textoFinal;
+        }
+
+        inputBase.addEventListener('input', function() {
+            let valor = this.value.replace(/\D/g, '');
+            if (valor !== '') {
+                this.value = formatarNum(parseInt(valor, 10));
+            }
+            gerarTextoRecompensa();
+        });
+
+        checkHaki.addEventListener('change', gerarTextoRecompensa);
+        checkAkuma.addEventListener('change', gerarTextoRecompensa);
+        selectLinhagem.addEventListener('change', gerarTextoRecompensa);
+        inputNpc.addEventListener('input', gerarTextoRecompensa);
+        
+        radiosBarco.forEach(radio => {
+            radio.addEventListener('change', gerarTextoRecompensa);
+        });
+
+        btnClearBarco.addEventListener('click', () => {
+            radiosBarco.forEach(r => r.checked = false);
+            gerarTextoRecompensa();
+        });
+
+        btnCopiar.addEventListener('click', () => {
+            if (!preResultado.textContent) return;
+            navigator.clipboard.writeText(preResultado.textContent).then(() => {
+                let originalText = btnCopiar.textContent;
+                let originalBg = btnCopiar.style.backgroundColor;
+                let originalColor = btnCopiar.style.color;
+
+                btnCopiar.textContent = "Texto Copiado!";
+                btnCopiar.style.backgroundColor = "#4caf50";
+                btnCopiar.style.color = "#fff";
+                
+                setTimeout(() => {
+                    btnCopiar.textContent = originalText;
+                    btnCopiar.style.backgroundColor = originalBg;
+                    btnCopiar.style.color = originalColor;
+                }, 2000);
+            });
+        });
+
+        gerarTextoRecompensa();
     }
 });
