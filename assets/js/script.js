@@ -3,6 +3,16 @@ if (history.scrollRestoration) {
 }
 window.scrollTo(0, 0);
 
+if (window.location.pathname.endsWith('area-restrita.html') || window.location.pathname.includes('area-restrita')) {
+    document.documentElement.style.display = 'none';
+    let senhaAdmin = prompt("Digite a senha para acessar a Área Restrita:");
+    if (senhaAdmin !== "Ben10") {
+        window.location.href = "index.html";
+    } else {
+        document.documentElement.style.display = '';
+    }
+}
+
 const presetThemes = {
     claro: { bg: '#f0f8ff', text: '#2d3748', sidebar: '#ffffff', border: '#e2e8f0', link: '#4a5568', hoverBg: '#edf2f7', accent: '#d32f2f', btnText: '#ffffff', areaBg: '#ffffff', areaBorder: '#cbd5e0', subMenu: '#f8fafc' },
     escuro: { bg: '#121212', text: '#e0e0e0', sidebar: '#1e1e1e', border: '#333333', link: '#b0b0b0', hoverBg: '#2d3748', accent: '#f1c40f', btnText: '#121212', areaBg: '#1a1a1a', areaBorder: '#4a5568', subMenu: '#1a1a1a' },
