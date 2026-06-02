@@ -6,6 +6,64 @@
     <title>Geografia - New Seas OP</title>
     <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .geo-textarea-contador {
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            border: 2px solid var(--sidebar-border); 
+            border-radius: var(--border-radius); 
+            padding: 15px; 
+            width: 100%; 
+            font-size: 14px; 
+            box-sizing: border-box; 
+            font-family: 'Comfortaa', sans-serif; 
+            resize: vertical; 
+            text-align: justify; 
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        .geo-textarea-contador:focus { 
+            outline: none; 
+            border-color: var(--accent-color); 
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+        .btn-copiar-contador, .btn-toggle-nav {
+            width: 100%; 
+            margin-top: 20px; 
+            padding: 15px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: var(--border-radius); 
+            background-color: var(--sidebar-bg); 
+            color: var(--accent-color); 
+            border: 2px solid var(--accent-color); 
+            font-family: 'Quantico', sans-serif; 
+            transition: all 0.3s ease;
+        }
+        .btn-copiar-contador:hover, .btn-toggle-nav:hover {
+            background-color: var(--accent-color);
+            color: var(--sidebar-bg);
+        }
+        .btn-toggle-nav {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            width: auto;
+            display: inline-block;
+        }
+        .stats-bar {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 16px; 
+            font-weight: bold; 
+            background: var(--bg-color); 
+            padding: 15px; 
+            border-radius: var(--border-radius); 
+            border: 2px solid var(--sidebar-border);
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
     <button id="theme-toggle" class="theme-toggle-btn"> </button>
@@ -173,7 +231,7 @@
                         <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 720 caracteres e não precisa de um NPC Especial.</li>
                     </ul>
 
-                    <table>
+                    <table style="margin-bottom: 25px;">
                         <thead>
                             <tr>
                                 <th>Resultado (d20)</th>
@@ -189,6 +247,18 @@
                             <tr><td>20</td><td>Navegação perfeita: menos 3 horas de viagem e o navio não perde vidas.</td></tr>
                         </tbody>
                     </table>
+
+                    <div class="box-content geo-writer-box" data-mar="blues">
+                        <div style="margin-bottom: 10px;">
+                            <button type="button" class="btn-toggle-nav" data-status="nao">Jogador Navegador: Não</button>
+                        </div>
+                        <textarea class="geo-textarea-contador" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                        <div class="stats-bar">
+                            <span><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
                 </div>
 
                 <div class="rank-box">
@@ -202,7 +272,7 @@
                         <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 1.440 caracteres e não precisa de um NPC Especial.</li>
                     </ul>
 
-                    <table>
+                    <table style="margin-bottom: 25px;">
                         <thead>
                             <tr>
                                 <th>Resultado (d20)</th>
@@ -219,6 +289,18 @@
                             <tr><td>20</td><td>Caminho limpo e estável: Menos 2 horas e sem perda de vidas.</td></tr>
                         </tbody>
                     </table>
+
+                    <div class="box-content geo-writer-box" data-mar="paraiso">
+                        <div style="margin-bottom: 10px;">
+                            <button type="button" class="btn-toggle-nav" data-status="nao">Jogador Navegador: Não</button>
+                        </div>
+                        <textarea class="geo-textarea-contador" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                        <div class="stats-bar">
+                            <span><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
                 </div>
 
                 <div class="rank-box">
@@ -233,7 +315,7 @@
                         <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 2.400 caracteres e não precisa de um NPC Especial.</li>
                     </ul>
 
-                    <table>
+                    <table style="margin-bottom: 25px;">
                         <thead>
                             <tr>
                                 <th>Resultado (d20)</th>
@@ -249,6 +331,18 @@
                             <tr><td>20</td><td>Sorte rara: Menos 2 horas de viagem e nenhuma perda de vida.</td></tr>
                         </tbody>
                     </table>
+
+                    <div class="box-content geo-writer-box" data-mar="novomundo">
+                        <div style="margin-bottom: 10px;">
+                            <button type="button" class="btn-toggle-nav" data-status="nao">Jogador Navegador: Não</button>
+                        </div>
+                        <textarea class="geo-textarea-contador" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                        <div class="stats-bar">
+                            <span><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
                 </div>
 
                 <div class="rank-box">
@@ -257,9 +351,14 @@
                     
                     <p style="margin-bottom: 15px;">No entanto, cientistas da Marinha descobriram uma forma de atravessar essas áreas revestindo os cascos dos navios com kairoseki. Esse minério possui propriedades semelhantes às do mar, o que dificulta a percepção das criaturas marinhas em relação ao navio. Contra-Almirantes e patentes acima possuem acesso a essa tecnologia, assim como os CP-6 em diante.</p>
                     
-                    <p style="margin-bottom: 20px;">Devido à falta de correntes marítimas, navios sem propulsores ou remos não conseguem navegar nessas águas.</p>
+                    <p style="margin-bottom: 15px;">Devido à falta de correntes marítimas, navios sem propulsores ou remos não conseguem navegar nessas águas.</p>
 
-                    <table>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;"><strong>Se não é Navegador:</strong> Escrever 4.500 caracteres e ter um NPC Especial que é Navegador. Sem Navegador é impossível velejar por lá.</li>
+                        <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 3.000 caracteres e não precisa de um NPC Especial.</li>
+                    </ul>
+
+                    <table style="margin-bottom: 25px;">
                         <thead>
                             <tr>
                                 <th>Resultado (d20)</th>
@@ -274,6 +373,18 @@
                             <tr><td>20</td><td>Passagem perfeita: Menos 2 horas de viagem.</td></tr>
                         </tbody>
                     </table>
+
+                    <div class="box-content geo-writer-box" data-mar="calmbelt">
+                        <div style="margin-bottom: 10px;">
+                            <button type="button" class="btn-toggle-nav" data-status="nao">Jogador Navegador: Não</button>
+                        </div>
+                        <textarea class="geo-textarea-contador" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                        <div class="stats-bar">
+                            <span><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
                 </div>
 
                 <div class="rank-box">

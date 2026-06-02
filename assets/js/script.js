@@ -795,6 +795,23 @@ function updateTextareaStats(textarea) {
         let typeMin = { "1": 1200, "2": 1800, "3": 3000 };
         minC = typeMin[tipoDesejadoEl.value] || minC;
     }
+
+    const geoMarDestinoEl = document.getElementById('geo-mar-destino');
+    const geoIsNavegadorEl = document.getElementById('geo-is-navegador');
+    if (geoMarDestinoEl && geoIsNavegadorEl && textarea.id === 'geo-sceneText') {
+        let minCharsGeo = 1200;
+        let mar = geoMarDestinoEl.value;
+        let nav = geoIsNavegadorEl.value;
+        
+        if (mar === 'blues') {
+            minCharsGeo = nav === 'sim' ? 720 : 1200;
+        } else if (mar === 'paraiso') {
+            minCharsGeo = nav === 'sim' ? 1440 : 2400;
+        } else if (mar === 'novomundo') {
+            minCharsGeo = nav === 'sim' ? 2400 : 3600;
+        }
+        minC = minCharsGeo;
+    }
     
     let charsEl = wrapper.querySelector('.scene-chars');
     let parasEl = wrapper.querySelector('.scene-paras');
@@ -828,6 +845,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         updateTextareaStats(ta);
+    });
+
+    document.querySelectorAll('.auto-calc-geo').forEach(select => {
+        select.addEventListener('change', () => {
+            let textarea = document.getElementById('geo-sceneText');
+            if (textarea) updateTextareaStats(textarea);
+        });
     });
 
     document.querySelectorAll('.btn-copiar-contador').forEach(btn => {
@@ -1233,3 +1257,82 @@ if (mapGrids.length > 0) {
     selectBarco.addEventListener('change', calcularTempo);
     checkboxTimoneiro.addEventListener('change', calcularTempo);
 }
+
+function updateGeoWriterStats(box) {
+    if (!box) return;
+    let textarea = box.querySelector('textarea');
+    let btn = box.querySelector('.btn-toggle-nav');
+    if (!textarea || !btn) return;
+    let mar = box.getAttribute('data-mar');
+    let status = btn.getAttribute('data-status');
+    let textVal = textarea.value;
+    let chars = textVal.length;
+    let paras = textVal.trim() === "" ? 0 : textVal.split(/\n+/).filter(p => p.trim().length > 0).length;
+    let minC = 1200;
+    if (mar === 'blues') {
+        minC = (status === 'sim') ? 720 : 1200;
+    } else if (mar === 'paraiso') {
+        minC = (status === 'sim') ? 1440 : 2400;
+    } else if (mar === 'novomundo') {
+        minC = (status === 'sim') ? 2400 : 3600;
+    } else if (mar === 'calmbelt') {
+        minC = (status === 'sim') ? 3000 : 4500;
+    }
+    let charsEl = box.querySelector('.scene-chars');
+    let parasEl = box.querySelector('.scene-paras');
+    let statusEl = box.querySelector('.scene-status');
+    if (charsEl) charsEl.textContent = chars.toLocaleString('pt-BR');
+    if (parasEl) parasEl.textContent = paras.toLocaleString('pt-BR');
+    if (statusEl) {
+        if (chars >= minC) {
+            statusEl.textContent = "(✔️ Alcançou o mínimo de " + minC.toLocaleString('pt-BR') + ")";
+            statusEl.style.color = "#4caf50";
+        } else {
+            let faltam = minC - chars;
+            statusEl.textContent = "(❌ Faltam " + faltam.toLocaleString('pt-BR') + ")";
+            statusEl.style.color = "#f44336";
+        }
+    }
+}
+document.querySelectorAll('.geo-writer-box').forEach(box => {
+    let textarea = box.querySelector('textarea');
+    let btn = box.querySelector('.btn-toggle-nav');
+    let btnCopiar = box.querySelector('.btn-copiar-contador');
+    if (textarea) {
+        textarea.addEventListener('input', () => {
+            updateGeoWriterStats(box);
+        });
+        updateGeoWriterStats(box);
+    }
+    if (btn) {
+        btn.addEventListener('click', () => {
+            let current = btn.getAttribute('data-status');
+            if (current === 'sim') {
+                btn.setAttribute('data-status', 'nao');
+                btn.textContent = 'Jogador Navegador: Não';
+            } else {
+                btn.setAttribute('data-status', 'sim');
+                btn.textContent = 'Jogador Navegador: Sim';
+            }
+            updateGeoWriterStats(box);
+        });
+    }
+    if (btnCopiar && textarea) {
+        btnCopiar.addEventListener('click', () => {
+            if (!textarea.value) return;
+            navigator.clipboard.writeText(textarea.value).then(() => {
+                let originalText = btnCopiar.textContent;
+                let originalBg = btnCopiar.style.backgroundColor;
+                let originalColor = btnCopiar.style.color;
+                btnCopiar.textContent = "Texto Copiado!";
+                btnCopiar.style.backgroundColor = "#4caf50";
+                btnCopiar.style.color = "#fff";
+                setTimeout(() => {
+                    btnCopiar.textContent = originalText;
+                    btnCopiar.style.backgroundColor = originalBg;
+                    btnCopiar.style.color = originalColor;
+                }, 2000);
+            });
+        });
+    }
+});
