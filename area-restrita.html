@@ -113,6 +113,10 @@
     <button id="theme-toggle" class="theme-toggle-btn"> </button>
     <div id="sidebar-container"></div>
 
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
     <main class="main-content">
         <div class="content-wrapper">
             <section class="content-section text-center">
@@ -121,23 +125,25 @@
 
             <div class="geo-layout">
                 <div class="rank-box">
-                    <p style="margin-bottom: 15px;">Bem-vindo à Área Restrita Administrativa. Utilize as ferramentas abaixo para gerenciar sistemas do RPG de forma ágil e padronizada.</p>
+                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
+                        RECOMPENSAS DE EXTRA-NARRADA <span class="toggle-icon">▼</span>
+                    </h2>
                     
-                    <h2 class="title-quantico rank-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px;">GERADOR DE RECOMPENSAS (EXTRA-NARRADA)</h2>
-                    
-                    <div class="admin-generator-box" id="admin-generator-extra">
+                    <div class="toggle-content">
+                        <div class="admin-generator-box" id="admin-generator-extra">
                         <div class="input-group">
-                            <label for="pontosBase">Número Base (Pontos de Atributo)</label>
-                            <input type="text" id="pontosBase" placeholder="Ex: 5000">
+                            <label for="pontosBase">Pontos de Atributo</label>
+                            <input type="text" id="pontosBase" placeholder="Ex: 2.000">
                         </div>
 
                         <div class="admin-checkbox-group">
-                            <label><input type="checkbox" id="checkHaki"> Haki</label>
-                            <label><input type="checkbox" id="checkAkuma"> Akuma no Mi</label>
+                            <label><input type="checkbox" id="checkHaki"> Tem Haki?</label>
+                            <label><input type="checkbox" id="checkAkuma"> Tem Fruta?</label>
+                            <label><input type="checkbox" id="check40k"> Tem 40.000 pontos ou mais?</label>
                         </div>
 
                         <div class="input-group">
-                            <label>Barco Encontrado / Recompensado</label>
+                            <label>Barco Conquistado</label>
                             <div class="admin-checkbox-group" id="radios-barco">
                                 <label><input type="radio" name="barco" value="Bote"> Bote</label>
                                 <label><input type="radio" name="barco" value="Barco Pesqueiro"> Barco Pesqueiro</label>
@@ -183,7 +189,7 @@
                         </div>
 
                         <div class="input-group">
-                            <label for="npcNome">NPC Especial (Opcional)</label>
+                            <label for="npcNome">NPC Especial</label>
                             <input type="text" id="npcNome" placeholder="Nome do NPC">
                         </div>
 
@@ -192,6 +198,7 @@
                         </div>
 
                         <button id="btn-copiar-resultado" class="btn-admin">Copiar Resultado</button>
+                    </div>
                     </div>
                 </div>
             </div>

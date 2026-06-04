@@ -1447,6 +1447,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputBase = document.getElementById('pontosBase');
         const checkHaki = document.getElementById('checkHaki');
         const checkAkuma = document.getElementById('checkAkuma');
+        const check40k = document.getElementById('check40k');
         const selectLinhagem = document.getElementById('linhagem');
         const inputNpc = document.getElementById('npcNome');
         const radiosBarco = document.querySelectorAll('input[name="barco"]');
@@ -1470,13 +1471,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const linhagemSelecionada = selectLinhagem.value;
             
             let textoFinal = "\u0060\u0060\u0060Recompensas da Extra-Narrada:\n";
-            textoFinal += "Pontos de Atributo: " + formatarNum(valorBase) + "\n";
-            
-            if (checkHaki.checked) {
-                textoFinal += "Pontos de Haki: " + formatarNum(calcHakiAkuma) + "\n";
-            }
-            if (checkAkuma.checked) {
-                textoFinal += "Pontos de Akuma no Mi: " + formatarNum(calcHakiAkuma) + "\n";
+            let pontosLivres = valorBase;
+            if (checkHaki.checked) pontosLivres += calcHakiAkuma;
+            if (checkAkuma.checked) pontosLivres += calcHakiAkuma;
+
+            if (check40k.checked) {
+                textoFinal += "Pontos Livres: " + formatarNum(pontosLivres) + "\n";
+            } else {
+                textoFinal += "Pontos de Atributo: " + formatarNum(valorBase) + "\n";
+                if (checkHaki.checked) {
+                    textoFinal += "Pontos de Haki: " + formatarNum(calcHakiAkuma) + "\n";
+                }
+                if (checkAkuma.checked) {
+                    textoFinal += "Pontos de Akuma no Mi: " + formatarNum(calcHakiAkuma) + "\n";
+                }
             }
             
             textoFinal += "Berries: ฿" + formatarNum(calcBerries);
@@ -1499,13 +1507,18 @@ document.addEventListener('DOMContentLoaded', () => {
         inputBase.addEventListener('input', function() {
             let valor = this.value.replace(/\D/g, '');
             if (valor !== '') {
-                this.value = formatarNum(parseInt(valor, 10));
+                let numero = parseInt(valor, 10);
+                if (numero > 2000) {
+                    numero = 2000;
+                }
+                this.value = formatarNum(numero);
             }
             gerarTextoRecompensa();
         });
 
         checkHaki.addEventListener('change', gerarTextoRecompensa);
         checkAkuma.addEventListener('change', gerarTextoRecompensa);
+        check40k.addEventListener('change', gerarTextoRecompensa);
         selectLinhagem.addEventListener('change', gerarTextoRecompensa);
         inputNpc.addEventListener('input', gerarTextoRecompensa);
         
