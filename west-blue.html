@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Blue - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div id="calculadora-rota-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">WEST BLUE</h1>
+            </section>
+
+            <section class="content-section text-center" style="margin-bottom: 40px;">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="map-container">
+                        <img src="assets/img/West Blue.png" alt="West Blue" style="width: 100%; height: auto; display: block;">
+                        <div class="grid-overlay" data-group="west-blue-page" data-index="0"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" style="max-width: 600px; margin: 0 auto 40px auto; text-align: center;">
+                <div class="input-group">
+                    <label for="island-sorter" style="font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--accent-color); margin-bottom: 10px; display: block;">Organizar Ilhas Por:</label>
+                    <select id="island-sorter" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease;">
+                        <option value="alphabetical">Ordem Alfabética</option>
+                        <option value="faction">Afiliação / Organização</option>
+                    </select>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <div id="island-container">
+
+                <div class="island-item" data-name="Ballywood" data-faction="marinha">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Ballywood <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p>
+                            <p style="margin-bottom: 15px;">Um reino próspero, governado por um monarca cuja lealdade ao Governo Mundial garante estabilidade e recursos. Suas forças armadas são bem treinadas, e o país mantém relações estreitas com a Marinha, servindo como ponto estratégico para o controle dos mares próximos.</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="Base da Marinha G-12" data-faction="marinha">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Base da Marinha G-12 <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p>
+                            <p style="margin-bottom: 15px;">Uma base naval flutuante construída para reforçar a presença da Marinha em águas perigosas.</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="God Valley" data-faction="marinha">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            God Valley <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p>
+                            <p style="margin-bottom: 15px;">Uma ilha remota e misteriosa, ocasionalmente usada por nobres e oficiais do Governo Mundial para eventos privados.</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="Ilusia" data-faction="marinha">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Ilusia <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p>
+                            <p style="margin-bottom: 15px;">Um reino de influência considerável dentro do Governo Mundial, anteriormente regido por uma linhagem respeitada, agora sob a administração de um novo monarca ambicioso. Sua frota marítima desempenha um papel crucial na defesa das rotas comerciais, garantindo a prosperidade do país.</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="Kano" data-faction="pirata">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Kano <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Pirata</i></p>
+                            <p style="margin-bottom: 15px;">Uma terra de guerreiros, conhecida por sua cultura marcial e pelo domínio das técnicas de combate desarmado. Um clã lendário se destaca como o mais temido e respeitado do reino, com sua linhagem forjada em batalhas e desafios de força. Clãs influentes disputam poder entre si, e mercadores de Kano são encontrados nos cantos mais remotos do mundo, espalhando sua arte e seus produtos. Mesmo com a grande diferença geográfica, Kano é rival de Wano, seu país "irmão".</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="Las Camp" data-faction="pirata">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Las Camp <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Pirata</i></p>
+                            <p style="margin-bottom: 15px;">Antes controlada por um poderoso pirata, Las Camp era um refúgio seguro em meio aos mares turbulentos. Apesar de sua natureza criminosa, havia ordem absoluta, com crimes e conflitos internos severamente proibidos. Sob esse domínio, o local prosperou como um território neutro, onde comércio e negociações ocorriam sem medo de traições. No entanto, após a derrota e captura de seu líder pela Marinha, Las Camp mergulhou no caos. Sem uma liderança capaz, a ilha tornou-se um território sem lei, dominado por traições e miséria. Mais tarde, um homem desconhecido assumiu o controle e foi responsável por restaurar a ordem, ainda que de forma rígida e instável.</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="Ohara" data-faction="independente">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Ohara <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Independente</i></p>
+                            <p style="margin-bottom: 15px;">O berço do conhecimento, lar dos maiores estudiosos da história e das civilizações antigas. Protegida pela majestosa Árvore do Conhecimento, a ilha é um farol para aqueles que buscam a verdade.</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="Soja" data-faction="marinha">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Soja <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p>
+                            <p style="margin-bottom: 15px;">Uma ilha rural de vastas plantações e vilas simples, onde a terra fértil sustenta uma produção abundante e constante. Apesar da aparência pacífica, há uma sensação de controle silencioso, com rotinas rígidas e pouca abertura para mudanças, como se tudo ali seguisse um propósito maior definido por poucos.</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="Thriller Bark" data-faction="revolucionaria">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Thriller Bark <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Vanguarda Popular Revolucionária</i></p>
+                            <p style="margin-bottom: 15px;">Uma ilha de arquitetura gótica, repleta de torres imponentes, corredores subterrâneos e salões ornamentados. Seus jardins bem cuidados contrastam com a atmosfera sombria, criando um ambiente tão enigmático quanto fascinante. Thriller Bark é conhecida por suas tradições peculiares e por atrair artesãos e navegadores curiosos em busca de seus segredos. A vida na ilha segue um ritmo próprio, distinto de qualquer outro lugar, enquanto seus habitantes preservam costumes únicos que perduram há gerações.</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+                <div class="island-item" data-name="Toroa" data-faction="independente">
+                    <section class="content-section">
+                        <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                            Toroa <span class="toggle-icon">▼</span>
+                        </h2>
+                        
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>Independente</i></p>
+                            <p style="margin-bottom: 15px;">Toroa foi governada por uma líder que acreditava que apenas os mais fortes mereciam reinar, sem leis ou restrições. A ilha refletia essa filosofia brutal: traições, duelos e saques não só eram comuns, como incentivados, tornando o território um campo de batalha constante entre criminosos e ambiciosos. Piratas sem lealdade, mercadores inescrupulosos e assassinos de aluguel vagavam pelas ruas, sempre atentos para não se tornarem a próxima vítima. A anarquia era vista como a forma mais pura de liberdade, em oposição a qualquer ordem imposta por líderes externos. Essa era chegou ao fim quando forças organizadas eliminaram todos os piratas da ilha, transformando Toroa em uma terra vazia. Posteriormente, uma organização passou a utilizar o local inóspito como base</p>
+                        </div>
+                    </section>
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -125,13 +125,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="#" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
                             <li><a href="east-blue.html">EAST BLUE</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/south-blue">SOUTH BLUE</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/west-blue">WEST BLUE</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/north-blue">NORTH BLUE</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/paraíso">PARAÍSO</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/novo-mundo">NOVO MUNDO</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/calm-belt">CALM BELT</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/ilhas-sem-localização-exata">ILHAS SEM LOCALIZAÇÃO EXATA</a></li>
+                            <li><a href="south-blue.html">SOUTH BLUE</a></li>
+                            <li><a href="west-blue.html">WEST BLUE</a></li>
+                            <li><a href="north-blue.html">NORTH BLUE</a></li>
+                            <li><a href="paraiso.html">PARAÍSO</a></li>
+                            <li><a href="novo-mundo.html">NOVO MUNDO</a></li>
+                            <li><a href="calm-belt.html">CALM BELT</a></li>
+                            <li><a href="ilhas-sem-localizacao-exata.html">ILHAS SEM LOCALIZAÇÃO EXATA</a></li>
                         </ul>
                     </li>
                 </ul>
