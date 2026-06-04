@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos de Akuma no Mi - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --accent-color: #673ab7;
+            --sidebar-bg: #ffffff;
+            --sidebar-border: #673ab7;
+            --border-radius: 12px;
+        }
+        body.dark-mode {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-color: #9c27b0;
+            --sidebar-bg: #141414;
+            --sidebar-border: #9c27b0;
+        }
+        .wg-emblem {
+            font-size: 80px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .wg-subtitle {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .toggle-content {
+            display: block;
+            overflow: hidden;
+        }
+        .toggle-content.collapsed {
+            display: none;
+        }
+        .toggle-icon {
+            display: inline-block;
+            font-size: 0.8em;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+        .toggle-title {
+            cursor: pointer;
+        }
+        .toggle-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .rank-box {
+            border: 2px solid var(--sidebar-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode .rank-box {
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15);
+        }
+        .rank-title {
+            font-size: 32px;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            padding: 10px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+        .highlight-text {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .sub-attr {
+            margin-left: 40px;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .sub-attr h3 {
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .calculator-box {
+            margin-top: 15px;
+            padding: 20px;
+            background-color: rgba(103, 58, 183, 0.05);
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+        }
+        .calculator-box h4 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-family: 'Quantico', sans-serif;
+        }
+        .calculator-box label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .calculator-box input {
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            background-color: var(--sidebar-bg);
+            color: var(--text-color);
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn"> </button>
+    <div id="sidebar-container"></div>
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <div class="wg-emblem"> </div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">AKUMA NO MI</h1>
+            </section>
+            
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Ganho de Pontos <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 20px;">Os atributos de uma Akuma no Mi são separados dos pontos recebidos pelo atributo físico, sendo possível ganhar pontos em Akuma no Mi das seguintes formas; é importante ressaltar que os pontos listados aqui são exclusivos para as Akuma no Mi:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;"><strong>Treino Padrão:</strong> 200 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Missão Auto-Narrada:</strong> 200 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Treino de Técnicas:</strong> 20 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Interação 5/5 (Jogador com Jogador):</strong> 125 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Interação 5/5 (Jogador com NPC):</strong> 50 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Interação 10/10 (Jogador com Jogador):</strong> 250 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Interação 10/10 (Jogador com NPC):</strong> 100 pontos</li>
+                        <li style="margin-bottom: 8px;"><strong>Caçadas, Dominações, Eventos e Extra-Narradas:</strong> pontos variados</li>
+                    </ul>
+                    <ul style="margin-left: 20px; line-height: 1.6; list-style-type: none;">
+                        <li style="margin-bottom: 15px;">
+                            ⚠ Não pode treinar <a href="haki.html">Haki</a> e Akuma no Mi ao mesmo tempo; isso significa que ao fazer um Treino Padrão, você vai ganhar 250 pontos de atributo normais, e também 200 pontos de Akuma no Mi/Haki (apenas um desses dois por vez).
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            ⚠ Quando você adquire uma Akuma no Mi, você não vai receber a ficha dela; para receber a ficha, antes você precisa comer a Akuma no Mi em ON, e então fazer uma quantidade específica de treinos para dominar o básico de sua Fruta. Após isso, vá no privado de algum ADM e peça pra ele fazer sua ficha de Akuma no Mi, e lembre-se de dizer para ele qual é a sua Fruta.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Como funcionam os Atributos? <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">As Akuma no Mi possuem atributos únicos para que você possa distribuir os pontos ganhos entre eles:</p>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">ALCANCE <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">O Alcance da Akuma no Mi vai ser variável, não são todas as Akuma no Mi que possuem esse atributo. Ele irá definir o quão longe, em metros, você pode alcançar com seus golpes. Cada Akuma no Mi terá um Multiplicador de Alcance diferente, que será definido na hora que for mandada a ficha.</p>
+                            <p style="margin-bottom: 10px;"><strong>Contagem:</strong> Os pontos de Alcance devem ser divididos por 20. O resultado será multiplicado pelo Multiplicador de Alcance que for definido pelo ADM. Assim o resultado será a distância que sua Akuma poderá percorrer em metros com seus golpes.</p>
+                            <div class="calculator-box">
+                                <h4>Calculadora de Alcance</h4>
+                                <label>Pontos de Alcance: <input type="text" id="calc-alcance-pts" class="points-input auto-calc" value="0"></label>
+                                <label>Multiplicador: <input type="number" step="0.1" id="calc-alcance-mult" class="auto-calc" value="1.0"></label>
+                                <p><strong>Resultado:</strong> <span id="calc-alcance-res">0</span> metros</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">CONTROLE <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">O Controle da Fruta é a porcentagem que define o seu domínio total sobre ela. Cada atributo de Akuma no Mi tem um limite máximo de 10.000 pontos. Para descobrir sua porcentagem de Controle, basta somar seus pontos e fazer uma regra de três com base no limite da sua Fruta.</p>
+                            <p style="margin-bottom: 10px;"><strong>Contagem:</strong> Para descobrir sua Porcentagem de Controle, basta fazer uma regra de três.</p>
+                            <div class="calculator-box">
+                                <h4>Calculadora de Controle</h4>
+                                <label>Quantidade de Atributos da Fruta: <input type="text" id="calc-ctrl-qtd" class="qtd-input auto-calc" value="3"></label>
+                                <label>Pontos Totais: <input type="text" id="calc-ctrl-pts" class="total-pts-input auto-calc" value="0"></label>
+                                <p><strong>Resultado:</strong> <span id="calc-ctrl-res">0</span>%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">DURABILIDADE <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">A Durabilidade será exclusivamente usada para definir a quantidade de cenas que você pode usar seus poderes de Akuma no Mi, ou seja, vai definir seu vigor com os poderes. Esse atributo pode ser esgotado com o uso constante em larga escala, com um debuff decidido por narrador durante um evento ou batalha.</p>
+                            <p style="margin-bottom: 10px;"><strong>Contagem:</strong> A cada 500 pontos colocados nesse atributo, o personagem pode usar sua Fruta por 1 cena consecutiva. O cálculo que pode ser feito para esse atributo é: Durabilidade ÷ 500.</p>
+                            <p><strong>Recuperar a Durabilidade:</strong> Para recuperar pontos de Durabilidade, basta ficar uma cena sem usar sua Akuma no Mi. A cada cena que você passa sem utilizar sua Akuma no Mi, você recupera 500 pontos de Durabilidade. Os pontos recuperados não podem ultrapassar seu limite máximo atual de pontos de Durabilidade.</p>
+                            <div class="calculator-box">
+                                <h4>Calculadora de Durabilidade</h4>
+                                <label>Pontos de Durabilidade: <input type="text" id="calc-dur-pts" class="points-input auto-calc" value="0"></label>
+                                <p><strong>Resultado:</strong> <span id="calc-dur-res">0</span> cenas consecutivas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">POTÊNCIA <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Define o Dano adicional que pode ser causado por sua Akuma no Mi. Não apenas isso, como também define a rigidez e a durabilidade de massa da matéria criada por sua Akuma no Mi, dependendo da Fruta, obviamente, já que há algumas Akuma no Mi que não precisam mostrar a rigidez de sua matéria, como por exemplo a Mera Mera no Mi.</p>
+                            <p style="margin-bottom: 10px;"><strong>Contagem:</strong> Essa parte vai variar de Fruta para Fruta. Cada Akuma no Mi terá um Controle, uma Porcentagem de Potência e uma Porcentagem de Resistência. Algumas podem ter 50%, assim como outras podem ter 100%. Isso será definido pelo ADM na hora que for mandada sua ficha. O resultado da porcentagem será somado ao total de seu atributo relacionado. O Controle é imutável, no momento em que ela for escolhida, não poderá mais ser mudada.</p>
+                            <div class="calculator-box">
+                                <h4>Calculadora de Potência (Dano)</h4>
+                                <label>Pontos de Potência: <input type="text" id="calc-pot-pts" class="points-input auto-calc" value="0"></label>
+                                <label>Controle (%): <input type="text" id="calc-pot-ctrl" class="percent-input auto-calc" value="0"></label>
+                                <label>Buff Adicional (%): <input type="text" id="calc-pot-buff" class="percent-input auto-calc" value="0"></label>
+                                <p><strong>Dano Adicional da Fruta:</strong> <span id="calc-pot-res">0</span></p>
+
+                                <h4 style="margin-top: 25px;">Calculadora de Potência (Resistência)</h4>
+                                <label>Pontos de Potência: <input type="text" id="calc-res-pts" class="points-input auto-calc" value="0"></label>
+                                <label>Porcentagem de Resistência (%): <input type="text" id="calc-res-pct" class="percent-input auto-calc" value="0"></label>
+                                <p><strong>Resistência da Criação:</strong> <span id="calc-res-res">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">VELOCIDADE <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">A Velocidade será calculada com base nos atributos do usuário. Para Frutas que aumentam a velocidade do usuário, o cálculo será feito multiplicando a porcentagem de Controle pela Velocidade atual, resultando em um valor extra somado à Velocidade do ataque ou do corpo. Esse bônus se aplica apenas a frutas específicas, como a Gomu Gomu no Mi, que melhora a mobilidade em combate.</p>
+                            <div class="calculator-box">
+                                <h4>Calculadora de Velocidade Adicional</h4>
+                                <label>Sua Velocidade Atual: <input type="text" id="calc-vel-pts" class="vel-input auto-calc" value="0"></label>
+                                <label>Controle (%): <input type="text" id="calc-vel-ctrl" class="percent-input auto-calc" value="0"></label>
+                                <label>Buff da Fruta (%): <input type="text" id="calc-vel-buff" class="percent-input auto-calc" value="0"></label>
+                                <p><strong>Velocidade Extra Adquirida:</strong> <span id="calc-vel-res">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Criação de Frutas <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">As Frutas são únicas, portanto a criação de Frutas será essencial, pois, com o aumento de jogadores, as Frutas mais conhecidas da obra de One Piece serão rapidamente coletadas para aqueles que forem mais rápidos. Mas e para aqueles que vieram depois? É nisso que esse sistema se concentra!</p>
+                    <p style="margin-bottom: 15px;">Os jogadores poderão dar um nome para a Fruta, no mesmo estilo da obra original.</p>
+                    <p style="margin-bottom: 15px;">Esse é o primeiro passo. Nos próximos passos, o jogador dará outra informação que definirá a habilidade de sua Fruta, seja ela Logia, Paramecia ou Zoan.</p>
+                    <p style="margin-bottom: 15px;">As Frutas terão a habilidades de acordo com seu tipo:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 8px;">Se for <strong>Logia</strong> será "elemental";</li>
+                        <li style="margin-bottom: 8px;">Se for <strong>Paramecia</strong> poderá manipular o ambiente ou o próprio corpo;</li>
+                        <li style="margin-bottom: 8px;">Se for <strong>Zoan</strong> terá características animalescas.</li>
+                    </ul>
+                    <p style="margin-bottom: 15px;">Nosso próximo passo será escolher as habilidades derivadas e suas fraquezas, além do padrão.</p>
+                    <ul style="margin-left: 20px; margin-bottom: 25px; padding: 15px; background-color: rgba(103, 58, 183, 0.05); border-left: 4px solid var(--accent-color); list-style-type: none;">
+                        <li style="margin-bottom: 8px;"><strong>Fruta:</strong> Poke Poke no Mi.</li>
+                        <li style="margin-bottom: 8px;"><strong>Tipo:</strong> Paramecia.</li>
+                        <li style="margin-bottom: 8px;"><strong>Habilidade:</strong> Criar uma dimensão de bolso onde se pode guardar qualquer tipo de item que o usuário da Fruta estivesse segurando.</li>
+                        <li style="margin-bottom: 8px;"><strong>Fraquezas:</strong> Não se pode guardar seres vivos e nem coisas imateriais, como almas e ar.</li>
+                    </ul>
+                    <p style="margin-bottom: 15px;">Logo após tudo isso, o jogador poderá mandar para um ADM, que relatará na administração e então a Akuma no Mi será discutida. Se ela for aprovada, a administração então vai decidir um preço justo para ela, e ela será imediatamente colocada na Loja.</p>
+                    <ul style="margin-left: 20px; line-height: 1.6; list-style-type: none;">
+                        <li style="margin-bottom: 15px;">
+                            ⚠ Mesmo que você crie a Akuma no Mi, isso não garante que ela será sua. Se alguém comprar antes de você, ele terá a Fruta pra ele.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            ⚠ Zoan em seu geral não gastam estamina/vigor. O seu buff de ativação se encaixa diretamente ao gasto de durabilidade do Fruto.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const autoCalcInputs = document.querySelectorAll('.auto-calc');
+
+            function formatInput(inputField) {
+                if (inputField.tagName.toLowerCase() !== 'input' || inputField.type !== 'text') return;
+                
+                let val = inputField.value.replace(/\D/g, '');
+                if (val === '') {
+                    inputField.value = '';
+                    return;
+                }
+                
+                let num = parseInt(val, 10);
+
+                if (inputField.classList.contains('points-input')) {
+                    if (num > 20000) num = 20000;
+                } else if (inputField.classList.contains('percent-input')) {
+                    if (num > 100) num = 100;
+                } else if (inputField.classList.contains('vel-input')) {
+                    if (num > 20000) num = 20000;
+                } else if (inputField.classList.contains('total-pts-input')) {
+                    let qtdStr = document.getElementById('calc-ctrl-qtd').value.replace(/\D/g, '');
+                    let qtd = parseInt(qtdStr, 10) || 1;
+                    let max = qtd * 10000;
+                    if (num > max) num = max;
+                } else if (inputField.classList.contains('qtd-input')) {
+                    if (num > 4) num = 4;
+                    if (num < 1) num = 1;
+                }
+                
+                inputField.value = num.toLocaleString('pt-BR');
+            }
+
+            function getVal(elementId) {
+                let el = document.getElementById(elementId);
+                if (!el) return 0;
+                if (el.type === 'number') return parseFloat(el.value) || 0;
+                let val = el.value.replace(/\./g, '');
+                return val ? parseInt(val, 10) : 0;
+            }
+
+            function calculateAll() {
+                let alcPts = getVal('calc-alcance-pts');
+                let alcMult = parseFloat(document.getElementById('calc-alcance-mult').value) || 1;
+                if(document.getElementById('calc-alcance-res')) {
+                    document.getElementById('calc-alcance-res').innerText = ((alcPts / 20) * alcMult).toLocaleString("pt-BR", {maximumFractionDigits: 1});
+                }
+
+                let ctrlQtd = getVal('calc-ctrl-qtd');
+                if (ctrlQtd < 1) ctrlQtd = 1;
+                let ctrlPts = getVal('calc-ctrl-pts');
+                if(document.getElementById('calc-ctrl-res')) {
+                    let ctrlRes = Math.min(Math.round((ctrlPts / (ctrlQtd * 10000)) * 100), 100);
+                    document.getElementById('calc-ctrl-res').innerText = ctrlRes;
+                }
+
+                let durPts = getVal('calc-dur-pts');
+                if(document.getElementById('calc-dur-res')) {
+                    document.getElementById('calc-dur-res').innerText = Math.floor(durPts / 500);
+                }
+
+                let potPts = getVal('calc-pot-pts');
+                let potCtrl = getVal('calc-pot-ctrl');
+                let potBuff = getVal('calc-pot-buff');
+                if(document.getElementById('calc-pot-res')) {
+                    let potBaseDano = Math.floor(potPts * (potCtrl / 100));
+                    let potDano = potBuff > 0 ? Math.round(potBaseDano * (1 + potBuff / 100)) : potBaseDano;
+                    document.getElementById('calc-pot-res').innerText = potDano.toLocaleString("pt-BR");
+                }
+
+                let resPts = getVal('calc-res-pts');
+                let resPct = getVal('calc-res-pct');
+                if(document.getElementById('calc-res-res')) {
+                    let resTotal = Math.round(resPts + (resPts * (resPct / 100)));
+                    document.getElementById('calc-res-res').innerText = resTotal.toLocaleString("pt-BR");
+                }
+
+                let velPts = getVal('calc-vel-pts');
+                let velCtrl = getVal('calc-vel-ctrl');
+                let velBuff = getVal('calc-vel-buff');
+                if(document.getElementById('calc-vel-res')) {
+                    let velBase = Math.floor(velPts * (velCtrl / 100));
+                    let velExtra = velBuff > 0 ? Math.round(velBase * (1 + velBuff / 100)) : velBase;
+                    document.getElementById('calc-vel-res').innerText = velExtra.toLocaleString("pt-BR");
+                }
+            }
+
+            autoCalcInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.id === 'calc-ctrl-qtd') {
+                        let totalPtsInput = document.getElementById('calc-ctrl-pts');
+                        if (totalPtsInput) {
+                            formatInput(totalPtsInput);
+                        }
+                    }
+                    if (this.id === 'calc-alcance-mult') {
+                        this.value = this.value.replace(/(\.\d)\d+/, '$1');
+                        if (parseFloat(this.value) > 2) this.value = '2.0';
+                    }
+                    formatInput(this);
+                    calculateAll();
+                });
+            });
+            
+            calculateAll();
+        });
+    </script>

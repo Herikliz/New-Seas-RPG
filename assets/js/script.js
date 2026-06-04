@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="#" class="toggle-btn">FORÇA VITAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li><a href="atributos.html">ATRIBUTOS</a></li>
-                    <li><a href="akuma-no-mi.html">AKUMA NO MI</a></li>
+                    <li><a href="atributos-akuma-no-mi.html">AKUMA NO MI</a></li>
                     <li><a href="haki.html">HAKI</a></li>
                     <li><a href="estamina.html">ESTAMINA</a></li>
                 </ul>
@@ -121,34 +121,20 @@ document.addEventListener('DOMContentLoaded', function() {
             <li>
                 <a href="geografia.html" class="toggle-btn">GEOGRAFIA <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li>
-                        <a href="#" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
-                        <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="east-blue.html">EAST BLUE</a></li>
-                            <li><a href="south-blue.html">SOUTH BLUE</a></li>
-                            <li><a href="west-blue.html">WEST BLUE</a></li>
-                            <li><a href="north-blue.html">NORTH BLUE</a></li>
-                            <li><a href="paraiso.html">PARAÍSO</a></li>
-                            <li><a href="novo-mundo.html">NOVO MUNDO</a></li>
-                            <li><a href="calm-belt.html">CALM BELT</a></li>
-                            <li><a href="ilhas-sem-localizacao-exata.html">ILHAS SEM LOCALIZAÇÃO EXATA</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="east-blue.html">EAST BLUE</a></li>
+                    <li><a href="south-blue.html">SOUTH BLUE</a></li>
+                    <li><a href="west-blue.html">WEST BLUE</a></li>
+                    <li><a href="north-blue.html">NORTH BLUE</a></li>
+                    <li><a href="paraiso.html">PARAÍSO</a></li>
+                    <li><a href="novo-mundo.html">NOVO MUNDO</a></li>
+                    <li><a href="calm-belt.html">CALM BELT</a></li>
+                    <li><a href="ilhas-sem-localizacao-exata.html">ILHAS SEM LOCALIZAÇÃO EXATA</a></li>
                 </ul>
             </li>
-            <li><a href="https://sites.google.com/view/new-seas-op/história">HISTÓRIA</a></li>
             <li>
-                <a href="https://sites.google.com/view/new-seas-op/submundo" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
+                <a href="submundo.html" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="https://sites.google.com/view/new-seas-op/submundo/escravos">ESCRAVOS</a></li>
-                    <li>
-                        <a href="#" class="toggle-btn">AKUMA NO MI <span class="arrow">▼</span></a>
-                        <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/logia">LOGIA</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/paramecia">PARAMECIA</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/submundo/akuma-no-mi/zoan">ZOAN</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="akuma-no-mi.html">AKUMA NO MI</a></li>
                 </ul>
             </li>
             <li>

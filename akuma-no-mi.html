@@ -6,387 +6,1718 @@
     <title>Akuma no Mi - New Seas OP</title>
     <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        :root {
-            --bg-color: #fdfdfd;
-            --text-color: #1a1a1a;
-            --accent-color: #673ab7;
-            --sidebar-bg: #ffffff;
-            --sidebar-border: #673ab7;
-            --border-radius: 12px;
-        }
-        body.dark-mode {
-            --bg-color: #0a0a0a;
-            --text-color: #f0f0f0;
-            --accent-color: #9c27b0;
-            --sidebar-bg: #141414;
-            --sidebar-border: #9c27b0;
-        }
-        .wg-emblem {
-            font-size: 80px;
-            text-align: center;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-        .wg-subtitle {
-            text-align: center;
-            font-weight: bold;
-            color: var(--accent-color);
-            margin-bottom: 30px;
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .toggle-content {
-            display: block;
-            overflow: hidden;
-        }
-        .toggle-content.collapsed {
-            display: none;
-        }
-        .toggle-icon {
-            display: inline-block;
-            font-size: 0.8em;
-            vertical-align: middle;
-            transition: transform 0.3s ease;
-            margin-left: 10px;
-        }
-        .toggle-title {
-            cursor: pointer;
-        }
-        .toggle-title.collapsed .toggle-icon {
-            transform: rotate(-90deg);
-        }
-        .rank-box {
-            border: 2px solid var(--sidebar-border);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 30px;
-            background-color: var(--sidebar-bg);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        body.dark-mode .rank-box {
-            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15);
-        }
-        .rank-title {
-            font-size: 32px;
-            text-align: center;
-            color: var(--accent-color);
-            margin-bottom: 25px;
-            padding: 10px;
-            border-bottom: 1px solid var(--sidebar-border);
-        }
-        .highlight-text {
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-        .sub-attr {
-            margin-left: 40px;
-            padding-left: 20px;
-            border-left: 3px solid var(--accent-color);
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-        .sub-attr h3 {
-            color: var(--accent-color);
-            font-family: 'Quantico', sans-serif;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .calculator-box {
-            margin-top: 15px;
-            padding: 20px;
-            background-color: rgba(103, 58, 183, 0.05);
-            border: 1px solid var(--accent-color);
-            border-radius: 8px;
-        }
-        .calculator-box h4 {
-            color: var(--accent-color);
-            margin-bottom: 15px;
-            font-family: 'Quantico', sans-serif;
-        }
-        .calculator-box label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        .calculator-box input {
-            margin-left: 10px;
-            padding: 5px;
-            border: 1px solid var(--accent-color);
-            border-radius: 4px;
-            background-color: var(--sidebar-bg);
-            color: var(--text-color);
-            width: 120px;
-        }
-    </style>
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle-btn"> </button>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
     <div id="sidebar-container"></div>
+
     <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
         <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
     </div>
+
     <main class="main-content">
         <div class="content-wrapper">
             <section class="content-section text-center">
-                <div class="wg-emblem"> </div>
+                <div class="wg-emblem"></div>
                 <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">AKUMA NO MI</h1>
             </section>
-            
+
             <section class="content-section">
-                <h2 class="title-quantico toggle-title rank-title">
-                    Ganho de Pontos <span class="toggle-icon">▼</span>
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    LOGIA <span class="toggle-icon">▼</span>
                 </h2>
+                
                 <div class="toggle-content rank-box">
-                    <p style="margin-bottom: 20px;">Os atributos de uma Akuma no Mi são separados dos pontos recebidos pelo atributo físico, sendo possível ganhar pontos em Akuma no Mi das seguintes formas; é importante ressaltar que os pontos listados aqui são exclusivos para as Akuma no Mi:</p>
-                    <ul style="margin-left: 20px; margin-bottom: 25px;">
-                        <li style="margin-bottom: 8px;"><strong>Treino Padrão:</strong> 200 pontos</li>
-                        <li style="margin-bottom: 8px;"><strong>Missão Auto-Narrada:</strong> 200 pontos</li>
-                        <li style="margin-bottom: 8px;"><strong>Treino de Técnicas:</strong> 20 pontos</li>
-                        <li style="margin-bottom: 8px;"><strong>Interação 5/5 (Jogador com Jogador):</strong> 125 pontos</li>
-                        <li style="margin-bottom: 8px;"><strong>Interação 5/5 (Jogador com NPC):</strong> 50 pontos</li>
-                        <li style="margin-bottom: 8px;"><strong>Interação 10/10 (Jogador com Jogador):</strong> 250 pontos</li>
-                        <li style="margin-bottom: 8px;"><strong>Interação 10/10 (Jogador com NPC):</strong> 100 pontos</li>
-                        <li style="margin-bottom: 8px;"><strong>Caçadas, Dominações, Eventos e Extra-Narradas:</strong> pontos variados</li>
-                    </ul>
-                    <ul style="margin-left: 20px; line-height: 1.6; list-style-type: none;">
-                        <li style="margin-bottom: 15px;">
-                            ⚠ Não pode treinar <a href="haki.html">Haki</a> e Akuma no Mi ao mesmo tempo; isso significa que ao fazer um Treino Padrão, você vai ganhar 250 pontos de atributo normais, e também 200 pontos de Akuma no Mi/Haki (apenas um desses dois por vez).
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            ⚠ Quando você adquire uma Akuma no Mi, você não vai receber a ficha dela; para receber a ficha, antes você precisa comer a Akuma no Mi em ON, e então fazer uma quantidade específica de treinos para dominar o básico de sua Fruta. Após isso, vá no privado de algum ADM e peça pra ele fazer sua ficha de Akuma no Mi, e lembre-se de dizer para ele qual é a sua Fruta.
-                        </li>
-                    </ul>
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ame Ame no Mi (Fruta do Melaço)</h4>
+                        <p style="margin-bottom: 10px;">Dá a capacidade ao usuário de se transformar e moldar um melaço de cor verde, como bem entender.</p>
+                        <p><strong>Valor:</strong> ฿1.200.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Chikyū Chikyū no Mi (Fruta da Terra) [Original do RPG]</h4>
+                        <p style="margin-bottom: 10px;">A habilidade permite ao usuário se transformar e criar montes de terra. No entanto, a Fruta não concede controle sobre pedras ou materiais muito sólidos.</p>
+                        <p><strong>Valor:</strong> ฿1.300.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gasu Gasu no Mi (Fruta do Gás)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode manipular e se transformar em gases, remover oxigênio do ar e utilizar outros métodos relacionados aos gases. Também pode usar para fins científicos.</p>
+                        <p><strong>Valor:</strong> ฿3.000.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Goro Goro no Mi (Fruta do Relâmpago)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode se transformar em raios, mover-se na forma de raio e à velocidade dos raios. Além disso, pode liberar grandes quantidades de relâmpagos.</p>
+                        <p><strong>Valor:</strong> ฿2.600.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hie Hie no Mi (Fruta do Frio)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode se transformar em gelo e manipular o frio, liberando grandes quantidades pelo campo e até mesmo congelando os alvos.</p>
+                        <p><strong>Valor:</strong> ฿2.900.000.000 <i>(Astarion D. Emiri)</i></p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kaze Kaze no Mi (Fruta do Vento) [Original do RPG]</h4>
+                        <p style="margin-bottom: 10px;">A habilidade permite ao usuário se transformar e criar ventanias. No entanto, a Fruta não concede controle sobre o ar dentro dos pulmões das pessoas, nem a capacidade de criar vácuo.</p>
+                        <p><strong>Valor:</strong> ฿1.800.000.000 <i>(Druig)</i></p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kumo Kumo no Mi (Fruta da Nuvem) [Original do RPG]</h4>
+                        <p style="margin-bottom: 10px;">A habilidade permite ao usuário criar, controlar e se transformar em nuvens à vontade, transformando o usuário em uma pessoa-nuvem.</p>
+                        <p><strong>Valor:</strong> ฿1.100.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Magu Magu no Mi (Fruta do Magma)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode se transformar em magma e manipulá-lo a partir do próprio corpo.</p>
+                        <p><strong>Valor:</strong> ฿3.200.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mera Mera no Mi (Fruta das Chamas)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode se transformar em chamas e manipulá-las, utilizando-as de diversas maneiras.</p>
+                        <p><strong>Valor:</strong> ฿1.500.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Moku Moku no Mi (Fruta da Fumaça)</h4>
+                        <p style="margin-bottom: 10px;">O usuário tem a capacidade de se transformar em fumaça e controlá-la, liberando e manipulando grandes quantidades de fumaça.</p>
+                        <p><strong>Valor:</strong> ฿1.200.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mori Mori no Mi (Fruta da Floresta)</h4>
+                        <p style="margin-bottom: 10px;">A habilidade permite ao usuário controlar a madeira e a Mãe Natureza em si, possibilitando a transformação em um monstro de árvore e outras formas relacionadas à natureza. Além disso, pode absorver os nutrientes das pessoas para fortalecer-se e vice-versa.</p>
+                        <p><strong>Valor:</strong> ฿2.900.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Numa Numa no Mi (Fruta do Pântano)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode se transformar em lama e manipulá-la. Além disso, pode guardar coisas dentro de si que tenham o mesmo tamanho que ele. Caso o objeto não seja do mesmo tamanho, o usuário não poderá voltar à sua forma normal.</p>
+                        <p><strong>Valor:</strong> ฿1.700.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Pasa Pasa no Mi (Fruta do Papel)</h4>
+                        <p style="margin-bottom: 10px;">Dá a habilidade de se transformar em papel, manipular os mesmos pelo ar e moldá-los como bem entender.</p>
+                        <p><strong>Valor:</strong> ฿1.100.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Pika Pika no Mi (Fruta da Luz)</h4>
+                        <p style="margin-bottom: 10px;">Usuário pode se transformar, atirar e moldar a luz (atinge a velocidade da luz apenas para movimentações curtas).</p>
+                        <p><strong>Valor:</strong> ฿4.200.000.000 <i>(Rhaizen D. Aether)</i></p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Suna Suna no Mi (Fruta da Areia)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode se transformar em areia e manipulá-la para realizar grandes feitos com o elemento, como secar o alvo que tocar e até mesmo o solo.</p>
+                        <p><strong>Valor:</strong> ฿2.000.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Susu Susu no Mi (Fruta da Fuligem)</h4>
+                        <p style="margin-bottom: 10px;">Permite ao usuário criar, controlar, moldar e se transformar em fuligem.</p>
+                        <p><strong>Valor:</strong> ฿1.400.000.000 <i>(Iori)</i></p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Toro Toro no Mi (Fruta do Líquido)</h4>
+                        <p style="margin-bottom: 10px;">Dá a capacidade ao usuário de se transformar em um líquido (a cor é escolhida pelo usuário), também moldando-o e manipulando-o conforme seu desejo.</p>
+                        <p><strong>Valor:</strong> ฿1.200.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Yami Yami no Mi (Fruta da Escuridão)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode criar escuridão e manipulá-la, inclusive formando buracos negros. Além disso, pode atrair pessoas para perto de si com uma mão, anular os poderes da Akuma no Mi do alvo e até mesmo absorver o elemento de todas as outras Akuma no Mi para dentro de sua escuridão.</p>
+                        <p><strong>Valor:</strong> ฿4.500.000.000 <i>(🔒FRUTA PERDIDA PELO MUNDO🔒)</i></p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Yuki Yuki no Mi (Fruta da Neve)</h4>
+                        <p style="margin-bottom: 10px;">O usuário pode se transformar em neve e manipulá-la.</p>
+                        <p><strong>Valor:</strong> ฿1.600.000.000</p>
+                    </div>
                 </div>
             </section>
-            
+
             <section class="content-section">
-                <h2 class="title-quantico toggle-title rank-title">
-                    Como funcionam os Atributos? <span class="toggle-icon">▼</span>
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    PARAMECIA <span class="toggle-icon">▼</span>
                 </h2>
+                
                 <div class="toggle-content rank-box">
-                    <p style="margin-bottom: 15px;">As Akuma no Mi possuem atributos únicos para que você possa distribuir os pontos ganhos entre eles:</p>
+                    <h3 class="title-quantico toggle-title" style="font-size: 26px; color: var(--accent-color); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--sidebar-border); cursor: pointer;">
+                        Paramecias Comuns <span class="toggle-icon">▼</span>
+                    </h3>
+                    
+                    <div class="toggle-content" style="margin-bottom: 40px;">
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ami Ami no Mi (Fruta da Rede)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar e manipular redes resistentes, capazes de capturar e imobilizar alvos com eficiência.</p>
+                            <p><strong>Valor:</strong> ฿500.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
 
-                    <div class="sub-attr">
-                        <h3 class="toggle-title">ALCANCE <span class="toggle-icon">▼</span></h3>
-                        <div class="toggle-content">
-                            <p style="margin-bottom: 10px;">O Alcance da Akuma no Mi vai ser variável, não são todas as Akuma no Mi que possuem esse atributo. Ele irá definir o quão longe, em metros, você pode alcançar com seus golpes. Cada Akuma no Mi terá um Multiplicador de Alcance diferente, que será definido na hora que for mandada a ficha.</p>
-                            <p style="margin-bottom: 10px;"><strong>Contagem:</strong> Os pontos de Alcance devem ser divididos por 20. O resultado será multiplicado pelo Multiplicador de Alcance que for definido pelo ADM. Assim o resultado será a distância que sua Akuma poderá percorrer em metros com seus golpes.</p>
-                            <div class="calculator-box">
-                                <h4>Calculadora de Alcance</h4>
-                                <label>Pontos de Alcance: <input type="text" id="calc-alcance-pts" class="points-input auto-calc" value="0"></label>
-                                <label>Multiplicador: <input type="number" step="0.1" id="calc-alcance-mult" class="auto-calc" value="1.0"></label>
-                                <p><strong>Resultado:</strong> <span id="calc-alcance-res">0</span> metros</p>
-                            </div>
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Aro Aro no Mi (Fruta da Flecha)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário gerar e manipular flechas vetoriais tangíveis, capazes de alterar a direção e o movimento de pessoas, objetos e ataques, além de restringir e comprimir alvos.</p>
+                            <p><strong>Valor:</strong> ฿1.400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ato Ato no Mi (Fruta da Arte)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar pessoas e objetos em obras de arte estilizadas ao tocá-los, alterando suas formas físicas para versões distorcidas e pouco funcionais.</p>
+                            <p><strong>Valor:</strong> ฿900.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Awa Awa no Mi (Fruta do Sabão)</h4>
+                            <p style="margin-bottom: 10px;">Habilidade de criar e moldar sabão em forma de pedra, além de deixar as pessoas lisas e bolhudas.</p>
+                            <p><strong>Valor:</strong> ฿200.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Baku Baku no Mi (Fruta da Mastigação)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário ingerir qualquer coisa, exceto kairoseki, e transformá-la em partes de seu corpo, incluindo a criação de um metal forte e resistente a partir das ligas metálicas ingeridas.</p>
+                            <p><strong>Valor:</strong> ฿400.000.000 <i>(Morgana Du'lor)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Bane Bane no Mi (Fruta da Mola)</h4>
+                            <p style="margin-bottom: 10px;">Confere ao usuário a capacidade de transformar qualquer parte do seu corpo em mola, tendo a capacidade de se recolher mesmo no ar.</p>
+                            <p><strong>Valor:</strong> ฿700.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Bara Bara no Mi (Fruta dos Pedaços)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário a capacidade de ser imune a qualquer corte e de se separar em vários pedaços, podendo controlá-los pelo ar. No entanto, não é tão forte quanto se imagina.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Bari Bari no Mi (Fruta da Barreira)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário o poder de criar campos de força impenetráveis e invisíveis. É praticamente uma defesa perfeita (também pode moldar em várias versões).</p>
+                            <p><strong>Valor:</strong> ฿850.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Bata Bata no Mi (Fruta da Manteiga)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar e controlar manteiga na forma líquida e cremosa.</p>
+                            <p><strong>Valor:</strong> ฿350.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Beri Beri no Mi (Fruta da Baga)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário dividir seu corpo em esferas, transformando o usuário em um humano-baga. O poder é semelhante ao da Bara Bara no Mi. Bagas são pequenos frutos como framboesas, amoras, mirtilos, etc.</p>
+                            <p><strong>Valor:</strong> ฿550.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Beta Beta no Mi (Fruta do Muco Explosivo)</h4>
+                            <p style="margin-bottom: 10px;">Parece muito com uma Logia, mas não é. Na verdade, não é o corpo do usuário que está se transformando, mas sim uma camada ao seu redor. Ela dá a habilidade de controlar muco explosivo, além de moldá-lo.</p>
+                            <p><strong>Valor:</strong> ฿620.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Bijo Bijo no Mi (Fruta da Fantasia)</h4>
+                            <p style="margin-bottom: 10px;">O usuário pode usar esta Fruta para enganar seus oponentes criando fantasmas de objetos ou outras pessoas. Os fantasmas criados pelas habilidades da Fruta também podem interagir com seu ambiente como as imagens que eles estão imitando.</p>
+                            <p><strong>Valor:</strong> ฿850.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Bisu Bisu no Mi (Fruta do Biscoito)</h4>
+                            <p style="margin-bottom: 10px;">Pode criar biscoitos e manipulá-los pelo ar, moldando-os e até mesmo criando bonecos de biscoito que são controlados à distância pelo usuário.</p>
+                            <p><strong>Valor:</strong> ฿1.000.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Bomu Bomu no Mi (Fruta da Bomba)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário explodir ou conferir poder destrutivo a partir de qualquer parte de seu corpo ou de seus derivados, no momento que o usuário desejar.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Buki Buki no Mi (Fruta das Armas)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar partes do corpo em armas, como canhões e pistolas, qualquer tipo de arma.</p>
+                            <p><strong>Valor:</strong> ฿400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Buku Buku no Mi (Fruta dos Livros)</h4>
+                            <p style="margin-bottom: 10px;">Concede ao usuário a capacidade de controlar livros próximos, independentemente do seu tamanho, permitindo que os mova telecineticamente ao redor e até mesmo os use como pontos de apoio.</p>
+                            <p><strong>Valor:</strong> ฿500.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Chiyu Chiyu no Mi (Fruta da Cura)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário liberar líquidos do seu corpo que se transformam instantaneamente em curativos para os alvos, até mesmo podendo curar feridas mortais. O uso constante dessa técnica enfraquece bastante o usuário.</p>
+                            <p><strong>Valor:</strong> ฿900.000.000 <i>(Keigo Kiyosaki)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Choki Choki no Mi (Fruta da Tesoura)</h4>
+                            <p style="margin-bottom: 10px;">Transforma as mãos do usuário em tesouras indestrutíveis, capazes de cortar quase qualquer coisa.</p>
+                            <p><strong>Valor:</strong> ฿300.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Deka Deka no Mi (Fruta da Gigantificação)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário aumentar drasticamente o tamanho do próprio corpo, tornando-se um humano-gigantificação capaz de atingir proporções colossais.</p>
+                            <p><strong>Valor:</strong> ฿1.300.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Dero Dero no Mi (Fruta da Dissolução)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário dissolver qualquer coisa em líquido ao toque, inclusive o próprio corpo, tornando-se um humano-dissolução.</p>
+                            <p><strong>Valor:</strong> ฿1.300.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Doa Doa no Mi (Fruta da Porta)</h4>
+                            <p style="margin-bottom: 10px;">Habilidade de criar portas em qualquer lugar e se mover entre elas, como se estivesse mudando de dimensões.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000 <i>(Sorum)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Doku Doku no Mi (Fruta do Veneno)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar venenos mortais e ser imune a eles. Também pode cobrir o corpo com veneno, contaminando quem o tocar.</p>
+                            <p><strong>Valor:</strong> ฿2.800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Doru Doru no Mi (Fruta da Cera de Vela)</h4>
+                            <p style="margin-bottom: 10px;">Capacita o usuário a criar e moldar cera de vela, podendo torná-la mole e, em seguida, endurecê-la.</p>
+                            <p><strong>Valor:</strong> ฿400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Fude Fude no Mi (Fruta da Tinta)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário gerar tinta a partir de seu corpo e, por meio do uso de um pincel de pintura, transformar imagens criadas com essa tinta em objetos tridimensionais e realistas.</p>
+                            <p><strong>Valor:</strong> ฿1.200.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Fuku Fuku no Mi (Fruta da Vestimenta)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar roupas e outros acessórios de folhas ou pedras, visualizando-os, até mesmo criando círculos para as pessoas passarem e assim por diante, vestindo a roupa que o usuário desejar.</p>
+                            <p><strong>Valor:</strong> ฿100.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Fuwa Fuwa no Mi (Fruta da Levitação)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário levitar a si mesmo, objetos e itens inanimados no ar.</p>
+                            <p><strong>Valor:</strong> ฿1.800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gabu Gabu no Mi (Fruta da Bebida)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário gerar e manipular grandes quantidades de bebida alcoólica a partir do próprio corpo, tornando-se um humano-bebida capaz de atacar, inundar áreas e potencializar combustões.</p>
+                            <p><strong>Valor:</strong> ฿1.100.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gasha Gasha no Mi (Fruta da Construção)</h4>
+                            <p style="margin-bottom: 10px;">Com o poder da Fruta, o usuário é capaz de criar grandes estruturas mecânicas e embarcações, incluindo submarinos e trajes robóticos que aumentam suas proezas de combate e capacidades de transporte. Tal como acontece com todas as Akuma no Mi, esta tem o potencial de ser "despertada", o que permite ao usuário desmontar e reformatar objetos de uma gama muito maior, até mesmo o próprio ambiente.</p>
+                            <p><strong>Valor:</strong> ฿1.000.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gatsu Gatsu no Mi (Fruta dos Pregos) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário gerar, controlar e incorporar pregos: símbolos de sacrifício, fixação e dor. Os pregos podem ser físicos (metálicos) ou "espirituais", manifestando-se como energia que "pregam" conceitos, emoções ou corpos no espaço.</p>
+                            <p><strong>Valor:</strong> ฿1.500.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Genso Genso no Mi (Fruta da Ilusão) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário a habilidade de criar ilusões vívidas e envolventes.</p>
+                            <p><strong>Valor:</strong> ฿550.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Giro Giro no Mi (Fruta da Visão)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário o poder de observar através das coisas. O usuário faz um círculo usando os dedos polegar e indicador e o coloca no olho, como um óculos. Isso permite ver através de paredes ou pessoas, como visão de raio-x. Também é possível ler a mente de alguém. Aparentemente, o usuário também pode criar coisas com lágrimas que atravessam o círculo de seus dedos e se tornam projéteis poderosos.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gocha Gocha no Mi (Fruta da Fusão)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário se fundir com outras pessoas.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Goe Goe no Mi (Fruta da Voz)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar feixes de som que se parecem com feixes de energia, gritando.</p>
+                            <p><strong>Valor:</strong> ฿950.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gomu Gomu no Mi (Fruta da Borracha)</h4>
+                            <p style="margin-bottom: 10px;">Concede ao corpo do usuário as propriedades da borracha, efetivamente transformando-o em uma pessoa-borracha.</p>
+                            <p><strong>Valor:</strong> ฿650.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Goru Goru no Mi (Fruta do Ouro)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário manipular o ouro em diversos estados (sólido, líquido ou semilíquido), possibilitando a criação de armaduras, moldagem de objetos e aprisionamento de pessoas.</p>
+                            <p><strong>Valor:</strong> ฿1.800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gura Gura no Mi (Fruta do Terremoto)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar abalos sísmicos e manipular o espaço, originando terremotos, maremotos e tsunamis.</p>
+                            <p><strong>Valor:</strong> ฿3.800.000.000 <i>(Sakazuki Itadori)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Guru Guru no Mi (Fruta da Hélice)</h4>
+                            <p style="margin-bottom: 10px;">Essa Fruta permite que o usuário transforme partes de seu corpo em hélices, o que lhe permite voar ou atacar.</p>
+                            <p><strong>Valor:</strong> ฿100.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gutsu Gutsu no Mi (Fruta da Fundição)</h4>
+                            <p style="margin-bottom: 10px;">Ao ingerir minérios de diferentes tipos, dentro de seu estômago, o usuário é capaz de aquecê-los e moldá-los em várias formas diferentes, tornando-se uma pessoa-fundição.</p>
+                            <p><strong>Valor:</strong> ฿950.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hana Hana no Mi (Fruta dos Membros)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário a capacidade de fazer brotar qualquer membro do corpo em qualquer superfície.</p>
+                            <p><strong>Valor:</strong> ฿700.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hemo Hemo no Mi (Fruta do Sangue) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário controlar seu próprio sangue e o sangue fresco, mas não o sangue das pessoas vivas.</p>
+                            <p><strong>Valor:</strong> ฿850.000.000 <i>(???)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hira Hira no Mi (Fruta da Bandeira)</h4>
+                            <p style="margin-bottom: 10px;">Torna o próprio usuário ou tudo o que ele toca fino como um pano e começa a tremular como uma bandeira. É um poder bem estranho, mas muito útil em combate.</p>
+                            <p><strong>Valor:</strong> ฿450.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hiso Hiso no Mi (Fruta da Conversa)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário entender o coração de um animal, permitindo que ele "fale" telepaticamente com animais.</p>
+                            <p><strong>Valor:</strong> ฿400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hobi Hobi no Mi (Fruta do Brinquedo)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar outros em brinquedos ao tocá-los, apagando da existência as memórias que as pessoas têm sobre ela.</p>
+                            <p><strong>Valor:</strong> ฿1.100.000.000 <i>(🔒FRUTA PERDIDA PELO MUNDO🔒)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hone Hone no Mi (Fruta do Osso) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Concede ao usuário a capacidade de controlar sua estrutura óssea à vontade, além da capacidade de moldar os ossos conforme desejado, tornando-os tão duros como aço ou tão flexíveis como borracha. O usuário pode aumentar o tamanho de seus ossos e até mesmo esticar sua estrutura óssea para fora de seu corpo, controlando-os. Pode controlar apenas os ossos de cadáveres, mas precisa tocar no osso sacro.</p>
+                            <p><strong>Valor:</strong> ฿700.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Horo Horo no Mi (Fruta do Fantasma)</h4>
+                            <p style="margin-bottom: 10px;">Habilidade de criar vários fantasmas que causam depressão e tristeza no inimigo, além da habilidade de ficar intangível como um fantasma, voar e criar um fantasma explosivo.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000 <i>(???)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Horu Horu no Mi (Fruta dos Hormônios)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário injetar e controlar hormônios, alterando temperamento, crescimento, entre outras coisas, através de agulhas que nascem nos dedos do usuário.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hoya Hoya no Mi (Fruta do Gênio)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário invocar um Gênio de seu corpo, tendo total controle desse ser insanamente forte.</p>
+                            <p><strong>Valor:</strong> ฿500.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Iro Iro no Mi (Fruta da Camuflagem)</h4>
+                            <p style="margin-bottom: 10px;">Capacidade de camuflar, tornando-o quase invisível ao olho. Pode ser usado para ataques furtivos e ajudar o usuário na batalha, tornando-se seu oponente incapaz de vê-los. A pintura de camuflagem funciona em objetos tão grandes quanto navios de grande porte.</p>
+                            <p><strong>Valor:</strong> ฿400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ishi Ishi no Mi (Fruta da Rocha)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário fundir seu corpo com qualquer pedra exposta, incluindo paredes, chão, estátuas ou qualquer outra estrutura rochosa. Ele pode mover-se dentro dessa estrutura e controlá-la para ter um corpo maior ou moldar o ambiente ao seu redor. Também pode usar o chão e moldar o próprio solo, se estiver dentro de um certo limite de distância.</p>
+                            <p><strong>Valor:</strong> ฿1.000.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ito Ito no Mi (Fruta dos Fios)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar e controlar fios extremamente pequenos, invisíveis a olho nu, que são super afiados, capazes de decepar facilmente a perna de um gigante.</p>
+                            <p><strong>Valor:</strong> ฿1.200.000.000 <i>(???)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Jake Jake no Mi (Fruta da Jaqueta)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário o poder de virar uma jaqueta que, quando vestida por alguém, assume o controle do corpo dessa pessoa.</p>
+                            <p><strong>Valor:</strong> ฿120.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Jara Jara no Mi (Fruta das Correntes)</h4>
+                            <p style="margin-bottom: 10px;">Permite que correntes de aço saiam do corpo do usuário para uso em lutas. Também é possível usar essas correntes para se proteger ou fortalecer seus ataques.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Jiki Jiki no Mi (Fruta do Magnetismo)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário controlar o magnetismo, manipulando metais à vontade.</p>
+                            <p><strong>Valor:</strong> ฿1.400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Juku Juku no Mi (Fruta do Amadurecimento)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário amadurecer e apodrecer qualquer coisa que toque, independentemente de sua composição.</p>
+                            <p><strong>Valor:</strong> ฿1.100.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kachi Kachi no Mi (Fruta da Resistência de Ferro)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário ter um corpo extremamente duro, muito próximo do kairoseki em termos de resistência. Também dá a capacidade de aquecer o corpo até uma certa temperatura.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kage Kage no Mi (Fruta da Sombra)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário manipular sombras, criando formas físicas. Também pode remover e transferir sombras para cadáveres, transformando-os em zumbis. A pessoa cuja sombra é roubada não pode se expor ao Sol. Se alguém absorve essas sombras para si, adquire todas as habilidades do dono.</p>
+                            <p><strong>Valor:</strong> ฿1.400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kama Kama no Mi (Fruta da Unha)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário a capacidade de aumentar as unhas em até duas polegadas, capazes até de cortar através do ar, criando lâminas de vácuo que podem cortar a qualquer distância, permitindo assim ataques de longo alcance. As unhas também podem ser usadas para combate de curto alcance.</p>
+                            <p><strong>Valor:</strong> ฿700.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kegawa Kegawa no Mi (Fruta do Pelo) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário controlar os pelos corporais, fazendo-os crescer ou diminuir e moldando-os de diversas formas possíveis, sendo o limite apenas sua imaginação.</p>
+                            <p><strong>Valor:</strong> ฿400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kesshō Kesshō no Mi (Fruta do Cristal) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar e manipular cristais sólidos de forma poliédrica regular, vidro fino e brilhante de boa qualidade. Ele pode cristalizar coisas e até mesmo moldar seu cristal conforme sua imaginação. São mais resistentes que o gelo devido à sua composição metálica e brilhantes.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kibi Kibi no Mi (Fruta do Kibi Dango)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar "dango" a partir de suas bochechas, que podem domar animais e animais de natureza à parte. Também pode domesticar Zoans do tipo animal enquanto eles estão em sua Forma Animal, se eles voltarem ao normal o controle sobre eles sumirá, fazendo que ele precise comer mais dando quando se tornar animal novamente.</p>
+                            <p><strong>Valor:</strong> ฿650.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kira Kira no Mi (Fruta do Diamante)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar seu corpo em diamante, tornando-se quase indestrutível e aumentando a potência de seus ataques.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kiro Kiro no Mi (Fruta do Peso)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário aumentar seu peso até 2 toneladas e diminuí-lo até menos de 1 grama.</p>
+                            <p><strong>Valor:</strong> ฿250.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kobu Kobu no Mi (Fruta do Incentivo)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário incentivar e reunir pessoas para despertar seu potencial latente para lutar.</p>
+                            <p><strong>Valor:</strong> ฿300.000.000 <i>(Druig)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kon Kon no Mi (Fruta do Milho) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário gerar e controlar grãos e espigas de milho a partir de seu corpo, à vontade.</p>
+                            <p><strong>Valor:</strong> ฿500.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Koro Koro no Mi (Fruta do Giro)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar-se em um carrinho de trilho humano, movendo-se rapidamente sobre superfícies e linhas.</p>
+                            <p><strong>Valor:</strong> ฿180.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kuku Kuku no Mi (Fruta da Comida)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar objetos não vivos em comida. Com essa fruta, o usuário tem acesso fácil aos alimentos para se alimentar e pode alimentar outros apenas transformando um objeto. O usuário nem precisa cozinhar a comida.</p>
+                            <p><strong>Valor:</strong> ฿250.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kuri Kuri no Mi (Fruta do Creme)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar e manipular creme à vontade. Sendo bastante semelhante a uma Logia, também pode manipulá-lo e moldá-lo em várias formas, além de ter a habilidade conceitual de queimar os oponentes através do creme.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kyubu Kyubu no Mi (Fruta dos Cubos)</h4>
+                            <p style="margin-bottom: 10px;">Permite que o usuário corte qualquer coisa que toque e a transformá-la em cubos, controlando esses cubos, transformando-se assim em uma pessoa-cubo.</p>
+                            <p><strong>Valor:</strong> ฿890.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Maki Maki no Mi (Fruta do Pergaminho)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário selar e armazenar ataques, objetos ou técnicas dentro de pergaminhos para liberá-los posteriormente.</p>
+                            <p><strong>Valor:</strong> ฿850.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mane Mane no Mi (Fruta da Cópia de Aparência)</h4>
+                            <p style="margin-bottom: 10px;">Capacita o usuário a transformar-se em qualquer pessoa que tocou, sem ganhar suas habilidades ou força.</p>
+                            <p><strong>Valor:</strong> ฿120.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Masu Masu no Mi (Fruta da Massa)</h4>
+                            <p style="margin-bottom: 10px;">Capacita o usuário a aumentar ou diminuir a massa de tudo que toca, incluindo o próprio usuário.</p>
+                            <p><strong>Valor:</strong> ฿1.200.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mato Mato no Mi (Fruta do Alvo)</h4>
+                            <p style="margin-bottom: 10px;">Faz com que o usuário marque um inimigo através de contato físico, tornando-o um alvo infinito. Quando o usuário dispara algum projétil, ele irá seguir o alvo até atingi-lo, não importa a distância ou local. No entanto, se o projétil for barrado, ele se torna normal novamente. Como o alvo fica "gravado" na mão do usuário, ele só pode marcar um número equivalente ao seu número de mãos.</p>
+                            <p><strong>Valor:</strong> ฿450.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Memo Memo no Mi (Fruta da Memória)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário mexer nas memórias de outras pessoas. É como se elas tivessem um rolo de filme dentro da cabeça, e o usuário pode remover esse rolo, cortar partes (apagar memórias) ou editar (inserir memórias falsas ou alterar a ordem delas), e depois inseri-lo de volta sem causar danos físicos.</p>
+                            <p><strong>Valor:</strong> ฿750.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mero Mero no Mi (Fruta do Amor)</h4>
+                            <p style="margin-bottom: 10px;">Petrifica pessoas com pensamentos impuros através do toque ou de um raio petrificante lançado com as mãos, além de moldar materiais em cor rosa que podem causar dano e petrificar.</p>
+                            <p><strong>Valor:</strong> ฿2.000.000.000 <i>(🔒FRUTA PERDIDA PELO MUNDO🔒)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mini Mini no Mi (Fruta da Diminuição Corporal)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário encolher até 5mm de altura sem reduzir sua força.</p>
+                            <p><strong>Valor:</strong> ฿300.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mira Mira no Mi (Fruta dos Espelhos)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar espelhos com habilidades únicas. Eles podem refletir qualquer tipo de ataque que os atinja. Também servem como portais para outra dimensão, interligada com todos os demais espelhos criados pelo usuário, permitindo que ele se mova entre eles ou simplesmente prenda seus adversários.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Muchi Muchi no Mi (Fruta do Chicote)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar e manipular chicotes que podem não apenas atacar, mas também subjugar e comandar aqueles que são atingidos.</p>
+                            <p><strong>Valor:</strong> ฿750.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Moa Moa no Mi (Fruta do Aumento)</h4>
+                            <p style="margin-bottom: 10px;">Permite que o usuário aumente o tamanho ou a velocidade de qualquer objeto que toque.</p>
+                            <p><strong>Valor:</strong> ฿1.000.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Modo Modo no Mi (Fruta do Retorno)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário rejuvenescer qualquer pessoa ou objeto que toque em 12 anos por uso; repetições sucessivas podem fazer o alvo regredir até desaparecer da existência.</p>
+                            <p><strong>Valor:</strong> ฿3.900.000.000 <i>(🔒FRUTA PERDIDA PELO MUNDO🔒)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mosa Mosa no Mi (Fruta do Crescimento)</h4>
+                            <p style="margin-bottom: 10px;">Concede ao usuário a capacidade de acelerar a taxa de crescimento das plantas, criar qualquer planta conhecida e controlá-las ao seu desejo.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Nagi Nagi no Mi (Fruta do Silêncio)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar uma barreira numa área em torno de si onde qualquer conversa, barulho ou tipo de som não pode ser ouvido por quem estiver de fora.</p>
+                            <p><strong>Valor:</strong> ฿300.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Nawa Nawa no Mi (Fruta das Cordas) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar e manipular cordas presas ao próprio corpo.</p>
+                            <p><strong>Valor:</strong> ฿250.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Nemu Nemu no Mi (Fruta do Sono)</h4>
+                            <p style="margin-bottom: 10px;">O único poder deste fruto é a capacidade de colocar seus inimigos em um estado de sono através da hipnose.</p>
+                            <p><strong>Valor:</strong> ฿450.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Netsu Netsu no Mi (Fruta do Calor)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao seu usuário emanar o calor de seu corpo, aquecendo partes do corpo a temperaturas maiores do que a maioria das pessoas pode suportar. Isso o ajuda muito em confrontos, permitindo também que transfira calor para objetos, tornando-os mais quentes. Além disso, as partes do corpo aquecidas possuem maior resistência a lâminas, armas de fogo e armas afiadas.</p>
+                            <p><strong>Valor:</strong> ฿550.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Nikyu Nikyu no Mi (Fruta da Pata)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário "empurrar" as coisas e refletir praticamente tudo. Também pode remover danos e dores do corpo e colocá-los em uma bolha com formato de pata.</p>
+                            <p><strong>Valor:</strong> ฿3.000.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Noko Noko no Mi (Fruta do Cogumelo)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar e controlar esporos de cogumelos venenosos, espalhando toxinas pelo ar e contaminando áreas amplas.</p>
+                            <p><strong>Valor:</strong> ฿900.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Nomi Nomi no Mi (Fruta do Cérebro)</h4>
+                            <p style="margin-bottom: 10px;">Permite que o cérebro do usuário se expanda indefinidamente com novos conhecimentos, tornando o usuário um Homem-Cérebro.</p>
+                            <p><strong>Valor:</strong> ฿200.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Nori Nori no Mi (Fruta da Montaria)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário "montar" e controlar qualquer pessoa ou criatura como se fosse um cavalo, assumindo o comando de seus movimentos enquanto estiver sobre ela.</p>
+                            <p><strong>Valor:</strong> ฿700.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Noro Noro no Mi (Fruta da Lentidão)</h4>
+                            <p style="margin-bottom: 10px;">Confere ao usuário a habilidade de congelar o oponente com raios fotônicos, desacelerando o inimigo e travando-o durante 30 segundos.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Nui Nui no Mi (Fruta da Costura)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário o poder de costurar qualquer coisa que desejar, com uma linha "inquebrável". Não se sabe ao certo, mas aparentemente não fere a vítima caso o costurado seja um ser vivo.</p>
+                            <p><strong>Valor:</strong> ฿370.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Nuke Nuke no Mi (Fruta da Intangibilidade)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário atravessar objetos inorgânicos ao tornar-se intangível.</p>
+                            <p><strong>Valor:</strong> ฿900.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ope Ope no Mi (Fruta da Operação)</h4>
+                            <p style="margin-bottom: 10px;">Confere ao usuário a capacidade de criar uma área esférica chamada "Room", onde ele pode manipular tudo dentro dela a seu favor.</p>
+                            <p><strong>Valor:</strong> ฿4.600.000.000 <i>(Morgana Du'lor)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ori Ori no Mi (Fruta da Grade)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar grades de prisão a partir do corpo, podendo prender seus oponentes em várias grades feitas pelo próprio usuário.</p>
+                            <p><strong>Valor:</strong> ฿350.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Oshi Oshi no Mi (Fruta da Argila)</h4>
+                            <p style="margin-bottom: 10px;">Permite que o usuário empurre o solo como se fosse maleável como argila.</p>
+                            <p><strong>Valor:</strong> ฿500.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Oto Oto no Mi (Fruta do Som)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar partes de seu corpo em instrumentos musicais e tocar música com uma variedade de efeitos destrutivos.</p>
+                            <p><strong>Valor:</strong> ฿1.000.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Pamu Pamu no Mi (Fruta da Explosão)</h4>
+                            <p style="margin-bottom: 10px;">Faz com que tudo o que o usuário toque (usando uma de suas técnicas) infle e exploda como uma bomba.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Pero Pero no Mi (Fruta do Doce)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar outras pessoas em doces. Não se sabe ao certo se as pessoas transformadas se tornam doces ambulantes ainda vivos ou se realmente morrem. Mas sabe-se que elas definitivamente morrem após serem consumidas na forma de doce. O usuário também pode controlar e moldar o doce que ele cria.</p>
+                            <p><strong>Valor:</strong> ฿600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Peto Peto no Mi (Fruta do Pet)</h4>
+                            <p style="margin-bottom: 10px;">Permite que o usuário crie colares com a habilidade de controlar animais e humanos. Para os comandos funcionarem, a vítima precisa ouvir o comando.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Poke Poke no Mi (Fruta do Bolso)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário criar bolsos e compartimentos em seu próprio corpo, armazenando grandes quantidades de armas e objetos para serem sacados instantaneamente.</p>
+                            <p><strong>Valor:</strong> ฿650.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Rashin Rashin no Mi (Fruta da Bússola) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Concede ao usuário a habilidade de criar e manipular bússolas à vontade. Essas bússolas possuem propriedades magnéticas especiais, permitindo ao usuário influenciar o ambiente e objetos ao seu redor de várias maneiras.</p>
+                            <p><strong>Valor:</strong> ฿700.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Riki Riki no Mi (Fruta da Força)</h4>
+                            <p style="margin-bottom: 10px;">Concede ao usuário a habilidade de dá ao usuário força física anormal, concedendo a capacidade de levantar e jogar objetos gigantescos. </p>
+                            <p><strong>Valor:</strong> ฿1.000.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Sabi Sabi no Mi (Fruta da Ferrugem)</h4>
+                            <p style="margin-bottom: 10px;">Habilidade de transformar em ferrugem tudo que tocar até virar um pó, precisando de vários toques ou manter em constante contato.</p>
+                            <p><strong>Valor:</strong> ฿400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Shari Shari no Mi (Fruta da Roda)</h4>
+                            <p style="margin-bottom: 10px;">Dá a capacidade de transformar qualquer parte do corpo em rodas.</p>
+                            <p><strong>Valor:</strong> ฿120.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Shibo Shibo no Mi (Fruta do Suco)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário drenar líquido de coisas vivas e não vivas, podendo aumentar seu próprio tamanho e o tamanho de sua arma.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Shiku Shiku no Mi (Fruta da Doença)</h4>
+                            <p style="margin-bottom: 10px;">Essa Fruta concede ao usuário a capacidade de gerar e espalhar doenças de forma intencional, criando enfermidades com efeitos variados e muitas vezes absurdos, como transformações físicas ou debilitações súbitas. As doenças podem se propagar rapidamente entre os alvos, mesmo sem contato direto, permitindo ao usuário enfraquecer grupos inteiros com facilidade. Além disso, essas enfermidades não seguem necessariamente as leis naturais, podendo ser moldadas conforme a vontade do usuário, o que torna seus efeitos imprevisíveis e extremamente perigosos em combate.</p>
+                            <p><strong>Valor:</strong> ฿2.200.000.000 <i>(???)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Shima Shima no Mi (Fruta da Ilha)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário fundir-se e controlar uma ilha inteira, manipulando sua estrutura como se fosse uma extensão do próprio corpo.</p>
+                            <p><strong>Valor:</strong> ฿1.600.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Shiro Shiro no Mi (Fruta da Fortaleza)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário se tornar uma fortaleza viva, com pontes, canhões e estruturas em seu interior, e pessoas conseguem entrar dentro do usuário, encolhendo para caber no espaço dentro dele.</p>
+                            <p><strong>Valor:</strong> ฿1.200.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Soru Soru no Mi (Fruta da Alma)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário o poder de manipular almas. Com isso, é possível extrair partes da alma de alguém, diminuindo assim o tempo de vida da pessoa. Ao consumir essas partes, o usuário prolonga sua própria vida. Essas partes de alma também podem ser depositadas em objetos inanimados, dando-lhes vida. A presença da alma do usuário causa grande temor em várias espécies. Aparentemente, ainda existem várias outras habilidades que não foram reveladas.</p>
+                            <p><strong>Valor:</strong> ฿2.300.000.000 <i>(Kozuki Yoshihide)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Sube Sube no Mi (Fruta do Corpo Liso)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário a capacidade de ter um corpo liso, permitindo deslizar pelo chão sem sofrer danos de cortes, armas ou balas.</p>
+                            <p><strong>Valor:</strong> ฿100.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Sui Sui no Mi (Fruta do Nado)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário a capacidade de nadar em superfícies sólidas, como se o ambiente ao redor do seu corpo se tornasse líquido. Isso permite até atravessar paredes.</p>
+                            <p><strong>Valor:</strong> ฿300.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Suji Suji no Mi (Fruta dos Músculos) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar seu corpo em músculos visíveis e altamente definidos, amplificando sua força física e resistência. Com essa habilidade, o usuário pode ajustar a densidade muscular, potencializando seus golpes e a capacidade de suportar ataques inimigos. A Fruta transforma o usuário em uma verdadeira máquina muscular, ideal para combate corpo a corpo.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Suke Suke no Mi (Fruta da Invisibilidade)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário a capacidade de ficar invisível, assim como tudo que ele toca.</p>
+                            <p><strong>Valor:</strong> ฿500.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Supa Supa no Mi (Fruta das Lâminas)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário tornar-se duro como aço e moldar qualquer parte de seu corpo em lâminas.</p>
+                            <p><strong>Valor:</strong> ฿700.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Toge Toge no Mi (Fruta dos Espinhos)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar-se em um verdadeiro espinho, podendo transformar qualquer parte de seu corpo em espinhos e aumentar sua força em várias partes do corpo.</p>
+                            <p><strong>Valor:</strong> ฿400.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Toki Toki no Mi (Fruta do Tempo)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário enviar a si mesmo ou outras pessoas para o futuro, avançando no tempo sem possibilidade de retornar ao passado.</p>
+                            <p><strong>Valor:</strong> ฿2.100.000.000 <i>(🔒FRUTA PERDIDA PELO MUNDO🔒)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ton Ton no Mi (Fruta do Aumento de Peso)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário aumentar sua massa exponencialmente, tornando-se muito pesado e capaz de esmagar qualquer coisa que esteja abaixo de seu corpo (de 1 tonelada a 10 toneladas).</p>
+                            <p><strong>Valor:</strong> ฿1.000.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Toshi Toshi no Mi (Fruta da Idade)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário alterar a idade das outras pessoas, fazendo-as ficarem mais velhas ou transformando-as em bebês ou idosos, com apenas um toque.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tsutsu Tsutsu no Mi (Fruta do Barril)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transformar partes do corpo em canos e barris de arma de fogo, disparando projéteis com grande poder destrutivo.</p>
+                            <p><strong>Valor:</strong> ฿550.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Uta Uta no Mi (Fruta da Canção)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário transportar a consciência das pessoas para um espaço imaginário através do canto.</p>
+                            <p><strong>Valor:</strong> ฿2.400.000.000 <i>(???)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Wapu Wapu no Mi (Fruta do Teleporte)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário se teletransportar para o seu campo de visão, porém o usuário não consegue teleportar muitas pessoas consigo, nem mesmo objetos muito grandes. A Fruta é melhor aproveitada com o Haki da Observação.</p>
+                            <p><strong>Valor:</strong> ฿1.900.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Wara Wara no Mi (Fruta da Palha)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário se transformar em um espantalho gigante, com a capacidade de amortecer golpes físicos e criar pequenos bonecos voodoo.</p>
+                            <p><strong>Valor:</strong> ฿800.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Woshu Woshu no Mi (Fruta da Limpeza)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário tratar os inimigos como roupas, literalmente os lavando em seguida, e depois colocando para secar. Ela limpa os corações e remove toda a maldade e vontade de matar, resultando em ações puras.</p>
+                            <p><strong>Valor:</strong> ฿120.000.000</p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Yomi Yomi no Mi (Fruta do Renascimento)</h4>
+                            <p style="margin-bottom: 10px;">Dá ao usuário a capacidade de renascer uma vez após a morte, mas o espírito deve encontrar o corpo para retornar à vida; caso contrário, o corpo pode se tornar um esqueleto.</p>
+                            <p><strong>Valor:</strong> ฿750.000.000 <i>(???)</i></p>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Zushi Zushi no Mi (Fruta da Gravidade)</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário manipular a gravidade em torno de um local escolhido, enviando forças gravitacionais.</p>
+                            <p><strong>Valor:</strong> ฿2.600.000.000 <i>(Sorum)</i></p>
                         </div>
                     </div>
 
-                    <div class="sub-attr">
-                        <h3 class="toggle-title">CONTROLE <span class="toggle-icon">▼</span></h3>
-                        <div class="toggle-content">
-                            <p style="margin-bottom: 10px;">O Controle da Fruta é a porcentagem que define o seu domínio total sobre ela. Cada atributo de Akuma no Mi tem um limite máximo de 10.000 pontos. Para descobrir sua porcentagem de Controle, basta somar seus pontos e fazer uma regra de três com base no limite da sua Fruta.</p>
-                            <p style="margin-bottom: 10px;"><strong>Contagem:</strong> Para descobrir sua Porcentagem de Controle, basta fazer uma regra de três.</p>
-                            <div class="calculator-box">
-                                <h4>Calculadora de Controle</h4>
-                                <label>Quantidade de Atributos da Fruta: <input type="text" id="calc-ctrl-qtd" class="qtd-input auto-calc" value="3"></label>
-                                <label>Pontos Totais: <input type="text" id="calc-ctrl-pts" class="total-pts-input auto-calc" value="0"></label>
-                                <p><strong>Resultado:</strong> <span id="calc-ctrl-res">0</span>%</p>
-                            </div>
+                    <h3 class="title-quantico toggle-title" style="font-size: 26px; color: var(--accent-color); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--sidebar-border); cursor: pointer;">
+                        Paramecias Especiais <span class="toggle-icon">▼</span>
+                    </h3>
+                    
+                    <div class="toggle-content">
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Karan Karan no Mi (Fruta do Metal) [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">O usuário pode se transformar, criar e manipular qualquer tipo de metal.</p>
+                            <p style="margin-bottom: 10px;">Concede ao usuário as capacidades de uma Logia apenas quando este está transformado num metal que, em temperatura ambiente, é líquido.</p>
+                            <p><strong>Valor:</strong> ฿1.200.000.000</p>
                         </div>
-                    </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
 
-                    <div class="sub-attr">
-                        <h3 class="toggle-title">DURABILIDADE <span class="toggle-icon">▼</span></h3>
-                        <div class="toggle-content">
-                            <p style="margin-bottom: 10px;">A Durabilidade será exclusivamente usada para definir a quantidade de cenas que você pode usar seus poderes de Akuma no Mi, ou seja, vai definir seu vigor com os poderes. Esse atributo pode ser esgotado com o uso constante em larga escala, com um debuff decidido por narrador durante um evento ou batalha.</p>
-                            <p style="margin-bottom: 10px;"><strong>Contagem:</strong> A cada 500 pontos colocados nesse atributo, o personagem pode usar sua Fruta por 1 cena consecutiva. O cálculo que pode ser feito para esse atributo é: Durabilidade ÷ 500.</p>
-                            <p><strong>Recuperar a Durabilidade:</strong> Para recuperar pontos de Durabilidade, basta ficar uma cena sem usar sua Akuma no Mi. A cada cena que você passa sem utilizar sua Akuma no Mi, você recupera 500 pontos de Durabilidade. Os pontos recuperados não podem ultrapassar seu limite máximo atual de pontos de Durabilidade.</p>
-                            <div class="calculator-box">
-                                <h4>Calculadora de Durabilidade</h4>
-                                <label>Pontos de Durabilidade: <input type="text" id="calc-dur-pts" class="points-input auto-calc" value="0"></label>
-                                <p><strong>Resultado:</strong> <span id="calc-dur-res">0</span> cenas consecutivas</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sub-attr">
-                        <h3 class="toggle-title">POTÊNCIA <span class="toggle-icon">▼</span></h3>
-                        <div class="toggle-content">
-                            <p style="margin-bottom: 10px;">Define o Dano adicional que pode ser causado por sua Akuma no Mi. Não apenas isso, como também define a rigidez e a durabilidade de massa da matéria criada por sua Akuma no Mi, dependendo da Fruta, obviamente, já que há algumas Akuma no Mi que não precisam mostrar a rigidez de sua matéria, como por exemplo a Mera Mera no Mi.</p>
-                            <p style="margin-bottom: 10px;"><strong>Contagem:</strong> Essa parte vai variar de Fruta para Fruta. Cada Akuma no Mi terá um Controle, uma Porcentagem de Potência e uma Porcentagem de Resistência. Algumas podem ter 50%, assim como outras podem ter 100%. Isso será definido pelo ADM na hora que for mandada sua ficha. O resultado da porcentagem será somado ao total de seu atributo relacionado. O Controle é imutável, no momento em que ela for escolhida, não poderá mais ser mudada.</p>
-                            <div class="calculator-box">
-                                <h4>Calculadora de Potência (Dano)</h4>
-                                <label>Pontos de Potência: <input type="text" id="calc-pot-pts" class="points-input auto-calc" value="0"></label>
-                                <label>Controle (%): <input type="text" id="calc-pot-ctrl" class="percent-input auto-calc" value="0"></label>
-                                <label>Buff Adicional (%): <input type="text" id="calc-pot-buff" class="percent-input auto-calc" value="0"></label>
-                                <p><strong>Dano Adicional da Fruta:</strong> <span id="calc-pot-res">0</span></p>
-
-                                <h4 style="margin-top: 25px;">Calculadora de Potência (Resistência)</h4>
-                                <label>Pontos de Potência: <input type="text" id="calc-res-pts" class="points-input auto-calc" value="0"></label>
-                                <label>Porcentagem de Resistência (%): <input type="text" id="calc-res-pct" class="percent-input auto-calc" value="0"></label>
-                                <p><strong>Resistência da Criação:</strong> <span id="calc-res-res">0</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sub-attr">
-                        <h3 class="toggle-title">VELOCIDADE <span class="toggle-icon">▼</span></h3>
-                        <div class="toggle-content">
-                            <p style="margin-bottom: 10px;">A Velocidade será calculada com base nos atributos do usuário. Para Frutas que aumentam a velocidade do usuário, o cálculo será feito multiplicando a porcentagem de Controle pela Velocidade atual, resultando em um valor extra somado à Velocidade do ataque ou do corpo. Esse bônus se aplica apenas a frutas específicas, como a Gomu Gomu no Mi, que melhora a mobilidade em combate.</p>
-                            <div class="calculator-box">
-                                <h4>Calculadora de Velocidade Adicional</h4>
-                                <label>Sua Velocidade Atual: <input type="text" id="calc-vel-pts" class="vel-input auto-calc" value="0"></label>
-                                <label>Controle (%): <input type="text" id="calc-vel-ctrl" class="percent-input auto-calc" value="0"></label>
-                                <label>Buff da Fruta (%): <input type="text" id="calc-vel-buff" class="percent-input auto-calc" value="0"></label>
-                                <p><strong>Velocidade Extra Adquirida:</strong> <span id="calc-vel-res">0</span></p>
-                            </div>
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mochi Mochi no Mi (Fruta do Bolo de Arroz)</h4>
+                            <p style="margin-bottom: 10px;">Dá a capacidade ao usuário de se transformar em bolo de arroz, também conhecido como "mochi". Ele é pegajoso demais, pode grudar nos oponentes, prender, moldar como bem entender e até mesmo guardar coisas dentro do próprio corpo, que seja do seu tamanho.</p>
+                            <p><strong>Valor:</strong> ฿1.000.000.000 <i>(Hikaru Chinjao)</i></p>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             <section class="content-section">
-                <h2 class="title-quantico toggle-title rank-title">
-                    Criação de Frutas <span class="toggle-icon">▼</span>
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    ZOAN <span class="toggle-icon">▼</span>
                 </h2>
+                
                 <div class="toggle-content rank-box">
-                    <p style="margin-bottom: 15px;">As Frutas são únicas, portanto a criação de Frutas será essencial, pois, com o aumento de jogadores, as Frutas mais conhecidas da obra de One Piece serão rapidamente coletadas para aqueles que forem mais rápidos. Mas e para aqueles que vieram depois? É nisso que esse sistema se concentra!</p>
-                    <p style="margin-bottom: 15px;">Os jogadores poderão dar um nome para a Fruta, no mesmo estilo da obra original.</p>
-                    <p style="margin-bottom: 15px;">Esse é o primeiro passo. Nos próximos passos, o jogador dará outra informação que definirá a habilidade de sua Fruta, seja ela Logia, Paramecia ou Zoan.</p>
-                    <p style="margin-bottom: 15px;">As Frutas terão a habilidades de acordo com seu tipo:</p>
-                    <ul style="margin-left: 20px; margin-bottom: 15px;">
-                        <li style="margin-bottom: 8px;">Se for <strong>Logia</strong> será "elemental";</li>
-                        <li style="margin-bottom: 8px;">Se for <strong>Paramecia</strong> poderá manipular o ambiente ou o próprio corpo;</li>
-                        <li style="margin-bottom: 8px;">Se for <strong>Zoan</strong> terá características animalescas.</li>
-                    </ul>
-                    <p style="margin-bottom: 15px;">Nosso próximo passo será escolher as habilidades derivadas e suas fraquezas, além do padrão.</p>
-                    <ul style="margin-left: 20px; margin-bottom: 25px; padding: 15px; background-color: rgba(103, 58, 183, 0.05); border-left: 4px solid var(--accent-color); list-style-type: none;">
-                        <li style="margin-bottom: 8px;"><strong>Fruta:</strong> Poke Poke no Mi.</li>
-                        <li style="margin-bottom: 8px;"><strong>Tipo:</strong> Paramecia.</li>
-                        <li style="margin-bottom: 8px;"><strong>Habilidade:</strong> Criar uma dimensão de bolso onde se pode guardar qualquer tipo de item que o usuário da Fruta estivesse segurando.</li>
-                        <li style="margin-bottom: 8px;"><strong>Fraquezas:</strong> Não se pode guardar seres vivos e nem coisas imateriais, como almas e ar.</li>
-                    </ul>
-                    <p style="margin-bottom: 15px;">Logo após tudo isso, o jogador poderá mandar para um ADM, que relatará na administração e então a Akuma no Mi será discutida. Se ela for aprovada, a administração então vai decidir um preço justo para ela, e ela será imediatamente colocada na Loja.</p>
-                    <ul style="margin-left: 20px; line-height: 1.6; list-style-type: none;">
-                        <li style="margin-bottom: 15px;">
-                            ⚠ Mesmo que você crie a Akuma no Mi, isso não garante que ela será sua. Se alguém comprar antes de você, ele terá a Fruta pra ele.
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            ⚠ Zoan em seu geral não gastam estamina/vigor. O seu buff de ativação se encaixa diretamente ao gasto de durabilidade do Fruto.
-                        </li>
-                    </ul>
+                    <h3 class="title-quantico toggle-title" style="font-size: 26px; color: var(--accent-color); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--sidebar-border); cursor: pointer;">
+                        Zoans Comuns <span class="toggle-icon">▼</span>
+                    </h3>
+                    
+                    <div class="toggle-content" style="margin-bottom: 40px;">
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kame Kame no Mi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿250.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +30%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +70%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Batto Batto no Mi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿500.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +40%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gama Gama no Mi [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿160.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +50%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +20%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hebi Hebi no Mi, Modelo: Anaconda</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿500.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +50%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +20%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hebi Hebi no Mi, Modelo: Cobra-Real</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿500.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +20%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +50%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hito Hito no Mi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿300.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +20%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +20%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Cão de Caça</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿450.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Destreza: +25%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +15%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Cão-Guaxinim</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿450.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Destreza: +30%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +20%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +20%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Chacal</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿450.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +30%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +40%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Dachshund</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿150.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +25%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +25%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +20%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Lobo</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿600.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +30%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +40%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mogu Mogu no Mi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿320.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +20%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +50% (aplicável apenas enquanto está abaixo do solo)</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mushi Mushi no Mi, Modelo: Besouro-Rinoceronte</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿450.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +40%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mushi Mushi no Mi, Modelo: Vespa-Mandarina</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿180.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +30%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +40%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Neko Neko no Mi, Modelo: Leão [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿450.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +30%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +10%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Neko Neko no Mi, Modelo: Leopardo</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿400.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +25%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +45%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Neko Neko no Mi, Modelo: Pantera Negra [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿500.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +45%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +25%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Neko Neko no Mi, Modelo: Tigre de Bengala [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿450.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +45%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +25%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Rako Rako no Mi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿180.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Destreza: +30%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +15%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +25%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Sara Sara no Mi, Modelo: Axolote</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿180.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +20%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +50%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tama Tama no Mi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿900.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +25%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +45%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tori Tori no Mi, Modelo: Águia</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿350.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Destreza: +25%</li>
+                                <li style="margin-bottom: 8px;">Força: +10%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +35%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tori Tori no Mi, Modelo: Albatroz</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿100.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Resistência: +20%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +50%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tori Tori no Mi, Modelo: Falcão</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿350.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +20%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +50%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Uma Uma no Mi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿100.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Resistência: +25%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +45%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Usagi Usagi no Mi [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿130.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +10%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +60%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ushi Ushi no Mi, Modelo: Bisão</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿300.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +40%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ushi Ushi no Mi, Modelo: Girafa</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿300.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +40%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ushi Ushi no Mi, Modelo: Rinoceronte [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿600.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +35%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +35%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Zou Zou no Mi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿500.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +40%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="title-quantico toggle-title" style="font-size: 26px; color: var(--accent-color); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--sidebar-border); cursor: pointer;">
+                        Zoans Ancestrais <span class="toggle-icon">▼</span>
+                    </h3>
+                    
+                    <div class="toggle-content" style="margin-bottom: 40px;">
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.400.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +40%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +50%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Neko Neko no Mi, Modelo: Tigre Dentes de Sabre</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.600.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +80%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +40%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ryū Ryū no Mi, Modelo: Alossauro</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.950.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +70%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +50%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ryū Ryū no Mi, Modelo: Braquiossauro</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.550.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +40%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +80%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ryū Ryū no Mi, Modelo: Espinossauro</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.950.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +50%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +70%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ryū Ryū no Mi, Modelo: Paquicefalossauro</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.000.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +90%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ryū Ryū no Mi, Modelo: Pteranodonte</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.700.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +30%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +90%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ryū Ryū no Mi, Modelo: Triceratops</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.000.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +60%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +60%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Zou Zou no Mi, Modelo: Mamute</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.800.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +50%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +70%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="title-quantico toggle-title" style="font-size: 26px; color: var(--accent-color); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--sidebar-border); cursor: pointer;">
+                        Zoans Míticas <span class="toggle-icon">▼</span>
+                    </h3>
+                    
+                    <div class="toggle-content" style="margin-bottom: 25px;">
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Batto Batto no Mi, Modelo: Vampiro</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário se transformar em um morcego vampiro com a habilidade de sugar o sangue de uma presa, ficando mais forte e se regenerando; a presa envelhece enquanto isso (se o Espírito for inferior).</p>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿3.200.000.000 <i>(Astarion Ancunín)</i></p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +90%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +80%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hebi Hebi no Mi, Modelo: Kaijū [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário se transformar em um monstruoso réptil místico de 130 metros, que emite uma grande quantidade de radiação.</p>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿3.800.000.000 <i>(Raidjinn Le Laufey)</i></p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +130%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +40%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hebi Hebi no Mi, Modelo: Yamata no Orochi</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.200.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +110%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +60%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hito Hito no Mi, Modelo: Daibutsu</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.500.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +140%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hito Hito no Mi, Modelo: O Anfitrião [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿4.134.134.134 <i>(Alastor)</i></p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Velocidade: +170%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Hito Hito no Mi, Modelo: Ōnyūdō</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.200.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +80%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +65%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +25%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Bake-Danuki</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.000.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Destreza: +60%</li>
+                                <li style="margin-bottom: 8px;">Força: +35%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +35%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +40%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Cérbero [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.300.000.000 <i>(Dante Salvatore)</i></p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +100%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +70%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Ōkuchi no Makami</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿3.000.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +50%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +50%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +70%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Inu Inu no Mi, Modelo: Raposa de Nove Caudas</h4>
+                            <p style="margin-bottom: 10px;">Permite que o usuário se transforme em uma Kyūbi no Kitsune completa ou híbrida, podendo copiar a aparência de qualquer pessoa ao tocar, porém as caudas ficam à mostra e precisam ser escondidas.</p>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.700.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +30%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +60%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +80%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ryū Ryū no Mi, Modelo: Dragão Ocidental [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.700.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +80%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +60%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +30%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ryū Ryū no Mi, Modelo: Kirin</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.500.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Destreza: +20%</li>
+                                <li style="margin-bottom: 8px;">Força: +50%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +40%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +60%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Saru Saru no Mi, Modelo: Sun Wukong [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿3.900.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +40%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +20%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +110%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tori Tori no Mi, Modelo: Fênix</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿3.000.000.000 <i>(Kozuki Shingen)</i></p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +20%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +50%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +100%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tori Tori no Mi, Modelo: Nue</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿3.000.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +90%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +50%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite ao usuário se transformar num pássaro feito de cinzas vulcânicas, sendo imune a ataques sem Haki na Forma Completa, simulando uma Logia, como a Fênix.</p>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿1.800.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +90%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +70%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +10%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tori Tori no Mi, Modelo: Pássaro de Gelo [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite que o usuário se transforme em uma espécie de pássaro que pode lançar geadas. A Forma Completa é imune a ataques sem Haki, simulando uma Logia, como a Fênix.</p>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.200.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +50%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +30%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +90%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]</h4>
+                            <p style="margin-bottom: 10px;">Permite que o usuário se transforme em um pássaro de raios que pode controlar tempestades. A Forma Completa é imune a ataques sem Haki, simulando uma Logia, como a Fênix.</p>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.400.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +30%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +10%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +130%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Uma Uma no Mi, Modelo: Pégaso</h4>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.100.000.000</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +45%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +55%</li>
+                                <li style="margin-bottom: 8px;">Velocidade: +70%</li>
+                            </ul>
+                        </div>
+                        <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Uo Uo no Mi, Modelo: Carpa Seiryū</h4>
+                            <p style="margin-bottom: 10px;">Permite que o usuário se transforme no lendário Seiryū, ou Dragão Azul, podendo controlar nuvens carregadas, lançar raios, voar, e soltar fogo pela boca. Possui escamas sob a pele mesmo sem estar transformado.</p>
+                            <p style="margin-bottom: 10px;"><strong>Valor:</strong> ฿2.900.000.000 <i>(Keigo Kiyosaki)</i></p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Força: +70%</li>
+                                <li style="margin-bottom: 8px;">Resistência: +100%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; padding: 20px; background-color: rgba(0,0,0,0.05); border-left: 4px solid var(--accent-color);">
+                        <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 22px;">Regras de Domínio Zoan</h4>
+                        <p style="margin-bottom: 15px;">Os buffs concedidos por cada Fruta são aplicados integralmente apenas na Forma Completa. Na Forma Híbrida, o usuário recebe metade dos buffs, enquanto na Forma Comum não há benefícios. O domínio sobre a Fruta determina a extensão dos poderes que podem ser utilizados; abaixo temos um resumo:</p>
+                        <ul style="margin-left: 40px; line-height: 1.6;">
+                            <li style="margin-bottom: 10px;"><strong>0% de Controle:</strong> A transformação é instável, afetando apenas uma parte do corpo. Nesse estado, o usuário pode utilizar apenas um terço dos buffs (se der número quebrado, arredonda pra baixo).</li>
+                            <li style="margin-bottom: 10px;"><strong>20% de Controle:</strong> Com um domínio maior, a Forma Híbrida é desbloqueada. Metade do corpo se transforma, permitindo acesso a metade dos buffs (se der número quebrado, arredonda pra baixo).</li>
+                            <li style="margin-bottom: 10px;"><strong>60% de Controle:</strong> O usuário atinge a quase maestria sobre a Fruta, liberando a Forma Completa. O corpo inteiro se transforma, garantindo o uso total dos buffs.</li>
+                            <li style="margin-bottom: 10px;"><strong>100% de Controle:</strong> O usuário atinge a maestria absoluta sobre sua Fruta, dominando cada aspecto de sua transformação. Nesse nível, ele se torna apto a despertar seu verdadeiro poder, embora o Despertar ainda dependa de outros fatores além do mero controle.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
+
     <script src="assets/js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const autoCalcInputs = document.querySelectorAll('.auto-calc');
-
-            function formatInput(inputField) {
-                if (inputField.tagName.toLowerCase() !== 'input' || inputField.type !== 'text') return;
-                
-                let val = inputField.value.replace(/\D/g, '');
-                if (val === '') {
-                    inputField.value = '';
-                    return;
-                }
-                
-                let num = parseInt(val, 10);
-
-                if (inputField.classList.contains('points-input')) {
-                    if (num > 20000) num = 20000;
-                } else if (inputField.classList.contains('percent-input')) {
-                    if (num > 100) num = 100;
-                } else if (inputField.classList.contains('vel-input')) {
-                    if (num > 20000) num = 20000;
-                } else if (inputField.classList.contains('total-pts-input')) {
-                    let qtdStr = document.getElementById('calc-ctrl-qtd').value.replace(/\D/g, '');
-                    let qtd = parseInt(qtdStr, 10) || 1;
-                    let max = qtd * 10000;
-                    if (num > max) num = max;
-                } else if (inputField.classList.contains('qtd-input')) {
-                    if (num > 4) num = 4;
-                    if (num < 1) num = 1;
-                }
-                
-                inputField.value = num.toLocaleString('pt-BR');
-            }
-
-            function getVal(elementId) {
-                let el = document.getElementById(elementId);
-                if (!el) return 0;
-                if (el.type === 'number') return parseFloat(el.value) || 0;
-                let val = el.value.replace(/\./g, '');
-                return val ? parseInt(val, 10) : 0;
-            }
-
-            function calculateAll() {
-                let alcPts = getVal('calc-alcance-pts');
-                let alcMult = parseFloat(document.getElementById('calc-alcance-mult').value) || 1;
-                if(document.getElementById('calc-alcance-res')) {
-                    document.getElementById('calc-alcance-res').innerText = ((alcPts / 20) * alcMult).toLocaleString("pt-BR", {maximumFractionDigits: 1});
-                }
-
-                let ctrlQtd = getVal('calc-ctrl-qtd');
-                if (ctrlQtd < 1) ctrlQtd = 1;
-                let ctrlPts = getVal('calc-ctrl-pts');
-                if(document.getElementById('calc-ctrl-res')) {
-                    let ctrlRes = Math.min(Math.round((ctrlPts / (ctrlQtd * 10000)) * 100), 100);
-                    document.getElementById('calc-ctrl-res').innerText = ctrlRes;
-                }
-
-                let durPts = getVal('calc-dur-pts');
-                if(document.getElementById('calc-dur-res')) {
-                    document.getElementById('calc-dur-res').innerText = Math.floor(durPts / 500);
-                }
-
-                let potPts = getVal('calc-pot-pts');
-                let potCtrl = getVal('calc-pot-ctrl');
-                let potBuff = getVal('calc-pot-buff');
-                if(document.getElementById('calc-pot-res')) {
-                    let potBaseDano = Math.floor(potPts * (potCtrl / 100));
-                    let potDano = potBuff > 0 ? Math.round(potBaseDano * (1 + potBuff / 100)) : potBaseDano;
-                    document.getElementById('calc-pot-res').innerText = potDano.toLocaleString("pt-BR");
-                }
-
-                let resPts = getVal('calc-res-pts');
-                let resPct = getVal('calc-res-pct');
-                if(document.getElementById('calc-res-res')) {
-                    let resTotal = Math.round(resPts + (resPts * (resPct / 100)));
-                    document.getElementById('calc-res-res').innerText = resTotal.toLocaleString("pt-BR");
-                }
-
-                let velPts = getVal('calc-vel-pts');
-                let velCtrl = getVal('calc-vel-ctrl');
-                let velBuff = getVal('calc-vel-buff');
-                if(document.getElementById('calc-vel-res')) {
-                    let velBase = Math.floor(velPts * (velCtrl / 100));
-                    let velExtra = velBuff > 0 ? Math.round(velBase * (1 + velBuff / 100)) : velBase;
-                    document.getElementById('calc-vel-res').innerText = velExtra.toLocaleString("pt-BR");
-                }
-            }
-
-            autoCalcInputs.forEach(input => {
-                input.addEventListener('input', function() {
-                    if (this.id === 'calc-ctrl-qtd') {
-                        let totalPtsInput = document.getElementById('calc-ctrl-pts');
-                        if (totalPtsInput) {
-                            formatInput(totalPtsInput);
-                        }
-                    }
-                    if (this.id === 'calc-alcance-mult') {
-                        this.value = this.value.replace(/(\.\d)\d+/, '$1');
-                        if (parseFloat(this.value) > 2) this.value = '2.0';
-                    }
-                    formatInput(this);
-                    calculateAll();
-                });
-            });
-            
-            calculateAll();
-        });
-    </script>
+</body>
+</html>
