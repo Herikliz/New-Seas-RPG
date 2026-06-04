@@ -122,9 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="geografia.html" class="toggle-btn">GEOGRAFIA <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="https://sites.google.com/view/new-seas-op/geografia/ilhas" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
+                        <a href="#" class="toggle-btn">ILHAS <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/east-blue">EAST BLUE</a></li>
+                            <li><a href="east-blue.html">EAST BLUE</a></li>
                             <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/south-blue">SOUTH BLUE</a></li>
                             <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/west-blue">WEST BLUE</a></li>
                             <li><a href="https://sites.google.com/view/new-seas-op/geografia/ilhas/north-blue">NORTH BLUE</a></li>
@@ -1551,5 +1551,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         gerarTextoRecompensa();
+    }
+
+    const islandSorter = document.getElementById('island-sorter');
+    if (islandSorter) {
+        islandSorter.addEventListener('change', function() {
+            const container = document.getElementById('island-container');
+            const items = Array.from(container.getElementsByClassName('island-item'));
+            const method = this.value;
+
+            if (method === 'alphabetical') {
+                items.sort((a, b) => {
+                    return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'), 'pt-BR');
+                });
+            } else if (method === 'faction') {
+                const factionOrder = { 'marinha': 1, 'pirata': 2, 'revolucionaria': 3, 'misto': 4, 'independente': 5, 'despovoada': 6 };
+                items.sort((a, b) => {
+                    const facA = factionOrder[a.getAttribute('data-faction')] || 99;
+                    const facB = factionOrder[b.getAttribute('data-faction')] || 99;
+                    if (facA !== facB) {
+                        return facA - facB;
+                    }
+                    return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'), 'pt-BR');
+                });
+            }
+
+            items.forEach(item => container.appendChild(item));
+        });
     }
 });
