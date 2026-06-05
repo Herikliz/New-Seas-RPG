@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
             </li>
             <li>
-                <a href="https://sites.google.com/view/new-seas-op/loja" class="toggle-btn">LOJA <span class="arrow">▼</span></a>
+                <a href="loja-geral.html" class="toggle-btn">LOJA GERAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li><a href="https://sites.google.com/view/new-seas-op/loja/itens-exclusivos">ITENS EXCLUSIVOS</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-barcos">LOJA DE BARCOS</a></li>
