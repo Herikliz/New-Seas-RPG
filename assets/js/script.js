@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <li>
                 <a href="loja-geral.html" class="toggle-btn">LOJA GERAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
-                    <li><a href="https://sites.google.com/view/new-seas-op/loja/itens-exclusivos">ITENS EXCLUSIVOS</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-barcos">LOJA DE BARCOS</a></li>
+                    <li><a href="itens-exclusivos.html">ITENS EXCLUSIVOS</a></li>
+                    <li><a href="loja-de-barcos.html">LOJA DE BARCOS</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-carpinteiro">LOJA DE CARPINTEIRO</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-criadores">LOJA DE CRIADORES</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-especial">LOJA ESPECIAL</a></li>

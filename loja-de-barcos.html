@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Barcos - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">LOJA DE BARCOS</h1>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    NORMAIS <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Bote</h4>
+                        <p style="margin-bottom: 15px;">Sendo o barco mais simples de sua categoria, ele possui apenas 15 metros de comprimento do casco até a ponta de sua pequena vela. O bote é uma embarcação simples, leve e sem grandes complexidades, possuindo apenas um pequeno convés e uma única vela.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 10 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 1 pessoa</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 3 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 12 horas por quadrado</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Compra:</strong> ฿5.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Conserto:</strong> ฿1.000.000</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Barco Pesqueiro</h4>
+                        <p style="margin-bottom: 15px;">Focado no trabalho costeiro, este barco de 30 metros de comprimento traz o conforto mínimo necessário com um pequeno convés, um quarto pequeno, um banheiro e uma cozinha simples.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 20 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 2 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 2 canhões em cada lateral (sem canhões frontais)</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 5 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 10 horas por quadrado</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Compra:</strong> ฿30.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Conserto:</strong> ฿10.000.000</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Escuna</h4>
+                        <p style="margin-bottom: 15px;">A escuna é uma embarcação de porte médio com 50 metros de comprimento, oferecendo mais conforto com seus 3 quartos, 1 cozinha, 2 banheiros médios e dois mastros para velas simples.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 40 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 4 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 10 canhões em cada lateral</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 7 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 8 horas por quadrado</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Compra:</strong> ฿50.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Conserto:</strong> ฿20.000.000</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Brigue</h4>
+                        <p style="margin-bottom: 15px;">O brigue é um navio de maior escala, atingindo seus 100 metros. Focado no transporte seguro, possui dois mastros para velas grandes e pequenas, 6 quartos, 5 banheiros e uma gigantesca cozinha.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 60 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 10 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 15 canhões em cada lateral e 2 canhões frontais</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 8 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 8 horas por quadrado</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Compra:</strong> ฿75.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Conserto:</strong> ฿35.000.000</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Caravela</h4>
+                        <p style="margin-bottom: 15px;">Um grande e imponente navio de 150 metros de comprimento, desenhado para suportar longos confrontos. Conta com 2 mastros principais e um terceiro de apoio, abrigando um grande convés, 15 quartos, 8 banheiros, 2 cozinhas médias e um grande salão de refeições.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 100 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 20 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 30 canhões em cada lateral e 3 canhões frontais</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 9 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 7 horas por quadrado</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Compra:</strong> ฿200.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Conserto:</strong> ฿100.000.000</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Fragata</h4>
+                        <p style="margin-bottom: 15px;">Uma verdadeira fortaleza de 200 metros de altura, impulsionada por 3 gigantescas velas. Planejada para longas expedições, ostenta 30 quartos, 10 banheiros, 5 cozinhas enormes e um salão luxuoso para bebidas e refeições.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 200 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 40 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 50 canhões em cada lateral, 5 frontais e 3 traseiros</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 10 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 6 horas por quadrado</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Compra:</strong> ฿400.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Conserto:</strong> ฿200.000.000</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Gran General</h4>
+                        <p style="margin-bottom: 15px;">O ápice da engenharia naval disponível comercialmente. Este gigantesco colosso de guerra de 250 metros possui 5 velas monumentais, 50 quartos, 10 cozinhas e 5 salões enormes.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 600 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 120 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 80 canhões laterais, 10 frontais, 5 traseiros, além de 25 metralhadoras blindadas em cada lado do convés</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 12 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 5 horas por quadrado</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Compra:</strong> ฿750.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Preço de Conserto:</strong> ฿350.000.000</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    NAVIOS DO GOVERNO <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">C-15 Kenpachi</h4>
+                        <p style="margin-bottom: 15px;">O menor navio de patrulha da organização, com 50 metros de comprimento. Possui uma única vela central, um pequeno convés, um único quarto, um banheiro e uma cozinha simples.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 50 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 10 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 10 canhões em cada lateral de baixa potência (causando até 5.000 de dano). Sem canhões frontais.</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 5 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 9 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Z-10 Perci</h4>
+                        <p style="margin-bottom: 15px;">Com 100 metros de comprimento, oferece o suporte ideal de tropa para interceptações táticas. Possui dois mastros com velas simples, 3 quartos, 1 cozinha e 2 banheiros médios.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 100 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 20 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 15 canhões em cada lateral e 4 frontais de baixa potência (causando até 7.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 7 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 7 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">B-47 Hajime</h4>
+                        <p style="margin-bottom: 15px;">Navio intermediário de 150 metros, projetado para missões de médio alcance da Marinha. Conta com três mastros, 4 quartos, 1 cozinha bem equipada e 3 banheiros.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 300 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 80 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 20 canhões laterais e 6 frontais de potência média (causando até 10.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 10 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 6 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">T-33 Apollo</h4>
+                        <p style="margin-bottom: 15px;">Um dos orgulhos da engenharia governamental, com 250 metros. É equipado com um casco de kairoseki para se camuflar contra os Reis do Mar. Possui 4 mastros, 6 quartos, cozinha grande e 5 banheiros.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 600 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 120 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 80 canhões laterais, 20 frontais e 10 traseiros de potência média (causando até 15.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 10 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 5 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">K-55 Mereoleona</h4>
+                        <p style="margin-bottom: 15px;">Navio pesado preparado para longas e punitivas expedições no Novo Mundo. É equipado com um casco de kairoseki para se camuflar contra os Reis do Mar. Conta com 380 metros, 5 mastros, 10 quartos, cozinha moderna e 6 banheiros.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 800 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 160 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 100 canhões laterais, 30 frontais e 15 traseiros de alta potência (causando até 20.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 15 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 4 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">A-1 Atlas</h4>
+                        <p style="margin-bottom: 15px;">A majestade suprema do Governo Mundial. Com 500 metros de altura, trata-se do centro de comando flutuante definitivo para cercos massivos, possuindo casco inteiramente forjado em kairoseki.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 1.000 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 200 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 120 canhões laterais, 50 frontais e 20 traseiros de altíssima potência (causando até 25.000 de dano), mais 100 metralhadoras no convés.</li>
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Especial:</strong> Pode passar pelas águas da Reverse Mountain para ir de um Blue para outro, ou do Paraíso para um Blue, ao invés da tradicional rota unidirecional de Blue para o Paraíso.</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 20 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 3 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    NAVIOS DA VANGUARDA <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">5-01 Sparkle</h4>
+                        <p style="margin-bottom: 15px;">O navio de suporte rápido e furtivo da Vanguarda Popular Revolucionária. Com 100 metros de comprimento, é essencial para interceptações, transporte de mensagens e missões de resgate ágeis. Oferece o suporte ideal para tropas que precisam agir e desaparecer rapidamente, contando com 3 quartos, 1 cozinha e 2 banheiros médios em sua estrutura principal.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 100 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 20 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 15 canhões em cada lateral e 4 frontais (causando até 7.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 7 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 7 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">4-01 Dream</h4>
+                        <p style="margin-bottom: 15px;">Embarcação intermediária da Vanguarda, desenhada para incursões de médio alcance e apoio tático. Com 150 metros, é ideal para transportar grandes grupos de rebeldes de forma segura. Conta com três mastros que facilitam manobras complexas, além de possuir 4 quartos, 1 cozinha bem equipada e 3 banheiros para acomodar o batalhão.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 300 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 80 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 20 canhões laterais e 6 frontais (causando até 10.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 10 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 6 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">3-01 Scream</h4>
+                        <p style="margin-bottom: 15px;">O grito de guerra da Vanguarda. Com 250 metros, é um navio projetado para desafiar o controle do Governo Mundial em áreas perigosas. Oferece infraestrutura robusta, contando com 4 mastros, 6 quartos amplos, uma grande cozinha e 5 banheiros. Sua estrutura é reforçada para manter a estabilidade em águas hostis sem o uso de tecnologias externas.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 600 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 120 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 80 canhões laterais, 20 frontais e 10 traseiros (causando até 15.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 10 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 5 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">2-01 Liberty</h4>
+                        <p style="margin-bottom: 15px;">A grande promessa de libertação dos mares. Esta colossal fortaleza revolucionária de 380 metros é preparada para enfrentar as piores tempestades do Novo Mundo. Blindada com ligas de aço reforçado, suporta cercos demorados. Em seu interior, há 5 mastros, 10 quartos, uma cozinha ampla moderna e 6 banheiros.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 800 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 160 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 100 canhões laterais, 30 frontais e 15 traseiros de alta potência (causando até 20.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 15 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 4 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">1-01 Hope</h4>
+                        <p style="margin-bottom: 15px;">A joia da coroa da Revolução. O Hope é a resposta direta ao colossal Atlas da Marinha. Com seus impressionantes 500 metros de extensão, serve como o centro de comando itinerante da Vanguarda. Seu casco inteiramente revestido em kairoseki e propulsão autônoma permite a infiltração de um verdadeiro exército silencioso e letal, pronto para mudar o destino do mundo.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> 1.000 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 200 pessoas</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 120 canhões laterais, 50 frontais e 20 traseiros de altíssima potência (causando até 25.000 de dano), mais 100 metralhadoras no convés.</li>
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Especial:</strong> Pode passar pelas águas da Reverse Mountain para ir de um Blue para outro, ou do Paraíso para um Blue, ao invés da tradicional rota unidirecional de Blue para o Paraíso.</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 20 pontos de vida.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 3 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    NAVIOS ESPECIAIS <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Pérola Negra</h4>
+                        <p style="margin-bottom: 15px;">Um lendário navio pirata com 130 metros, de aparência majestosa com velas negras e casco escuro. É a pura representação do terror cortando os mares. Seu vasto convés possui várias cabines luxuosas, cozinha equipada e um gigantesco armazenamento.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> ???</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> Pode ser tripulado pela vontade de seu comandante ou contra a vontade do próprio em prol de resgatar ele.</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 30 canhões em cada lateral, além de canhões frontais e traseiros (causando 15.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Especial:</strong> Pode passar pelas águas da Reverse Mountain para ir de um Blue para outro, ou do Paraíso para um Blue, ao invés da tradicional rota unidirecional de Blue para o Paraíso.</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> Auto-reparo automático de 25% da durabilidade total por dia, desde que não esteja em combate.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 2 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Holandês Voador</h4>
+                        <p style="margin-bottom: 15px;">Um colossal e amaldiçoado navio espectral de 250 metros, outrora governado por Davy Jones. Com um casco repleto de cracas e corais, ele é capaz de emergir das águas abissais diretamente para o combate e viajar indefinidamente por não precisar de suprimentos. Pode navegar acima e abaixo d'água sem que seus tripulantes precisem respirar ou sofrer caso sejam usuários de Akuma no Mi. Os tripulantes podem se locomover livremente dentro do navio, mesmo dentro d'água. O comandante é quem decide quem é ou não considerado parte da tripulação, assim influenciando quem é ou não afetado pelas propriedades do navio.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> ???</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> Pode ser tripulado pela vontade de seu comandante.</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 100 canhões laterais e 10 canhões triplos frontais e traseiros de altíssima potência (causando 20.000 de dano).</li>
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Especial:</strong> Pode passar pelas águas da Reverse Mountain para ir de um Blue para outro, ou do Paraíso para um Blue, ao invés da tradicional rota unidirecional de Blue para o Paraíso.</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> Auto-reparo de 30% da durabilidade ao dia, mesmo no calor de um combate.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 5 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Vingança da Rainha Ana</h4>
+                        <p style="margin-bottom: 15px;">O infame pesadelo de 180 metros que já pertenceu ao Barba Negra. Adornado macabramente com os ossos e despojos de inimigos vencidos, ele transforma o mar em um verdadeiro teatro da morte.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> ???</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> 1 pessoa.</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 50 canhões em cada lateral (causando 18.000 de dano) e um colossal lança-chamas frontal (causando 20.000 de dano incendiário).</li>
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Especial:</strong> O dono pode manipular as cordas vivas do navio da maneira que bem entender; pode passar pelas águas da Reverse Mountain para ir de um Blue para outro, ou do Paraíso para um Blue, ao invés da tradicional rota unidirecional de Blue para o Paraíso.</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> Alta resistência a fogo pesado; auto-reparo de 20% ao dia fora de combate.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 4 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Silent Mary</h4>
+                        <p style="margin-bottom: 15px;">Um galeão espanhol de 230 metros parcialmente desintegrado. Embora lhe falte o fundo do casco e suas tábuas pareçam suspensas magicamente no ar, a ira o transforma num dos caçadores navais mais letais do mundo.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> ???</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> Nenhum, movido de forma sobrenatural.</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 30 canhões operacionais de alta potência em cada lateral (causando 22.000 de dano total) e um gigantesco aríete naval.</li>
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Especial:</strong> Pode abrir seu casco frontal como uma "boca" para engolir navios (dano equivalente à mordida de um Rei dos Mares); pode passar pelas águas da Reverse Mountain para ir de um Blue para outro, ou do Paraíso para um Blue, ao invés da tradicional rota unidirecional de Blue para o Paraíso.</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> Reconstituição instantânea do pó; auto-reparo de 50% por dia, mesmo em combate.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 4 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Pequod</h4>
+                        <p style="margin-bottom: 15px;">Um navio baleeiro rústico, sujo e implacável de 210 metros, construído com ossos colossais e ferro torcido. Este navio rejeita capitães que não compartilham do ódio profundo por piratas ou feras incontroláveis, focado na brutalidade e caça visceral.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Máxima:</strong> ???</li>
+                            <li style="margin-bottom: 8px;"><strong>Mínimo para Navegar:</strong> Exige uma tripulação sádica focada na caça.</li>
+                            <li style="margin-bottom: 8px;"><strong>Artilharia:</strong> 70 canhões laterais de curto alcance (causando estrondosos 25.000 de dano bruto de perfuração) e um arpão baleeiro.</li>
+                            <li style="margin-bottom: 8px;"><strong>Capacidade Especial:</strong> Disparo do arpão que fixa a caça para combate corpo a corpo inescapável; pode passar pelas águas da Reverse Mountain para ir de um Blue para outro, ou do Paraíso para um Blue, ao invés da tradicional rota unidirecional de Blue para o Paraíso.</li>
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> Armadura cega projetada para abalroamentos; consome escombros afundados para auto-reparo de 35% ao dia.</li>
+                            <li style="margin-bottom: 8px;"><strong>Velocidade:</strong> 3 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
