@@ -1,3 +1,6 @@
+// ==========================================
+// INICIALIZAÇÃO
+// ==========================================
 if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 }
@@ -13,6 +16,9 @@ if (window.location.pathname.endsWith('area-restrita.html') || window.location.p
     }
 }
 
+// ==========================================
+// TEMAS
+// ==========================================
 const presetThemes = {
     claro: { bg: '#f0f8ff', text: '#2d3748', sidebar: '#ffffff', border: '#e2e8f0', link: '#4a5568', hoverBg: '#edf2f7', accent: '#d32f2f', btnText: '#ffffff', areaBg: '#ffffff', areaBorder: '#cbd5e0', subMenu: '#f8fafc' },
     escuro: { bg: '#121212', text: '#e0e0e0', sidebar: '#1e1e1e', border: '#333333', link: '#b0b0b0', hoverBg: '#2d3748', accent: '#f1c40f', btnText: '#121212', areaBg: '#1a1a1a', areaBorder: '#4a5568', subMenu: '#1a1a1a' },
@@ -26,6 +32,9 @@ const presetThemes = {
     ouro: { bg: '#000000', text: '#fef08a', sidebar: '#1a1a1a', border: '#ca8a04', link: '#fde047', hoverBg: '#333333', accent: '#eab308', btnText: '#000000', areaBg: '#000000', areaBorder: '#a16207', subMenu: '#1a1a1a' }
 };
 
+// ==========================================
+// CARREGAMENTO DE TEMAS
+// ==========================================
 function applyTheme(themeObj) {
     const root = document.documentElement;
     root.style.setProperty('--bg-color', themeObj.bg);
@@ -55,6 +64,9 @@ function loadSavedTheme() {
 }
 loadSavedTheme();
 
+// ==========================================
+// SIDEBAR E MENU DE NAVEGAÇÃO
+// ==========================================
 document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo(0, 0);
 
@@ -440,43 +452,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleTitles = document.querySelectorAll('.toggle-title');
-    
-    toggleTitles.forEach(title => {
-        title.addEventListener('click', () => {
-            title.classList.toggle('collapsed');
-            const content = title.nextElementSibling;
-            if (content && content.classList.contains('toggle-content')) {
-                content.classList.toggle('collapsed');
-            }
-        });
-    });
-
-    const toggleAllBtn = document.getElementById('toggle-all-btn');
-    let isAllCollapsed = false;
-
-    if (toggleAllBtn) {
-        toggleAllBtn.addEventListener('click', () => {
-            isAllCollapsed = !isAllCollapsed;
-            toggleAllBtn.textContent = isAllCollapsed ? 'Expandir Tudo' : 'Retrair Tudo';
-
-            toggleTitles.forEach(title => {
-                const content = title.nextElementSibling;
-                if (content && content.classList.contains('toggle-content')) {
-                    if (isAllCollapsed) {
-                        title.classList.add('collapsed');
-                        content.classList.add('collapsed');
-                    } else {
-                        title.classList.remove('collapsed');
-                        content.classList.remove('collapsed');
-                    }
-                }
-            });
-        });
-    }
-});
-
+// ==========================================
+// FUNÇÕES AUXILIARES PARA CÁLCULOS
+// ==========================================
 function formatCalcInput(inputField) {
     if (inputField.tagName.toLowerCase() !== 'input' || inputField.type !== 'text') return;
     let val = inputField.value.replace(/\D/g, '');
@@ -488,6 +466,9 @@ function formatCalcInput(inputField) {
     inputField.value = num.toLocaleString('pt-BR');
 }
 
+// ==========================================
+// SISTEMA DE CÁLCULO DE ATRIBUTOS
+// ==========================================
 function getCalcVal(elementId) {
     let el = document.getElementById(elementId);
     if (!el) return 0;
@@ -595,6 +576,9 @@ function runAtributosCalc() {
     }
 }
 
+// ==========================================
+// SISTEMA DE CÁLCULO DE ESTAMINA
+// ==========================================
 function runEstaminaCalc() {
     if (!document.getElementById('calc-res')) return;
 
@@ -655,6 +639,9 @@ document.addEventListener('DOMContentLoaded', () => {
     runEstaminaCalc();
 });
 
+// ==========================================
+// SISTEMA DE CENAS
+// ==========================================
 function updateSceneStats(textarea) {
     if (!textarea) return;
     let sceneTxt = textarea.value;
@@ -720,7 +707,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+// ==========================================
+// SISTEMA DE TRABALHO
+// ==========================================
 function formatarEVerificar(el) {
     let valor = el.value.replace(/\D/g, "");
     el.value = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -1348,6 +1337,9 @@ if (mapGrids.length > 0) {
     checkboxTimoneiro.addEventListener('change', calcularTempo);
 }
 
+// ==========================================
+// SISTEMA GEO WRITER
+// ==========================================
 function updateGeoWriterStats(box) {
     if (!box) return;
     let textarea = box.querySelector('textarea');
@@ -1567,6 +1559,148 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ==========================================
+// BANCO DE DADOS - ILHAS E REGIÕES
+// ==========================================
+const bancoDeIlhas = {
+    "East Blue": [
+        { nome: "Base da Marinha G-03", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma base flutuante da Marinha estrategicamente posicionada para patrulhar as águas próximas e responder rapidamente a ameaças piratas.</p>` },
+        { nome: "Clockwork", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Embora pequena em extensão, a ilha é dominada por uma imensa torre mecânica que sustenta uma cidade inteira no topo. Com um sistema de engrenagens e elevadores complexos, Clockwork é um testemunho da engenhosidade de seus habitantes, servindo como um centro comercial independente e lar de inventores e engenheiros excêntricos.</p>` },
+        { nome: "Conomi", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Um arquipélago de clima tropical, conhecido por suas vastas plantações de tangerinas e comunidades pesqueiras. Suas águas cristalinas e solos férteis sustentam vilas autossuficientes, onde os moradores levam uma vida simples, mas próspera. A paisagem é marcada por pequenas ilhas interligadas por barcos e pontes rústicas, com mercados vibrantes e festivais que celebram a cultura local. Antes pertencente à KYT, agora pertence à tripulação pirata Lótus de Ferro, antigamente tendo como capitão o finado Silvers Damir, quando a tripulação ainda se chamava Guerreiros da Libertação, tendo agora Astarion D. Emiri como capitã.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Vila Cocoyasi</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Pirata</i></p><p style="margin-left: 20px;">Uma vila acolhedora cercada por plantações de tangerinas, onde as famílias se dedicam à agricultura e ao comércio. O porto é movimentado, com pescadores trazendo suas capturas diárias para vender na praça central.</p></div><div style="margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Vila Gosa</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Pirata</i></p><p style="margin-left: 20px;">Uma vila tranquila, com casas de madeira espalhadas entre colinas suaves e campos cultiváveis. Apesar de seu tamanho modesto, possui um espírito comunitário forte, onde todos trabalham juntos para manter a paz e a ordem.</p></div>` },
+        { nome: "Cozia", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha de importância estratégica, onde o Governo Mundial construiu uma fortaleza militar imponente para garantir a segurança e a ordem na região. Sua posição central a torna um ponto de apoio crucial para as rotas comerciais e uma base essencial para a Marinha. A cidade ao redor da base é bem estruturada, com ruas movimentadas, mercados prósperos e infraestrutura avançada, refletindo o poder e controle do Governo Mundial. A ilha é conhecida por sua população dedicada e pela forte presença militar que garante a paz e estabilidade na região.</p>` },
+        { nome: "Dawn", afiliacaoTexto: "Independente | Governo Mundial/Marinha", afiliacaoClasse: "misto", descricao: `<p style="margin-bottom: 15px;">Um território sob controle do Governo Mundial, conhecido por seu equilíbrio entre riqueza e pobreza. Enquanto as classes altas prosperam no Reino Goa, os menos favorecidos lutam pela sobrevivência em áreas negligenciadas como o Terminal Cinza, onde o povo predomina, criando um campo de guerra entre ambos os lados da ilha.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Reino Goa</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p><p style="margin-left: 20px;">Um dos reinos mais influentes do East Blue, com forte ligação ao Governo Mundial. Sua nobreza vê-se como a elite civilizada, mantendo rígido controle sobre seus domínios.</p></div><div style="margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Terminal Cinza</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Independente</i></p><p style="margin-left: 20px;">Uma favela localizada na Ilha Dawn, onde os rejeitados da sociedade se reúnem em meio ao lixo e à miséria, ignorados pela nobreza do Reino Goa.</p></div><div style="margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Vila Foosha</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Independente</i></p><p style="margin-left: 20px;">Uma pacata vila pesqueira na Ilha Dawn, isolada dos conflitos políticos e disputas territoriais da região.</p></div>` },
+        { nome: "Gecko", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma cadeia de ilhas autônomas, lar da pacífica Vila Syrup, conhecida por sua tranquilidade e pequenas frotas mercantes que evitam se envolver nos conflitos entre piratas e o Governo Mundial.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Vila Syrup</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Independente</i></p><p style="margin-left: 20px;">Uma pequena e tranquila vila situada no Arquipélago Gecko, conhecida por sua serenidade e simplicidade. A vila é famosa por suas plantações e pela pesca em suas águas calmas, além de ser um centro de comércio pacífico, com pequenas frotas mercantes que cruzam os mares para vender seus produtos. Seus moradores, em sua maioria, são pessoas humildes que priorizam a paz e a vida tranquila, evitando envolvimento em conflitos externos. A arquitetura da vila é simples, com casas de madeira e ruas estreitas, rodeadas por belas paisagens naturais que a tornam um refúgio acolhedor para quem busca escapar da agitação do mundo exterior.</p></div>` },
+        { nome: "Goat", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha pouco explorada e cercada de mistérios, raramente visitada devido à sua localização remota e à falta de recursos atrativos para colonizadores ou piratas.</p>` },
+        { nome: "Ilha dos Animais Raros", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma densa floresta repleta de criaturas únicas e bizarras, lar de híbridos de diferentes espécies. Seus perigos naturais afastam invasores, tornando-a um território praticamente intocado. Atualmente a ilha pertence a um grande grupo pirata.</p>` },
+        { nome: "Ilha Navio de Guerra", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">A ilha recebe esse nome por sua formação geográfica lembrar um imenso navio de guerra. É um local estratégico, mas também abriga um ninho de dragões lendários que emergem a cada mil anos, tornando-a um território de grande interesse para estudiosos e aventureiros.</p>` },
+        { nome: "Ilha Shimotsuki", afiliacaoTexto: "Pirata", afiliacaoClasse: "despovoada", descricao: `<p style="margin-bottom: 15px;">A terra fértil e os rios cristalinos indicam que poderia ser um local propício para assentamento. Criaturas selvagens dominam a paisagem, e os ventos que cortam as encostas trazem consigo o silêncio de um lugar que ainda aguarda sua história ser escrita. Atualmente, a ilha pertence a Reh D'Nanryū e Yuu D'Couteau, da tripulação pirata Darkin.</p>` },
+        { nome: "Kumate", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha exótica com formato semelhante a uma pata de urso, suas montanhas elevadas formam uma espécie de muralha natural. Pouco se sabe sobre sua população e cultura, mas lendas locais falam de tribos canibais isoladas do resto do mundo.</p>` },
+        { nome: "Mirrorball", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha vibrante, famosa por sua cultura musical. O Governo Mundial mantém forte presença na região para garantir a segurança de suas rotas comerciais.</p>` },
+        { nome: "Organ", afiliacaoTexto: "Despovoada", afiliacaoClasse: "despovoada", descricao: `<p style="margin-bottom: 15px;">Um arquipélago completamente despovoado, frequentemente usado por piratas como ponto de descanso ou esconderijo temporário. Suas ilhas rochosas e de difícil acesso dificultam a presença da Marinha.</p>` },
+        { nome: "Oykot", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">O arquipélago Oykot é formado por diversas ilhas de clima tropical, com praias extensas, vegetação abundante e vilas costeiras que vivem principalmente da pesca e do comércio marítimo. Sua localização favorece rotas de navegação, tornando-o um ponto de parada comum para viajantes e tripulações que cruzam os mares.</p>` },
+        { nome: "Polestar", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Um dos arquipélagos mais movimentados do East Blue, lar da icônica cidade portuária de Loguetown, onde piratas e comerciantes se misturam em um dos maiores mercados da região.</p>` },
+        { nome: "Tequila Wolf", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha marcada por um enorme projeto de construção que se estendia por séculos: uma ponte colossal, cuja construção foi iniciada há mais de 600 anos, ligando continentes. Trabalhadores forçados e prisioneiros são mantidos ali, sobre uma tortura e escravidão interminável.</p>` },
+        { nome: "Yotsuba", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha de importância estratégica para a Marinha, onde se localiza Shells Town, um de seus postos mais conhecidos no East Blue.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Shells Town</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p><p style="margin-left: 20px;">Uma cidade costeira localizada em uma ilha estratégica no East Blue, onde a Marinha mantém um de seus postos de controle mais importantes. A cidade é caracterizada por sua arquitetura militar robusta, com torres de observação e fortificações que cercam a base principal. No centro da cidade, uma praça movimentada serve como ponto de encontro para os habitantes e militares, enquanto mercados e lojas atendem tanto à população local quanto aos viajantes. Shells Town é um local de transição, onde a ordem da Marinha é mantida com firmeza, mas também possui uma forte presença civil que busca se beneficiar da segurança proporcionada pela base militar. A cidade é um elo vital para a manutenção da paz e da estabilidade na região, sendo um marco no East Blue.</p></div>` }
+    ],
+    "South Blue": [
+        { nome: "Base da Marinha G-10", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">A Base da Marinha G-10 foi erguida como um ponto estratégico para vigiar e manter a ordem nas águas locais. A fortaleza militar foi equipada para operações táticas e de combate, servindo também como centro de treinamento rigoroso para marinheiros. Sua presença garantiu o poder do Governo Mundial na região, impondo respeito e controlando a segurança nas rotas comerciais.</p>` },
+        { nome: "Baterilla", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Baterilla é uma ilha isolada e pacífica, com vilarejos espalhados por uma terra montanhosa. Seus habitantes vivem de forma simples, dedicando-se à agricultura e à pesca, preservando suas tradições e cultura.</p>` },
+        { nome: "Briss", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">O Reino Briss é uma terra próspera, conhecida por sua poderosa frota e por sua cultura avançada em navegação e comércio. A ilha foi um ponto estratégico importante, mas sua independência foi perdida após a queda de sua ordem. Atualmente, Briss vive sob o domínio de forças externas, que destroem sua antiga glória. Os moradores agora lutam para sobreviver e tentar preservar o que resta de sua grandeza.</p>` },
+        { nome: "Centaurea", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Centaurea é uma ilha marcada pela luta constante pela liberdade. Com um terreno montanhoso e selvagem, seus habitantes enfrentam qualquer tentativa de dominação externa com coragem e resistência. A natureza proporciona uma defesa natural, e os moradores prezam pela autonomia, sem aceitar imposições de autoridades externas.</p>` },
+        { nome: "Karate", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">A Ilha Karate é um centro de treinamento dedicado ao aperfeiçoamento de técnicas de combate, especialmente o boxe. Com escolas e academias marciais espalhadas por toda a ilha, os guerreiros buscam desenvolver suas habilidades físicas e mentais. A disciplina e o treinamento rigoroso são aspectos essenciais da vida cotidiana. A ilha também é um local de encontros e competições entre lutadores habilidosos da região.</p>` },
+        { nome: "Kutsukku", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Irregular e fragmentada, Kutsukku parece ter sido quebrada e remontada de forma caótica. Suas formações naturais desafiam a lógica, criando caminhos estranhos e territórios que mudam com o tempo.</p>` },
+        { nome: "Reino Negro de Drum", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Uma terra dominada pelo frio e pela opressão, onde montanhas cobertas de neve cercam cidades sombrias e silenciosas. O Reino Negro de Drum é marcado por um governo rígido e implacável, que mantém o controle absoluto sobre seus habitantes através do medo e da escassez. A medicina e o conhecimento são tratados como privilégios raros, concentrados nas mãos de poucos, enquanto o restante da população sobrevive em condições duras, sempre sob vigilância constante.</p>` },
+        { nome: "Roshwan", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha de contrastes silenciosos, onde o vento percorre campos dourados. Roshwan é marcada por um clima melancólico, mas fértil.</p>` },
+        { nome: "Samba", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Vibrante e caótica, Samba pulsa com energia constante, como se a própria terra dançasse. Suas cidades são coloridas, cheias de música, comércio e conflitos rápidos, tornando cada esquina imprevisível e viva.</p>` },
+        { nome: "Samuwanai", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha isolada de atmosfera inquietante, onde uma comunidade fechada vive em harmonia aparente com a natureza e seus próprios costumes peculiares. Campos, bosques e construções simples compõem um cenário quase acolhedor, mas há algo profundamente estranho na forma como tudo segue um padrão rígido e ritualístico. Tradições antigas são levadas ao extremo, e visitantes logo percebem que cada detalhe, dos gestos cotidianos às celebrações, parece fazer parte de algo maior e perturbador.</p>` },
+        { nome: "Sorbet", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Coberta por um frio constante, Sorbet é uma ilha de inverno. Nevascas frequentes escondem caminhos e perigos, enquanto suas paisagens geladas desafiam qualquer um que tente dominá-las.</p>` },
+        { nome: "Taya", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Marcada por vastas planícies e céus abertos, Taya transmite uma sensação de liberdade quase absoluta. No entanto, sua calmaria esconde perigos sutis, onde o maior inimigo pode ser aquilo que não se vê.</p>` },
+        { nome: "Torino", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">O Reino Torino é uma ilha montanhosa e selvagem, coberta por densas florestas e vales profundos. Sua população é composta por pessoas simples, porém habilidosas, que têm uma conexão profunda com a natureza ao seu redor. A medicina tradicional é praticada com base em ervas e remédios naturais, e os habitantes da ilha são conhecidos por sua habilidade em curar ferimentos e doenças com o que a terra oferece. O reino é um bastião de conhecimento sobre as propriedades curativas das plantas e a vida selvagem, com escolas e sábios locais transmitindo esse saber para as novas gerações. O território é auto-sustentável e, devido à sua localização isolada, o Reino Torino mantém uma política de não-interferência em assuntos externos, focando apenas no bem-estar de seu povo e na preservação do ambiente natural.</p>` },
+        { nome: "Tumi", afiliacaoTexto: "Despovoada | Governo Mundial/Marinha", afiliacaoClasse: "misto", descricao: `<p style="margin-bottom: 15px;">Uma ilha marcada por uma única cidade de aparência impecável, com ruas limpas, arquitetura elegante e uma beleza quase artificial. Por trás dessa fachada perfeita, no entanto, Tumi vive sob uma rígida ditadura militar, onde a ordem é mantida à força e qualquer desvio desaparece sem deixar vestígios.</p>` },
+        { nome: "Vespa", afiliacaoTexto: "Despovoada", afiliacaoClasse: "despovoada", descricao: `<p style="margin-bottom: 15px;">Densa e perigosa, Vespa é tomada por florestas fechadas e criaturas agressivas. O ar parece sempre carregado, como se a própria ilha estivesse em alerta, pronta para reagir a qualquer intruso.</p>` }
+    ],
+    "West Blue": [
+        { nome: "Ballywood", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Um reino próspero, governado por um monarca cuja lealdade ao Governo Mundial garante estabilidade e recursos. Suas forças armadas são bem treinadas, e o país mantém relações estreitas com a Marinha, servindo como ponto estratégico para o controle dos mares próximos.</p>` },
+        { nome: "Base da Marinha G-12", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma base naval flutuante construída para reforçar a presença da Marinha em águas perigosas.</p>` },
+        { nome: "God Valley", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha remota e misteriosa, ocasionalmente usada por nobres e oficiais do Governo Mundial para eventos privados.</p>` },
+        { nome: "Ilusia", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Um reino de influência considerável dentro do Governo Mundial, anteriormente regido por uma linhagem respeitada, agora sob a administração de um novo monarca ambicioso. Sua frota marítima desempenha um papel crucial na defesa das rotas comerciais, garantindo a prosperidade do país.</p>` },
+        { nome: "Kano", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma terra de guerreiros, conhecida por sua cultura marcial e pelo domínio das técnicas de combate desarmado. Um clã lendário se destaca como o mais temido e respeitado do reino, com sua linhagem forjada em batalhas e desafios de força. Clãs influentes disputam poder entre si, e mercadores de Kano são encontrados nos cantos mais remotos do mundo, espalhando sua arte e seus produtos. Mesmo com a grande diferença geográfica, Kano é rival de Wano, seu país "irmão".</p>` },
+        { nome: "Las Camp", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Antes controlada por um poderoso pirata, Las Camp era um refúgio seguro em meio aos mares turbulentos. Apesar de sua natureza criminosa, havia ordem absoluta, com crimes e conflitos internos severamente proibidos. Sob esse domínio, o local prosperou como um território neutro, onde comércio e negociações ocorriam sem medo de traições. No entanto, após a derrota e captura de seu líder pela Marinha, Las Camp mergulhou no caos. Sem uma liderança capaz, a ilha tornou-se um território sem lei, dominado por traições e miséria. Mais tarde, um homem desconhecido assumiu o controle e foi responsável por restaurar a ordem, ainda que de forma rígida e instável.</p>` },
+        { nome: "Ohara", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">O berço do conhecimento, lar dos maiores estudiosos da história e das civilizações antigas. Protegida pela majestosa Árvore do Conhecimento, a ilha é um farol para aqueles que buscam a verdade.</p>` },
+        { nome: "Soja", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha rural de vastas plantações e vilas simples, onde a terra fértil sustenta uma produção abundante e constante. Apesar da aparência pacífica, há uma sensação de controle silencioso, com rotinas rígidas e pouca abertura para mudanças, como se tudo ali seguisse um propósito maior definido por poucos.</p>` },
+        { nome: "Thriller Bark", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Uma ilha de arquitetura gótica, repleta de torres imponentes, corredores subterrâneos e salões ornamentados. Seus jardins bem cuidados contrastam com a atmosfera sombria, criando um ambiente tão enigmático quanto fascinante. Thriller Bark é conhecida por suas tradições peculiares e por atrair artesãos e navegadores curiosos em busca de seus segredos. A vida na ilha segue um ritmo próprio, distinto de qualquer outro lugar, enquanto seus habitantes preservam costumes únicos que perduram há gerações.</p>` },
+        { nome: "Toroa", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Toroa foi governada por uma líder que acreditava que apenas os mais fortes mereciam reinar, sem leis ou restrições. A ilha refletia essa filosofia brutal: traições, duelos e saques não só eram comuns, como incentivados, tornando o território um campo de batalha constante entre criminosos e ambiciosos. Piratas sem lealdade, mercadores inescrupulosos e assassinos de aluguel vagavam pelas ruas, sempre atentos para não se tornarem a próxima vítima. A anarquia era vista como a forma mais pura de liberdade, em oposição a qualquer ordem imposta por líderes externos. Essa era chegou ao fim quando forças organizadas eliminaram todos os piratas da ilha, transformando Toroa em uma terra vazia. Posteriormente, uma organização passou a utilizar o local inóspito como base</p>` }
+    ],
+    "North Blue": [
+        { nome: "Base da Marinha G-11", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma das principais fortalezas navais do North Blue, equipada com uma frota formidável e tropas treinadas para manter a ordem na região. Suas muralhas imponentes e canhões voltados para o mar intimidam qualquer um que tente desafiar sua autoridade.</p>` },
+        { nome: "Deul", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Um reino próspero, cercado por extensos campos agrícolas e rios que alimentam suas cities movimentadas. Governado por uma monarquia tradicional, mantém-se distante de conflitos e foca na expansão de suas rotas comerciais pelo North Blue.</p>` },
+        { nome: "Downs", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha de ruas estreitas e vielas escondidas, conhecida por ser o lar de ladrões, vigaristas e mercadores duvidosos. Estalagens clandestinas e mercados subterrâneos movimentam a economia local, enquanto alianças temporárias são feitas e desfeitas a cada dia.</p>` },
+        { nome: "Flevance", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma cidade de arquitetura refinada, famosa por suas minas de chumbo branco, cuja extração tornou sua elite extremamente rica. Enquanto a nobreza prospera, estudiosos e mineradores buscam entender os segredos do minério que sustenta a economia local.</p>` },
+        { nome: "Kuen", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha árida e marcada por terrenos hostis, onde apenas os mais resistentes conseguem viver. Pequenos assentamentos se formam de maneira improvisada, e disputas por recursos são frequentes, criando um ambiente instável e perigoso.</p>` },
+        { nome: "Lvneel", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Um reino de grande influência, onde historiadores e exploradores são reverenciados. Seus portos movimentados são um dos mais bem organizados do North Blue, permitindo que sua marinha comercial prospere.</p>` },
+        { nome: "Minion", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha isolada, com poucas aldeias e uma costa repleta de falésias traiçoeiras. Conhecida por ser um refúgio para aqueles que desejam desaparecer do mundo, suas cavernas escondem histórias de viajantes que nunca retornaram.</p>` },
+        { nome: "Notice", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha voltada ao conhecimento e à comunicação, repleta de arquivos, registros e estruturas dedicadas à coleta de informações. Apesar do ar organizado, há uma sensação constante de vigilância, como se tudo que acontece ali estivesse sendo observado e catalogado.</p>` },
+        { nome: "Polo Norte", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma região gélida e hostil, onde apenas os mais resistentes conseguem sobreviver. Pequenos assentamentos foram estabelecidos por exploradores que buscam riquezas ocultas no gelo, enquanto embarcações patrulham suas águas traiçoeiras em busca de possíveis intrusos.</p>` },
+        { nome: "Rakesh", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Uma ilha fortificada pelo Governo Mundial, servindo como posto avançado para operações militares no North Blue. Soldados treinam incessantemente em suas instalações, enquanto oficiais supervisionam atividades estratégicas na região.</p>` },
+        { nome: "Rubeck", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Um movimentado centro mercantil, onde comerciantes de diferentes origens negociam bens raros e exóticos. Suas feiras e mercados atraem viajantes de todo o North Blue, tornando-se um ponto essencial para trocas comerciais e informações valiosas.</p>` },
+        { nome: "Spider Miles", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma cidade industrial tomada pelo crime e pela corrupção, onde fábricas e docas funcionam sob o domínio de sindicatos ilegais. Navios de procedência duvidosa atracam regularmente, transportando cargas contrabandeadas e negociadas por figuras influentes do submundo.</p>` },
+        { nome: "Swallow", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha de geografia peculiar, com formações rochosas que lembram asas de uma andorinha. Suas aldeias costeiras vivem da pesca e da navegação, e marinheiros habilidosos dali são frequentemente contratados como navegadores por expedições de longa distância.</p>` },
+        { nome: "Welbems", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha industrializada, coberta por construções robustas, máquinas e fumaça constante. A produção nunca para, e tudo gira em torno de eficiência e lucro, mesmo que isso custe a qualidade de vida de quem vive ali.</p>` },
+        { nome: "Whiteland", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Um grandioso reino sob o comando de um poderoso líder pirata, temido em todos os mares. Suas cidades prosperam sob esse domínio, enquanto fortalezas vigiam as águas ao redor. Guerreiros e navegadores habilidosos juram lealdade ao governo local, consolidando Whiteland como um império marítimo no North Blue.</p>` }
+    ],
+    "Paraíso": [
+        { nome: "Baltigo", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Conhecida como a "Terra da Argila Branca", Baltigo é uma ilha envolta por ventanias constantes e paisagens áridas, com colinas cobertas por uma poeira esbranquiçada. Sua localização é de difícil acesso, tornando-a um refúgio para eremitas e estudiosos que buscam isolamento.</p>` },
+        { nome: "Banaro", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha coberta por vastas plantações e bosques de árvores frutíferas. O solo fértil e o clima ameno fazem dela um local ideal para a agricultura. Apesar de sua tranquilidade, antigas ruínas de um povoado desaparecido indicam que a ilha já teve uma história turbulenta.</p>` },
+        { nome: "Base da Marinha G-02", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma fortaleza marítima posicionada na entrada da Grand Line. Seu propósito é controlar o fluxo de embarcações que entram e saem da rota, funcionando como um posto avançado da Marinha na região.</p>` },
+        { nome: "Base da Marinha G-08", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma base móvel da Marinha construída sobre uma frota de navios interligados. Sua posição varia conforme a necessidade estratégica, tornando-a uma força de resposta rápida contra ameaças emergentes.</p>` },
+        { nome: "Boin", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">O Arquipélago Boin consiste em um conjunto de ilhas de formato peculiar, lembrando pétalas de flores. Sua flora e fauna são exuberantes, mas perigosas: insetos gigantes e plantas carnívoras dominam o ecossistema, tornando a sobrevivência um desafio constante.</p>` },
+        { nome: "Cactus", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha rochosa repleta de colinas pontiagudas que se assemelham a cactos. Os "espinhos" que cobrem suas formações naturais, no entanto, são na verdade lápides de um antigo cemitério, indicando que batalhas sangrentas ocorreram ali no passado.</p>` },
+        { nome: "Corrente Tarai", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">A Corrente Tarai é uma poderosa corrente marítima "controlada" pelo Governo Mundial, conectando diretamente três de suas fortalezas mais imponentes: Enies Lobby, Impel Down e a Sede da Marinha. Essa via exclusiva de transporte é estrategicamente projetada para facilitar o deslocamento rápido entre essas bases, ao mesmo tempo em que impede a navegação de embarcações não autorizadas. Devido à sua localização e às águas turbulentas que a compõem, é praticamente impossível acessá-la ou escapar dela sem a permissão do Governo. A Corrente Tarai desempenha um papel crucial na segurança dessas instalações, tornando qualquer invasão ou fuga uma tarefa extremamente desafiadora.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Base da Marinha G-01</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p><p style="margin-left: 20px;">Marineford é a base de operações do Quartel-General da Marinha, onde os almirantes e altos oficiais residem. Sua posição estratégica próxima à Red Line faz dela uma das fortalezas mais bem protegidas do mundo.</p></div><div style="margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Enies Lobby</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p><p style="margin-left: 20px;">Também chamada de "Ilha Judiciária", Enies Lobby serve como um centro administrativo para julgamentos ligados ao Governo Mundial. Cercada por correntes marítimas violentas, seu acesso é restrito, sendo usada para o transporte de prisioneiros.</p></div><div style="margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Impel Down</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p><p style="margin-left: 20px;">Veja a página Calm Belt.</p></div>` },
+        { nome: "Drum", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha de inverno conhecida por suas montanhas nevadas e o frio intenso que domina a paisagem. Pequenos vilarejos espalhados por suas encostas sobrevivem graças à caça e ao cultivo de ervas medicinais raras.</p>` },
+        { nome: "Foolshout", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha marcada por penhascos e uma cidade portuária decadente. O local se tornou refúgio para foras da lei, com tavernas e docas onde se negociam bens ilegais. A ilha está sob o controle de um poderoso capitão pirata e de sua tripulação, conhecidos por dominar a região à força.</p>` },
+        { nome: "Ilha Spa", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Um paraíso de águas termais e resorts, repleto de escorregadores naturais, fontes aquecidas e restaurantes sofisticados. Sua fama atrai visitantes de toda a Grand Line em busca de descanso e lazer.</p>` },
+        { nome: "Jaya", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha de primavera com vegetação densa e florestas tropicais. Sua geografia montanhosa esconde vestígios de civilizações antigas, mas a maior parte de sua história permanece desconhecida.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Skypiea</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Independente</i></p><p style="margin-left: 20px;">Uma ilha flutuante sobre o Mar Branco-Branco. Os habitantes locais veneram uma entidade divina e vivem em estruturas suspensas. A identidade do líder supremo de Skypiea é Odin Tenshi.</p></div>` },
+        { nome: "Karakuri", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha de inverno conhecida por suas máquinas complexas e autômatos. Sua principal cidade, Baldimore, abriga artesãos e inventores que exploram a engenharia avançada. Atualmente, a ilha está sob o controle de um alto representante de um grande Imperador do Mar.</p>` },
+        { nome: "Kenzan", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">O Reino Tehna Gehna se ergue sobre a ilha Kenzan, famosa por sua arquitetura peculiar e habitantes que dominam técnicas de combate corpo a corpo.</p>` },
+        { nome: "Kuraigana", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha sombria, coberta por ruínas de um reino esquecido. Criaturas misteriosas espreitam entre os escombros, e poucos aventureiros ousam permanecer por muito tempo. A ilha está sob o controle de um temido Imperador do Mar.</p>` },
+        { nome: "Kyuka", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha de clima ameno e forte economia pesqueira, antes marcada por pequenos vilarejos costeiros e festivais sazonais.</p>` },
+        { nome: "Little Garden", afiliacaoTexto: "Desabitada", afiliacaoClasse: "despovoada", descricao: `<p style="margin-bottom: 15px;">Uma ilha isolada, onde a vida selvagem permaneceu intocada por séculos. Dinossauros e outros seres pré-históricos habitam a região, tornando-a um verdadeiro desafio para exploradores.</p>` },
+        { nome: "Long Ring Long Land", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha peculiar que se estende em anéis de terra interligados. De tempos em tempos, o recuo das marés revela novas passagens e altera o formato da ilha.</p>` },
+        { nome: "Reino Lulusia", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">O Reino Lulusia é um lugar de clima ameno, com colinas suaves, campos férteis e cidades bem cuidadas de aparência clássica. O povo é educado e contido, acostumado a seguir regras e respeitar autoridades, mas há uma tensão silenciosa sob a aparência ordeira, como se muitos sorrisos fossem forçados. A vida é tranquila para quem se encaixa, mas rígida para quem pensa diferente.</p>` },
+        { nome: "Mar do Triângulo Florian", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma região coberta por uma névoa densa, conhecida por engolir embarcações inteiras. Muitos marinheiros evitam essa rota, temendo as lendas sobre fantasmas e monstros marinhos. Toda navegação passando por esse local deve ser narrada por um ADM.</p>` },
+        { nome: "Mary Geoise", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">O coração do Governo Mundial, onde os governantes mais influentes residem. O local é cercado por muralhas imponentes e protegido por exércitos de elite.</p>` },
+        { nome: "Merveille", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha selvagem cercada por ilhotas menores. A flora da região contém uma substância única chamada QI, responsável por acelerar a evolução de algumas criaturas locais.</p>` },
+        { nome: "Momoiro", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">A ilha onde se localiza o Reino de Kamabakka, lar de indivíduos que seguem uma cultura própria baseada na beleza e na graça.</p>` },
+        { nome: "Namakura", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha devastada pela pobreza, onde seus habitantes vivem em condições precárias. A "Terra da Pobreza" já foi um reino próspero, mas guerras e saques reduziram seu povoado a meras sombras do passado. Atualmente, a ilha está sob o controle de um senhor da guerra pirata.</p>` },
+        { nome: "Nanimonai", afiliacaoTexto: "Desabitada", afiliacaoClasse: "despovoada", descricao: `<p style="margin-bottom: 15px;">Uma ilha desabitada antes de Alabasta. Suas terras áridas e ausência de recursos fazem dela um local de passagem, raramente visitado por navegantes.</p>` },
+        { nome: "Pucci", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Famosa por sua culinária requintada, é chamada de "A Cidade Gourmet" devido à sua grande concentração de chefs renomados.</p>` },
+        { nome: "Sabaody", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Um arquipélago formado por gigantescas árvores de mangue. Sua proximidade com a Red Line faz dela um ponto de parada obrigatório para navegantes em busca de novas rotas.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Ilha dos Homens-Peixe</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Pirata</i></p><p style="margin-left: 20px;">Uma cidade subaquática habitada por homens-peixe e sereianos. Sua localização serve como ponto de travessia entre os mares, mas muitos humanos têm dificuldade para obter passagem segura. Esta ilha está sob o controle do grande Imperador do Mar David The Statue.</p></div>` },
+        { nome: "San Faldo", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma cidade movimentada, famosa por seus festivais exuberantes e carnaval interminável.</p>` },
+        { nome: "Sandy", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">A ilha onde se encontra o Reino de Alabasta, uma das maiores civilizações da Grand Line. Seu deserto escaldante esconde oásis e segredos antigos. Atualmente, a ilha pertence a poderosos Imperadores do Mar que disputam influência sobre a região.</p>` },
+        { nome: "Water 7", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma cidade conhecida por seus construtores navais, responsáveis por embarcações de qualidade excepcional. Seu sistema de canais a torna uma metrópole única na Grand Line.</p>` }
+    ],
+    "Novo Mundo": [
+        { nome: "Applenine", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha fértil e exuberante, conhecida por suas vastas plantações de maçãs únicas, chamadas de "Nove-Sabores", devido à variedade de gostos que uma única maçã pode oferecer. Situada próxima a outras ilhas influentes, Applenine prospera como um centro comercial independente, atraindo comerciantes e aventureiros. No entanto, sua posição estratégica também a torna alvo frequente de piratas e facções em busca de domínio sobre suas terras produtivas.</p>` },
+        { nome: "Base da Marinha G-09", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Localizada em uma área estratégica do Novo Mundo, a Base G-09 é uma fortaleza flutuante construída sobre uma ilha artificial reforçada com aço naval. Apelidada de "Forte da Aurora" devido ao brilho dourado que reflete em suas muralhas ao amanhecer, essa base é um dos principais pontos de defesa contra piratas que tentam invadir territórios sob controle do Governo Mundial. Seu comandante é um estrategista infame, conhecido por suas táticas defensivas e emboscadas no mar. A G-09 também serve como um centro de treinamento para novos marinheiros, moldando futuros combatentes para enfrentar as ameaças do Novo Mundo.</p>` },
+        { nome: "Base da Marinha G-13", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Escondida em meio a ilhas rochosas e bancos de neblina traiçoeiros, a G-13 é um centro de pesquisa e desenvolvimento militar, onde a Marinha testa novas armas e embarcações projetadas para enfrentar as ameaças do Novo Mundo. Seu acesso é altamente restrito, e poucas pessoas além de seus próprios engenheiros e oficiais conhecem sua localização exata. Rumores entre os marinheiros dizem que a G-13 abriga protótipos tão destrutivos que o Governo Mundial mantém sua existência em segredo, temendo que sua tecnologia caia em mãos erradas.</p>` },
+        { nome: "Base da Marinha G-14", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Situada sobre uma série de falésias elevadas, a G-14 se destaca por sua posição privilegiada, permitindo que seus vigias enxerguem grandes distâncias no horizonte. Essa base é especializada em combates aéreos e tem um esquadrão próprio de navios leves, capazes de realizar ataques rápidos e missões de interceptação. Seus oficiais são treinados para operações em altitudes elevadas, e alguns rumores dizem que a base mantém uma parceria secreta com uma tribo de guerreiros que dominam os céus.</p>` },
+        { nome: "Base da Marinha G-15", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">A G-15 é uma das bases mais fortificadas do Novo Mundo, construída sobre uma imensa doca naval que abriga frotas de guerra da Marinha. Conhecida como "O Dique de Ferro", essa base é o maior ponto de reabastecimento e manutenção de navios da Marinha na região. Sua estrutura é reforçada com camadas de metal, tornando-a resistente a bombardeios e ataques diretos. Os engenheiros navais mais talentosos do Governo Mundial operam aqui, criando embarcações e armas avançadas para combater a crescente ameaça pirata.</p>` },
+        { nome: "Dressrosa", afiliacaoTexto: "Governo Mundial/Marinha | Independente", afiliacaoClasse: "misto", descricao: `<p style="margin-bottom: 15px;">Um reino situado no Novo Mundo, Dressrosa é famoso por sua arquitetura deslumbrante e tradições culturais que misturam festivais vibrantes e um código de honra rigoroso entre seus guerreiros. O reino mantém relações estreitas com o Governo Mundial, garantindo proteção contra piratas e invasores, mas também gerando insatisfação entre aqueles que desejam maior independência. As ruas de Dressrosa são sempre movimentadas, repletas de artistas, duelistas e comerciantes de todo o mundo.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Green Bit</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Independente</i></p><p style="margin-left: 20px;">Green Bit é um lugar misterioso e selvagem, onde a natureza reina sem interferência dos humanos. Atravessar a antiga ponte de ferro que liga Dressrosa até aqui é um desafio, com criaturas marinhas gigantes sempre à espreita. Mas o verdadeiro segredo da ilha está escondido sob as raízes das árvores gigantes: o reino dos Tontatta, pequeninos ágeis e incrivelmente fortes que vivem em harmonia com a floresta. Para quem chega sem conhecer os costumes, pode parecer que a ilha é desabitada, mas basta um passo em falso para sentir a velocidade de um golpe dos pequenos guerreiros.</p></div>` },
+        { nome: "Egghead", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha cercada por um mistério denso, Egghead abriga um dos mais avançados centros de pesquisa do Governo Mundial. Poucos sabem o que realmente acontece em suas instalações, mas rumores falam de experimentos científicos inovadores, desde aprimoramento de armamentos até estudos sobre os segredos do próprio mar. Sua localização isolada a torna quase impenetrável, sendo vigiada constantemente pela Marinha e por guardiões autômatos desconhecidos.</p>` },
+        { nome: "Elbaf", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">O poderoso reino dos gigantes, conhecido por sua sociedade guerreira e valores baseados em honra e força. Governado por um conselho de anciãos e grandes chefes de clãs, Elbaf se mantém isolado do mundo, raramente aceitando forasteiros. Sua frota de navios colossais e guerreiros lendários faz com que seja respeitado e temido. As histórias de seus maiores guerreiros são passadas de geração em geração, e apenas os mais fortes entre os gigantes podem sonhar em se tornar lendas em Elbaf.</p>` },
+        { nome: "Foodvalten", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha de grande riqueza gastronômica, Foodvalten é um paraíso para os amantes da comida e um ponto crucial para comerciantes de especiarias raras. Seus mercados oferecem desde pratos exóticos até bebidas fermentadas em cavernas subterrâneas por décadas. Devido à sua abundância, a ilha sempre foi disputada por piratas, sendo atualmente governada por forças que impõem sua autoridade à base de ferro e fogo, transformando Foodvalten em um território perigoso para forasteiros.</p>` },
+        { nome: "Hachinosu", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Conhecida como a "Ilha dos Piratas", Hachinosu é um refúgio para foras-da-lei e uma terra sem leis. Diferentes tripulações chegam e partem, negociando, duelando e tramando alianças. As tavernas nunca fecham, e cada beco pode esconder um segredo sombrio. Atualmente, a ilha está sob o domínio de um Imperador do Mar, mas conflitos constantes entre forças rivais tornam o controle do território instável.</p>` },
+        { nome: "Mystoria", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha que parece flutuar entre a realidade e a lenda, Mystoria é cercada por névoas enigmáticas que confundem navegadores. Muitas tripulações que chegam aqui nunca mais são vistas, enquanto outras retornam com histórias sobre criaturas impossíveis e cidades fantasmagóricas. Alguns acreditam que a ilha é protegida por uma civilização oculta, enquanto outros veem Mystoria apenas como um jogo cruel do mar.</p>` },
+        { nome: "Prodence", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Um reino orgulhoso e independente, Prodence é famoso por seus guerreiros destemidos e por sua monarquia que valoriza a força e a bravura. Seus soldados treinam desde a infância, preparando-se para batalhas que garantam a soberania de seu povo. O rei governa com mão firme, buscando manter sua posição no sempre volátil cenário político do Novo Mundo.</p>` },
+        { nome: "Punk Hazard", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Punk Hazard é uma ilha vulcânica onde o Governo Mundial mantém grandes fornalhas e fundições para a produção de armas e navios da Marinha. Suas montanhas expelem fumaça constantemente, alimentando forjas gigantescas que derretem metais raros extraídos das profundezas da ilha. O local também abriga um centro de pesquisas avançadas, onde cientistas estudam novas tecnologias militares em segredo. Devido ao calor intenso e à atividade vulcânica, a ilha é fortemente patrulhada.</p>` },
+        { nome: "Raijin", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha perpetuamente envolta por tempestades violentas, onde relâmpagos cortam o céu sem cessar. Suas montanhas são lar de tribos isoladas que desenvolveram resistência às tempestades, tornando-se guerreiros formidáveis. Poucos ousam se aventurar em Raijin, mas aqueles que sobrevivem falam de tesouros ocultos e da possibilidade de dominar o próprio trovão.</p>` },
+        { nome: "Risky Red", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Conhecida como a "Ilha dos Atiradores", Risky Red é um território onde a mira perfeita decide quem vive e quem morre. As tavernas são palco de desafios constantes, e qualquer desentendimento pode resultar em um duelo de pistolas. A ilha está sob o controle de um poderoso Imperador do Mar, tornando o local ainda mais perigoso para visitantes despreparados.</p>` },
+        { nome: "Wano", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Um país fechado para o mundo exterior, onde samurais seguem um rígido código de conduta e honram a tradição de seus ancestrais. Isolado por suas montanhas e mares traiçoeiros, Wano mantém sua cultura e governo sem interferência do Governo Mundial. No entanto, rumores dizem que sua paz interna esconde conflitos entre clãs e traições silenciosas. Atualmente, a ilha está sob o domínio de um Imperador do Mar, envolvido em disputas territoriais contínuas.</p>` },
+        { nome: "Whole Cake", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Um arquipélago coberto por vegetação vibrante e construções peculiares, Whole Cake é um paraíso de excessos onde festas nunca terminam. As ilhas prosperam por meio de alianças e negociações secretas, tornando-se um dos territórios mais influentes do Novo Mundo. No passado, todo o arquipélago esteve sob o domínio de uma Imperatriz do Mar, cuja influência ainda marca a região.</p>` },
+        { nome: "Yukiryu", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha de inverno coberta por florestas geladas e montanhas intransponíveis. Suas cavernas abrigam criaturas lendárias e guerreiros nômades que vivem em harmonia com a neve. A beleza de Yukiryu contrasta com sua hostilidade, pois poucos sobrevivem ao frio e às tempestades repentinas que assolam a região</p>` }
+    ],
+    "Calm Belt": [
+        { nome: "Amazon Lily", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Amazon Lily é uma ilha localizada no Calm Belt, cercada por águas infestadas de Reis do Mar, o que a torna isolada e de difícil acesso. A ilha é governada pelas guerreiras da tribo Kuja, uma sociedade exclusivamente feminina conhecida por sua força em combate e pelo domínio do Haki. A cultura local valoriza a força e a independência, e os homens são estritamente proibidos de permanecer na ilha. Devido ao seu isolamento e às habilidades excepcionais de suas habitantes, Amazon Lily é um dos lugares mais singulares do mundo.</p>` },
+        { nome: "Base da Marinha G-04", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Base flutuante da Marinha. Fronteira da Grand Line com o South Blue no Calm Belt.</p>` },
+        { nome: "Base da Marinha G-05", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Base flutuante da Marinha. Fronteira da Grand Line com o East Blue no Calm Belt.</p>` },
+        { nome: "Base da Marinha G-06", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Base flutuante da Marinha. Fronteira da Grand Line com o North Blue no Calm Belt.</p>` },
+        { nome: "Base da Marinha G-07", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Base flutuante da Marinha. Fronteira da Grand Line com o West Blue no Calm Belt.</p>` },
+        { nome: "Impel Down", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Impel Down é uma prisão submarina de segurança máxima administrada pelo Governo Mundial, situada no Calm Belt e integrada à Corrente Tarai. Junto com Marineford e Enies Lobby, forma um dos três grandes baluartes da justiça no Paraíso. Destinada a manter os criminosos e piratas mais perigosos sob rigorosa vigilância, a fortaleza é praticamente impenetrável. Sua estrutura imponente e seus guardas implacáveis fazem dela um verdadeiro pesadelo para qualquer detento.</p>` },
+        { nome: "Rusukaina", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Rusukaina é uma ilha inóspita localizada no Calm Belt, caracterizada por suas condições extremas e hostis. O clima na ilha muda drasticamente 48 vezes ao longo do ano, tornando o ambiente imprevisível e desafiador. Além disso, a região é habitada por diversas criaturas selvagens e extremamente perigosas, dificultando ainda mais a sobrevivência de qualquer visitante. Devido a esses fatores, Rusukaina é um local ideal para o desenvolvimento de habilidades de combate e resistência, sendo um verdadeiro teste para aqueles que ousam enfrentar seus perigos.</p>` },
+        { nome: "Shitsurakujima", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Shitsurakujima é uma ilha remota e isolada localizada no Calm Belt. É um território montanhoso coberto por florestas densas e constantemente assolado por um clima glacial. Ventos cortantes, tempestades de neve frequentes e terrenos traiçoeiros tornaram a ilha inóspita e praticamente inabitável</p>` }
+    ],
+    "Ilhas Sem Localização Exata": [
+        { nome: "Arkham Island", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `` },
+        { nome: "Gran Tesoro", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Gran Tesoro é um navio enorme com uma metrópole construída sobre ele, sendo a maior cidade de entretenimento do mundo.</p>` },
+        { nome: "Ilha do Sol", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `` },
+        { nome: "Reino de Atlantis", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `` },
+        { nome: "Zou", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Zou é uma ilha situada nas costas de um enorme elefante com cerca de 1.000 anos de idade, que percorre o Novo Mundo. É conhecida como uma "ilha fantasma" devido aos Log Pose serem incapazes de apontá-la. É a casa da Tribo Mink.</p>` }
+    ]
+};
+
+// ==========================================
+// BANCO DE DADOS - RECURSOS E MATERIAIS
+// ==========================================
 const recursosDasIlhas = {
     "Amazon Lily": ["Carvalho", "Pau-Brasil", "Pinheiro"],
     "Applenine": ["Pinheiro"],
@@ -1690,6 +1824,74 @@ const recursosDasIlhas = {
     "Zou": ["Carvalho"]
 };
 
+// ==========================================
+// FUNÇÕES DE RENDERIZAÇÃO DINÂMICA
+// ==========================================
+function renderizarIlhasDinamicas() {
+    const container = document.getElementById('island-container');
+    if (!container || !container.hasAttribute('data-mar')) return;
+
+    const mar = container.getAttribute('data-mar');
+    const ilhasDoMar = bancoDeIlhas[mar];
+
+    if (!ilhasDoMar) {
+        container.innerHTML = `<p style="text-align: center; color: var(--text-color);">Nenhuma ilha cadastrada neste mar ainda.</p>`;
+        return;
+    }
+
+    let htmlGerado = "";
+
+    ilhasDoMar.forEach(ilha => {
+        htmlGerado += `
+            <div class="island-item" data-name="${ilha.nome}" data-faction="${ilha.afiliacaoClasse}">
+                <section class="content-section">
+                    <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                        ${ilha.nome} <span class="toggle-icon">▼</span>
+                    </h2>
+                    
+                    <div class="toggle-content">
+                        <p style="margin-bottom: 15px;"><strong>Afiliação:</strong> <i>${ilha.afiliacaoTexto}</i></p>
+                        ${ilha.descricao}
+                    </div>
+                </section>
+                <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            </div>
+        `;
+    });
+
+    container.innerHTML = htmlGerado;
+
+    if (typeof iniciarSistemaDeAbas === 'function') {
+        iniciarSistemaDeAbas();
+    }
+
+    const toggleAllBtn = document.getElementById('toggle-all-btn');
+    if (toggleAllBtn) {
+        toggleAllBtn.addEventListener('click', () => {
+            const toggleTitles = document.querySelectorAll('.toggle-title');
+            const isAllCollapsed = toggleTitles[0] && !toggleTitles[0].classList.contains('collapsed');
+            
+            toggleTitles.forEach(title => {
+                const content = title.nextElementSibling;
+                if (content && content.classList.contains('toggle-content')) {
+                    if (isAllCollapsed) {
+                        title.classList.add('collapsed');
+                        content.classList.add('collapsed');
+                    } else {
+                        title.classList.remove('collapsed');
+                        content.classList.remove('collapsed');
+                    }
+                }
+            });
+            
+            toggleAllBtn.textContent = isAllCollapsed ? 'Expandir Tudo' : 'Retrair Tudo';
+        });
+    }
+}
+
+// ==========================================
+// CARREGAMENTO DE LOCAIS DE MATERIAIS
+// ==========================================
 function carregarLocaisDeMateriais() {
     const elementosMaterial = document.querySelectorAll('.locais-material');
     if (elementosMaterial.length === 0) return;
@@ -1720,5 +1922,25 @@ function carregarLocaisDeMateriais() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    renderizarIlhasDinamicas();
+    iniciarSistemaDeAbas();
     carregarLocaisDeMateriais();
 });
+
+// ==========================================
+// SISTEMA DE ABAS COM RETRAÇÃO E EXPANSÃO
+// ==========================================
+function iniciarSistemaDeAbas() {
+    document.querySelectorAll('.toggle-title').forEach(title => {
+        const newTitle = title.cloneNode(true);
+        title.parentNode.replaceChild(newTitle, title);
+        
+        newTitle.addEventListener('click', function() {
+            this.classList.toggle('collapsed');
+            const content = this.nextElementSibling;
+            if (content && content.classList.contains('toggle-content')) {
+                content.classList.toggle('collapsed');
+            }
+        });
+    });
+}
