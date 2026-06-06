@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <ul class="sub-menu">
                     <li><a href="itens-exclusivos.html">ITENS EXCLUSIVOS</a></li>
                     <li><a href="loja-de-barcos.html">LOJA DE BARCOS</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-carpinteiro">LOJA DE CARPINTEIRO</a></li>
+                    <li><a href="loja-de-carpinteiros.html">LOJA DE CARPINTEIROS</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-criadores">LOJA DE CRIADORES</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-especial">LOJA ESPECIAL</a></li>
                     <li>
@@ -1565,4 +1565,160 @@ document.addEventListener('DOMContentLoaded', () => {
             items.forEach(item => container.appendChild(item));
         });
     }
+});
+
+const recursosDasIlhas = {
+    "Amazon Lily": ["Carvalho", "Pau-Brasil", "Pinheiro"],
+    "Applenine": ["Pinheiro"],
+    "Arkham Island": ["Carvalho", "Pau-Brasil"],
+    "Ballywood": ["Carvalho"],
+    "Baltigo": ["Carvalho"],
+    "Banaro": ["Pinheiro"],
+    "Base da Marinha G-01": [],
+    "Base da Marinha G-02": [],
+    "Base da Marinha G-03": [],
+    "Base da Marinha G-04": [],
+    "Base da Marinha G-05": [],
+    "Base da Marinha G-06": [],
+    "Base da Marinha G-07": [],
+    "Base da Marinha G-08": [],
+    "Base da Marinha G-09": [],
+    "Base da Marinha G-10": [],
+    "Base da Marinha G-11": [],
+    "Base da Marinha G-12": [],
+    "Base da Marinha G-13": [],
+    "Base da Marinha G-14": [],
+    "Base da Marinha G-15": [],
+    "Baterilla": ["Pinheiro"],
+    "Boin": ["Carvalho", "Pinheiro"],
+    "Briss": ["Carvalho", "Pau-Brasil"],
+    "Cactus": ["Pinheiro"],
+    "Centaurea": ["Carvalho"],
+    "Clockwork": ["Pinheiro"],
+    "Conomi": ["Carvalho", "Pau-Brasil", "Pinheiro"],
+    "Corrente Tarai": [],
+    "Cozia": ["Carvalho"],
+    "Dawn": ["Carvalho", "Pinheiro"],
+    "Deul": ["Pinheiro"],
+    "Downs": ["Carvalho", "Pau-Brasil"],
+    "Dressrosa": ["Carvalho", "Pinheiro"],
+    "Drum": ["Pinheiro"],
+    "Egghead": ["Pinheiro"],
+    "Elbaf": ["Árvore do Tesouro Adão", "Carvalho", "Pau-Brasil"],
+    "Enies Lobby": [],
+    "Flevance": ["Pinheiro"],
+    "Foodvalten": ["Pinheiro", "Pau-Brasil"],
+    "Foolshout": ["Carvalho", "Pau-Brasil"],
+    "Gecko": ["Pinheiro"],
+    "Goat": ["Pinheiro"],
+    "God Valley": ["Carvalho"],
+    "Gran Tesoro": ["Árvore do Tesouro Adão"],
+    "Hachinosu": ["Carvalho", "Pau-Brasil"],
+    "Ilha do Sol": ["Pinheiro"],
+    "Ilha dos Animais Raros": ["Carvalho", "Pau-Brasil"],
+    "Ilha dos Homens-Peixe": ["Árvore da Luz Solar Eva"],
+    "Ilha Navio de Guerra": ["Carvalho"],
+    "Ilha Shimotsuki": ["Carvalho", "Pinheiro"],
+    "Ilha Spa": ["Pinheiro"],
+    "Ilusia": ["Carvalho", "Pinheiro"],
+    "Impel Down": [],
+    "Jaya": ["Carvalho", "Pinheiro"],
+    "Kano": ["Carvalho", "Pau-Brasil"],
+    "Karakuri": ["Carvalho", "Pau-Brasil"],
+    "Karate": ["Pinheiro"],
+    "Kenzan": ["Pinheiro"],
+    "Kuen": ["Pinheiro", "Pau-Brasil"],
+    "Kumate": ["Carvalho"],
+    "Kuraigana": ["Carvalho", "Pau-Brasil"],
+    "Kutsukku": ["Pinheiro"],
+    "Kyuka": ["Pinheiro"],
+    "Las Camp": ["Pinheiro", "Pau-Brasil"],
+    "Little Garden": ["Carvalho"],
+    "Long Ring Long Land": ["Pinheiro"],
+    "Lvneel": ["Carvalho", "Pinheiro"],
+    "Mary Geoise": ["Carvalho"],
+    "Merveille": ["Carvalho"],
+    "Minion": ["Pinheiro"],
+    "Mirrorball": ["Pinheiro"],
+    "Momoiro": ["Pinheiro"],
+    "Mystoria": ["Carvalho"],
+    "Namakura": ["Pinheiro", "Pau-Brasil"],
+    "Nanimonai": ["Pinheiro"],
+    "Notice": ["Carvalho"],
+    "Ohara": ["Carvalho"],
+    "Organ": ["Pinheiro"],
+    "Oykot": ["Pinheiro", "Pau-Brasil"],
+    "Polo Norte": ["Pinheiro"],
+    "Polestar": ["Carvalho", "Pau-Brasil"],
+    "Prodence": ["Carvalho"],
+    "Pucci": ["Pinheiro"],
+    "Punk Hazard": ["Carvalho"],
+    "Raijin": ["Carvalho", "Pau-Brasil"],
+    "Rakesh": ["Carvalho"],
+    "Reino de Atlantis": ["Carvalho"],
+    "Reino Lulusia": ["Carvalho", "Pinheiro"],
+    "Reino Negro de Drum": ["Pinheiro"],
+    "Risky Red": ["Pinheiro", "Pau-Brasil"],
+    "Roshwan": ["Pinheiro"],
+    "Rubeck": ["Carvalho", "Pinheiro"],
+    "Rusukaina": ["Carvalho"],
+    "Sabaody": ["Pau-Brasil", "Mogno de Sabaody"],
+    "Samba": ["Carvalho", "Pau-Brasil", "Pinheiro"],
+    "Samuwanai": ["Carvalho", "Pinheiro"],
+    "San Faldo": ["Pinheiro"],
+    "Sandy": ["Carvalho", "Pau-Brasil"],
+    "Shitsurakujima": ["Pinheiro"],
+    "Skypiea": ["Pinheiro"],
+    "Soja": ["Pinheiro"],
+    "Sorbet": ["Pinheiro"],
+    "Spider Miles": ["Carvalho", "Pau-Brasil"],
+    "Swallow": ["Pinheiro"],
+    "Taya": ["Pinheiro"],
+    "Tequila Wolf": ["Carvalho"],
+    "Thriller Bark": ["Carvalho"],
+    "Torino": ["Carvalho", "Pinheiro"],
+    "Toroa": ["Pinheiro", "Pau-Brasil"],
+    "Tumi": ["Carvalho"],
+    "Vespa": ["Carvalho"],
+    "Wano": ["Carvalho", "Pinheiro", "Pau-Brasil"],
+    "Water 7": ["Carvalho", "Pinheiro"],
+    "Welbems": ["Carvalho"],
+    "Whiteland": ["Carvalho", "Pau-Brasil"],
+    "Whole Cake": ["Pinheiro"],
+    "Yotsuba": ["Carvalho"],
+    "Yukiryu": ["Pinheiro"],
+    "Zou": ["Carvalho"]
+};
+
+function carregarLocaisDeMateriais() {
+    const elementosMaterial = document.querySelectorAll('.locais-material');
+    if (elementosMaterial.length === 0) return;
+
+    elementosMaterial.forEach(elemento => {
+        const materialDesejado = elemento.getAttribute('data-material');
+        let ilhasEncontradas = [];
+
+        for (const [ilha, materiais] of Object.entries(recursosDasIlhas)) {
+            if (materiais.includes(materialDesejado)) {
+                ilhasEncontradas.push(ilha);
+            }
+        }
+
+        if (ilhasEncontradas.length > 0) {
+            let ilhasOrdenadas = ilhasEncontradas.sort((a, b) => a.localeCompare(b, 'pt-BR'));
+            
+            if (ilhasOrdenadas.length === 1) {
+                elemento.textContent = ilhasOrdenadas[0];
+            } else {
+                let ultimaIlha = ilhasOrdenadas.pop();
+                elemento.textContent = ilhasOrdenadas.join(', ') + " e " + ultimaIlha;
+            }
+        } else {
+            elemento.textContent = "Disponibilidade restrita ou desconhecida.";
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    carregarLocaisDeMateriais();
 });

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Carpinteiros - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">LOJA DE CARPINTEIROS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <div class="rank-box" style="text-align: center;">
+                    <p style="margin-bottom: 0;">Dentro desta loja, é possível adquirir lotes dos melhores materiais para a criação e manutenção de embarcações. Cada tipo de madeira oferece características específicas de resistência e velocidade, moldando o desempenho do seu futuro navio nos mares.</p>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    MATÉRIAS-PRIMAS <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Madeira de Carvalho</h4>
+                        <p style="margin-bottom: 15px;">Madeira dura e pesada, com anéis bem marcados na superfície e tonalidades escuras no interior. É um material rústico e altamente confiável para a construção de navios que priorizam resistência a danos em vez de velocidade.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 8 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Desgaste:</strong> Perde 1 vida a cada 2 navegações</li>
+                            <li style="margin-bottom: 8px;"><strong>Valor do Lote:</strong> ฿150.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Onde encontrar:</strong> <span class="locais-material" data-material="Carvalho"></span></li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Madeira de Pinheiro</h4>
+                        <p style="margin-bottom: 15px;">Uma espécie muito prolífica e de preço reduzido em comparação com madeiras nobres. É um material semiduro e semipesado, com fibras retas. Muito vantajoso para navios equilibrados que precisam ser ágeis sem sacrificar totalmente a firmeza do casco.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 7 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Desgaste:</strong> Perde 1 vida a cada navegação</li>
+                            <li style="margin-bottom: 8px;"><strong>Valor do Lote:</strong> ฿100.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Onde encontrar:</strong> <span class="locais-material" data-material="Pinheiro"></span></li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Madeira de Pau-Brasil</h4>
+                        <p style="margin-bottom: 15px;">Uma madeira muito rara vendida em mercados clandestinos. É extremamente densa, capaz de aguentar uma massiva quantidade de dano e permanecer muitos dias no mar sem sofrer desgaste, sendo naturalmente imune a fungos e outras pragas marinhas que deterioram os cascos.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 10 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Desgaste:</strong> Perde 1 vida a cada 2 navegações</li>
+                            <li style="margin-bottom: 8px;"><strong>Valor do Lote:</strong> ฿230.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Onde encontrar:</strong> <span class="locais-material" data-material="Pau-Brasil"></span></li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Madeira de Mogno de Sabaody</h4>
+                        <p style="margin-bottom: 15px;">Uma madeira feita a partir dos galhos caídos das imensas árvores do Arquipélago Sabaody. É perfeita para navios velozes, sendo flexível e extremamente leve. A única desvantagem desse material exótico é a sua fragilidade sob bombardeios diretos.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 5 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Desgaste:</strong> Perde 1 vida a cada navegação</li>
+                            <li style="margin-bottom: 8px;"><strong>Valor do Lote:</strong> ฿50.000.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Onde encontrar:</strong> <span class="locais-material" data-material="Mogno de Sabaody"></span></li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Madeira da Árvore do Tesouro Adão</h4>
+                        <p style="margin-bottom: 15px;">A árvore do Tesouro Adão fornece o tipo de madeira mais forte e de melhor qualidade encontrada no mundo inteiro. Sua imensa raridade a torna um verdadeiro tesouro. Ela é capaz de suportar rajadas intensas de canhões e armas de fogo, recedendo quase nenhum arranhão severo. Apesar dessa resistência lendária, os navios ainda exigem o trabalho minucioso de um carpinteiro para a manutenção do conjunto.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 12 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Desgaste:</strong> Perde 1 vida a cada 3 navegações</li>
+                            <li style="margin-bottom: 8px;"><strong>Valor do Lote:</strong> ฿400.000.000 (só pode comprar estando pessoalmente em suas respectivas ilhas de encontro)</li>
+                            <li style="margin-bottom: 8px;"><strong>Onde encontrar:</strong> <span class="locais-material" data-material="Árvore do Tesouro Adão"></span></li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Madeira da Árvore da Luz Solar Eva</h4>
+                        <p style="margin-bottom: 15px;">Uma planta colossal e milenar cujas raízes mergulham até as maiores profundezas do oceano. A madeira extraída de seus imensos galhos absorve e canaliza a energia do sol, tornando-se incrivelmente resistente a pressões extremas e ataques pesados, além de emanar um leve e reconfortante calor. Tão rara e valiosa quanto a madeira de Adão, a madeira de Eva é um tesouro cobiçado que permite a construção de navios lendários, capazes de navegar com uma fluidez incomparável mesmo nas águas mais hostis e escuras do mundo.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Durabilidade:</strong> 12 pontos de vida</li>
+                            <li style="margin-bottom: 8px;"><strong>Desgaste:</strong> Perde 1 vida a cada 3 navegações</li>
+                            <li style="margin-bottom: 8px;"><strong>Valor do Lote:</strong> ฿400.000.000 (só pode comprar estando pessoalmente em suas respectivas ilhas de encontro)</li>
+                            <li style="margin-bottom: 8px;"><strong>Onde encontrar:</strong> <span class="locais-material" data-material="Árvore da Luz Solar Eva"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
