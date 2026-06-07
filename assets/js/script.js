@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="itens-exclusivos.html">ITENS EXCLUSIVOS</a></li>
                     <li><a href="loja-de-barcos.html">LOJA DE BARCOS</a></li>
                     <li><a href="loja-de-carpinteiros.html">LOJA DE CARPINTEIROS</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-criadores">LOJA DE CRIADORES</a></li>
+                    <li><a href="loja-de-criadores.html">LOJA DE CRIADORES</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-especial">LOJA ESPECIAL</a></li>
                     <li>
                         <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-ferreiro" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
@@ -1702,12 +1702,12 @@ const bancoDeIlhas = {
 // BANCO DE DADOS - RECURSOS E MATERIAIS
 // ==========================================
 const recursosDasIlhas = {
-    "Amazon Lily": ["Carvalho", "Pau-Brasil", "Pinheiro"],
-    "Applenine": ["Pinheiro"],
-    "Arkham Island": ["Carvalho", "Pau-Brasil"],
-    "Ballywood": ["Carvalho"],
-    "Baltigo": ["Carvalho"],
-    "Banaro": ["Pinheiro"],
+    "Amazon Lily": ["Carvalho", "Pau-Brasil", "Pinheiro", "Materiais de Criadores 1"],
+    "Applenine": ["Pinheiro", "Materiais de Criadores 1"],
+    "Arkham Island": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Ballywood": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2", "Materiais de Criadores 3"],
+    "Baltigo": ["Carvalho", "Materiais de Criadores 1"],
+    "Banaro": ["Pinheiro", "Materiais de Criadores 1"],
     "Base da Marinha G-01": [],
     "Base da Marinha G-02": [],
     "Base da Marinha G-03": [],
@@ -1723,105 +1723,105 @@ const recursosDasIlhas = {
     "Base da Marinha G-13": [],
     "Base da Marinha G-14": [],
     "Base da Marinha G-15": [],
-    "Baterilla": ["Pinheiro"],
-    "Boin": ["Carvalho", "Pinheiro"],
-    "Briss": ["Carvalho", "Pau-Brasil"],
-    "Cactus": ["Pinheiro"],
-    "Centaurea": ["Carvalho"],
-    "Clockwork": ["Pinheiro"],
-    "Conomi": ["Carvalho", "Pau-Brasil", "Pinheiro"],
+    "Baterilla": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Boin": ["Carvalho", "Pinheiro", "Materiais de Criadores 1"],
+    "Briss": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Cactus": ["Pinheiro", "Materiais de Criadores 1"],
+    "Centaurea": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Clockwork": ["Pinheiro", "Materiais de Criadores 1"],
+    "Conomi": ["Carvalho", "Pau-Brasil", "Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
     "Corrente Tarai": [],
-    "Cozia": ["Carvalho"],
-    "Dawn": ["Carvalho", "Pinheiro"],
-    "Deul": ["Pinheiro"],
-    "Downs": ["Carvalho", "Pau-Brasil"],
-    "Dressrosa": ["Carvalho", "Pinheiro"],
-    "Drum": ["Pinheiro"],
-    "Egghead": ["Pinheiro"],
-    "Elbaf": ["Árvore do Tesouro Adão", "Carvalho", "Pau-Brasil"],
+    "Cozia": ["Carvalho", "Materiais de Criadores 1"],
+    "Dawn": ["Carvalho", "Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Deul": ["Pinheiro", "Materiais de Criadores 1"],
+    "Downs": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Dressrosa": ["Carvalho", "Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2", "Materiais de Criadores 3"],
+    "Drum": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2", "Materiais de Criadores 3"],
+    "Egghead": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 4"],
+    "Elbaf": ["Árvore do Tesouro Adão", "Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
     "Enies Lobby": [],
-    "Flevance": ["Pinheiro"],
-    "Foodvalten": ["Pinheiro", "Pau-Brasil"],
-    "Foolshout": ["Carvalho", "Pau-Brasil"],
-    "Gecko": ["Pinheiro"],
-    "Goat": ["Pinheiro"],
-    "God Valley": ["Carvalho"],
-    "Gran Tesoro": ["Árvore do Tesouro Adão"],
-    "Hachinosu": ["Carvalho", "Pau-Brasil"],
-    "Ilha do Sol": ["Pinheiro"],
-    "Ilha dos Animais Raros": ["Carvalho", "Pau-Brasil"],
-    "Ilha dos Homens-Peixe": ["Árvore da Luz Solar Eva"],
-    "Ilha Navio de Guerra": ["Carvalho"],
-    "Ilha Shimotsuki": ["Carvalho", "Pinheiro"],
-    "Ilha Spa": ["Pinheiro"],
-    "Ilusia": ["Carvalho", "Pinheiro"],
+    "Flevance": ["Pinheiro", "Materiais de Criadores 1"],
+    "Foodvalten": ["Pinheiro", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Foolshout": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Gecko": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Goat": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "God Valley": ["Carvalho", "Materiais de Criadores 1"],
+    "Gran Tesoro": ["Árvore do Tesouro Adão", "Materiais de Criadores 1"],
+    "Hachinosu": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Ilha do Sol": ["Pinheiro", "Materiais de Criadores 1"],
+    "Ilha dos Animais Raros": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Ilha dos Homens-Peixe": ["Árvore da Luz Solar Eva", "Materiais de Criadores 1"],
+    "Ilha Navio de Guerra": ["Carvalho", "Materiais de Criadores 1"],
+    "Ilha Shimotsuki": ["Carvalho", "Pinheiro", "Materiais de Criadores 1"],
+    "Ilha Spa": ["Pinheiro", "Materiais de Criadores 1"],
+    "Ilusia": ["Carvalho", "Pinheiro", "Materiais de Criadores 1"],
     "Impel Down": [],
-    "Jaya": ["Carvalho", "Pinheiro"],
-    "Kano": ["Carvalho", "Pau-Brasil"],
-    "Karakuri": ["Carvalho", "Pau-Brasil"],
-    "Karate": ["Pinheiro"],
-    "Kenzan": ["Pinheiro"],
-    "Kuen": ["Pinheiro", "Pau-Brasil"],
-    "Kumate": ["Carvalho"],
-    "Kuraigana": ["Carvalho", "Pau-Brasil"],
-    "Kutsukku": ["Pinheiro"],
-    "Kyuka": ["Pinheiro"],
-    "Las Camp": ["Pinheiro", "Pau-Brasil"],
-    "Little Garden": ["Carvalho"],
-    "Long Ring Long Land": ["Pinheiro"],
-    "Lvneel": ["Carvalho", "Pinheiro"],
-    "Mary Geoise": ["Carvalho"],
-    "Merveille": ["Carvalho"],
-    "Minion": ["Pinheiro"],
-    "Mirrorball": ["Pinheiro"],
-    "Momoiro": ["Pinheiro"],
-    "Mystoria": ["Carvalho"],
-    "Namakura": ["Pinheiro", "Pau-Brasil"],
-    "Nanimonai": ["Pinheiro"],
-    "Notice": ["Carvalho"],
-    "Ohara": ["Carvalho"],
-    "Organ": ["Pinheiro"],
-    "Oykot": ["Pinheiro", "Pau-Brasil"],
-    "Polo Norte": ["Pinheiro"],
-    "Polestar": ["Carvalho", "Pau-Brasil"],
-    "Prodence": ["Carvalho"],
-    "Pucci": ["Pinheiro"],
-    "Punk Hazard": ["Carvalho"],
-    "Raijin": ["Carvalho", "Pau-Brasil"],
-    "Rakesh": ["Carvalho"],
-    "Reino de Atlantis": ["Carvalho"],
-    "Reino Lulusia": ["Carvalho", "Pinheiro"],
-    "Reino Negro de Drum": ["Pinheiro"],
-    "Risky Red": ["Pinheiro", "Pau-Brasil"],
-    "Roshwan": ["Pinheiro"],
-    "Rubeck": ["Carvalho", "Pinheiro"],
-    "Rusukaina": ["Carvalho"],
-    "Sabaody": ["Pau-Brasil", "Mogno de Sabaody"],
-    "Samba": ["Carvalho", "Pau-Brasil", "Pinheiro"],
-    "Samuwanai": ["Carvalho", "Pinheiro"],
-    "San Faldo": ["Pinheiro"],
-    "Sandy": ["Carvalho", "Pau-Brasil"],
-    "Shitsurakujima": ["Pinheiro"],
-    "Skypiea": ["Pinheiro"],
-    "Soja": ["Pinheiro"],
-    "Sorbet": ["Pinheiro"],
-    "Spider Miles": ["Carvalho", "Pau-Brasil"],
-    "Swallow": ["Pinheiro"],
-    "Taya": ["Pinheiro"],
-    "Tequila Wolf": ["Carvalho"],
-    "Thriller Bark": ["Carvalho"],
-    "Torino": ["Carvalho", "Pinheiro"],
-    "Toroa": ["Pinheiro", "Pau-Brasil"],
-    "Tumi": ["Carvalho"],
-    "Vespa": ["Carvalho"],
-    "Wano": ["Carvalho", "Pinheiro", "Pau-Brasil"],
-    "Water 7": ["Carvalho", "Pinheiro"],
-    "Welbems": ["Carvalho"],
-    "Whiteland": ["Carvalho", "Pau-Brasil"],
-    "Whole Cake": ["Pinheiro"],
-    "Yotsuba": ["Carvalho"],
-    "Yukiryu": ["Pinheiro"],
-    "Zou": ["Carvalho"]
+    "Jaya": ["Carvalho", "Pinheiro", "Materiais de Criadores 1"],
+    "Kano": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Karakuri": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Karate": ["Pinheiro", "Materiais de Criadores 1"],
+    "Kenzan": ["Pinheiro", "Materiais de Criadores 1"],
+    "Kuen": ["Pinheiro", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Kumate": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Kuraigana": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1", "Materiais de Criadores 2", "Materiais de Criadores 3"],
+    "Kutsukku": ["Pinheiro", "Materiais de Criadores 1"],
+    "Kyuka": ["Pinheiro", "Materiais de Criadores 1"],
+    "Las Camp": ["Pinheiro", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Little Garden": ["Carvalho", "Materiais de Criadores 1"],
+    "Long Ring Long Land": ["Pinheiro", "Materiais de Criadores 1"],
+    "Lvneel": ["Carvalho", "Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Mary Geoise": ["Carvalho", "Materiais de Criadores 1"],
+    "Merveille": ["Carvalho", "Materiais de Criadores 1"],
+    "Minion": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Mirrorball": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Momoiro": ["Pinheiro", "Materiais de Criadores 1"],
+    "Mystoria": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Namakura": ["Pinheiro", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Nanimonai": ["Pinheiro", "Materiais de Criadores 1"],
+    "Notice": ["Carvalho", "Materiais de Criadores 1"],
+    "Ohara": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Organ": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Oykot": ["Pinheiro", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Polo Norte": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Polestar": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1", "Materiais de Criadores 2", "Materiais de Criadores 3"],
+    "Prodence": ["Carvalho", "Materiais de Criadores 1"],
+    "Pucci": ["Pinheiro", "Materiais de Criadores 1"],
+    "Punk Hazard": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Raijin": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Rakesh": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Reino de Atlantis": ["Carvalho", "Materiais de Criadores 1"],
+    "Reino Lulusia": ["Carvalho", "Pinheiro", "Materiais de Criadores 1"],
+    "Reino Negro de Drum": ["Pinheiro", "Materiais de Criadores 1"],
+    "Risky Red": ["Pinheiro", "Pau-Brasil", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Roshwan": ["Pinheiro", "Materiais de Criadores 1"],
+    "Rubeck": ["Carvalho", "Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Rusukaina": ["Carvalho", "Materiais de Criadores 1"],
+    "Sabaody": ["Pau-Brasil", "Mogno de Sabaody", "Materiais de Criadores 1", "Materiais de Criadores 2", "Materiais de Criadores 3"],
+    "Samba": ["Carvalho", "Pau-Brasil", "Pinheiro", "Materiais de Criadores 1"],
+    "Samuwanai": ["Carvalho", "Pinheiro", "Materiais de Criadores 1"],
+    "San Faldo": ["Pinheiro", "Materiais de Criadores 1"],
+    "Sandy": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Shitsurakujima": ["Pinheiro", "Materiais de Criadores 1"],
+    "Skypiea": ["Pinheiro", "Materiais de Criadores 1"],
+    "Soja": ["Pinheiro", "Materiais de Criadores 1"],
+    "Sorbet": ["Pinheiro", "Materiais de Criadores 1"],
+    "Spider Miles": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Swallow": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Taya": ["Pinheiro", "Materiais de Criadores 1"],
+    "Tequila Wolf": ["Carvalho", "Materiais de Criadores 1"],
+    "Thriller Bark": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Torino": ["Carvalho", "Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2", "Materiais de Criadores 3"],
+    "Toroa": ["Pinheiro", "Pau-Brasil", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Tumi": ["Carvalho", "Materiais de Criadores 1"],
+    "Vespa": ["Carvalho", "Materiais de Criadores 1"],
+    "Wano": ["Carvalho", "Pinheiro", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Water 7": ["Carvalho", "Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2", "Materiais de Criadores 3"],
+    "Welbems": ["Carvalho", "Materiais de Criadores 1"],
+    "Whiteland": ["Carvalho", "Pau-Brasil", "Materiais de Criadores 1"],
+    "Whole Cake": ["Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Yotsuba": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2"],
+    "Yukiryu": ["Pinheiro", "Materiais de Criadores 1"],
+    "Zou": ["Carvalho", "Materiais de Criadores 1"]
 };
 
 // ==========================================
@@ -1900,23 +1900,24 @@ function carregarLocaisDeMateriais() {
         const materialDesejado = elemento.getAttribute('data-material');
         let ilhasEncontradas = [];
 
-        for (const [ilha, materiais] of Object.entries(recursosDasIlhas)) {
-            if (materiais.includes(materialDesejado)) {
-                ilhasEncontradas.push(ilha);
+        if (materialDesejado) {
+            for (const [ilha, materiais] of Object.entries(recursosDasIlhas)) {
+                if (materiais.includes(materialDesejado)) {
+                    ilhasEncontradas.push(ilha);
+                }
             }
         }
 
         if (ilhasEncontradas.length > 0) {
-            let ilhasOrdenadas = ilhasEncontradas.sort((a, b) => a.localeCompare(b, 'pt-BR'));
-            
+            let ilhasOrdenadas = [...new Set(ilhasEncontradas)].sort((a, b) => a.localeCompare(b, 'pt-BR'));
             if (ilhasOrdenadas.length === 1) {
                 elemento.textContent = ilhasOrdenadas[0];
             } else {
                 let ultimaIlha = ilhasOrdenadas.pop();
-                elemento.textContent = ilhasOrdenadas.join(', ') + " e " + ultimaIlha;
+                elemento.textContent = ilhasOrdenadas.join(', ') + ' e ' + ultimaIlha;
             }
         } else {
-            elemento.textContent = "Disponibilidade restrita ou desconhecida.";
+            elemento.textContent = 'Disponibilidade restrita ou desconhecida.';
         }
     });
 }
@@ -1925,6 +1926,30 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarIlhasDinamicas();
     iniciarSistemaDeAbas();
     carregarLocaisDeMateriais();
+
+    const toggleAllBtn = document.getElementById('toggle-all-btn');
+    if (toggleAllBtn) {
+        toggleAllBtn.addEventListener('click', () => {
+            const toggleTitles = document.querySelectorAll('.toggle-title');
+            if (!toggleTitles || toggleTitles.length === 0) return;
+            const isAllCollapsed = toggleTitles[0] && !toggleTitles[0].classList.contains('collapsed');
+
+            toggleTitles.forEach(title => {
+                const content = title.nextElementSibling;
+                if (content && content.classList.contains('toggle-content')) {
+                    if (isAllCollapsed) {
+                        title.classList.add('collapsed');
+                        content.classList.add('collapsed');
+                    } else {
+                        title.classList.remove('collapsed');
+                        content.classList.remove('collapsed');
+                    }
+                }
+            });
+
+            toggleAllBtn.textContent = isAllCollapsed ? 'Expandir Tudo' : 'Retrair Tudo';
+        });
+    }
 });
 
 // ==========================================
