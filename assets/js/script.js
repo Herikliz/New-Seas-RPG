@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="loja-de-barcos.html">LOJA DE BARCOS</a></li>
                     <li><a href="loja-de-carpinteiros.html">LOJA DE CARPINTEIROS</a></li>
                     <li><a href="loja-de-criadores.html">LOJA DE CRIADORES</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-especial">LOJA ESPECIAL</a></li>
+                    <li><a href="loja-especial.html">LOJA ESPECIAL</a></li>
                     <li>
                         <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-ferreiro" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">

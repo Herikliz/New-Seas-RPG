@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Especial - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">LOJA ESPECIAL</h1>
+                <p style="font-size: 16px; margin-top: 10px; font-style: italic;">Abre duas vezes ao mês (dias 15 e 30) com estoque limitado e itens únicos.</p>
+            </section>
+
+            <section class="content-section" style="margin-top: 40px; padding: 20px; background: var(--card-bg); border-left: 4px solid var(--accent-color);">
+                <p style="font-style: italic; color: var(--text-muted); margin: 0;"><strong>⚠️ Nota Importante:</strong> Você só pode ter um consumível no inventário por vez.</p>
+            </section>
+
+            <!-- CONSUMÍVEIS -->
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    CONSUMÍVEIS <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Feijão Senju</h4>
+                        <p style="margin: 5px 0;"><strong>Efeito:</strong> Cura feridas mortais</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿1.000.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Espinafre do Paizão</h4>
+                        <p style="margin: 5px 0;"><strong>Efeito:</strong> Aumenta a Força em 10% após o consumo por 2 turnos (infelizmente ele cheira a cachimbo, mas o gosto é bom)</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿500.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Leite da Mimosa</h4>
+                        <p style="margin: 5px 0;"><strong>Efeito:</strong> Dizem que até mesmo 7 monstros brigam por ele, pois ele cura feridas nos ossos rapidamente</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿800.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Chocolate Humano</h4>
+                        <p style="margin: 5px 0;"><strong>Efeito:</strong> Um estranho chocolate da marca "VTC". Diz-se que após o consumo a força de uma nova pessoa se soma à sua por 2 turnos. Buff de 5% nos atributos físicos</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿500.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Macarrão sem Mentiras</h4>
+                        <p style="margin: 5px 0;"><strong>Efeito:</strong> Um prato delicioso e sem ingredientes ocultos que limpa a mente e ajuda nos combates. Aumenta Destreza em 10% por 2 turnos</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿500.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Cogumelo Dorminhoco</h4>
+                        <p style="margin: 5px 0;"><strong>Efeito:</strong> Rouba seu sono. Enquanto estiver o comendo pode ficar longos períodos de tempo sem dormir</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿150.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Cogumelo M</h4>
+                        <p style="margin: 5px 0;"><strong>Efeito:</strong> Cogumelo que aumenta sua massa muscular aumentando um pouco seu tamanho. Dizem que a primeira pessoa que usou isso foi alguém de roupa vermelha com um M no chapéu. Buff de +25% Força por 2 turnos</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿1.200.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Cogumelo L</h4>
+                        <p style="margin: 5px 0;"><strong>Efeito:</strong> Um cogumelo irmão do Cogumelo M com propriedades opostas. Ele diminui sua massa corporal deixando a pessoa um pouco menor. Dizem que o irmão do misterioso M usava esse cogumelo para se esconder por ser medroso. Ele sempre usava uma roupa verde com L no chapéu. Buff de +25% Velocidade (apenas para fugir) por 2 turnos</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿800.000.000</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ARMAS -->
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    ARMAS <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Jashin no Kira</h4>
+                        <p style="margin: 5px 0;"><strong>Descrição:</strong> A foice suprema. Seu corpo é completamente vermelho com detalhes negros, e suas três lâminas diminuem de tamanho de cima para baixo, aumentando seu alcance em troca de um leve declínio na letalidade. Conectada a um cabo metálico enrolado em carretéis acopláveis ao usuário, essa arma pode ser manipulada a grandes distâncias, tornando-se uma ameaça imprevisível. Sua presença carrega uma aura espiritual invisível, como se tivesse uma vontade própria.</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿1.000.000.000 <i>(Druig)</i></p>
+                        <p style="margin: 5px 0; color: var(--text-muted);"><strong>Restrições:</strong> Usada apenas por usuários de Yaristyle</p>
+                        <p style="margin: 5px 0; color: var(--text-muted);"><strong>Bônus:</strong> A foice se torna mais forte se o usuário for portador da Hemo Hemo no Mi</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Rhitta</h4>
+                        <p style="margin: 5px 0;"><strong>Descrição:</strong> Um machado imponente e dourado, com uma lâmina em forma de lua crescente e o símbolo de um leão gravado, irradiando uma presença quase viva. Dizem que apenas guerreiros com a ferocidade de um leão podem dominá-lo, pois seu peso desequilibrado torna o manuseio desafiador, mas, quando exposto ao sol, sua lâmina se torna ainda mais afiada, capaz de cortar até as maiores estruturas com facilidade.</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿1.500.000.000 <i>(Raion Solgard)</i></p>
+                        <p style="margin: 5px 0; color: var(--text-muted);"><strong>Restrições:</strong> Usada apenas por usuários de Combate Gigante</p>
+                        <p style="margin: 5px 0; color: var(--text-muted);"><strong>Observação:</strong> Essa arma é usada com Força ao invés de Destreza, e seus buffs também são em Força.</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Soul</h4>
+                        <p style="margin: 5px 0;"><strong>Descrição:</strong> Uma foice de cabo escuro e longo, com uma lâmina vermelha curva que brilha como metal recém-forjado. Seu design lembra um sorriso torto, quase provocador. Apesar da aparência simples, há algo de inquietante em sua presença, como se observasse quem a segura. Forjada a partir de uma alma viva, a Soul responde à sintonia do usuário, tornando-se mais letal quanto maior for a conexão entre os dois. Mas para empunhá-la, é preciso espírito o suficiente.</p>
+                        <p style="margin: 5px 0;"><strong>Valor:</strong> ฿2.000.000.000</p>
+                        <p style="margin: 5px 0; color: var(--text-muted);"><strong>Bônus Base:</strong> +25% em Destreza durante o uso</p>
+                        <p style="margin: 5px 0; color: var(--text-muted);"><strong>Restrições:</strong> Usada apenas por usuários de Yaristyle</p>
+                        <p style="margin: 5px 0; color: var(--text-muted);"><strong>Requisito:</strong> Necessário no mínimo 10.000 pontos em Espírito para usar</p>
+                        <p style="margin: 5px 0; color: var(--text-muted);"><strong>Bônus Sinergia:</strong> A foice se torna mais forte se o usuário for portador da Soru Soru no Mi (25% → 35%)</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
