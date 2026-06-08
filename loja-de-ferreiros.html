@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Ferreiros - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">LOJA DE FERREIROS</h1>
+            </section>
+
+            <section class="content-section">
+                <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 8px; margin-bottom: 30px;">
+                    <p style="margin-bottom: 15px;">Dentro dessa loja, será possível adquirir materiais para a criação de armas e armaduras da melhor qualidade, cada uma com características específicas. Alguns metais têm buffs quando usados em atividades específicas. Buffs não são acumulativos, sendo sempre considerados os maiores.</p>
+                    <p style="margin-bottom: 15px;">Exemplo: Tenho uma arma de Adamantium e uma de Aço Carbono; o único buff a ser considerado será o de +25% em Força ou Destreza e +15% em Velocidade do Adamantium.</p>
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #d32f2f; text-align: center;">ATENÇÃO</h3>
+                    <p>Ao realizar a compra de um item nesta loja, a entrega não é instantânea. É necessário verificar em qual ilha você está, assim como as ilhas onde é possível encontrar o minério desejado. Após isso, você deve calcular o tempo de navegação necessário para que os entregadores cheguem até você, com eles sempre navegando a bordo de uma Fragata. Só é possível comprar se estiver no mesmo Mar. O preço descrito em todos os minérios é considerando um lingote de 10kg.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    MINÉRIOS E LIGAS METÁLICAS <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Adamantium</h4>
+                        <p style="margin-bottom: 10px;">Um metal lendário de resistência absurda, considerado indestrutível por muitos. Apesar de sua dureza, é surpreendentemente maleável quando forjado corretamente, permitindo a criação de armas e ferramentas de desempenho incomparável. Sua leveza e condutividade o tornam uma escolha perfeita para equipamentos de combate, mas sua raridade extrema o torna quase inalcançável para a maioria dos ferreiros.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> +25% em Força ou Destreza e +15% em Velocidade</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> Nenhum</li>
+                            <li style="margin-bottom: 8px;"><strong>Resistência:</strong> 10.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Adamantium">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ฿500.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Aço Carbono</h4>
+                        <p style="margin-bottom: 10px;">Um dos metais mais tradicionais e versáteis, amplamente utilizado na fabricação de lâminas e ferramentas. Fácil de forjar e tratar, possui uma ótima retenção de fio e permite acabamentos diferenciados, desde o rústico ao espelhado. No entanto, sua principal fraqueza é a necessidade de manutenção constante, pois pode oxidar com o tempo se não for bem cuidado.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> +10% em Velocidade</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> +5% em Resistência</li>
+                            <li style="margin-bottom: 8px;"><strong>Resistência:</strong> 2.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Aço Carbono">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ฿60.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Barra Damasco</h4>
+                        <p style="margin-bottom: 10px;">A Barra Damasco é uma liga especial criada através da fundição de dois materiais distintos, como por exemplo, a combinação de aço carbono e adamantium. O processo de forjamento alterna as camadas dos materiais, resultando em um metal único que possui as melhores propriedades de ambos. O grande diferencial do damasco não é apenas a beleza visual de sua superfície, que exibe um padrão intricado, mas também a flexibilidade e a resistência que ele oferece, tornando-o ideal para a criação de lâminas e armamentos. A versatilidade do material vem da sua composição híbrida, aproveitando as qualidades de cada metal, seja a resistência do adamantium ou a maleabilidade do aço carbono.</p>
+                        <p><strong>Preço:</strong> O preço depende dos materiais que serão juntados, deve-se somar os preços de ambos.</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Beskar</h4>
+                        <p style="margin-bottom: 10px;">Também conhecido como ferro-tontatta, esse é um metal resistente e durável, amplamente valorizado por sua capacidade de suportar impactos e altas temperaturas sem perder sua integridade. Embora difícil de fundir e moldar, ferreiros habilidosos conseguem forjar armas e armaduras altamente eficazes a partir dele. Sua principal característica é a resistência superior a cortes e perfurações, tornando-o um material excelente para defesa, sem ser excessivamente pesado.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> +15% em Velocidade e +5% em Força ou Destreza</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> +5% em Velocidade e +15% em Resistência</li>
+                            <li style="margin-bottom: 8px;"><strong>Resistência:</strong> 4.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Beskar">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ฿300.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ferro</h4>
+                        <p style="margin-bottom: 10px;">Um dos metais mais comuns e acessíveis do mundo, encontrado em abundância e amplamente utilizado para a construção de estruturas e armas simples. Embora possua uma resistência considerável, sua maleabilidade e peso o tornam uma opção inferior em relação a minérios mais raros. Por ser tão facilmente encontrado, é frequentemente a escolha de iniciantes na metalurgia.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> Nenhum</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> Nenhum</li>
+                            <li style="margin-bottom: 8px;"><strong>Resistência:</strong> 1.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Ferro">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ฿40.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Mithril</h4>
+                        <p style="margin-bottom: 10px;">Um metal brilhante e místico, mais resistente que o aço e mais leve que o alumínio, conhecido por sua beleza e durabilidade. Nunca enferruja e é altamente valorizado por guerreiros e artesãos devido à sua combinação única de resistência e leveza. Diz-se que armas e armaduras forjadas com Mithril foram usadas por heróis lendários do passado.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> +20% em Força ou Destreza e +20% em Velocidade</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> +20% em Resistência e Velocidade</li>
+                            <li style="margin-bottom: 8px;"><strong>Resistência:</strong> 8.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Mithril">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ฿400.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Unobtainium</h4>
+                        <p style="margin-bottom: 10px;">Um metal raro e enigmático, conhecido por suas propriedades incomuns, como magnetismo peculiar e comportamento supercondutor em temperatura ambiente. Durante muito tempo, ele foi chamado de Amazonium e era considerado um segredo das kuja, que dominavam sua forja e utilização em armas e armaduras. No entanto, com o passar dos séculos, novas jazidas foram descobertas em diferentes partes do mundo, permitindo que outros povos tivessem acesso a esse minério cobiçado. Ainda assim, sua extração e manipulação continuam sendo desafiadoras, tornando-o um dos materiais mais valiosos e difíceis de obter.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> +5% em Força ou Destreza e +10% em Velocidade</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> +5% em Resistência e +10% em Velocidade</li>
+                            <li style="margin-bottom: 8px;"><strong>Resistência:</strong> 3.500</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Unobtainium">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ฿150.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Vibranium</h4>
+                        <p style="margin-bottom: 10px;">Um dos metais mais raros e poderosos do mundo, famoso por sua capacidade de absorver e redirecionar energia cinética. Sua leveza e flexibilidade o tornam ideal para armaduras e escudos, tornando aqueles que o usam quase invulneráveis a impactos diretos. Embora sua forja seja extremamente difícil, suas propriedades defensivas incomparáveis fazem dele um dos materiais mais desejados por guerreiros e estrategistas.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> Nenhum</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> +30% em Resistência</li>
+                            <li style="margin-bottom: 8px;"><strong>Resistência:</strong> 15.000</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Vibranium">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ฿500.000.000</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Wapometal</h4>
+                        <p style="margin-bottom: 10px;">O Wapometal é um metal único com propriedades de memória de forma, permitindo que ele volte a um estado pré-configurado após ser deformado. Essa característica o torna extremamente versátil para armas e armaduras que precisam se adaptar rapidamente a diferentes situações.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> ???</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> ???</li>
+                            <li style="margin-bottom: 8px;"><strong>Resistência:</strong> ???</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Wapometal">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ???</p>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Kairoseki</h4>
+                        <p style="margin-bottom: 10px;">O Kairoseki é um mineral extremamente raro e altamente resistente, conhecido por sua capacidade única de anular os poderes das Akuma no Mi ao drenar a energia dos usuários que entram em contato com ele. Naturalmente encontrado em poucas regiões do mundo, sua extração e manipulação são tarefas desafiadoras, exigindo artesãos habilidosos para moldá-lo sem comprometer suas propriedades especiais. Sua resistência é comparável à do diamante, tornando-o um material excelente para a fabricação de armas, algemas e até mesmo o revestimento de navios. Seu comércio é altamente restrito, sendo Wano o único local onde pode ser adquirido legalmente.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armas:</strong> +40% em Força ou Destreza</li>
+                            <li style="margin-bottom: 8px;"><strong>Buffs em armaduras ou trajes:</strong> Nenhum</li>
+                            <li style="margin-bottom: 8px;"><strong>Vantagem:</strong> Impossibilita usuários de Akuma no Mi de usar seus poderes</li>
+                            <li style="margin-bottom: 8px;"><strong>Locais onde se pode encontrar tendo um Investimento:</strong> <span class="locais-material" data-material="Kairoseki">Carregando locais...</span></li>
+                            <li style="margin-bottom: 8px;"><strong>Preço:</strong> ฿4.000.000.000</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div id="calculadora-minerios-container" style="margin-top:40px;"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
