@@ -1954,6 +1954,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
+// PREÇOS - LOJA DE FERREIROS
+// ==========================================
+const minerioPrices = {
+    'adamantium': 500000000,
+    'aco-carbono': 60000000,
+    'beskar': 300000000,
+    'ferro': 40000000,
+    'mithril': 400000000,
+    'unobtainium': 150000000,
+    'vibranium': 500000000,
+    'kairoseki': 4000000000,
+    'wapometal': null,
+    'barra-damasco': null
+};
+
+function formatPriceBR(value) {
+    if (value === null || value === undefined) return '—';
+    return '฿' + value.toLocaleString('pt-BR');
+}
+
+function populateMinerioPrices() {
+    document.querySelectorAll('.price-value[data-price-key]').forEach(el => {
+        const key = el.getAttribute('data-price-key');
+        const val = minerioPrices[key];
+        el.textContent = formatPriceBR(val);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', populateMinerioPrices);
+
+// ==========================================
 // SISTEMA DE ABAS COM RETRAÇÃO E EXPANSÃO
 // ==========================================
 function iniciarSistemaDeAbas() {
@@ -1975,15 +2006,15 @@ function iniciarSistemaDeAbas() {
 // CALCULADORA DE MINÉRIOS
 // ==========================================
 (function() {
-    const mineriosBase = {
-        "Aço Carbono": 60000000,
-        "Adamantium": 500000000,
-        "Beskar": 300000000,
-        "Ferro": 40000000,
-        "Kairoseki": 4000000000,
-        "Mithril": 400000000,
-        "Unobtainium": 150000000,
-        "Vibranium": 500000000
+    const mineriosDisplay = {
+        'aco-carbono': 'Aço Carbono',
+        'adamantium': 'Adamantium',
+        'beskar': 'Beskar',
+        'ferro': 'Ferro',
+        'kairoseki': 'Kairoseki',
+        'mithril': 'Mithril',
+        'unobtainium': 'Unobtainium',
+        'vibranium': 'Vibranium'
     };
 
     function formatNumberInputDisplay(value) {
@@ -2020,7 +2051,7 @@ function iniciarSistemaDeAbas() {
         const container = document.getElementById('calculadora-minerios-container');
         if (!container) return;
 
-        const optionsHTML = Object.keys(mineriosBase).map(name => `<option value="${mineriosBase[name]}">${name}</option>`).join('');
+        const optionsHTML = Object.keys(mineriosDisplay).map(key => `<option value="${key}">${mineriosDisplay[key]}</option>`).join('');
 
         container.innerHTML = `
     <div class="calc-floating">
@@ -2028,7 +2059,7 @@ function iniciarSistemaDeAbas() {
 
         <div class="input-group">
             <label>Metal Principal</label>
-            <select id="calc-metal">` + Object.entries(mineriosBase).map(([k,v]) => `<option value="${v}">${k}</option>`).join('') + `<option value="damasco">Barra Damasco</option><option value="wapometal">Wapometal</option></select>
+            <select id="calc-metal">` + optionsHTML + `<option value="damasco">Barra Damasco</option><option value="wapometal">Wapometal</option></select>
         </div>
 
         <div class="input-group" id="calc-peso-container">
@@ -2088,15 +2119,15 @@ function iniciarSistemaDeAbas() {
             if (selecao === 'damasco') {
                 pesoContainer.style.display = 'none';
                 damascoContainer.style.display = 'block';
-                const preco1 = parseFloat(selectMetal1.value) || 0;
-                const preco2 = parseFloat(selectMetal2.value) || 0;
+                const preco1 = (minerioPrices[selectMetal1.value] !== undefined) ? minerioPrices[selectMetal1.value] : 0;
+                const preco2 = (minerioPrices[selectMetal2.value] !== undefined) ? minerioPrices[selectMetal2.value] : 0;
                 const peso1 = parseFormattedNumber(inputPeso1.value) || 0;
                 const peso2 = parseFormattedNumber(inputPeso2.value) || 0;
                 valorFinal = (preco1 * peso1) + (preco2 * peso2);
             } else {
                 pesoContainer.style.display = 'block';
                 damascoContainer.style.display = 'none';
-                const preco = parseFloat(selecao) || 0;
+                const preco = (minerioPrices[selecao] !== undefined) ? minerioPrices[selecao] : 0;
                 const peso = parseFormattedNumber(inputPeso.value) || 0;
                 valorFinal = preco * peso;
             }
