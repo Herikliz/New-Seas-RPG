@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <ul class="sub-menu">
                     <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/caçadas">CAÇADAS</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/criação-de-experimentos">CRIAÇÃO DE EXPERIMENTOS</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/criação-de-meitos">CRIAÇÃO DE MEITOUS</a></li>
+                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/criação-de-meitos">CRIAÇÃO DE MEITŌS</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/descoberta-de-aterfatos">DESCOBERTA DE ARTEFATOS</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/dominações">DOMINAÇÕES</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/investimento">INVESTIMENTO</a></li>
