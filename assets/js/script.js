@@ -164,15 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </ul>
                     </li>
                     <li>
-                        <a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous" class="toggle-btn">LOJA DE MEITOUS <span class="arrow">▼</span></a>
-                        <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/grau-desconhecido">GRAU DESCONHECIDO</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/armas-do-mundo">ARMAS DO MUNDO</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/wazamono">WAZAMONO</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/ryō-wazamono">RYŌ WAZAMONO</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/ō-wazamono">Ō WAZAMONO</a></li>
-                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-meitous/saijō-ō-wazamono">SAIJŌ Ō WAZAMONO</a></li>
-                        </ul>
+                        <li><a href="loja-de-meitos.html">LOJA DE MEITŌS</a></li>
                     </li>
                 </ul>
             </li>
@@ -2414,7 +2406,7 @@ function iniciarSistemaDeAbas() {
                 
                 let textFerreiro = '฿' + valorFerreiro.toLocaleString('pt-BR');
                 if (taxaVal > 0 && multiplicador > 0) {
-                    textFerreiro = '+ ' + textFerreiro;
+                    textFerreiro = '+' + textFerreiro;
                     spanFerreiro.className = 'escudo-calc-result-value positivo';
                 } else if (taxaVal > 0 && multiplicador < 0) {
                     textFerreiro = '-' + textFerreiro;
