@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>
                         <a href="loja-de-ferreiros.html" class="toggle-btn">LOJA DE FERREIROS <span class="arrow">▼</span></a>
                         <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
-                            <li><a href="https://sites.google.com/view/new-seas-op/loja/loja-de-ferreiro/escudos">ESCUDOS</a></li>
+                            <li><a href="escudos.html">ESCUDOS</a></li>
                         </ul>
                     </li>
                     <li>
@@ -1954,6 +1954,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
+// RESISTÊNCIA - LOJA DE FERREIROS E ESCUDOS
+// ==========================================
+const minerioHp = {
+    'Adamantium': 10000,
+    'Aço Carbono': 2000,
+    'Beskar': 4000,
+    'Ferro': 1000,
+    'Mithril': 8000,
+    'Unobtainium': 3500,
+    'Vibranium': 15000,
+    'Kairoseki': '???',
+    'Wapometal': '???'
+};
+
+function carregarHpDosMinerios() {
+    document.querySelectorAll('.hp-value[data-hp-key]').forEach(el => {
+        const key = el.getAttribute('data-hp-key');
+        if (minerioHp[key] !== undefined) {
+            const val = minerioHp[key];
+            if (val === '???') {
+                el.textContent = '???';
+            } else {
+                el.textContent = val.toLocaleString('pt-BR');
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', carregarHpDosMinerios);
+
+// ==========================================
 // PREÇOS - LOJA DE FERREIROS
 // ==========================================
 const minerioPrices = {
@@ -2152,5 +2183,261 @@ function iniciarSistemaDeAbas() {
         document.addEventListener('DOMContentLoaded', initCalculadoraMinerios);
     } else {
         initCalculadoraMinerios();
+    }
+})();
+
+(function() {
+    const mineriosEscudo = {
+        "Adamantium": { preco10kg: 500000000, hp: minerioHp['Adamantium'] },
+        "Aço Carbono": { preco10kg: 60000000, hp: minerioHp['Aço Carbono'] },
+        "Beskar": { preco10kg: 300000000, hp: minerioHp['Beskar'] },
+        "Ferro": { preco10kg: 40000000, hp: minerioHp['Ferro'] },
+        "Mithril": { preco10kg: 400000000, hp: minerioHp['Mithril'] },
+        "Unobtainium": { preco10kg: 150000000, hp: minerioHp['Unobtainium'] },
+        "Vibranium": { preco10kg: 500000000, hp: minerioHp['Vibranium'] },
+        "Kairoseki": { preco10kg: 4000000000, hp: minerioHp['Kairoseki'] },
+        "Wapometal": { preco10kg: '???', hp: minerioHp['Wapometal'] }
+    };
+
+    function initCalculadoraEscudos() {
+        const container = document.getElementById('calculadora-escudos-container');
+        if (!container) return;
+
+        const optionsHTML = Object.keys(mineriosEscudo).map(name => `<option value="${name}">${name}</option>`).join('');
+
+        container.innerHTML = `
+    <style>
+        .escudo-calc-container {
+            background: var(--sidebar-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--sidebar-border);
+            max-width: 650px;
+            margin: 40px auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            font-family: 'Comfortaa', Verdana, sans-serif;
+            color: var(--text-color);
+        }
+
+        .escudo-calc-title {
+            font-family: 'Quantico', sans-serif;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .escudo-calc-field {
+            margin-bottom: 20px;
+        }
+
+        .escudo-calc-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .escudo-calc-input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .escudo-calc-select, .escudo-calc-input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--sidebar-border);
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .escudo-calc-select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b0bec5%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095a17.6%2017.6%200%200%200%205.5-12.8c0-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 15px top 50%;
+            background-size: 12px auto;
+            cursor: pointer;
+        }
+
+        .escudo-calc-select:focus, .escudo-calc-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .escudo-calc-results {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--sidebar-border);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        .escudo-calc-result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .escudo-calc-result-item.total {
+            background: rgba(211, 47, 47, 0.1);
+            border: 1px solid rgba(211, 47, 47, 0.3);
+            font-weight: 700;
+            padding: 15px;
+        }
+
+        .escudo-calc-result-label {
+            font-weight: 400;
+        }
+
+        .escudo-calc-result-value {
+            font-family: 'Quantico', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .escudo-calc-result-value.positivo { color: #f44336; }
+        .escudo-calc-result-value.negativo { color: #4CAF50; }
+        
+        #calc-escudo-hp {
+            color: var(--accent-color);
+        }
+    </style>
+    <div class="escudo-calc-container">
+        <h2 class="escudo-calc-title">Calculadora de Escudos</h2>
+        
+        <div class="escudo-calc-field">
+            <label class="escudo-calc-label">Minério Base</label>
+            <select id="calc-escudo-metal" class="escudo-calc-select">` + optionsHTML + `</select>
+        </div>
+
+        <div class="escudo-calc-field">
+            <label class="escudo-calc-label">Mão de Obra do Ferreiro (%)</label>
+            <div class="escudo-calc-input-group">
+                <select id="calc-escudo-tipo-taxa" class="escudo-calc-select" style="flex: 1.5;">
+                    <option value="1">Acréscimo (Taxa)</option>
+                    <option value="-1">Desconto</option>
+                </select>
+                <input type="number" id="calc-escudo-taxa" class="escudo-calc-input" style="flex: 1;" min="0" max="25" value="0" placeholder="0 a 25">
+            </div>
+        </div>
+
+        <div class="escudo-calc-results">
+            <div class="escudo-calc-result-item">
+                <span class="escudo-calc-result-label">Custo Base:</span>
+                <strong id="calc-escudo-base" class="escudo-calc-result-value">฿0</strong>
+            </div>
+            <div class="escudo-calc-result-item">
+                <span class="escudo-calc-result-label">Parte do Ferreiro (Mão de Obra):</span>
+                <strong id="calc-escudo-ferreiro" class="escudo-calc-result-value">฿0</strong>
+            </div>
+            <div class="escudo-calc-result-item total">
+                <span class="escudo-calc-result-label">Preço Total a Pagar:</span>
+                <strong id="calc-escudo-total" class="escudo-calc-result-value" style="color: #4CAF50; font-size: 24px;">฿0</strong>
+            </div>
+            <div class="escudo-calc-result-item" style="border-top: 1px solid var(--sidebar-border); border-radius: 0; background: transparent; padding-top: 20px;">
+                <span class="escudo-calc-result-label">HP do Escudo:</span>
+                <strong id="calc-escudo-hp" class="escudo-calc-result-value" style="font-size: 24px;">0</strong>
+            </div>
+        </div>
+    </div>
+        `;
+
+        const selectMetal = document.getElementById('calc-escudo-metal');
+        const selectTipoTaxa = document.getElementById('calc-escudo-tipo-taxa');
+        const inputTaxa = document.getElementById('calc-escudo-taxa');
+
+        const spanBase = document.getElementById('calc-escudo-base');
+        const spanFerreiro = document.getElementById('calc-escudo-ferreiro');
+        const spanTotal = document.getElementById('calc-escudo-total');
+        const spanHp = document.getElementById('calc-escudo-hp');
+
+        function calcular() {
+            let taxaVal = parseInt(inputTaxa.value, 10);
+            if (isNaN(taxaVal) || taxaVal < 0) {
+                taxaVal = 0;
+            } else if (taxaVal > 25) {
+                taxaVal = 25;
+            }
+            
+            if (inputTaxa.value !== "" && parseInt(inputTaxa.value, 10) > 25) {
+                inputTaxa.value = 25;
+            } else if (inputTaxa.value !== "" && parseInt(inputTaxa.value, 10) < 0) {
+                inputTaxa.value = 0;
+            }
+
+            const multiplicador = parseInt(selectTipoTaxa.value, 10);
+            const porcentagem = (taxaVal / 100) * multiplicador;
+
+            const minName = selectMetal.value;
+            const data = mineriosEscudo[minName];
+            
+            if (data.hp === '???') {
+                spanHp.textContent = '???';
+            } else {
+                spanHp.textContent = data.hp.toLocaleString('pt-BR');
+            }
+
+            if (data.preco10kg === '???') {
+                spanBase.textContent = '???';
+                spanBase.style.color = '#ff5252';
+                spanFerreiro.textContent = '???';
+                spanFerreiro.className = 'escudo-calc-result-value';
+                spanTotal.textContent = '???';
+                spanTotal.style.color = '#ff5252';
+            } else {
+                const preco8kg = (data.preco10kg / 10) * 8;
+                const custoBase = preco8kg * 1.10;
+                
+                const valorFerreiro = Math.round(custoBase * Math.abs(porcentagem));
+                let valorTotal = custoBase;
+                
+                if (multiplicador > 0) {
+                    valorTotal += valorFerreiro;
+                } else {
+                    valorTotal -= valorFerreiro;
+                }
+
+                spanBase.textContent = '฿' + Math.round(custoBase).toLocaleString('pt-BR');
+                spanBase.style.color = 'var(--text-color)';
+                
+                let textFerreiro = '฿' + valorFerreiro.toLocaleString('pt-BR');
+                if (taxaVal > 0 && multiplicador > 0) {
+                    textFerreiro = '+ ' + textFerreiro;
+                    spanFerreiro.className = 'escudo-calc-result-value positivo';
+                } else if (taxaVal > 0 && multiplicador < 0) {
+                    textFerreiro = '-' + textFerreiro;
+                    spanFerreiro.className = 'escudo-calc-result-value negativo';
+                } else {
+                    spanFerreiro.className = 'escudo-calc-result-value';
+                }
+                spanFerreiro.textContent = textFerreiro;
+
+                spanTotal.textContent = '฿' + Math.round(valorTotal).toLocaleString('pt-BR');
+                spanTotal.style.color = '#4CAF50';
+            }
+        }
+
+        selectMetal.addEventListener('change', calcular);
+        selectTipoTaxa.addEventListener('change', calcular);
+        inputTaxa.addEventListener('input', calcular);
+        calcular();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCalculadoraEscudos);
+    } else {
+        initCalculadoraEscudos();
     }
 })();

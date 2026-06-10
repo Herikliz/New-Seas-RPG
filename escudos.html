@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escudos - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">ESCUDOS</h1>
+            </section>
+
+            <section class="content-section">
+                <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 8px; margin-bottom: 30px;">
+                    <p style="margin-bottom: 15px;">O sistema de proteção utiliza uma mecânica de integridade estrutural, onde o escudo atua como uma extensão da vitalidade do combatente, mas com limites físicos claros. Para fabricar um escudo, são necessários obrigatoriamente 8 kg de minério base, que definem a estrutura primária do equipamento. Narrativamente, o ferreiro não utiliza apenas o metal puro: o custo de produção base para o artesão envolve o valor desses 8 kg somado a uma taxa fixa de 10% referente aos insumos essenciais, como combustíveis para a forja, couro para as braçadeiras, rebites de fixação e solventes alquímicos. Portanto, é impossível solicitar um escudo feito "apenas de minério", pois, sem esses elementos complementares, o item seria apenas um bloco de metal inútil e sem empunhadura. O preço final para o jogador, logicamente, será o custo de produção do ferreiro acrescido da mão de obra especializada do artesão.</p>
+                    <p style="margin-bottom: 15px;">Uma vez em posse do item, a durabilidade do escudo, ou seu HP Máximo, é diretamente equivalente à resistência natural do minério utilizado em sua forja (por exemplo, um material com resistência 20.000 resultará em um escudo com 20.000 de HP). Durante o combate, o sistema de defesa é dinâmico: ao receber um golpe, o defensor tem o controle sobre a distribuição do impacto. Se um golpe de 10.000 de dano é desferido, o jogador pode optar por absorver tudo com o escudo, preservando seu próprio HP mas sacrificando a integridade da peça, ou moderar a defesa, permitindo que parte do dano passe para seu corpo para poupar o equipamento.</p>
+                    <p>No entanto, o uso eficiente dessa ferramenta é restrito aos mestres das artes defensivas. Apenas guerreiros que dominam os estilos de luta Combate Gigante ou Paladino possuem o treinamento necessário para angular o escudo e dissipar a energia dos impactos corretamente. Qualquer indivíduo que tente utilizar um escudo sem o conhecimento desses estilos o fará de forma bruta e ineficiente: por não saberem absorver o choque, o estresse mecânico sobre o material é muito maior, resultando na perda do dobro de vida (HP) do escudo para cada ponto de dano bloqueado. Assim, o que para um Paladino seria um bloqueio limpo, para um leigo seria um impacto traumático que racha a estrutura do metal rapidamente.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div id="calculadora-escudos-container" style="margin-top:20px;"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
