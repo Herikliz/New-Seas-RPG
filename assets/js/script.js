@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li><a href="impel-down.html">IMPEL DOWN</a></li>
             </li>
             <li>
-                <a href="https://sites.google.com/view/new-seas-op/jornal" class="toggle-btn">JORNAL <span class="arrow">▼</span></a>
+                <a href="jornal.html" class="toggle-btn">JORNAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li><a href="https://sites.google.com/view/new-seas-op/jornal/procurados">PROCURADOS</a></li>
                     <li><a href="https://sites.google.com/view/new-seas-op/jornal/younkous">YOUNKOUS</a></li>
@@ -2426,5 +2426,363 @@ function iniciarSistemaDeAbas() {
         document.addEventListener('DOMContentLoaded', initCalculadoraEscudos);
     } else {
         initCalculadoraEscudos();
+    }
+})();
+
+(function() {
+    const dadosJornal = window.dadosJornalApp || {};
+    const datasDisponiveis = Object.keys(dadosJornal).sort();
+    let dataAtual = datasDisponiveis.length > 0 ? datasDisponiveis[datasDisponiveis.length - 1] : "2026-05-11";
+    let paginaAtual = 0;
+
+    let calDataIncial = new Date(dataAtual + "T12:00:00");
+    if (isNaN(calDataIncial)) calDataIncial = new Date();
+    let calMes = calDataIncial.getMonth() + 1;
+    let calAno = calDataIncial.getFullYear();
+
+    const nomesMeses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+    function formatarData(dataISO) {
+        const partes = dataISO.split('-');
+        return parseInt(partes[2], 10) + " de " + nomesMeses[parseInt(partes[1], 10) - 1].toLowerCase() + " de " + partes[0];
+    }
+
+    function gerarCalendario(mes, ano) {
+        let htmlCal = '<div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; margin-top: 15px;">';
+        const diasSemana = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+        
+        diasSemana.forEach(d => {
+            htmlCal += `<div style="font-weight: bold; color: var(--accent-color); padding: 5px 0;">${d}</div>`;
+        });
+
+        const primeiroDia = new Date(ano, mes - 1, 1).getDay();
+        const diasNoMes = new Date(ano, mes, 0).getDate();
+
+        for (let i = 0; i < primeiroDia; i++) {
+            htmlCal += '<div></div>';
+        }
+
+        for (let dia = 1; dia <= diasNoMes; dia++) {
+            const strMes = mes < 10 ? '0' + mes : mes;
+            const strDia = dia < 10 ? '0' + dia : dia;
+            const dataData = `${ano}-${strMes}-${strDia}`;
+            const temJornal = dadosJornal[dataData] !== undefined;
+            
+            let btnStyle = `padding: 10px 0; border-radius: 4px; font-family: 'Comfortaa', sans-serif; font-size: 14px; border: 1px solid var(--sidebar-border); cursor: default; background: var(--bg-color); color: var(--text-color); opacity: 0.5;`;
+            
+            let classeJornal = "";
+            if (temJornal) {
+                btnStyle = `padding: 10px 0; border-radius: 4px; font-family: 'Comfortaa', sans-serif; font-size: 14px; font-weight: bold; border: 1px solid #d4af37; background: rgba(212, 175, 55, 0.1); color: #d4af37; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);`;
+                classeJornal = "btn-dia-jornal";
+            }
+            
+            if (dataData === dataAtual) {
+                btnStyle = `padding: 10px 0; border-radius: 4px; font-family: 'Comfortaa', sans-serif; font-size: 14px; font-weight: bold; border: 1px solid var(--accent-color); background: var(--accent-color); color: var(--sidebar-bg); cursor: default;`;
+                classeJornal = "";
+            }
+
+            htmlCal += `<button class="btn-cal-dia ${classeJornal}" style="${btnStyle}" data-data="${dataData}">${dia}</button>`;
+        }
+
+        htmlCal += '</div>';
+        return htmlCal;
+    }
+
+    function initSistemaJornal() {
+        const container = document.getElementById('jornal-sistema-container');
+        if (!container) return;
+
+        container.innerHTML = `
+        <style>
+            .jornal-box {
+                background: var(--sidebar-bg);
+                border: 1px solid var(--sidebar-border);
+                border-radius: 12px;
+                padding: 30px;
+                max-width: 800px;
+                margin: 0 auto;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+            .data-selector-btn {
+                background: var(--bg-color);
+                border: 2px solid var(--accent-color);
+                color: var(--accent-color);
+                font-family: 'Quantico', sans-serif;
+                font-size: 22px;
+                padding: 15px 30px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: block;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .data-selector-btn:hover {
+                background: var(--accent-color);
+                color: var(--sidebar-bg);
+            }
+            .calendario-panel {
+                display: none;
+                background: var(--sidebar-bg);
+                border: 1px solid var(--sidebar-border);
+                border-radius: 8px;
+                padding: 20px;
+                margin-top: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            }
+            .calendario-panel.show {
+                display: block;
+                animation: slideDown 0.3s ease;
+            }
+            .cal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px dashed var(--sidebar-border);
+                padding-bottom: 10px;
+            }
+            .cal-nav-btn {
+                background: transparent;
+                border: none;
+                color: var(--accent-color);
+                font-size: 20px;
+                cursor: pointer;
+                padding: 5px 15px;
+                transition: transform 0.2s;
+            }
+            .cal-nav-btn:hover {
+                transform: scale(1.2);
+            }
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .btn-dia-jornal:hover {
+                background: #d4af37 !important;
+                color: #fff !important;
+            }
+            .jornal-book-container {
+                margin-top: 40px;
+                position: relative;
+                width: 100%;
+                min-height: 500px;
+                background: var(--bg-color);
+                border-radius: 4px;
+                border: 1px solid var(--sidebar-border);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            }
+            .jornal-page-image {
+                max-width: 100%;
+                max-height: 800px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+                transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+                border-radius: 2px;
+            }
+            .jornal-page-image.turning-forward {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            .jornal-page-image.turning-backward {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            .jornal-nav-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 25px;
+            }
+            .jornal-btn-nav {
+                background: var(--sidebar-bg);
+                border: 1px solid var(--sidebar-border);
+                color: var(--text-color);
+                padding: 10px 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-family: 'Quantico', sans-serif;
+                font-size: 16px;
+                transition: all 0.3s;
+            }
+            .jornal-btn-nav:hover:not(:disabled) {
+                border-color: var(--accent-color);
+                color: var(--accent-color);
+            }
+            .jornal-btn-nav:disabled {
+                opacity: 0.3;
+                cursor: not-allowed;
+            }
+            .jornal-contador-paginas {
+                font-family: 'Comfortaa', sans-serif;
+                font-size: 16px;
+                color: var(--text-color);
+                opacity: 0.8;
+            }
+            .img-placeholder {
+                padding: 50px;
+                text-align: center;
+                color: var(--text-color);
+                opacity: 0.5;
+                border: 2px dashed var(--sidebar-border);
+                border-radius: 8px;
+                width: 80%;
+            }
+        </style>
+
+        <div class="jornal-box">
+            <button id="btn-selecionar-data" class="data-selector-btn"></button>
+            
+            <div id="painel-calendario" class="calendario-panel">
+                <div class="cal-header">
+                    <button id="btn-cal-ant" class="cal-nav-btn">◄</button>
+                    <div id="txt-cal-mesano" style="font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--accent-color);"></div>
+                    <button id="btn-cal-prox" class="cal-nav-btn">►</button>
+                </div>
+                <div id="calendario-grid"></div>
+            </div>
+
+            <div class="jornal-book-container">
+                <div id="jornal-imagem-render" style="width: 100%; display: flex; justify-content: center; padding: 20px;"></div>
+            </div>
+
+            <div class="jornal-nav-container">
+                <button id="btn-jornal-ant" class="jornal-btn-nav">◄ Anterior</button>
+                <div id="txt-jornal-contador" class="jornal-contador-paginas">Página 1 de X</div>
+                <button id="btn-jornal-prox" class="jornal-btn-nav">Próxima ►</button>
+            </div>
+        </div>
+        `;
+
+        const btnSelecionarData = document.getElementById('btn-selecionar-data');
+        const painelCalendario = document.getElementById('painel-calendario');
+        const calendarioGrid = document.getElementById('calendario-grid');
+        const txtCalMesAno = document.getElementById('txt-cal-mesano');
+        const btnCalAnt = document.getElementById('btn-cal-ant');
+        const btnCalProx = document.getElementById('btn-cal-prox');
+        
+        const renderContainer = document.getElementById('jornal-imagem-render');
+        const btnAnt = document.getElementById('btn-jornal-ant');
+        const btnProx = document.getElementById('btn-jornal-prox');
+        const txtContador = document.getElementById('txt-jornal-contador');
+
+        function atualizarGradeCalendario() {
+            txtCalMesAno.textContent = `${nomesMeses[calMes - 1]} de ${calAno}`;
+            calendarioGrid.innerHTML = gerarCalendario(calMes, calAno);
+
+            document.querySelectorAll('.btn-dia-jornal').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const novaData = this.getAttribute('data-data');
+                    if (novaData && dadosJornal[novaData]) {
+                        dataAtual = novaData;
+                        paginaAtual = 0;
+                        atualizarRenderizacao();
+                        painelCalendario.classList.remove('show');
+                    }
+                });
+            });
+        }
+
+        btnCalAnt.addEventListener('click', () => {
+            calMes--;
+            if (calMes < 1) { calMes = 12; calAno--; }
+            atualizarGradeCalendario();
+        });
+
+        btnCalProx.addEventListener('click', () => {
+            calMes++;
+            if (calMes > 12) { calMes = 1; calAno++; }
+            atualizarGradeCalendario();
+        });
+
+        function atualizarRenderizacao(direcaoAnimacao = null) {
+            btnSelecionarData.textContent = formatarData(dataAtual);
+            atualizarGradeCalendario();
+            
+            const imagens = dadosJornal[dataAtual] || [];
+            
+            if (imagens.length === 0) {
+                renderContainer.innerHTML = `<div class="img-placeholder">Nenhum jornal encontrado para esta data.</div>`;
+                btnAnt.disabled = true;
+                btnProx.disabled = true;
+                txtContador.textContent = "Página 0 de 0";
+            } else {
+                const imagemSrc = imagens[paginaAtual];
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = imagemSrc;
+                imgElement.alt = "Página do Jornal";
+                imgElement.className = "jornal-page-image";
+                
+                imgElement.onerror = function() {
+                    imgElement.outerHTML = `<div class="img-placeholder" style="width: 100%;">Imagem não encontrada:<br>${imagemSrc}<br><br>Peça ao ADM para adicionar a imagem na pasta para que ela seja exibida aqui.</div>`;
+                };
+
+                if (direcaoAnimacao === 'forward') {
+                    imgElement.classList.add('turning-backward');
+                    setTimeout(() => imgElement.classList.remove('turning-backward'), 50);
+                } else if (direcaoAnimacao === 'backward') {
+                    imgElement.classList.add('turning-forward');
+                    setTimeout(() => imgElement.classList.remove('turning-forward'), 50);
+                }
+
+                renderContainer.innerHTML = '';
+                renderContainer.appendChild(imgElement);
+
+                txtContador.textContent = `Página ${paginaAtual + 1} de ${imagens.length}`;
+                btnAnt.disabled = paginaAtual === 0;
+                btnProx.disabled = paginaAtual === (imagens.length - 1);
+            }
+        }
+
+        btnSelecionarData.addEventListener('click', function() {
+            painelCalendario.classList.toggle('show');
+        });
+
+        btnProx.addEventListener('click', function() {
+            const imagens = dadosJornal[dataAtual] || [];
+            if (paginaAtual < imagens.length - 1) {
+                const imgCurrent = renderContainer.querySelector('.jornal-page-image');
+                if (imgCurrent) {
+                    imgCurrent.classList.add('turning-forward');
+                    setTimeout(() => {
+                        paginaAtual++;
+                        atualizarRenderizacao('forward');
+                    }, 300);
+                } else {
+                    paginaAtual++;
+                    atualizarRenderizacao();
+                }
+            }
+        });
+
+        btnAnt.addEventListener('click', function() {
+            if (paginaAtual > 0) {
+                const imgCurrent = renderContainer.querySelector('.jornal-page-image');
+                if (imgCurrent) {
+                    imgCurrent.classList.add('turning-backward');
+                    setTimeout(() => {
+                        paginaAtual--;
+                        atualizarRenderizacao('backward');
+                    }, 300);
+                } else {
+                    paginaAtual--;
+                    atualizarRenderizacao();
+                }
+            }
+        });
+
+        atualizarRenderizacao();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSistemaJornal);
+    } else {
+        initSistemaJornal();
     }
 })();
