@@ -2435,10 +2435,15 @@ function iniciarSistemaDeAbas() {
     let dataAtual = datasDisponiveis.length > 0 ? datasDisponiveis[datasDisponiveis.length - 1] : "2026-05-11";
     let paginaAtual = 0;
 
-    let calDataIncial = new Date(dataAtual + "T12:00:00");
-    if (isNaN(calDataIncial)) calDataIncial = new Date();
-    let calMes = calDataIncial.getMonth() + 1;
-    let calAno = calDataIncial.getFullYear();
+    let mesesDisponiveis = [...new Set(datasDisponiveis.map(d => d.substring(0, 7)))].sort();
+    if (mesesDisponiveis.length === 0) mesesDisponiveis = ["2026-05"];
+    
+    let currentMesAno = dataAtual.substring(0, 7);
+    let indexMesAtual = mesesDisponiveis.indexOf(currentMesAno);
+    if (indexMesAtual === -1) indexMesAtual = Math.max(0, mesesDisponiveis.length - 1);
+
+    let calAno = parseInt(mesesDisponiveis[indexMesAtual].substring(0, 4), 10);
+    let calMes = parseInt(mesesDisponiveis[indexMesAtual].substring(5, 7), 10);
 
     const nomesMeses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
@@ -2566,7 +2571,6 @@ function iniciarSistemaDeAbas() {
                 margin-top: 40px;
                 position: relative;
                 width: 100%;
-                min-height: 500px;
                 background: var(--bg-color);
                 border-radius: 4px;
                 border: 1px solid var(--sidebar-border);
@@ -2574,16 +2578,13 @@ function iniciarSistemaDeAbas() {
                 align-items: center;
                 justify-content: center;
                 overflow: hidden;
-                box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
             }
             .jornal-page-image {
-                max-width: 100%;
-                max-height: 800px;
-                object-fit: contain;
+                width: 100%;
+                height: auto;
                 display: block;
                 margin: 0 auto;
                 transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-                border-radius: 2px;
             }
             .jornal-page-image.turning-forward {
                 transform: translateX(-50px);
@@ -2636,7 +2637,11 @@ function iniciarSistemaDeAbas() {
         </style>
 
         <div class="jornal-box">
-            <button id="btn-selecionar-data" class="data-selector-btn"></button>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button id="btn-edicao-ant" class="jornal-btn-nav" title="Edição Anterior" style="font-size: 24px; padding: 10px 20px;">◄</button>
+                <button id="btn-selecionar-data" class="data-selector-btn" style="flex: 1; margin: 0;"></button>
+                <button id="btn-edicao-prox" class="jornal-btn-nav" title="Próxima Edição" style="font-size: 24px; padding: 10px 20px;">►</button>
+            </div>
             
             <div id="painel-calendario" class="calendario-panel">
                 <div class="cal-header">
@@ -2648,7 +2653,7 @@ function iniciarSistemaDeAbas() {
             </div>
 
             <div class="jornal-book-container">
-                <div id="jornal-imagem-render" style="width: 100%; display: flex; justify-content: center; padding: 20px;"></div>
+                <div id="jornal-imagem-render" style="width: 100%; display: flex; justify-content: center; padding: 0;"></div>
             </div>
 
             <div class="jornal-nav-container">
@@ -2660,6 +2665,8 @@ function iniciarSistemaDeAbas() {
         `;
 
         const btnSelecionarData = document.getElementById('btn-selecionar-data');
+        const btnEdicaoAnt = document.getElementById('btn-edicao-ant');
+        const btnEdicaoProx = document.getElementById('btn-edicao-prox');
         const painelCalendario = document.getElementById('painel-calendario');
         const calendarioGrid = document.getElementById('calendario-grid');
         const txtCalMesAno = document.getElementById('txt-cal-mesano');
@@ -2671,9 +2678,34 @@ function iniciarSistemaDeAbas() {
         const btnProx = document.getElementById('btn-jornal-prox');
         const txtContador = document.getElementById('txt-jornal-contador');
 
+        function atualizarBotoesNavegacaoMes() {
+            if (mesesDisponiveis.length <= 1) {
+                btnCalAnt.style.opacity = "0.3";
+                btnCalAnt.style.cursor = "not-allowed";
+                btnCalProx.style.opacity = "0.3";
+                btnCalProx.style.cursor = "not-allowed";
+                return;
+            }
+            if (indexMesAtual <= 0) {
+                btnCalAnt.style.opacity = "0.3";
+                btnCalAnt.style.cursor = "not-allowed";
+            } else {
+                btnCalAnt.style.opacity = "1";
+                btnCalAnt.style.cursor = "pointer";
+            }
+            if (indexMesAtual >= mesesDisponiveis.length - 1) {
+                btnCalProx.style.opacity = "0.3";
+                btnCalProx.style.cursor = "not-allowed";
+            } else {
+                btnCalProx.style.opacity = "1";
+                btnCalProx.style.cursor = "pointer";
+            }
+        }
+
         function atualizarGradeCalendario() {
             txtCalMesAno.textContent = `${nomesMeses[calMes - 1]} de ${calAno}`;
             calendarioGrid.innerHTML = gerarCalendario(calMes, calAno);
+            atualizarBotoesNavegacaoMes();
 
             document.querySelectorAll('.btn-dia-jornal').forEach(btn => {
                 btn.addEventListener('click', function() {
@@ -2689,15 +2721,23 @@ function iniciarSistemaDeAbas() {
         }
 
         btnCalAnt.addEventListener('click', () => {
-            calMes--;
-            if (calMes < 1) { calMes = 12; calAno--; }
-            atualizarGradeCalendario();
+            if (indexMesAtual > 0) {
+                indexMesAtual--;
+                const novoMesAno = mesesDisponiveis[indexMesAtual];
+                calAno = parseInt(novoMesAno.substring(0, 4), 10);
+                calMes = parseInt(novoMesAno.substring(5, 7), 10);
+                atualizarGradeCalendario();
+            }
         });
 
         btnCalProx.addEventListener('click', () => {
-            calMes++;
-            if (calMes > 12) { calMes = 1; calAno++; }
-            atualizarGradeCalendario();
+            if (indexMesAtual < mesesDisponiveis.length - 1) {
+                indexMesAtual++;
+                const novoMesAno = mesesDisponiveis[indexMesAtual];
+                calAno = parseInt(novoMesAno.substring(0, 4), 10);
+                calMes = parseInt(novoMesAno.substring(5, 7), 10);
+                atualizarGradeCalendario();
+            }
         });
 
         function atualizarRenderizacao(direcaoAnimacao = null) {
@@ -2738,7 +2778,53 @@ function iniciarSistemaDeAbas() {
                 btnAnt.disabled = paginaAtual === 0;
                 btnProx.disabled = paginaAtual === (imagens.length - 1);
             }
+
+            const idx = datasDisponiveis.indexOf(dataAtual);
+            btnEdicaoAnt.disabled = idx <= 0;
+            btnEdicaoProx.disabled = idx >= datasDisponiveis.length - 1;
         }
+
+        btnEdicaoAnt.addEventListener('click', function() {
+            const idx = datasDisponiveis.indexOf(dataAtual);
+            if (idx > 0) {
+                dataAtual = datasDisponiveis[idx - 1];
+                paginaAtual = 0;
+                
+                calAno = parseInt(dataAtual.substring(0, 4), 10);
+                calMes = parseInt(dataAtual.substring(5, 7), 10);
+                let currentMesAno = dataAtual.substring(0, 7);
+                indexMesAtual = mesesDisponiveis.indexOf(currentMesAno) !== -1 ? mesesDisponiveis.indexOf(currentMesAno) : 0;
+                
+                const imgCurrent = renderContainer.querySelector('.jornal-page-image');
+                if (imgCurrent) {
+                    imgCurrent.classList.add('turning-backward');
+                    setTimeout(() => atualizarRenderizacao('backward'), 300);
+                } else {
+                    atualizarRenderizacao();
+                }
+            }
+        });
+
+        btnEdicaoProx.addEventListener('click', function() {
+            const idx = datasDisponiveis.indexOf(dataAtual);
+            if (idx < datasDisponiveis.length - 1) {
+                dataAtual = datasDisponiveis[idx + 1];
+                paginaAtual = 0;
+                
+                calAno = parseInt(dataAtual.substring(0, 4), 10);
+                calMes = parseInt(dataAtual.substring(5, 7), 10);
+                let currentMesAno = dataAtual.substring(0, 7);
+                indexMesAtual = mesesDisponiveis.indexOf(currentMesAno) !== -1 ? mesesDisponiveis.indexOf(currentMesAno) : 0;
+
+                const imgCurrent = renderContainer.querySelector('.jornal-page-image');
+                if (imgCurrent) {
+                    imgCurrent.classList.add('turning-forward');
+                    setTimeout(() => atualizarRenderizacao('forward'), 300);
+                } else {
+                    atualizarRenderizacao();
+                }
+            }
+        });
 
         btnSelecionarData.addEventListener('click', function() {
             painelCalendario.classList.toggle('show');
