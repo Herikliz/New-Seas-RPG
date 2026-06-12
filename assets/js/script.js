@@ -3036,13 +3036,47 @@ function initBountySort() {
             return 0;
         });
 
-        // Reanexar na nova ordem
         cards.forEach(card => grid.appendChild(card));
     }
 
     select.addEventListener('change', sortCards);
-    // Disparar a ordenação inicial automaticamente com base no valor default do select
     sortCards();
 }
 
 if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initBountySort); } else { initBountySort(); }
+
+// ==========================================
+// ORDENAÇÃO DE APARÊNCIAS
+// ==========================================
+function initGallerySort() {
+    if (!window.location.pathname.includes('aparencias.html')) return;
+
+    const grid = document.querySelector('.gallery-grid');
+    if (!grid) return;
+
+    const items = Array.from(grid.querySelectorAll('.gallery-item'));
+    if (items.length === 0) return;
+
+    items.sort((a, b) => {
+        const titleElA = a.querySelector('.gallery-title');
+        const titleElB = b.querySelector('.gallery-title');
+        
+        if (!titleElA || !titleElB) return 0;
+
+        const nameA = titleElA.textContent.trim().toLowerCase();
+        const nameB = titleElB.textContent.trim().toLowerCase();
+
+        if (nameA === '???' && nameB !== '???') return 1;
+        if (nameB === '???' && nameA !== '???') return -1;
+
+        return nameA.localeCompare(nameB, 'pt-BR');
+    });
+
+    items.forEach(item => grid.appendChild(item));
+}
+
+if (document.readyState === 'loading') { 
+    document.addEventListener('DOMContentLoaded', initGallerySort); 
+} else { 
+    initGallerySort(); 
+}
