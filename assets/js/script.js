@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="jornal.html" class="toggle-btn">JORNAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li><a href="procurados.html">PROCURADOS</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/jornal/younkous">YOUNKOUS</a></li>
+                    <li><a href="imperadores-dos-mares.html">IMPERADORES DOS MARES</a></li>
                 </ul>
             </li>
             <li>
