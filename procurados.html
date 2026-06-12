@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurados - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color); text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Procurados</h1>
+                <p class="section-title" style="font-size: 16px; opacity: 0.8; margin-bottom: 30px;">Abaixo constam algumas das cabeças mais valiosas dos mares. A Marinha exige cautela ao confrontar estes indivíduos.</p>
+            </section>
+
+            <section class="content-section">
+                <div class="box-content" style="padding: 30px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 8px;">
+                    
+                    <div class="bounty-controls">
+                        <select id="sort-bounties" class="bounty-sort-select">
+                            <option value="val-desc">Maior Recompensa</option>
+                            <option value="val-asc">Menor Recompensa</option>
+                            <option value="az">Ordem Alfabética (A-Z)</option>
+                            <option value="za">Ordem Alfabética (Z-A)</option>
+                        </select>
+                    </div>
+
+                    <div class="bounty-grid">
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Astarion D. Emiri.png" alt="Astarion D. Emiri" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Astarion D. Emiri</h3>
+                                <p class="bounty-value">1.285.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/BladeHawk.png" alt="BladeHawk" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">BladeHawk</h3>
+                                <p class="bounty-value">165.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Dante Salvatore.png" alt="Dante Salvatore" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Dante Salvatore</h3>
+                                <p class="bounty-value">316.032.240</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Druig.png" alt="Druig" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Druig</h3>
+                                <p class="bounty-value">212.500.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Enk Edwards.png" alt="Enk Edwards" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Enk Edwards</h3>
+                                <p class="bounty-value">218.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Hyugan Drole.png" alt="Hyugan Drole" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Hyugan Drole</h3>
+                                <p class="bounty-value">190.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Iwoye Zhuo.png" alt="Iwoye Zhuo" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Iwoye Zhuo</h3>
+                                <p class="bounty-value">40.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Kagayaru Charlotte.png" alt="Kagayaru Charlotte" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Kagayaru Charlotte</h3>
+                                <p class="bounty-value">40.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Kaleb.png" alt="Kaleb" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Kaleb</h3>
+                                <p class="bounty-value">150.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Kozuki Yoshihide.png" alt="Kozuki Yoshihide" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Kozuki Yoshihide</h3>
+                                <p class="bounty-value">645.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Morgana Du'lor.png" alt="Morgana Du'lor" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Morgana Du'lor</h3>
+                                <p class="bounty-value">1.500.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Raidjinn Le Laufey.png" alt="Raidjinn Le Laufey" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Raidjinn Le Laufey</h3>
+                                <p class="bounty-value">370.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Reh D'Nanryū.png" alt="Reh D'Nanryū" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Reh D'Nanryū</h3>
+                                <p class="bounty-value">40.000.000</p>
+                            </div>
+                        </div>
+                        <div class="bounty-card">
+                            <img src="assets/imagens/Cartazes/Yuu D'Couteau.png" alt="Yuu D'Couteau" class="bounty-image">
+                            <div class="bounty-info">
+                                <h3 class="bounty-name">Yuu D'Couteau</h3>
+                                <p class="bounty-value">85.500.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
