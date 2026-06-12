@@ -9,13 +9,53 @@
     <style>
         .bounty-desc {
             font-family: 'Comfortaa', sans-serif;
-            font-size: 14px;
+            font-size: 16px;
             text-align: justify;
-            margin-top: 15px;
-            line-height: 1.6;
+            margin-top: 20px;
+            line-height: 1.7;
             color: var(--text-color);
-            padding-top: 15px;
+            padding-top: 20px;
             border-top: 1px dashed var(--sidebar-border);
+        }
+        .bounty-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 40px;
+            padding: 20px 0;
+            justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .bounty-card {
+            max-width: 520px !important;
+            width: 100%;
+        }
+        .bounty-name {
+            font-size: 28px !important;
+            margin-bottom: 10px;
+        }
+        .bounty-value {
+            font-size: 24px !important;
+        }
+        @media (max-width: 992px) {
+            .bounty-grid {
+                max-width: 90%;
+            }
+        }
+        @media (max-width: 768px) {
+            .bounty-grid {
+                grid-template-columns: 1fr !important;
+                gap: 30px;
+            }
+            .bounty-name {
+                font-size: 24px !important;
+            }
+            .bounty-value {
+                font-size: 20px !important;
+            }
+            .bounty-desc {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -28,12 +68,20 @@
                 <h1 class="title-quantico">IMPERADORES DOS MARES</h1>
             </section>
             <section class="content-section">
+                <div class="bounty-controls">
+                    <select id="sort-bounties" class="bounty-sort-select">
+                        <option value="val-desc">Maior Recompensa</option>
+                        <option value="val-asc">Menor Recompensa</option>
+                        <option value="az">Ordem Alfabética (A-Z)</option>
+                        <option value="za">Ordem Alfabética (Z-A)</option>
+                    </select>
+                </div>
                 <div class="bounty-grid">
                     <div class="bounty-card">
                         <img src="assets\imagens\Cartazes\Edward Kenway.png" alt="Edward Kenway" class="bounty-image">
                         <div class="bounty-info">
                             <h3 class="bounty-name">Edward Kenway</h3>
-                            <p class="bounty-value">3.897.426.158</p>
+                            <p class="bounty-value">4.789.642.851</p>
                             <p class="bounty-desc">Edward Kenway, até poucos anos atrás, era apenas um novato em rápida ascensão. Em um período surpreendentemente curto, graças ao enorme número de aliados que reuniu e às diversas ilhas que passou a dominar, consolidou-se como um dos Imperadores dos Mares com apenas 2 anos de aventura. Pouco se sabe sobre sua verdadeira identidade, nem mesmo seu rosto é conhecido por completo, mas sua reputação fala por si. Sua imensa tripulação é temida em todos os Mares, sendo considerada poderosa o bastante para afundar qualquer embarcação inimiga ou até mesmo derrubar fortalezas navais inteiras.</p>
                         </div>
                     </div>
@@ -41,7 +89,7 @@
                         <img src="assets\imagens\Cartazes\David The Statue.png" alt="David The Statue" class="bounty-image">
                         <div class="bounty-info">
                             <h3 class="bounty-name">David The Statue</h3>
-                            <p class="bounty-value">4.829.637.401</p>
+                            <p class="bounty-value">5.682.367.104</p>
                             <p class="bounty-desc">Embora pouco se saiba sobre seu passado, há registros de que, em algum momento, foi aliado do antigo Almirante-de-Frota Siddhartha D. Butsu. O motivo da ruptura entre os dois permanece desconhecido, mas as consequências dessa separação ecoam até hoje. O que se sabe com certeza é que David possui um poder aterrador. Suas habilidades atuais são envoltas em mistério, porém até as poucas informações confirmadas já são suficientes para inspirar medo até nos mais experientes navegadores e combatentes dos Mares.</p>
                         </div>
                     </div>
@@ -49,8 +97,16 @@
                         <img src="assets\imagens\Cartazes\Kong Jia Qiu.png" alt="Kong Jia Qiu" class="bounty-image">
                         <div class="bounty-info">
                             <h3 class="bounty-name">Kong "Jia" Qiu</h3>
-                            <p class="bounty-value">4.481.000.001</p>
+                            <p class="bounty-value">5.685.000.100</p>
                             <p class="bounty-desc">Kong "Jia" Qiu, o Qilin de Jade, é o atual Lorde de Hongyuan em Wano. Sobrevivente do massacre de sua família, ele derrubou o corrupto sistema monárquico de sua terra natal, adotando o nome "Jia" de seus opressores como puro deboche. Por trás de sua postura fria e implacável, esconde um líder justo que trouxe prosperidade ao seu povo. Como representante do "Mindinho" no poderoso sindicato "Os Cinco Dedos", sua influência no submundo global e sua força letal com a Estrela de Tiangang lhe renderam a atenção do Governo Mundial e uma colossal recompensa.</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Cartazes\Siddhartha D. Gumi.png" alt="Siddhartha D. Gumi" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Siddhartha D. Gumi</h3>
+                            <p class="bounty-value">4.986.010.871</p>
+                            <p class="bounty-desc">Siddhartha D. Gumi é conhecida por sua personalidade alegre, impulsiva e completamente despreocupada com as regras ou o julgamento alheio. Com um forte senso de identidade e pensamento livre, ela desafia qualquer autoridade e encara os maiores perigos com um sorriso no rosto, tratando o risco como algo natural. Sua imensa força e a capacidade de movimentar bandos inteiros sob sua liderança não convencional garantiram a ela uma reputação lendária e uma das maiores recompensas do mundo.</p>
                         </div>
                     </div>
                 </div>
