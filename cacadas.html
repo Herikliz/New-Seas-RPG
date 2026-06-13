@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caçadas - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .rules-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Comfortaa', sans-serif;
+        }
+        .rules-table th, .rules-table td {
+            border: 1px solid var(--sidebar-border);
+            padding: 12px;
+            text-align: center;
+        }
+        .rules-table th {
+            background-color: var(--sidebar-bg);
+            color: var(--accent-color);
+            font-family: 'Quantico', sans-serif;
+        }
+        .sea-title {
+            font-family: 'Quantico', sans-serif;
+            font-size: 26px;
+            color: var(--accent-color);
+            text-align: center;
+            margin: 40px 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+        }
+        .bounty-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr) !important;
+            gap: 30px;
+            padding: 20px 0;
+            justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+        .bounty-grid .bounty-card {
+            max-width: 350px !important;
+            width: 100%;
+        }
+        .bounty-grid .bounty-card:nth-child(1),
+        .bounty-grid .bounty-card:nth-child(2),
+        .bounty-grid .bounty-card:nth-child(3) {
+            grid-column: span 2;
+        }
+        .bounty-grid .bounty-card:nth-child(4) {
+            grid-column: 2 / span 2;
+        }
+        .bounty-grid .bounty-card:nth-child(5) {
+            grid-column: 4 / span 2;
+        }
+        .bounty-location {
+            font-family: 'Comfortaa', sans-serif;
+            font-size: 14px;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+        @media (max-width: 992px) {
+            .bounty-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px;
+            }
+            .bounty-grid .bounty-card {
+                grid-column: auto !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .bounty-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico">CAÇADAS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p>Eis aqui os procurados pela Marinha. Os procurados são aqueles que ameaçaram a população de uma ilha, a Marinha ou o Governo de alguma forma, resultando em um cartaz com o nome da pessoa e o valor de sua recompensa. Você pode caçar esses procurados de acordo com suas localizações. Membros de qualquer afiliação podem caçá-los.</p>
+                <p>Se você for um pirata, derrotar um procurado automaticamente aumentará o valor da sua cabeça.</p>
+                
+                <table class="rules-table">
+                    <thead>
+                        <tr>
+                            <th>Recompensa do Procurado</th>
+                            <th>Pontos Recebidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>฿49.999.999 ou menos</td><td>300 pontos</td></tr>
+                        <tr><td>฿50.000.000 a ฿99.999.999</td><td>500 pontos</td></tr>
+                        <tr><td>฿100.000.000 a ฿199.999.999</td><td>800 pontos</td></tr>
+                        <tr><td>฿200.000.000 a ฿299.999.999</td><td>1.000 pontos</td></tr>
+                        <tr><td>฿300.000.000 a ฿499.999.999</td><td>1.200 pontos</td></tr>
+                        <tr><td>฿500.000.000 a ฿699.999.999</td><td>1.500 pontos</td></tr>
+                        <tr><td>฿700.000.000 a ฿999.999.999</td><td>2.000 pontos</td></tr>
+                        <tr><td>฿1.000.000.000 ou mais</td><td>2.500 pontos</td></tr>
+                    </tbody>
+                </table>
+
+                <p>Caçadas podem ser narradas por qualquer jogador. Vá no grupo <a href="https://chat.whatsapp.com/JLjPwHDuvPN9xzOwyKFnAZ">Cɑçɑɗɑs & Dσɱiɳɑçσ̃es 📍</a> e peça por um narrador, já especificando quem você quer caçar; se alguém estiver disponível, responderá você no grupo e algum ADM colocará vocês dois num grupo separado para a Caçada.</p>
+                <p>Após o término da Caçada, o jogador terá que esperar 7 dias para começar outra. Caso o jogador não tome um dano considerável, poderá caçar mais uma vez antes de ter que ficar 7 dias sem caçar.</p>
+                <p>Dominação e Caçada juntas são permitidas desde que você se garanta. Caso você vença o procurado enquanto está tentando dominar a ilha, não poderá abandonar a Dominação, senão perderá todo o prêmio da Caçada.</p>
+                <p>NPCs não têm lado muitas das vezes e podem ser desde ex-agentes até pessoas que assassinaram alguém. Não precisam ser necessariamente piratas, marinheiros, governistas, etc.</p>
+                <p>Conforme forem capturados ou mortos, novos NPCs irão aparecer e os capturados serão tirados da lista.</p>
+                <p>Qualquer jogador tem direito de invadir a Caçada de outro jogador se estiver presente na mesma ilha.</p>
+            </section>
+
+            <section class="content-section">
+                <div class="bounty-controls">
+                    <select class="bounty-sort-select section-sorter">
+                        <option value="val-desc">Maior Recompensa</option>
+                        <option value="val-asc">Menor Recompensa</option>
+                        <option value="az">Ordem Alfabética (A-Z)</option>
+                        <option value="za">Ordem Alfabética (Z-A)</option>
+                    </select>
+                </div>
+
+                <div class="sea-title toggle-title" style="cursor: pointer;"><a href="east-blue.html">East Blue</a> <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content">
+                    <div class="bounty-grid" data-sea="east-blue">
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\East Blue\Cartaz 1.png" alt="Artur, Gancho Negro" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Artur, Gancho Negro</h3>
+                            <p class="bounty-value">50.000.000</p>
+                            <p class="bounty-location">Kumate</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\East Blue\Cartaz 2.png" alt="Bartolomeu Finch" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Bartolomeu Finch</h3>
+                            <p class="bounty-value">40.000.000</p>
+                            <p class="bounty-location">Ilha Shimotsuki</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\East Blue\Cartaz 3.png" alt="Silas Thorne" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Silas Thorne</h3>
+                            <p class="bounty-value">50.000.000</p>
+                            <p class="bounty-location">Clockwork</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\East Blue\Cartaz 4.png" alt="Olivia, Corvo" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Olivia, Corvo</h3>
+                            <p class="bounty-value">30.000.000</p>
+                            <p class="bounty-location">Ilha dos Animais Raros</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\East Blue\Cartaz 5.png" alt="Bartolomeu, Névoa" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Bartolomeu, Névoa</h3>
+                            <p class="bounty-value">65.000.000</p>
+                            <p class="bounty-location">Yotsuba</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                <div class="sea-title toggle-title" style="cursor: pointer;"><a href="south-blue.html">South Blue</a> <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content">
+                    <div class="bounty-grid" data-sea="south-blue">
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\South Blue\Cartaz 1.png" alt="Volpina" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Volpina</h3>
+                            <p class="bounty-value">50.000.000</p>
+                            <p class="bounty-location">Karate</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\South Blue\Cartaz 2.png" alt="Manon Chamack" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Manon Chamack</h3>
+                            <p class="bounty-value">60.000.000</p>
+                            <p class="bounty-location">Baterilla</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\South Blue\Cartaz 3.png" alt="Ella e Etta" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Ella e Etta</h3>
+                            <p class="bounty-value">65.000.000</p>
+                            <p class="bounty-location">Samuwanai</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\South Blue\Cartaz 4.png" alt="Cupido Negro" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Cupido Negro</h3>
+                            <p class="bounty-value">55.000.000</p>
+                            <p class="bounty-location">Sorbet</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\South Blue\Cartaz 5.png" alt="Scarabella" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Scarabella</h3>
+                            <p class="bounty-value">45.000.000</p>
+                            <p class="bounty-location">Briss</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                <div class="sea-title toggle-title" style="cursor: pointer;"><a href="west-blue.html">West Blue</a> <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content">
+                    <div class="bounty-grid" data-sea="west-blue">
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\West Blue\Cartaz 1.png" alt="Cazador Szarr" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Cazador Szarr</h3>
+                            <p class="bounty-value">60.000.000</p>
+                            <p class="bounty-location">Thriller Bark</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\West Blue\Cartaz 2.png" alt="Enver Gortash" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Enver Gortash</h3>
+                            <p class="bounty-value">45.000.000</p>
+                            <p class="bounty-location">Soja</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\West Blue\Cartaz 3.png" alt="Kagha" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Kagha</h3>
+                            <p class="bounty-value">50.000.000</p>
+                            <p class="bounty-location">God Valley</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\West Blue\Cartaz 4.png" alt="Manto Negro" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Manto Negro</h3>
+                            <p class="bounty-value">55.000.000</p>
+                            <p class="bounty-location">Kano</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\West Blue\Cartaz 5.png" alt="Auntie Ethel" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Auntie Ethel</h3>
+                            <p class="bounty-value">85.000.000</p>
+                            <p class="bounty-location">Ballywood</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                <div class="sea-title toggle-title" style="cursor: pointer;"><a href="north-blue.html">North Blue</a> <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content">
+                    <div class="bounty-grid" data-sea="north-blue">
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\North Blue\Cartaz 1.png" alt="Sauron" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Sauron</h3>
+                            <p class="bounty-value">45.000.000</p>
+                            <p class="bounty-location">Polo Norte</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\North Blue\Cartaz 2.png" alt="O Outro" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">O Outro</h3>
+                            <p class="bounty-value">70.000.000</p>
+                            <p class="bounty-location">Welbems</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\North Blue\Cartaz 3.png" alt="Ossos Cruzados" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Ossos Cruzados</h3>
+                            <p class="bounty-value">30.000.000</p>
+                            <p class="bounty-location">Notice</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\North Blue\Cartaz 4.png" alt="Cersei Lannister" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Cersei Lannister</h3>
+                            <p class="bounty-value">45.000.000</p>
+                            <p class="bounty-location">Swallow</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\North Blue\Cartaz 5.png" alt="Hannibal Lecter" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Hannibal Lecter</h3>
+                            <p class="bounty-value">70.000.000</p>
+                            <p class="bounty-location">Rakesh</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                <div class="sea-title toggle-title" style="cursor: pointer;"><a href="paraiso.html">Paraíso</a> <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content">
+                    <div class="bounty-grid" data-sea="grand-line">
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Paraíso\Cartaz 1.png" alt="Ego" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Ego</h3>
+                            <p class="bounty-value">430.000.000</p>
+                            <p class="bounty-location">Jaya | Skypiea</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Paraíso\Cartaz 2.png" alt="Cheung Po Tsai" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Cheung Po Tsai</h3>
+                            <p class="bounty-value">499.000.000</p>
+                            <p class="bounty-location">Ilha Spa</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Paraíso\Cartaz 3.png" alt="Alexander Pierce" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Alexander Pierce</h3>
+                            <p class="bounty-value">480.000.000</p>
+                            <p class="bounty-location">Momoiro</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Paraíso\Cartaz 4.png" alt="Anne Bonny" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Anne Bonny</h3>
+                            <p class="bounty-value">300.000.000</p>
+                            <p class="bounty-location">Namakura</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Paraíso\Cartaz 5.png" alt="O Colecionador" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">O Colecionador</h3>
+                            <p class="bounty-value">390.000.000</p>
+                            <p class="bounty-location">Little Garden</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                <div class="sea-title toggle-title" style="cursor: pointer;"><a href="novo-mundo.html">Novo Mundo</a> <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content">
+                    <div class="bounty-grid" data-sea="novo-mundo">
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Novo Mundo\Cartaz 1.png" alt="Zephyrus, o Traidor" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Zephyrus, o Traidor</h3>
+                            <p class="bounty-value">750.000.000</p>
+                            <p class="bounty-location">Zou</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Novo Mundo\Cartaz 2.png" alt="Groal, o Magnífico" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Groal, o Magnífico</h3>
+                            <p class="bounty-value">1.200.000.000</p>
+                            <p class="bounty-location">Punk Hazard</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Novo Mundo\Cartaz 3.png" alt="Progenitora" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Progenitora</h3>
+                            <p class="bounty-value">1.000.000.000</p>
+                            <p class="bounty-location">Dressrosa</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Novo Mundo\Cartaz 4.png" alt="Ra's Al Ghul" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Ra's Al Ghul</h3>
+                            <p class="bounty-value">880.000.000</p>
+                            <p class="bounty-location">Applenine</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Novo Mundo\Cartaz 5.png" alt="Agouro" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Agouro</h3>
+                            <p class="bounty-value">900.000.000</p>
+                            <p class="bounty-location">Elbaf</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.querySelector('.section-sorter');
+            if (!select) return;
+
+            select.addEventListener('change', () => {
+                const sortType = select.value;
+                document.querySelectorAll('.bounty-grid').forEach(grid => {
+                    const cards = Array.from(grid.querySelectorAll('.bounty-card'));
+                    
+                    cards.sort((a, b) => {
+                        const nameA = a.querySelector('.bounty-name').textContent.trim().toLowerCase();
+                        const nameB = b.querySelector('.bounty-name').textContent.trim().toLowerCase();
+                        
+                        const valStrA = a.querySelector('.bounty-value').textContent.replace(/[^0-9]/g, '');
+                        const valStrB = b.querySelector('.bounty-value').textContent.replace(/[^0-9]/g, '');
+                        const valA = parseInt(valStrA, 10) || 0;
+                        const valB = parseInt(valStrB, 10) || 0;
+
+                        if (sortType === 'az') return nameA.localeCompare(nameB);
+                        if (sortType === 'za') return nameB.localeCompare(nameA);
+                        if (sortType === 'val-desc') return valB - valA;
+                        if (sortType === 'val-asc') return valA - valB;
+                        return 0;
+                    });
+
+                    cards.forEach(card => grid.appendChild(card));
+                });
+            });
+            select.dispatchEvent(new Event('change'));
+        });
+    </script>
+</body>
+</html>
