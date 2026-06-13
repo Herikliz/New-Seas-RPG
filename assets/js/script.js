@@ -206,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li>
                 <li><a href="index.html">INÍCIO</a></li>
                 <li><a href="area-restrita.html">ÁREA RESTRITA</a></li>
+                <li><a href="regras.html">REGRAS</a></li>
             </li>
             <li>
                 <a href="criacao-de-personagem.html" class="toggle-btn">CRIAÇÃO DE PERSONAGEM <span class="arrow">▼</span></a>
@@ -309,7 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="sangue.html">SANGUE</a></li>
                 </ul>
             </li>
-            <li><a href="https://sites.google.com/view/new-seas-op/regras">REGRAS</a></li>
         </ul>
     </aside>
         `;

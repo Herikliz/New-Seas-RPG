@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras Gerais - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .category-container-box {
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            background: var(--sidebar-bg);
+            transition: transform 0.2s ease;
+        }
+        .category-container-box:hover {
+            transform: scale(1.01);
+        }
+        .category-container-box .toggle-title {
+            font-family: 'Quantico', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .rules-list {
+            margin-left: 20px;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        .rules-list li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+        .rules-list li strong {
+            color: inherit;
+            font-family: 'Quantico', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        .faq-box {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--sidebar-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-family: 'Quantico', sans-serif;
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .faq-answer {
+            font-family: 'Comfortaa', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">REGRAS DO RPG</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p>Para garantir que o nosso universo funcione com equilíbrio, diversão e respeito mútuo, estabelecemos um conjunto de diretrizes essenciais. O desconhecimento das regras não isenta nenhum jogador de suas punições. Leia atentamente todas as categorias abaixo para compreender o funcionamento do RPG.</p>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <!-- CATEGORIA 1: CONDUTA OFF-GAME -->
+            <div class="category-container-box" style="color: #3498db; border-color: #3498db;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">1. Conduta e Comportamento <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: rgba(0,0,0,0.1); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <ul class="rules-list" style="color: #3498db;">
+                                <li><strong style="color: #3498db;">Respeito Absoluto:</strong> É obrigatório manter respeito com todos no RPG, sejam jogadores ou ADMs. Xingamentos, ofensas, provocações ou brincadeiras de mau gosto com quem você não tem intimidade não serão tolerados e podem resultar em banimento. Isso se aplica até com amigos se houver reclamação de incômodo.</li>
+                                <li><strong style="color: #3498db;">Tolerância Zero ao Preconceito:</strong> É proibido abordar discussões polêmicas (política, religião) ou desrespeitar crenças. Racismo, machismo, homofobia, transfobia ou qualquer outro comportamento tóxico resultará em banimento imediato.</li>
+                                <li><strong style="color: #3498db;">Convivência com a Staff:</strong> Não marque ADMs em excesso, não insista repetidamente nem fique reclamando por decisões ou respostas. Quando um ADM impor limites, aceite sem criar conflitos. Lembre-se que todos possuem vida fora do RPG.</li>
+                                <li><strong style="color: #3498db;">Maturidade Perante as Perdas:</strong> Caso perca uma luta ou seu personagem morra, aceite o resultado com maturidade. Reclamações excessivas e drama prejudicam o andamento do jogo.</li>
+                                <li><strong style="color: #3498db;">Ameaças por Itens:</strong> É terminantemente proibido matar ou ameaçar outro jogador no OFF apenas por ele ter obtido uma Akuma no Mi (ou outro item) que você queria; se você realmente quiser esse item, se esforce em ON para obtê-lo, ou, caso alguém já tenha, se esforce para descobrir quem o tem e então faça algo em ON para obter, mas em OFF é proibido.</li>
+                                <li><strong style="color: #3498db;">Divulgação:</strong> É proibida a divulgação direta com envio de links externos nos grupos do RPG; divulgar no privado dos jogadores é permitido se tiver a permissão deles.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- CATEGORIA 2: INTERPRETAÇÃO E ROLEPLAY -->
+            <div class="category-container-box" style="color: #9b59b6; border-color: #9b59b6;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">2. Interpretação e Roleplay (ON) <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: rgba(0,0,0,0.1); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <ul class="rules-list" style="color: #9b59b6;">
+                                <li><strong style="color: #9b59b6;">Metagaming:</strong> É proibido utilizar informações obtidas fora do jogo (no OFF) para obter benefício próprio dentro do ON.</li>
+                                <li><strong style="color: #9b59b6;">Powergaming:</strong> Não é permitido supor ações, intenções ou resultados do personagem de outro jogador. Ações e reações devem ser limpas.</li>
+                                <li><strong style="color: #9b59b6;">Respeito ao Corpo Alheio:</strong> Durante interações livres, é proibido matar, mutilar ou arrancar membros de outro personagem arbitrariamente. Respeite os limites das cenas do colega. Para fazer isso, deve ser uma interação narrada por um ADM.</li>
+                                <li><strong style="color: #9b59b6;">Lutas Letais e Apostas:</strong> Lutas valendo a morte ou apostas de itens entre jogadores só podem ocorrer com a presença direta de um ADM narrando.</li>
+                                <li><strong style="color: #9b59b6;">Roubos e Transferências:</strong> Não é permitido transferir, dar ou roubar itens de outros jogadores fora de momentos devidamente narrados no ON.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- CATEGORIA 3: CRIAÇÃO E GESTÃO DE PERSONAGENS -->
+            <div class="category-container-box" style="color: #e67e22; border-color: #e67e22;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">3. Criação e Progressão <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: rgba(0,0,0,0.1); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <ul class="rules-list" style="color: #e67e22;">
+                                <li><strong style="color: #e67e22;">Prazos de Ficha e Inatividade:</strong> Após entrar no grupo de Fichas, você tem até 2 semanas para finalizar a sua ficha. O limite máximo de inatividade é de 2 semanas; quem possui Akuma no Mi sendo inativo pode ser expulso sumariamente.</li>
+                                <li><strong style="color: #e67e22;">Limites de Personagens:</strong> O limite inicial é de 1 personagem. Um segundo é liberado a partir de 15.000 pontos e deve ser de uma organização diferente. Apenas um dos seus personagens pode ter Logia (salvo prêmios de eventos). Apenas um personagem na conta pode ter Linhagem ou Raça Exclusiva.</li>
+                                <li><strong style="color: #e67e22;">Direito de Reset:</strong> Todo jogador tem direito a um único reset de personagem onde mantém os pontos de atributo, mas perde absolutamente todo o resto (itens, Frutas, dinheiro).</li>
+                                <li><strong style="color: #e67e22;">Transtornos Mentais:</strong> É proibido criar personagens com "personalidade bipolar" ou "múltiplas personalidades" apenas com o objetivo de driblar fraquezas ou obter vantagens no sistema.</li>
+                                <li><strong style="color: #e67e22;">Trocas de Classe e Estilo:</strong> O Estilo de Luta pode ser alterado 1 vez, sendo necessários 4 treinos desaprendendo ele e treinar aprendendo o novo (a quantidade de treinos é variável). A Classe pode ser trocada apenas 1 vez em todo o RPG (sendo exigidos 4 treinos para consolidar a transição). Essas duas mecânicas não podem utilizar Treinos Acumulados.</li>
+                                <li><strong style="color: #e67e22;">Originalidade de Tripulação:</strong> É proibido criar tripulações com nomes ou bandeiras idênticas ou excessivamente semelhantes às da obra original de One Piece.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- CATEGORIA 4: SISTEMAS, LIMITES E ITENS -->
+            <div class="category-container-box" style="color: #2ecc71; border-color: #2ecc71;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">4. Sistemas, Limites e Itens <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: rgba(0,0,0,0.1); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <ul class="rules-list" style="color: #2ecc71;">
+                                <li><strong style="color: #2ecc71;">Regras de Akuma no Mi:</strong> Ao comprar uma Akuma no Mi, ela deve ser ingerida em até 1 semana (ou retornará à Loja sem reembolso). É proibido comprar Frutas para revendê-las a amigos fazendo monopólio. O limite vitalício é de 4 Frutas por jogador, podendo haver apenas uma Logia ou Paramecia Especial entre elas.</li>
+                                <li><strong style="color: #2ecc71;">Limites de Meitōs:</strong> O limite de Meitōs compradas na loja é de 3 por personagem e 6 por jogador. Para se livrar delas, venda de volta para a loja (por 50% do valor) ou para outro jogador (+50% a -50% do preço original). Meitōs conquistadas via narrativa não ocupam esse limite.</li>
+                                <li><strong style="color: #2ecc71;">Buffs e Balanceamento:</strong> O sistema permite simultaneamente até 100% de buffs ativos, 100% passivos e 100% de buffs oriundos de itens ou terceiros. Técnicas criadas por jogadores fornecem no máximo 25% de buff. A Velocidade tem um teto de buff ativo de 30%, não sendo possível exceder esse limite, e técnicas que buffam Velocidade não se somam, a menos que tenham sido feitos exclusivamente para isso. É estritamente proibido que você aprove suas próprias técnicas.</li>
+                                <li><strong style="color: #2ecc71;">Treinos e Prazos:</strong> Para envio de treinos (padrões, técnicas, etc), há tolerância até à 1h da manhã de segunda-feira. Durante os fins de semana, é permitido enviar simultaneamente todas as ações de treino atrasadas sem aguardar o tempo limite entre elas.</li>
+                                <li><strong style="color: #2ecc71;">Navios Oficiais:</strong> Membros da Marinha, Governo ou organizações oficiais não podem vender suas embarcações doadas pelo sistema sem sofrerem duras punições narrativas (ser classificado como traidor, expulsão ou debuffs graves). Essa regra é narrativa, e não mecânica, então pode ser quebrada se for da escolha do jogador.</li>
+                                <li><strong style="color: #2ecc71;">Caça aos Bugs (Recompensa):</strong> Jogadores que relatarem falhas no sistema ou de balanceamento, <strong>e</strong> apresentarem junto uma solução viável para a staff, serão recompensados com 300 pontos de atributos!</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- CATEGORIA 5: PUNIÇÕES E ADVERTÊNCIAS -->
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <section class="content-section">
+                <div class="faq-box" style="border-color: #e74c3c;">
+                    <div class="faq-question" style="color: #e74c3c; font-size: 22px; text-align: center;">⚠️ SISTEMA DE PUNIÇÕES ⚠️</div>
+                    <div class="faq-answer" style="text-align: center; margin-top: 15px;">
+                        <p>A administração trabalha com um sistema de tolerância baseada em advertências (avisos) para manter a ordem em casos mais leves de descumprimento de regras (como pequenas infrações de sistema ou floods). Reincidências não serão ignoradas.</p>
+                        <p style="margin-top: 15px; font-weight: bold; font-family: 'Quantico', sans-serif; color: #e74c3c; font-size: 18px;">
+                            Cada jogador pode receber no máximo 2 avisos formais dentro de um mesmo mês.<br>
+                            Na 3ª (terceira) infração registrada no mês, o jogador sofrerá BANIMENTO PERMANENTE da temporada atual.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
