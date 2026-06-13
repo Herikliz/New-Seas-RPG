@@ -6,7 +6,7 @@
 /* ==========================================
    ESTILOS GERAIS (Injetados via JS)
    ========================================== */
-.bounty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 0; justify-items: center; }
+.bounty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 15px; justify-items: center; }
 .bounty-card { background: var(--sidebar-bg); border: 2px solid var(--sidebar-border); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease; width: 100%; max-width: 350px; }
 .bounty-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(211, 47, 47, 0.3); border-color: var(--accent-color); }
 .bounty-image { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--sidebar-border); }
@@ -97,6 +97,10 @@ body.dark-mode .calc-box { box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15); }
 .calc-input-group input { padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none; transition: border-color 0.3s ease; }
 .calc-input-group input:focus { border-color: var(--accent-color); }
 .result-display { background-color: var(--sidebar-border); color: var(--bg-color); padding: 15px; border-radius: 8px; font-size: 20px; font-family: 'Quantico', sans-serif; text-align: center; margin-top: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+.btn-alternar-img { position: absolute; bottom: 8px; right: 8px; background: var(--sidebar-bg); color: var(--accent-color); border: 1px solid var(--accent-color); border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px; font-family: 'Quantico', sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.5); transition: all 0.3s ease; z-index: 10; }
+.btn-alternar-img:hover { background: var(--accent-color); color: var(--bg-color); }
+.gallery-img-container img.secundaria { display: none !important; }
 
 @media (max-width: 768px) { 
     .stats-bar { flex-direction: column; gap: 10px; text-align: center; } 
@@ -367,12 +371,60 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="custom-theme-section">
                 <h3 style="margin-bottom: 15px; font-size: 16px; text-align: center;">TEMA PERSONALIZADO</h3>
-                <div class="color-picker-group"><label>Cor de Fundo</label><input type="color" id="custom-bg" value="#ffffff"></div>
-                <div class="color-picker-group"><label>Cor do Menu</label><input type="color" id="custom-sidebar" value="#f8fafc"></div>
-                <div class="color-picker-group"><label>Cor do Texto</label><input type="color" id="custom-text" value="#2d3748"></div>
-                <div class="color-picker-group"><label>Cor de Destaque</label><input type="color" id="custom-accent" value="#d32f2f"></div>
-                <div class="color-picker-group"><label>Cor das Bordas</label><input type="color" id="custom-border" value="#e2e8f0"></div>
-                <button id="apply-custom-theme" class="theme-btn" style="width: 100%; margin-top: 15px; border-color: var(--accent-color);">Aplicar Personalizado</button>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Cor de Fundo</label>
+                        <input type="color" id="custom-bg" value="#ffffff" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Cor do Menu</label>
+                        <input type="color" id="custom-sidebar" value="#f8fafc" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Cor do Texto</label>
+                        <input type="color" id="custom-text" value="#2d3748" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Cor de Destaque</label>
+                        <input type="color" id="custom-accent" value="#d32f2f" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Cor das Bordas</label>
+                        <input type="color" id="custom-border" value="#e2e8f0" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-family: 'Comfortaa', sans-serif; cursor: pointer;">
+                        <input type="checkbox" id="toggle-advanced-theme" style="accent-color: var(--accent-color); cursor: pointer;"> Personalização Avançada
+                    </label>
+                </div>
+                <div id="advanced-theme-fields" style="display: none; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Cor do Link</label>
+                        <input type="color" id="custom-link" value="#2d3748" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Fundo de Hover</label>
+                        <input type="color" id="custom-hoverBg" value="#e2e8f0" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Texto do Botão</label>
+                        <input type="color" id="custom-btnText" value="#ffffff" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Fundo da Área</label>
+                        <input type="color" id="custom-areaBg" value="#ffffff" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Borda da Área</label>
+                        <input type="color" id="custom-areaBorder" value="#e2e8f0" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Submenu</label>
+                        <input type="color" id="custom-subMenu" value="#f8fafc" style="width: 100%; height: 40px; padding: 0; border: 1px solid var(--sidebar-border); border-radius: 8px; cursor: pointer; background: none; box-sizing: border-box; outline: none;">
+                    </div>
+                </div>
+                <button id="apply-custom-theme" class="theme-btn" style="width: 100%; margin-top: 5px; border-color: var(--accent-color);">Aplicar Personalizado</button>
             </div>
             <button id="close-theme-modal" class="close-modal-btn">Fechar</button>
         </div>
@@ -396,7 +448,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('custom-text').value = customColors.text;
                     document.getElementById('custom-accent').value = customColors.accent;
                     document.getElementById('custom-border').value = customColors.border;
+                    if(document.getElementById('toggle-advanced-theme')) {
+                        document.getElementById('toggle-advanced-theme').checked = !!customColors.advanced;
+                        document.getElementById('advanced-theme-fields').style.display = customColors.advanced ? 'grid' : 'none';
+                        document.getElementById('custom-link').value = customColors.link || customColors.text;
+                        document.getElementById('custom-hoverBg').value = customColors.hoverBg || customColors.border;
+                        document.getElementById('custom-btnText').value = customColors.btnText || '#ffffff';
+                        document.getElementById('custom-areaBg').value = customColors.areaBg || customColors.bg;
+                        document.getElementById('custom-areaBorder').value = customColors.areaBorder || customColors.border;
+                        document.getElementById('custom-subMenu').value = customColors.subMenu || customColors.sidebar;
+                    }
                 }
+            }
+            if(document.getElementById('toggle-advanced-theme') && !document.getElementById('toggle-advanced-theme').dataset.hasListener) {
+                document.getElementById('toggle-advanced-theme').dataset.hasListener = "true";
+                document.getElementById('toggle-advanced-theme').addEventListener('change', function() {
+                    document.getElementById('advanced-theme-fields').style.display = this.checked ? 'grid' : 'none';
+                });
             }
             themeModalOverlay.classList.add('show');
         });
@@ -420,18 +488,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const applyCustomBtn = document.getElementById('apply-custom-theme');
     if (applyCustomBtn) {
         applyCustomBtn.addEventListener('click', function() {
+            const isAdvanced = document.getElementById('toggle-advanced-theme') && document.getElementById('toggle-advanced-theme').checked;
             const customObj = {
                 bg: document.getElementById('custom-bg').value,
                 text: document.getElementById('custom-text').value,
                 sidebar: document.getElementById('custom-sidebar').value,
                 border: document.getElementById('custom-border').value,
-                link: document.getElementById('custom-text').value,
-                hoverBg: document.getElementById('custom-border').value,
+                link: isAdvanced ? document.getElementById('custom-link').value : document.getElementById('custom-text').value,
+                hoverBg: isAdvanced ? document.getElementById('custom-hoverBg').value : document.getElementById('custom-border').value,
                 accent: document.getElementById('custom-accent').value,
-                btnText: '#ffffff',
-                areaBg: document.getElementById('custom-bg').value,
-                areaBorder: document.getElementById('custom-border').value,
-                subMenu: document.getElementById('custom-sidebar').value
+                btnText: isAdvanced ? document.getElementById('custom-btnText').value : '#ffffff',
+                areaBg: isAdvanced ? document.getElementById('custom-areaBg').value : document.getElementById('custom-bg').value,
+                areaBorder: isAdvanced ? document.getElementById('custom-areaBorder').value : document.getElementById('custom-border').value,
+                subMenu: isAdvanced ? document.getElementById('custom-subMenu').value : document.getElementById('custom-sidebar').value,
+                advanced: isAdvanced
             };
             applyTheme(customObj);
             localStorage.setItem('selectedTheme', 'custom');
@@ -1982,29 +2052,6 @@ function renderizarIlhasDinamicas() {
     if (typeof iniciarSistemaDeAbas === 'function') {
         iniciarSistemaDeAbas();
     }
-
-    const toggleAllBtn = document.getElementById('toggle-all-btn');
-    if (toggleAllBtn) {
-        toggleAllBtn.addEventListener('click', () => {
-            const toggleTitles = document.querySelectorAll('.toggle-title');
-            const isAllCollapsed = toggleTitles[0] && !toggleTitles[0].classList.contains('collapsed');
-            
-            toggleTitles.forEach(title => {
-                const content = title.nextElementSibling;
-                if (content && content.classList.contains('toggle-content')) {
-                    if (isAllCollapsed) {
-                        title.classList.add('collapsed');
-                        content.classList.add('collapsed');
-                    } else {
-                        title.classList.remove('collapsed');
-                        content.classList.remove('collapsed');
-                    }
-                }
-            });
-            
-            toggleAllBtn.textContent = isAllCollapsed ? 'Expandir Tudo' : 'Retrair Tudo';
-        });
-    }
 }
 
 // ==========================================
@@ -2047,6 +2094,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toggleAllBtn = document.getElementById('toggle-all-btn');
     if (toggleAllBtn) {
+        if (document.querySelector('.calc-floating')) {
+            toggleAllBtn.parentElement.style.setProperty('bottom', 'auto', 'important');
+            toggleAllBtn.parentElement.style.setProperty('top', '80px', 'important');
+        }
+
         toggleAllBtn.addEventListener('click', () => {
             const toggleTitles = document.querySelectorAll('.toggle-title');
             if (!toggleTitles || toggleTitles.length === 0) return;
@@ -3075,8 +3127,162 @@ function initGallerySort() {
     items.forEach(item => grid.appendChild(item));
 }
 
+// ==========================================
+// MÚLTIPLAS IMAGENS NA GALERIA
+// ==========================================
+function initGalleryMultipleImages() {
+    if (!window.location.pathname.includes('aparencias.html')) return;
+
+    const containers = document.querySelectorAll('.gallery-img-container');
+    containers.forEach(container => {
+        const images = container.querySelectorAll('img');
+        if (images.length > 1) {
+            container.style.position = 'relative';
+
+            images.forEach((img, index) => {
+                if (index !== 0) img.style.display = 'none';
+                img.classList.remove('secundaria');
+            });
+
+            const btn = document.createElement('button');
+            btn.textContent = 'Alternar';
+            btn.className = 'btn-alternar-img';
+            container.appendChild(btn);
+
+            let currentIndex = 0;
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                images[currentIndex].style.display = 'none';
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].style.display = 'block';
+            });
+        }
+    });
+}
+
 if (document.readyState === 'loading') { 
-    document.addEventListener('DOMContentLoaded', initGallerySort); 
+    document.addEventListener('DOMContentLoaded', () => {
+        initGallerySort();
+        initGalleryMultipleImages();
+    }); 
 } else { 
     initGallerySort(); 
+    initGalleryMultipleImages();
 }
+
+(function initGlobalImageCopy() {
+    let lastActiveBtn = null;
+
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.tagName === 'IMG') {
+            if (e.target.closest('.map-container') || e.target.closest('.jornal-book-container') || e.target.naturalWidth < 100) return;
+            
+            const img = e.target;
+            const parent = img.parentElement;
+            
+            let btn = parent.querySelector('.injected-copy-img-btn');
+            if (!btn) {
+                const style = window.getComputedStyle(parent);
+                if (style.position === 'static') {
+                    parent.style.position = 'relative';
+                }
+                
+                btn = document.createElement('button');
+                btn.className = 'injected-copy-img-btn';
+                btn.innerHTML = '📋 Copiar';
+                btn.style.cssText = `
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    background: rgba(0, 0, 0, 0.7);
+                    color: #fff;
+                    border: 1px solid rgba(255,255,255,0.3);
+                    border-radius: 6px;
+                    padding: 6px 10px;
+                    font-size: 12px;
+                    font-family: 'Comfortaa', sans-serif;
+                    cursor: pointer;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.2s ease, background 0.2s ease;
+                    z-index: 100;
+                    backdrop-filter: blur(4px);
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+                    white-space: nowrap;
+                `;
+                
+                btn.onmouseover = () => { btn.style.background = 'rgba(0, 0, 0, 0.9)'; };
+                btn.onmouseout = () => { btn.style.background = 'rgba(0, 0, 0, 0.7)'; };
+                
+                btn.addEventListener('click', (ev) => {
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    
+                    const originalText = '📋 Copiar';
+                    btn.innerHTML = '⏳...';
+                    
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    ctx.drawImage(img, 0, 0);
+                    
+                    canvas.toBlob(async function(blob) {
+                        try {
+                            const item = new ClipboardItem({ "image/png": blob });
+                            await navigator.clipboard.write([item]);
+                            btn.innerHTML = '✅ Copiado!';
+                            btn.style.color = '#00b37e';
+                            btn.style.borderColor = '#00b37e';
+                            
+                            setTimeout(() => {
+                                btn.innerHTML = originalText;
+                                btn.style.color = '#fff';
+                                btn.style.borderColor = 'rgba(255,255,255,0.3)';
+                            }, 2000);
+                        } catch (err) {
+                            btn.innerHTML = '❌ Erro';
+                            btn.style.color = '#f44336';
+                            btn.style.borderColor = '#f44336';
+                            
+                            setTimeout(() => {
+                                btn.innerHTML = originalText;
+                                btn.style.color = '#fff';
+                                btn.style.borderColor = 'rgba(255,255,255,0.3)';
+                            }, 2000);
+                        }
+                    }, 'image/png');
+                });
+                
+                parent.appendChild(btn);
+            }
+            
+            if (lastActiveBtn && lastActiveBtn !== btn) {
+                lastActiveBtn.style.opacity = '0';
+                lastActiveBtn.style.pointerEvents = 'none';
+            }
+            
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
+            lastActiveBtn = btn;
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.tagName === 'IMG') {
+            let btn = e.target.parentElement.querySelector('.injected-copy-img-btn');
+            if (btn && e.relatedTarget !== btn) {
+                btn.style.opacity = '0';
+                btn.style.pointerEvents = 'none';
+                if (lastActiveBtn === btn) lastActiveBtn = null;
+            }
+        } else if (e.target.classList.contains('injected-copy-img-btn')) {
+            const img = e.target.parentElement.querySelector('img');
+            if (e.relatedTarget !== img && e.relatedTarget !== e.target.parentElement) {
+                e.target.style.opacity = '0';
+                e.target.style.pointerEvents = 'none';
+                if (lastActiveBtn === e.target) lastActiveBtn = null;
+            }
+        }
+    });
+})();
