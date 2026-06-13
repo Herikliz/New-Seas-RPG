@@ -1660,6 +1660,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (linhagemSelecionada !== '') {
                 textoFinal += "\nLinhagem Descoberta: " + linhagemSelecionada;
             }
+            
+            let pontosNpc = Math.floor(valorBase / 2);
+            textoFinal += "\nPontos dos NPCs: " + formatarNum(pontosNpc);
 
             textoFinal += "\u0060\u0060\u0060";
             
