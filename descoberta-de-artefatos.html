@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descoberta de Artefatos - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .category-container-box {
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            background: var(--sidebar-bg);
+            transition: transform 0.2s ease;
+        }
+        .category-container-box:hover {
+            transform: scale(1.01);
+        }
+        .exotic-container-box {
+            animation: exotic-rainbow 8s linear infinite;
+        }
+        @keyframes exotic-rainbow {
+            0% { color: #ff007f; border-color: #ff007f; }
+            20% { color: #00f0ff; border-color: #00f0ff; }
+            40% { color: #7000ff; border-color: #7000ff; }
+            60% { color: #ffbc00; border-color: #ffbc00; }
+            80% { color: #00ff66; border-color: #00ff66; }
+            100% { color: #ff007f; border-color: #ff007f; }
+        }
+        .category-container-box .toggle-title {
+            font-family: 'Quantico', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .actions-list li {
+            margin-bottom: 8px;
+            color: #2ecc71;
+        }
+        .faq-box {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--sidebar-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-family: 'Quantico', sans-serif;
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .faq-answer {
+            font-family: 'Comfortaa', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">DESCOBERTA DE ARTEFATOS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p>O Sistema de Descoberta de Artefatos é voltado para Arqueólogos que desejam encontrar objetos únicos, raros ou lendários que carregam grande valor histórico. Para obter um artefato, é necessário seguir uma sequência de etapas obrigatórias, sempre com narração ou acompanhamento de um ADM.</p>
+
+                <div class="rank-box" style="border-color: var(--accent-color); margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: var(--accent-color); border-color: var(--accent-color); font-size: 22px;">REQUISITOS GERAIS</h2>
+                    <p style="margin-bottom: 10px;">Para iniciar uma caçada por Relíquias e Artefatos, as seguintes diretrizes devem ser seguidas:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">É obrigatório ser um jogador da classe <strong>Arqueólogo</strong> para iniciar o processo.</li>
+                        <li style="margin-bottom: 8px;">Toda a expedição e etapas práticas requerem supervisão, validação ou narração direta de um <strong>ADM</strong>.</li>
+                        <li style="margin-bottom: 8px;">Cenas de investigações e missões específicas devem respeitar os limites de caracteres estipulados e ser desenvolvidas de forma manual.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #3498db; border-color: #3498db;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Primeira Etapa: Conhecer o Artefato <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Antes de sair em busca de um artefato, é necessário descobrir sua existência. Isso pode ser feito por meio de roleplay, estudando livros antigos, lendas populares, documentos raros ou relatos históricos.</p>
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Você pode fazer isso sozinho ou com ajuda de NPCs especializados (como Arqueólogos). Caso tenha um Arqueólogo na equipe, o processo de interpretação e validação das informações pode ser mais rápido e confiável.</p>
+                            <p style="line-height: 1.6;"><strong>Restrição Importante:</strong> Você não pode fazer Descoberta de Artefatos sem ser um jogador da classe Arqueólogo, mesmo possuindo um NPC da classe na sua equipe.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #9b59b6; border-color: #9b59b6;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Segunda Etapa: Investigar seu Paradeiro <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Depois de descobrir sobre a existência do artefato, você precisa realizar <strong>3 cenas</strong>, de no mínimo <strong>3.000 caracteres</strong> cada, buscando sobre rastros ou a localização do dito artefato, além de sua origem detalhada.</p>
+                            <p style="line-height: 1.6;">A terceira missão obrigatoriamente revelará alguma pista concreta sobre o artefato, apontando uma ilha específica onde ele <strong>possivelmente</strong> pode estar ou foi visto pela última vez.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #e67e22; border-color: #e67e22;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Terceira Etapa: Dominação e Preparação <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Para iniciar a expedição prática na ilha apontada pelas pistas, é necessário que o Arqueólogo tenha domínio absoluto sobre a ilha ou a permissão expressa do seu respectivo dono (veja <a href="dominacoes.html">Dominações</a>).</p>
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Esta permissão ou concessão só pode ser obtida caso o personagem já seja um Arqueólogo famoso mundialmente ou caso sua capacidade de barganha narrativa seja suficiente para convencer o soberano local.</p>
+                            <p style="line-height: 1.6;"><strong>Requisito de Evolução:</strong> Para concluir com sucesso esta etapa de preparação e avançar para as buscas físicas, é <strong>obrigatório</strong> que o personagem seja no mínimo um <strong>Arqueólogo Mestre de Artefatos</strong>.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box exotic-container-box">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Quarta Etapa: Busca pela Relíquia <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Com o acesso à ilha devidamente concedido e a sua equipe de expedição pronta, o jogador deve realizar uma grande missão final, dessa vez agindo diretamente no território onde o artefato se encontra oculto.</p>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">Este tipo de missão final é inteiramente narrado por <strong>ADMs</strong> e servirá para definir se o grupo conseguirá rastrear e garantir a posse da relíquia histórica. A missão será dada como concluída no exato momento em que o paradeiro exato for desvendado.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #2ecc71;">Ações Típicas de Exploração</h4>
+                            <ul class="actions-list" style="margin-left: 40px; line-height: 1.6;">
+                                <li>Explorar ruínas esquecidas pelo tempo, masmorras antigas ou cavernas profundas;</li>
+                                <li>Interrogar e perguntar aos habitantes locais, investigando pistas e boatos;</li>
+                                <li>Decodificar e traduzir com precisão textos, inscrições e dialetos antigos;</li>
+                                <li>Investigar minuciosamente o ambiente e traçar paralelos com a história da própria ilha.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <section class="content-section">
+                <h2 class="title-quantico text-center" style="font-size: 28px; color: var(--accent-color); margin-bottom: 30px;">DÚVIDAS FREQUENTES (FAQ)</h2>
+                
+                <div class="faq-box">
+                    <div class="faq-question">P: E se o artefato não estiver na ilha, já que a segunda etapa diz que ela seria apenas a mais suscetível e não garantida?</div>
+                    <div class="faq-answer">R: Na própria missão desenvolvida na ilha onde ele supostamente estaria escondido, você encontrará sinais, rastros ou registros históricos de que o artefato foi movido de lugar no passado. Se explorar e investigar o ambiente corretamente, você conseguirá desvendar as pistas para achar o local correto.</div>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">P: Tem como achar espadas Saijō Ō Wazamono ou Akuma no Mi muito poderosas que estão perdidas pelo mundo?</div>
+                    <div class="faq-answer">R: Sim... e não. Se as relíquias lendárias estão perdidas, por lógica elas podem ser rastreadas e achadas através do sistema. No entanto, a distribuição não é feita de forma aleatória. Itens de menor expressão estarão em locais menos perigosos ou complexos, e relíquias de patamar devastador demandarão locais proporcionalmente perigosos e avançados, salvo raras exceções.</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

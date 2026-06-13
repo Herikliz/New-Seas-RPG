@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Meitōs - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .category-container-box {
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            background: var(--sidebar-bg);
+            transition: transform 0.2s ease;
+        }
+        .category-container-box:hover {
+            transform: scale(1.01);
+        }
+        .exotic-container-box {
+            animation: exotic-rainbow 8s linear infinite;
+        }
+        @keyframes exotic-rainbow {
+            0% { color: #ff007f; border-color: #ff007f; }
+            20% { color: #00f0ff; border-color: #00f0ff; }
+            40% { color: #7000ff; border-color: #7000ff; }
+            60% { color: #ffbc00; border-color: #ffbc00; }
+            80% { color: #00ff66; border-color: #00ff66; }
+            100% { color: #ff007f; border-color: #ff007f; }
+        }
+        .category-container-box .toggle-title {
+            font-family: 'Quantico', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .beneficios-list li {
+            margin-bottom: 8px;
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">CRIAÇÃO DE MEITŌS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p>Meitōs, também conhecidas como espadas de grau, são as melhores e mais poderosas espadas do mundo. Isso significa que a espada tem uma história renomada. A lâmina geralmente se destaca por sua força e nitidez, superando todas as outras espadas. Uma Meitō é, por vezes, associada ao guerreiro que a maneja e se torna parte de sua identidade. Independentemente de quem seja o dono, possuir uma Meitō é considerado um grande símbolo de respeito e representa uma grande honra para o seu portador. Sendo um Ferreiro, o jogador pode ter a chance de criar sua própria arma, mas essa não é uma tarefa fácil.</p>
+                
+                <p>Como sabemos, as Meitōs podem ser divididas em graus de acordo com sua força e histórias, e, obviamente, cada uma tem seu próprio requisito para fabricação.</p>
+
+                <div class="rank-box" style="border-color: var(--accent-color); margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: var(--accent-color); border-color: var(--accent-color); font-size: 22px;">REQUISITOS BÁSICOS</h2>
+                    <p style="margin-bottom: 10px;">Antes de criar uma Meitō, o jogador precisa obrigatoriamente:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;">Ser um Ferreiro com classe evoluída a no mínimo Nível 3;</li>
+                        <li style="margin-bottom: 8px;">Ter acesso a sua própria <a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/investimento">Forja Avançada</a>;</li>
+                        <li style="margin-bottom: 8px;">Ter completado no mínimo 5 projetos prévios de armas para jogadores;</li>
+                        <li style="margin-bottom: 8px;">Possuir os materiais necessários para a criação por nível.</li>
+                    </ul>
+                </div>
+
+                <div class="rank-box" style="border-color: #f44336; margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: #f44336; border-color: #f44336; font-size: 22px;">ATENÇÃO</h2>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li style="margin-bottom: 12px;"><strong>Desenvolvimento:</strong> Será necessário um bom desenvolvimento na criação das Meitōs, e isso será avaliado de forma rigorosa. Além disso, nas missões feitas para a criação delas, não serão ganhos pontos ou berries.</li>
+                        <li style="margin-bottom: 12px;"><strong>Aprovação Prévia:</strong> Antes de criar sua Meitō, faça a ficha dela e envie para um ADM. A quantia de treinos pode ser alterada ou não.</li>
+                        <li style="margin-bottom: 12px;"><strong>Falhas no Sorteio:</strong> Ao falhar no sorteio, será necessário realizar 50% das missões novamente, utilizando o antigo projeto como base para a nova criação. (Uma Wazamono falha, por exemplo, pode ser concluída ao realizar 2 missões, onde irá ser sorteada novamente).</li>
+                        <li style="margin-bottom: 12px;"><strong>Substituição de Missões:</strong> As missões exigidas na criação das Meitōs podem ser feitas no lugar de Treinos Padrão, Missões ou Trabalhos, mas independente do que seja escolhido para ser feito no lugar, devem sempre cumprir os requisitos de caracteres por categoria.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #3498db; border-color: #3498db;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Wazamono [I] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">Sendo o grau mais baixo das Meitōs, ainda assim se destaca em meio às armas comuns, mas ainda não está sequer no TOP 3 espadas.</p>
+                            <p style="margin-bottom: 20px;"><strong>Dificuldade:</strong> <span style="color: #f1c40f; letter-spacing: 2px;">★★☆☆☆</span></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos de Criação</h4>
+                            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Ferreiro Forjador de Lendas Menores</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter no mínimo <strong>15.000 pontos</strong> de atributo totais.</li>
+                                <li style="margin-bottom: 8px;">Uma <strong>Forja Avançada</strong>.</li>
+                                <li style="margin-bottom: 8px;">Materiais resistentes como, no mínimo, <strong>Unobtainium</strong>; Caso haja alguma propriedade especial, materiais para justificar sua existência precisarão ser forjados previamente com um custo adicional dependendo de sua complexidade (exemplo, uma câmara de absorção de temperatura).</li>
+                                <li style="margin-bottom: 8px;"><strong>4 missões</strong> de no mínimo 3.000 caracteres, sempre deixando clara a intenção de desenvolver uma Meitō.</li>
+                                <li style="margin-bottom: 8px;">Será realizado um sorteio de <strong>1d20</strong>, tendo <strong>15/20 de chance de sucesso</strong> (aumenta 1/20 a cada 5.000 de atributos extra, limite máximo 20/20).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #9b59b6; border-color: #9b59b6;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Ryō Wazamono [II] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">O segundo grau mais fraco de armas. Sua força já é mais elevada que a anterior, mas ainda não se destaca muito entre as armas mais poderosas.</p>
+                            <p style="margin-bottom: 20px;"><strong>Dificuldade:</strong> <span style="color: #f1c40f; letter-spacing: 2px;">★★★☆☆</span></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos de Criação</h4>
+                            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Ferreiro Forjador de Lendas Menores</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter ao menos <strong>20.000 pontos</strong> de atributos totais.</li>
+                                <li style="margin-bottom: 8px;">Uma <strong>Forja Épica</strong>.</li>
+                                <li style="margin-bottom: 8px;">Materiais resistentes como, no mínimo, <strong>Unobtainium</strong> ou <strong>Mithril</strong>; Caso haja alguma propriedade especial, materiais para justificar sua existência precisarão ser forjados previamente com um custo adicional dependendo de sua complexidade (exemplo, uma câmara de absorção de temperatura).</li>
+                                <li style="margin-bottom: 8px;"><strong>6 missões</strong> de no mínimo 3.000 caracteres, sempre deixando clara a intenção de desenvolver uma Meitō.</li>
+                                <li style="margin-bottom: 8px;">Será realizado um sorteio de <strong>1d20</strong>, tendo <strong>13/20 de chance de sucesso</strong> (aumenta 1/20 a cada 5.000 de atributos extra, limite máximo 18/20).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #e67e22; border-color: #e67e22;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Ō Wazamono [III] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">Agora as armas criadas começam a ter um peso extremamente significativo em sua história, sendo o segundo grau de equipamentos mais forte.</p>
+                            <p style="margin-bottom: 20px;"><strong>Dificuldade:</strong> <span style="color: #f1c40f; letter-spacing: 2px;">★★★★☆</span></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos de Criação</h4>
+                            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Ferreiro Mestre das Lâminas</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter ao menos <strong>30.000 pontos</strong> de atributos totais.</li>
+                                <li style="margin-bottom: 8px;">Uma <strong>Forja Lendária</strong>.</li>
+                                <li style="margin-bottom: 8px;">Materiais mais resistentes, como, no mínimo, <strong>Mithril</strong> ou <strong>Adamantium</strong>; Caso haja alguma propriedade especial, materiais para justificar sua existência precisarão ser forjados previamente com um custo adicional dependendo de sua complexidade (exemplo, uma câmara de absorção de temperatura).</li>
+                                <li style="margin-bottom: 8px;">Espadas desse grau que contenham maldições ou espíritos possessores precisam de uma <strong>Extra-Narrada</strong> e no mínimo <strong>10.000 pontos em Haki</strong> para forjá-la e conter a maldição.</li>
+                                <li style="margin-bottom: 8px;"><strong>8 missões</strong> de no mínimo 3.000 caracteres, sempre deixando clara a intenção de desenvolver uma Meitō.</li>
+                                <li style="margin-bottom: 8px;">Será realizado um sorteio de <strong>1d20</strong>, tendo <strong>11/20 de chance de sucesso</strong> (aumenta 1/20 a cada 5.000 de atributos extra, limite máximo 15/20).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box exotic-container-box">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Saijō Ō Wazamono [IV] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">Finalmente, o grau de armas mais forte e poderoso. Lâminas ou qualquer tipo de arma desse grau são conhecidas mundialmente, tendo seu nome carregado por todos os oceanos, desde os Blues até o Novo Mundo.</p>
+                            <p style="margin-bottom: 20px;"><strong>Dificuldade:</strong> <span style="color: #f1c40f; letter-spacing: 2px;">★★★★★</span></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos de Criação</h4>
+                            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Ferreiro Nível 5</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter ao menos <strong>45.000 pontos</strong> de atributos totais.</li>
+                                <li style="margin-bottom: 8px;">Uma <strong>Forja Perfeita</strong>.</li>
+                                <li style="margin-bottom: 8px;">Materiais extremamente resistentes, como, no mínimo, <strong>Adamantium</strong> ou <strong>Kairoseki</strong>; Caso haja alguma propriedade especial, materiais para justificar sua existência precisarão ser forjados previamente com um custo adicional dependendo de sua complexidade (exemplo, uma câmara de absorção de temperatura).</li>
+                                <li style="margin-bottom: 8px;">Espadas desse grau que contenham maldições ou espíritos possessores precisam de <strong>2 Extra-Narradas</strong> e no mínimo <strong>20.000 pontos em Haki</strong> para forjá-la e conter a maldição.</li>
+                                <li style="margin-bottom: 8px;"><strong>Uma Extra-Narrada</strong> realizando o desenvolvimento do planejamento da arma, além de optar por algo que cause impacto em sua criação; a Extra-Narrada será avaliada normalmente, porém, terá este adendo para a criação da lâmina, caso deseje.</li>
+                                <li style="margin-bottom: 8px;"><strong>10 missões</strong> de no mínimo 3.600 caracteres, sempre deixando clara a intenção de desenvolver uma Meitō.</li>
+                                <li style="margin-bottom: 8px;">Será realizado um sorteio de <strong>1d20</strong>, tendo <strong>10/20 de chance de sucesso</strong> (aumenta 1/20 a cada 5.000 de atributos extra, limite máximo 12/20).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #7f8c8d; border-color: #7f8c8d;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Grau Desconhecido [?] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">Meitōs que não se encaixem em nenhuma outra categoria, seja por falta de desenvolvimento ou má escrita (por exemplo, uma Saijō Ō Wazamono que tenha sido considerada mal descrita pelo avaliador), caem neste grau. Mesmo ainda tendo grande qualidade, o grau delas não será nomeado ou tão reconhecido quanto os outros.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos da Queda</h4>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Ferreiro</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter no mínimo <strong>20.000 pontos</strong> de atributos totais.</li>
+                                <li style="margin-bottom: 8px;"><strong>Falhar parcialmente</strong> na criação de uma Meitō de qualquer grau.</li>
+                                <li style="margin-bottom: 8px;">O material usado é um grande influenciador em quão forte será, indicando o grau que supostamente deveria participar.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

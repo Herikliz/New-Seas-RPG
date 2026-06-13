@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominação de Ilhas - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .category-container-box {
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            background: var(--sidebar-bg);
+            transition: transform 0.2s ease;
+        }
+        .category-container-box:hover {
+            transform: scale(1.01);
+        }
+        .exotic-container-box {
+            animation: exotic-rainbow 8s linear infinite;
+        }
+        @keyframes exotic-rainbow {
+            0% { color: #ff007f; border-color: #ff007f; }
+            20% { color: #00f0ff; border-color: #00f0ff; }
+            40% { color: #7000ff; border-color: #7000ff; }
+            60% { color: #ffbc00; border-color: #ffbc00; }
+            80% { color: #00ff66; border-color: #00ff66; }
+            100% { color: #ff007f; border-color: #ff007f; }
+        }
+        .category-container-box .toggle-title {
+            font-family: 'Quantico', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .rewards-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .faq-box {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--sidebar-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-family: 'Quantico', sans-serif;
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .faq-answer {
+            font-family: 'Comfortaa', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">DOMINAÇÃO DE ILHAS E ORGANIZAÇÕES</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p>Este sistema é voltado para tripulações e organizações que desejam dominar ilhas e estabelecer nelas suas fortalezas ou bases. Além disso, é possível cobrar impostos e realizar vários tipos de investimentos para gerar renda mensalmente nas ilhas dominadas.</p>
+
+                <div class="rank-box" style="border-color: var(--accent-color); margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: var(--accent-color); border-color: var(--accent-color); font-size: 22px;">FUNCIONAMENTO GERAL</h2>
+                    <p style="margin-bottom: 12px; line-height: 1.6;"><strong>Investimentos e Recursos:</strong> Após a dominação bem-sucedida, o narrador calculará o valor do imposto base e fornecerá uma descrição detalhada da ilha, incluindo os recursos disponíveis e o número de "slots" disponíveis para investimentos. Vale lembrar que cada ilha possui um limite estrito de terras para investimentos.</p>
+                    <p style="margin-bottom: 12px; line-height: 1.6;"><strong>Tributação Quinzenal:</strong> O imposto devido pelos habitantes e estruturas da ilha será recolhido duas vezes ao mês, ocorrendo pontualmente nos dias <strong>1</strong> e <strong>15</strong>.</p>
+                    <p style="line-height: 1.6;"><strong>Zonas Despovoadas:</strong> Nem todas as ilhas geram impostos automáticos (como no caso de ilhas completamente despovoadas). O retorno financeiro dependerá diretamente das ações que você tomar para colonizar, dominar ou firmar acordos, influenciando o modo geral de como a região será gerida.</p>
+                </div>
+
+                <div class="rank-box" style="border-color: #f44336; margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: #f44336; border-color: #f44336; font-size: 22px;">PROCESSO DE CONQUISTA E AVISO DE RISCO</h2>
+                    <p style="margin-bottom: 12px; line-height: 1.6;">Para dominar uma ilha, vá no grupo <a href="https://chat.whatsapp.com/JLjPwHDuvPN9xzOwyKFnAZ">Cɑçɑɗɑs & Dσɱiɳɑçσ̃es 📍</a> e peça por um narrador, já especificando qual ilha você quer dominar; se alguém estiver disponível, responderá você no grupo e algum ADM colocará vocês dois num grupo separado para a Dominação; caso seja uma ilha especial para a lore do RPG, os ADMs intervirão para informar o narrador sobre o que ele precisa saber, ou, em casos mais específicos, eles mesmos narrarão. A equipe de administração avaliará detalhadamente se você e sua respectiva equipe possuem o preparo técnico, narrativo e o nível necessário para o desafio.</p>
+                    <p style="line-height: 1.6;"><strong>Aviso Rigoroso:</strong> Caso a administração informe que o grupo não está apto e, ainda assim, os jogadores insistam em seguir com a narração forçada, o narrador dará início aos eventos. No entanto, <strong>a conta e o personagem estarão sob risco severo</strong>, podendo resultar em morte definitiva do personagem e na perda completa de todos os bens e progressos conquistados.</p>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #3498db; border-color: #3498db;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Blues <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 20px; line-height: 1.6;">Os mares tradicionais de East, West, North e South Blue compreendem os territórios iniciais e contam com uma estrutura tributária de estabilidade básica.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #3498db;">Recompensas de Dominação</h4>
+                            <ul class="rewards-list" style="margin-left: 40px; list-style-type: square;">
+                                <li><strong>Aquisição de População:</strong> Garantia de <strong>100 NPCs</strong> da raça de sua escolha (dentre as raças comuns disponíveis no cenário).</li>
+                                <li><strong>Bonificação de Atributos:</strong> Adição variável de <strong>1.500 a 2.500 pontos</strong> totais, calculados com base na qualidade narrativa apresentada.</li>
+                                <li><strong>Retorno Financeiro (Dias 1 e 15):</strong> Arrecadação de tributos variando entre <strong>฿30.000.000 e ฿50.000.000</strong> por período.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #9b59b6; border-color: #9b59b6;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Paraíso <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 20px; line-height: 1.6;">A primeira metade da Grand Line apresenta desafios moderados e uma densidade populacional muito mais expressiva para colonização.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #9b59b6;">Recompensas de Dominação</h4>
+                            <ul class="rewards-list" style="margin-left: 40px; list-style-type: square;">
+                                <li><strong>Aquisição de População:</strong> Garantia de <strong>250 NPCs</strong> da raça de sua escolha (dentre as raças comuns disponíveis no cenário).</li>
+                                <li><strong>Bonificação de Atributos:</strong> Adição variável de <strong>2.500 a 3.500 pontos</strong> totais, calculados com base na qualidade narrativa apresentada.</li>
+                                <li><strong>Retorno Financeiro (Dias 1 e 15):</strong> Arrecadação de tributos variando entre <strong>฿50.000.000 e ฿100.000.000</strong> por período.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #e67e22; border-color: #e67e22;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Calm Belt <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 20px; line-height: 1.6;">As zonas desprovidas de correntes marítimas e infestadas de Reis dos Mares guardam isolamento geográfico e alto valor estratégico.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #e67e22;">Recompensas de Dominação</h4>
+                            <ul class="rewards-list" style="margin-left: 40px; list-style-type: square;">
+                                <li><strong>Aquisição de População:</strong> Garantia de <strong>300 NPCs</strong> da raça de sua escolha (dentre as raças comuns disponíveis no cenário).</li>
+                                <li><strong>Bonificação de Atributos:</strong> Adição variável de <strong>3.500 a 4.500 pontos</strong> totais, calculados com base na qualidade narrativa apresentada.</li>
+                                <li><strong>Retorno Financeiro (Dias 1 e 15):</strong> Valor estritamente <strong>variável</strong>, avaliado e definido pela administração no momento exato da conquista.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box exotic-container-box">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Novo Mundo <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 20px; line-height: 1.6;">O ápice dos mares do mundo. Territórios de extrema complexidade climática e política, oferecendo o maior retorno financeiro e militar global.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #2ecc71;">Recompensas de Dominação</h4>
+                            <ul class="rewards-list" style="margin-left: 40px; list-style-type: square;">
+                                <li><strong>Aquisição de População:</strong> Garantia de <strong>500 NPCs</strong> da raça de sua escolha (dentre as raças comuns disponíveis no cenário).</li>
+                                <li><strong>Bonificação de Atributos:</strong> Adição variável de <strong>4.500 a 5.500 pontos</strong> totais, calculados com base na qualidade narrativa apresentada.</li>
+                                <li><strong>Retorno Financeiro (Dias 1 e 15):</strong> Arrecadação massiva de tributos variando entre <strong>฿100.000.000 e ฿150.000.000</strong> por período.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <section class="content-section">
+                <h2 class="title-quantico text-center" style="font-size: 28px; color: var(--accent-color); margin-bottom: 30px;">CONSELHOS E ESTRATÉGIAS</h2>
+                
+                <div class="faq-box">
+                    <div class="faq-question">Recomendação de Atributos e Trabalho de Equipe</div>
+                    <div class="faq-answer">Não tente realizar a dominação de uma ilha de forma isolada, especialmente se o seu personagem possuir patamares baixos como 1.000, 2.500 ou 3.000 pontos de atributos. Personagens considerados "fracos" não conseguirão obter êxito sozinhos. Recomenda-se atingir a marca de ao menos <strong>10.000 pontos</strong> antes de arriscar, sendo fundamental a união e o planejamento junto à sua tripulação. Estratégia e inteligência superam a força bruta.</div>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">Participação de Marinheiros e Agentes do Governo</div>
+                    <div class="faq-answer">Caso você integre as forças da Marinha ou seja um agente vinculado ao Governo Mundial, a participação em conquistas de bases também é inteiramente permitida junto à sua respectiva tripulação funcional. O limite máximo é fixado em <strong>até 10 jogadores ativos por esquadrão</strong>. Basta organizar os agrupamentos e reportar diretamente a um ADM.</div>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">Conquista Narrativa: Força vs Diplomacia</div>
+                    <div class="faq-answer">Lembre-se sempre de que uma dominação legítima não precisa ser pautada exclusivamente em combates sangrentos. Eliminar ou poupar a vida do atual governante local da ilha não dita o teto de sua pontuação máxima ou mínima. Abordagens inteligentes, estratégicas ou o estabelecimento de uma <strong>aliança diplomática estável</strong> possuem chances idênticas de garantir a pontuação máxima avaliada.</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

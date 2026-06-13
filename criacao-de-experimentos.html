@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Experimentos - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+<style>
+        .category-container-box {
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            background: var(--sidebar-bg);
+            transition: transform 0.2s ease;
+        }
+        .category-container-box:hover {
+            transform: scale(1.01);
+        }
+        .exotic-container-box {
+            animation: exotic-rainbow 8s linear infinite;
+        }
+        @keyframes exotic-rainbow {
+            0% { color: #ff007f; border-color: #ff007f; }
+            20% { color: #00f0ff; border-color: #00f0ff; }
+            40% { color: #7000ff; border-color: #7000ff; }
+            60% { color: #ffbc00; border-color: #ffbc00; }
+            80% { color: #00ff66; border-color: #00ff66; }
+            100% { color: #ff007f; border-color: #ff007f; }
+        }
+        .category-container-box .toggle-title {
+            font-family: 'Quantico', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">CRIAÇÃO DE EXPERIMENTOS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p>Experimentos são criações extraordinárias que se destacam acima das demais. Cada invenção carrega um histórico de testes, falhas e descobertas. O artefato geralmente se diferencia por sua eficiência, precisão ou efeitos incomuns, superando tecnologias comuns. Sendo um cientista ou inventor, o jogador pode ter a chance de desenvolver sua própria criação, mas essa é uma tarefa complexa, exigindo recursos, tempo e inúmeros testes até alcançar o resultado desejado.</p>
+                
+                <p>Como sabemos, os Experimentos podem ser divididos em categorias de acordo com sua complexidade e materiais necessários e, obviamente, cada uma tem seu próprio requisito para fabricação.</p>
+
+                <div class="rank-box" style="border-color: var(--accent-color); margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: var(--accent-color); border-color: var(--accent-color); font-size: 22px;">REQUISITOS BÁSICOS</h2>
+                    <p style="margin-bottom: 10px;">Antes de criar um Experimento, o jogador precisa obrigatoriamente:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;">Ser um cientista ou inventor;</li>
+                        <li style="margin-bottom: 8px;">Ter acesso ao seu próprio Centro de Pesquisa;</li>
+                        <li style="margin-bottom: 8px;">Possuir os materiais necessários para a criação.</li>
+                    </ul>
+                </div>
+
+                <div class="rank-box" style="border-color: #f44336; margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: #f44336; border-color: #f44336; font-size: 22px;">ATENÇÃO</h2>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li style="margin-bottom: 12px;"><strong>Desenvolvimento:</strong> Será necessário um bom desenvolvimento na criação dos seus Experimentos, e isso será avaliado de forma rigorosa. Além disso, nas missões feitas para a criação deles, não serão ganhos pontos ou berries.</li>
+                        <li style="margin-bottom: 12px;"><strong>Aprovação Prévia:</strong> Antes de criar seu Experimento, faça a ficha dele e envie para um ADM. A quantia de treinos pode ser alterada ou não. Além disso, os ADMs irão lhe informar detalhadamente os materiais exigidos para dado experimento.</li>
+                        <li style="margin-bottom: 12px;"><strong>Falhas no Sorteio:</strong> Ao falhar no sorteio, será necessário realizar 75% das missões novamente, utilizando o antigo projeto como base para a nova criação.</li>
+                        <li style="margin-bottom: 12px;"><strong>Substituição de Missões:</strong> As missões exigidas na criação dos experimentos podem ser feitas no lugar de Treinos Padrão, Missões ou Trabalhos, mas independente do que seja escolhido para ser feito no lugar, devem sempre cumprir os requisitos de caracteres por categoria.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #3498db; border-color: #3498db;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Categoria Básica [I] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">Sendo o grau mais baixo dos seus experimentos, ainda assim se destaca em meio a gambiarras mundanas, mas ainda não está sequer próximo de ser uma espécie de experimento que ameace o globo.</p>
+                            <p style="margin-bottom: 20px;"><strong>Dificuldade:</strong> <span style="color: #f1c40f; letter-spacing: 2px;">★★☆☆☆</span></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos de Criação</h4>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Cientista Biólogo</strong> ou um <strong>Inventor Mecânico</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter no mínimo <strong>10.000 pontos</strong> de atributo totais.</li>
+                                <li style="margin-bottom: 8px;">Um <strong>Centro de Pesquisa Grau 1</strong> ou maior.</li>
+                                <li style="margin-bottom: 8px;"><strong>6 missões</strong> de no mínimo 4.800 caracteres, sempre deixando clara a intenção de desenvolver o seu Experimento.</li>
+                                <li style="margin-bottom: 8px;">Será realizado um sorteio de <strong>1d20</strong>, tendo <strong>15/20 de chance de sucesso</strong> (aumenta 1/20 a cada 5.000 de atributos extra, com o limite máximo de 20/20 em 35.000 pontos).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #9b59b6; border-color: #9b59b6;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Categoria Intermediária [II] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">O segundo grau mais básico de experimentos. Sua importância e avanço na tecnologia já é um pouco mais forte do que o anterior, mas ainda não se destaca muito entre os experimentos mais poderosos.</p>
+                            <p style="margin-bottom: 20px;"><strong>Dificuldade:</strong> <span style="color: #f1c40f; letter-spacing: 2px;">★★★☆☆</span></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos de Criação</h4>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Cientista Bioengenheiro</strong> ou um <strong>Inventor Arquitetônico</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter ao menos <strong>15.000 pontos</strong> de atributos totais.</li>
+                                <li style="margin-bottom: 8px;">Um <strong>Centro de Pesquisas Grau 4</strong> ou maior.</li>
+                                <li style="margin-bottom: 8px;"><strong>10 missões</strong> de no mínimo 6.000 caracteres, sempre deixando clara a intenção de desenvolver o seu Experimento.</li>
+                                <li style="margin-bottom: 8px;">Será realizado um sorteio de <strong>1d20</strong>, tendo <strong>13/20 de chance de sucesso</strong> (aumenta 1/20 a cada 5.000 de atributos extra, com o limite máximo de 18/20 em 30.000 pontos).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box" style="color: #e67e22; border-color: #e67e22;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Categoria Avançada [III] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">Agora as invenções criadas começam a ter um peso extremamente significativo em sua história, sendo o segundo grau de equipamentos mais fortes.</p>
+                            <p style="margin-bottom: 20px;"><strong>Dificuldade:</strong> <span style="color: #f1c40f; letter-spacing: 2px;">★★★★☆</span></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos de Criação</h4>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Cientista Alquimista</strong> ou um <strong>Inventor Condutor</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter ao menos <strong>25.000 pontos</strong> de atributos totais.</li>
+                                <li style="margin-bottom: 8px;">Um <strong>Centro de Pesquisas Grau 5</strong> ou maior.</li>
+                                <li style="margin-bottom: 8px;"><strong>8 missões</strong> de no mínimo 9.000 caracteres, sempre deixando clara a intenção de desenvolver o seu Experimento.</li>
+                                <li style="margin-bottom: 8px;">Será realizado um sorteio de <strong>1d20</strong>, tendo <strong>11/20 de chance de sucesso</strong> (aumenta 1/20 a cada 5.000 de atributos extra, com o limite máximo de 15/20 em 45.000 pontos).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <div class="category-container-box exotic-container-box">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Categoria Exótica [IV] <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px;">Finalmente, o grau de experimentos mais fortes e poderosos. Experimentos dessa categoria são conhecidos mundialmente, tendo seu nome carregado por todos os oceanos, desde os Blues até o Novo Mundo e tendem a ser extremamente custosos.</p>
+                            <p style="margin-bottom: 20px;"><strong>Dificuldade:</strong> <span style="color: #f1c40f; letter-spacing: 2px;">★★★★★</span></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px;">Requisitos de Criação</h4>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ser um <strong>Cientista Nível 5</strong> ou um <strong>Inventor Nível 5</strong>.</li>
+                                <li style="margin-bottom: 8px;">Ter ao menos <strong>40.000 pontos</strong> de atributos totais.</li>
+                                <li style="margin-bottom: 8px;">Um <strong>Centro de Pesquisas Grau 6</strong>.</li>
+                                <li style="margin-bottom: 8px;"><strong>2 Extra-Narradas e 10 missões</strong> de no mínimo 6.000 caracteres, sempre deixando clara a intenção de desenvolver o seu Experimento.</li>
+                                <li style="margin-bottom: 8px;">Será realizado um sorteio de <strong>1d20</strong>, tendo <strong>10/20 de chance de sucesso</strong> (aumenta 1/20 a cada 5.000 de atributos extra, com o limite máximo de 12/20 em 50.000 pontos).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
