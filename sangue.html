@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos Sanguíneos - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .category-container-box {
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            background: var(--sidebar-bg);
+            transition: transform 0.2s ease;
+        }
+        .category-container-box:hover {
+            transform: scale(1.01);
+        }
+        .category-container-box .toggle-title {
+            font-family: 'Quantico', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .blood-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Comfortaa', sans-serif;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .blood-table th, .blood-table td {
+            border: 2px solid var(--sidebar-border);
+            padding: 12px;
+            text-align: center;
+        }
+        .blood-table th {
+            background-color: var(--sidebar-bg);
+            color: #e74c3c;
+            font-family: 'Quantico', sans-serif;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        .blood-table td {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .blood-table tr:hover td {
+            background: rgba(231, 76, 60, 0.1);
+        }
+        .blood-type-highlight {
+            font-family: 'Quantico', sans-serif;
+            font-size: 18px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .faq-box {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--sidebar-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-family: 'Quantico', sans-serif;
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .faq-answer {
+            font-family: 'Comfortaa', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: #e74c3c;">SISTEMA DE TIPOS SANGUÍNEOS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p>No universo do nosso RPG, assim como no mundo real, o sangue é o combustível da vida. Durante batalhas intensas, acidentes catastróficos ou envenenamentos, a perda de sangue (hemorragia) pode ser um fator letal para qualquer personagem, independente de quão forte ele seja.</p>
+
+                <div class="rank-box" style="border-color: #e74c3c; margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: #e74c3c; border-color: #e74c3c; font-size: 22px;">A IMPORTÂNCIA NO RPG</h2>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li style="margin-bottom: 12px;"><strong>Mecânica de Sobrevivência:</strong> Receber danos críticos ou cortes profundos resultará em sangramento. Personagens que perdem muito sangue entram em estado de choque e podem morrer se não receberem uma transfusão a tempo.</li>
+                        <li style="margin-bottom: 12px;"><strong>Atuação Médica:</strong> Médicos na tripulação precisarão estocar bolsas de sangue compatíveis em suas enfermarias. Saber o tipo sanguíneo dos seus companheiros de tripulação é o primeiro passo para salvá-los.</li>
+                        <li style="margin-bottom: 12px;"><strong>Roleplay e Sacrifício:</strong> Fazer uma transfusão de sangue direta de um personagem para o outro durante uma emergência gera laços narrativos poderosos. Porém, doar sangue deixa o doador temporariamente enfraquecido e vulnerável.</li>
+                        <li style="margin-bottom: 12px;"><strong>Restrição Rígida:</strong> Uma transfusão incompatível no RPG pode causar uma rejeição severa, podendo levar o paciente à morte. A tabela de compatibilidade deve ser respeitada.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            
+            <section class="content-section">
+                <h2 class="title-quantico text-center" style="font-size: 28px; color: #e74c3c; margin-bottom: 20px;">A TABELA DE COMPATIBILIDADE</h2>
+                <p style="text-align: center; margin-bottom: 30px; line-height: 1.6;">A nomenclatura médica global classifica o sangue no clássico sistema ABO, contendo os quatro tipos principais: <strong>O, A, B e AB</strong>. Cada um deles conta com o Fator RH Positivo ou Negativo, que determina quem pode receber de quem.</p>
+
+                <div class="category-container-box" style="color: #e74c3c; border-color: #e74c3c; padding: 10px 25px;">
+                    <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Compatibilidade Sanguínea <span class="toggle-icon">▼</span></div>
+                    <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                        <table class="blood-table">
+                            <thead>
+                                <tr>
+                                    <th>Tipo Sanguíneo</th>
+                                    <th>Doa Para</th>
+                                    <th>Recebe De</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="blood-type-highlight">O-</span><br><span style="font-size: 12px; color: #aaa;">(Doador Universal)</span></td>
+                                    <td>Todos os tipos (O±, A±, B±, AB±)</td>
+                                    <td>O-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="blood-type-highlight">O+</span></td>
+                                    <td>O+, A+, B+, AB+</td>
+                                    <td>O-, O+</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="blood-type-highlight">A-</span></td>
+                                    <td>A-, A+, AB-, AB+</td>
+                                    <td>O-, A-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="blood-type-highlight">A+</span></td>
+                                    <td>A+, AB+</td>
+                                    <td>O-, O+, A-, A+</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="blood-type-highlight">B-</span></td>
+                                    <td>B-, B+, AB-, AB+</td>
+                                    <td>O-, B-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="blood-type-highlight">B+</span></td>
+                                    <td>B+, AB+</td>
+                                    <td>O-, O+, B-, B+</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="blood-type-highlight">AB-</span></td>
+                                    <td>AB-, AB+</td>
+                                    <td>O-, A-, B-, AB-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="blood-type-highlight">AB+</span><br><span style="font-size: 12px; color: #aaa;">(Receptor Universal)</span></td>
+                                    <td>AB+</td>
+                                    <td>Todos os tipos (O±, A±, B±, AB±)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <section class="content-section">
+                <h2 class="title-quantico text-center" style="font-size: 28px; color: var(--accent-color); margin-bottom: 30px;">O FATOR RH E DÚVIDAS</h2>
+                
+                <div class="faq-box">
+                    <div class="faq-question">Como o Fator RH (+ e -) afeta as doações?</div>
+                    <div class="faq-answer">
+                        <p>Além das letras (A, B, AB, O), todo sangue possui o <strong>Fator RH</strong>, que pode ser Positivo (+) ou Negativo (-).</p>
+                        <ul style="margin-top: 15px; margin-left: 40px;">
+                            <li><strong>Sangue Positivo (+):</strong> É mais "forte" na recepção. Pode receber tanto sangue Positivo quanto Negativo (desde que a letra seja compatível).</li>
+                            <li><strong>Sangue Negativo (-):</strong> É mais sensível. Só pode receber transfusões de outro sangue Negativo. Se um personagem com sangue A- receber sangue A+, ele sofrerá uma grave complicação imunológica.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">Como eu defino meu tipo sanguíneo?</div>
+                    <div class="faq-answer">
+                        <p>No momento da criação da sua ficha, você pode sortear o tipo sanguíneo do seu personagem uma única vez com o comando presente no grupo de Fichas, e, caso ele não funcione, peça para um ADM pedir o sorteio para a Meta IA.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

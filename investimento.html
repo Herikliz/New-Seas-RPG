@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investimentos e Empreendimentos - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .category-container-box {
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            background: var(--sidebar-bg);
+            transition: transform 0.2s ease;
+        }
+        .category-container-box:hover {
+            transform: scale(1.01);
+        }
+        .exotic-container-box {
+            animation: exotic-rainbow 8s linear infinite;
+        }
+        @keyframes exotic-rainbow {
+            0% { color: #ff007f; border-color: #ff007f; }
+            20% { color: #00f0ff; border-color: #00f0ff; }
+            40% { color: #7000ff; border-color: #7000ff; }
+            60% { color: #ffbc00; border-color: #ffbc00; }
+            80% { color: #00ff66; border-color: #00ff66; }
+            100% { color: #ff007f; border-color: #ff007f; }
+        }
+        .category-container-box .toggle-title {
+            font-family: 'Quantico', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .details-list li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .faq-box {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--sidebar-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-family: 'Quantico', sans-serif;
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .faq-answer {
+            font-family: 'Comfortaa', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        .edificio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .edificio-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--sidebar-border);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        .edificio-title {
+            font-family: 'Quantico', sans-serif;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .edificio-tax {
+            font-family: 'Comfortaa', sans-serif;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .grau-box {
+            background: rgba(0, 0, 0, 0.15);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .grau-title {
+            font-family: 'Quantico', sans-serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        .grau-box p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">GUIA DE INVESTIMENTOS & EMPREENDIMENTOS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p>Para iniciar um investimento, o jogador deve possuir uma ilha sob seu domínio. Com isso, será possível construir fábricas e bancos para dar início à produção e comercialização de produtos. Cada tipo de investimento possui seus próprios requisitos, incluindo a necessidade de NPCs e edifícios específicos. Atenção aos detalhes antes de investir!</p>
+
+                <div class="rank-box" style="border-color: var(--accent-color); margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: var(--accent-color); border-color: var(--accent-color); font-size: 22px;">REGRAS GERAIS</h2>
+                    <ul style="margin-left: 40px; margin-bottom: 10px; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">Cada ilha pode ter no <strong>máximo 2 investimentos</strong>.</li>
+                        <li style="margin-bottom: 8px;">Cada jogador tem um limite de <strong>1 investimento por ilha</strong> dominada.</li>
+                        <li style="margin-bottom: 8px;">Investimentos não funcionam sem um <strong>edifício associado</strong> (onde a taxa tributária é incluída).</li>
+                        <li style="margin-bottom: 8px;">Se o jogador fizer parte de uma organização e receber salário, sua renda semanal será reduzida em 50%, sendo o restante transferido para o banco da organização.</li>
+                        <li style="margin-bottom: 8px;">Se sua ilha for conquistada por outro jogador, seu investimento <strong>não será roubado, e sim apagado</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="rank-box" style="border-color: #e74c3c; margin-top: 30px;">
+                    <h2 class="title-quantico rank-title" style="color: #e74c3c; border-color: #e74c3c; font-size: 22px;">TIPOS DE EDIFÍCIOS</h2>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Os edifícios são essenciais para a produção e comercialização de itens. Escolha com sabedoria, pois você pagará uma taxa tributária mensal para manter o edifício aberto.</p>
+                    
+                    <div class="edificio-grid">
+                        <div class="edificio-card">
+                            <div class="edificio-title">Carpintaria</div>
+                            <div class="edificio-tax">฿60.000.000</div>
+                        </div>
+                        <div class="edificio-card">
+                            <div class="edificio-title">Restaurante</div>
+                            <div class="edificio-tax">฿60.000.000</div>
+                        </div>
+                        <div class="edificio-card">
+                            <div class="edificio-title">Gestão de Viagens Marítimas</div>
+                            <div class="edificio-tax">฿70.000.000</div>
+                        </div>
+                        <div class="edificio-card">
+                            <div class="edificio-title">Fábrica de Armas</div>
+                            <div class="edificio-tax">฿80.000.000</div>
+                        </div>
+                        <div class="edificio-card">
+                            <div class="edificio-title">Hospital</div>
+                            <div class="edificio-tax">฿50.000.000</div>
+                        </div>
+                        <div class="edificio-card">
+                            <div class="edificio-title">Ferraria</div>
+                            <div class="edificio-tax">฿100.000.000</div>
+                        </div>
+                        <div class="edificio-card">
+                            <div class="edificio-title">Laboratório</div>
+                            <div class="edificio-tax">฿120.000.000</div>
+                        </div>
+                        <div class="edificio-card">
+                            <div class="edificio-title">Edifício Único (Não Listado)</div>
+                            <div class="edificio-tax">฿150.000.000</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <h2 class="title-quantico text-center" style="font-size: 28px; color: var(--accent-color); margin-bottom: 30px;">TIPOS DE INVESTIMENTO</h2>
+
+            <div class="category-container-box" style="color: #3498db; border-color: #3498db;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Investimento Rico <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Produção e venda de itens de baixo custo.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #3498db;">Detalhes do Empreendimento</h4>
+                            <ul class="details-list" style="margin-left: 40px; list-style-type: square;">
+                                <li><strong>Custo de Criação:</strong> ฿100.000.000</li>
+                                <li><strong>Limite de Faturamento:</strong> Até ฿100.000.000</li>
+                                <li><strong>Renda Semanal Automática:</strong> ฿30.000.000 aos domingos (caso não tenha feito vendas durante a semana).</li>
+                                <li><strong>Exportação:</strong> Indisponível. O comprador precisa ir até a ilha do Investimento.</li>
+                                <li><strong>Requisitos:</strong> 5 NPCs (eles serão deixados na ilha para manter o Investimento funcionando).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="category-container-box" style="color: #9b59b6; border-color: #9b59b6;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Investimento Riqueza <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Produção e venda de uma maior variedade de itens.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #9b59b6;">Detalhes do Empreendimento</h4>
+                            <ul class="details-list" style="margin-left: 40px; list-style-type: square;">
+                                <li><strong>Custo de Criação:</strong> ฿200.000.000</li>
+                                <li><strong>Limite de Faturamento:</strong> Até ฿300.000.000</li>
+                                <li><strong>Renda Semanal Automática:</strong> ฿60.000.000 aos domingos (caso não tenha feito vendas durante a semana).</li>
+                                <li><strong>Exportação:</strong> Indisponível. O comprador precisa ir até a ilha do Investimento.</li>
+                                <li><strong>Requisitos:</strong> 20 NPCs (eles serão deixados na ilha para manter o Investimento funcionando).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="category-container-box" style="color: #e67e22; border-color: #e67e22;">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Investimento Milionário <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Produção e venda de itens de alto valor.</p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #e67e22;">Detalhes do Empreendimento</h4>
+                            <ul class="details-list" style="margin-left: 40px; list-style-type: square;">
+                                <li><strong>Custo de Criação:</strong> ฿350.000.000</li>
+                                <li><strong>Limite de Faturamento:</strong> Até ฿450.000.000</li>
+                                <li><strong>Renda Semanal Automática:</strong> ฿100.000.000 aos domingos (caso não tenha feito vendas durante a semana).</li>
+                                <li><strong>Exportação:</strong> Disponível, mas restrita apenas dentro do Mar em que o Investimento foi feito.</li>
+                                <li><strong>Requisitos:</strong> 80 NPCs (eles serão deixados na ilha para manter o Investimento funcionando).</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="category-container-box exotic-container-box">
+                <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">Investimento Bilionário <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                    <section class="content-section">
+                        <div class="box-content" style="padding: 20px; background: var(--sidebar-bg); border: 1px solid var(--sidebar-border); border-radius: 12px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">Produção, venda e exportação de produtos premium do mais alto escalão global. <strong>Apenas um Investimento Bilionário pode ser feito por Mar.</strong></p>
+                            
+                            <h4 class="highlight-text" style="margin-bottom: 15px; font-size: 18px; color: #2ecc71;">Detalhes do Empreendimento</h4>
+                            <ul class="details-list" style="margin-left: 40px; list-style-type: square;">
+                                <li><strong>Custo de Criação:</strong> ฿500.000.000</li>
+                                <li><strong>Limite de Faturamento:</strong> Até ฿500.000.000</li>
+                                <li><strong>Renda Semanal Automática:</strong> ฿200.000.000 aos domingos (caso não tenha feito vendas durante a semana).</li>
+                                <li><strong>Exportação:</strong> Totalmente liberada. Disponível para qualquer Mar do mundo.</li>
+                                <li><strong>Requisitos:</strong> 300 NPCs (eles serão deixados na ilha) e, obrigatoriamente, a ilha deve estar localizada no <strong>Novo Mundo</strong>.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <section class="content-section">
+                <h2 class="title-quantico text-center" style="font-size: 28px; color: var(--accent-color); margin-bottom: 20px;">MELHORIAS DE INVESTIMENTO</h2>
+                <p style="text-align: center; margin-bottom: 30px; line-height: 1.6;">As Melhorias de Investimento são opções estratégicas que permitem expandir, fortalecer e aumentar os lucros da sua empresa. Elas vão desde a ampliação da exportação até a parceria com outros jogadores ou a promoção por artistas renomados. Essas melhorias podem ser aplicadas a qualquer investimento compatível, garantindo um crescimento ainda maior para o seu império comercial.</p>
+                
+                <div class="faq-box">
+                    <div class="faq-question">Divulgação por Celebridades</div>
+                    <div class="faq-answer">
+                        <p>A influência de um artista pode impulsionar suas empresas, aumentando os lucros por uma semana. Dependendo do nível de fama do artista, o bônus pode ser ainda maior. Ao contratar essa Melhoria, <strong>todas as suas empresas serão impulsionadas</strong>, não apenas uma. O valor da contratação será decidido de forma interpretativa pelo próprio artista.</p>
+                        <ul style="margin-top: 15px; margin-left: 40px;">
+                            <li><strong>Artista Iniciante:</strong> +25% de lucro.</li>
+                            <li><strong>Artista Conhecido:</strong> +50% de lucro.</li>
+                            <li><strong>Astro da Fama:</strong> +80% de lucro.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">Expansão de Exportação</div>
+                    <div class="faq-answer">
+                        <p>Amplie sua capacidade de exportação e importação para outro Mar, permitindo alcançar novos mercados e compradores em territórios mais distantes.</p>
+                        <ul style="margin-top: 15px; margin-left: 40px;">
+                            <li><strong>Custo:</strong> ฿300.000.000</li>
+                            <li><strong>Requisito:</strong> Possuir um Investimento Milionário ativo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">Parceria de Negócios</div>
+                    <div class="faq-answer">
+                        <p>Venda 50% da sua empresa para outro jogador e torne-o seu sócio corporativo. Com essa parceria, ambos os proprietários receberão um aumento significativo no alcance dos negócios. É proibido vender para membros do próprio grupo/tripulação.</p>
+                        <ul style="margin-top: 15px; margin-left: 40px;">
+                            <li><strong>Benefício:</strong> A empresa receberá um buff de <strong>+25% nos lucros totais</strong>, e o lucro rendido total será dividido em 50% para cada um dos sócios.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+            <section class="content-section">
+                <h2 class="title-quantico text-center" style="font-size: 28px; color: var(--accent-color); margin-bottom: 20px;">MELHORIAS ESPECÍFICAS</h2>
+                <p style="text-align: justify; margin-bottom: 30px; line-height: 1.6;">Ainda dentro da categoria de melhorias, existem expansões para certos tipos de edificações vitais (como laboratórios e forjas). Elas garantem saltos na tecnologia e qualidade dos materiais gerados pela sua empresa. É necessário passar por cada uma das etapas para alcançar o nível seguinte de desenvolvimento, então se quiser uma Forja Avançada, é necessário comprar a Ferraria por ฿100.000.000 e evoluir ela para Forja Intermediária por mais ฿250.000.000, e só então poderá evoluir para a Forja Avançada por mais ฿500.000.000.</p>
+
+                <div class="category-container-box" style="color: #e74c3c; border-color: #e74c3c;">
+                    <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">FERRARIA: FORJA <span class="toggle-icon">▼</span></div>
+                    <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                        <p style="margin-bottom: 25px; line-height: 1.6;">Sua forja não pode ficar parada para sempre! O mesmo martelo, a mesma bigorna, até a mesma temperatura de forno... seus materiais acabam envelhecendo e se inutilizando ao longo do tempo. É necessário evoluir sua estrutura conforme sua experiência cresce.</p>
+
+                        <div class="grau-box" style="border-left-color: #e74c3c;">
+                            <h4 class="grau-title" style="color: #e74c3c;">Forja Básica [Grau 1]</h4>
+                            <p>Sua forja está em nível básico. Você consegue usar ela para forjar usando metais leves e não tão resistentes, como Aço Carbono, por exemplo.</p>
+                            <p><strong>Materiais Suportados:</strong> Aço Carbono.</p>
+                            <p><strong>Custo:</strong> Gratuito (já incluso inicialmente com sua ferraria).</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #e74c3c;">
+                            <h4 class="grau-title" style="color: #e74c3c;">Forja Intermediária [Grau 2]</h4>
+                            <p>Sua forja agora se torna mais capaz, você consegue forjar agora materiais mais resistentes e poderosos, além de ganhar uma seção extra para adereços de arma, sessão essa que lhe possibilita criar as capacidades extras de armas específicas.</p>
+                            <p><strong>Materiais Suportados:</strong> Aço Carbono, Unobtainium.</p>
+                            <p><strong>Custo:</strong> ฿250.000.000</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #e74c3c;">
+                            <h4 class="grau-title" style="color: #e74c3c;">Forja Avançada [Grau 3]</h4>
+                            <p>Nesse nível você consegue forjar usando materiais ainda mais capazes, além de ter a capacidade de fundi-los (produzir Barra Damasco) e juntar recursos e conhecimento para forjar sua primeira arma de categoria Meitō.</p>
+                            <p><strong>Materiais Suportados:</strong> Aço Carbono, Barra Damasco, Beskar, Mithril, Unobtainium.</p>
+                            <p><strong>Custo:</strong> ฿500.000.000</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #e74c3c;">
+                            <h4 class="grau-title" style="color: #e74c3c;">Forja Épica [Grau 4]</h4>
+                            <p>Você já possui uma ferraria bem grande e movimentada, é relativamente conhecido na sua região e consegue forjar usando materiais quase perfeitos, além de ter a capacidade de fundi-los. Agora você consegue forjar armas Ryō Wazamono.</p>
+                            <p><strong>Materiais Suportados:</strong> Aço Carbono, Adamantium, Barra Damasco, Mithril, Unobtainium, Vibranium.</p>
+                            <p><strong>Bônus Passivo:</strong> Começa a ganhar +15% de rendimento pelo tamanho de seu empreendimento.</p>
+                            <p><strong>Custo:</strong> ฿1.000.000.000</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #e74c3c;">
+                            <h4 class="grau-title" style="color: #e74c3c;">Forja Lendária [Grau 5]</h4>
+                            <p>Praticamente já está ganho na vida. Sua ferraria já é bem conhecida entre os Blues e a primeira metade do Paraíso; tornar-se um lendário ferreiro está cada dia mais próximo. Sua forja está extremamente poderosa e atinge a temperatura perfeita. Agora você consegue forjar armas Ō Wazamono.</p>
+                            <p><strong>Materiais Suportados:</strong> Aço Carbono, Adamantium, Barra Damasco, Beskar, Kairoseki, Mithril, Unobtainium, Vibranium.</p>
+                            <p><strong>Bônus Passivo:</strong> Começa a ganhar +20% de rendimento pelo tamanho de seu empreendimento.</p>
+                            <p><strong>Importação:</strong> Consegue importar os metais diretamente para a ilha onde sua forja reside, com exceção de kairoseki.</p>
+                            <p><strong>Custo:</strong> ฿1.500.000.000</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #e74c3c;">
+                            <h4 class="grau-title" style="color: #e74c3c;">Forja Perfeita [Grau 6]</h4>
+                            <p>Sua forja agora é perfeita. Você tem tudo o que é necessário para se tornar um lendário ferreiro. Agora você consegue forjar as supremas armas Saijō Ō Wazamono.</p>
+                            <p><strong>Materiais Suportados:</strong> Todos.</p>
+                            <p><strong>Bônus Passivo:</strong> Começa a ganhar +30% de rendimento pelo tamanho de seu empreendimento.</p>
+                            <p><strong>Importação:</strong> Consegue importar os metais diretamente para a ilha onde sua forja reside.</p>
+                            <p><strong>Custo:</strong> ฿2.500.000.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-container-box" style="color: #2ecc71; border-color: #2ecc71;">
+                    <div class="sea-title toggle-title" style="cursor: pointer; font-size: 22px;">LABORATÓRIO: CENTRO DE PESQUISA <span class="toggle-icon">▼</span></div>
+                    <div class="toggle-content" style="margin-top: 20px; color: var(--text-color);">
+                        <p style="margin-bottom: 25px; line-height: 1.6;">Todo cientista que se preze possui um laboratório! É o lugar essencial para você realizar suas pesquisas e experimentos. Mas, assim como a forja de um mestre ferreiro, o seu laboratório precisa sempre inovar. Afinal, o ambiente que usa para pesquisar precisa acompanhar a evolução da sua genialidade.</p>
+
+                        <div class="grau-box" style="border-left-color: #2ecc71;">
+                            <h4 class="grau-title" style="color: #2ecc71;">Centro de Pesquisa Básico [Grau 1]</h4>
+                            <p>Seu laboratório é simples, montado com sucata, instrumentos básicos e reagentes limitados. Mesmo assim, sua genialidade compensa a falta de estrutura.</p>
+                            <p><strong>Custo:</strong> Gratuito (já incluso inicialmente com seu laboratório).</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #2ecc71;">
+                            <h4 class="grau-title" style="color: #2ecc71;">Centro de Pesquisa Intermediário [Grau 2]</h4>
+                            <p>Seu espaço agora é estruturado, com equipamentos refinados, área de testes e setor de manipulação química avançada. Você pode começar a produzir venenos.</p>
+                            <p><strong>Capacidade Científica:</strong> Consegue manipular materiais de <a href="loja-de-criadores.html">Categoria 1</a>.</p>
+                            <p><strong>Custo:</strong> ฿300.000.000</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #2ecc71;">
+                            <h4 class="grau-title" style="color: #2ecc71;">Centro de Pesquisa Avançado [Grau 3]</h4>
+                            <p>Seu laboratório agora possui câmaras de manipulação microscópica, incubadoras e setor genético. Agora você ultrapassa a ciência comum.</p>
+                            <p><strong>Capacidade Científica:</strong> Consegue manipular materiais de Categoria 1 e 2.</p>
+                            <p><strong>Custo:</strong> ฿600.000.000</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #2ecc71;">
+                            <h4 class="grau-title" style="color: #2ecc71;">Centro de Pesquisa Épico [Grau 4]</h4>
+                            <p>Seu nome já circula entre organizações científicas e governos. Seu laboratório é amplo, dividido em setores especializados. Você começa a manipular seres vivos de forma mais profunda.</p>
+                            <p><strong>Capacidade Científica:</strong> Consegue manipular materiais de Categoria 1, 2 e 3.</p>
+                            <p><strong>Bônus Passivo:</strong> Começa a ganhar +15% de rendimento pelo tamanho de seu empreendimento.</p>
+                            <p><strong>Custo:</strong> ฿1.200.000.000</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #2ecc71;">
+                            <h4 class="grau-title" style="color: #2ecc71;">Centro de Pesquisa Lendário [Grau 5]</h4>
+                            <p>Seu laboratório é referência entre os Blues e metade do Paraíso. Você é temido e respeitado. Sua ciência já desafia limites éticos e naturais.</p>
+                            <p><strong>Capacidade Científica:</strong> Consegue manipular materiais de Categoria 1, 2, 3 e 4.</p>
+                            <p><strong>Bônus Passivo:</strong> Começa a ganhar +20% de rendimento pelo tamanho de seu empreendimento.</p>
+                            <p><strong>Importação:</strong> Consegue importar os materiais diretamente para a ilha onde seu laboratório reside, com exceção de Materiais de Categoria Exótica.</p>
+                            <p><strong>Custo:</strong> ฿2.400.000.000</p>
+                        </div>
+
+                        <div class="grau-box" style="border-left-color: #2ecc71;">
+                            <h4 class="grau-title" style="color: #2ecc71;">Centro de Pesquisa Perfeito [Grau 6]</h4>
+                            <p>Seu laboratório é considerado o ápice do conhecimento científico. Você está a um passo de se tornar uma lenda viva. Seu laboratório pode gerar clones e seres biologicamente modificados.</p>
+                            <p><strong>Capacidade Científica:</strong> Consegue manipular materiais de Categoria 1, 2, 3 e 4.</p>
+                            <p><strong>Bônus Passivo:</strong> Começa a ganhar +30% de rendimento pelo tamanho de seu empreendimento.</p>
+                            <p><strong>Importação:</strong> Consegue importar os materiais diretamente para a ilha onde seu laboratório reside.</p>
+                            <p><strong>Custo:</strong> ฿4.800.000.000</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

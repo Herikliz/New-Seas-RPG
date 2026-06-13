@@ -305,8 +305,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="criacao-de-meitos.html">CRIAÇÃO DE MEITŌS</a></li>
                     <li><a href="descoberta-de-artefatos.html">DESCOBERTA DE ARTEFATOS</a></li>
                     <li><a href="dominacoes.html">DOMINAÇÕES</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/investimento">INVESTIMENTO</a></li>
-                    <li><a href="https://sites.google.com/view/new-seas-op/mecânicas-do-rpg/sangue">SANGUE</a></li>
+                    <li><a href="investimento.html">INVESTIMENTO</a></li>
+                    <li><a href="sangue.html">SANGUE</a></li>
                 </ul>
             </li>
             <li><a href="https://sites.google.com/view/new-seas-op/regras">REGRAS</a></li>
