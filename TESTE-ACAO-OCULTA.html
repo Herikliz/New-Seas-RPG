@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ações Ocultas - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">AÇÕES OCULTAS (A.O.)</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <div class="rank-box" style="text-align: center;">
+                    <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">O QUE SÃO AÇÕES OCULTAS?</h4>
+                    <p style="margin-bottom: 15px;">As Ações Ocultas (A.O.) são ações realizadas por um personagem sem que os demais jogadores tenham conhecimento delas. Ao utilizar uma Ação Oculta, o jogador não descreve a ação em sua cena; em vez disso, envia a ação diretamente para um ADM através do privado.</p>
+                    <p style="margin-bottom: 0;">O objetivo desse sistema é representar situações onde um personagem realiza algo discretamente, escondido ou impossível de ser percebido de imediato pelos demais presentes na cena.</p>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    REGRAS GERAIS <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 10px;">Toda Ação Oculta deve ser enviada para um ADM antes ou junto da postagem <strong>(Tolerância de 15 minutos)</strong>.</li>
+                        <li style="margin-bottom: 10px;">O ADM registrará a ação e verificará sua validade.</li>
+                        <li style="margin-bottom: 10px;">A ação permanecerá secreta até que seja descoberta, ativada ou produza consequências.</li>
+                        <li style="margin-bottom: 10px;">Jogadores não podem agir com conhecimento que seus personagens não possuem.</li>
+                        <li style="margin-bottom: 10px;">Metagaming envolvendo Ações Ocultas pode resultar em punição severa.</li>
+                    </ul>
+
+                    <div class="info-box" style="text-align: left; padding: 20px; border: 1px solid var(--accent-color); border-radius: 8px; background: rgba(0, 0, 0, 0.2);">
+                        <h4 class="highlight-text" style="font-size: 18px; margin-bottom: 10px;">A Importância do Contexto</h4>
+                        <p style="margin-bottom: 10px;">É muito importante que a cena pública tenha contexto e sentido, um bom contexto. Quanto melhor o contexto, mais fácil e maiores as chances de sua cena A.O. ser aprovada pela administração.</p>
+                        <p style="margin-bottom: 0;">Por essa razão, determinamos um <strong>mínimo de 1.000 caracteres</strong> para fazer uma cena pública referente a uma A.O., mencionando coisas para o contexto como onde seu personagem está, com quem está, como está vestido e as interações do ambiente.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    EXEMPLOS DE AÇÕES OCULTAS <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Esconder uma arma</h4>
+                        <p style="margin-bottom: 8px;">O personagem pode esconder uma adaga sob a roupa sem mencionar isso na cena.</p>
+                        <ul style="margin-left: 20px; list-style-type: none;">
+                            <li style="margin-bottom: 5px;">🗣️ <strong>Cena Pública:</strong> "Enquanto eu andava até a reunião, ajeitava meu casaco."</li>
+                            <li style="margin-bottom: 5px;">📩 <strong>A.O. Enviada:</strong> "Antes de entrar na reunião, escondo uma adaga na manga esquerda do casaco."</li>
+                        </ul>
+                    </div>
+                    
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Preparar uma armadilha</h4>
+                        <ul style="margin-left: 20px; list-style-type: none;">
+                            <li style="margin-bottom: 5px;">🗣️ <strong>Cena Pública:</strong> "Durante a conversa, vasculhava algumas caixas próximas."</li>
+                            <li style="margin-bottom: 5px;">📩 <strong>A.O. Enviada:</strong> "Enquanto vasculhava, deixei um fio de aço preso atrás das caixas."</li>
+                        </ul>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 15px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Roubar um objeto</h4>
+                        <ul style="margin-left: 20px; list-style-type: none;">
+                            <li style="margin-bottom: 5px;">🗣️ <strong>Cena Pública:</strong> "Me aproximei de você de forma calorosa, apertando sua mão e o puxando para um abraço."</li>
+                            <li style="margin-bottom: 5px;">📩 <strong>A.O. Enviada:</strong> "Durante o aperto de mãos, tento retirar a chave do bolso dele."</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    LIMITAÇÕES E DESCOBERTAS <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 15px;">O Que Não Pode Ser A.O.</h4>
+                        <p style="margin-bottom: 15px;">Algumas ações são visíveis demais para serem ocultadas. Se uma ação pode ser claramente percebida pelos presentes, ela deve ser descrita normalmente na cena. Exemplos proibidos:</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;">❌ Sacar uma espada diante de todos</li>
+                            <li style="margin-bottom: 8px;">❌ Gritar uma ordem</li>
+                            <li style="margin-bottom: 8px;">❌ Atacar alguém diretamente</li>
+                            <li style="margin-bottom: 8px;">❌ Usar uma técnica extremamente chamativa</li>
+                            <li style="margin-bottom: 8px;">❌ Destruir um objeto na frente de outras pessoas</li>
+                        </ul>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 15px;">Descobrindo uma A.O.</h4>
+                        <p style="margin-bottom: 15px;">Uma Ação Oculta não é automaticamente perfeita. O ADM poderá permitir que outros personagens percebam a ação caso possuam vantagens adequadas, como:</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;">Possuir <strong>Haki da Observação</strong> ativo.</li>
+                            <li style="margin-bottom: 8px;">Estarem observando de forma nítida o suspeito no momento da ação (é importante que isso seja feito sem que haja metagaming).</li>
+                            <li style="margin-bottom: 8px;">Se o contexto construído para a A.O. for fraco ou mal elaborado.</li>
+                        </ul>
+                        <p style="margin-bottom: 0;">Caso alguém tenha condições plausíveis de notar a ação, o ADM poderá solicitar testes, comparações de atributos ou simplesmente informar a descoberta.</p>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 15px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 15px;">A.O. em Combate</h4>
+                        <p style="margin-bottom: 15px;">Durante combates, Ações Ocultas são permitidas apenas para situações plausíveis.</p>
+                        <ul style="margin-left: 40px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 5px;">✅ Esconder uma segunda arma</li>
+                            <li style="margin-bottom: 5px;">✅ Preparar um item para uso posterior</li>
+                            <li style="margin-bottom: 5px;">✅ Posicionar discretamente um cabo ou armadilha</li>
+                            <li style="margin-bottom: 15px;">✅ Fazer sinais secretos para aliados</li>
+                            <li style="margin-bottom: 5px;">❌ "Ataquei sem ninguém ver."</li>
+                            <li style="margin-bottom: 5px;">❌ "Usei uma técnica e ninguém percebeu."</li>
+                            <li style="margin-bottom: 5px;">❌ "Matei o inimigo em segredo."</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    REGISTRO E BOM SENSO <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Registro Administrativo</h4>
+                        <p style="margin-bottom: 15px;">Toda Ação Oculta enviada fica registrada pelo ADM responsável. Quando a ação gerar resultado, o ADM poderá revelar publicamente na cena:</p>
+                        <p style="margin-bottom: 10px; padding-left: 20px; border-left: 3px solid var(--accent-color);"><em>"AÇÃO OCULTA REVELADA: Três turnos atrás, o personagem havia escondido uma bomba sob a ponte do navio."</em></p>
+                        <p style="margin-bottom: 0; padding-left: 20px; border-left: 3px solid var(--accent-color);"><em>"AÇÃO OCULTA REVELADA: O personagem retirou discretamente a chave do carcereiro durante a conversa anterior."</em></p>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Regra de Bom Senso</h4>
+                        <p style="margin-bottom: 15px;">O sistema de Ações Ocultas existe para criar estratégias, espionagem, mistérios e reviravoltas. Ele <strong>não existe</strong> para tornar personagens invisíveis, oniscientes ou impossíveis de serem descobertos.</p>
+                        <p style="margin-bottom: 15px;">Quanto mais absurda for a ação, maiores serão as exigências de contexto e qualidade narrativa, ou a necessidade de habilidades específicas e aprovação rigorosa da administração.</p>
+                        <p style="margin-bottom: 15px;">Se o personagem poderia fazer sem que todos percebam imediatamente, pode ser uma Ação Oculta. Se todos veriam acontecer, deve ser postado normalmente na cena. Usem o bom senso; se não tiverem, ao menos tentem.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
