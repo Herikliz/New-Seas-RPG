@@ -904,8 +904,25 @@ function verificarTrabalho() {
     let textarea = document.getElementById('info-sceneText');
     let tiposFeitos = Array.from(document.querySelectorAll('.tipo-feito:checked')).map(cb => cb.value);
 
-    let reqPontos = { "1": 1000, "2": 2500, "3": 5000 };
-    let reqPontosFormatados = { "1": "1.000", "2": "2.500", "3": "5.000" };
+    let reqPontos = { "1": 1000, "2": 2500, "3": 5000, "4": 15000 };
+    let reqPontosFormatados = { "1": "1.000", "2": "2.500", "3": "5.000", "4": "15.000" };
+
+    let palavraPonto = pontos === 1 ? "ponto" : "pontos";
+
+    for (let feito of tiposFeitos) {
+        if (pontos < reqPontos[feito]) {
+            resultadoEl.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
+            resultadoEl.style.border = "1px dashed var(--danger)";
+            resultadoEl.style.color = "var(--danger)";
+            resultadoEl.innerHTML = "Amigão, se você tem " + pontos.toLocaleString('pt-BR') + " " + palavraPonto + ", não tem como ter feito o Trabalho Tipo " + feito + ", porque precisa ter no mínimo " + reqPontosFormatados[feito] + " pontos pra fazer ele.";
+            resultadoEl.classList.add("active");
+            if (textarea) {
+                textarea.disabled = true;
+                updateTextareaStats(textarea);
+            }
+            return;
+        }
+    }
 
     if (tiposFeitos.includes(tipoDesejado)) {
         resultadoEl.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
@@ -924,7 +941,7 @@ function verificarTrabalho() {
         resultadoEl.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
         resultadoEl.style.border = "1px dashed var(--danger)";
         resultadoEl.style.color = "var(--danger)";
-        resultadoEl.innerHTML = "Negado. O Trabalho Tipo " + tipoDesejado + " exige que você tenha no mínimo " + reqPontosFormatados[tipoDesejado] + " pontos acumulados. Atualmente, você possui apenas " + pontos.toLocaleString('pt-BR') + " pontos.";
+        resultadoEl.innerHTML = "Negado. O Trabalho Tipo " + tipoDesejado + " exige que você tenha no mínimo " + reqPontosFormatados[tipoDesejado] + " pontos acumulados. Atualmente, você possui apenas " + pontos.toLocaleString('pt-BR') + " " + palavraPonto + ".";
         resultadoEl.classList.add("active");
         if(textarea) {
             textarea.disabled = true;
@@ -959,7 +976,7 @@ function updateTextareaStats(textarea) {
 
     const tipoDesejadoEl = document.getElementById('tipo-desejado');
     if (tipoDesejadoEl && textarea.id === 'info-sceneText') {
-        let typeMin = { "1": 1200, "2": 1800, "3": 3000 };
+        let typeMin = { "1": 1200, "2": 1800, "3": 3000, "4": 9000 };
         minC = typeMin[tipoDesejadoEl.value] || minC;
     }
 
@@ -3289,3 +3306,102 @@ if (document.readyState === 'loading') {
         }
     });
 })();
+
+function updateMedTextareaStats(textarea) {
+    if (!textarea) return;
+    const wrapper = textarea.closest('.verificador-box');
+    if (!wrapper) return;
+    let sceneTxt = textarea.value;
+    let sChars = sceneTxt.length;
+    let sParas = sceneTxt.trim() === "" ? 0 : sceneTxt.split(/\n+/).filter(p => p.trim().length > 0).length;
+    const tipoEl = document.getElementById('med-tipo-calculadora');
+    const containerTratamento = document.getElementById('med-container-tratamento');
+    let minChars = 500;
+    if (tipoEl && tipoEl.value === 'tratamento') {
+        if (containerTratamento) containerTratamento.style.display = 'grid';
+        const ferimentoEl = document.getElementById('med-nivel-ferimento');
+        const medicoEl = document.getElementById('med-nivel-medico');
+        let baseChars = 600;
+        if (ferimentoEl) baseChars = parseInt(ferimentoEl.value) || 600;
+        let reduction = 0;
+        if (medicoEl) reduction = parseInt(medicoEl.value) || 0;
+        minChars = Math.ceil(baseChars * (1 - (reduction / 100)));
+    } else {
+        if (containerTratamento) containerTratamento.style.display = 'none';
+    }
+    let charsEl = wrapper.querySelector('.scene-chars');
+    let parasEl = wrapper.querySelector('.scene-paras');
+    let statusEl = wrapper.querySelector('.scene-status');
+    if(charsEl) charsEl.textContent = sChars.toLocaleString('pt-BR');
+    if(parasEl) parasEl.textContent = sParas.toLocaleString('pt-BR');
+    if(statusEl) {
+        if (sChars >= minChars) { 
+            statusEl.textContent = "(✔️ Alcançou o mínimo de " + minChars.toLocaleString('pt-BR') + " caracteres)"; 
+            statusEl.style.color = "#4caf50"; 
+        } else { 
+            let faltam = minChars - sChars;
+            statusEl.textContent = "(❌ Faltam " + faltam.toLocaleString('pt-BR') + " caracteres)"; 
+            statusEl.style.color = "#f44336"; 
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const medTextarea = document.getElementById('med-sceneText');
+    if (medTextarea) {
+        medTextarea.addEventListener('input', function() {
+            updateMedTextareaStats(this);
+        });
+        updateMedTextareaStats(medTextarea);
+    }
+    document.querySelectorAll('.auto-calc-med').forEach(select => {
+        select.addEventListener('change', () => {
+            let textarea = document.getElementById('med-sceneText');
+            if (textarea) updateMedTextareaStats(textarea);
+        });
+    });
+
+    const hakiInput = document.getElementById('haki-rei-pontos');
+    const hakiResultado = document.getElementById('haki-rei-alcance');
+    if (hakiInput && hakiResultado) {
+        hakiInput.addEventListener('input', function(e) {
+            let rawValue = this.value.replace(/\D/g, '');
+            if (rawValue === '') {
+                this.value = '';
+                hakiResultado.textContent = "0 m";
+                return;
+            }
+            let pontos = parseInt(rawValue, 10);
+            this.value = pontos.toLocaleString('pt-BR');
+            let metros = pontos / 10;
+            if (metros >= 1000) {
+                let km = metros / 1000;
+                hakiResultado.textContent = km.toLocaleString('pt-BR', { maximumFractionDigits: 2 }) + " km (" + metros.toLocaleString('pt-BR') + "m)";
+            } else {
+                hakiResultado.textContent = metros.toLocaleString('pt-BR') + "m";
+            }
+        });
+    }
+
+    const calcHpTotal = document.getElementById('calc-hp-total');
+    const calcTipoFerimento = document.getElementById('calc-tipo-ferimento');
+    const calcHpLimite = document.getElementById('calc-hp-limite');
+    
+    function updateHpLimite() {
+        if (!calcHpTotal || !calcTipoFerimento || !calcHpLimite) return;
+        let rawValue = calcHpTotal.value.replace(/\D/g, '');
+        if (rawValue === '') {
+            calcHpTotal.value = '';
+            calcHpLimite.textContent = '0';
+            return;
+        }
+        let hpTotal = parseInt(rawValue, 10);
+        calcHpTotal.value = hpTotal.toLocaleString('pt-BR');
+        let multiplicador = parseFloat(calcTipoFerimento.value);
+        let hpLimite = Math.floor(hpTotal * multiplicador);
+        calcHpLimite.textContent = hpLimite.toLocaleString('pt-BR');
+    }
+
+    if (calcHpTotal) calcHpTotal.addEventListener('input', updateHpLimite);
+    if (calcTipoFerimento) calcTipoFerimento.addEventListener('change', updateHpLimite);
+});

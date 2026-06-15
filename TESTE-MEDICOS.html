@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicina e Ferimentos - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">MEDICINA E FERIMENTOS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <div class="rank-box" style="text-align: center;">
+                    <p style="margin-bottom: 0;">Após a conclusão de combates em ON, eventos, caçadas ou dominações, a severidade dos danos sofridos pelos personagens será avaliada e ditada pela narrativa. Os ferimentos recebidos impõem limitações diretas à integridade física do combatente, reduzindo temporariamente o seu teto máximo de vitalidade.</p>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    SISTEMA DE FERIMENTOS <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 20px;">Cada nível de ferimento estabelece um teto máximo para o HP do personagem ou NPC afetado. Esse teto atua como um debuff persistente até que a cura completa seja efetuada:</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 10px;"><strong>Ferimentos Leves:</strong> Limitam o personagem a um teto máximo de <strong>90% do HP total</strong>.</li>
+                        <li style="margin-bottom: 10px;"><strong>Ferimentos Moderados:</strong> Limitam o personagem a um teto máximo de <strong>70% do HP total</strong>.</li>
+                        <li style="margin-bottom: 10px;"><strong>Ferimentos Graves:</strong> Limitam o personagem a um teto máximo de <strong>50% do HP total</strong>.</li>
+                        <li style="margin-bottom: 10px;"><strong>Ferimentos Fatais:</strong> Limitam o personagem a um teto máximo de <strong>30% do HP total</strong>.</li>
+                    </ul>
+
+                    <div class="verificador-box" style="padding: 20px; text-align: left; margin-bottom: 0;">
+                        <h4 class="verificador-title" style="text-align: left; margin-bottom: 15px;">CALCULADORA DE LIMITE DE HP</h4>
+                        <div class="calc-grid" style="margin-bottom: 15px;">
+                            <div class="input-group">
+                                <label for="calc-hp-total">HP Máximo Original</label>
+                                <input type="text" inputmode="numeric" id="calc-hp-total" placeholder="Ex: 20.000">
+                            </div>
+                            <div class="input-group">
+                                <label for="calc-tipo-ferimento">Nível do Ferimento</label>
+                                <select id="calc-tipo-ferimento">
+                                    <option value="0.9">Leve (Limita a 90%)</option>
+                                    <option value="0.7">Moderado (Limita a 70%)</option>
+                                    <option value="0.5">Grave (Limita a 50%)</option>
+                                    <option value="0.3">Fatal (Limita a 30%)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0; font-size: 16px;"><strong>HP Limite:</strong> <span id="calc-hp-limite" class="highlight-text">0</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    DIRETRIZES DE TRATAMENTO MÉDICO <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 25px;">O tratamento convencional exige a intervenção de um personagem da classe Médico. O procedimento demanda uma cena que impõe um período de repouso obrigatório para o paciente em ON. Estas cenas de repouso não geram impedimentos para a realização de outras obrigações semanais do jogador.</p>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ferimentos Leves</h4>
+                        <p style="margin-bottom: 8px;"><em>Definição: Cortes superficiais, escoriações, queimaduras leves ou torções.</em></p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 5px;"><strong>Requisitos:</strong> Médico de Nível 1 ou superior e porte de um Kit Médico.</li>
+                            <li style="margin-bottom: 5px;"><strong>Volume de Escrita:</strong> Mínimo de 600 caracteres na cena de atendimento.</li>
+                            <li style="margin-bottom: 5px;"><strong>Período de Recuperação:</strong> Exige a realização de 2 cenas de repouso em ON por parte do paciente.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ferimentos Moderados</h4>
+                        <p style="margin-bottom: 8px;"><em>Definição: Pequenas fraturas ósseas ou cortes profundos.</em></p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 5px;"><strong>Requisitos:</strong> Médico de Nível 2 ou superior e porte de um Kit Médico.</li>
+                            <li style="margin-bottom: 5px;"><strong>Volume de Escrita:</strong> Mínimo de 1.200 caracteres na cena de atendimento.</li>
+                            <li style="margin-bottom: 5px;"><strong>Período de Recuperação:</strong> Exige a realização de 3 cenas de repouso em ON por parte do paciente.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ferimentos Graves</h4>
+                        <p style="margin-bottom: 8px;"><em>Definição: Grandes fraturas, lacerações severas ou traumas extensos.</em></p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 5px;"><strong>Requisitos:</strong> Médico de Nível 3 ou superior e porte de um Kit Médico.</li>
+                            <li style="margin-bottom: 5px;"><strong>Volume de Escrita:</strong> Mínimo de 1.800 caracteres na cena de atendimento.</li>
+                            <li style="margin-bottom: 5px;"><strong>Período de Recuperação:</strong> Exige a realização de 4 cenas de repouso em ON por parte do paciente.</li>
+                        </ul>
+                    </div>
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Ferimentos Fatais</h4>
+                        <p style="margin-bottom: 8px;"><em>Definição: Lesões severas em órgãos vitais, hemorragias massivas ou queimaduras de terceiro grau.</em></p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 5px;"><strong>Requisitos:</strong> Médico de Nível 4 e acesso às instalações de um Investimento do tipo Hospital.</li>
+                            <li style="margin-bottom: 5px;"><strong>Volume de Escrita:</strong> Mínimo de 3.600 caracteres na cena de atendimento.</li>
+                            <li style="margin-bottom: 5px;"><strong>Período de Recuperação:</strong> Exige a realização de 6 cenas de repouso em ON por parte do paciente.</li>
+                        </ul>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 20px 0;">
+                    <div class="info-box" style="text-align: left; padding: 15px; background-color: rgba(211, 47, 47, 0.05); border: 1px solid var(--accent-color);">
+                        <p style="margin-bottom: 0;"><strong>Critério para Cenas de Repouso:</strong> Cada cena de repouso elaborada pelo paciente deve conter, obrigatoriamente, um tamanho mínimo de <strong>500 caracteres</strong> para ser considerada válida.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    BONIFICAÇÕES E MAESTRIA MÉDICA <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 20px;">À medida que o profissional da medicina avança em sua carreira, ele desenvolve métodos eficientes que otimizam o tempo de operação e tratamento:</p>
+
+                    <ul style="margin-left: 40px;">
+                        <li style="margin-bottom: 15px;"><strong>Nível 4:</strong> O conhecimento avançado concede uma <strong>redução de 15%</strong> na meta de caracteres obrigatórios de qualquer nível de atendimento. Adicionalmente, o médico ganha a permissão de sintetizar medicamentos e pílulas especiais, desde que obtenha os insumos necessários.</li>
+                        <li style="margin-bottom: 15px;"><strong>Nível 5:</strong> A maestria absoluta concede uma <strong>redução de 20%</strong> na meta de caracteres obrigatórios de seus atendimentos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    PRODUÇÃO DE MEDICAMENTOS E PÍLULAS <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Médicos devidamente qualificados podem pesquisar e manufaturar compostos químicos medicinais para aplicações em campo de batalha ou suporte logístico:</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Desenvolvimento de Fórmula:</strong> É necessário realizar o investimento de <strong>6 Treinos de Técnicas</strong> dedicados para consolidar a receita e os efeitos específicos de uma nova pílula ou remédio.</li>
+                        <li style="margin-bottom: 10px;"><strong>Rendimento de Manufatura:</strong> Cada ciclo de produção rende de <strong>5 a 10 unidades</strong> do medicamento, variando conforme os ingredientes empregados e a complexidade do efeito almejado.</li>
+                        <li style="margin-bottom: 10px;"><strong>Regulamentação:</strong> Todas as propriedades terapêuticas e bônus mecânicos criados devem passar pela aprovação prévia da administração do RPG. Efeitos abusivos ou desbalanceados serão sumariamente recusados, e os valores monetários ou raridade das matérias-primas serão estipulados por um administrador.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    SISTEMA DE AUTO-CURA E RECUPERAÇÃO AUTÔNOMA <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">Caso o combatente lesionado não disponha do amparo de um Médico em suas imediações, ele pode recorrer ao isolamento e repouso forçado para mitigar seus debuffs. Essa escolha representa uma estagnação no avanço de suas habilidades:</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Sacrifício de Progressão:</strong> O personagem deve usar seus <strong>Treinos de Técnicas</strong> semanais para estruturar a cura de seus ferimentos. Durante este período de convalescença, as cenas de repouso <strong>não concederão</strong> pontos e não serão contabilizadas para Treinos Acumulados.</li>
+                        <li style="margin-bottom: 10px;"><strong>Restrição Logística:</strong> Sob nenhuma hipótese será permitido o uso de Treinos Acumulados para liquidar condições de ferimento.</li>
+                        <li style="margin-bottom: 10px;"><strong>Custo em Treinos de Técnicas:</strong> A ausência de cuidados técnicos faz com que o corpo precise do <strong>dobro</strong> do tempo para se reestruturar. A tabela abaixo especifica o custo necessário para a reabilitação autônoma:</li>
+                    </ul>
+
+                    <div class="input-group" style="margin-top: 25px;">
+                        <div class="job-type-container">
+                            <h3>Tabela de Equivalência para Auto-Cura</h3>
+                            <ul>
+                                <li style="margin-bottom: 8px;"><strong>Ferimentos Leves:</strong> Gasto obrigatório de 4 Treinos de Técnicas</li>
+                                <li style="margin-bottom: 8px;"><strong>Ferimentos Moderados:</strong> Gasto obrigatório de 6 Treinos de Técnicas</li>
+                                <li style="margin-bottom: 8px;"><strong>Ferimentos Graves:</strong> Gasto obrigatório de 8 Treinos de Técnicas</li>
+                                <li style="margin-bottom: 8px;"><strong>Ferimentos Fatais:</strong> Gasto obrigatório de 12 Treinos de Técnicas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    VERIFICADOR DE TRATAMENTO <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div class="verificador-box" style="margin-bottom: 0;">
+                        <h3 class="verificador-title">VERIFICADOR DE CENAS</h3>
+                        
+                        <div class="input-group" style="margin-bottom: 20px;">
+                            <label for="med-tipo-calculadora">Tipo de Cena</label>
+                            <select id="med-tipo-calculadora" class="auto-calc-med">
+                                <option value="tratamento">Tratamento Médico</option>
+                                <option value="repouso">Cena de Repouso</option>
+                            </select>
+                        </div>
+
+                        <div id="med-container-tratamento" class="calc-grid" style="margin-bottom: 20px;">
+                            <div class="input-group">
+                                <label for="med-nivel-ferimento">Nível do Ferimento</label>
+                                <select id="med-nivel-ferimento" class="auto-calc-med">
+                                    <option value="600">Leve (600 Caracteres)</option>
+                                    <option value="1200">Moderado (1.200 Caracteres)</option>
+                                    <option value="1800">Grave (1.800 Caracteres)</option>
+                                    <option value="3600">Fatal (3.600 Caracteres)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="med-nivel-medico">Nível do Médico</label>
+                                <select id="med-nivel-medico" class="auto-calc-med">
+                                    <option value="0">Nível 1 a 3 (0% de Redução)</option>
+                                    <option value="15">Nível 4 (15% de Redução)</option>
+                                    <option value="20">Nível 5 (20% de Redução)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <textarea id="med-sceneText" class="contador-textarea" rows="10" placeholder="Escreva a sua cena aqui..."></textarea>
+                        
+                        <div class="stats-bar">
+                            <span>Caracteres: <span class="scene-chars">0</span></span>
+                            <span>Parágrafos: <span class="scene-paras">0</span></span>
+                            <span class="scene-status" style="color: #f44336;">(❌ Faltam caracteres)</span>
+                        </div>
+
+                        <button class="btn-copiar-contador">Copiar Cena</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
