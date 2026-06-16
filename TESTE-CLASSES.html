@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico">CLASSES</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p class="highlight-text"><a href="https://herikliz.github.io/New-Seas-RPG-Ficha/" style="color: inherit; text-decoration: none;">CLIQUE AQUI PARA TER ACESSO À FICHA AUTOMÁTICA</a></p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="highlight-text toggle-title rank-title" style="font-size: 24px; text-align: center; margin-bottom: 25px;">NÍVEIS E EVOLUÇÕES DE CLASSE <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;"><strong>Todas as Classes concedem estilos de luta específicos, permitindo que você selecione apenas um deles no momento da criação da ficha.</strong></p>
+                    
+                    <p style="margin-bottom: 15px;">A progressão de Classes funciona com um <strong>Sistema de Proficiência de Classe</strong>, que representa o quanto seu personagem domina uma determinada vocação, seja ela Primária, Secundária ou até mesmo Terciária.</p>
+                    
+                    <p style="margin-bottom: 15px;">Cada Classe evolui separadamente, de acordo com os pontos de atributos investidos no personagem como um todo. A proficiência é dividida em cinco níveis cruciais:</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Nível 1 (INICIAL):</strong> O personagem tem um conhecimento básico da Classe, sabendo fazer apenas o essencial.</li>
+                        <li style="margin-bottom: 10px;"><strong>Nível 2 (5.000):</strong> O personagem já entende melhor a Classe e pode executar técnicas mais impactantes e estratégicas.</li>
+                        <li style="margin-bottom: 10px;"><strong>Nível 3 (10.000):</strong> Aqui, o personagem já demonstra domínio sólido, sendo capaz de utilizar a Classe com eficiência em diferentes situações.</li>
+                        <li style="margin-bottom: 10px;"><strong>Nível 4 (20.000 + Feito Narrativo):</strong> Este Nível representa o status de mestre na Classe. A partir desta etapa, o avanço deixa de ser puramente numérico e passa a exigir marcos narrativos conquistados em ON.</li>
+                        <li style="margin-bottom: 10px;"><strong>Nível 5 (35.000 + Feito Narrativo):</strong> O ápice. O personagem atinge o patamar de expert absoluto e referência histórica em sua vocação, exigindo feitos de proporções monumentais para consagrá-lo. Todos os níveis de classe possuem um nome, com exceção do Nível 5, que é o próprio jogador que escolhe seu título de supremo na própria Classe.</li>
+                    </ul>
+
+                    <p style="margin-bottom: 15px;">Essa progressão não é puramente quantitativa. Do Nível 1 ao Nível 3, ao atingir a pontuação necessária, o personagem deve realizar 4 treinos para subir de nível. No entanto, para alcançar os <strong>Níveis 4 e 5</strong>, o jogador deverá escolher um dos <strong>"Caminhos de Evolução"</strong> estipulados na sua respectiva classe e realizar um feito grandioso em ON. Esse feito deverá ser coerente com sua profissão e, posteriormente, validado por um Narrador ou ADM, além do requerimento de pontos.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 40px;">
+                        <li style="margin-bottom: 10px;"><strong>Exemplo:</strong> Assim que cria sua ficha, você escolhe uma Classe de Nível 1. Aos 5.000 pontos, pode evoluir para Nível 2 ou obter uma Secundária Nível 1. Aos 10.000 pontos, pode avançar para o Nível 3. Aos 20.000 pontos, ao invés de apenas pagar com treinos, você precisará cumprir um <strong>Feito Narrativo</strong> para se tornar Nível 4, ou então treinar para adquirir uma Quaternária de Nível 1. Dessa forma, caso o jogador evite responsabilidades interpretativas, ele pode continuar sempre no Nível 1 ou 2 de várias classes, sendo o famoso "faz tudo, mas mestre em nada".</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #8B4513;">Arqueólogo <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Arqueólogo.png" alt="Arqueólogo" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Você é um estudioso das civilizações antigas. Seu conhecimento envolve história, arqueologia, ruínas e artefatos. Desde o início, consegue identificar itens básicos, interagir com estruturas antigas e analisar documentos deteriorados. A Classe Arqueólogo é voltada para a exploração do passado e descoberta de conhecimentos esquecidos.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Instinto Animal</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #8B4513;">Nível 1: Aprendiz de Arqueologia <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você, como um historiador, consegue reconhecer padrões históricos assim como relacionar acontecimentos do passado com pessoas ou locais que já existem. Sua habilidade de análise ainda é de um iniciante, mas você começa a despertar o interesse de estudiosos ou habitantes locais.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue formular teorias com base em registros incompletos;</li>
+                                <li style="margin-bottom: 8px;">Ganha bônus narrativo ao interagir com nativos e estudiosos dependendo do método de linguagem utilizado com eles e comportamento em relação a sua cultura;</li>
+                                <li style="margin-bottom: 8px;">Recebe pedidos de instituições para investigar artefatos (um ADM irá lhe avisar caso receba comissão, não adianta ficar indo no privado para pedir comissão);</li>
+                                <li style="margin-bottom: 8px;">Tem a capacidade de interpretar ruínas e estruturas antigas, demorando de duas a cinco cenas (dependendo da complexidade) pra formular uma teoria ou suposição do que talvez possa ter ocorrido ali;</li>
+                                <li style="margin-bottom: 8px;">Tem a capacidade de traçar rotas históricas.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #8B4513;">Nível 2: Historiador <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Seu domínio sobre línguas mortas e escritas antigas se destaca. Você passa a atuar como um tradutor especializado em inscrições e documentos enigmáticos, além de poder transmitir esse conhecimento a outros.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ajuda a traduzir inscrições, códigos e tratados antigos, demorando cerca de 2 a 3 cenas para conseguir completar a tradução de um modo que fique claro o que está escrito;</li>
+                                <li style="margin-bottom: 8px;">Pode agir como linguista durante investigações arqueológicas, no entanto, ainda não é tão experiente. 3 cenas em contato com nativos e você saberá 60% da tradução de suas palavras;</li>
+                                <li style="margin-bottom: 8px;">Pode decifrar idiomas extintos com estudo contínuo (exceto Poneglyphs).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #8B4513;">Nível 3: Mestre de Artefatos <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Sua fama cresce entre instituições de prestígio. Você se torna referência em autenticação e restauração de relíquias, e ganha acesso a novos recursos relacionados à preservação e exposição de itens históricos.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Domina completamente a arte da linguística agora, exigindo apenas uma cena pra qualquer coisa relacionada a tradução de línguas antigas (exceto Poneglyphs);</li>
+                                <li style="margin-bottom: 8px;">Pode abrir uma galeria de descobertas e expor suas relíquias lá. A galeria funciona como um empreendimento e você tem liberdade total para pôr o que quiser lá, contanto que faça sentido com o intuito da instituição. Ganhos poderão ser influenciados com a qualidade e tipo das relíquias expostas;</li>
+                                <li style="margin-bottom: 8px;">Pode autenticar artefatos e assinar para aumentar o valor de venda;</li>
+                                <li style="margin-bottom: 8px;">Pode restaurar parcialmente documentos, esculturas e objetos antigos, aumentando muito mais seu valor por ser a redescoberta de uma relíquia antiga;</li>
+                                <li style="margin-bottom: 8px;">Tem a capacidade de estudar a história e segredos ocultos em relíquias achadas por aí. Caso um valor histórico seja computado por esse artefato, seu valor aumenta em até 15% dependendo da notabilidade.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #8B4513;">Nível 4: Dominante da História <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(139, 69, 19, 0.05); border-left: 4px solid #8B4513; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #8B4513; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Desbravador:</strong> Liderar uma expedição para escavar e explorar completamente um sítio arqueológico perdido, mapeando suas câmaras e recuperando um artefato de inestimável valor histórico.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Decifrador:</strong> Resolver um mistério histórico de longa data conectando três ou mais artefatos ou escrituras antigas, provando de forma inegável uma nova teoria sobre uma civilização extinta.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Protetor:</strong> Proteger um sítio arqueológico vital da destruição, negociando com forças invasoras ou organizando uma defesa impecável que resulte na preservação do local.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você domina a prática arqueológica em campo e a leitura precisa de artefatos. Sua influência aumenta, e seus conhecimentos despertam o interesse de grupos poderosos e figuras influentes.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Identifica a origem exata de artefatos apenas por seu estilo e material;</li>
+                                <li style="margin-bottom: 8px;">Interpreta artefatos danificados ou incompletos sem problema algum e consegue os restaurar facilmente;</li>
+                                <li style="margin-bottom: 8px;">Pode liderar escavações e teorizar com precisão histórica. As escavações podem lhe render dinheiro dependendo do local escavado e qualidade do material de escavação;</li>
+                                <li style="margin-bottom: 8px;">Recebe convites de governos, nobres ou revolucionários para serviços.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #8B4513;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(139, 69, 19, 0.05); border-left: 4px solid #8B4513; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #8B4513; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Leitor de Poneglyphs:</strong> Decifrar e conectar com sucesso dois ou mais Poneglyphs, revelando uma informação inédita e crucial sobre o Século Perdido ou uma Arma Ancestral.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Construtor de Teorias:</strong> Apresentar uma teoria revolucionária sobre a história do mundo que seja aceita e absorvida por grandes instituições, mudando permanentemente o entendimento histórico de toda a região.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Legado Antigo:</strong> Encontrar e ativar um artefato ou maquinário lendário que exija profundo conhecimento arqueológico, desbloqueando saberes que haviam sido apagados pelo tempo.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você atinge o ápice da arqueologia. Agora é capaz de compreender os Poneglyphs e desvendar segredos profundos do mundo. Suas descobertas podem mudar a história (ou esconder a verdade dela).</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Cria teorias válidas sobre o século perdido e armas ancestrais;</li>
+                                <li style="margin-bottom: 8px;">Enxerga passagens e mensagens ocultas em qualquer ilha ou estrutura;</li>
+                                <li style="margin-bottom: 8px;">Pode aprender a ler Poneglyphs com especialistas;</li>
+                                <li style="margin-bottom: 8px;">Pode falsificar ou ocultar registros históricos deliberadamente;</li>
+                                <li style="margin-bottom: 8px;">Pode ser caçado, protegido ou observado por grupos secretos por saber demais.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #FF00FF;">Artista <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Artista.png" alt="Artista" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Você é alguém com talento nato para a expressão visual, performática ou literária. Desde cedo, transforma ideias em quadros, peças teatrais, esculturas ou livros. Sua arte começa a ganhar forma e passa a impactar o mundo ao seu redor, seja como registro de eventos, inspiração para os outros ou símbolo de identidade de um grupo.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Armadilha de Cores</i> | <i>Escultura de Forma</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF00FF;">Nível 1: Ilustrador <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Sua arte começa a contar histórias com força. Você registra memórias, dramatiza batalhas, pinta momentos importantes e cria obras que fortalecem os laços da tripulação. Seu estilo se torna reconhecível e sua criatividade começa a gerar impacto real.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Cria quadros, esculturas, peças ou livros com valor simbólico;</li>
+                                <li style="margin-bottom: 8px;">Desenvolve um estilo próprio perceptível por outros personagens;</li>
+                                <li style="margin-bottom: 8px;">Gera bônus sociais leves ao representar eventos vividos;</li>
+                                <li style="margin-bottom: 8px;">Inspira, acalma ou intimida NPCs por meio de arte;</li>
+                                <li style="margin-bottom: 8px;">Produz itens que reforçam a narrativa e identidade do grupo.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF00FF;">Nível 2: Empresário <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Sua arte conquista espaço e reconhecimento. Você abre seu próprio ateliê, galeria, teatro ou espaço criativo, movimentando cultura e economia em locais por onde passa.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Atrai aprendizes, apoiadores e patrocínios narrativos;</li>
+                                <li style="margin-bottom: 8px;">Aumenta sua influência social em regiões onde atua;</li>
+                                <li style="margin-bottom: 8px;">Pode definir movimentos artísticos, estilos ou tendências com seu nome;</li>
+                                <li style="margin-bottom: 8px;">Realiza eventos que atraem público e geram prestígio ou renda [até 100.000.000 por evento dependendo de sua qualidade de planejamento. Fazer planejamento com os ADMs. Apenas três vezes ao mês].</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF00FF;">Nível 3: Estilista de Mil Faces <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você domina o poder da transformação. Disfarces, figurinos, interpretação e encenação se tornam ferramentas refinadas nas suas mãos, permitindo mudar rostos, papéis e até histórias inteiras.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Cria encenações e farsas complexas com realismo total;</li>
+                                <li style="margin-bottom: 8px;">Ganha bônus em infiltrações, manipulação e fraudes sociais;</li>
+                                <li style="margin-bottom: 8px;">Realiza disfarces convincentes com aparência, voz e gestos de qualquer raça;</li>
+                                <li style="margin-bottom: 8px;">Transforma aliados em novas personas com papéis narrativos específicos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF00FF;">Nível 4: Escultor de Símbolos <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 0, 255, 0.05); border-left: 4px solid #FF00FF; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FF00FF; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Grande Farsa:</strong> Utilize sua arte da transformação para realizar uma infiltração, sabotagem ou fraude em larga escala, enganando uma figura de autoridade ou uma organização inteira.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Inspiração Coletiva:</strong> Crie uma obra de arte ou espetáculo tão estonteante que inspire uma ação em massa (como o estopim de um movimento ou a defesa inabalável de uma vila).</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Empreendedor Artístico:</strong> Expanda e popularize seu ateliê, galeria ou teatro a ponto de torná-lo referência cultural consolidada em pelo menos três ilhas distintas.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Sua arte se torna símbolo de ideias maiores. Monumentos, peças ou livros criados por você começam a representar eras, ideologias ou causas. A cultura passa a ser moldada pelas suas mãos.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Altera a reputação pública de lugares, pessoas ou eventos;</li>
+                                <li style="margin-bottom: 8px;">Cria obras com peso político, histórico ou cultural profundo;</li>
+                                <li style="margin-bottom: 8px;">Gera efeitos permanentes nas pessoas e cidades onde passa por meio da arte;</li>
+                                <li style="margin-bottom: 8px;">Influencia coletivos, movimentos e mudanças sociais;</li>
+                                <li style="margin-bottom: 8px;">Pode registrar a história de ilhas, tripulações ou nações como oficial.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF00FF;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 0, 255, 0.05); border-left: 4px solid #FF00FF; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FF00FF; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Obra-Prima Mundial:</strong> Crie uma produção artística suprema cujo impacto cultural torne o seu nome imortalizado nas páginas da história, marcando uma era política e social.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Transformador Social:</strong> Manipule diretamente as decisões sócio-políticas do mundo com a sua arte, sendo responsável pela ruína de uma tirania ou pela reconciliação de grandes nações.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Manipulador de Massas:</strong> Conclua uma farsa cênica aclamada mundialmente, ludibriando engrenagens de grandes Governos de forma intocável e desviando o curso da humanidade.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Sua existência redefine a arte em escala mundial. Você se torna referência, sua estética molda culturas inteiras e suas obras são capazes de mover exércitos, unir nações ou provocar rupturas globais.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Cria obras-primas com impacto narrativo gigantesco e duradouro;</li>
+                                <li style="margin-bottom: 8px;">Deixa marcas culturais permanentes no mundo e na história;</li>
+                                <li style="margin-bottom: 8px;">Inicia movimentos culturais ou ideológicos que se espalham pelo mundo;</li>
+                                <li style="margin-bottom: 8px;">Sua assinatura é reconhecida como símbolo de prestígio ou ameaça;</li>
+                                <li style="margin-bottom: 8px;">Usa fama e influência para interferir em decisões políticas e sociais.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #FF5F15;">Atirador <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Atirador.png" alt="Atirador" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">O Atirador é o especialista em combate à distância, utilizando todo tipo de armas de fogo e bestas para garantir a proteção da tripulação e desempenhar papéis de ataque estratégico. Seu foco está no uso eficiente de armas, manuseio de canhões e na criação de armas bélicas. Além de ser fundamental nas batalhas à distância, o Atirador também desempenha um papel importante em missões furtivas, sabotagem e ataques a alvos específicos.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Atirador</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF5F15;">Nível 1: Atirador Iniciante <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">O básico do básico: você é um atirador com algum treinamento, capaz de utilizar armas simples e canhões de maneira eficaz. Sua função inicial é oferecer apoio à distância e garantir que os inimigos sejam mantidos longe da tripulação.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">+5% de dano com armas à distância (Sendo armas de fogo ou de corda. Não pode ser os dois, precisa escolher e manter na ficha);</li>
+                                <li style="margin-bottom: 8px;">A habilidade de manusear armas de fogo simples sem penalidades (como pistolas, mas isso não quer dizer que você tenha acesso a elas, mesmo sendo de organizações como Marinha ou Governo Mundial);</li>
+                                <li style="margin-bottom: 8px;">Acesso a canhões e armas de uso público.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF5F15;">Nível 2: Atirador de Precisão <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Sua experiência aumenta, e agora você consegue operar armas de fogo. Você aprende a usar diferentes tipos de armas e tem maior controle sobre o uso delas, tornando-se um especialista em ataques à distância. Seu foco é maximizar os danos e a eficácia das armas, e agora você também tem mais acesso à criação de munições especiais.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">+10% de dano com armas à distância que você escolheu no Nível 1 e +5% com o outro tipo (isso substitui o buff do Nível 1);</li>
+                                <li style="margin-bottom: 8px;">Acesso a bestas mais avançadas e armas de longo alcance, como armas de fogo;</li>
+                                <li style="margin-bottom: 8px;">Acesso a novos tipos de munição, como balas de alto impacto e balas incendiárias;</li>
+                                <li style="margin-bottom: 8px;">Melhoria no uso de armas e canhões: maior precisão e alcance (10%).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF5F15;">Nível 3: Atirador de Elite <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Agora você atira com uma habilidade invejável. Você é mais rápido e eficaz, com grande domínio sobre qualquer tipo de arma de fogo. Sua capacidade de controlar o campo de batalha à distância é impressionante. Além disso, começa a se destacar em combates táticos, utilizando sua experiência para criar armamentos personalizados para sua tripulação.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">+10% de dano com armas de corda e +10% com armas de fogo (isso substitui o buff do Nível 2);</li>
+                                <li style="margin-bottom: 8px;">Capacidade de criar armas e equipamentos personalizados, como rifles com mira telescópica ou pistolas de alta potência;</li>
+                                <li style="margin-bottom: 8px;">Desconto de 25% na criação de armas e munições (em relação ao custo de produção);</li>
+                                <li style="margin-bottom: 8px;">Pode utilizar bombas de fumaça e bombas incendiárias com maior eficácia;</li>
+                                <li style="margin-bottom: 8px;">Recebe um buff de +10% em Reflexos contra ataques à distância.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF5F15;">Nível 4: Criador Bélico <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 95, 21, 0.05); border-left: 4px solid #FF5F15; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FF5F15; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Tiro Decisivo:</strong> Realizar um disparo improvável de extremo longo alcance ou sob condições insustentáveis (como tufões ou escuridão total) que neutralize uma ameaça bélica crucial no momento exato.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Arsenal Personalizado:</strong> Projetar e desenvolver empiricamente uma munição ou arma pesada revolucionária, tornando o artefato essencial para a vitória de toda a tripulação.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Atirador Furtivo:</strong> Desempenhar o suporte integral de uma missão mortal de infiltração sem ser detectado ou errar um disparo, liquidando guardas e armadilhas sorrateiramente.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Sua habilidade vai além de disparar e manusear armas. Agora, você é um criador de armas. Você pode forjar seus próprios armamentos, desde pistolas de alta precisão até armas pesadas, e também desenvolver bombas especializadas para todo tipo de missão. Seus conhecimentos em criação e modificação de armamentos são inigualáveis.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">+15% de dano com armas de corda e +15% com armas de fogo (isso substitui o buff do Nível 3);</li>
+                                <li style="margin-bottom: 8px;">Bombas personalizadas podem ser criadas e utilizadas para várias finalidades: explosivas, incendiárias, venenosas ou teleguiadas;</li>
+                                <li style="margin-bottom: 8px;">Criação de armamentos especiais: como rifles automáticos, lança-granadas, metralhadoras, bombas teleguiadas;</li>
+                                <li style="margin-bottom: 8px;">Ganha a habilidade de criar armas de fogo personalizadas para sua tripulação e outros jogadores, com modificações únicas.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF5F15;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 95, 21, 0.05); border-left: 4px solid #FF5F15; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FF5F15; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Criação Lendária:</strong> Construir a arma atiradora definitiva de forma inédita, uma criação cuja letalidade obrigue marinheiros ou facções criminosas a caçá-la ou desejá-la a qualquer custo.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Invencível:</strong> Derrotar, valendo-se unicamente de distância, agilidade e mira balística, um inimigo de patente superior e monstruosamente resistente, sem receber golpes críticos.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Apoio Imbatível:</strong> Tornar-se um escudo protetor contra chuvas de granadas e pelotões, interceptando projéteis no ar e salvaguardando a integridade dos aliados durante o frenesi de uma invasão.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você alcançou a maestria no uso de armas de fogo e na criação de equipamentos bélicos. Sua habilidade como atirador é lendária, e suas criações são as mais poderosas e cobiçadas. Sua presença no campo de batalha é um pesadelo para qualquer inimigo, e suas armas e munições são temidas por todos.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">+20% de dano com armas de corda e +20% com armas de fogo (isso substitui o buff do Nível 4);</li>
+                                <li style="margin-bottom: 8px;">Bombas de impacto massivo, como bombas de fogo + gás venenoso, podem ser criadas para devastar grandes áreas;</li>
+                                <li style="margin-bottom: 8px;">Criação de munições especializadas, como balas que podem atravessar barreiras ou balas com efeitos únicos;</li>
+                                <li style="margin-bottom: 8px;">Maior alcance e poder de destruição com qualquer tipo de armamento bélico (20%);</li>
+                                <li style="margin-bottom: 8px;">Sua reputação como atirador faz com que inimigos próximos a você tenham -10% de dano com armas de fogo devido à sua notoriedade, a menos que eles também tenham o Nível 5 de Atirador.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #FFBF00;">Carpinteiro <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Carpinteiro.png" alt="Carpinteiro" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">O Carpinteiro é responsável pela manutenção, construção e aprimoramento da embarcação e estruturas da tripulação. Sua função vai muito além da madeira: ele também domina conhecimentos de engenharia, arquitetura, hidráulica e mecânica, sendo capaz de transformar um barco comum numa fortaleza flutuante ou inventar ferramentas e armas úteis em combate. É um gênio criativo, e um bom carpinteiro pode ser a diferença entre afundar ou navegar gloriosamente pelos mares.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Impacto Estrutural</i> | <i>Rope Action</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FFBF00;">Nível 1: Aprendiz da Madeira <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você sabe o que é um martelo e não bate mais o dedo com frequência. É capaz de realizar reparos simples no navio, identificar danos e fazer manutenções emergenciais que mantêm a embarcação funcionando em alto-mar.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ganha acesso a ferramentas básicas de carpintaria;</li>
+                                <li style="margin-bottom: 8px;">Pode montar pequenas estruturas ou armadilhas fora de combate com materiais improvisados (tipo armadilhas de madeira);</li>
+                                <li style="margin-bottom: 8px;">Pode realizar reparos básicos no navio (sem custo se possuir material).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FFBF00;">Nível 2: Construtor de Bordo <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Agora você entende de verdade como um navio funciona. Seus reparos são mais duradouros, e você já começa a projetar pequenas melhorias para a embarcação. Consegue fazer construções estáveis, como torres de vigia, portões e fortificações simples.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">+10% de resistência estrutural do navio sob sua responsabilidade (menos tendência a perder uma vida em navegações);</li>
+                                <li style="margin-bottom: 8px;">Pode construir estruturas temporárias em ilhas (postos, tendas, guaritas);</li>
+                                <li style="margin-bottom: 8px;">Pode realizar melhorias simples no navio, como compartimentos secretos ou sistemas manuais de defesa.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FFBF00;">Nível 3: Engenheiro Naval <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Seu domínio da engenharia naval permite aprimorar o navio com sistemas personalizados, como portões retráteis, docas auxiliares, mecanismos automáticos e muito mais. Se tiver tempo e materiais, você transforma qualquer navio numa máquina de guerra ou um castelo no mar.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">+10% de velocidade de navegação se as velas forem modificadas por você;</li>
+                                <li style="margin-bottom: 8px;">Consegue reparar navios grandes ou pesadamente danificados sem depender de estaleiros;</li>
+                                <li style="margin-bottom: 8px;">Pode desenvolver dispositivos especiais (como braços mecânicos, portões móveis, etc.) para o navio, com projeto e aprovação da ADM;</li>
+                                <li style="margin-bottom: 8px;">Pode projetar e construir melhorias complexas: salas móveis, compartimentos à prova d’água, plataformas elevatórias, etc.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FFBF00;">Nível 4: Mestre da Madeira <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 191, 0, 0.05); border-left: 4px solid #FFBF00; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FFBF00; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Construtor de Fortalezas:</strong> Levantar fortificações providenciais ou trincheiras defensivas no seio de um conflito de urgência, estabilizando as defesas contra invasores.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Inovador Naval:</strong> Modificar e instalar um mecanismo de extrema complexidade (canhões furtivos, hélices anfíbias, escotilhas hidráulicas) de forma original a otimizar a navegação ou guerra do navio.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Reparador de Emergência:</strong> Efetuar um reparo que beira o impossível estrutural no convés de um barco em queda ou sob bombardeio ativo, garantindo a sua preservação até que se encontre calmaria.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Agora sua criatividade explode. Você começa a trabalhar com sistemas mecânicos mais complexos, como propulsores, motores e autômatos auxiliares para reparos. Além de navios, pode criar veículos, armas de cerco e engenhocas para a tripulação.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">É possível criar armas de cerco e defesa para o navio (balistas, catapultas, torretas mecânicas);</li>
+                                <li style="margin-bottom: 8px;">Pode construir torres, guarnições ou laboratórios móveis em ilhas dominadas;</li>
+                                <li style="margin-bottom: 8px;">Pode criar mecanismos avançados: guindastes internos, sistemas de propulsão, escotilhas automáticas, ou até uma mini versão do seu barco para viagens que exijam menos pessoas e mais velocidade.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FFBF00;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 191, 0, 0.05); border-left: 4px solid #FFBF00; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FFBF00; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Navio Lendário:</strong> Assumir inteiramente a liderança na produção de uma Nau Capitânia colossal com recursos inigualáveis e propriedades místicas ou bélicas absolutas, marcando a sua tripulação.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Criação Mecânica:</strong> Empregar seu conhecimento para conceber uma plataforma ou Mecha colossal de combate de excelência, integrando carpintaria bélica a capacidades destrutivas assustadoras.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Marca na História:</strong> Projetar e erigir uma estrutura urbana ou geográfica de peso mundial (uma represa massiva, uma ponte entre impérios, ou docas impenetráveis) que altera o fluxo econômico de um oceano.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você atingiu o ápice. Seus projetos são lendários, dignos de serem lembrados em livros e canções. Seu navio é único, cheio de mecanismos que só você poderia conceber. Você é respeitado como um gênio da construção naval e pode, inclusive, criar uma Arma Ancestral da tripulação, se tiver conhecimento e tempo.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ganha reconhecimento entre os grandes construtores do mundo, podendo ser procurado por ilhas e reinos;</li>
+                                <li style="margin-bottom: 8px;">Permissão para desenvolver projetos colaborativos com Cientistas ou Ferreiros de nível alto (fusões tecnológicas);</li>
+                                <li style="margin-bottom: 8px;">Pode criar um Navio Especial: uma embarcação lendária com propriedades únicas, mediante projeto aprovado pela staff;</li>
+                                <li style="margin-bottom: 8px;">Pode desenvolver autômatos de combate ou mechas de uso individual (limitados, requer aprovação).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #00BFFF;">Cientista <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Cientista.png" alt="Cientista" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Você é uma mente curiosa, inquieta e analítica. Desde cedo desenvolveu um olhar técnico sobre o mundo, conseguindo transformar sucata em soluções e ideias em invenções. Seus primeiros experimentos são simples, mas funcionais, e já te colocam à frente de muitos.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Punho Suave</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #00BFFF;">Nível 1: Estudioso <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você domina os fundamentos da ciência aplicada. Usa ferramentas improvisadas, entende química básica e consegue transformar teoria em pequenos dispositivos úteis.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue analisar plantas, animais e minerais para descobrir propriedades úteis;</li>
+                                <li style="margin-bottom: 8px;">Consegue identificar doenças e anomalias, além de preparar tratamentos emergenciais;</li>
+                                <li style="margin-bottom: 8px;">Entende como funciona o corpo humano e pode improvisar primeiros socorros básicos, como estancar sangue;</li>
+                                <li style="margin-bottom: 8px;">Pode criar remédios simples, antídotos e venenos fracos usando materiais naturais;</li>
+                                <li style="margin-bottom: 8px;">Você tem um conhecimento básico sobre biologia e química.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #00BFFF;">Nível 2: Biólogo <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Seu conhecimento técnico evolui. Agora você trabalha com componentes mais complexos, ajustando armamentos, equipamentos e estruturas com maior precisão.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue estudar criaturas para descobrir suas fraquezas biológicas e aplicá-las em combate;</li>
+                                <li style="margin-bottom: 8px;">Pode criar vacinas e antídotos para doenças e venenos mais complexos;</li>
+                                <li style="margin-bottom: 8px;">Pode desenvolver compostos químicos (ácidos, explosivos, toxinas);</li>
+                                <li style="margin-bottom: 8px;">Você se especializou em anatomia e fisiologia de diferentes espécies.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #00BFFF;">Nível 3: Bioengenheiro <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Sua mente vai além do presente. Você analisa, restaura e reinventa tecnologias antigas, conectando passado e futuro através da ciência.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue estudar organismos para criar novas armas biológicas;</li>
+                                <li style="margin-bottom: 8px;">Pode criar implantes orgânicos simples;</li>
+                                <li style="margin-bottom: 8px;">Pode criar mutações temporárias em plantas ou animais;</li>
+                                <li style="margin-bottom: 8px;">Pode desenvolver drogas aprimoradas, estimulantes e soros de fortalecimento temporário;</li>
+                                <li style="margin-bottom: 8px;">Suas pesquisas agora envolvem manipulação genética básica.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #00BFFF;">Nível 4: Alquimista <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(0, 191, 255, 0.05); border-left: 4px solid #00BFFF; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #00BFFF; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Cura Milagrosa:</strong> Desenvolver emergencialmente uma vacina, antídoto ou purificador para frear um envenenamento biológico ou peste endêmica que esteja assolando massas, com êxito garantido.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Arma Biológica:</strong> Produzir compostos tóxicos controlados capazes de adormecer, reter ou pacificar vastas frotas de inimigos sob risco nulo para a sua própria guarnição.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho das Mutações Controladas:</strong> Conduzir uma pesquisa arriscada que conceda aperfeiçoamentos e mutações temporárias ou definitivas na genética de aliados e a si próprio, lidando de forma formidável com o resultado químico.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você ultrapassa a linha entre ciência prática e inovação de ponta. Cria mecanismos funcionais e começa a estudar o corpo vivo como máquina.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue criar antídotos para venenos exóticos ou doenças raríssimas em questão de horas ou dias no máximo;</li>
+                                <li style="margin-bottom: 8px;">Manipula DNA com maestria, criando criaturas híbridas e mutantes;</li>
+                                <li style="margin-bottom: 8px;">Pode fazer o esboço de dispositivos avançados, como câmaras de cura e próteses vivas (deve receber a ajuda de um Inventor para construir).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #00BFFF;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(0, 191, 255, 0.05); border-left: 4px solid #00BFFF; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #00BFFF; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Nova Vida:</strong> Cruzar as barreiras da alquimia básica, sintetizando vidas artificiais com livre arbítrio estabilizado (Clones ou Quimeras de imenso poder) dotados de finalidades pacíficas ou bélicas.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Evolução Acelerada:</strong> Transmutar a biologia permanentemente utilizando um soro irrefreável em seus parceiros de equipe, injetando dons formidáveis, resistência absoluta ou traços raciais dominantes sem letalidade.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Descoberta Proibida:</strong> Comprovar de modo irrefutável um segredo basilar da existência mundial (ex: a mecânica de restrição das Akuma no Mi ou linhagens esquecidas) chamando a atenção e perseguição iminente dos mais altos poderes.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você é uma lenda viva da ciência. Suas criações desafiam a lógica comum e provocam avanços irreversíveis no mundo moderno.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Cria seres vivos artificiais (como quimeras ou clones);</li>
+                                <li style="margin-bottom: 8px;">Desenvolve vírus e bactérias programáveis para afetar inimigos ou ambientes específicos;</li>
+                                <li style="margin-bottom: 8px;">Pode alterar permanentemente o corpo de aliados;</li>
+                                <li style="margin-bottom: 8px;">Sua pesquisa é temida, admirada e procurada por governos e organizações secretas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #FF0000;">Combatente <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Combatente.png" alt="Combatente" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Combatentes são a alma de batalha de qualquer tripulação. Mestres do corpo e da disciplina, eles enfrentam o mundo com as próprias mãos (ou pernas). São brutos, táticos e versáteis, e sua presença em campo é sempre notada. Além disso, com o tempo, tornam-se mentores e guias, capazes de treinar e moldar novos combatentes.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Freestyle</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF0000;">Nível 1: Discípulo do Punho <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você está no início da sua jornada, aprendendo com cada soco, com cada dor nas juntas após os treinos. Não é só força: é disciplina, garra e convicção. Tu ainda tropeça, ainda sangra demais... mas já sabe por onde seguir.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Pode treinar até 1 NPC Especial em treinos comuns. Ele vai ganhar 75% dos pontos ganhos nos treinos;</li>
+                                <li style="margin-bottom: 8px;">Pode treinar até 50 NPCs comuns em treinos de interação. Eles vão ganhar 50% dos pontos ganhos nos treinos;</li>
+                                <li style="margin-bottom: 8px;">Todos os treinos para você aprender técnicas requerem metade dos treinos normais;</li>
+                                <li style="margin-bottom: 8px;">Você tem um buff passivo de 5% no seu atributo principal (Destreza ou Força, fica a seu critério, apenas um deles, escolhido no momento que pegar esse nível da Classe. Não pode alterar).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF0000;">Nível 2: Guerreiro de Aço <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Agora seu corpo começa a se tornar resistente como ferro e seu olhar revela experiência; sua presença em batalha intimida. Você treina não só a si mesmo, mas começa a cuidar dos outros.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Pode treinar até 100 NPCs comuns em treinos de interação. Eles vão ganhar 100% dos pontos ganhos por você nos treinos;</li>
+                                <li style="margin-bottom: 8px;">Pode treinar até 2 NPCs Especiais ao mesmo tempo em treinos de interação. Eles vão ganhar 75% dos pontos ganhos nos treinos;</li>
+                                <li style="margin-bottom: 8px;">Você pode fazer 2 treinos de técnica a mais em uma das semanas do mês, e cada um desses treinos dá 75 pontos ao invés dos 25 padrão. Esses treinos não podem ser com NPC Especial.</li>
+                                <li style="margin-bottom: 8px;">Você tem um buff de 10% no seu atributo principal (isso substitui o buff de 5% do Nível 1).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF0000;">Nível 3: Mestre da Guerra <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você domina o campo de batalha como uma extensão do próprio corpo. Não há mais hesitação, só tática e poder. Você é aquele que os outros combatentes olham para aprender.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Pode treinar até 2 NPCs Especiais em treinos comuns. Eles vão ganhar 75% dos pontos ganhos nos treinos;</li>
+                                <li style="margin-bottom: 8px;">Pode treinar todos os seus NPCs comuns em treinos de interação. Eles vão ganhar 100% dos pontos ganhos por você nos treinos;</li>
+                                <li style="margin-bottom: 8px;">Você pode liderar treinamentos coletivos uma vez ao mês. Quem participar desses treinamentos ganha 500 pontos de atributo, incluindo você, mas só jogadores podem participar;</li>
+                                <li style="margin-bottom: 8px;">Você tem um buff de 15% no seu atributo principal (isso substitui o buff de 10% do Nível 2).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF0000;">Nível 4: Doutrinador Marcial <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 0, 0, 0.05); border-left: 4px solid #FF0000; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FF0000; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Invencível:</strong> Sobrepor um indivíduo em duelo equilibrado que disponha de patentes formidáveis de poder ou poderes místicos colossais, limitando-se meramente à maestria de sua pura essência corporal.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Protetor:</strong> Tornar-se a muralha viva impenetrável barrando instâncias colossais de destruição (canhões estatais ou bestas absurdas) focado estritamente em proteger seus companheiros indefesos na retaguarda.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Gladiador:</strong> Peneirar com destreza inabalável bandos robustos de mais de quinze homens hostis em eventos de cerco fechado sem pedir repouso, aniquilando os ofensores pelo condicionamento físico absurdo.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você transcendeu o físico. Cada passo seu tem uma história própria. Seus ensinamentos moldam lutadores ao seu redor, mesmo os que não são seus aliados. Agora você é temido, respeitado e ouvido. O campo de batalha é seu palco, e cada aprendiz, uma chama acesa por você.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ganha direito de criar técnicas exclusivas que só podem ser aprendidas por você. Essas técnicas possuem táticas marciais extremamente complicadas que você é o único que consegue aplicar ou replicar;</li>
+                                <li style="margin-bottom: 8px;">Pode nomear 1 NPC Especial ou jogador como "Discípulo Pessoal", dando a ele um bônus de +10% no atributo principal enquanto treinado por você. E mais 150% no ganho dos atributos em dois dos treinos feitos com ele. Segunda situação só se aplica duas vezes ao mês, uma por treino;</li>
+                                <li style="margin-bottom: 8px;">Pode treinar NPCs de outros jogadores como se fossem seus.</li>
+                                <li style="margin-bottom: 8px;">Você tem um buff de 20% no seu atributo principal (isso substitui o buff de 15% do Nível 3).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF0000;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 0, 0, 0.05); border-left: 4px solid #FF0000; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FF0000; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Executor de Titãs:</strong> Erradicar adversários de magnitudes insustentáveis e inumanas, como Golens Vivos, Colossos do mar ou gigantes lendários através do esmagamento singular dos punhos enrijecidos.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Imorrível:</strong> Ressurgir das garras da fatalidade; apanhar para além da destruição cerebral ou corpórea num confronto inevitável, recusar-se a morrer através do orgulho incólume, e retomar o duelo até derrubar o executor.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Criador de Estilo:</strong> Inventar em seu clímax e perante instinto uma técnica original magistral, cravando as noções nela para derrotar com perfeição um soberano que um dia o esmagou ou humilhou.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você virou um mito. Um verdadeiro monumento da arte marcial. Dizem que, com um comando seu, qualquer grupo se transforma num exército. Com seu treino, qualquer iniciante pode se tornar uma lenda.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">NPCs Especiais treinados por você passam a ganhar 150% dos pontos em todos os treinos. Seu pupilo passa a ganhar 200%;</li>
+                                <li style="margin-bottom: 8px;">Pode treinar até 3 NPCs Especiais em treinos comuns;</li>
+                                <li style="margin-bottom: 8px;">Pode treinar todos os seus NPCs comuns em treinos de interação. Eles vão ganhar 150% dos pontos ganhos por você nos treinos;</li>
+                                <li style="margin-bottom: 8px;">Seu nome está gravado na história viva do combate. Mesmo sem fama global, entre lutadores você é reverenciado;</li>
+                                <li style="margin-bottom: 8px;">Você tem um buff de 25% no seu atributo principal (isso substitui o buff de 10% do Nível 4).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #FF7034;">Cozinheiro <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Cozinheiro.png" alt="Cozinheiro" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Responsável por manter a saúde, o moral e a energia da tripulação, o cozinheiro vai muito além de apenas alimentar: ele transforma ingredientes em bem-estar. Durante longas viagens, o cozinheiro garante refeições balanceadas, saborosas e seguras. Com a progressão de proficiência, ele se especializa em nutrição, gestão gastronômica e culinária medicinal, tornando-se uma peça central tanto em combate quanto no cotidiano da tripulação.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Cortes Precisos</i> | <i>Perna Negra</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF7034;">Nível 1: Garçom <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você sabe o básico: preparar pratos nutritivos e manter os alimentos em bom estado. Já consegue alimentar toda a tripulação com refeições decentes e garantir que ninguém fique com intoxicação alimentar durante a jornada.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Pode aplicar "Refrescos Morais", pequenas melhorias de humor para a tripulação após as refeições (uso narrativo/conceitual, sem buff direto). Buffs morais auxiliam ainda mais caso seja o prato favorito do seu nakama, então sempre o pergunte;</li>
+                                <li style="margin-bottom: 8px;">Pode cozinhar refeições que regeneram energia e curam cansaço de forma narrativa.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF7034;">Nível 2: Especialista Culinário <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Domina uma grande variedade de ingredientes e passa a conhecer os efeitos básicos de determinados alimentos no corpo. Pode começar a criar refeições específicas para contextos distintos: uma comida leve para quem vai lutar, uma sopa reconfortante para quem está ferido, ou um prato festivo para comemorações.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ao realizar uma cena de preparo e consumo de uma refeição antes de uma missão ou combate, os membros da tripulação que comerem ganham: +5% de regeneração de stamina ao longo da missão e +5% de resistência a penalidades ambientais (ex: fome, frio, calor, clima extremo, etc.);</li>
+                                <li style="margin-bottom: 8px;">Pode criar pratos com efeitos narrativos curativos leves (ex: aliviar dores, recuperar fôlego, estimular o corpo). Dependendo da descrição e qualidade do prato, talvez provenha um buff de verdade.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF7034;">Nível 3: Nutricionista <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Agora, seus pratos possuem propriedades medicinais mais consistentes. Você entende bem o corpo humano e sabe como curar males leves por meio da alimentação. Já começa a explorar técnicas de preparo que envolve precisão cirúrgica nos ingredientes, sendo também capaz de preparar suplementos, bebidas e chás especiais.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Pode abrir um restaurante com lucro quinzenal (conversar com ADM);</li>
+                                <li style="margin-bottom: 8px;">Pode aplicar buffs leves de resistência e recuperação através da comida;</li>
+                                <li style="margin-bottom: 8px;">Pode criar os próprios pratos com os próprios buffs (conversar com ADM, mandar um esquema listando ingredientes, modo de preparo, nutrientes e buffs que o alimento criado dá);</li>
+                                <li style="margin-bottom: 8px;">Pode criar refeições especiais para casos específicos (ex: um lutador que perdeu muito sangue, alguém com febre, etc.). Essas refeições talvez ajudem, talvez não. Depende da especificidade dela e do grau dos males descritos;</li>
+                                <li style="margin-bottom: 8px;">Pode preparar alimentos que ajudem na recuperação de membros da tripulação após lutas intensas (efeito pós-combate).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF7034;">Nível 4: Chef <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 112, 52, 0.05); border-left: 4px solid #FF7034; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FF7034; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Banquete Restaurador:</strong> Providenciar e orquestrar de forma incansável e ágil o suprimento alimentício de centenas de aliados amedrontados, estancando seus medos e fome iminente com uma reestruturação moral definitiva pelo sabor.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Terapia Culinária:</strong> Isolar-se diante de uma maldição biológica incurável afligindo um tripulante valioso e encontrar na biologia nutritiva os agentes vitais para desinfetar o perigo via iguarias medicinais irrefutáveis.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Imperador Comercial:</strong> Conquistar a fama gastronômica gerencial em localidades ímpares, erguendo ao menos três restaurantes consolidados que sirvam aos apetites das populações em diferentes distritos portuários de renome.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você atingiu um novo patamar na gastronomia. É reconhecido regionalmente ou até mesmo nos mares por sua habilidade, podendo expandir seu próprio restaurante, evento ou taverna móvel. Também pode conduzir banquetes e festas que elevam o moral de toda uma ilha ou tripulação inteira.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Aumenta o limite de efeitos possíveis em uma refeição (misturando mais de um efeito);</li>
+                                <li style="margin-bottom: 8px;">Pode fazer banquetes que oferecem buffs leves de vigor, regeneração e bônus narrativos por tempo limitado;</li>
+                                <li style="margin-bottom: 8px;">Seu restaurante tem o direito de aumentar e franquiar, multiplicando até em 5 vezes seu lucro inicial.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #FF7034;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(255, 112, 52, 0.05); border-left: 4px solid #FF7034; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #FF7034; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Ambrosia Suprema:</strong> Consolidar, por exaustão e experiência, uma receita cuja capacidade regenerativa instantânea se equipare aos milagres, extirpando injúrias ou perigos peçonhentos a uma simples degustação.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho das Três Estrelas Mundiais:</strong> Ganhar repercussão absurda ao ser convocado para chefiar e servir em comitês imperiais ou assembleias do alto escalão onde suas especiarias moldem a etiqueta global.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Sabor da Paz:</strong> Harmonizar laços bélicos, apaziguando guerras iminentes ou massacres incontroláveis por meio das receitas oferecidas durante tréguas orquestradas pela sedução palatina de sua genialidade.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você é uma lenda da culinária. Seus pratos são praticamente mágicos: curam feridas com uma colherada, revigoram com um gole e fazem a tripulação se sentir invencível. Alimentos preparados por você podem causar efeitos reais e poderosos, comparáveis a pequenos milagres gastronômicos. Sua fama pode ser usada como moeda de prestígio.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Pode aplicar buffs consistentes em aliados antes de missões ou combates;</li>
+                                <li style="margin-bottom: 8px;">Seu restaurante aumenta ainda mais e agora é conhecido como um 5 Estrelas mundialmente. Seu lucro multiplica em duas vezes o lucro atual;</li>
+                                <li style="margin-bottom: 8px;">Suas criações são tão valiosas que podem ser trocadas por favores; narrativamente, você tem passe livre pra entrar na maioria dos eventos se for reconhecido pela sua cozinha.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #B87333;">Ferreiro <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Ferreiro.png" alt="Ferreiro" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">O Ferreiro é responsável pela criação e manutenção de armas, sendo a principal força por trás da construção de itens poderosos e raros. Suas habilidades em fundição e metalurgia o tornam essencial para garantir que a tripulação tenha os melhores equipamentos possíveis. Ao longo da progressão, o Ferreiro se especializa em forjar armamentos únicos e artefatos lendários, tornando-se um mestre na criação de itens que podem mudar o curso de uma batalha. (Recebe 30% de Desconto na Loja de Ferreiro).</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Impacto Estrutural</i> | <i>Rope Action</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #B87333;">Nível 1: Artesão <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Seu trabalho começa. Suas armas possuem equilíbrio, estética e resistência. São itens de qualidade superior, usados com orgulho por guerreiros e aventureiros.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Ainda não pode tocar o universo das Meitōs;</li>
+                                <li style="margin-bottom: 8px;">Começa a ser reconhecido em vilas e ilhas menores como um artesão promissor;</li>
+                                <li style="margin-bottom: 8px;">Ferramentas ou armas criadas têm mais durabilidade e valor comercial (no máximo 400.00.0000);</li>
+                                <li style="margin-bottom: 8px;">Pode adaptar armamentos para raças específicas (como garras para minks ou lanças longas para gigantes);</li>
+                                <li style="margin-bottom: 8px;">Pode criar armamentos reforçados com efeitos narrativos leves (ex: resistência aumentada, empunhadura adaptada, formato versátil).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #B87333;">Nível 2: Forjador de Imperfeições <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você se aproxima da verdadeira grandeza, criando armas quase lendárias. Falham por pouco em atingir a perfeição, mas já são peças raras cobiçadas por alguns.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">As criações já são vistas como raras, ganhando valor simbólico e financeiro (valor máximo estipulado de 600.000.000);</li>
+                                <li style="margin-bottom: 8px;">Começa a chamar atenção de guerreiros em busca de armas únicas;</li>
+                                <li style="margin-bottom: 8px;">Essas armas são instáveis, podendo ter vantagens ou falhas narrativas;</li>
+                                <li style="margin-bottom: 8px;">Pode criar Meitōs de Grau Desconhecido (armas poderosas, mas que não são oficialmente reconhecidas como Meitōs) com 10.000 pontos de atributos e exigências narrativas  específicas;</li>
+                                <li style="margin-bottom: 8px;">Pode incluir efeitos personalizados com justificativa narrativa (ex: vibração, corte expandido, condução de energia).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #B87333;">Nível 3: Forjador de Lendas Menores <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Sua forja ganha fama. Suas armas já são dignas de histórias, canções e rivalidades. Você entra oficialmente no círculo dos forjadores lendários.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Deve seguir os critérios de criação de Meitōs (missões, narrações e sistema de rolagem);</li>
+                                <li style="margin-bottom: 8px;">Pode forjar Wazamono (com 10.000 pontos de atributos e exigências narrativas específicas);</li>
+                                <li style="margin-bottom: 8px;">Pode forjar Ryō Wazamono (com 15.000 pontos de atributos e similares exigências);</li>
+                                <li style="margin-bottom: 8px;">Pode personalizar efeitos ou características das Meitōs criadas, com aprovação da administração;</li>
+                                <li style="margin-bottom: 8px;">Suas armas agora não possuem limites para valor... só o bom senso.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #B87333;">Nível 4: Mestre das Lâminas <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(184, 115, 51, 0.05); border-left: 4px solid #B87333; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #B87333; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Lâmina Renomada:</strong> Bater a têmpera do primeiro artefato mítico oficial cujo gume e durabilidade tornem a lâmina conhecida de imediato pelas grandes frentes marciais do continente.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Vanguarda Blindada:</strong> Elaborar maciçamente e suprir um vasto exército com arsenais personalizados que garantam de imediato o peso esmagador de um lado sobre o outro em batalhas regionais.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Restaurador da Honra:</strong> Localizar os retalhos oxidados de uma relíquia arruinada na história e, fundindo maestria e Haki, reestruturá-la impecavelmente ao nível original de fama e prestígio.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você já molda armas que entram para a história. Algumas se tornarão símbolo de clãs, governos ou até facções criminosas. Seu nome está gravado em aço.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Mantém a capacidade de criar todos os graus anteriores;</li>
+                                <li style="margin-bottom: 8px;">Pode criar Ō Wazamono (com todos os requisitos exigidos);</li>
+                                <li style="margin-bottom: 8px;">Pode criar peças com significado narrativo (ex: espadas seladoras, armas com simbologia racial ou histórica);</li>
+                                <li style="margin-bottom: 8px;">Recebe convites para cargos, contratos ou encomendas especiais de alto nível.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #B87333;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(184, 115, 51, 0.05); border-left: 4px solid #B87333; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #B87333; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Ō Wazamono:</strong> Dedicar-se intensamente a conceber a obra máxima do forjamento, alcançando as raridades da Ō Wazamono onde a própria estrutura do aço detém ares de vida e sede de destruição.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Molde do Destino:</strong> Projetar uma espada inconfundível que passará a ser a espinha dorsal ou estopim político das batalhas colossais, marcando a sua existência no armorial do mundo.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Transmutação Eterna:</strong> Quebrar os conceitos forjados das raças inventando empiricamente um modo alienígena e secreto de forja duradoura que aprimore drasticamente a retenção de Haki nos itens.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você atingiu o ápice. Seu nome é dito em voz baixa entre os grandes. Cada arma que você cria pode mudar o rumo de uma guerra, selar tratados ou destruir reinos.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">O nome da sua forja pode se tornar tão temido quanto o de qualquer Imperador dos Mares;</li>
+                                <li style="margin-bottom: 8px;">Pode comandar sua própria oficina lendária, atraindo discípulos, compradores e caçadores;</li>
+                                <li style="margin-bottom: 8px;">Pode desenvolver armas com mecânicas únicas ou evolutivas (com aval da administração);</li>
+                                <li style="margin-bottom: 8px;">Pode forjar Saijō Ō Wazamono, as armas mais poderosas e lendárias do mundo;</li>
+                                <li style="margin-bottom: 8px;">Suas criações podem influenciar eventos globais, ser estudadas por acadêmicos ou veneradas por culturas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #ADFF2F;">Inventor <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Inventor.png" alt="Inventor" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Você é um visionário. Sempre com as mãos sujas de graxa e o cérebro fervilhando de ideias, seu talento é transformando materiais simples em dispositivos complexos e funcionais. Nada é impossível para sua mente criativa: de armadilhas engenhosas a grandes máquinas, você está sempre pensando em novas invenções que podem mudar o rumo da batalha ou da exploração. Seu laboratório é onde a magia acontece, e a curiosidade é seu combustível.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Impacto Estrutural</i> | <i>Rope Action</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #ADFF2F;">Nível 1: Improvisador <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você é um iniciador da mecânica, alguém que começa a aprender como transformar objetos comuns em soluções engenhosas. No começo, suas invenções são simples, mas eficazes. Sua criatividade para modificar o que está ao seu redor te coloca à frente na solução de problemas rápidos.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue reparar armas e equipamentos com peças improvisadas;</li>
+                                <li style="margin-bottom: 8px;">Cria ferramentas simples úteis (alavancas, anzóis, armadilhas simples, catapultas manuais, cordas com sistemas de roldana, fechaduras, gatilhos, grampos, lanternas, polias e prensas).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #ADFF2F;">Nível 2: Mecânico <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Sua habilidade em criar dispositivos mais elaborados começa a crescer. Você começa a entender a importância dos detalhes técnicos e é capaz de trabalhar com materiais mais refinados. Agora, suas invenções são mais úteis e de maior qualidade, embora ainda dependam bastante do improviso.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue reforçar armas e armaduras, dando bônus de durabilidade ou impacto;</li>
+                                <li style="margin-bottom: 8px;">Cria gadgets utilitários: comunicadores simples, bombas de fumaça, grilhões mecânicos;</li>
+                                <li style="margin-bottom: 8px;">Desenvolve sistemas hidráulicos simples para o navio ou campo (portas automáticas);</li>
+                                <li style="margin-bottom: 8px;">Pode construir armas de cerco básicas: balistas, catapultas, torres de ataque;</li>
+                                <li style="margin-bottom: 8px;">Pode construir pequenos veículos improvisados (bicicletas, carrinhos, etc).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #ADFF2F;">Nível 3: Arquitetônico <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você agora não apenas cria dispositivos, mas começa a projetar sistemas completos. Seu foco é mais em construção e no uso de tecnologias maiores e mais impactantes. Você começa a compreender a arquitetura das máquinas e sua funcionalidade dentro de grandes sistemas.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Capaz de construir drones simples de reconhecimento e suporte;</li>
+                                <li style="margin-bottom: 8px;">Constrói sistemas de defesa automáticos (torretas, minas, sentinelas);</li>
+                                <li style="margin-bottom: 8px;">Desenvolve veículos maiores: carros, barcos pequenos, planadores;</li>
+                                <li style="margin-bottom: 8px;">Pode criar bombas mais complexas (fragmentação, minas de contato, etc);</li>
+                                <li style="margin-bottom: 8px;">Pode criar exoesqueletos ou braços mecânicos para aliados.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #ADFF2F;">Nível 4: Mestre das Engenhocas <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(173, 255, 47, 0.05); border-left: 4px solid #ADFF2F; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #ADFF2F; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Salvação Operacional:</strong> Elaborar um mega-sistema estrutural para curar a ruína de vilarejos remotos, como dutos subterrâneos impulsionadores ou torres elétricas, atestando durabilidade contra as investidas temporais.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Armorial de Campo:</strong> Equipar taticamente aliados fundamentais de sua expedição com protótipos acopláveis exatos a cada fisiologia, alavancando os índices de evasão e dano destas mentes nas linhas perigosas.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Escudeiro Automático:</strong> Montar das sucatas a primeira IA utilitária rudimentar passível de patrulhar o perímetro, ou desarmar travas sem interferência direta dos dedos nervosos de um biológico.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você se torna um verdadeiro mestre da mecânica, capaz de criar máquinas inovadoras que desafiam as expectativas. Seus dispositivos são cada vez mais complexos e úteis, com o foco em soluções engenhosas para a tripulação em combate e em viagens longas no mar.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue modificar o navio com armas de energia e motores auxiliares;</li>
+                                <li style="margin-bottom: 8px;">Constrói mechas de combate pequenos ou suportes robóticos para batalhas;</li>
+                                <li style="margin-bottom: 8px;">Cria laboratórios móveis ou fábricas automatizadas para produção em massa;</li>
+                                <li style="margin-bottom: 8px;">Desenvolve sistemas de propulsão e motores avançados.</li>
+                                <li style="margin-bottom: 8px;">Pode criar escudos energéticos e sistemas de camuflagem mecânica.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #ADFF2F;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(173, 255, 47, 0.05); border-left: 4px solid #ADFF2F; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #ADFF2F; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Paradoxo Físico:</strong> Materializar a ciência obscura por via do desenho criativo de algo utópico—um canhão de plasma insólito ou botas magnéticas reversíveis—abalando espiões com sua eficiência brutal.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Comandante de Lata:</strong> Preencher os arredores bélicos com uma legião de pacíficos, tanques ou constructos modulares formidáveis que aniquilem, na precisão da engrenagem pura, as vontades de tropas inteiras.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Herança de Vega:</strong> Copiar os rudimentos ocultos no arsenal das antigas eras (Vegapunk ou Vinsmoke) e elevá-los à quintessência por engenhosidade própria em locais estritamente inóspitos de montagem.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você é uma lenda na mecânica. Suas criações são inovações revolucionárias. Não há limite para o que você pode criar, e sua genialidade vai além daquilo que os outros podem conceber. Seu nome é conhecido por todos os inventores e grandes facções, e suas invenções mudam o jogo.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Constrói sistemas de inteligência artificial básica para automação total;</li>
+                                <li style="margin-bottom: 8px;">Cria máquinas de combate massivas (tanques, mechas gigantes);</li>
+                                <li style="margin-bottom: 8px;">Desenvolve armas de destruição em massa (canhões de energia, torres de plasma);</li>
+                                <li style="margin-bottom: 8px;">Pode criar robôs com personalidade e habilidades únicas;</li>
+                                <li style="margin-bottom: 8px;">Suas criações são vendidas e temidas no mundo inteiro, sendo alvo de facções.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #50C878;">Médico <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Médico.png" alt="Médico" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Você domina os fundamentos da medicina. Consegue aplicar primeiros socorros com eficiência, tratar envenenamentos simples, realizar curativos e até pequenas cirurgias improvisadas. A partir do momento em que começa a avançar nesse caminho, seu conhecimento se torna essencial para manter aliados vivos e ativos em qualquer situação.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Punho Suave</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #50C878;">Nível 1: Clínico de Campo <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você é um médico iniciante, mas mesmo assim entende como manter aliados vivos mesmo sob pressão, e improvisa tratamentos eficazes com o que estiver ao seu alcance.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue manter aliados em estado crítico vivos com técnicas emergenciais;</li>
+                                <li style="margin-bottom: 8px;">Cria analgésicos, antibióticos e estimulantes improvisados;</li>
+                                <li style="margin-bottom: 8px;">Diagnósticos se tornam mais rápidos e precisos;</li>
+                                <li style="margin-bottom: 8px;">Realiza cirurgias menores com ferramentas improvisadas;</li>
+                                <li style="margin-bottom: 8px;">Trata ferimentos leves, envenenamentos simples e realiza diagnósticos básicos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #50C878;">Nível 2: Cirurgião <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você se torna um especialista em procedimentos críticos. Sua habilidade de operar em qualquer circunstância o torna indispensável tanto em combate quanto em situações extremas.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Diagnósticos simples tornam-se quase instantâneos (pode diagnosticar na cena após os sintomas serem apresentados);</li>
+                                <li style="margin-bottom: 8px;">Estabiliza personagens à beira da morte caso possua os materiais em disponibilidade;</li>
+                                <li style="margin-bottom: 8px;">Lida com hemorragias massivas e órgãos perfurados com certa dificuldade, mas ainda com eficiência;</li>
+                                <li style="margin-bottom: 8px;">Realiza cirurgias complexas;</li>
+                                <li style="margin-bottom: 8px;">Trata qualquer lesão se o paciente ainda estiver vivo.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #50C878;">Nível 3: Biomédico Avançado <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você começa a explorar áreas além da medicina tradicional. Seu conhecimento se expande para biotecnologia, genética e tratamentos específicos para diferentes raças e fisiologias.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue compreender e aplicar conhecimentos interraciais na medicina com estudo;</li>
+                                <li style="margin-bottom: 8px;">Cria fórmulas específicas para diferentes espécies e condições;</li>
+                                <li style="margin-bottom: 8px;">Desenvolve antídotos, medicamentos raros e próteses rudimentares;</li>
+                                <li style="margin-bottom: 8px;">Estuda doenças e vírus em busca de vacinas ou curas experimentais em laboratórios improvisados;</li>
+                                <li style="margin-bottom: 8px;">Melhora fisicamente aliados com tratamentos de efeito temporário, como tônicos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #50C878;">Nível 4: Doutor de Guerra <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(80, 200, 120, 0.05); border-left: 4px solid #50C878; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #50C878; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Protetor das Massas:</strong> Mobilizar triagens insanas e curar enfermidades pandêmicas ou maldições patológicas devastando cidades, liderando a higienização salvadora de inumeráveis infectados de forma assertiva.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Ressurreição de Frente:</strong> Agarrar o sopro que escapa de um companheiro agonizante cujos os miolos explodiriam entre bombardeios frenéticos, o suturando ou estancando na urgência desesperadora do combate, blindando a morte.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Pioneiro Cirúrgico:</strong> Estripar conceitos da biologia convencional, procedendo amputações, excisões de membros malditos e transplantes inéditos valendo-se das piores macas e pinças improvisadas que houver.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você ultrapassa os limites da medicina convencional. Seu conhecimento permite prolongar a vida, curar o incurável e realizar feitos médicos que poucos ousariam tentar.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Executa cirurgias de alta complexidade sob qualquer pressão;</li>
+                                <li style="margin-bottom: 8px;">Mantém pacientes vivos artificialmente mesmo sem recursos;</li>
+                                <li style="margin-bottom: 8px;">Passa a ser reconhecido como autoridade médica em qualquer região;</li>
+                                <li style="margin-bottom: 8px;">Realiza transplantes e enxertos entre raças ou espécies diferentes;</li>
+                                <li style="margin-bottom: 8px;">Reverte doenças raras e condições terminais.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #50C878;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(80, 200, 120, 0.05); border-left: 4px solid #50C878; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #50C878; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Milagre Prático:</strong> Identificar antídotos obscuros para erradicar peçonhas endêmicas irreversíveis em tempo recorde, varrendo infecções crônicas tidas outrora como impenetráveis por pesquisadores marinhos.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Misericórdia Absoluta:</strong> Promover a neutralidade compassiva sob a iminente traição ou raiva do próprio bando, sanando imperadores e oficiais odiados numa fresta perigosa do desespero por amor puro aos ofícios de um cirurgião.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Tecedor de Vidas:</strong> Modificar e revigorar glândulas ou pernas arrancadas através de enxertos míticos, postergando o suspiro da velhice num paciente e desafiando inteiramente o controle letal da divindade.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Sua reputação é lendária. Você representa a esperança onde a morte parecia certa, sendo capaz de feitos quase milagrosos com a medicina. Onde você pisa, vidas são salvas e histórias mudam.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Cria tratamentos ou implantes únicos com efeitos mecânicos e narrativos;</li>
+                                <li style="margin-bottom: 8px;">Cura com efeitos adicionais (como remover traumas mentais ou fadiga extrema);</li>
+                                <li style="margin-bottom: 8px;">É reconhecido mundialmente por NPCs e pode ser convocado por ilhas ou governos em crises sanitárias;</li>
+                                <li style="margin-bottom: 8px;">Modifica biologicamente seres vivos com cirurgias especiais;</li>
+                                <li style="margin-bottom: 8px;">Realiza milagres médicos, salvando quem deveria estar morto (com custo narrativo).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #1E90FF;">Musicista <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Musicista.png" alt="Musicista" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Um musicista é responsável por levantar a moral do grupo através de canções, utilizando qualquer tipo de instrumento musical para refletir ou alegrar os sentimentos dos companheiros durante a jornada. Suas melodias podem inspirar coragem, trazer conforto em momentos difíceis e fortalecer os laços entre os tripulantes. O músico desempenha um papel crucial na manutenção do espírito e da motivação da tripulação, tornando a viagem mais agradável e unindo todos com o poder da música.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Melodia Impactante</i> | <i>Sinfonia Ilusória</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #1E90FF;">Nível 1: Sonante <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você é um talentoso músico, você pode se apresentar em praças, bares populares e festas da comunidade, conquistando público e reconhecimento. É o começo da sua jornada como um grande musicista.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">É tratado com simpatia por NPCs que admiram sua arte;</li>
+                                <li style="margin-bottom: 8px;">Ganha 100.000.000 por show nos dias 15 e 30;</li>
+                                <li style="margin-bottom: 8px;">Pode influenciar pequenos grupos durante ou após apresentações;</li>
+                                <li style="margin-bottom: 8px;">Recebe 2% de desconto em lojas onde for reconhecido.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #1E90FF;">Nível 2: Celebridade Local <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Seu nome se espalha com facilidade pelas ilhas que visita. As pessoas passam a reconhecer seu rosto e lembrar de suas canções, e até comerciantes usam sua imagem para atrair clientes.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Obtém informações privilegiadas por influência social;</li>
+                                <li style="margin-bottom: 8px;">Pode conseguir pequenos favores de NPCs admiradores;</li>
+                                <li style="margin-bottom: 8px;">Pode realizar shows em eventos maiores, como feiras ou festivais;</li>
+                                <li style="margin-bottom: 8px;">Recebe 200.000.000 por show nos dias 15 e 30;</li>
+                                <li style="margin-bottom: 8px;">Recebe 5% de desconto em lojas em troca de patrocínio pessoal.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #1E90FF;">Nível 3: Pop Star <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você vira um fenômeno. Seus cartazes são colados por aí, seu nome estampa camisetas, e multidões começam a seguir sua agenda. Sua música agora movimenta massas.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Cria um fã-clube que pode auxiliar com tarefas simples;</li>
+                                <li style="margin-bottom: 8px;">Fã-clube gera 50.000.000 por semana como fundo coletivo que pode ser usado como empréstimo;</li>
+                                <li style="margin-bottom: 8px;">Ganha 10% de desconto em compras devido à fama;</li>
+                                <li style="margin-bottom: 8px;">Pode atrair grandes multidões e influenciar situações sociais em massa;</li>
+                                <li style="margin-bottom: 8px;">Recebe 400.000.000 por show nos dias 15 e 30.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #1E90FF;">Nível 4: Maestro Emocional <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(30, 144, 255, 0.05); border-left: 4px solid #1E90FF; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #1E90FF; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Sinfonia de Batalha:</strong> Orquestrar o frenesi num banho de sangue entoando marchas heroicas que desestabilizem o foco mortífero adversário ao revigorar com audácia pura seus esfarrapados protegidos.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Apaziguador de Feras:</strong> Comungar um espetáculo ressoante, aturdindo ou fascinando calamidades orgânicas e seres inóspitos de oceanos negros numa hipnose musical provisória que dissipe naufrágios.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Espião Sonoro:</strong> Apoderar-se das cortinas burguesas e camarotes restritos, deslizando incólume até festins monárquicos ou marinheiros, furtando as falácias enquanto seduz os desconfiados em harpas de falsidade.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Agora você é reconhecido em todos os Blues e na Grand Line. Governos, revolucionários e criminosos sabem quem você é. Sua música afeta opiniões e seu nome abre portas importantes.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue 20% de desconto em estabelecimentos comerciais;</li>
+                                <li style="margin-bottom: 8px;">Ganha acesso a patrocinadores que financiam projetos pessoais ou coletivos;</li>
+                                <li style="margin-bottom: 8px;">Manipula multidões com facilidade em grandes eventos;</li>
+                                <li style="margin-bottom: 8px;">Pode estampar produtos, eventos e campanhas com sua imagem;</li>
+                                <li style="margin-bottom: 8px;">Recebe 900.000.000 por show (uma vez ao mês).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #1E90FF;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(30, 144, 255, 0.05); border-left: 4px solid #1E90FF; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #1E90FF; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Psicanálise Rítmica:</strong> Reformatar os pânicos neurológicos ou psicoses irrevogáveis de indivíduos amargurados por maldições através das cordas, varrendo do ego das pessoas traumas severos, curando-as de dentro para fora.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Eco Histórico:</strong> Rastrear e materializar uma composição exilada e poética atrelada às raças reclusas, manifestando suas estrofes como as chaves sonoras que acordam segredos colossais dormentes.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Serenata Geopolítica:</strong> Abrandar ódios inter-raciais enraizados cantando unissonamente para abafar a guerra impulsionada por reis tiranos, decretando alianças históricas entre os sangues rebeldes em comício imponente.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Sua fama é inquestionável. Você é uma lenda viva da música. Sua influência social é comparável à de imperadores e seu nome é citado em músicas, livros e jornais ao redor do mundo.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue 30% de desconto global em praticamente todo comércio;</li>
+                                <li style="margin-bottom: 8px;">Pode impor presença apenas com sua reputação, facilitando diálogos, negociações e fugas de situações tensas;</li>
+                                <li style="margin-bottom: 8px;">Recebe 1.500.000.000 por show (uma vez ao mês);</li>
+                                <li style="margin-bottom: 8px;">Reconhecido mesmo em ilhas isoladas e territórios perigosos;</li>
+                                <li style="margin-bottom: 8px;">Seus fãs incluem nobres, criminosos, caçadores e membros do Governo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; color: #0066CC;">Navegador <span class="toggle-icon">▼</span></h2>
+                
+                <div class="toggle-content rank-box">
+                    <img src="assets\imagens\Classes\Navegador.png" alt="Navegador" style="width: 100%; max-width: 800px; height: auto; border-radius: var(--border-radius); display: block; margin: 0 auto 25px; border: 2px solid var(--sidebar-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <p style="margin-bottom: 15px;">Você é o guia da tripulação, responsável por traçar as rotas mais seguras e rápidas. Com seu vasto conhecimento em cartografia, meteorologia e navegação astronômica, você se antecipa aos perigos naturais do mar, garantindo que a jornada seja o mais tranquila possível. Sua habilidade de ler as estrelas, prever tempestades e entender os caprichos das marés é fundamental para a sobrevivência e sucesso da tripulação. A jornada pode ser longa e traiçoeira, mas você sempre sabe como encontrar o caminho certo.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 35px;">
+                        <li><strong>Estilo de Classe:</strong> <i>Arte do Tempo</i> | <i>Fúria das Marés</i></li>
+                    </ul>
+
+                    <h3 class="highlight-text" style="text-align: center; margin-bottom: 25px; font-size: 22px;">⇃EVOLUÇÕES⇂</h3>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #0066CC;">Nível 1: Marujo <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você já possui uma boa base de conhecimentos sobre o mar e a navegação. Sua habilidade em mapear rotas e interpretar as condições do tempo é suficiente para garantir que a tripulação não se perca durante a jornada. Embora seus métodos ainda sejam simples, você sabe como lidar com os elementos naturais que surgem em seu caminho.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Capacidade de traçar rotas seguras, considerando os ventos, as marés e as correntes marítimas;</li>
+                                <li style="margin-bottom: 8px;">Conhece as coordenadas básicas de navegação (como usar mapas simples e bússolas);</li>
+                                <li style="margin-bottom: 8px;">Consegue fazer previsões básicas do tempo (tempestades, ventos fortes, mudanças na maré);</li>
+                                <li style="margin-bottom: 8px;">Desenha mapas rudimentares, usando sua experiência, e pode especificar direções seguras;</li>
+                                <li style="margin-bottom: 8px;">Pode ajudar a tripulação a evitar perigos naturais (tempestades ou correntes traiçoeiras).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #0066CC;">Nível 2: Cartógrafo <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Sua habilidade com os mapas e o clima é muito mais apurada. Você pode antecipar mudanças nas condições climáticas e identificar áreas seguras ou perigosas com grande antecedência. Seu conhecimento de ilhas e mares é vasto, e você é capaz de criar mapas detalhados e precisos, sendo capaz de vender essas criações para quem precisar delas.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Antecipação de mudanças climáticas: Consegue prever tempestades e mudanças no tempo com muito mais precisão;</li>
+                                <li style="margin-bottom: 8px;">Conhece muito bem a fauna e flora marítima, podendo fornecer informações sobre criaturas e recursos encontrados no mar;</li>
+                                <li style="margin-bottom: 8px;">Criação de mapas detalhados que incluem ilhas, correntes marítimas e pontos de interesse. Você pode vender esses mapas criados com base no conhecimento sobre as ilhas por preços decididos por você mesmo.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #0066CC;">Nível 3: Timoneiro <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 15px;">Você agora é um mestre na arte de navegar. Seu conhecimento do mar é tão profundo que você consegue antecipar e superar até mesmo as tempestades mais violentas. Seu controle sobre o navio e o tempo de viagem é incomparável, permitindo que a tripulação viaje de forma mais eficiente e rápida entre as ilhas.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Conhecimento avançado das correntes e ventos, conseguindo navegar através de grandes tempestades e águas turbulentas;</li>
+                                <li style="margin-bottom: 8px;">Domínio da fauna e flora marinha, conseguindo identificar rapidamente criaturas ou recursos valiosos no mar;</li>
+                                <li style="margin-bottom: 8px;">Pode orientar a tripulação em navegações difíceis, garantindo que os riscos sejam minimizados;</li>
+                                <li style="margin-bottom: 8px;">Reduz o tempo de navegação pela metade entre as ilhas, graças ao seu conhecimento profundo das rotas mais rápidas e seguras;</li>
+                                <li style="margin-bottom: 8px;">Tem controle total sobre o timão, sendo capaz de ajustar a navegação rapidamente para evitar perigos imprevistos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #0066CC;">Nível 4: Mestre das Rotas <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(0, 102, 204, 0.05); border-left: 4px solid #0066CC; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #0066CC; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Intransitável:</strong> Engajar sua tripulação pelos estigmas do oceano corrompido, superando calmarias maciças repletas de Reis dos Mares sem a blindagem adequada e garantindo a resiliência plena de sua frota.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Topógrafo Notório:</strong> Escalar e contornar os cumes de penínsulas renegadas que inexistem na vastidão cartográfica da Marinha, rabiscando e atestando nas rotas a mais perigosa geografia selvagem do mundo.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho da Premonição Pluviométrica:</strong> Distinguir antecipadamente e anular pelo contorno geográfico um evento natural aniquilador, esquivando-se da fatalidade de Knocks-Up imperiosos muito antes da catástrofe abraçá-los.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Seu domínio sobre a arte de navegar e os mares é absoluto. Agora, você não apenas prevê o clima e as marés, mas consegue usar essas forças a seu favor. Seu conhecimento avançado sobre os ventos e as marés permite que você altere sua rota para se mover mais rapidamente e com mais segurança, mesmo nas condições mais desafiadoras.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Consegue criar mapas de rotas super detalhadas, incluindo ilhas remotas ou áreas de difícil acesso;</li>
+                                <li style="margin-bottom: 8px;">Manipula o clima a seu favor utilizando ventos e correntes para acelerar a navegação ou evitar tempestades com mais eficácia;</li>
+                                <li style="margin-bottom: 8px;">Sempre encontra a rota mais segura para a tripulação, mesmo em mares desconhecidos;</li>
+                                <li style="margin-bottom: 8px;">Tem uma visão aprimorada do mar, conseguindo antecipar qualquer mudança nas condições do tempo muito antes dos outros.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text toggle-title" style="text-align: center; margin-bottom: 15px; color: #0066CC;">Nível 5 <span class="toggle-icon">▼</span></h4>
+                        <div class="toggle-content">
+                            <div style="background-color: rgba(0, 102, 204, 0.05); border-left: 4px solid #0066CC; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                                <h5 style="color: #0066CC; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px;">Requisito de Evolução (Escolha UM Caminho em ON):</h5>
+                                <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                    <li style="margin-bottom: 8px;"><strong>Caminho Sem Agulha:</strong> Flutuar e deslizar pelas engrenagens distorcidas do Novo Mundo ignorando o apelo falso dos Logs Poses estilhaçados, apoiando a travessia ilesa somente nos cálculos mentais das correntes invisíveis.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho do Arquipélago da Salvação:</strong> Liderar a fuga estratégica e providencial das frontes pesadas em meio ao cataclismo impiedoso que afundaria frotas imperiais inteiras, estabilizando e preservando naus que sequer estão sob seu leme.</li>
+                                    <li style="margin-bottom: 8px;"><strong>Caminho até as Lendas:</strong> Firmar com êxito a trilha para santuários reclusos ou terras da lenda milenar, rompendo os bloqueios enraizados que velavam tais paradas das unhas de imperadores durante séculos.</li>
+                                </ul>
+                            </div>
+                            <p style="margin-bottom: 15px;">Você é uma lenda viva dos mares. Seus conhecimentos e habilidades de navegação são reconhecidos em todas as partes do mundo. As condições climáticas e os mares, com todos os seus perigos, se tornam uma simples extensão do seu domínio. Sua capacidade de navegar com segurança e eficiência é tão incomum que até mesmo as tempestades mais ferozes não o intimidam.</p>
+                            <ul style="margin-left: 40px;">
+                                <li style="margin-bottom: 8px;">Controle absoluto do clima: Você pode invocar ou controlar ventos, correntes e até influenciar parcialmente o clima ao seu redor para beneficiar a navegação com auxílio do Clima Tact;</li>
+                                <li style="margin-bottom: 8px;">Perícia avançada em todos os aspectos do mar, sabendo como interagir com qualquer fenômeno natural (tempestades, criaturas marinhas, correntes) sem colocar a tripulação em risco;</li>
+                                <li style="margin-bottom: 8px;">Pode realizar viagens expressas entre ilhas, ainda mais rápidas e seguras, mesmo em mares desconhecidos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
