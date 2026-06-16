@@ -64,10 +64,10 @@
                     <p style="margin-bottom: 25px;">⚠ Não pode treinar Haki e <a href="akuma-no-mi.html">Akuma no Mi</a> ao mesmo tempo; isso significa que ao fazer um Treino Padrão, você vai ganhar 250 pontos de atributo normais, e também 200 pontos de Akuma no Mi/Haki (apenas um desses dois por vez).</p>
 
                     <h3 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Limites de Haki e Estamina</h3>
-                    <p style="margin-bottom: 10px;">Usuários de Haki sem Akuma no Mi podem atingir o máximo de 30.000 pontos em Haki. Só é possível ultrapassar esse valor se sua Linhagem lhe permitir. Ao ingerir uma Akuma no Mi, ocorre um balanceamento que reduz o limite de Haki:</p>
+                    <p style="margin-bottom: 10px;">Usuários de Haki sem Akuma no Mi podem atingir o máximo de 35.000 pontos em Haki. Só é possível ultrapassar esse valor se sua Linhagem lhe permitir. Ao ingerir uma Akuma no Mi, ocorre um balanceamento que reduz o limite de Haki:</p>
                     <ul style="margin-left: 20px; margin-bottom: 15px;">
-                        <li style="margin-bottom: 8px;"><strong>Sem Akuma no Mi:</strong> 30.000 pontos de Haki.</li>
-                        <li style="margin-bottom: 8px;"><strong>Com Akuma no Mi:</strong> 25.000 pontos de Haki.</li>
+                        <li style="margin-bottom: 8px;"><strong>Sem Akuma no Mi:</strong> 35.000 pontos de Haki.</li>
+                        <li style="margin-bottom: 8px;"><strong>Com Akuma no Mi:</strong> 30.000 pontos de Haki.</li>
                     </ul>
                     <p style="margin-bottom: 10px;"><strong>Gasto de Estamina:</strong></p>
                     <ul style="margin-left: 20px; margin-bottom: 15px;">
@@ -170,12 +170,19 @@
                 <div class="toggle-content rank-box">
                     <p style="margin-bottom: 15px;">O Haki mais poderoso, raro e desejado do RPG. Não possui treinamento específico de despertar; a administração decide se o personagem é digno, avaliando sua personalidade e situação narrativa. Ele permite emitir sua vontade de forma tão intensa que adversários com vontade mais fraca desmaiam.</p>
                     <p style="margin-bottom: 15px;">Para despertar, é necessário presenciar a morte de alguém importante ou estar em situação de morte certa. Está ligado à intimidação e pode causar danos a objetos inanimados.</p>
+                    <p style="margin-bottom: 20px;">O simples despertar desse espírito supremo prova a magnitude do indivíduo. Portanto, todos aqueles que despertam o Haki do Rei automaticamente <strong>aumentam seu teto máximo de Espírito em 5.000 pontos</strong>. Se o seu limite era 30.000 pontos, ele será permanentemente expandido para 35.000, e assim por diante.</p>
                     <p style="margin-bottom: 20px;"><strong>Requerimentos de Despertar:</strong> Merecimento | Feitos | Boa personalidade | Situação de quase morte/trauma presenciado | 4 treinos de domínio</p>
 
                     <div class="sub-attr">
                         <h3 class="toggle-title">DOMINAÇÃO <span class="toggle-icon">▼</span></h3>
                         <div class="toggle-content">
-                            <p style="margin-bottom: 10px;">Pode ser usada para temporariamente dominar, controlar ou intimidar a vontade da vítima, como domar animais. Animais afetados tornam-se submissos e o efeito pode culminar na perda de consciência.</p>
+                            <p style="margin-bottom: 10px;">Pode ser usada para temporariamente dominar, controlar ou intimidar a vontade da vítima, como domar animais. Animais afetados tornam-se submissos e o efeito pode culminar na perda de consciência. A quantidade mínima de pontos em Haki do Rei dita quais criaturas podem ser subjugadas:</p>
+                            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                                <li style="margin-bottom: 8px;"><strong>Animais comuns:</strong> 1.000 pontos</li>
+                                <li style="margin-bottom: 8px;"><strong>Bestas selvagens:</strong> 3.000 pontos</li>
+                                <li style="margin-bottom: 8px;"><strong>Criaturas gigantes:</strong> 6.000 pontos</li>
+                                <li style="margin-bottom: 8px;"><strong>Reis do Mar:</strong> 9.000 pontos</li>
+                            </ul>
                             <p><strong>Requerimentos:</strong> 1.000 pontos em Haki do Rei | 2 treinos</p>
                         </div>
                     </div>
@@ -191,7 +198,17 @@
                     <div class="sub-attr">
                         <h3 class="toggle-title">PRESSÃO <span class="toggle-icon">▼</span></h3>
                         <div class="toggle-content">
-                            <p style="margin-bottom: 10px;">Se usado com poder suficiente, o Haki pode danificar objetos inanimados ou estruturas ao redor. Quando dois usuários poderosos se chocam, geram raios negros de energia, podendo até "dividir os céus".</p>
+                            <p style="margin-bottom: 10px;">Se usado com poder suficiente, o Haki pode danificar objetos inanimados ou estruturas ao redor. Quando dois usuários poderosos se chocam, geram raios negros de energia, podendo até "dividir os céus". O raio de alcance é de 1 metro para cada 10 pontos de Haki do Rei.</p>
+                            
+                            <div class="verificador-box" style="padding: 15px; margin-bottom: 15px; max-width: 300px;">
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <label for="haki-rei-pontos">Pontos de Haki do Rei</label>
+                                    <input type="text" inputmode="numeric" id="haki-rei-pontos" placeholder="Digite a pontuação...">
+                                </div>
+                                <p style="margin-bottom: 0; font-size: 15px;"><strong>Alcance:</strong> <span id="haki-rei-alcance" class="highlight-text">0 m</span></p>
+                            </div>
+
+                            <p style="margin-bottom: 10px;"><strong>Buff Passivo:</strong> Soma 50% do Haki do Rei ao dano causado em ataques que o utilizem.</p>
                             <p><strong>Requerimentos:</strong> Incapacitação | 5.000 pontos em Haki do Rei | 2 treinos</p>
                         </div>
                     </div>
@@ -207,10 +224,76 @@
                     <div class="sub-attr">
                         <h3 class="toggle-title">INFUSÃO <span class="toggle-icon">▼</span></h3>
                         <div class="toggle-content">
-                            <p style="margin-bottom: 10px;">O usuário infunde o corpo e armas com o espírito conquistador (semelhante ao Haki do Armamento), gerando um impulso de dano avassalador marcado por raios negros avermelhados ou roxos. No nível máximo, o usuário pode atacar o alvo sem contato físico direto.</p>
+                            <p style="margin-bottom: 10px;">O ápice do Haki do Rei. Neste estágio, o usuário deixa de apenas impor sua vontade sobre os outros e passa a revestir seus ataques com o próprio espírito de conquistador. Sua ambição, determinação e poder manifestam-se fisicamente através de rajadas de energia negra que envolvem seu corpo ou armamento, liberando um poder destrutivo capaz de abalar até mesmo os adversários mais poderosos.</p>
+                            <p style="margin-bottom: 10px;"><strong>Buff:</strong> Concede um bônus de pontos fixos no dano equivalente a 125% do total de Haki do Rei e ignora 35% da Resistência do oponente.</p>
                             <p><strong>Requerimentos:</strong> 10.000 pontos em Haki do Rei | Deve ter desbloqueado todas as etapas de Haki do Armamento e Haki da Observação, com exceção dos Avançados | Só desperta em eventos/trama por aprovação da staff.</p>
                         </div>
                     </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 40px 0;">
+                    
+                    <h3 class="title-quantico" style="font-size: 28px; text-align: center; color: var(--accent-color); margin-bottom: 30px;">
+                        DIFERENÇA DE ESPÍRITO
+                    </h3>
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Diferença de 0 a 999 pontos</h4>
+                        <p style="margin-bottom: 10px;">As vontades se chocam, mas nenhuma delas é forte o bastante para subjugar a outra. O alvo sente a presença esmagadora do conquistador, percebendo instintivamente que está diante de alguém de espírito excepcional, porém mantém sua determinação intacta.</p>
+                        <p style="margin-bottom: 0;"><strong>Efeito:</strong> Apenas narrativo.</p>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 40px 0;">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Diferença de 1.000 a 2.499 pontos</h4>
+                        <p style="margin-bottom: 10px;">A vontade do usuário começa a se impor sobre a do alvo. A pressão invisível exercida pelo Haki do Rei faz com que seus movimentos se tornem ligeiramente mais hesitantes, enquanto sua confiança vacila diante da presença dominante do adversário.</p>
+                        <p style="margin-bottom: 8px;"><strong>Debuff:</strong> -5% em Reflexo | -5% em Velocidade Corporal</p>
+                        <p style="margin-bottom: 0;"><strong>Duração:</strong> 3 turnos.</p>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 40px 0;">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Diferença de 2.500 a 4.999 pontos</h4>
+                        <p style="margin-bottom: 10px;">A pressão espiritual torna-se sufocante. O alvo sente o próprio instinto de sobrevivência alertá-lo constantemente do perigo que está à sua frente, dificultando sua capacidade de reagir e executar ações com precisão.</p>
+                        <p style="margin-bottom: 8px;"><strong>Debuff:</strong> -10% em Reflexo | -10% em Velocidade Corporal</p>
+                        <p style="margin-bottom: 0;"><strong>Duração:</strong> 3 turnos.</p>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 40px 0;">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Diferença de 5.000 a 7.499 pontos</h4>
+                        <p style="margin-bottom: 10px;">A presença do conquistador pesa sobre a mente do alvo como uma montanha. Manter-se consciente e focado passa a exigir um enorme esforço mental, enquanto pensamentos de derrota e insegurança tentam se infiltrar em sua vontade.</p>
+                        <p style="margin-bottom: 8px;"><strong>Debuff:</strong> -15% em Reflexo | -15% em Velocidade Corporal | -10% em Força/Destreza</p>
+                        <p style="margin-bottom: 0;"><strong>Duração:</strong> 3 turnos.</p>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 40px 0;">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Diferença de 7.500 a 9.999 pontos</h4>
+                        <p style="margin-bottom: 10px;">A diferença entre as vontades torna-se brutal. O ambiente parece ser dominado pela presença do usuário, e aqueles afetados sentem como se estivessem lutando contra uma força inevitável. Cada movimento exige mais esforço, enquanto a própria determinação é constantemente pressionada.</p>
+                        <p style="margin-bottom: 8px;"><strong>Debuff:</strong> -20% em Reflexo | -20% em Velocidade Corporal | -15% em Força/Destreza | Consome 25% mais Estamina para utilizar técnicas.</p>
+                        <p style="margin-bottom: 0;"><strong>Duração:</strong> 3 turnos.</p>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 40px 0;">
+                    <div style="margin-bottom: 25px;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Diferença de 10.000 a 14.999 pontos</h4>
+                        <p style="margin-bottom: 10px;">A vontade do usuário alcança um nível capaz de esmagar completamente espíritos inferiores. Para pessoas comuns, permanecer consciente diante dessa pressão torna-se impossível. Mesmo combatentes experientes precisam reunir toda sua força mental para resistir.</p>
+                        <p style="margin-bottom: 10px;">Os jogadores deverão jogar <strong>2d20</strong> utilizando o link usado para as navegações e usarão o <strong>menor resultado</strong>:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;">Se o resultado for de <strong>1 a 10</strong>, será considerado uma falha e o alvo desmaia por 3 turnos.</li>
+                            <li style="margin-bottom: 8px;">Se o resultado for de <strong>11 a 20</strong>, o alvo resiste, mas sofre os debuffs abaixo.</li>
+                        </ul>
+                        <p style="margin-bottom: 8px;"><strong>Debuff (se resistir):</strong> -20% em Reflexo | -20% em Velocidade Corporal | -15% em Força/Destreza | Consome 40% mais Estamina para utilizar técnicas.</p>
+                        <p style="margin-bottom: 0;"><strong>Duração do Debuff:</strong> 3 turnos.</p>
+                    </div>
+
+                    <hr style="border: 1px dashed var(--sidebar-border); margin: 40px 0;">
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Diferença de 15.000 pontos ou mais</h4>
+                        <p style="margin-bottom: 10px;">A supremacia da vontade do conquistador torna-se absoluta. A mera presença do usuário é suficiente para esmagar espíritos inferiores sem qualquer esforço consciente. Poucos são capazes de permanecer de pé diante de uma diferença tão absurda de poder.</p>
+                        <p style="margin-bottom: 0;"><strong>Efeito:</strong> Desmaiam automaticamente.</p>
+                    </div>
+
                 </div>
             </section>
         </div>

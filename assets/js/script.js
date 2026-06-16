@@ -101,6 +101,8 @@ body.dark-mode .calc-box { box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15); }
 .btn-alternar-img { position: absolute; bottom: 8px; right: 8px; background: var(--sidebar-bg); color: var(--accent-color); border: 1px solid var(--accent-color); border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px; font-family: 'Quantico', sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.5); transition: all 0.3s ease; z-index: 10; }
 .btn-alternar-img:hover { background: var(--accent-color); color: var(--bg-color); }
 .gallery-img-container img.secundaria { display: none !important; }
+.map-container.show-coords .grid-cell::after { content: attr(data-coord); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255, 255, 255, 0.9); font-size: 8px; font-weight: bold; font-family: 'Quantico', monospace; pointer-events: none; text-shadow: 1px 1px 1px #000, -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000; z-index: 2; }
+.grid-cell { position: relative; }
 
 @media (max-width: 768px) { 
     .stats-bar { flex-direction: column; gap: 10px; text-align: center; } 
@@ -1175,6 +1177,36 @@ if (mapGrids.length > 0) {
         container.parentElement.insertBefore(btn, container);
     });
 
+    document.querySelectorAll('.map-container').forEach(container => {
+        const btnCoords = document.createElement('button');
+        btnCoords.className = 'btn-toggle-nav';
+        btnCoords.innerHTML = '📍Mostrar Coordenadas';
+        btnCoords.style.cssText = 'background: var(--sidebar-bg); border-color: var(--accent-color); color: var(--accent-color); font-weight: bold; cursor: pointer; padding: 4px 8px; font-size: 12px; margin-left: 5px;';
+        
+        btnCoords.onclick = function() {
+            container.classList.toggle('show-coords');
+            this.innerHTML = container.classList.contains('show-coords') ? '📍Esconder Coordenadas' : '📍Mostrar Coordenadas';
+        };
+
+        const parent = container.parentElement;
+        const flexDiv = Array.from(parent.children).find(el => el.style && el.style.display === 'flex' && el.style.justifyContent === 'flex-end');
+        
+        if (flexDiv) {
+            flexDiv.appendChild(btnCoords);
+        } else {
+            const newFlexDiv = document.createElement('div');
+            newFlexDiv.style.cssText = 'display: flex; justify-content: flex-end; margin-bottom: 5px; gap: 5px;';
+            newFlexDiv.appendChild(btnCoords);
+            
+            const copyBtn = parent.querySelector('.copy-map-btn');
+            if (copyBtn) {
+                parent.insertBefore(newFlexDiv, copyBtn);
+            } else {
+                parent.insertBefore(newFlexDiv, container);
+            }
+        }
+    });
+
     function atualizarContagemQuadrados() {
         const totalSelected = document.querySelectorAll('.grid-cell.selected').length;
         inputQuadrados.value = totalSelected;
@@ -1199,6 +1231,10 @@ if (mapGrids.length > 0) {
                 cell.dataset.y = y;
                 cell.dataset.group = group;
                 cell.dataset.index = index;
+                
+                const letter = String.fromCharCode(65 + y);
+                const num = String(x + 1).padStart(2, '0');
+                cell.dataset.coord = letter + num;
                 
                 if (isRedZone(group, index, x, y)) {
                     cell.classList.add('red-zone');
