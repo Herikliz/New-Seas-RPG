@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn"> </button>
+    <div id="sidebar-container"></div>
+
+    <div id="calculadora-rota-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">GEOGRAFIA E NAVEGAÇÃO</h1>
+            </section>
+
+            <div class="geo-layout">
+                <div class="rank-box">
+                    <p style="margin-bottom: 15px;">O sistema de navegação do nosso RPG é bem simples. Abaixo estarão as informações sobre quais navios, quantos caracteres e qual Log Pose vocês irão precisar para navegar pelos mares. Aproveite!</p>
+                    <h2 class="title-quantico rank-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px;">SISTEMA DE LOCOMOÇÃO</h2>
+
+                    <div class="maps-grid" style="margin-bottom: 25px;">
+                        <div>
+                            <div class="map-title">North Blue</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\North Blue.png" alt="North Blue">
+                                <div class="grid-overlay" data-group="left" data-index="0"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">East Blue</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\East Blue.png" alt="East Blue">
+                                <div class="grid-overlay" data-group="right" data-index="0"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="map-title">Calm Belt (North Blue)</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\Calm Belt (North Blue).png" alt="Calm Belt North Blue">
+                                <div class="grid-overlay" data-group="left" data-index="1"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">Calm Belt (East Blue)</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\Calm Belt (East Blue).png" alt="Calm Belt East Blue">
+                                <div class="grid-overlay" data-group="right" data-index="1"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="map-title">Novo Mundo</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\Novo Mundo.png" alt="Novo Mundo">
+                                <div class="grid-overlay" data-group="left" data-index="2"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">Paraíso</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\Paraíso.png" alt="Paraíso">
+                                <div class="grid-overlay" data-group="right" data-index="2"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="map-title">Calm Belt (West Blue)</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\Calm Belt (West Blue).png" alt="Calm Belt West Blue">
+                                <div class="grid-overlay" data-group="left" data-index="3"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">Calm Belt (South Blue)</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\Calm Belt (South Blue).png" alt="Calm Belt South Blue">
+                                <div class="grid-overlay" data-group="right" data-index="3"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="map-title">West Blue</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\West Blue.png" alt="West Blue">
+                                <div class="grid-overlay" data-group="left" data-index="4"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title">South Blue</div>
+                            <div class="map-container">
+                                <img src="assets\imagens\Mapas\South Blue.png" alt="South Blue">
+                                <div class="grid-overlay" data-group="right" data-index="4"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">O mapa do mundo de One Piece é dividido em mares, que são: Blues, Grand Line, Novo Mundo e Calm Belt. Para se locomover nesse mapa, você pode escolher entre diferentes navios para executar a travessia entre os mares.</p>
+
+                    <p style="margin-bottom: 15px;">Para viajar, basta informar sua localização atual e o destino desejado usando as coordenadas do mapa (clicando em Copiar Mapa e enviando no <a href="https://chat.whatsapp.com/FHkr8XCRYx1EGloW474rAn">Deғιɴιçα̃o de Roтαѕ ⋮⋮ Oɴe pιece</a>; além disso, antes de enviar isso lá, precisa mandar a cena de navegação no <a href="https://chat.whatsapp.com/Jw5S6zJecDx1FwJzPCcMns">Neɯ Seαs O.P (Ꮻɴ)</a>). Por exemplo, se você está em Toroa no mar West Blue e quer ir para Ohara, também no West Blue, pode escolher o meio de transporte e calcular o tempo de deslocamento de acordo. O sistema funciona com o método de plano quadriculado. Cada quadradinho representará um tempo necessário para ser percorrido, podendo ser aéreo ou marítimo.</p>
+
+                    <p style="margin-bottom: 20px;">O modo de navegação aérea (no caso de Frutas) dependerá da velocidade de deslocamento ou do tipo de Fruta. Peça a um ADM que calcule o tempo necessário para percorrer cada quadradinho com o sistema de viagem de sua Fruta.</p>
+
+                    <h3 class="title-quantico" style="color: var(--accent-color); font-size: 22px; margin-bottom: 15px;">Rolagem de Dados</h3>
+                    <p>Quando mandar o cálculo de tempo no Deғιɴιçα̃o de Roтαѕ ⋮⋮ Oɴe pιece, entre <a href="https://www.rolldicewithfriends.com/rooms/newseas">nesse link</a> e preencha o nome de seu personagem lá, e então clique para girar 1d20, tire print do resultado e mande no grupo.</p>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico toggle-title rank-title" style="cursor: pointer;">BLUES <span class="toggle-icon">▼</span></h2>
+                    <div class="toggle-content">
+                        <p style="margin-bottom: 15px;">Os Blues são os mares mais calmos e suaves que existem no mundo, sendo divididos em quatro partes: North Blue, East Blue, South Blue e West Blue. Para navegar entre eles, você precisa:</p>
+                        
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Se não é Navegador:</strong> Escrever 1.200 caracteres. Se não tiver um NPC Especial Navegador, tem uma chance de 50% de acabar indo pra ilha errada.</li>
+                            <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 720 caracteres e não precisa de um NPC Especial.</li>
+                        </ul>
+
+                        <table style="margin-bottom: 25px;">
+                            <thead>
+                                <tr>
+                                    <th>Resultado (d20)</th>
+                                    <th>Efeito</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>01–05</td><td>Tempestade súbita: Navio perde 3 vidas ao invés de 1.</td></tr>
+                                <tr><td>06–09</td><td>Bateu numa pedra: Navio perde 2 vidas ao invés de 1.</td></tr>
+                                <tr><td>10</td><td>A viagem segue normalmente.</td></tr>
+                                <tr><td>11–15</td><td>Boas correntes: menos 1 hora de viagem.</td></tr>
+                                <tr><td>16–19</td><td>Ótima navegação: menos 2 horas de viagem.</td></tr>
+                                <tr><td>20</td><td>Navegação perfeita: menos 3 horas de viagem e o navio não perde vidas.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-content geo-writer-box" data-mar="blues">
+                            <div style="margin-bottom: 10px;">
+                                <button type="button" class="btn-toggle-nav" data-status="nao">Jogador Navegador: Não</button>
+                            </div>
+                            <textarea class="geo-textarea-contador" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                            <div class="stats-bar">
+                                <span><span class="scene-paras">0</span> Parágrafos</span>
+                                <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                            </div>
+                            <button class="btn-copiar-contador">Copiar Texto</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico toggle-title rank-title" style="cursor: pointer;">PARAÍSO <span class="toggle-icon">▼</span></h2>
+                    <div class="toggle-content">
+                        <p style="margin-bottom: 15px;">A Grand Line é uma corrente oceânica cercada pelos Calm Belt, que se estende ao longo de uma linha imaginária do noroeste ao sudeste pelo meio do mundo e é perpendicular à Red Line. A Red Line é um vasto continente que circunda o globo de nordeste a sudoeste. Essas duas linhas dividem o resto do mar em North Blue, East Blue, West Blue e South Blue.</p>
+                        
+                        <p style="margin-bottom: 15px;">Para atravessar a Red Line, é necessário ser um Navegador (ou ter um NPC Especial Navegador) com um Log Pose. Ao chegarem na Grand Line, os mesmos requisitos são exigidos, mas:</p>
+
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Se não é Navegador:</strong> Escrever 2.400 caracteres e ter um NPC Especial que é Navegador. Sem Navegador é impossível velejar por lá.</li>
+                            <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 1.440 caracteres e não precisa de um NPC Especial.</li>
+                        </ul>
+
+                        <table style="margin-bottom: 25px;">
+                            <thead>
+                                <tr>
+                                    <th>Resultado (d20)</th>
+                                    <th>Efeito</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>01</td><td>Rei dos Mares aparece.</td></tr>
+                                <tr><td>02–05</td><td>Clima caótico: Perde 4 vidas.</td></tr>
+                                <tr><td>06–09</td><td>Corrente traiçoeira: Perde 2 vidas.</td></tr>
+                                <tr><td>10</td><td>Desvio leve de rota: Sem perdas, mas viagem atrasa 1 hora.</td></tr>
+                                <tr><td>11–15</td><td>Corrente instável controlada: Sem perdas, sem bônus de tempo.</td></tr>
+                                <tr><td>16–19</td><td>Atalho acidental eficiente: Menos 1 hora de viagem.</td></tr>
+                                <tr><td>20</td><td>Caminho limpo e estável: Menos 2 horas e sem perda de vidas.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-content geo-writer-box" data-mar="paraiso">
+                            <div style="margin-bottom: 10px;">
+                                <button type="button" class="btn-toggle-nav" data-status="nao">Jogador Navegador: Não</button>
+                            </div>
+                            <textarea class="geo-textarea-contador" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                            <div class="stats-bar">
+                                <span><span class="scene-paras">0</span> Parágrafos</span>
+                                <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                            </div>
+                            <button class="btn-copiar-contador">Copiar Texto</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico toggle-title rank-title" style="cursor: pointer;">NOVO MUNDO <span class="toggle-icon">▼</span></h2>
+                    <div class="toggle-content">
+                        <p style="margin-bottom: 15px;">A segunda metade da Grand Line, o mar mais forte e impiedoso que existe. Aqui, o clima é um caos constante, o magnetismo desafia a lógica e as feras marinhas são o menor dos seus problemas. Apenas as tripulações mais preparadas conseguem sobreviver à travessia e às regras implacáveis deste oceano.</p>
+                        
+                        <h3 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Travessia para o Novo Mundo</h3>
+                        <p style="margin-bottom: 15px;">Só existem duas formas de atravessar do Paraíso para o Novo Mundo. A primeira é por cima, cruzando a Red Line (restrita à Marinha e ao Governo). A segunda, usada por piratas, é cruzar por baixo, passando pela <strong>Ilha dos Homens-Peixe</strong>. Para essa travessia subaquática, é obrigatório revestir o navio no Arquipélago Sabaody (através de um NPC Carpinteiro ou de um jogador da classe Carpinteiro de Nível 4+ que tenha aprendido esse método de revestimento em ON; Ferreiros também podem aprender esse método, mas precisam estar no Nível 5). Tipos de resina disponíveis:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 25px;">
+                            <li style="margin-bottom: 8px;"><strong style="color: #f44336;">Bolha Fraca (฿1.500.000.000):</strong> 1 vida. Rolagens abaixo de 10 a fazem estourar.</li>
+                            <li style="margin-bottom: 8px;"><strong style="color: #ff9800;">Bolha Mediana (฿2.000.000.000):</strong> 3 vidas. Rolagens abaixo de 10 tiram 1 vida da bolha. <strong>Utilizada somente para passagem.</strong></li>
+                            <li style="margin-bottom: 8px;"><strong style="color: #4caf50;">Bolha Forte (฿2.500.000.000):</strong> 7 vidas. Rolagens abaixo de 10 não a danificam.</li>
+                        </ul>
+
+                        <h3 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Navegação e Log Pose</h3>
+                        <div style="background-color: rgba(0, 0, 0, 0.2); border-left: 4px solid var(--accent-color); padding: 15px; margin-bottom: 25px; border-radius: 4px;">
+                            <ul style="margin-left: 20px; font-size: 14px; color: var(--text-color);">
+                                <li style="margin-bottom: 8px;"><strong>Alcance Máximo:</strong> Você só pode velejar para ilhas que estejam a até <strong>3 quadrados</strong> de distância. Saltos diretos maiores que isso são quase impossíveis na geografia caótica desse Mar; se quiser pode velejar <strong>4 quadrados</strong>, mas girando 2d20 ao invés de 1d20 e pegando o pior resultado; se quiser forçar ainda mais, pode velejar <strong>5 quadrados</strong>, mas girando 3d20 e pegando o pior resultado.</li>
+                                <li style="margin-bottom: 8px;"><strong>Adaptação Magnética:</strong> O Log Pose precisa de tempo para calibrar a energia magnética da próxima ilha. A cada ilha visitada, é obrigatório um <strong>tempo de espera de 72 horas na vida real</strong> antes de poder navegar adiante.</li>
+                                <li style="margin-bottom: 8px;"><strong>Eternal Pose Restrito:</strong> No Novo Mundo, você só pode comprar um Eternal Pose para uma ilha específica se estiver nela no momento da compra.</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Barreira de Pontos</h3>
+                        <p style="margin-bottom: 15px;">O teto máximo de pontos de atributos do seu personagem será aumentado de acordo com as ilhas que conseguir visitar:</p>
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px;">
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px; border-left: 4px solid #b0bec5;">
+                                <strong style="color: #b0bec5; font-size: 16px;">Limite de 60.000 Pontos</strong><br>
+                                <span style="font-size: 14px;">Mystoria, Punk Hazard, Raijin e Risky Red.</span>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px; border-left: 4px solid #81c784;">
+                                <strong style="color: #81c784; font-size: 16px;">Limite de 70.000 Pontos</strong><br>
+                                <span style="font-size: 14px;">Applenine, Dressrosa, Whole Cake e Yukiryu.</span>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px; border-left: 4px solid #64b5f6;">
+                                <strong style="color: #64b5f6; font-size: 16px;">Limite de 80.000 Pontos</strong><br>
+                                <span style="font-size: 14px;">Foodvalten e Wano.</span>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px; border-left: 4px solid #ba68c8;">
+                                <strong style="color: #ba68c8; font-size: 16px;">Limite de 90.000 Pontos</strong><br>
+                                <span style="font-size: 14px;">Egghead, Elbaf, Hachinosu e Prodence.</span>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px; border-left: 4px solid #f44336;">
+                                <strong style="color: #f44336; font-size: 16px;">Limite de 100.000 Pontos</strong><br>
+                                <span style="font-size: 14px;">Lodestar e Laugh Tale.</span>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 15px;">Como explicado na página <a href="atributos.html">Atributos</a>, personagens com 40.000 pontos ou mais não podem ganhar pontos com cenas no ON, pois a partir desse teto, os pontos adicionais só são conquistados via Eventos, Caçadas ou Dominações. Isso não muda ao chegar ao Novo Mundo: mesmo com o limite de pontos aumentado, ainda é necessário que os pontos sejam ganhos via Eventos, Caçadas ou Dominações.</p>
+
+                        <h3 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Requisitos de Navegação</h3>
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Se não é Navegador:</strong> Escrever 3.600 caracteres e ter um NPC Especial que é Navegador. Sem Navegador é impossível velejar por lá.</li>
+                            <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 2.400 caracteres e não precisa de um NPC Especial.</li>
+                        </ul>
+
+                        <table style="margin-bottom: 25px;">
+                            <thead>
+                                <tr>
+                                    <th>Resultado (d20)</th>
+                                    <th>Efeito</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>01–05</td><td>Reis do Mar aparecem.</td></tr>
+                                <tr><td>06–09</td><td>Mar revolto e ataque inesperado: Perde 4 vidas.</td></tr>
+                                <tr><td>10</td><td>Clima ameaçador: Sem perdas, mas atraso de 2 horas.</td></tr>
+                                <tr><td>11–15</td><td>Condições severas, mas controladas: Sem perdas, mas atraso de 1 hora.</td></tr>
+                                <tr><td>16–19</td><td>Comando de elite: Menos 1 hora de viagem.</td></tr>
+                                <tr><td>20</td><td>Sorte rara: Menos 2 horas de viagem e nenhuma perda de vida.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-content geo-writer-box" data-mar="novomundo">
+                            <div style="margin-bottom: 10px;">
+                                <button type="button" class="btn-toggle-nav" data-status="nao">Jogador Navegador: Não</button>
+                            </div>
+                            <textarea class="geo-textarea-contador" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                            <div class="stats-bar">
+                                <span><span class="scene-paras">0</span> Parágrafos</span>
+                                <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                            </div>
+                            <button class="btn-copiar-contador">Copiar Texto</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico toggle-title rank-title" style="cursor: pointer;">CALM BELT <span class="toggle-icon">▼</span></h2>
+                    <div class="toggle-content">
+                        <p style="margin-bottom: 15px;">O Calm Belt é uma região situada ao norte e ao sul do Paraíso e do Novo Mundo. Devido à ausência quase total de correntes oceânicas e ventos, e à presença de muitos Reis dos Mares, estas áreas são barreiras muito eficazes para aqueles que tentam entrar na Grand Line.</p>
+                        
+                        <p style="margin-bottom: 15px;">No entanto, cientistas da Marinha descobriram uma forma de atravessar essas áreas revestindo os cascos dos navios com kairoseki. Esse minério possui propriedades semelhantes às do mar, o que dificulta a percepção das criaturas marinhas em relação ao navio. Contra-Almirantes e patentes acima possuem acesso a essa tecnologia, assim como os CP-6 em diante.</p>
+                        
+                        <p style="margin-bottom: 15px;">Devido à falta de correntes marítimas, navios sem propulsores ou remos não conseguem navegar nessas águas.</p>
+
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Se não é Navegador:</strong> Escrever 4.500 caracteres e ter um NPC Especial que é Navegador. Sem Navegador é impossível velejar por lá.</li>
+                            <li style="margin-bottom: 8px;"><strong>Se é Navegador:</strong> Se você for um jogador Navegador, poderá navegar com apenas 3.000 caracteres e não precisa de um NPC Especial.</li>
+                        </ul>
+
+                        <table style="margin-bottom: 25px;">
+                            <thead>
+                                <tr>
+                                    <th>Resultado (d20)</th>
+                                    <th>Efeito</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>01–09</td><td>Ataque de Rei do Mar.</td></tr>
+                                <tr><td>10</td><td>Calmaria total: Viagem prossegue com atraso de 1 hora.</td></tr>
+                                <tr><td>11–15</td><td>Navegação tensa: Sem perdas, mas sem bônus de tempo.</td></tr>
+                                <tr><td>16–19</td><td>Caminho seguro e oculto: Menos 1 hora de viagem.</td></tr>
+                                <tr><td>20</td><td>Passagem perfeita: Menos 2 horas de viagem.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-content geo-writer-box" data-mar="calmbelt">
+                            <div style="margin-bottom: 10px;">
+                                <button type="button" class="btn-toggle-nav" data-status="nao">Jogador Navegador: Não</button>
+                            </div>
+                            <textarea class="geo-textarea-contador" placeholder="Escreva sua narrativa aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                            <div class="stats-bar">
+                                <span><span class="scene-paras">0</span> Parágrafos</span>
+                                <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                            </div>
+                            <button class="btn-copiar-contador">Copiar Texto</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico toggle-title rank-title" style="cursor: pointer;">NAVEGAÇÃO INDIVIDUAL <span class="toggle-icon">▼</span></h2>
+                    <div class="toggle-content">
+                        <p style="margin-bottom: 15px;">Para cruzar os mares sem o auxílio de uma embarcação, o personagem enfrentará um teste extremo de resistência onde precisará gastar 2.000 pontos de Estamina para cada quadrado avançado no mapa. Como a vastidão e as correntes marítimas são implacáveis, o tempo exigido para essa travessia individual varia estritamente de acordo com o método de locomoção utilizado.</p>
+                        
+                        <ul style="margin-left: 20px; line-height: 1.6;">
+                            <li style="margin-bottom: 8px;"><strong>Nado Comum:</strong> 18 horas por quadrado;</li>
+                            <li style="margin-bottom: 8px;"><strong>Nado de Tritões e Sereianos:</strong> 11 horas por quadrado;</li>
+                            <li style="margin-bottom: 8px;"><strong>Voo:</strong> 5 horas por quadrado.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rank-box" style="border-color: #f44336;">
+                    <h2 class="title-quantico toggle-title rank-title" style="cursor: pointer; color: #f44336; border-color: #f44336;">ATENÇÃO <span class="toggle-icon">▼</span></h2>
+                    <div class="toggle-content">
+                        <p style="margin-bottom: 15px;">Não há limite ou requisito mínimo de pontos para atravessar os mares, tampouco necessidade de um barco; basta confiar na sua sorte. Se desejar tentar qualquer tipo de navegação, avise um ADM e ele irá narrar caso surjam adversidades durante a jornada marítima.</p>
+                        
+                        <p>Knock Up Stream é a rampa de acesso para Skypiea, que abre todas as segundas e sextas-feiras às 8:00 e encerra às 18:00. Essa é a única forma de chegar em Skypiea, a menos que você tenha um meio alternativo para voar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
