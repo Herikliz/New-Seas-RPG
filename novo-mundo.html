@@ -25,10 +25,26 @@
 
             <section class="content-section text-center" style="margin-bottom: 40px;">
                 <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                        <button onclick="const img = document.getElementById('mapa-novo-mundo'); if(img.src.includes('Rota')){ img.src = 'assets/imagens/Mapas/Novo Mundo.png'; this.innerHTML = '🗺️Mostrar Rotas'; } else { img.src = 'assets/imagens/Mapas/Novo Mundo - Rota.png'; this.innerHTML = '🗺️Esconder Rotas'; }" class="btn-toggle-nav" style="background: var(--sidebar-bg); border-color: var(--accent-color); color: var(--accent-color); font-weight: bold; cursor: pointer;">🗺️Mostrar Rotas</button>
+                    </div>
                     <div class="map-container">
-                        <img src="assets\imagens\Mapas\Novo Mundo.png" alt="Novo Mundo" style="width: 100%; height: auto; display: block;">
+                        <img id="mapa-novo-mundo" src="assets/imagens/Mapas/Novo Mundo.png" alt="Novo Mundo" style="width: 100%; height: auto; display: block; transition: all 0.3s ease;">
                         <div class="grid-overlay" data-group="novo-mundo-page" data-index="0"></div>
                     </div>
+                </div>
+            </section>
+
+            <section class="content-section" style="max-width: 800px; margin: 0 auto 40px auto;">
+                <div class="info-box" style="text-align: left; padding: 20px; border-left: 4px solid var(--accent-color); background-color: rgba(0, 0, 0, 0.2); border-radius: 4px;">
+                    <h3 class="highlight-text" style="font-size: 20px; margin-bottom: 10px;">Entrada no Novo Mundo (Regra do d4)</h3>
+                    <p style="margin-bottom: 15px; font-size: 14px; color: var(--text-color);">Ao entrar no Novo Mundo, a primeira ilha de destino não pode ser escolhida livremente. As rotas magnéticas iniciais apontam para quatro ilhas específicas. O jogador deverá girar um <strong>d4</strong> no grupo de rolagens para definir o seu destino inicial na segunda metade da Grand Line:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 0; font-size: 14px; color: var(--text-color);">
+                        <li style="margin-bottom: 5px;"><strong>1:</strong> Mystoria</li>
+                        <li style="margin-bottom: 5px;"><strong>2:</strong> Punk Hazard</li>
+                        <li style="margin-bottom: 5px;"><strong>3:</strong> Raijin</li>
+                        <li><strong>4:</strong> Risky Red</li>
+                    </ul>
                 </div>
             </section>
 
