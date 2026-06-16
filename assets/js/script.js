@@ -303,6 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li>
                 <a href="#" class="toggle-btn">MECÂNICAS DO RPG <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
+                    <li><a href="acao-oculta.html">AÇÃO OCULTA</a></li>
                     <li><a href="cacadas.html">CAÇADAS</a></li>
                     <li><a href="criacao-de-experimentos.html">CRIAÇÃO DE EXPERIMENTOS</a></li>
                     <li><a href="criacao-de-meitos.html">CRIAÇÃO DE MEITŌS</a></li>
