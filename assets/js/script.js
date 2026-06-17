@@ -122,6 +122,55 @@ body.dark-mode .calc-box { box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15); }
 })();
 
 // ==========================================
+// FUNÇÃO GLOBAL DE CÓPIA (COMPATÍVEL COM IOS)
+// ==========================================
+window.copiarTextoUniversal = function(texto) {
+    return new Promise((resolve, reject) => {
+        function fallbackCopy() {
+            let textArea = document.createElement("textarea");
+            textArea.value = texto;
+            
+            textArea.style.position = "fixed";
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            
+            const isIOS = navigator.userAgent.match(/ipad|iphone/i);
+            if (isIOS) {
+                let range = document.createRange();
+                range.selectNodeContents(textArea);
+                let selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                textArea.setSelectionRange(0, 999999);
+            } else {
+                textArea.select();
+            }
+
+            try {
+                let successful = document.execCommand('copy');
+                if (successful) {
+                    resolve();
+                } else {
+                    reject(new Error('execCommand falhou no iOS'));
+                }
+            } catch (err) {
+                reject(err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+            window.copiarTextoUniversal(texto).then(resolve).catch(() => fallbackCopy());
+        } else {
+            fallbackCopy();
+        }
+    });
+};
+
+// ==========================================
 // INICIALIZAÇÃO
 // ==========================================
 if (history.scrollRestoration) {
@@ -622,9 +671,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnCopiar) {
         btnCopiar.addEventListener('click', function() {
             let textArea = document.getElementById("textAreaFicha");
-            textArea.select();
-            document.execCommand("copy");
-            alert("Ficha copiada!");
+            if (window.copiarTextoUniversal) {
+                window.copiarTextoUniversal(textArea.value).then(() => alert("Ficha copiada!"));
+            } else {
+                textArea.select();
+                document.execCommand("copy");
+                alert("Ficha copiada!");
+            }
         });
     }
 });
@@ -867,7 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (this.dataset.copying) return;
             this.dataset.copying = "true";
-            navigator.clipboard.writeText(textarea.value).then(() => {
+            window.copiarTextoUniversal(textarea.value).then(() => {
                 let originalText = this.textContent;
                 let originalBg = this.style.backgroundColor;
                 let originalColor = this.style.color;
@@ -1051,7 +1104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (this.dataset.copying) return;
             this.dataset.copying = "true";
-            navigator.clipboard.writeText(textarea.value).then(() => {
+            window.copiarTextoUniversal(textarea.value).then(() => {
                 let originalText = this.textContent;
                 let originalBg = this.style.backgroundColor;
                 let originalColor = this.style.color;
@@ -1454,7 +1507,7 @@ if (mapGrids.length > 0) {
 
         if (btn.dataset.copying) return;
         btn.dataset.copying = "true";
-        navigator.clipboard.writeText(relatorio).then(() => {
+        window.copiarTextoUniversal(relatorio).then(() => {
             const originalText = btn.innerText;
             btn.innerText = '✅ Relatório Copiado!';
             btn.style.backgroundColor = '#00b37e';
@@ -1640,7 +1693,7 @@ document.querySelectorAll('.geo-writer-box').forEach(box => {
     if (btnCopiar && textarea) {
         btnCopiar.addEventListener('click', () => {
             if (!textarea.value) return;
-            navigator.clipboard.writeText(textarea.value).then(() => {
+            window.copiarTextoUniversal(textarea.value).then(() => {
                 let originalText = btnCopiar.textContent;
                 let originalBg = btnCopiar.style.backgroundColor;
                 let originalColor = btnCopiar.style.color;
@@ -1754,7 +1807,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!preResultado.textContent) return;
             if (btnCopiar.dataset.copying) return;
             btnCopiar.dataset.copying = "true";
-            navigator.clipboard.writeText(preResultado.textContent).then(() => {
+            window.copiarTextoUniversal(preResultado.textContent).then(() => {
                 let originalText = btnCopiar.textContent;
                 let originalBg = btnCopiar.style.backgroundColor;
                 let originalColor = btnCopiar.style.color;
