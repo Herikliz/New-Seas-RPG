@@ -1541,6 +1541,12 @@ if (mapGrids.length > 0) {
             return;
         }
 
+        let fileName = 'mapa-new-seas.png';
+        try {
+            let decodedSrc = decodeURIComponent(img.src);
+            fileName = decodedSrc.split('/').pop().split('?')[0] || fileName;
+        } catch(err) {}
+
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         
@@ -1590,10 +1596,13 @@ if (mapGrids.length > 0) {
             });
         }
         
-        canvas.toBlob(async function(blob) {
-            try {
-                const item = new ClipboardItem({ "image/png": blob });
-                await navigator.clipboard.write([item]);
+        try {
+            const blobPromise = new Promise(resolve => {
+                canvas.toBlob(blob => resolve(blob), 'image/png');
+            });
+            const item = new ClipboardItem({ "image/png": blobPromise });
+            
+            navigator.clipboard.write([item]).then(() => {
                 const originalText = btn.innerText;
                 btn.innerText = '✅ Copiado!';
                 btn.style.backgroundColor = '#00b37e';
@@ -1601,16 +1610,38 @@ if (mapGrids.length > 0) {
                     btn.innerText = originalText;
                     btn.style.backgroundColor = 'var(--accent-color)';
                 }, 1000);
-            } catch (err) {
+            }).catch(err => {
                 const originalText = btn.innerText;
-                btn.innerText = '❌ Erro ao copiar';
-                btn.style.backgroundColor = '#d32f2f';
+                const link = document.createElement('a');
+                link.download = fileName;
+                link.href = canvas.toDataURL('image/png');
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                btn.innerText = '📥 Baixado!';
+                btn.style.backgroundColor = '#2196F3';
                 setTimeout(() => {
                     btn.innerText = originalText;
                     btn.style.backgroundColor = 'var(--accent-color)';
-                }, 1000);
-            }
-        }, 'image/png');
+                }, 2000);
+            });
+        } catch (err) {
+            const originalText = btn.innerText;
+            const link = document.createElement('a');
+            link.download = fileName;
+            link.href = canvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            btn.innerText = '📥 Baixado!';
+            btn.style.backgroundColor = '#2196F3';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = 'var(--accent-color)';
+            }, 2000);
+        }
     }
 
     selectBarco.addEventListener('change', function() {
@@ -3281,7 +3312,7 @@ if (document.readyState === 'loading') {
 }
 
 (function initGlobalImageCopy() {
-    let lastActiveBtn = null;
+    let activeBtns = [];
 
     document.addEventListener('mouseover', (e) => {
         if (e.target.tagName === 'IMG') {
@@ -3290,17 +3321,22 @@ if (document.readyState === 'loading') {
             const img = e.target;
             const parent = img.parentElement;
             
-            let btn = parent.querySelector('.injected-copy-img-btn');
-            if (!btn) {
+            let fileName = 'imagem-new-seas.png';
+            try {
+                let decodedSrc = decodeURIComponent(img.src);
+                fileName = decodedSrc.split('/').pop().split('?')[0] || fileName;
+            } catch(err) {}
+            
+            let btnCopy = parent.querySelector('.injected-copy-img-btn');
+            let btnDownload = parent.querySelector('.injected-download-img-btn');
+
+            if (!btnCopy || !btnDownload) {
                 const style = window.getComputedStyle(parent);
                 if (style.position === 'static') {
                     parent.style.position = 'relative';
                 }
                 
-                btn = document.createElement('button');
-                btn.className = 'injected-copy-img-btn';
-                btn.innerHTML = '📋 Copiar';
-                btn.style.cssText = `
+                const commonCss = `
                     position: absolute;
                     background: rgba(0, 0, 0, 0.7);
                     color: #fff;
@@ -3319,80 +3355,170 @@ if (document.readyState === 'loading') {
                     white-space: nowrap;
                 `;
                 
-                btn.onmouseover = () => { btn.style.background = 'rgba(0, 0, 0, 0.9)'; };
-                btn.onmouseout = () => { btn.style.background = 'rgba(0, 0, 0, 0.7)'; };
-                
-                btn.addEventListener('click', (ev) => {
-                    ev.preventDefault();
-                    ev.stopPropagation();
+                if (!btnCopy) {
+                    btnCopy = document.createElement('button');
+                    btnCopy.className = 'injected-copy-img-btn';
+                    btnCopy.innerHTML = '📋 Copiar';
+                    btnCopy.style.cssText = commonCss;
                     
-                    const originalText = '📋 Copiar';
-                    btn.innerHTML = '⏳...';
+                    btnCopy.onmouseover = () => { btnCopy.style.background = 'rgba(0, 0, 0, 0.9)'; };
+                    btnCopy.onmouseout = () => { btnCopy.style.background = 'rgba(0, 0, 0, 0.7)'; };
                     
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    canvas.width = img.naturalWidth;
-                    canvas.height = img.naturalHeight;
-                    ctx.drawImage(img, 0, 0);
-                    
-                    canvas.toBlob(async function(blob) {
+                    btnCopy.addEventListener('click', (ev) => {
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                        
+                        const originalText = '📋 Copiar';
+                        btnCopy.innerHTML = '⏳...';
+                        
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = img.naturalWidth;
+                        canvas.height = img.naturalHeight;
+                        ctx.drawImage(img, 0, 0);
+                        
                         try {
-                            const item = new ClipboardItem({ "image/png": blob });
-                            await navigator.clipboard.write([item]);
-                            btn.innerHTML = '✅ Copiado!';
-                            btn.style.color = '#00b37e';
-                            btn.style.borderColor = '#00b37e';
+                            const blobPromise = new Promise(resolve => {
+                                canvas.toBlob(b => resolve(b), 'image/png');
+                            });
+                            const item = new ClipboardItem({ "image/png": blobPromise });
                             
-                            setTimeout(() => {
-                                btn.innerHTML = originalText;
-                                btn.style.color = '#fff';
-                                btn.style.borderColor = 'rgba(255,255,255,0.3)';
-                            }, 2000);
+                            navigator.clipboard.write([item]).then(() => {
+                                btnCopy.innerHTML = '✅ Copiado!';
+                                btnCopy.style.color = '#00b37e';
+                                btnCopy.style.borderColor = '#00b37e';
+                                
+                                setTimeout(() => {
+                                    btnCopy.innerHTML = originalText;
+                                    btnCopy.style.color = '#fff';
+                                    btnCopy.style.borderColor = 'rgba(255,255,255,0.3)';
+                                }, 2000);
+                            }).catch(err => {
+                                const link = document.createElement('a');
+                                link.download = fileName;
+                                link.href = canvas.toDataURL('image/png');
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+
+                                btnCopy.innerHTML = '📥 Baixado!';
+                                btnCopy.style.color = '#2196F3';
+                                btnCopy.style.borderColor = '#2196F3';
+                                
+                                setTimeout(() => {
+                                    btnCopy.innerHTML = originalText;
+                                    btnCopy.style.color = '#fff';
+                                    btnCopy.style.borderColor = 'rgba(255,255,255,0.3)';
+                                }, 2000);
+                            });
                         } catch (err) {
-                            btn.innerHTML = '❌ Erro';
-                            btn.style.color = '#f44336';
-                            btn.style.borderColor = '#f44336';
+                            const link = document.createElement('a');
+                            link.download = fileName;
+                            link.href = canvas.toDataURL('image/png');
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+
+                            btnCopy.innerHTML = '📥 Baixado!';
+                            btnCopy.style.color = '#2196F3';
+                            btnCopy.style.borderColor = '#2196F3';
                             
                             setTimeout(() => {
-                                btn.innerHTML = originalText;
-                                btn.style.color = '#fff';
-                                btn.style.borderColor = 'rgba(255,255,255,0.3)';
+                                btnCopy.innerHTML = originalText;
+                                btnCopy.style.color = '#fff';
+                                btnCopy.style.borderColor = 'rgba(255,255,255,0.3)';
                             }, 2000);
                         }
-                    }, 'image/png');
+                    });
+                    
+                    parent.appendChild(btnCopy);
+                }
+
+                if (!btnDownload) {
+                    btnDownload = document.createElement('button');
+                    btnDownload.className = 'injected-download-img-btn';
+                    btnDownload.innerHTML = '📥 Baixar';
+                    btnDownload.style.cssText = commonCss;
+                    btnDownload.onmouseover = () => { btnDownload.style.background = 'rgba(0, 0, 0, 0.9)'; };
+                    btnDownload.onmouseout = () => { btnDownload.style.background = 'rgba(0, 0, 0, 0.7)'; };
+                    
+                    btnDownload.addEventListener('click', (ev) => {
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                        
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = img.naturalWidth;
+                        canvas.height = img.naturalHeight;
+                        ctx.drawImage(img, 0, 0);
+                        
+                        const link = document.createElement('a');
+                        link.download = fileName;
+                        link.href = canvas.toDataURL('image/png');
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+
+                        const originalText = '📥 Baixar';
+                        btnDownload.innerHTML = '✅ Baixado!';
+                        btnDownload.style.color = '#2196F3';
+                        btnDownload.style.borderColor = '#2196F3';
+                        
+                        setTimeout(() => {
+                            btnDownload.innerHTML = originalText;
+                            btnDownload.style.color = '#fff';
+                            btnDownload.style.borderColor = 'rgba(255,255,255,0.3)';
+                        }, 2000);
+                    });
+                    
+                    parent.appendChild(btnDownload);
+                }
+            }
+            
+            btnCopy.style.top = (img.offsetTop + 8) + 'px';
+            btnCopy.style.right = (parent.clientWidth - (img.offsetLeft + img.offsetWidth) + 8) + 'px';
+            
+            btnDownload.style.top = (img.offsetTop + 8) + 'px';
+            btnDownload.style.left = (img.offsetLeft + 8) + 'px';
+            
+            if (activeBtns.length > 0 && activeBtns[0] !== btnCopy) {
+                activeBtns.forEach(b => {
+                    if(b) {
+                        b.style.opacity = '0';
+                        b.style.pointerEvents = 'none';
+                    }
                 });
-                
-                parent.appendChild(btn);
             }
             
-            btn.style.top = (img.offsetTop + 8) + 'px';
-            btn.style.right = (parent.clientWidth - (img.offsetLeft + img.offsetWidth) + 8) + 'px';
+            btnCopy.style.opacity = '1';
+            btnCopy.style.pointerEvents = 'auto';
             
-            if (lastActiveBtn && lastActiveBtn !== btn) {
-                lastActiveBtn.style.opacity = '0';
-                lastActiveBtn.style.pointerEvents = 'none';
-            }
+            btnDownload.style.opacity = '1';
+            btnDownload.style.pointerEvents = 'auto';
             
-            btn.style.opacity = '1';
-            btn.style.pointerEvents = 'auto';
-            lastActiveBtn = btn;
+            activeBtns = [btnCopy, btnDownload];
         }
     });
 
     document.addEventListener('mouseout', (e) => {
         if (e.target.tagName === 'IMG') {
-            let btn = e.target.parentElement.querySelector('.injected-copy-img-btn');
-            if (btn && e.relatedTarget !== btn) {
-                btn.style.opacity = '0';
-                btn.style.pointerEvents = 'none';
-                if (lastActiveBtn === btn) lastActiveBtn = null;
+            const parent = e.target.parentElement;
+            let btnC = parent.querySelector('.injected-copy-img-btn');
+            let btnD = parent.querySelector('.injected-download-img-btn');
+            if (e.relatedTarget !== btnC && e.relatedTarget !== btnD) {
+                if (btnC) { btnC.style.opacity = '0'; btnC.style.pointerEvents = 'none'; }
+                if (btnD) { btnD.style.opacity = '0'; btnD.style.pointerEvents = 'none'; }
+                activeBtns = [];
             }
-        } else if (e.target.classList.contains('injected-copy-img-btn')) {
-            const img = e.target.parentElement.querySelector('img');
-            if (e.relatedTarget !== img && e.relatedTarget !== e.target.parentElement) {
-                e.target.style.opacity = '0';
-                e.target.style.pointerEvents = 'none';
-                if (lastActiveBtn === e.target) lastActiveBtn = null;
+        } else if (e.target.classList.contains('injected-copy-img-btn') || e.target.classList.contains('injected-download-img-btn')) {
+            const parent = e.target.parentElement;
+            const img = parent.querySelector('img');
+            let btnC = parent.querySelector('.injected-copy-img-btn');
+            let btnD = parent.querySelector('.injected-download-img-btn');
+            if (e.relatedTarget !== img && e.relatedTarget !== btnC && e.relatedTarget !== btnD && e.relatedTarget !== parent) {
+                if (btnC) { btnC.style.opacity = '0'; btnC.style.pointerEvents = 'none'; }
+                if (btnD) { btnD.style.opacity = '0'; btnD.style.pointerEvents = 'none'; }
+                activeBtns = [];
             }
         }
     });
