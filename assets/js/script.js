@@ -3302,8 +3302,6 @@ if (document.readyState === 'loading') {
                 btn.innerHTML = '📋 Copiar';
                 btn.style.cssText = `
                     position: absolute;
-                    top: 8px;
-                    right: 8px;
                     background: rgba(0, 0, 0, 0.7);
                     color: #fff;
                     border: 1px solid rgba(255,255,255,0.3);
@@ -3366,6 +3364,9 @@ if (document.readyState === 'loading') {
                 
                 parent.appendChild(btn);
             }
+            
+            btn.style.top = (img.offsetTop + 8) + 'px';
+            btn.style.right = (parent.clientWidth - (img.offsetLeft + img.offsetWidth) + 8) + 'px';
             
             if (lastActiveBtn && lastActiveBtn !== btn) {
                 lastActiveBtn.style.opacity = '0';
