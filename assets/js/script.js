@@ -3321,10 +3321,13 @@ if (document.readyState === 'loading') {
             const img = e.target;
             const parent = img.parentElement;
             
-            let fileName = 'imagem-new-seas.png';
+            let baseFileName = 'imagem-new-seas';
             try {
                 let decodedSrc = decodeURIComponent(img.src);
-                fileName = decodedSrc.split('/').pop().split('?')[0] || fileName;
+                let possibleName = decodedSrc.split('/').pop().split('?')[0];
+                if (possibleName && possibleName.length > 0) {
+                    baseFileName = possibleName;
+                }
             } catch(err) {}
             
             let btnCopy = parent.querySelector('.injected-copy-img-btn');
@@ -3355,6 +3358,63 @@ if (document.readyState === 'loading') {
                     white-space: nowrap;
                 `;
                 
+                const triggerFallbackDownload = (btnElement, originalTextBtn) => {
+                    fetch(img.src, { mode: 'cors' })
+                        .then(res => res.blob())
+                        .then(blob => {
+                            let finalFileName = baseFileName;
+                            let ext = blob.type.split('/')[1];
+                            if (ext) {
+                                if (ext === 'jpeg') ext = 'jpg';
+                                if (ext === 'svg+xml') ext = 'svg';
+                                if (!finalFileName.toLowerCase().endsWith('.' + ext)) {
+                                    finalFileName = finalFileName.replace(/\.[a-z0-9]+$/i, '') + '.' + ext;
+                                }
+                            }
+                            const url = URL.createObjectURL(blob);
+                            const link = document.createElement('a');
+                            link.download = finalFileName;
+                            link.href = url;
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            URL.revokeObjectURL(url);
+
+                            btnElement.innerHTML = '📥 Baixado!';
+                            btnElement.style.color = '#2196F3';
+                            btnElement.style.borderColor = '#2196F3';
+                            
+                            setTimeout(() => {
+                                btnElement.innerHTML = originalTextBtn;
+                                btnElement.style.color = '#fff';
+                                btnElement.style.borderColor = 'rgba(255,255,255,0.3)';
+                            }, 2000);
+                        })
+                        .catch(() => {
+                            let finalFileName = baseFileName;
+                            if (!/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(finalFileName)) {
+                                finalFileName += '.png';
+                            }
+                            const link = document.createElement('a');
+                            link.download = finalFileName;
+                            link.href = img.src;
+                            link.target = '_blank';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+
+                            btnElement.innerHTML = '📥 Baixado!';
+                            btnElement.style.color = '#2196F3';
+                            btnElement.style.borderColor = '#2196F3';
+                            
+                            setTimeout(() => {
+                                btnElement.innerHTML = originalTextBtn;
+                                btnElement.style.color = '#fff';
+                                btnElement.style.borderColor = 'rgba(255,255,255,0.3)';
+                            }, 2000);
+                        });
+                };
+
                 if (!btnCopy) {
                     btnCopy = document.createElement('button');
                     btnCopy.className = 'injected-copy-img-btn';
@@ -3371,64 +3431,64 @@ if (document.readyState === 'loading') {
                         const originalText = '📋 Copiar';
                         btnCopy.innerHTML = '⏳...';
                         
-                        const canvas = document.createElement('canvas');
-                        const ctx = canvas.getContext('2d');
-                        canvas.width = img.naturalWidth;
-                        canvas.height = img.naturalHeight;
-                        ctx.drawImage(img, 0, 0);
-                        
-                        try {
-                            const blobPromise = new Promise(resolve => {
-                                canvas.toBlob(b => resolve(b), 'image/png');
-                            });
-                            const item = new ClipboardItem({ "image/png": blobPromise });
-                            
+                        const tryCopy = () => {
+                            return fetch(img.src, { mode: 'cors' })
+                                .then(res => res.blob())
+                                .then(blob => {
+                                    return new Promise((resolve, reject) => {
+                                        const url = URL.createObjectURL(blob);
+                                        const tempImg = new Image();
+                                        tempImg.onload = () => {
+                                            const canvas = document.createElement('canvas');
+                                            canvas.width = tempImg.naturalWidth;
+                                            canvas.height = tempImg.naturalHeight;
+                                            const ctx = canvas.getContext('2d');
+                                            ctx.drawImage(tempImg, 0, 0);
+                                            canvas.toBlob(pngBlob => {
+                                                URL.revokeObjectURL(url);
+                                                if (pngBlob) resolve(pngBlob);
+                                                else reject();
+                                            }, 'image/png');
+                                        };
+                                        tempImg.onerror = () => {
+                                            URL.revokeObjectURL(url);
+                                            reject();
+                                        };
+                                        tempImg.src = url;
+                                    });
+                                })
+                                .catch(() => {
+                                    return new Promise((resolve, reject) => {
+                                        const canvas = document.createElement('canvas');
+                                        canvas.width = img.naturalWidth;
+                                        canvas.height = img.naturalHeight;
+                                        const ctx = canvas.getContext('2d');
+                                        ctx.drawImage(img, 0, 0);
+                                        canvas.toBlob(pngBlob => {
+                                            if (pngBlob) resolve(pngBlob);
+                                            else reject();
+                                        }, 'image/png');
+                                    });
+                                });
+                        };
+
+                        tryCopy().then(pngBlob => {
+                            const item = new ClipboardItem({ "image/png": pngBlob });
                             navigator.clipboard.write([item]).then(() => {
                                 btnCopy.innerHTML = '✅ Copiado!';
                                 btnCopy.style.color = '#00b37e';
                                 btnCopy.style.borderColor = '#00b37e';
-                                
                                 setTimeout(() => {
                                     btnCopy.innerHTML = originalText;
                                     btnCopy.style.color = '#fff';
                                     btnCopy.style.borderColor = 'rgba(255,255,255,0.3)';
                                 }, 2000);
-                            }).catch(err => {
-                                const link = document.createElement('a');
-                                link.download = fileName;
-                                link.href = canvas.toDataURL('image/png');
-                                document.body.appendChild(link);
-                                link.click();
-                                document.body.removeChild(link);
-
-                                btnCopy.innerHTML = '📥 Baixado!';
-                                btnCopy.style.color = '#2196F3';
-                                btnCopy.style.borderColor = '#2196F3';
-                                
-                                setTimeout(() => {
-                                    btnCopy.innerHTML = originalText;
-                                    btnCopy.style.color = '#fff';
-                                    btnCopy.style.borderColor = 'rgba(255,255,255,0.3)';
-                                }, 2000);
+                            }).catch(() => {
+                                triggerFallbackDownload(btnCopy, originalText);
                             });
-                        } catch (err) {
-                            const link = document.createElement('a');
-                            link.download = fileName;
-                            link.href = canvas.toDataURL('image/png');
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-
-                            btnCopy.innerHTML = '📥 Baixado!';
-                            btnCopy.style.color = '#2196F3';
-                            btnCopy.style.borderColor = '#2196F3';
-                            
-                            setTimeout(() => {
-                                btnCopy.innerHTML = originalText;
-                                btnCopy.style.color = '#fff';
-                                btnCopy.style.borderColor = 'rgba(255,255,255,0.3)';
-                            }, 2000);
-                        }
+                        }).catch(() => {
+                            triggerFallbackDownload(btnCopy, originalText);
+                        });
                     });
                     
                     parent.appendChild(btnCopy);
@@ -3446,29 +3506,9 @@ if (document.readyState === 'loading') {
                         ev.preventDefault();
                         ev.stopPropagation();
                         
-                        const canvas = document.createElement('canvas');
-                        const ctx = canvas.getContext('2d');
-                        canvas.width = img.naturalWidth;
-                        canvas.height = img.naturalHeight;
-                        ctx.drawImage(img, 0, 0);
-                        
-                        const link = document.createElement('a');
-                        link.download = fileName;
-                        link.href = canvas.toDataURL('image/png');
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-
                         const originalText = '📥 Baixar';
-                        btnDownload.innerHTML = '✅ Baixado!';
-                        btnDownload.style.color = '#2196F3';
-                        btnDownload.style.borderColor = '#2196F3';
-                        
-                        setTimeout(() => {
-                            btnDownload.innerHTML = originalText;
-                            btnDownload.style.color = '#fff';
-                            btnDownload.style.borderColor = 'rgba(255,255,255,0.3)';
-                        }, 2000);
+                        btnDownload.innerHTML = '⏳...';
+                        triggerFallbackDownload(btnDownload, originalText);
                     });
                     
                     parent.appendChild(btnDownload);
@@ -3483,7 +3523,7 @@ if (document.readyState === 'loading') {
             
             if (activeBtns.length > 0 && activeBtns[0] !== btnCopy) {
                 activeBtns.forEach(b => {
-                    if(b) {
+                    if (b) {
                         b.style.opacity = '0';
                         b.style.pointerEvents = 'none';
                     }
