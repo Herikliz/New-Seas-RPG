@@ -3987,7 +3987,6 @@ document.addEventListener('DOMContentLoaded', () => {
             {nome: "Inu Inu no Mi, Modelo: Raposa de Nove Caudas", valor: 2700000000},
             {nome: "Ryū Ryū no Mi, Modelo: Dragão Ocidental", valor: 2700000000},
             {nome: "Ryū Ryū no Mi, Modelo: Kirin", valor: 2500000000},
-            {nome: "Saru Saru no Mi, Modelo: Sun Wukong", valor: 3900000000},
             {nome: "Tori Tori no Mi, Modelo: Fênix", valor: 3000000000},
             {nome: "Tori Tori no Mi, Modelo: Nue", valor: 3000000000},
             {nome: "Tori Tori no Mi, Modelo: Pássaro de Cinzas", valor: 1800000000},
