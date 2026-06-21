@@ -20,7 +20,7 @@
             <section class="content-section text-center">
                 <div class="wg-emblem">⚓</div>
                 <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">MARINHA</h1>
-                <p class="wg-subtitle" id="wg-theme-name">Base: Marineford</p>
+                <p class="wg-subtitle">Base Principal: Base da Marinha G-01</p>
             </section>
 
             <section class="content-section intro-text rank-box">
@@ -379,27 +379,5 @@
     </main>
 
     <script src="assets/js/script.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const themeNameLabel = document.getElementById('wg-theme-name');
-            
-            if (themeToggleBtn && themeNameLabel) {
-                themeToggleBtn.addEventListener('click', () => {
-                    setTimeout(() => {
-                        if (document.body.classList.contains('dark-mode')) {
-                            themeNameLabel.innerText = "Base: Nova Marineford";
-                        } else {
-                            themeNameLabel.innerText = "Base: Marineford";
-                        }
-                    }, 50);
-                });
-
-                if (document.body.classList.contains('dark-mode')) {
-                    themeNameLabel.innerText = "Base: Nova Marineford";
-                }
-            }
-        });
-    </script>
 </body>
 </html>

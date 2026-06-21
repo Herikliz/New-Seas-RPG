@@ -20,7 +20,7 @@
             <section class="content-section text-center">
                 <div class="wg-emblem">✊</div>
                 <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">VANGUARDA POPULAR REVOLUCIONÁRIA</h1>
-                <p class="wg-subtitle" id="wg-theme-name">Base: Shitsurakujima</p>
+                <p class="wg-subtitle" id="wg-theme-name">Base Principal: Shitsurakujima</p>
             </section>
 
             <section class="content-section intro-text rank-box">
@@ -317,27 +317,5 @@
     </main>
 
     <script src="assets/js/script.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const themeNameLabel = document.getElementById('wg-theme-name');
-            
-            if (themeToggleBtn && themeNameLabel) {
-                themeToggleBtn.addEventListener('click', () => {
-                    setTimeout(() => {
-                        if (document.body.classList.contains('dark-mode')) {
-                            themeNameLabel.innerText = "Base: Desconhecida";
-                        } else {
-                            themeNameLabel.innerText = "Base: Shitsurakujima";
-                        }
-                    }, 50);
-                });
-
-                if (document.body.classList.contains('dark-mode')) {
-                    themeNameLabel.innerText = "Base: Desconhecida";
-                }
-            }
-        });
-    </script>
 </body>
 </html>

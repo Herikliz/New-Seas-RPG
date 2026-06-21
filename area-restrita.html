@@ -99,6 +99,79 @@
                     </div>
                     </div>
                 </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
+                        SORTEADOR DE AKUMA NO MI <span class="toggle-icon">▼</span>
+                    </h2>
+                    
+                    <div class="toggle-content">
+                        <div class="admin-generator-box">
+                            <div class="calc-grid">
+                                <div class="input-group">
+                                    <label for="sorteio-min">Valor Mínimo</label>
+                                    <input type="text" id="sorteio-min" value="700.000.000" placeholder="Ex: 100.000.000">
+                                </div>
+                                <div class="input-group">
+                                    <label for="sorteio-max">Valor Máximo</label>
+                                    <input type="text" id="sorteio-max" value="4.600.000.000" placeholder="Preenchido automaticamente">
+                                </div>
+                            </div>
+                            <div class="calc-grid">
+                                <div class="input-group">
+                                    <label>Quantidade de Frutas (Mín - Máx)</label>
+                                    <div style="display: flex; gap: 10px;">
+                                        <input type="number" id="sorteio-qtd-min" value="1" min="1" max="20" placeholder="Mín" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                        <input type="number" id="sorteio-qtd-max" value="1" min="1" max="20" placeholder="Máx" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="sorteio-ilha-manual">Ilha (Opcional: Ignora Sorteio)</label>
+                                    <input type="text" id="sorteio-ilha-manual" placeholder="Se preenchido, não sorteia">
+                                </div>
+                            </div>
+                            <div class="calc-grid">
+                                <div class="input-group">
+                                    <label for="sorteio-mar">Sortear Ilha: Filtro de Mar</label>
+                                    <select id="sorteio-mar">
+                                        <option value="Qualquer">Qualquer Mar</option>
+                                        <option value="East Blue">East Blue</option>
+                                        <option value="West Blue">West Blue</option>
+                                        <option value="North Blue">North Blue</option>
+                                        <option value="South Blue">South Blue</option>
+                                        <option value="Paraíso">Paraíso</option>
+                                        <option value="Novo Mundo">Novo Mundo</option>
+                                        <option value="Calm Belt">Calm Belt</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="sorteio-faccao">Sortear Ilha: Filtro de Afiliação</label>
+                                    <select id="sorteio-faccao">
+                                        <option value="Qualquer">Qualquer Afiliação</option>
+                                        <option value="marinha">Governo Mundial / Marinha</option>
+                                        <option value="pirata">Pirata</option>
+                                        <option value="revolucionaria">Revolucionária</option>
+                                        <option value="independente">Independente</option>
+                                        <option value="misto">Misto</option>
+                                        <option value="despovoada">Despovoada</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="admin-checkbox-group" style="margin-top: 5px; margin-bottom: 20px;">
+                                <label><input type="checkbox" id="sorteio-incluir-donos"> Incluir Frutas com donos (ou perdidas) no sorteio</label>
+                            </div>
+                            
+                            <button id="btn-sortear-akuma" class="btn-admin">Sortear Frutas</button>
+                            <button id="btn-sorteio-semanal" class="btn-admin">Sorteio Semanal Rápido</button>
+                            
+                            <div class="output-container" style="display: none;" id="container-resultado-sorteio">
+                                <pre id="resultado-sorteio" style="margin-bottom: 15px;"></pre>
+                                <button id="btn-copiar-sorteio" class="btn-admin" style="margin-top: 0;">Copiar Resultado</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

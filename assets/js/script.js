@@ -315,12 +315,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
             </li>
             <li>
-                <a href="submundo.html" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
-                <ul class="sub-menu">
-                    <li><a href="akuma-no-mi.html">AKUMA NO MI</a></li>
-                </ul>
-            </li>
-            <li>
                 <a href="loja-geral.html" class="toggle-btn">LOJA GERAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
                     <li><a href="itens-exclusivos.html">ITENS EXCLUSIVOS</a></li>
@@ -336,6 +330,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     </li>
                     <li>
                         <li><a href="loja-de-meitos.html">LOJA DE MEITŌS</a></li>
+                    <li>
+                        <a href="submundo.html" class="toggle-btn">SUBMUNDO <span class="arrow">▼</span></a>
+                        <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
+                            <li><a href="akuma-no-mi.html">AKUMA NO MI</a></li>
+                        </ul>
+                    </li>
                     </li>
                 </ul>
             </li>
@@ -1964,7 +1964,7 @@ const bancoDeIlhas = {
         { nome: "Boin", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">O Arquipélago Boin consiste em um conjunto de ilhas de formato peculiar, lembrando pétalas de flores. Sua flora e fauna são exuberantes, mas perigosas: insetos gigantes e plantas carnívoras dominam o ecossistema, tornando a sobrevivência um desafio constante.</p>` },
         { nome: "Cactus", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha rochosa repleta de colinas pontiagudas que se assemelham a cactos. Os "espinhos" que cobrem suas formações naturais, no entanto, são na verdade lápides de um antigo cemitério, indicando que batalhas sangrentas ocorreram ali no passado.</p>` },
         { nome: "Corrente Tarai", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">A Corrente Tarai é uma poderosa corrente marítima "controlada" pelo Governo Mundial, conectando diretamente três de suas fortalezas mais imponentes: Enies Lobby, Impel Down e a Sede da Marinha. Essa via exclusiva de transporte é estrategicamente projetada para facilitar o deslocamento rápido entre essas bases, ao mesmo tempo em que impede a navegação de embarcações não autorizadas. Devido à sua localização e às águas turbulentas que a compõem, é praticamente impossível acessá-la ou escapar dela sem a permissão do Governo. A Corrente Tarai desempenha um papel crucial na segurança dessas instalações, tornando qualquer invasão ou fuga uma tarefa extremamente desafiadora.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Base da Marinha G-01</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p><p style="margin-left: 20px;">Marineford é a base de operações do Quartel-General da Marinha, onde os almirantes e altos oficiais residem. Sua posição estratégica próxima à Red Line faz dela uma das fortalezas mais bem protegidas do mundo.</p></div><div style="margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Enies Lobby</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p><p style="margin-left: 20px;">Também chamada de "Ilha Judiciária", Enies Lobby serve como um centro administrativo para julgamentos ligados ao Governo Mundial. Cercada por correntes marítimas violentas, seu acesso é restrito, sendo usada para o transporte de prisioneiros.</p></div><div style="margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Impel Down</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Governo Mundial/Marinha</i></p><p style="margin-left: 20px;">Veja a página Calm Belt.</p></div>` },
-        { nome: "Drum", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Uma ilha de inverno conhecida por suas montanhas nevadas e o frio intenso que domina a paisagem. Pequenos vilarejos espalhados por suas encostas sobrevivem graças à caça e ao cultivo de ervas medicinais raras.</p>` },
+        { nome: "Drum", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha de inverno conhecida por suas montanhas nevadas e o frio intenso que domina a paisagem. Pequenos vilarejos espalhados por suas encostas sobrevivem graças à caça e ao cultivo de ervas medicinais raras. Atualmente está sob o controle do pirata Keigo Kiyosaki.</p>` },
         { nome: "Foolshout", afiliacaoTexto: "Pirata", afiliacaoClasse: "pirata", descricao: `<p style="margin-bottom: 15px;">Uma ilha marcada por penhascos e uma cidade portuária decadente. O local se tornou refúgio para foras da lei, com tavernas e docas onde se negociam bens ilegais. A ilha está sob o controle de um poderoso capitão pirata e de sua tripulação, conhecidos por dominar a região à força.</p>` },
         { nome: "Ilha Spa", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">Um paraíso de águas termais e resorts, repleto de escorregadores naturais, fontes aquecidas e restaurantes sofisticados. Sua fama atrai visitantes de toda a Grand Line em busca de descanso e lazer.</p>` },
         { nome: "Jaya", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha de primavera com vegetação densa e florestas tropicais. Sua geografia montanhosa esconde vestígios de civilizações antigas, mas a maior parte de sua história permanece desconhecida.</p><div style="margin-top: 30px; margin-bottom: 30px;"><h4 class="highlight-text" style="margin-bottom: 15px;">Skypiea</h4><p style="margin-bottom: 15px; margin-left: 20px;"><strong>Afiliação:</strong> <i>Independente</i></p><p style="margin-left: 20px;">Uma ilha flutuante sobre o Mar Branco-Branco. Os habitantes locais veneram uma entidade divina e vivem em estruturas suspensas. A identidade do líder supremo de Skypiea é Odin Tenshi.</p></div>` },
@@ -3239,6 +3239,38 @@ function initBountySort() {
 if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initBountySort); } else { initBountySort(); }
 
 // ==========================================
+// EXIBIÇÃO DE DONOS DAS AKUMA NO MI NA PÁGINA
+// ==========================================
+function exibirDonosAkuma() {
+    if (!window.location.pathname.includes('akuma-no-mi.html') && !window.location.pathname.endsWith('akuma-no-mi.html')) return;
+
+    if (!window.donosDeAkuma) return;
+
+    const sectionsFrutas = document.querySelectorAll('h4.highlight-text');
+
+    sectionsFrutas.forEach(tituloEl => {
+        let nomeBruto = tituloEl.textContent.split(' (')[0].trim();
+        let dono = window.donosDeAkuma[nomeBruto];
+
+        if (dono) {
+            const div = tituloEl.parentElement;
+            const paragrafos = div.querySelectorAll('p');
+            paragrafos.forEach(p => {
+                if (p.textContent.includes('Valor:') && !p.innerHTML.includes(dono)) {
+                    p.innerHTML = p.innerHTML + ` (<i>${dono}</i>)`;
+                }
+            });
+        }
+    });
+}
+
+if (document.readyState === 'loading') { 
+    document.addEventListener('DOMContentLoaded', exibirDonosAkuma); 
+} else { 
+    exibirDonosAkuma(); 
+}
+
+// ==========================================
 // ORDENAÇÃO DE APARÊNCIAS
 // ==========================================
 function initGallerySort() {
@@ -3661,4 +3693,464 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (calcHpTotal) calcHpTotal.addEventListener('input', updateHpLimite);
     if (calcTipoFerimento) calcTipoFerimento.addEventListener('change', updateHpLimite);
+});
+
+// ==========================================
+// SORTEADOR DE AKUMA NO MI E DONOS
+// ==========================================
+window.donosDeAkuma = {
+    "Baku Baku no Mi": "Rhaast",
+    "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
+    "Chiyu Chiyu no Mi": "Tontatta",
+    "Doa Doa no Mi": "Chester",
+    "Gomu Gomu no Mi": "Ratatui-le",
+    "Goro Goro no Mi": "Edward Belmont",
+    "Gura Gura no Mi": "Sakazuki Itadori",
+    "Hebi Hebi no Mi, Modelo: Kaijū": "Raidjinn Le Laufey",
+    "Hemo Hemo no Mi": "???",
+    "Hie Hie no Mi": "Astarion D. Emiri",
+    "Hito Hito no Mi, Modelo: O Anfitrião": "Alastor",
+    "Hobi Hobi no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Horo Horo no Mi": "???",
+    "Inu Inu no Mi, Modelo: Cérbero": "Dante Salvatore",
+    "Ito Ito no Mi": "???",
+    "Kaze Kaze no Mi": "Druig",
+    "Kobu Kobu no Mi": "Ernesto Cruz",
+    "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
+    "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Mochi Mochi no Mi": "Hikaru Chinjao",
+    "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre": "MahaD Mnaj",
+    "Ope Ope no Mi": "Morgana Du'lor",
+    "Pika Pika no Mi": "Rhaizen D. Aether",
+    "Ryū Ryū no Mi, Modelo: Dragão Ocidental": "Galan'd Von Antares",
+    "Ryū Ryū no Mi, Modelo: Kirin": "Hyugan Drole",
+    "Shiku Shiku no Mi": "???",
+    "Soru Soru no Mi": "Kozuki Yoshihide",
+    "Suna Suna no Mi": "BladeHawk",
+    "Susu Susu no Mi": "Iori",
+    "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Tori Tori no Mi, Modelo: Fênix": "Kozuki Shingen",
+    "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
+    "Uta Uta no Mi": "???",
+    "Wapu Wapu no Mi": "Kagayaru Charlotte",
+    "Yami Yami no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Yomi Yomi no Mi": "???",
+    "Zou Zou no Mi, Modelo: Mamute": "Serm D'yos",
+    "Zushi Zushi no Mi": "Sorum"
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.includes('area-restrita')) {
+        const inputMin = document.getElementById('sorteio-min');
+        const inputMax = document.getElementById('sorteio-max');
+        const inputQtdMin = document.getElementById('sorteio-qtd-min');
+        const inputQtdMax = document.getElementById('sorteio-qtd-max');
+        const btnSortear = document.getElementById('btn-sortear-akuma');
+        const btnSorteioSemanal = document.getElementById('btn-sorteio-semanal');
+
+        if (btnSorteioSemanal) {
+            btnSorteioSemanal.addEventListener('click', () => {
+                if (inputMin) inputMin.value = "700.000.000";
+                if (inputMax) inputMax.value = "4.600.000.000";
+                if (inputQtdMin) inputQtdMin.value = "5";
+                if (inputQtdMax) inputQtdMax.value = "8";
+                const checkboxIncluir = document.getElementById('sorteio-incluir-donos');
+                if (checkboxIncluir) checkboxIncluir.checked = false;
+                const selectMar = Array.from(document.querySelectorAll('select')).find(s => Array.from(s.options).some(o => o.value === 'Paraíso' || o.textContent.includes('Paraíso')));
+                if (selectMar) {
+                    const option = Array.from(selectMar.options).find(o => o.value === 'Paraíso' || o.textContent.includes('Paraíso'));
+                    if (option) selectMar.value = option.value;
+                }
+                const selectAfiliacao = Array.from(document.querySelectorAll('select')).find(s => Array.from(s.options).some(o => o.value === 'Pirata' || o.textContent.includes('Pirata')));
+                if (selectAfiliacao) {
+                    const option = Array.from(selectAfiliacao.options).find(o => o.value === 'Pirata' || o.textContent.includes('Pirata'));
+                    if (option) selectAfiliacao.value = option.value;
+                }
+                if (btnSortear) btnSortear.click();
+                const btnSortearIlha = document.getElementById('btn-sortear-ilha') || Array.from(document.querySelectorAll('button')).find(b => b.textContent.toLowerCase().includes('ilha'));
+                if (btnSortearIlha) btnSortearIlha.click();
+            });
+        }
+        const containerResultado = document.getElementById('container-resultado-sorteio');
+        const preResultado = document.getElementById('resultado-sorteio');
+        const btnCopiar = document.getElementById('btn-copiar-sorteio');
+
+        if (!btnSortear) return;
+
+        function formatarNumeroSorteio(e) {
+            let valor = e.target.value.replace(/\D/g, '');
+            if (valor !== '') {
+                e.target.value = parseInt(valor, 10).toLocaleString('pt-BR');
+            } else {
+                e.target.value = '';
+            }
+        }
+
+        if (inputMin) inputMin.addEventListener('input', formatarNumeroSorteio);
+        if (inputMax) inputMax.addEventListener('input', formatarNumeroSorteio);
+
+        const listaFrutas = [
+            {nome: "Ame Ame no Mi (Fruta do Melaço)", valor: 1200000000},
+            {nome: "Chikyū Chikyū no Mi (Fruta da Terra)", valor: 1300000000},
+            {nome: "Gasu Gasu no Mi (Fruta do Gás)", valor: 3000000000},
+            {nome: "Goro Goro no Mi (Fruta do Relâmpago)", valor: 2400000000},
+            {nome: "Hie Hie no Mi (Fruta do Frio)", valor: 2900000000},
+            {nome: "Kaze Kaze no Mi (Fruta do Vento)", valor: 1800000000},
+            {nome: "Kumo Kumo no Mi (Fruta da Nuvem)", valor: 1100000000},
+            {nome: "Magu Magu no Mi (Fruta do Magma)", valor: 3200000000},
+            {nome: "Mera Mera no Mi (Fruta das Chamas)", valor: 1500000000},
+            {nome: "Moku Moku no Mi (Fruta da Fumaça)", valor: 1200000000},
+            {nome: "Mori Mori no Mi (Fruta da Floresta)", valor: 2900000000},
+            {nome: "Numa Numa no Mi (Fruta do Pântano)", valor: 1700000000},
+            {nome: "Pasa Pasa no Mi (Fruta do Papel)", valor: 1100000000},
+            {nome: "Pika Pika no Mi (Fruta da Luz)", valor: 4200000000},
+            {nome: "Suna Suna no Mi (Fruta da Areia)", valor: 2000000000},
+            {nome: "Susu Susu no Mi (Fruta da Fuligem)", valor: 1400000000},
+            {nome: "Toro Toro no Mi (Fruta do Líquido)", valor: 1200000000},
+            {nome: "Yami Yami no Mi (Fruta da Escuridão)", valor: 4500000000},
+            {nome: "Yuki Yuki no Mi (Fruta da Neve)", valor: 1600000000},
+            {nome: "Ami Ami no Mi (Fruta da Rede)", valor: 500000000},
+            {nome: "Aro Aro no Mi (Fruta da Flecha)", valor: 1400000000},
+            {nome: "Ato Ato no Mi (Fruta da Arte)", valor: 900000000},
+            {nome: "Awa Awa no Mi (Fruta do Sabão)", valor: 200000000},
+            {nome: "Baku Baku no Mi (Fruta da Mastigação)", valor: 400000000},
+            {nome: "Bane Bane no Mi (Fruta da Mola)", valor: 700000000},
+            {nome: "Bara Bara no Mi (Fruta dos Pedaços)", valor: 600000000},
+            {nome: "Bari Bari no Mi (Fruta da Barreira)", valor: 850000000},
+            {nome: "Bata Bata no Mi (Fruta da Manteiga)", valor: 350000000},
+            {nome: "Beri Beri no Mi (Fruta da Baga)", valor: 550000000},
+            {nome: "Beta Beta no Mi (Fruta do Muco Explosivo)", valor: 620000000},
+            {nome: "Bijo Bijo no Mi (Fruta da Fantasia)", valor: 850000000},
+            {nome: "Bisu Bisu no Mi (Fruta do Biscoito)", valor: 1000000000},
+            {nome: "Bomu Bomu no Mi (Fruta da Bomba)", valor: 600000000},
+            {nome: "Buki Buki no Mi (Fruta das Armas)", valor: 400000000},
+            {nome: "Buku Buku no Mi (Fruta dos Livros)", valor: 500000000},
+            {nome: "Chiyu Chiyu no Mi (Fruta da Cura)", valor: 900000000},
+            {nome: "Choki Choki no Mi (Fruta da Tesoura)", valor: 300000000},
+            {nome: "Deka Deka no Mi (Fruta da Gigantificação)", valor: 1300000000},
+            {nome: "Dero Dero no Mi (Fruta da Dissolução)", valor: 1300000000},
+            {nome: "Doa Doa no Mi (Fruta da Porta)", valor: 800000000},
+            {nome: "Doku Doku no Mi (Fruta do Veneno)", valor: 2800000000},
+            {nome: "Doru Doru no Mi (Fruta da Cera de Vela)", valor: 400000000},
+            {nome: "Fude Fude no Mi (Fruta da Tinta)", valor: 1200000000},
+            {nome: "Fuku Fuku no Mi (Fruta da Vestimenta)", valor: 100000000},
+            {nome: "Fuwa Fuwa no Mi (Fruta da Levitação)", valor: 1800000000},
+            {nome: "Gabu Gabu no Mi (Fruta da Bebida)", valor: 1100000000},
+            {nome: "Gasha Gasha no Mi (Fruta da Construção)", valor: 1000000000},
+            {nome: "Gatsu Gatsu no Mi (Fruta dos Pregos)", valor: 1500000000},
+            {nome: "Genso Genso no Mi (Fruta da Ilusão)", valor: 550000000},
+            {nome: "Giro Giro no Mi (Fruta da Visão)", valor: 800000000},
+            {nome: "Gocha Gocha no Mi (Fruta da Fusão)", valor: 600000000},
+            {nome: "Goe Goe no Mi (Fruta da Voz)", valor: 950000000},
+            {nome: "Gomu Gomu no Mi (Fruta da Borracha)", valor: 650000000},
+            {nome: "Goru Goru no Mi (Fruta do Ouro)", valor: 1800000000},
+            {nome: "Gura Gura no Mi (Fruta do Terremoto)", valor: 3800000000},
+            {nome: "Guru Guru no Mi (Fruta da Hélice)", valor: 100000000},
+            {nome: "Gutsu Gutsu no Mi (Fruta da Fundição)", valor: 950000000},
+            {nome: "Hana Hana no Mi (Fruta dos Membros)", valor: 700000000},
+            {nome: "Hemo Hemo no Mi (Fruta do Sangue)", valor: 850000000},
+            {nome: "Hira Hira no Mi (Fruta da Bandeira)", valor: 450000000},
+            {nome: "Hiso Hiso no Mi (Fruta da Conversa)", valor: 400000000},
+            {nome: "Hobi Hobi no Mi (Fruta do Brinquedo)", valor: 1100000000},
+            {nome: "Hone Hone no Mi (Fruta do Osso)", valor: 700000000},
+            {nome: "Horo Horo no Mi (Fruta do Fantasma)", valor: 800000000},
+            {nome: "Horu Horu no Mi (Fruta dos Hormônios)", valor: 800000000},
+            {nome: "Hoya Hoya no Mi (Fruta do Gênio)", valor: 500000000},
+            {nome: "Iro Iro no Mi (Fruta da Camuflagem)", valor: 400000000},
+            {nome: "Ishi Ishi no Mi (Fruta da Rocha)", valor: 1000000000},
+            {nome: "Ito Ito no Mi (Fruta dos Fios)", valor: 1200000000},
+            {nome: "Jake Jake no Mi (Fruta da Jaqueta)", valor: 120000000},
+            {nome: "Jara Jara no Mi (Fruta das Correntes)", valor: 600000000},
+            {nome: "Jiki Jiki no Mi (Fruta do Magnetismo)", valor: 1400000000},
+            {nome: "Juku Juku no Mi (Fruta do Amadurecimento)", valor: 1100000000},
+            {nome: "Kachi Kachi no Mi (Fruta da Resistência de Ferro)", valor: 800000000},
+            {nome: "Kage Kage no Mi (Fruta da Sombra)", valor: 1400000000},
+            {nome: "Kama Kama no Mi (Fruta da Unha)", valor: 700000000},
+            {nome: "Kegawa Kegawa no Mi (Fruta do Pelo)", valor: 400000000},
+            {nome: "Kesshō Kesshō no Mi (Fruta do Cristal)", valor: 800000000},
+            {nome: "Kibi Kibi no Mi (Fruta do Kibi Dango)", valor: 650000000},
+            {nome: "Kira Kira no Mi (Fruta do Diamante)", valor: 600000000},
+            {nome: "Kiro Kiro no Mi (Fruta do Peso)", valor: 250000000},
+            {nome: "Kobu Kobu no Mi (Fruta do Incentivo)", valor: 300000000},
+            {nome: "Kon Kon no Mi (Fruta do Milho)", valor: 500000000},
+            {nome: "Koro Koro no Mi (Fruta do Giro)", valor: 180000000},
+            {nome: "Kuku Kuku no Mi (Fruta da Comida)", valor: 250000000},
+            {nome: "Kuri Kuri no Mi (Fruta do Creme)", valor: 600000000},
+            {nome: "Kyubu Kyubu no Mi (Fruta dos Cubos)", valor: 890000000},
+            {nome: "Maki Maki no Mi (Fruta do Pergaminho)", valor: 850000000},
+            {nome: "Mane Mane no Mi (Fruta da Cópia de Aparência)", valor: 120000000},
+            {nome: "Masu Masu no Mi (Fruta da Massa)", valor: 1200000000},
+            {nome: "Mato Mato no Mi (Fruta do Alvo)", valor: 450000000},
+            {nome: "Memo Memo no Mi (Fruta da Memória)", valor: 750000000},
+            {nome: "Mero Mero no Mi (Fruta do Amor)", valor: 2000000000},
+            {nome: "Mini Mini no Mi (Fruta da Diminuição Corporal)", valor: 300000000},
+            {nome: "Mira Mira no Mi (Fruta dos Espelhos)", valor: 800000000},
+            {nome: "Muchi Muchi no Mi (Fruta do Chicote)", valor: 750000000},
+            {nome: "Moa Moa no Mi (Fruta do Aumento)", valor: 1000000000},
+            {nome: "Modo Modo no Mi (Fruta do Retorno)", valor: 3900000000},
+            {nome: "Mosa Mosa no Mi (Fruta do Crescimento)", valor: 600000000},
+            {nome: "Nagi Nagi no Mi (Fruta do Silêncio)", valor: 300000000},
+            {nome: "Nawa Nawa no Mi (Fruta das Cordas)", valor: 250000000},
+            {nome: "Nemu Nemu no Mi (Fruta do Sono)", valor: 450000000},
+            {nome: "Netsu Netsu no Mi (Fruta do Calor)", valor: 550000000},
+            {nome: "Nikyu Nikyu no Mi (Fruta da Pata)", valor: 3000000000},
+            {nome: "Noko Noko no Mi (Fruta do Cogumelo)", valor: 900000000},
+            {nome: "Nomi Nomi no Mi (Fruta do Cérebro)", valor: 200000000},
+            {nome: "Nori Nori no Mi (Fruta da Montaria)", valor: 700000000},
+            {nome: "Noro Noro no Mi (Fruta da Lentidão)", valor: 600000000},
+            {nome: "Nui Nui no Mi (Fruta da Costura)", valor: 370000000},
+            {nome: "Nuke Nuke no Mi (Fruta da Intangibilidade)", valor: 900000000},
+            {nome: "Ope Ope no Mi (Fruta da Operação)", valor: 4600000000},
+            {nome: "Ori Ori no Mi (Fruta da Grade)", valor: 350000000},
+            {nome: "Oshi Oshi no Mi (Fruta da Argila)", valor: 500000000},
+            {nome: "Oto Oto no Mi (Fruta do Som)", valor: 1000000000},
+            {nome: "Pamu Pamu no Mi (Fruta da Explosão)", valor: 800000000},
+            {nome: "Pero Pero no Mi (Fruta do Doce)", valor: 600000000},
+            {nome: "Peto Peto no Mi (Fruta do Pet)", valor: 800000000},
+            {nome: "Poke Poke no Mi (Fruta do Bolso)", valor: 650000000},
+            {nome: "Rashin Rashin no Mi (Fruta da Bússola)", valor: 700000000},
+            {nome: "Riki Riki no Mi (Fruta da Força)", valor: 1000000000},
+            {nome: "Sabi Sabi no Mi (Fruta da Ferrugem)", valor: 400000000},
+            {nome: "Shari Shari no Mi (Fruta da Roda)", valor: 120000000},
+            {nome: "Shibo Shibo no Mi (Fruta do Suco)", valor: 800000000},
+            {nome: "Shiku Shiku no Mi (Fruta da Doença)", valor: 2200000000},
+            {nome: "Shima Shima no Mi (Fruta da Ilha)", valor: 1600000000},
+            {nome: "Shiro Shiro no Mi (Fruta da Fortaleza)", valor: 1200000000},
+            {nome: "Soru Soru no Mi (Fruta da Alma)", valor: 2300000000},
+            {nome: "Sube Sube no Mi (Fruta do Corpo Liso)", valor: 100000000},
+            {nome: "Sui Sui no Mi (Fruta do Nado)", valor: 300000000},
+            {nome: "Suji Suji no Mi (Fruta dos Músculos)", valor: 800000000},
+            {nome: "Suke Suke no Mi (Fruta da Invisibilidade)", valor: 500000000},
+            {nome: "Supa Supa no Mi (Fruta das Lâminas)", valor: 700000000},
+            {nome: "Toge Toge no Mi (Fruta dos Espinhos)", valor: 400000000},
+            {nome: "Toki Toki no Mi (Fruta do Tempo)", valor: 2100000000},
+            {nome: "Ton Ton no Mi (Fruta do Aumento de Peso)", valor: 1000000000},
+            {nome: "Toshi Toshi no Mi (Fruta da Idade)", valor: 800000000},
+            {nome: "Tsutsu Tsutsu no Mi (Fruta do Barril)", valor: 550000000},
+            {nome: "Uta Uta no Mi (Fruta da Canção)", valor: 2400000000},
+            {nome: "Wapu Wapu no Mi (Fruta do Teleporte)", valor: 1900000000},
+            {nome: "Wara Wara no Mi (Fruta da Palha)", valor: 800000000},
+            {nome: "Woshu Woshu no Mi (Fruta da Limpeza)", valor: 120000000},
+            {nome: "Yomi Yomi no Mi (Fruta do Renascimento)", valor: 750000000},
+            {nome: "Zushi Zushi no Mi (Fruta da Gravidade)", valor: 2600000000},
+            {nome: "Karan Karan no Mi (Fruta do Metal)", valor: 1200000000},
+            {nome: "Mochi Mochi no Mi (Fruta do Bolo de Arroz)", valor: 1000000000},
+            {nome: "Kame Kame no Mi", valor: 250000000},
+            {nome: "Batto Batto no Mi", valor: 500000000},
+            {nome: "Gama Gama no Mi", valor: 160000000},
+            {nome: "Hebi Hebi no Mi, Modelo: Anaconda", valor: 500000000},
+            {nome: "Hebi Hebi no Mi, Modelo: Cobra-Real", valor: 500000000},
+            {nome: "Hito Hito no Mi", valor: 300000000},
+            {nome: "Inu Inu no Mi, Modelo: Cão de Caça", valor: 450000000},
+            {nome: "Inu Inu no Mi, Modelo: Cão-Guaxinim", valor: 450000000},
+            {nome: "Inu Inu no Mi, Modelo: Chacal", valor: 450000000},
+            {nome: "Inu Inu no Mi, Modelo: Dachshund", valor: 150000000},
+            {nome: "Inu Inu no Mi, Modelo: Lobo", valor: 600000000},
+            {nome: "Mogu Mogu no Mi", valor: 320000000},
+            {nome: "Mushi Mushi no Mi, Modelo: Besouro-Rinoceronte", valor: 450000000},
+            {nome: "Mushi Mushi no Mi, Modelo: Vespa-Mandarina", valor: 180000000},
+            {nome: "Neko Neko no Mi, Modelo: Leão", valor: 450000000},
+            {nome: "Neko Neko no Mi, Modelo: Leopardo", valor: 400000000},
+            {nome: "Neko Neko no Mi, Modelo: Pantera Negra", valor: 500000000},
+            {nome: "Neko Neko no Mi, Modelo: Tigre de Bengala", valor: 450000000},
+            {nome: "Rako Rako no Mi", valor: 180000000},
+            {nome: "Sara Sara no Mi, Modelo: Axolote", valor: 180000000},
+            {nome: "Tama Tama no Mi", valor: 900000000},
+            {nome: "Tori Tori no Mi, Modelo: Águia", valor: 350000000},
+            {nome: "Tori Tori no Mi, Modelo: Albatroz", valor: 100000000},
+            {nome: "Tori Tori no Mi, Modelo: Falcão", valor: 350000000},
+            {nome: "Uma Uma no Mi", valor: 100000000},
+            {nome: "Usagi Usagi no Mi", valor: 130000000},
+            {nome: "Ushi Ushi no Mi, Modelo: Bisão", valor: 300000000},
+            {nome: "Ushi Ushi no Mi, Modelo: Girafa", valor: 300000000},
+            {nome: "Ushi Ushi no Mi, Modelo: Rinoceronte", valor: 600000000},
+            {nome: "Zou Zou no Mi", valor: 500000000},
+            {nome: "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli", valor: 1400000000},
+            {nome: "Neko Neko no Mi, Modelo: Tigre Dentes de Sabre", valor: 1600000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Alossauro", valor: 1950000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Braquiossauro", valor: 1550000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Espinossauro", valor: 1950000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Paquicefalossauro", valor: 1000000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Pteranodonte", valor: 1700000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Triceratops", valor: 1000000000},
+            {nome: "Zou Zou no Mi, Modelo: Mamute", valor: 1800000000},
+            {nome: "Batto Batto no Mi, Modelo: Vampiro", valor: 3200000000},
+            {nome: "Hebi Hebi no Mi, Modelo: Kaijū", valor: 3800000000},
+            {nome: "Hebi Hebi no Mi, Modelo: Yamata no Orochi", valor: 2200000000},
+            {nome: "Hito Hito no Mi, Modelo: Daibutsu", valor: 2500000000},
+            {nome: "Hito Hito no Mi, Modelo: O Anfitrião", valor: 4134134134},
+            {nome: "Hito Hito no Mi, Modelo: Ōnyūdō", valor: 2200000000},
+            {nome: "Inu Inu no Mi, Modelo: Bake-Danuki", valor: 2000000000},
+            {nome: "Inu Inu no Mi, Modelo: Cérbero", valor: 2300000000},
+            {nome: "Inu Inu no Mi, Modelo: Ōkuchi no Makami", valor: 3000000000},
+            {nome: "Inu Inu no Mi, Modelo: Raposa de Nove Caudas", valor: 2700000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Dragão Ocidental", valor: 2700000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Kirin", valor: 2500000000},
+            {nome: "Saru Saru no Mi, Modelo: Sun Wukong", valor: 3900000000},
+            {nome: "Tori Tori no Mi, Modelo: Fênix", valor: 3000000000},
+            {nome: "Tori Tori no Mi, Modelo: Nue", valor: 3000000000},
+            {nome: "Tori Tori no Mi, Modelo: Pássaro de Cinzas", valor: 1800000000},
+            {nome: "Tori Tori no Mi, Modelo: Pássaro de Gelo", valor: 2200000000},
+            {nome: "Tori Tori no Mi, Modelo: Thunderbird", valor: 2400000000},
+            {nome: "Uma Uma no Mi, Modelo: Pégaso", valor: 2100000000},
+            {nome: "Uo Uo no Mi, Modelo: Carpa Seiryū", valor: 2900000000}
+        ];
+
+        btnSortear.addEventListener('click', () => {
+            let minStr = inputMin.value.replace(/\D/g, '');
+            let maxStr = inputMax.value.replace(/\D/g, '');
+            
+            let min = parseInt(minStr, 10);
+            let max = parseInt(maxStr, 10);
+            
+            let qtdMinVal = parseInt(inputQtdMin.value, 10);
+            let qtdMaxVal = parseInt(inputQtdMax.value, 10);
+            
+            if (isNaN(qtdMinVal) || qtdMinVal < 1) qtdMinVal = 1;
+            if (isNaN(qtdMaxVal) || qtdMaxVal < 1) qtdMaxVal = 1;
+            if (qtdMinVal > qtdMaxVal) qtdMinVal = qtdMaxVal;
+            
+            let qtd = Math.floor(Math.random() * (qtdMaxVal - qtdMinVal + 1)) + qtdMinVal;
+
+            if (isNaN(min) || isNaN(max)) {
+                preResultado.textContent = "Por favor, defina os valores mínimo e máximo.";
+                preResultado.style.color = "#f44336";
+                containerResultado.style.display = 'block';
+                return;
+            }
+
+            if (min > max) {
+                preResultado.textContent = "O valor mínimo não pode ser maior que o máximo.";
+                preResultado.style.color = "#f44336";
+                containerResultado.style.display = 'block';
+                return;
+            }
+            
+            const checkboxIncluir = document.getElementById('sorteio-incluir-donos');
+            const incluirDonos = checkboxIncluir ? checkboxIncluir.checked : false;
+
+            const frutasValidas = listaFrutas.filter(f => {
+                if (f.valor < min || f.valor > max) return false;
+                
+                let nomeBase = f.nome.split(' (')[0].trim();
+                if (!incluirDonos && window.donosDeAkuma[nomeBase]) return false;
+                
+                return true;
+            });
+
+            if (frutasValidas.length === 0) {
+                preResultado.textContent = "Nenhuma Akuma no Mi encontrada nessa faixa de valor.";
+                preResultado.style.color = "#ffeb3b";
+                containerResultado.style.display = 'block';
+                return;
+            }
+
+            // Shuffle
+            for (let i = frutasValidas.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [frutasValidas[i], frutasValidas[j]] = [frutasValidas[j], frutasValidas[i]];
+            }
+
+            const limite = Math.min(qtd, frutasValidas.length);
+            const sorteadas = frutasValidas.slice(0, limite);
+
+            sorteadas.sort((a, b) => {
+                let nameA = a.nome.split(' (')[0].trim();
+                let nameB = b.nome.split(' (')[0].trim();
+                return nameA.localeCompare(nameB, 'pt-BR');
+            });
+
+            const inputIlhaManual = document.getElementById('sorteio-ilha-manual');
+            const selectMar = document.getElementById('sorteio-mar');
+            const selectFaccao = document.getElementById('sorteio-faccao');
+
+            let nomeIlha = "";
+            
+            // Verifica se o usuário quis forçar um nome de ilha ignorando o sorteio
+            if (inputIlhaManual && inputIlhaManual.value.trim() !== '') {
+                nomeIlha = inputIlhaManual.value.trim();
+            } else {
+                let marFiltro = selectMar ? selectMar.value : 'Qualquer';
+                let faccaoFiltro = selectFaccao ? selectFaccao.value : 'Qualquer';
+                let ilhasValidas = [];
+
+                // Varre o banco de ilhas global
+                if (typeof bancoDeIlhas !== 'undefined') {
+                    for (const [marNome, ilhas] of Object.entries(bancoDeIlhas)) {
+                        if (marFiltro !== 'Qualquer' && marNome !== marFiltro) continue;
+                        
+                        ilhas.forEach(ilha => {
+                            if (faccaoFiltro !== 'Qualquer' && ilha.afiliacaoClasse !== faccaoFiltro) return;
+                            ilhasValidas.push(ilha.nome);
+                        });
+                    }
+                }
+
+                if (ilhasValidas.length > 0) {
+                    // Sorteia uma ilha aleatória da lista de ilhas válidas
+                    nomeIlha = ilhasValidas[Math.floor(Math.random() * ilhasValidas.length)];
+                } else {
+                    nomeIlha = "[Nenhuma ilha corresponde aos filtros]";
+                }
+            }
+
+            let textoFinal = "*SORTEIO DAS FRUTAS RARAS QUE ESTÃO DISPONÍVEIS PARA SEREM COMPRADAS*\n\n";
+            textoFinal += `* Ilha: *${nomeIlha}*\n\n`;
+            textoFinal += "* Frutas:\n";
+            
+            sorteadas.forEach((f, index) => {
+                let nomeBase = f.nome.split(' (')[0].trim();
+                textoFinal += `${index + 1}. *${nomeBase} - ฿${f.valor.toLocaleString('pt-BR')}*\n`;
+            });
+
+            textoFinal += "\nAqui está o link que lhes permite verificar qual é a cada uma das Frutas: https://herikliz.github.io/New-Seas-RPG/akuma-no-mi.html";
+
+            preResultado.textContent = textoFinal;
+            preResultado.style.color = "var(--text-color)";
+            containerResultado.style.display = 'block';
+        });
+
+        btnCopiar.addEventListener('click', () => {
+            if (!preResultado.textContent || preResultado.textContent.includes('Por favor') || preResultado.textContent.includes('Nenhuma')) return;
+            if (btnCopiar.dataset.copying) return;
+            btnCopiar.dataset.copying = "true";
+            
+            if (window.copiarTextoUniversal) {
+                window.copiarTextoUniversal(preResultado.textContent).then(() => {
+                    let originalText = btnCopiar.textContent;
+                    let originalBg = btnCopiar.style.backgroundColor;
+                    let originalColor = btnCopiar.style.color;
+
+                    btnCopiar.textContent = "Texto Copiado!";
+                    btnCopiar.style.backgroundColor = "#4caf50";
+                    btnCopiar.style.color = "#fff";
+                    
+                    setTimeout(() => {
+                        btnCopiar.textContent = originalText;
+                        btnCopiar.style.backgroundColor = originalBg;
+                        btnCopiar.style.color = originalColor;
+                        delete btnCopiar.dataset.copying;
+                    }, 1000);
+                });
+            } else {
+                navigator.clipboard.writeText(preResultado.textContent).then(() => {
+                    let originalText = btnCopiar.textContent;
+                    let originalBg = btnCopiar.style.backgroundColor;
+                    let originalColor = btnCopiar.style.color;
+
+                    btnCopiar.textContent = "Texto Copiado!";
+                    btnCopiar.style.backgroundColor = "#4caf50";
+                    btnCopiar.style.color = "#fff";
+                    
+                    setTimeout(() => {
+                        btnCopiar.textContent = originalText;
+                        btnCopiar.style.backgroundColor = originalBg;
+                        btnCopiar.style.color = originalColor;
+                        delete btnCopiar.dataset.copying;
+                    }, 1000);
+                });
+            }
+        });
+    }
 });
