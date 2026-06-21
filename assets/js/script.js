@@ -3811,19 +3811,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (inputQtdMax) inputQtdMax.value = "8";
                 const checkboxIncluir = document.getElementById('sorteio-incluir-donos');
                 if (checkboxIncluir) checkboxIncluir.checked = false;
-                const selectMar = Array.from(document.querySelectorAll('select')).find(s => Array.from(s.options).some(o => o.value === 'Paraíso' || o.textContent.includes('Paraíso')));
-                if (selectMar) {
-                    const option = Array.from(selectMar.options).find(o => o.value === 'Paraíso' || o.textContent.includes('Paraíso'));
-                    if (option) selectMar.value = option.value;
-                }
-                const selectAfiliacao = Array.from(document.querySelectorAll('select')).find(s => Array.from(s.options).some(o => o.value === 'Pirata' || o.textContent.includes('Pirata')));
-                if (selectAfiliacao) {
-                    const option = Array.from(selectAfiliacao.options).find(o => o.value === 'Pirata' || o.textContent.includes('Pirata'));
-                    if (option) selectAfiliacao.value = option.value;
-                }
+                const selectMar = document.getElementById('sorteio-mar');
+                if (selectMar) selectMar.value = "Paraíso";
+                const selectFaccao = document.getElementById('sorteio-faccao');
+                if (selectFaccao) selectFaccao.value = "pirata";
                 if (btnSortear) btnSortear.click();
-                const btnSortearIlha = document.getElementById('btn-sortear-ilha') || Array.from(document.querySelectorAll('button')).find(b => b.textContent.toLowerCase().includes('ilha'));
-                if (btnSortearIlha) btnSortearIlha.click();
             });
         }
         const containerResultado = document.getElementById('container-resultado-sorteio');
@@ -4049,6 +4041,15 @@ document.addEventListener('DOMContentLoaded', () => {
             {nome: "Uma Uma no Mi, Modelo: Pégaso", valor: 2100000000},
             {nome: "Uo Uo no Mi, Modelo: Carpa Seiryū", valor: 2900000000}
         ];
+
+        if (inputMin) {
+            const menorValor = Math.min(...listaFrutas.map(f => f.valor));
+            inputMin.value = menorValor.toLocaleString('pt-BR');
+        }
+        if (inputMax) {
+            const maiorValor = Math.max(...listaFrutas.map(f => f.valor));
+            inputMax.value = maiorValor.toLocaleString('pt-BR');
+        }
 
         btnSortear.addEventListener('click', () => {
             let minStr = inputMin.value.replace(/\D/g, '');
