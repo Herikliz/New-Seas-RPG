@@ -1,4 +1,15 @@
 // ==========================================
+// INJEÇÃO GLOBAL DE FAVICON
+// ==========================================
+(function injectFavicon() {
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = 'assets/imagens/favicon.png';
+    document.head.appendChild(link);
+})();
+
+// ==========================================
 // INJEÇÃO GLOBAL DE ESTILOS
 // ==========================================
 (function injectGlobalStyles() {
@@ -571,7 +582,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const path = window.location.pathname.split('/').pop() || 'index.html';
     const sidebarElement = sidebarContainer || document.body;
-    const currentLink = sidebarElement.querySelector(`a[href="${path}"]`);
+    const currentLink = sidebarElement.querySelector(`.nav-links a[href="${path}"]`);
     if (currentLink) {
         currentLink.classList.add('active');
         let parentMenu = currentLink.closest('.sub-menu');
