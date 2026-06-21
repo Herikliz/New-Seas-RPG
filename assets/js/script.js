@@ -190,13 +190,53 @@ if (history.scrollRestoration) {
 window.scrollTo(0, 0);
 
 if (window.location.pathname.endsWith('area-restrita.html') || window.location.pathname.includes('area-restrita')) {
-    document.documentElement.style.display = 'none';
-    let senhaAdmin = prompt("Digite a senha para acessar a Área Restrita:");
-    if (senhaAdmin !== "Ben10") {
-        window.location.href = "index.html";
-    } else {
-        document.documentElement.style.display = '';
-    }
+    const childNodes = Array.from(document.body.children);
+    childNodes.forEach(child => child.style.display = 'none');
+    const overlay = document.createElement('div');
+    overlay.innerHTML = `
+        <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #121212; z-index: 100000; display: flex; justify-content: center; align-items: center;">
+            <div style="background: var(--sidebar-bg); padding: 40px; border-radius: 8px; border: 2px solid var(--accent-color); text-align: center; box-shadow: 0 8px 16px rgba(0,0,0,0.8); max-width: 400px; width: 90%;">
+                <h2 style="color: var(--accent-color); font-family: 'Quantico', sans-serif; margin-bottom: 20px; font-size: 26px;">ACESSO RESTRITO</h2>
+                <div style="position: relative; margin-bottom: 20px; width: 100%;">
+                    <input type="password" id="senha-input" placeholder="Digite a senha..." style="width: 100%; padding: 12px 40px 12px 12px; border: 1px solid var(--sidebar-border); border-radius: 4px; background: rgba(0,0,0,0.5); color: #ffffff; font-family: 'Comfortaa', sans-serif; font-size: 16px; outline: none; text-align: center; box-sizing: border-box;">
+                    <button id="toggle-senha-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-color); cursor: pointer; font-size: 18px; padding: 0; outline: none;">👁️</button>
+                </div>
+                <button id="senha-btn" style="background: var(--accent-color); color: #000000; border: none; padding: 12px 24px; font-family: 'Quantico', sans-serif; font-weight: bold; font-size: 18px; border-radius: 4px; cursor: pointer; width: 100%;">ENTRAR</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+    setTimeout(() => {
+        const inputSenha = document.getElementById('senha-input');
+        const toggleBtn = document.getElementById('toggle-senha-btn');
+        if (inputSenha) {
+            inputSenha.focus();
+        }
+        if (toggleBtn && inputSenha) {
+            toggleBtn.addEventListener('click', () => {
+                if (inputSenha.type === 'password') {
+                    inputSenha.type = 'text';
+                    toggleBtn.textContent = '🙈';
+                } else {
+                    inputSenha.type = 'password';
+                    toggleBtn.textContent = '👁️';
+                }
+            });
+        }
+        document.getElementById('senha-btn').addEventListener('click', () => {
+            if (document.getElementById('senha-input').value === 'Ben10') {
+                overlay.remove();
+                childNodes.forEach(child => child.style.display = '');
+            } else {
+                window.location.href = 'index.html';
+            }
+        });
+        document.getElementById('senha-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('senha-btn').click();
+            }
+        });
+    }, 0);
 }
 
 // ==========================================
@@ -3359,7 +3399,7 @@ if (document.readyState === 'loading') {
 
     document.addEventListener('mouseover', (e) => {
         if (e.target.tagName === 'IMG') {
-            if (e.target.closest('.map-container') || e.target.closest('.jornal-book-container') || e.target.naturalWidth < 100) return;
+            if (e.target.closest('.map-container') || e.target.closest('.jornal-book-container') || e.target.classList.contains('hero-image') || e.target.src.includes('Banner.png') || e.target.naturalWidth < 100) return;
             
             const img = e.target;
             const parent = img.parentElement;
