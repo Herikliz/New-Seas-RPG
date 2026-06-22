@@ -3178,7 +3178,21 @@ function iniciarSistemaDeAbas() {
                 }
 
                 renderContainer.innerHTML = '';
+                renderContainer.style.flexDirection = 'column';
+                renderContainer.style.alignItems = 'center';
                 renderContainer.appendChild(imgElement);
+
+                if (window.mensagensRodape && window.mensagensRodape[dataAtual]) {
+                    const aviso = document.createElement('div');
+                    aviso.style.textAlign = 'center';
+                    aviso.style.fontFamily = "'Quantico', sans-serif";
+                    aviso.style.color = "var(--accent-color)";
+                    aviso.style.marginTop = "20px";
+                    aviso.style.marginBottom = "20px";
+                    aviso.style.fontSize = "18px";
+                    aviso.textContent = window.mensagensRodape[dataAtual];
+                    renderContainer.appendChild(aviso);
+                }
 
                 txtContador.textContent = `Página ${paginaAtual + 1} de ${imagens.length}`;
                 btnAnt.disabled = paginaAtual === 0;
