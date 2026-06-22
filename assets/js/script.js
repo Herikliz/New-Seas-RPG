@@ -3055,6 +3055,34 @@ function iniciarSistemaDeAbas() {
         const btnProx = document.getElementById('btn-jornal-prox');
         const txtContador = document.getElementById('txt-jornal-contador');
 
+        function mostrarAvisoJornal(mensagem) {
+            const overlay = document.createElement('div');
+            overlay.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.8); z-index: 100000; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(3px);">
+                    <div style="background: var(--sidebar-bg); padding: 30px; border-radius: 8px; border: 2px solid var(--accent-color); text-align: center; box-shadow: 0 8px 16px rgba(0,0,0,0.8); max-width: 400px; width: 90%; animation: slideDown 0.3s ease;">
+                        <h2 style="color: var(--accent-color); font-family: 'Quantico', sans-serif; margin-bottom: 15px; font-size: 22px;">AVISO DO JORNAL</h2>
+                        <p style="color: var(--text-color); font-family: 'Comfortaa', sans-serif; font-size: 16px; margin-bottom: 25px;">${mensagem}</p>
+                        <button id="btn-fechar-aviso" style="background: var(--accent-color); color: #000000; border: none; padding: 10px 20px; font-family: 'Quantico', sans-serif; font-weight: bold; font-size: 16px; border-radius: 4px; cursor: pointer; width: 100%; transition: transform 0.2s;">OK</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            document.getElementById('btn-fechar-aviso').addEventListener('click', () => {
+                overlay.remove();
+            });
+        }
+
+        function checarAvisoTemporada(dataAntiga, novaData) {
+            if (!window.avisosJornal) return;
+            for (let aviso of window.avisosJornal) {
+                if (dataAntiga >= aviso.dataCorte && novaData < aviso.dataCorte) {
+                    mostrarAvisoJornal(aviso.msgAntes);
+                } else if (dataAntiga < aviso.dataCorte && novaData >= aviso.dataCorte) {
+                    mostrarAvisoJornal(aviso.msgDepois);
+                }
+            }
+        }
+
         function atualizarBotoesNavegacaoMes() {
             if (mesesDisponiveis.length <= 1) {
                 btnCalAnt.style.opacity = "0.3";
@@ -3088,6 +3116,7 @@ function iniciarSistemaDeAbas() {
                 btn.addEventListener('click', function() {
                     const novaData = this.getAttribute('data-data');
                     if (novaData && dadosJornal[novaData]) {
+                        checarAvisoTemporada(dataAtual, novaData);
                         dataAtual = novaData;
                         paginaAtual = 0;
                         atualizarRenderizacao();
@@ -3164,7 +3193,9 @@ function iniciarSistemaDeAbas() {
         btnEdicaoAnt.addEventListener('click', function() {
             const idx = datasDisponiveis.indexOf(dataAtual);
             if (idx > 0) {
-                dataAtual = datasDisponiveis[idx - 1];
+                const novaData = datasDisponiveis[idx - 1];
+                checarAvisoTemporada(dataAtual, novaData);
+                dataAtual = novaData;
                 paginaAtual = 0;
                 
                 calAno = parseInt(dataAtual.substring(0, 4), 10);
@@ -3185,7 +3216,9 @@ function iniciarSistemaDeAbas() {
         btnEdicaoProx.addEventListener('click', function() {
             const idx = datasDisponiveis.indexOf(dataAtual);
             if (idx < datasDisponiveis.length - 1) {
-                dataAtual = datasDisponiveis[idx + 1];
+                const novaData = datasDisponiveis[idx + 1];
+                checarAvisoTemporada(dataAtual, novaData);
+                dataAtual = novaData;
                 paginaAtual = 0;
                 
                 calAno = parseInt(dataAtual.substring(0, 4), 10);
@@ -3402,7 +3435,7 @@ if (document.readyState === 'loading') {
 
     document.addEventListener('mouseover', (e) => {
         if (e.target.tagName === 'IMG') {
-            if (e.target.closest('.map-container') || e.target.closest('.jornal-book-container') || e.target.classList.contains('hero-image') || e.target.src.includes('Banner.png') || e.target.naturalWidth < 100) return;
+            if (e.target.closest('.map-container') || e.target.classList.contains('hero-image') || e.target.src.includes('Banner.png') || e.target.naturalWidth < 100) return;
             
             const img = e.target;
             const parent = img.parentElement;
