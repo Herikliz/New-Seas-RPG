@@ -4013,7 +4013,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {nome: "Ushi Ushi no Mi, Modelo: Rinoceronte", valor: 600000000},
             {nome: "Zou Zou no Mi", valor: 500000000},
             {nome: "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli", valor: 1400000000},
-            {nome: "Neko Neko no Mi, Modelo: Tigre Dentes de Sabre", valor: 1600000000},
+            {nome: "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre", valor: 1600000000},
             {nome: "Ryū Ryū no Mi, Modelo: Alossauro", valor: 1950000000},
             {nome: "Ryū Ryū no Mi, Modelo: Braquiossauro", valor: 1550000000},
             {nome: "Ryū Ryū no Mi, Modelo: Espinossauro", valor: 1950000000},
@@ -4088,7 +4088,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (f.valor < min || f.valor > max) return false;
                 
                 let nomeBase = f.nome.split(' (')[0].trim();
-                if (!incluirDonos && window.donosDeAkuma[nomeBase]) return false;
+                if (!incluirDonos) {
+                    const estaOcupada = Object.keys(window.donosDeAkuma).some(key => {
+                        return key.replace(' [Original do RPG]', '').trim() === nomeBase;
+                    });
+                    if (estaOcupada) return false;
+                }
                 
                 return true;
             });
