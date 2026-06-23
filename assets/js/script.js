@@ -3353,7 +3353,7 @@ function exibirDonosAkuma() {
         let nomeBruto = tituloEl.textContent.split(' (')[0].trim();
         let dono = window.donosDeAkuma[nomeBruto];
 
-        if (dono) {
+        if (dono && dono !== "Bloqueada") {
             const div = tituloEl.parentElement;
             const paragrafos = div.querySelectorAll('p');
             paragrafos.forEach(p => {
@@ -3818,6 +3818,7 @@ window.donosDeAkuma = {
     "Kaze Kaze no Mi": "Druig",
     "Kobu Kobu no Mi": "Ernesto Cruz",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
+    "Magu Magu no Mi": "Bloqueada",
     "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
@@ -3832,6 +3833,7 @@ window.donosDeAkuma = {
     "Susu Susu no Mi": "Iori",
     "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Tori Tori no Mi, Modelo: Fênix": "Kozuki Shingen",
+    "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "Bloqueada",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
     "Uta Uta no Mi": "???",
     "Wapu Wapu no Mi": "Kagayaru Charlotte",
