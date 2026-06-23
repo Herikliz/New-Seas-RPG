@@ -4261,3 +4261,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function initLinhagensAutomacao() {
+    if (!window.location.pathname.includes('linhagens.html')) return;
+    const vagasHeaders = Array.from(document.querySelectorAll('h4.highlight-text, h5.highlight-text')).filter(h => h.textContent.includes('Vagas'));
+    vagasHeaders.forEach(header => {
+        const ul = header.nextElementSibling;
+        if (ul && ul.tagName === 'UL') {
+            const lis = Array.from(ul.querySelectorAll('li'));
+            const totalVagas = lis.length;
+            const ocupados = [];
+            const livres = [];
+            lis.forEach(li => {
+                const textoLimpo = li.textContent.trim();
+                if (textoLimpo === '' || textoLimpo === String.fromCharCode(160) || li.innerHTML.trim() === '&nbsp;') {
+                    livres.push(li);
+                } else {
+                    ocupados.push(li);
+                }
+            });
+            ocupados.sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim(), 'pt-BR'));
+            header.textContent = `Vagas ${ocupados.length}/${totalVagas}:`;
+            ul.innerHTML = '';
+            ocupados.forEach(li => ul.appendChild(li));
+            livres.forEach(li => ul.appendChild(li));
+        }
+    });
+}
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLinhagensAutomacao);
+} else {
+    initLinhagensAutomacao();
+}
