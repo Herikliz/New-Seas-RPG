@@ -311,7 +311,12 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <ul class="nav-links">
             <li>
-                <li><a href="index.html">INÍCIO</a></li>
+                <li>
+                    <a href="index.html" class="toggle-btn">INÍCIO <span class="arrow">▼</span></a>
+                    <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
+                        <li><a href="como-jogar.html">COMO JOGAR O RPG?</a></li>
+                    </ul>
+                </li>
                 <li><a href="area-restrita.html">ÁREA RESTRITA</a></li>
                 <li><a href="regras.html">REGRAS</a></li>
             </li>
@@ -324,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="habilidades-unicas.html">HABILIDADES ÚNICAS</a></li>
                     <li><a href="linhagens.html">LINHAGENS</a></li>
                     <li><a href="racas.html">RAÇAS</a></li>
-                    <li><a href="https://herikliz.github.io/New-Seas-RPG-Ficha/">SALVAR FICHA</a></li>
+                    <li><a href="https://herikliz.github.io/New-Seas-RPG-Ficha/" target="_blank">SALVAR FICHA</a></li>
                 </ul>
             </li>
             <li>
