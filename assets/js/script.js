@@ -3823,6 +3823,7 @@ window.donosDeAkuma = {
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre": "MahaD Mnaj",
     "Ope Ope no Mi": "Morgana Du'lor",
+    "Pasa Pasa no Mi": "Genma Gan",
     "Pika Pika no Mi": "Rhaizen D. Aether",
     "Ryū Ryū no Mi, Modelo: Dragão Ocidental [Original do RPG]": "Galan'd Von Antares",
     "Ryū Ryū no Mi, Modelo: Kirin": "Hyugan Drole",
