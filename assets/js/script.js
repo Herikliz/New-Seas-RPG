@@ -17,10 +17,12 @@
 /* ==========================================
    ESTILOS GERAIS (Injetados via JS)
    ========================================== */
-.bounty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 15px; justify-items: center; }
+.bounty-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; padding: 20px 15px; justify-items: center; }
 .bounty-card { background: var(--sidebar-bg); border: 2px solid var(--sidebar-border); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease; width: 100%; max-width: 350px; }
 .bounty-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(211, 47, 47, 0.3); border-color: var(--accent-color); }
-.bounty-image { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--sidebar-border); }
+.bounty-image { width: 100%; aspect-ratio: 3184 / 4160; object-fit: cover; display: block; border-bottom: 2px solid var(--sidebar-border); }
+    .bounty-copy-icon { opacity: 0; cursor: pointer; transition: opacity 0.2s ease, color 0.2s ease; font-size: 16px; position: absolute; right: -25px; top: 50%; transform: translateY(-50%); }
+    .bounty-name:hover .bounty-copy-icon, .bounty-value:hover .bounty-copy-icon, .gallery-title:hover .bounty-copy-icon, .gallery-subtitle:hover .bounty-copy-icon { opacity: 1; }
 .bounty-info { padding: 15px; text-align: center; }
 .bounty-name { font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bounty-controls { text-align: center; margin-bottom: 20px; }
@@ -1991,7 +1993,7 @@ const bancoDeIlhas = {
         { nome: "Ohara", afiliacaoTexto: "Independente", afiliacaoClasse: "independente", descricao: `<p style="margin-bottom: 15px;">O berço do conhecimento, lar dos maiores estudiosos da história e das civilizações antigas. Protegida pela majestosa Árvore do Conhecimento, a ilha é um farol para aqueles que buscam a verdade.</p>` },
         { nome: "Soja", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma ilha rural de vastas plantações e vilas simples, onde a terra fértil sustenta uma produção abundante e constante. Apesar da aparência pacífica, há uma sensação de controle silencioso, com rotinas rígidas e pouca abertura para mudanças, como se tudo ali seguisse um propósito maior definido por poucos.</p>` },
         { nome: "Thriller Bark", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Uma ilha de arquitetura gótica, repleta de torres imponentes, corredores subterrâneos e salões ornamentados. Seus jardins bem cuidados contrastam com a atmosfera sombria, criando um ambiente tão enigmático quanto fascinante. Thriller Bark é conhecida por suas tradições peculiares e por atrair artesãos e navegadores curiosos em busca de seus segredos. A vida na ilha segue um ritmo próprio, distinto de qualquer outro lugar, enquanto seus habitantes preservam costumes únicos que perduram há gerações.</p>` },
-        { nome: "Toroa", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Toroa foi governada por uma líder que acreditava que apenas os mais fortes mereciam reinar, sem leis ou restrições. A ilha refletia essa filosofia brutal: traições, duelos e saques não só eram comuns, como incentivados, tornando o território um campo de batalha constante entre criminosos e ambiciosos. Piratas sem lealdade, mercadores inescrupulosos e assassinos de aluguel vagavam pelas ruas, sempre atentos para não se tornarem a próxima vítima. A anarquia era vista como a forma mais pura de liberdade, em oposição a qualquer ordem imposta por líderes externos. Essa era chegou ao fim quando forças organizadas eliminaram todos os piratas da ilha, transformando Toroa em uma terra vazia. Posteriormente, uma organização passou a utilizar o local inóspito como base, e atualmente a Vanguarda Popular Revolucionária é dona dessa ilha, após ter sido conquistada por Dante Salvatore e Druig.</p>` }
+        { nome: "Toroa", afiliacaoTexto: "Vanguarda Popular Revolucionária", afiliacaoClasse: "revolucionaria", descricao: `<p style="margin-bottom: 15px;">Toroa foi governada por uma líder que acreditava que apenas os mais fortes mereciam reinar, sem leis ou restrições. A ilha refletia essa filosofia brutal: traições, duelos e saques não só eram comuns, como incentivados, tornando o território um campo de batalha constante entre criminosos e ambiciosos. Piratas sem lealdade, mercadores inescrupulosos e assassinos de aluguel vagavam pelas ruas, sempre atentos para não se tornarem a próxima vítima. A anarquia era vista como a forma mais pura de liberdade, em oposição a qualquer ordem imposta por líderes externos. Essa era chegou ao fim quando forças organizadas eliminaram todos os piratas da ilha, transformando Toroa em uma terra vazia. Posteriormente, uma organização passou a utilizar o local inóspito como base, e atualmente a Vanguarda Popular Revolucionária é dona dessa ilha, após ter sido conquistada por Dante Salvatore e Donquixote Druig.</p>` }
     ],
     "North Blue": [
         { nome: "Base da Marinha G-11", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma das principais fortalezas navais do North Blue, equipada com uma frota formidável e tropas treinadas para manter a ordem na região. Suas muralhas imponentes e canhões voltados para o mar intimidam qualquer um que tente desafiar sua autoridade.</p>` },
@@ -3166,7 +3168,7 @@ function iniciarSistemaDeAbas() {
                 imgElement.className = "jornal-page-image";
                 
                 imgElement.onerror = function() {
-                    imgElement.outerHTML = `<div class="img-placeholder" style="width: 100%;">Imagem não encontrada:<br>${imagemSrc}<br><br>Peça ao ADM para adicionar a imagem na pasta para que ela seja exibida aqui.</div>`;
+                    imgElement.outerHTML = `<div class="img-placeholder" style="width: 100%;">Imagem não encontrada.<br><br>Avise ao <a href="https://wa.link/b6zcmn" target="_blank">Herikliz</a> que a imagem não está aqui, e ele a colocará assim que possível.</div>`;
                 };
 
                 if (direcaoAnimacao === 'forward') {
@@ -3815,7 +3817,7 @@ window.donosDeAkuma = {
     "Horo Horo no Mi": "???",
     "Inu Inu no Mi, Modelo: Cérbero [Original do RPG]": "Dante Salvatore",
     "Ito Ito no Mi": "???",
-    "Kaze Kaze no Mi": "Druig",
+    "Kaze Kaze no Mi": "Donquixote Druig",
     "Kobu Kobu no Mi": "Ernesto Cruz",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
     "Magu Magu no Mi": "Bloqueada",
@@ -3828,12 +3830,12 @@ window.donosDeAkuma = {
     "Ryū Ryū no Mi, Modelo: Dragão Ocidental [Original do RPG]": "Galan'd Von Antares",
     "Ryū Ryū no Mi, Modelo: Kirin": "Hyugan Drole",
     "Shiku Shiku no Mi": "???",
-    "Soru Soru no Mi": "Kozuki Yoshihide",
+    "Soru Soru no Mi": "Kozuki Ryōshū",
     "Suna Suna no Mi": "BladeHawk",
     "Susu Susu no Mi": "Iori",
     "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Tori Tori no Mi, Modelo: Fênix": "Kozuki Shingen",
-    "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "Bloqueada",
+    "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "???",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
     "Uta Uta no Mi": "???",
     "Wapu Wapu no Mi": "Kagayaru Charlotte",
@@ -4289,8 +4291,74 @@ function initLinhagensAutomacao() {
         }
     });
 }
+function initProcuradosCopy() {
+    if (!window.location.pathname.includes('procurados.html') && !window.location.pathname.includes('aparencias.html')) return;
+    
+    document.querySelectorAll('.bounty-name, .bounty-value, .gallery-title, .gallery-subtitle').forEach(el => {
+        const nodes = Array.from(el.childNodes);
+        el.innerHTML = '';
+        
+        let currentWrapper = document.createElement('span');
+        currentWrapper.style.position = 'relative';
+        currentWrapper.style.display = 'inline-block';
+
+        function attachIconIfNeeded(wrapper) {
+            let wText = wrapper.textContent.trim();
+            if (wText !== '' && wText !== 'OC' && wText !== 'IA') {
+                const icon = document.createElement('span');
+                icon.className = 'bounty-copy-icon';
+                icon.innerHTML = '📋';
+                icon.title = 'Copiar';
+                icon.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    icon.style.display = 'none';
+                    let textToCopy = wrapper.innerText || wrapper.textContent;
+                    icon.style.display = '';
+                    
+                    textToCopy = textToCopy.trim();
+                    
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        icon.innerHTML = '✔️';
+                        icon.style.color = '#4caf50';
+                        setTimeout(() => {
+                            icon.innerHTML = '📋';
+                            icon.style.color = '';
+                        }, 1500);
+                    });
+                });
+                wrapper.appendChild(icon);
+            }
+        }
+
+        nodes.forEach(node => {
+            if (node.nodeName.toLowerCase() === 'br') {
+                attachIconIfNeeded(currentWrapper);
+                el.appendChild(currentWrapper);
+                el.appendChild(node);
+                
+                currentWrapper = document.createElement('span');
+                currentWrapper.style.position = 'relative';
+                currentWrapper.style.display = 'inline-block';
+            } else {
+                currentWrapper.appendChild(node);
+            }
+        });
+
+        if (currentWrapper.childNodes.length > 0) {
+            attachIconIfNeeded(currentWrapper);
+            el.appendChild(currentWrapper);
+        }
+    });
+}
+
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLinhagensAutomacao);
+    document.addEventListener('DOMContentLoaded', () => {
+        initLinhagensAutomacao();
+        initProcuradosCopy();
+    });
 } else {
     initLinhagensAutomacao();
+    initProcuradosCopy();
 }
