@@ -3197,7 +3197,7 @@ function iniciarSistemaDeAbas() {
                     aviso.style.marginTop = "20px";
                     aviso.style.marginBottom = "20px";
                     aviso.style.fontSize = "18px";
-                    aviso.textContent = window.mensagensRodape[dataAtual];
+                    aviso.innerHTML = window.mensagensRodape[dataAtual];
                     renderContainer.appendChild(aviso);
                 }
 
