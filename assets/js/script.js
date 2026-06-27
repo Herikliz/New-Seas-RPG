@@ -3359,8 +3359,8 @@ function exibirDonosAkuma() {
     sectionsFrutas.forEach(tituloEl => {
         let nomeBruto = tituloEl.textContent.split(' (')[0].trim();
         let dono = window.donosDeAkuma[nomeBruto];
-
-        if (dono && dono !== "Bloqueada") {
+        
+        if (dono && dono !== "Bloqueada" && dono !== "AGORAAGORA") {
             const div = tituloEl.parentElement;
             const paragrafos = div.querySelectorAll('p');
             paragrafos.forEach(p => {
@@ -3811,6 +3811,7 @@ window.donosDeAkuma = {
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Chiyu Chiyu no Mi": "Tontatta",
     "Doa Doa no Mi": "Chester",
+    "Giro Giro no Mi": "Bloqueada",
     "Gomu Gomu no Mi": "Ratatui-le",
     "Goro Goro no Mi": "Edward Belmont",
     "Gura Gura no Mi": "Sakazuki Itadori",
@@ -3826,7 +3827,9 @@ window.donosDeAkuma = {
     "Kobu Kobu no Mi": "Ernesto Cruz",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
     "Magu Magu no Mi": "Bloqueada",
+    "Memo Memo no Mi": "Bloqueada",
     "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Mira Mira no Mi": "Bloqueada",
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre": "MahaD Mnaj",
@@ -4122,8 +4125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isNaN(qtdMaxVal) || qtdMaxVal < 1) qtdMaxVal = 1;
             if (qtdMinVal > qtdMaxVal) qtdMinVal = qtdMaxVal;
             
-            let qtd = Math.floor(Math.random() * (qtdMaxVal - qtdMinVal + 1)) + qtdMinVal;
-
             if (isNaN(min) || isNaN(max)) {
                 preResultado.textContent = "Por favor, defina os valores mínimo e máximo.";
                 preResultado.style.color = "#f44336";
@@ -4141,35 +4142,63 @@ document.addEventListener('DOMContentLoaded', () => {
             const checkboxIncluir = document.getElementById('sorteio-incluir-donos');
             const incluirDonos = checkboxIncluir ? checkboxIncluir.checked : false;
 
-            const frutasValidas = listaFrutas.filter(f => {
-                if (f.valor < min || f.valor > max) return false;
+            const frutasObrigatorias = [];
+            const frutasNormais = [];
+
+            listaFrutas.forEach(f => {
+                if (f.valor < min || f.valor > max) return;
                 
                 let nomeBase = f.nome.split(' (')[0].trim();
-                if (!incluirDonos) {
-                    const estaOcupada = Object.keys(window.donosDeAkuma).some(key => {
-                        return key.replace(' [Original do RPG]', '').trim() === nomeBase;
-                    });
-                    if (estaOcupada) return false;
+                let isObrigatoria = false;
+                let isOcupada = false;
+
+                Object.keys(window.donosDeAkuma).forEach(key => {
+                    if (key.replace(' [Original do RPG]', '').trim() === nomeBase) {
+                        if (window.donosDeAkuma[key] === "AGORAAGORA") {
+                            isObrigatoria = true;
+                        } else {
+                            isOcupada = true;
+                        }
+                    }
+                });
+
+                if (isObrigatoria) {
+                    frutasObrigatorias.push(f);
+                } else if (incluirDonos || !isOcupada) {
+                    frutasNormais.push(f);
                 }
-                
-                return true;
             });
 
-            if (frutasValidas.length === 0) {
+            if (frutasObrigatorias.length === 0 && frutasNormais.length === 0) {
                 preResultado.textContent = "Nenhuma Akuma no Mi encontrada nessa faixa de valor.";
                 preResultado.style.color = "#ffeb3b";
                 containerResultado.style.display = 'block';
                 return;
             }
 
-            // Shuffle
-            for (let i = frutasValidas.length - 1; i > 0; i--) {
+            let baseQtdMin = Math.max(qtdMinVal, Math.min(qtdMaxVal, frutasObrigatorias.length));
+            let qtd = Math.floor(Math.random() * (qtdMaxVal - baseQtdMin + 1)) + baseQtdMin;
+
+            for (let i = frutasObrigatorias.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
-                [frutasValidas[i], frutasValidas[j]] = [frutasValidas[j], frutasValidas[i]];
+                [frutasObrigatorias[i], frutasObrigatorias[j]] = [frutasObrigatorias[j], frutasObrigatorias[i]];
+            }
+            
+            for (let i = frutasNormais.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [frutasNormais[i], frutasNormais[j]] = [frutasNormais[j], frutasNormais[i]];
             }
 
-            const limite = Math.min(qtd, frutasValidas.length);
-            const sorteadas = frutasValidas.slice(0, limite);
+            let sorteadas = [];
+            
+            let qtdPegarObrigatorias = Math.min(qtd, frutasObrigatorias.length);
+            sorteadas = sorteadas.concat(frutasObrigatorias.slice(0, qtdPegarObrigatorias));
+            
+            let restantes = qtd - sorteadas.length;
+            if (restantes > 0) {
+                let qtdPegarNormais = Math.min(restantes, frutasNormais.length);
+                sorteadas = sorteadas.concat(frutasNormais.slice(0, qtdPegarNormais));
+            }
 
             sorteadas.sort((a, b) => {
                 let nameA = a.nome.split(' (')[0].trim();
@@ -4183,7 +4212,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let nomeIlha = "";
             
-            // Verifica se o usuário quis forçar um nome de ilha ignorando o sorteio
             if (inputIlhaManual && inputIlhaManual.value.trim() !== '') {
                 nomeIlha = inputIlhaManual.value.trim();
             } else {
@@ -4191,7 +4219,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let faccaoFiltro = selectFaccao ? selectFaccao.value : 'Qualquer';
                 let ilhasValidas = [];
 
-                // Varre o banco de ilhas global
                 if (typeof bancoDeIlhas !== 'undefined') {
                     for (const [marNome, ilhas] of Object.entries(bancoDeIlhas)) {
                         if (marFiltro !== 'Qualquer' && marNome !== marFiltro) continue;
@@ -4204,7 +4231,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (ilhasValidas.length > 0) {
-                    // Sorteia uma ilha aleatória da lista de ilhas válidas
                     nomeIlha = ilhasValidas[Math.floor(Math.random() * ilhasValidas.length)];
                 } else {
                     nomeIlha = "[Nenhuma ilha corresponde aos filtros]";
