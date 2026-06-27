@@ -3853,6 +3853,63 @@ window.donosDeAkuma = {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('area-restrita')) {
+        const btnSortearSangue = document.getElementById('btn-sortear-sangue');
+        const containerResultadoSangue = document.getElementById('container-resultado-sangue');
+        const preResultadoSangue = document.getElementById('resultado-sangue');
+        const btnCopiarSangue = document.getElementById('btn-copiar-sangue');
+
+        if (btnSortearSangue) {
+            btnSortearSangue.addEventListener('click', () => {
+                const tiposSanguineos = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+                const sorteado = tiposSanguineos[Math.floor(Math.random() * tiposSanguineos.length)];
+                preResultadoSangue.textContent = "Seu tipo sanguíneo sorteado: " + sorteado;
+                preResultadoSangue.style.color = "var(--text-color)";
+                containerResultadoSangue.style.display = 'block';
+            });
+
+            btnCopiarSangue.addEventListener('click', () => {
+                if (!preResultadoSangue.textContent) return;
+                if (btnCopiarSangue.dataset.copying) return;
+                btnCopiarSangue.dataset.copying = "true";
+                
+                if (window.copiarTextoUniversal) {
+                    window.copiarTextoUniversal(preResultadoSangue.textContent).then(() => {
+                        let originalText = btnCopiarSangue.textContent;
+                        let originalBg = btnCopiarSangue.style.backgroundColor;
+                        let originalColor = btnCopiarSangue.style.color;
+
+                        btnCopiarSangue.textContent = "Texto Copiado!";
+                        btnCopiarSangue.style.backgroundColor = "#4caf50";
+                        btnCopiarSangue.style.color = "#fff";
+                        
+                        setTimeout(() => {
+                            btnCopiarSangue.textContent = originalText;
+                            btnCopiarSangue.style.backgroundColor = originalBg;
+                            btnCopiarSangue.style.color = originalColor;
+                            delete btnCopiarSangue.dataset.copying;
+                        }, 1000);
+                    });
+                } else {
+                    navigator.clipboard.writeText(preResultadoSangue.textContent).then(() => {
+                        let originalText = btnCopiarSangue.textContent;
+                        let originalBg = btnCopiarSangue.style.backgroundColor;
+                        let originalColor = btnCopiarSangue.style.color;
+
+                        btnCopiarSangue.textContent = "Texto Copiado!";
+                        btnCopiarSangue.style.backgroundColor = "#4caf50";
+                        btnCopiarSangue.style.color = "#fff";
+                        
+                        setTimeout(() => {
+                            btnCopiarSangue.textContent = originalText;
+                            btnCopiarSangue.style.backgroundColor = originalBg;
+                            btnCopiarSangue.style.color = originalColor;
+                            delete btnCopiarSangue.dataset.copying;
+                        }, 1000);
+                    });
+                }
+            });
+        }
+
         const inputMin = document.getElementById('sorteio-min');
         const inputMax = document.getElementById('sorteio-max');
         const inputQtdMin = document.getElementById('sorteio-qtd-min');
