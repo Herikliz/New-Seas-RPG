@@ -1322,14 +1322,47 @@ if (mapGrids.length > 0) {
         }
     });
 
+    window.rotaSelecionada = [];
+
     function atualizarContagemQuadrados() {
-        const totalSelected = document.querySelectorAll('.grid-cell.selected').length;
-        inputQuadrados.value = totalSelected;
+        inputQuadrados.value = window.rotaSelecionada.length;
         calcularTempo();
     }
 
+    function atualizarVisualCelula(cell) {
+        let count = parseInt(cell.dataset.count) || 0;
+        let badge = cell.querySelector('.cell-badge');
+        if (count <= 0) {
+            cell.classList.remove('selected');
+            cell.style.backgroundColor = '';
+            if (badge) badge.remove();
+        } else {
+            cell.classList.add('selected');
+            if (count === 1) {
+                cell.style.backgroundColor = 'rgba(103, 58, 183, 0.4)';
+                if (badge) badge.remove();
+            } else {
+                cell.style.backgroundColor = 'rgba(211, 47, 47, 0.6)';
+                if (!badge) {
+                    badge = document.createElement('span');
+                    badge.className = 'cell-badge';
+                    badge.style.cssText = 'position: absolute; top: 2px; right: 2px; background: #d32f2f; color: #fff; font-size: 9px; font-weight: bold; padding: 1px 4px; border-radius: 4px; z-index: 5; pointer-events: none; font-family: sans-serif; line-height: 1;';
+                    cell.appendChild(badge);
+                }
+                badge.textContent = count;
+            }
+        }
+    }
+
     window.limparQuadrados = function() {
-        document.querySelectorAll('.grid-cell.selected').forEach(c => c.classList.remove('selected'));
+        document.querySelectorAll('.grid-cell.selected').forEach(c => {
+            c.classList.remove('selected');
+            c.style.backgroundColor = '';
+            c.dataset.count = 0;
+            let badge = c.querySelector('.cell-badge');
+            if (badge) badge.remove();
+        });
+        window.rotaSelecionada = [];
         inputQuadrados.value = "0";
         calcularTempo();
     }
@@ -1356,55 +1389,62 @@ if (mapGrids.length > 0) {
                 }
                 
                 cell.addEventListener('click', function() {
-                    if (this.classList.contains('selected')) {
-                        this.classList.remove('selected');
-                        atualizarContagemQuadrados();
-                        return;
+                    if (window.rotaSelecionada.length > 0) {
+                        let lastCell = window.rotaSelecionada[window.rotaSelecionada.length - 1];
+                        if (lastCell === this) {
+                            window.rotaSelecionada.pop();
+                            let count = parseInt(this.dataset.count) || 0;
+                            count--;
+                            this.dataset.count = count;
+                            atualizarVisualCelula(this);
+                            atualizarContagemQuadrados();
+                            return;
+                        }
                     }
 
-                    const selectedElements = document.querySelectorAll('.grid-cell.selected');
-                    
-                    if (selectedElements.length === 0) {
-                        this.classList.add('selected');
+                    if (window.rotaSelecionada.length === 0) {
+                        this.dataset.count = 1;
+                        atualizarVisualCelula(this);
+                        window.rotaSelecionada.push(this);
                     } else {
+                        let lastCell = window.rotaSelecionada[window.rotaSelecionada.length - 1];
                         let cx = parseInt(this.dataset.x);
                         let cy = parseInt(this.dataset.y);
                         let cg = this.dataset.group;
                         let ci = parseInt(this.dataset.index);
                         
+                        let sx = parseInt(lastCell.dataset.x);
+                        let sy = parseInt(lastCell.dataset.y);
+                        let sg = lastCell.dataset.group;
+                        let si = parseInt(lastCell.dataset.index);
+
                         let isAdjacent = false;
                         let isCurrentRedZone = isRedZone(cg, ci, cx, cy);
 
-                        selectedElements.forEach(el => {
-                            let sx = parseInt(el.dataset.x);
-                            let sy = parseInt(el.dataset.y);
-                            let sg = el.dataset.group;
-                            let si = parseInt(el.dataset.index);
-
-                            if (isCurrentRedZone && isRedZone(sg, si, sx, sy)) {
-                                isAdjacent = true;
-                                return;
-                            }
-
-                            if (cg === sg) {
-                                if (ci === si) {
-                                    if (Math.abs(cx - sx) <= 1 && Math.abs(cy - sy) <= 1) {
-                                        isAdjacent = true;
-                                    }
-                                } else if (ci === si + 1) {
-                                    if (cy === 0 && sy === rows - 1 && Math.abs(cx - sx) <= 1) {
-                                        isAdjacent = true;
-                                    }
-                                } else if (ci === si - 1) {
-                                    if (cy === rows - 1 && sy === 0 && Math.abs(cx - sx) <= 1) {
-                                        isAdjacent = true;
-                                    }
+                        if (isCurrentRedZone && isRedZone(sg, si, sx, sy)) {
+                            isAdjacent = true;
+                        } else if (cg === sg) {
+                            if (ci === si) {
+                                if (Math.abs(cx - sx) <= 1 && Math.abs(cy - sy) <= 1) {
+                                    isAdjacent = true;
+                                }
+                            } else if (ci === si + 1) {
+                                if (cy === 0 && sy === rows - 1 && Math.abs(cx - sx) <= 1) {
+                                    isAdjacent = true;
+                                }
+                            } else if (ci === si - 1) {
+                                if (cy === rows - 1 && sy === 0 && Math.abs(cx - sx) <= 1) {
+                                    isAdjacent = true;
                                 }
                             }
-                        });
+                        }
 
                         if (isAdjacent) {
-                            this.classList.add('selected');
+                            let count = parseInt(this.dataset.count) || 0;
+                            count++;
+                            this.dataset.count = count;
+                            atualizarVisualCelula(this);
+                            window.rotaSelecionada.push(this);
                         }
                     }
                     atualizarContagemQuadrados();
@@ -1643,8 +1683,13 @@ if (mapGrids.length > 0) {
                 const y = parseInt(cell.dataset.y);
                 const cx = (x + 0.5) * cellWidth;
                 const cy = (y + 0.5) * cellHeight;
+                let count = parseInt(cell.dataset.count) || 1;
                 
-                ctx.fillStyle = 'rgba(103, 58, 183, 0.4)';
+                if (count > 1) {
+                    ctx.fillStyle = 'rgba(211, 47, 47, 0.6)';
+                } else {
+                    ctx.fillStyle = 'rgba(103, 58, 183, 0.4)';
+                }
                 ctx.fillRect(x * cellWidth, y * cellHeight, cellWidth, cellHeight);
                 
                 ctx.beginPath();
@@ -1654,6 +1699,14 @@ if (mapGrids.length > 0) {
                 ctx.lineWidth = radius * 0.3;
                 ctx.strokeStyle = '#000000';
                 ctx.stroke();
+
+                if (count > 1) {
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = `bold ${Math.max(10, cellWidth * 0.35)}px sans-serif`;
+                    ctx.textAlign = 'right';
+                    ctx.textBaseline = 'top';
+                    ctx.fillText(count.toString(), (x + 1) * cellWidth - 3, y * cellHeight + 3);
+                }
             });
         }
         
