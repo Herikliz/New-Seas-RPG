@@ -1280,6 +1280,162 @@ if (mapGrids.length > 0) {
         { group: 'right', index: 4, x: 0, y: 0 }, { group: 'right', index: 4, x: 0, y: 1 }, { group: 'right', index: 4, x: 0, y: 2 }, { group: 'right', index: 4, x: 0, y: 3 }, { group: 'right', index: 4, x: 0, y: 4 }, { group: 'right', index: 4, x: 0, y: 5 }, { group: 'right', index: 4, x: 0, y: 6 }, { group: 'right', index: 4, x: 0, y: 7 }, { group: 'right', index: 4, x: 0, y: 8 }, { group: 'right', index: 4, x: 0, y: 9 }, { group: 'right', index: 4, x: 0, y: 10 }, { group: 'right', index: 4, x: 0, y: 11 }, { group: 'right', index: 4, x: 0, y: 12 }, { group: 'right', index: 4, x: 0, y: 13 }
     ];
 
+    const ilhasCoordenadas = {
+        'east-blue-page': {
+            'Base da Marinha G-03': ['H10'],
+            'Clockwork': ['K15'],
+            'Conomi': ['E08', 'E09', 'F08', 'F09'],
+            'Cozia': ['L18', 'L19'],
+            'Dawn': ['I03', 'I04', 'I05'],
+            'Gecko': ['F15', 'F16'],
+            'Goat': ['G12', 'G13'],
+            'Ilha dos Animais Raros': ['C07', 'D07'],
+            'Ilha Navio de Guerra': ['K09', 'L08', 'L09', 'L10'],
+            'Ilha Shimotsuki': ['G18', 'G19', 'H19', 'I18', 'I19'],
+            'Kumate': ['D18', 'D19'],
+            'Mirrorball': ['J07', 'J08'],
+            'Organ': ['D12', 'D13'],
+            'Oykot': ['J11', 'J12', 'J13'],
+            'Polestar': ['L04', 'L05'],
+            'Tequila Wolf': ['G02', 'G03', 'G04'],
+            'Yotsuba': ['E04']
+        },
+        'south-blue-page': {
+            'Base da Marinha G-10': ['F12'],
+            'Baterilla': ['K04', 'K05', 'L04', 'L05'],
+            'Briss': ['B10', 'B11'],
+            'Centaurea': ['B17', 'B18', 'C17', 'C18'],
+            'Karate': ['K12', 'K13'],
+            'Kutsukku': ['G16', 'G17', 'H16', 'H17'],
+            'Reino Negro de Drum': ['H06', 'I05', 'I06', 'I07'],
+            'Roshwan': ['C06', 'C07', 'D06', 'D07'],
+            'Samba': ['J08', 'J09', 'K08', 'K09'],
+            'Samuwanai': ['F06', 'F07'],
+            'Sorbet': ['D13', 'D14', 'D15'],
+            'Taya': ['D10', 'E10'],
+            'Torino': ['J18', 'K17', 'K18'],
+            'Tumi': ['I14'],
+            'Vespa': ['H08', 'H09', 'H10']
+        },
+        'west-blue-page': {
+            'Ballywood': ['E04', 'E05'],
+            'Base da Marinha G-12': ['C15', 'D15'],
+            'God Valley': ['H07', 'H08'],
+            'Ilusia': ['I15', 'I16', 'J15', 'J16'],
+            'Kano': ['G18', 'G19'],
+            'Las Camp': ['J05', 'J06', 'K05', 'K06'],
+            'Ohara': ['F10', 'F11'],
+            'Soja': ['G14', 'G15'],
+            'Thriller Bark': ['J10', 'J11', 'J12', 'K10', 'K11', 'K12'],
+            'Toroa': ['C09', 'C10', 'C11']
+        },
+        'north-blue-page': {
+            'Base da Marinha G-11': ['G18', 'H18'],
+            'Deul': ['G04', 'H04'],
+            'Downs': ['E12', 'E13', 'E14', 'F12', 'F13', 'F14'],
+            'Flevance': ['K11', 'K12'],
+            'Kuen': ['I06', 'I07', 'I08', 'J06', 'J07'],
+            'Lvneel': ['C12', 'C13'],
+            'Minion': ['G07', 'G08'],
+            'Notice': ['F16', 'G16'],
+            'Polo Norte': ['A01', 'A02', 'A03', 'A04', 'A05', 'B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'C01', 'C02', 'C03', 'C04', 'C05', 'C06', 'D01', 'D02', 'D03', 'D04', 'D05', 'E01', 'E02', 'E03', 'E04', 'F02', 'F03'],
+            'Rakesh': ['K08', 'K09', 'L08', 'L09'],
+            'Rubeck': ['E08', 'E09'],
+            'Spider Miles': ['C17', 'D17'],
+            'Swallow': ['K04', 'K05', 'L04', 'L05'],
+            'Welbems': ['G12', 'G13', 'H12', 'H13'],
+            'Whiteland': ['L14', 'L15', 'M14', 'M15']
+        },
+        'paraiso-page': {
+            'Baltigo': ['B16'],
+            'Banaro': ['L09'],
+            'Base da Marinha G-01': ['M18'],
+            'Base da Marinha G-02': ['C14'],
+            'Base da Marinha G-08': ['G06'],
+            'Boin': ['K05', 'K06', 'L05', 'L06'],
+            'Cactus': ['H03', 'H04'],
+            'Drum': ['I08'],
+            'Enies Lobby': ['M15'],
+            'Foolshout': ['B13', 'B14'],
+            'Ilha Spa': ['D13', 'E13', 'E14'],
+            'Jaya': ['F12', 'G12'],
+            'Karakuri': ['B06', 'B07'],
+            'Kenzan': ['C18', 'D18'],
+            'Kuraigana': ['E16'],
+            'Kyuka': ['D05', 'E05', 'E06'],
+            'Little Garden': ['I05', 'I06'],
+            'Long Ring Long Land': ['H12', 'H13', 'I12', 'I13'],
+            'Mar do Triângulo Florian': ['J12', 'J13', 'J14', 'J15', 'K12', 'K13', 'K14', 'K15', 'L13', 'L14'],
+            'Mary Geoise': ['A20', 'A21', 'B19', 'B20', 'B21', 'C19', 'C20', 'C21', 'D20', 'D21', 'E19', 'E20', 'E21', 'F19', 'F20', 'F21', 'G19', 'G20', 'G21', 'H18', 'H19', 'H20', 'H21', 'I18', 'I19', 'I20', 'I21', 'J20', 'J21', 'K20', 'K21', 'L20', 'L21', 'M20', 'M21', 'N21'],
+            'Merveille': ['H14', 'H15', 'I14', 'I15'],
+            'Momoiro': ['B09', 'B10'],
+            'Namakura': ['M03', 'M04'],
+            'Nanimonai': ['F07', 'F08'],
+            'Pucci': ['M10'],
+            'Reino Lulusia': ['E10'],
+            'Sabaody': ['G17', 'G18'],
+            'San Faldo': ['L11', 'L12'],
+            'Sandy': ['H09', 'H10'],
+            'Water 7': ['K10']
+        },
+        'novo-mundo-page': {
+            'Applenine': ['G10', 'G11', 'H10', 'H11'],
+            'Base da Marinha G-09': ['G07', 'G08'],
+            'Base da Marinha G-13': ['H13', 'I12', 'I13'],
+            'Base da Marinha G-14': ['F15', 'F16', 'G15', 'G16'],
+            'Base da Marinha G-15': ['K14', 'K15', 'L14', 'L15'],
+            'Dressrosa': ['I09', 'J08', 'J09'],
+            'Egghead': ['B16', 'B17', 'C16', 'C17'],
+            'Elbaf': ['K18', 'K19', 'L18', 'L19'],
+            'Foodvalten': ['K11', 'K12', 'L11', 'L12'],
+            'Hachinosu': ['D18', 'E17', 'E18'],
+            'Mystoria': ['I05', 'I06'],
+            'Prodence': ['I15', 'I16'],
+            'Punk Hazard': ['C06', 'C07', 'D06', 'D07'],
+            'Raijin': ['K05', 'L04', 'L05', 'M05'],
+            'Risky Red': ['F04', 'F05', 'G05'],
+            'Wano': ['D13', 'D14'],
+            'Whole Cake': ['L07', 'L08', 'M07', 'M08'],
+            'Yukiryu': ['C09', 'C10', 'D09', 'D10']
+        },
+        'calm-belt-north-page': {
+            'Base da Marinha G-06': ['D09', 'D10', 'E09', 'E10']
+        },
+        'calm-belt-east-page': {
+            'Base da Marinha G-05': ['F10', 'F11', 'G10', 'G11'],
+            'Shitsurakujima': ['J06'],
+            '?': ['D17']
+        },
+        'calm-belt-west-page': {
+            'Base da Marinha G-07': ['F11', 'F12', 'G11', 'G12']
+        },
+        'calm-belt-south-page': {
+            'Amazon Lily': ['B11', 'C10', 'C11', 'C12', 'D10', 'D11', 'D12'],
+            'Base da Marinha G-04': ['I11', 'I12', 'J11', 'J12'],
+            'Impel Down': ['B16', 'B17', 'C16', 'C17'],
+            'Rusukaina': ['E04', 'E05', 'F04', 'F05']
+        }
+    };
+
+    window.obterNomeLocal = function(group, coord) {
+        let groupNormal = group;
+        
+        if(group === 'paraiso') groupNormal = 'paraiso-page';
+        else if(group === 'novo-mundo') groupNormal = 'novo-mundo-page';
+        else if(group === 'calm-belt-page') {
+            const overlay = document.querySelector(`[data-group="${group}"]`);
+            const idx = overlay ? overlay.dataset.index : '0';
+            const maps = ['calm-belt-north-page', 'calm-belt-east-page', 'calm-belt-west-page', 'calm-belt-south-page'];
+            groupNormal = maps[idx] || 'calm-belt-south-page';
+        }
+        
+        if (!ilhasCoordenadas[groupNormal]) return "Alto-Mar";
+        for (const [ilha, coords] of Object.entries(ilhasCoordenadas[groupNormal])) {
+            if (coords.includes(coord)) return ilha;
+        }
+        return "Alto-Mar";
+    };
+
     function isRedZone(group, index, x, y) {
         return redLineZones.some(z => z.group === group && z.index === index && z.x === x && z.y === y);
     }
@@ -1478,7 +1634,7 @@ if (mapGrids.length > 0) {
             timoneiroContainer.style.display = 'flex';
         }
 
-        if (quadrados > 0 && tempoPorQuadrado > 0) {
+        if (quadrados > 1 && tempoPorQuadrado > 0) {
             let horasTotais = quadrados * tempoPorQuadrado;
             
             if (checkboxTimoneiro.checked) {
@@ -1533,9 +1689,18 @@ if (mapGrids.length > 0) {
                 infoEstamina = `<br>Custo de Estamina: ${estaminaTotal}`;
             }
 
-            resultadoTexto.innerHTML = `Chegada: ${stringData}<br><small>Duração: ${textoDuracao}${infoEstamina}</small>`;
+            let nomeLocalInicio = "Alto-Mar";
+            let nomeLocalFim = "Alto-Mar";
+            if (window.rotaSelecionada && window.rotaSelecionada.length > 0) {
+                let firstCell = window.rotaSelecionada[0];
+                let lastCell = window.rotaSelecionada[window.rotaSelecionada.length - 1];
+                nomeLocalInicio = window.obterNomeLocal(firstCell.dataset.group, firstCell.dataset.coord);
+                nomeLocalFim = window.obterNomeLocal(lastCell.dataset.group, lastCell.dataset.coord);
+            }
+
+            resultadoTexto.innerHTML = `De: ${nomeLocalInicio} ➔ Para: ${nomeLocalFim}<br>Chegada: ${stringData}<br><small>Duração: ${textoDuracao}${infoEstamina}</small>`;
         } else {
-            resultadoTexto.innerHTML = `Tempo Total: 0h`;
+            resultadoTexto.innerHTML = `Tempo Total: 0h (Você está parado)`;
         }
     }
 
@@ -1597,8 +1762,28 @@ if (mapGrids.length > 0) {
             papel = "Timoneiro";
         }
 
-        let relatorio = `*Saindo de:* [${stringSaida}]\n`;
-        relatorio += `*Destino Final:* [${stringChegada}]\n\n`;
+        let nomeLocalInicio = "Alto-Mar";
+        let nomeLocalFim = "Alto-Mar";
+        if (window.rotaSelecionada && window.rotaSelecionada.length > 0) {
+            let firstCell = window.rotaSelecionada[0];
+            let lastCell = window.rotaSelecionada[window.rotaSelecionada.length - 1];
+            nomeLocalInicio = window.obterNomeLocal(firstCell.dataset.group, firstCell.dataset.coord);
+            nomeLocalFim = window.obterNomeLocal(lastCell.dataset.group, lastCell.dataset.coord);
+        }
+
+        if (quadrados <= 1) {
+            const originalText = btn.innerText;
+            btn.innerText = '⚠️ Selecione ao menos 2 quadrados!';
+            btn.style.backgroundColor = '#d32f2f';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = 'var(--accent-color)';
+            }, 2000);
+            return;
+        }
+
+        let relatorio = `*Saindo de:* ${nomeLocalInicio} [${stringSaida}]\n`;
+        relatorio += `*Destino Final:* ${nomeLocalFim} [${stringChegada}]\n\n`;
         relatorio += `*Meio de Transporte:* ${nomeBarco}\n\n`;
         
         if (isIndividual) {
