@@ -1420,6 +1420,8 @@ if (mapGrids.length > 0) {
     window.obterNomeLocal = function(group, coord) {
         let groupNormal = group;
         
+        if (!group || group === 'undefined') return "Alto-Mar";
+
         if(group === 'paraiso') groupNormal = 'paraiso-page';
         else if(group === 'novo-mundo') groupNormal = 'novo-mundo-page';
         else if(group === 'calm-belt-page') {
@@ -1427,7 +1429,10 @@ if (mapGrids.length > 0) {
             const idx = overlay ? overlay.dataset.index : '0';
             const maps = ['calm-belt-north-page', 'calm-belt-east-page', 'calm-belt-west-page', 'calm-belt-south-page'];
             groupNormal = maps[idx] || 'calm-belt-south-page';
-        }
+        } else if (group.includes('east')) groupNormal = 'east-blue-page';
+        else if (group.includes('south')) groupNormal = 'south-blue-page';
+        else if (group.includes('west')) groupNormal = 'west-blue-page';
+        else if (group.includes('north')) groupNormal = 'north-blue-page';
         
         if (!ilhasCoordenadas[groupNormal]) return "Alto-Mar";
         for (const [ilha, coords] of Object.entries(ilhasCoordenadas[groupNormal])) {
@@ -1440,7 +1445,9 @@ if (mapGrids.length > 0) {
         return redLineZones.some(z => z.group === group && z.index === index && z.x === x && z.y === y);
     }
 
-    document.querySelectorAll('.geo-layout .map-container').forEach(container => {
+    document.querySelectorAll('.map-container').forEach(container => {
+        if (container.parentElement.querySelector('.copy-map-btn')) return;
+    
         const btn = document.createElement('button');
         btn.className = 'copy-map-btn';
         btn.innerText = '📸 Copiar Mapa';
