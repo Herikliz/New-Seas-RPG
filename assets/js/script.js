@@ -3862,6 +3862,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.donosDeAkuma = {
     "Baku Baku no Mi": "Rhaast",
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
+    "Buku Buku no Mi": "Patchouli Quazar",
     "Chiyu Chiyu no Mi": "Tontatta",
     "Doa Doa no Mi": "Chester",
     "Gomu Gomu no Mi": "Ratatui-le",
