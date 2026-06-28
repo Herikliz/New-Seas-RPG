@@ -4602,10 +4602,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initLinhagensAutomacao() {
-    if (!window.location.pathname.includes('linhagens.html')) return;
+    if (!window.location.pathname.includes('linhagens.html') && !window.location.pathname.includes('racas.html')) return;
     const vagasHeaders = Array.from(document.querySelectorAll('h4.highlight-text, h5.highlight-text')).filter(h => h.textContent.includes('Vagas'));
     vagasHeaders.forEach(header => {
-        const ul = header.nextElementSibling;
+        let ul = header.nextElementSibling;
+        while (ul && ul.tagName !== 'UL' && ul.tagName !== 'H4' && ul.tagName !== 'H5') {
+            ul = ul.nextElementSibling;
+        }
         if (ul && ul.tagName === 'UL') {
             const lis = Array.from(ul.querySelectorAll('li'));
             const totalVagas = lis.length;
