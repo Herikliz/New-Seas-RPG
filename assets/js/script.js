@@ -4701,3 +4701,25 @@ if (document.readyState === 'loading') {
     initLinhagensAutomacao();
     initProcuradosCopy();
 }
+
+window.copiarTextoDoSubmundo = function() {
+    const caixa = document.getElementById('caixa-texto-informativa');
+    const botao = event.target;
+    
+    if (!caixa) return;
+    
+    const texto = caixa.innerText;
+    
+    window.copiarTextoUniversal(texto).then(() => {
+        const originalText = botao.textContent;
+        const originalBg = botao.style.backgroundColor;
+        
+        botao.textContent = "Copiado!";
+        botao.style.backgroundColor = "#4caf50";
+        
+        setTimeout(() => {
+            botao.textContent = originalText;
+            botao.style.backgroundColor = originalBg;
+        }, 1500);
+    });
+};
