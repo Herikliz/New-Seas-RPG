@@ -1281,7 +1281,7 @@ if (mapGrids.length > 0) {
     ];
 
     const ilhasCoordenadas = {
-        'east-blue-page': {
+        'east-blue': {
             'Base da Marinha G-03': ['H10'],
             'Clockwork': ['K15'],
             'Conomi': ['E08', 'E09', 'F08', 'F09'],
@@ -1300,7 +1300,7 @@ if (mapGrids.length > 0) {
             'Tequila Wolf': ['G02', 'G03', 'G04'],
             'Yotsuba': ['E04']
         },
-        'south-blue-page': {
+        'south-blue': {
             'Base da Marinha G-10': ['F12'],
             'Baterilla': ['K04', 'K05', 'L04', 'L05'],
             'Briss': ['B10', 'B11'],
@@ -1317,7 +1317,7 @@ if (mapGrids.length > 0) {
             'Tumi': ['I14'],
             'Vespa': ['H08', 'H09', 'H10']
         },
-        'west-blue-page': {
+        'west-blue': {
             'Ballywood': ['E04', 'E05'],
             'Base da Marinha G-12': ['C15', 'D15'],
             'God Valley': ['H07', 'H08'],
@@ -1329,7 +1329,7 @@ if (mapGrids.length > 0) {
             'Thriller Bark': ['J10', 'J11', 'J12', 'K10', 'K11', 'K12'],
             'Toroa': ['C09', 'C10', 'C11']
         },
-        'north-blue-page': {
+        'north-blue': {
             'Base da Marinha G-11': ['G18', 'H18'],
             'Deul': ['G04', 'H04'],
             'Downs': ['E12', 'E13', 'E14', 'F12', 'F13', 'F14'],
@@ -1346,7 +1346,7 @@ if (mapGrids.length > 0) {
             'Welbems': ['G12', 'G13', 'H12', 'H13'],
             'Whiteland': ['L14', 'L15', 'M14', 'M15']
         },
-        'paraiso-page': {
+        'paraiso': {
             'Baltigo': ['B16'],
             'Banaro': ['L09'],
             'Base da Marinha G-01': ['M18'],
@@ -1378,7 +1378,7 @@ if (mapGrids.length > 0) {
             'Sandy': ['H09', 'H10'],
             'Water 7': ['K10']
         },
-        'novo-mundo-page': {
+        'novo-mundo': {
             'Applenine': ['G10', 'G11', 'H10', 'H11'],
             'Base da Marinha G-09': ['G07', 'G08'],
             'Base da Marinha G-13': ['H13', 'I12', 'I13'],
@@ -1398,18 +1398,18 @@ if (mapGrids.length > 0) {
             'Whole Cake': ['L07', 'L08', 'M07', 'M08'],
             'Yukiryu': ['C09', 'C10', 'D09', 'D10']
         },
-        'calm-belt-north-page': {
+        'calm-belt-north': {
             'Base da Marinha G-06': ['D09', 'D10', 'E09', 'E10']
         },
-        'calm-belt-east-page': {
+        'calm-belt-east': {
             'Base da Marinha G-05': ['F10', 'F11', 'G10', 'G11'],
             'Shitsurakujima': ['J06'],
             '?': ['D17']
         },
-        'calm-belt-west-page': {
+        'calm-belt-west': {
             'Base da Marinha G-07': ['F11', 'F12', 'G11', 'G12']
         },
-        'calm-belt-south-page': {
+        'calm-belt-south': {
             'Amazon Lily': ['B11', 'C10', 'C11', 'C12', 'D10', 'D11', 'D12'],
             'Base da Marinha G-04': ['I11', 'I12', 'J11', 'J12'],
             'Impel Down': ['B16', 'B17', 'C16', 'C17'],
@@ -1417,25 +1417,25 @@ if (mapGrids.length > 0) {
         }
     };
 
-    window.obterNomeLocal = function(group, coord) {
-        let groupNormal = group;
+    window.obterNomeLocal = function(group, index, coord) {
+        if (!group || index === undefined || !coord) return "Alto-Mar";
         
-        if (!group || group === 'undefined') return "Alto-Mar";
-
-        if(group === 'paraiso') groupNormal = 'paraiso-page';
-        else if(group === 'novo-mundo') groupNormal = 'novo-mundo-page';
-        else if(group === 'calm-belt-page') {
-            const overlay = document.querySelector(`[data-group="${group}"]`);
-            const idx = overlay ? overlay.dataset.index : '0';
-            const maps = ['calm-belt-north-page', 'calm-belt-east-page', 'calm-belt-west-page', 'calm-belt-south-page'];
-            groupNormal = maps[idx] || 'calm-belt-south-page';
-        } else if (group.includes('east')) groupNormal = 'east-blue-page';
-        else if (group.includes('south')) groupNormal = 'south-blue-page';
-        else if (group.includes('west')) groupNormal = 'west-blue-page';
-        else if (group.includes('north')) groupNormal = 'north-blue-page';
+        let mapKey = "";
+        index = parseInt(index);
         
-        if (!ilhasCoordenadas[groupNormal]) return "Alto-Mar";
-        for (const [ilha, coords] of Object.entries(ilhasCoordenadas[groupNormal])) {
+        if (index === 0 && group === 'left') mapKey = 'north-blue';
+        else if (index === 0 && group === 'right') mapKey = 'east-blue';
+        else if (index === 1 && group === 'left') mapKey = 'calm-belt-north';
+        else if (index === 1 && group === 'right') mapKey = 'calm-belt-east';
+        else if (index === 2 && group === 'left') mapKey = 'novo-mundo';
+        else if (index === 2 && group === 'right') mapKey = 'paraiso';
+        else if (index === 3 && group === 'left') mapKey = 'calm-belt-west';
+        else if (index === 3 && group === 'right') mapKey = 'calm-belt-south';
+        else if (index === 4 && group === 'left') mapKey = 'west-blue';
+        else if (index === 4 && group === 'right') mapKey = 'south-blue';
+        
+        if (!ilhasCoordenadas[mapKey]) return "Alto-Mar";
+        for (const [ilha, coords] of Object.entries(ilhasCoordenadas[mapKey])) {
             if (coords.includes(coord)) return ilha;
         }
         return "Alto-Mar";
@@ -1701,8 +1701,8 @@ if (mapGrids.length > 0) {
             if (window.rotaSelecionada && window.rotaSelecionada.length > 0) {
                 let firstCell = window.rotaSelecionada[0];
                 let lastCell = window.rotaSelecionada[window.rotaSelecionada.length - 1];
-                nomeLocalInicio = window.obterNomeLocal(firstCell.dataset.group, firstCell.dataset.coord);
-                nomeLocalFim = window.obterNomeLocal(lastCell.dataset.group, lastCell.dataset.coord);
+                nomeLocalInicio = window.obterNomeLocal(firstCell.dataset.group, firstCell.dataset.index, firstCell.dataset.coord);
+                nomeLocalFim = window.obterNomeLocal(lastCell.dataset.group, lastCell.dataset.index, lastCell.dataset.coord);
             }
 
             resultadoTexto.innerHTML = `De: ${nomeLocalInicio} ➔ Para: ${nomeLocalFim}<br>Chegada: ${stringData}<br><small>Duração: ${textoDuracao}${infoEstamina}</small>`;
@@ -1774,8 +1774,8 @@ if (mapGrids.length > 0) {
         if (window.rotaSelecionada && window.rotaSelecionada.length > 0) {
             let firstCell = window.rotaSelecionada[0];
             let lastCell = window.rotaSelecionada[window.rotaSelecionada.length - 1];
-            nomeLocalInicio = window.obterNomeLocal(firstCell.dataset.group, firstCell.dataset.coord);
-            nomeLocalFim = window.obterNomeLocal(lastCell.dataset.group, lastCell.dataset.coord);
+            nomeLocalInicio = window.obterNomeLocal(firstCell.dataset.group, firstCell.dataset.index, firstCell.dataset.coord);
+            nomeLocalFim = window.obterNomeLocal(lastCell.dataset.group, lastCell.dataset.index, lastCell.dataset.coord);
         }
 
         if (quadrados <= 1) {
