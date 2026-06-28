@@ -1335,18 +1335,21 @@ if (mapGrids.length > 0) {
         if (count <= 0) {
             cell.classList.remove('selected');
             cell.style.backgroundColor = '';
+            cell.style.containerType = '';
             if (badge) badge.remove();
         } else {
             cell.classList.add('selected');
             if (count === 1) {
                 cell.style.backgroundColor = 'rgba(103, 58, 183, 0.4)';
+                cell.style.containerType = '';
                 if (badge) badge.remove();
             } else {
                 cell.style.backgroundColor = 'rgba(211, 47, 47, 0.6)';
+                cell.style.containerType = 'inline-size';
                 if (!badge) {
                     badge = document.createElement('span');
                     badge.className = 'cell-badge';
-                    badge.style.cssText = 'position: absolute; top: 0; right: 0; background: #d32f2f; color: #fff; font-size: clamp(7px, 1.8vw, 12px); font-weight: bold; display: flex; align-items: center; justify-content: center; width: clamp(12px, 3vw, 20px); height: clamp(12px, 3vw, 20px); border-radius: 50%; z-index: 5; pointer-events: none; font-family: sans-serif; line-height: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.5);';
+                    badge.style.cssText = 'position: absolute; top: 0; right: 0; background: #d32f2f; color: #fff; font-size: min(45cqw, 12px); font-weight: bold; display: flex; align-items: center; justify-content: center; width: min(60%, 20px); height: min(60%, 20px); border-radius: 50%; z-index: 5; pointer-events: none; font-family: sans-serif; line-height: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.5);';
                     cell.appendChild(badge);
                 }
                 badge.textContent = count;
@@ -1358,6 +1361,7 @@ if (mapGrids.length > 0) {
         document.querySelectorAll('.grid-cell.selected').forEach(c => {
             c.classList.remove('selected');
             c.style.backgroundColor = '';
+            c.style.containerType = '';
             c.dataset.count = 0;
             let badge = c.querySelector('.cell-badge');
             if (badge) badge.remove();
