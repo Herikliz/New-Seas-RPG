@@ -1346,7 +1346,7 @@ if (mapGrids.length > 0) {
                 if (!badge) {
                     badge = document.createElement('span');
                     badge.className = 'cell-badge';
-                    badge.style.cssText = 'position: absolute; top: 2px; right: 2px; background: #d32f2f; color: #fff; font-size: 9px; font-weight: bold; padding: 1px 4px; border-radius: 4px; z-index: 5; pointer-events: none; font-family: sans-serif; line-height: 1;';
+                    badge.style.cssText = 'position: absolute; top: 0; right: 0; background: #d32f2f; color: #fff; font-size: clamp(7px, 1.8vw, 12px); font-weight: bold; display: flex; align-items: center; justify-content: center; width: clamp(12px, 3vw, 20px); height: clamp(12px, 3vw, 20px); border-radius: 50%; z-index: 5; pointer-events: none; font-family: sans-serif; line-height: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.5);';
                     cell.appendChild(badge);
                 }
                 badge.textContent = count;
