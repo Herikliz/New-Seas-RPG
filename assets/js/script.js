@@ -114,8 +114,8 @@ body.dark-mode .calc-box { box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15); }
 .btn-alternar-img { position: absolute; bottom: 8px; right: 8px; background: var(--sidebar-bg); color: var(--accent-color); border: 1px solid var(--accent-color); border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px; font-family: 'Quantico', sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.5); transition: all 0.3s ease; z-index: 10; }
 .btn-alternar-img:hover { background: var(--accent-color); color: var(--bg-color); }
 .gallery-img-container img.secundaria { display: none !important; }
-.map-container.show-coords .grid-cell::after { content: attr(data-coord); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255, 255, 255, 0.9); font-size: 8px; font-weight: bold; font-family: 'Quantico', monospace; pointer-events: none; text-shadow: 1px 1px 1px #000, -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000; z-index: 2; }
-.grid-cell { position: relative; }
+.map-container.show-coords .grid-cell::after { content: attr(data-coord); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255, 255, 255, 0.9); font-size: min(35cqw, 10px); font-weight: bold; font-family: 'Quantico', monospace; pointer-events: none; text-shadow: 1px 1px 1px #000, -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000; z-index: 2; }
+.grid-cell { position: relative; container-type: inline-size; }
 
 @media (max-width: 768px) { 
     .stats-bar { flex-direction: column; gap: 10px; text-align: center; } 
@@ -1332,20 +1332,18 @@ if (mapGrids.length > 0) {
     function atualizarVisualCelula(cell) {
         let count = parseInt(cell.dataset.count) || 0;
         let badge = cell.querySelector('.cell-badge');
+        cell.style.containerType = 'inline-size';
         if (count <= 0) {
             cell.classList.remove('selected');
             cell.style.backgroundColor = '';
-            cell.style.containerType = '';
             if (badge) badge.remove();
         } else {
             cell.classList.add('selected');
             if (count === 1) {
                 cell.style.backgroundColor = 'rgba(103, 58, 183, 0.4)';
-                cell.style.containerType = '';
                 if (badge) badge.remove();
             } else {
                 cell.style.backgroundColor = 'rgba(211, 47, 47, 0.6)';
-                cell.style.containerType = 'inline-size';
                 if (!badge) {
                     badge = document.createElement('span');
                     badge.className = 'cell-badge';
@@ -1361,7 +1359,7 @@ if (mapGrids.length > 0) {
         document.querySelectorAll('.grid-cell.selected').forEach(c => {
             c.classList.remove('selected');
             c.style.backgroundColor = '';
-            c.style.containerType = '';
+            c.style.containerType = 'inline-size';
             c.dataset.count = 0;
             let badge = c.querySelector('.cell-badge');
             if (badge) badge.remove();
