@@ -4695,11 +4695,44 @@ function initProcuradosCopy() {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         initLinhagensAutomacao();
+        initMeitosAutomacao();
         initProcuradosCopy();
     });
 } else {
     initLinhagensAutomacao();
+    initMeitosAutomacao();
     initProcuradosCopy();
+}
+
+function initMeitosAutomacao() {
+    if (!window.location.pathname.includes('loja-de-meitos.html')) return;
+    const headers = Array.from(document.querySelectorAll('h2.title-quantico, h2.toggle-title, h3'));
+    headers.forEach(header => {
+        const text = header.textContent.toLowerCase();
+        let total = null;
+        if (text.includes('ryo wazamono') || text.includes('ryō wazamono')) total = 50;
+        else if (text.includes('saijo') || text.includes('saijō')) total = 12;
+        else if (text.includes('o wazamono') || text.includes('ō wazamono')) total = 21;
+        else if (text.includes('wazamono')) total = '??';
+        else if (text.includes('classificação') || text.includes('sem classe') || text.includes('outras')) total = '??';
+        if (total !== null) {
+            let contentDiv = header.nextElementSibling;
+            while (contentDiv && !contentDiv.classList.contains('toggle-content') && !contentDiv.classList.contains('box-content') && contentDiv.tagName !== 'DIV') {
+                contentDiv = contentDiv.nextElementSibling;
+            }
+            if (contentDiv) {
+                const itemsCount = contentDiv.querySelectorAll('h4').length;
+                let counterEl = contentDiv.querySelector('.meito-contador');
+                if (!counterEl) {
+                    counterEl = document.createElement('p');
+                    counterEl.className = 'meito-contador highlight-text';
+                    counterEl.style.marginBottom = '15px';
+                    contentDiv.insertBefore(counterEl, contentDiv.firstChild);
+                }
+                counterEl.textContent = `Quantidade: ${itemsCount}/${total}`;
+            }
+        }
+    });
 }
 
 window.copiarTextoDoSubmundo = function() {
