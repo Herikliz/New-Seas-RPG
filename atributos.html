@@ -54,14 +54,18 @@
                     <p style="margin-bottom: 15px;">A Resistência representa a durabilidade do corpo e a capacidade de suportar dano e esforço. Ela está ligada ao <strong>HP (Pontos de Vida)</strong> e atua como uma armadura passiva natural.</p>
                     
                     <ul style="margin-left: 20px; margin-bottom: 25px;">
-                        <li style="margin-bottom: 8px;"><strong>HP Total:</strong> Calculado apenas com a Resistência Passiva (sem buffs ativos). O cálculo é: <strong>Resistência + 10.000</strong>.</li>
-                        <li style="margin-bottom: 8px;"><strong>Redução de Dano:</strong> O dano não é ignorado, mas reduzido. Quanto maior a resistência (incluindo buffs), menor o dano final sofrido. 25.000 de Resistência corta o dano recebido exatamente pela metade.</li>
+                        <li style="margin-bottom: 8px;"><strong>HP Total:</strong> Calculado apenas com a Resistência Passiva (sem buffs ativos, apenas passivos). O cálculo é: <strong>(Resistência * Multiplicador) + 10.000</strong>. O Multiplicador depende do total de pontos da ficha inteira: 1.5 (até 9.999), 2.0 (10.000 a 19.999), 3.0 (20.000 a 39.999) e 4.0 (40.000+).</li>
+                        <li style="margin-bottom: 8px;"><strong>Redução de Dano:</strong> O dano não é ignorado, mas reduzido. Quanto maior a resistência (incluindo buffs ativos), menor o dano final sofrido. 25.000 de Resistência corta o dano recebido exatamente pela metade.</li>
                     </ul>
 
                     <div class="calc-box">
                         <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de HP e Dano</h4>
                         
                         <div style="border-bottom: 1px dashed var(--accent-color); padding-bottom: 20px; margin-bottom: 20px;">
+                            <div class="input-group">
+                                <label>Pontos Totais da Ficha:</label>
+                                <input type="text" id="hp-pontos-totais" class="auto-calc" placeholder="Ex: 15.000">
+                            </div>
                             <div class="input-group">
                                 <label>Resistência Passiva (Para calcular HP):</label>
                                 <input type="text" id="hp-res-passiva" class="auto-calc" placeholder="Ex: 5.000">

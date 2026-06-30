@@ -347,8 +347,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <ul class="sub-menu">
                     <li><a href="atributos.html">ATRIBUTOS</a></li>
                     <li><a href="atributos-akuma-no-mi.html">AKUMA NO MI</a></li>
-                    <li><a href="haki.html">HAKI</a></li>
                     <li><a href="estamina.html">ESTAMINA</a></li>
+                    <li><a href="haki.html">HAKI</a></li>
                 </ul>
             </li>
             <li>
@@ -771,9 +771,16 @@ function getCalcVal(elementId) {
 function runAtributosCalc() {
     if (!document.getElementById('hp-res-passiva')) return;
 
+    let ptsTotais = getCalcVal('hp-pontos-totais');
     let resPassiva = getCalcVal('hp-res-passiva');
     let outHp = document.getElementById('out-hp');
-    if (outHp) outHp.innerText = (resPassiva + 10000).toLocaleString('pt-BR');
+    
+    let multiplicador = 1.5;
+    if (ptsTotais >= 40000) multiplicador = 4.0;
+    else if (ptsTotais >= 20000) multiplicador = 3.0;
+    else if (ptsTotais >= 10000) multiplicador = 2.0;
+    
+    if (outHp) outHp.innerText = (Math.floor(resPassiva * multiplicador) + 10000).toLocaleString('pt-BR');
 
     let dmgBruto = getCalcVal('dmg-bruto');
     let dmgResTotal = getCalcVal('dmg-res-total');
@@ -874,7 +881,7 @@ function runEstaminaCalc() {
     if (!document.getElementById('calc-res')) return;
 
     let res = getCalcVal('calc-res');
-    let estaminaTotal = res * 2;
+    let estaminaTotal = res * 5;
     let elEstaminaTotal = document.getElementById('res-estamina-total');
     if (elEstaminaTotal) elEstaminaTotal.innerText = estaminaTotal.toLocaleString('pt-BR');
 
