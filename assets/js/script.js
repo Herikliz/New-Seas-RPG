@@ -3611,11 +3611,21 @@ function exibirDonosAkuma() {
     const sectionsFrutas = document.querySelectorAll('h4.highlight-text');
 
     sectionsFrutas.forEach(tituloEl => {
+        const div = tituloEl.parentElement;
+        const isFruit = Array.from(div.querySelectorAll('p')).some(p => p.textContent.includes('Valor:'));
+        if (!isFruit) return;
+
         let nomeBruto = tituloEl.textContent.split(' (')[0].trim();
         let dono = window.donosDeAkuma[nomeBruto];
         
+        let status = "livres";
         if (dono && dono !== "Bloqueada" && dono !== "AGORAAGORA") {
-            const div = tituloEl.parentElement;
+            if (dono === "🔒FRUTA PERDIDA PELO MUNDO🔒") {
+                status = "perdidas";
+            } else {
+                status = "ocupadas";
+            }
+            
             const paragrafos = div.querySelectorAll('p');
             paragrafos.forEach(p => {
                 if (p.textContent.includes('Valor:') && !p.innerHTML.includes(dono)) {
@@ -3623,7 +3633,48 @@ function exibirDonosAkuma() {
                 }
             });
         }
+        
+        div.dataset.status = status;
+        div.classList.add('fruit-entry');
     });
+
+    const filterSelect = document.getElementById('filter-akuma');
+    if (filterSelect) {
+        filterSelect.addEventListener('change', function() {
+            const showType = this.value;
+            document.querySelectorAll('.fruit-entry').forEach(div => {
+                const status = div.dataset.status;
+                const hr = div.nextElementSibling;
+                
+                let shouldShow = (showType === 'todas') || (showType === status);
+                
+                if (shouldShow) {
+                    div.style.display = '';
+                    if (hr && hr.tagName === 'HR') hr.style.display = '';
+                } else {
+                    div.style.display = 'none';
+                    if (hr && hr.tagName === 'HR') hr.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('h2.toggle-title, h3.toggle-title').forEach(header => {
+                const content = header.nextElementSibling;
+                if (content && content.classList.contains('toggle-content')) {
+                    const fruits = Array.from(content.querySelectorAll('.fruit-entry'));
+                    if (fruits.length > 0) {
+                        const hasVisible = fruits.some(f => f.style.display !== 'none');
+                        if (hasVisible) {
+                            header.style.display = '';
+                            content.style.display = '';
+                        } else {
+                            header.style.display = 'none';
+                            content.style.display = 'none';
+                        }
+                    }
+                }
+            });
+        });
+    }
 }
 
 if (document.readyState === 'loading') { 
