@@ -4112,6 +4112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // SORTEADOR DE AKUMA NO MI E DONOS
 // ==========================================
 window.donosDeAkuma = {
+    "Awa Awa no Mi": "Iwoye Zhuo",
     "Baku Baku no Mi": "Rhaast",
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
@@ -4151,6 +4152,7 @@ window.donosDeAkuma = {
     "Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]": "Genma Gan",
     "Tori Tori no Mi, Modelo: Pássaro de Gelo [Original do RPG]": "Alexander Pierce",
     "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "???",
+    "Toro Toro no Mi": "Hyun",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
     "Uta Uta no Mi": "???",
     "Wapu Wapu no Mi": "Kagayaru Charlotte",
