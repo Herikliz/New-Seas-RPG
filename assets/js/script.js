@@ -4145,6 +4145,7 @@ window.donosDeAkuma = {
     "Ryū Ryū no Mi, Modelo: Kirin": "Hyugan Drole",
     "Shiku Shiku no Mi": "???",
     "Soru Soru no Mi": "Kozuki Ryōshū",
+    "Suji Suji no Mi": "???",
     "Suna Suna no Mi": "BladeHawk",
     "Susu Susu no Mi": "Iori",
     "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
