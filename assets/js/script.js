@@ -4118,7 +4118,6 @@ window.donosDeAkuma = {
     "Buku Buku no Mi": "Patchouli Quazar",
     "Chiyu Chiyu no Mi": "Tontatta",
     "Doa Doa no Mi": "Chester",
-    "Gomu Gomu no Mi": "Ratatui-le",
     "Goro Goro no Mi": "Edward Belmont",
     "Gura Gura no Mi": "Sakazuki Itadori",
     "Hebi Hebi no Mi, Modelo: Kaijū [Original do RPG]": "Raidjinn Le Laufey",
@@ -4142,7 +4141,7 @@ window.donosDeAkuma = {
     "Ope Ope no Mi": "Morgana Du'lor",
     "Pika Pika no Mi": "Rhaizen D. Aether",
     "Ryū Ryū no Mi, Modelo: Dragão Ocidental [Original do RPG]": "Galan'd Von Antares",
-    "Ryū Ryū no Mi, Modelo: Kirin": "Hyugan Drole",
+    "Ryū Ryū no Mi, Modelo: Kirin": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Shiku Shiku no Mi": "???",
     "Soru Soru no Mi": "Kozuki Ryōshū",
     "Suji Suji no Mi": "???",
@@ -4156,7 +4155,6 @@ window.donosDeAkuma = {
     "Toro Toro no Mi": "Hyun",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
     "Uta Uta no Mi": "???",
-    "Wapu Wapu no Mi": "Kagayaru Charlotte",
     "Yami Yami no Mi": "Andrial D. Oran",
     "Yomi Yomi no Mi": "La Muerte",
     "Zou Zou no Mi, Modelo: Mamute": "Serm D'yos",
@@ -4305,10 +4303,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.shadowColor = "rgba(0,0,0,0.2)";
                 ctx.shadowOffsetX = 2;
                 ctx.shadowOffsetY = 2;
-                ctx.fillStyle = "#3e281b";
+                ctx.fillStyle = "#413633";
 
-                const limiteNomeWidth = (3223 - 285) * (canvasCartaz.width / 3508);
-                const limiteRecompensaWidth = (2900 - 0) * (canvasCartaz.width / 3508);
+                const limiteNomeWidth = (3000 - 282) * (canvasCartaz.width / 3469);
+                const limiteRecompensaWidth = (2700 - 550) * (canvasCartaz.width / 3469);
 
                 ctx.textAlign = "center";
                 ctx.textBaseline = "middle";
@@ -4319,7 +4317,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     fontSizeNome--;
                     ctx.font = `${fontSizeNome}px 'Playfair Display', serif`;
                 }
-                ctx.fillText(nome, canvasCartaz.width * 0.5, canvasCartaz.height * 0.765);
+                ctx.fillText(nome, canvasCartaz.width * 0.5, canvasCartaz.height * 0.750);
 
                 let fontSizeRec = 60;
                 ctx.font = `${fontSizeRec}px 'Always In My Heart', 'Times New Roman', serif`;
@@ -4327,7 +4325,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     fontSizeRec--;
                     ctx.font = `${fontSizeRec}px 'Always In My Heart', 'Times New Roman', serif`;
                 }
-                ctx.fillText(recompensa, canvasCartaz.width * 0.5, canvasCartaz.height * 0.875);
+                ctx.fillText(recompensa, canvasCartaz.width * 0.5, canvasCartaz.height * 0.840);
             }
 
             templateImg.onload = drawCartaz;
@@ -4352,9 +4350,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         const img = new Image();
                         img.onload = () => {
                             customImg = img;
-                            imgScale = (canvasCartaz.width * 0.75) / img.width;
-                            imgX = (canvasCartaz.width - (img.width * imgScale)) / 2;
-                            imgY = (canvasCartaz.height * 0.42) - (img.height * imgScale) / 2;
+                            
+                            const targetW = canvasCartaz.width * 0.86;
+                            const targetH = canvasCartaz.height * 0.56;
+                            const targetX = canvasCartaz.width * 0.07;
+                            const targetY = canvasCartaz.height * 0.20;
+                            
+                            imgScale = Math.max(targetW / img.width, targetH / img.height);
+                            imgX = targetX + (targetW - (img.width * imgScale)) / 2;
+                            imgY = targetY + (targetH - (img.height * imgScale)) / 2;
+                            
                             if (inputZoom) inputZoom.value = imgScale;
                             drawCartaz();
                         };
