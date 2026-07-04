@@ -4266,6 +4266,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputUpload = document.getElementById('cartaz-upload');
         const btnColarImagem = document.getElementById('btn-colar-imagem');
         const inputZoom = document.getElementById('cartaz-zoom');
+        const inputImgW = document.getElementById('cartaz-img-w');
+        const inputImgH = document.getElementById('cartaz-img-h');
+        const lockRatio = document.getElementById('cartaz-lock-ratio');
         const btnCopiarCartaz = document.getElementById('btn-copiar-cartaz');
         const btnBaixarCartaz = document.getElementById('btn-baixar-cartaz');
 
@@ -4276,7 +4279,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let customImg = null;
             let customFileName = 'Cartaz';
-            let imgX = 0, imgY = 0, imgScale = 1;
+            let imgX = 0, imgY = 0, drawW = 0, drawH = 0;
+            let originalRatio = 1;
             let isDragging = false;
             let startX, startY;
 
@@ -4286,8 +4290,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.fillRect(0, 0, canvasCartaz.width, canvasCartaz.height);
 
                 if (customImg) {
-                    const drawW = customImg.width * imgScale;
-                    const drawH = customImg.height * imgScale;
                     ctx.drawImage(customImg, imgX, imgY, drawW, drawH);
                 }
 
@@ -4350,17 +4352,25 @@ document.addEventListener('DOMContentLoaded', () => {
                         const img = new Image();
                         img.onload = () => {
                             customImg = img;
-                            
+                            originalRatio = img.width / img.height;
                             const targetW = canvasCartaz.width * 0.86;
                             const targetH = canvasCartaz.height * 0.56;
                             const targetX = canvasCartaz.width * 0.07;
                             const targetY = canvasCartaz.height * 0.20;
-                            
-                            imgScale = Math.max(targetW / img.width, targetH / img.height);
-                            imgX = targetX + (targetW - (img.width * imgScale)) / 2;
-                            imgY = targetY + (targetH - (img.height * imgScale)) / 2;
-                            
-                            if (inputZoom) inputZoom.value = imgScale;
+                            const scale = Math.max(targetW / img.width, targetH / img.height);
+                            drawW = img.width * scale;
+                            drawH = img.height * scale;
+                            imgX = targetX + (targetW - drawW) / 2;
+                            imgY = targetY + (targetH - drawH) / 2;
+                            if (inputZoom) inputZoom.value = scale;
+                            if (inputImgW) {
+                                inputImgW.value = Math.round(drawW);
+                                inputImgW.disabled = false;
+                            }
+                            if (inputImgH) {
+                                inputImgH.value = Math.round(drawH);
+                                inputImgH.disabled = false;
+                            }
                             drawCartaz();
                         };
                         img.src = ev.target.result;
@@ -4381,10 +4391,19 @@ document.addEventListener('DOMContentLoaded', () => {
                             const img = new Image();
                             img.onload = () => {
                                 customImg = img;
-                                imgScale = (canvasCartaz.width * 0.75) / img.width;
-                                imgX = (canvasCartaz.width - (img.width * imgScale)) / 2;
-                                imgY = (canvasCartaz.height * 0.42) - (img.height * imgScale) / 2;
-                                if (inputZoom) inputZoom.value = imgScale;
+                                originalRatio = img.width / img.height;
+                                const targetW = canvasCartaz.width * 0.86;
+                                const targetH = canvasCartaz.height * 0.56;
+                                const targetX = canvasCartaz.width * 0.07;
+                                const targetY = canvasCartaz.height * 0.20;
+                                const scale = Math.max(targetW / img.width, targetH / img.height);
+                                drawW = img.width * scale;
+                                drawH = img.height * scale;
+                                imgX = targetX + (targetW - drawW) / 2;
+                                imgY = targetY + (targetH - drawH) / 2;
+                                if (inputZoom) inputZoom.value = scale;
+                                if (inputImgW) inputImgW.value = Math.round(drawW);
+                                if (inputImgH) inputImgH.value = Math.round(drawH);
                                 drawCartaz();
                             };
                             img.src = ev.target.result;
@@ -4409,10 +4428,19 @@ document.addEventListener('DOMContentLoaded', () => {
                                     const img = new Image();
                                     img.onload = () => {
                                         customImg = img;
-                                        imgScale = (canvasCartaz.width * 0.75) / img.width;
-                                        imgX = (canvasCartaz.width - (img.width * imgScale)) / 2;
-                                        imgY = (canvasCartaz.height * 0.42) - (img.height * imgScale) / 2;
-                                        if (inputZoom) inputZoom.value = imgScale;
+                                        originalRatio = img.width / img.height;
+                                        const targetW = canvasCartaz.width * 0.86;
+                                        const targetH = canvasCartaz.height * 0.56;
+                                        const targetX = canvasCartaz.width * 0.07;
+                                        const targetY = canvasCartaz.height * 0.20;
+                                        const scale = Math.max(targetW / img.width, targetH / img.height);
+                                        drawW = img.width * scale;
+                                        drawH = img.height * scale;
+                                        imgX = targetX + (targetW - drawW) / 2;
+                                        imgY = targetY + (targetH - drawH) / 2;
+                                        if (inputZoom) inputZoom.value = scale;
+                                        if (inputImgW) inputImgW.value = Math.round(drawW);
+                                        if (inputImgH) inputImgH.value = Math.round(drawH);
                                         drawCartaz();
                                     };
                                     img.src = ev.target.result;
@@ -4430,7 +4458,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (inputZoom) {
                 inputZoom.addEventListener('input', (e) => {
-                    imgScale = parseFloat(e.target.value);
+                    if (!customImg) return;
+                    const scale = parseFloat(e.target.value);
+                    drawW = customImg.width * scale;
+                    drawH = customImg.height * scale;
+                    if (inputImgW) inputImgW.value = Math.round(drawW);
+                    if (inputImgH) inputImgH.value = Math.round(drawH);
+                    drawCartaz();
+                });
+            }
+
+            if (inputImgW) {
+                inputImgW.addEventListener('input', (e) => {
+                    if (!customImg) return;
+                    drawW = parseFloat(e.target.value) || 0;
+                    if (lockRatio && lockRatio.checked) {
+                        drawH = drawW / originalRatio;
+                        if (inputImgH) inputImgH.value = Math.round(drawH);
+                    }
+                    drawCartaz();
+                });
+            }
+
+            if (inputImgH) {
+                inputImgH.addEventListener('input', (e) => {
+                    if (!customImg) return;
+                    drawH = parseFloat(e.target.value) || 0;
+                    if (lockRatio && lockRatio.checked) {
+                        drawW = drawH * originalRatio;
+                        if (inputImgW) inputImgW.value = Math.round(drawW);
+                    }
                     drawCartaz();
                 });
             }
