@@ -4260,6 +4260,259 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (inputMin) inputMin.addEventListener('input', formatarNumeroSorteio);
         if (inputMax) inputMax.addEventListener('input', formatarNumeroSorteio);
+        
+        const inputCartazNome = document.getElementById('cartaz-nome');
+        const inputCartazRecompensa = document.getElementById('cartaz-recompensa');
+        const canvasCartaz = document.getElementById('cartaz-canvas');
+        const inputUpload = document.getElementById('cartaz-upload');
+        const btnColarImagem = document.getElementById('btn-colar-imagem');
+        const inputZoom = document.getElementById('cartaz-zoom');
+        const btnCopiarCartaz = document.getElementById('btn-copiar-cartaz');
+        const btnBaixarCartaz = document.getElementById('btn-baixar-cartaz');
+
+        if (canvasCartaz) {
+            const ctx = canvasCartaz.getContext('2d');
+            const templateImg = new Image();
+            templateImg.src = 'assets/imagens/Cartazes/Modelo.png';
+            
+            let customImg = null;
+            let customFileName = 'Cartaz';
+            let imgX = 0, imgY = 0, imgScale = 1;
+            let isDragging = false;
+            let startX, startY;
+
+            function drawCartaz() {
+                ctx.clearRect(0, 0, canvasCartaz.width, canvasCartaz.height);
+                ctx.fillStyle = '#e4d5b7';
+                ctx.fillRect(0, 0, canvasCartaz.width, canvasCartaz.height);
+
+                if (customImg) {
+                    const drawW = customImg.width * imgScale;
+                    const drawH = customImg.height * imgScale;
+                    ctx.drawImage(customImg, imgX, imgY, drawW, drawH);
+                }
+
+                if (templateImg.complete) {
+                    ctx.drawImage(templateImg, 0, 0, canvasCartaz.width, canvasCartaz.height);
+                }
+
+                const nomeRaw = inputCartazNome ? inputCartazNome.value.toUpperCase().trim() : '';
+                const nome = nomeRaw.replace(/\./g, '').replace(/\s+/g, '●');
+                let recompensa = inputCartazRecompensa ? inputCartazRecompensa.value : '';
+                if (recompensa) recompensa += '–';
+
+                ctx.shadowColor = "rgba(0,0,0,0.2)";
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+                ctx.fillStyle = "#3e281b";
+
+                const limiteNomeWidth = (3223 - 285) * (canvasCartaz.width / 3508);
+                const limiteRecompensaWidth = (2900 - 0) * (canvasCartaz.width / 3508);
+
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+
+                let fontSizeNome = 72;
+                ctx.font = `${fontSizeNome}px 'Playfair Display', serif`;
+                while (ctx.measureText(nome).width > limiteNomeWidth && fontSizeNome > 10) {
+                    fontSizeNome--;
+                    ctx.font = `${fontSizeNome}px 'Playfair Display', serif`;
+                }
+                ctx.fillText(nome, canvasCartaz.width * 0.5, canvasCartaz.height * 0.765);
+
+                let fontSizeRec = 60;
+                ctx.font = `${fontSizeRec}px 'Always In My Heart', 'Times New Roman', serif`;
+                while (ctx.measureText(recompensa).width > limiteRecompensaWidth && fontSizeRec > 10) {
+                    fontSizeRec--;
+                    ctx.font = `${fontSizeRec}px 'Always In My Heart', 'Times New Roman', serif`;
+                }
+                ctx.fillText(recompensa, canvasCartaz.width * 0.5, canvasCartaz.height * 0.875);
+            }
+
+            templateImg.onload = drawCartaz;
+            if(document.fonts) document.fonts.ready.then(drawCartaz);
+
+            if (inputCartazNome) inputCartazNome.addEventListener('input', drawCartaz);
+            if (inputCartazRecompensa) {
+                inputCartazRecompensa.addEventListener('input', (e) => {
+                    formatarNumeroSorteio(e);
+                    drawCartaz();
+                });
+            }
+
+            if (inputUpload) {
+                inputUpload.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+                    customFileName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+                    if (!customFileName) customFileName = 'Cartaz';
+                    const reader = new FileReader();
+                    reader.onload = (ev) => {
+                        const img = new Image();
+                        img.onload = () => {
+                            customImg = img;
+                            imgScale = (canvasCartaz.width * 0.75) / img.width;
+                            imgX = (canvasCartaz.width - (img.width * imgScale)) / 2;
+                            imgY = (canvasCartaz.height * 0.42) - (img.height * imgScale) / 2;
+                            if (inputZoom) inputZoom.value = imgScale;
+                            drawCartaz();
+                        };
+                        img.src = ev.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            window.addEventListener('paste', (e) => {
+                if (!canvasCartaz || canvasCartaz.offsetParent === null) return;
+                const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+                for (let index in items) {
+                    const item = items[index];
+                    if (item.kind === 'file' && item.type.startsWith('image/')) {
+                        const blob = item.getAsFile();
+                        const reader = new FileReader();
+                        reader.onload = (ev) => {
+                            const img = new Image();
+                            img.onload = () => {
+                                customImg = img;
+                                imgScale = (canvasCartaz.width * 0.75) / img.width;
+                                imgX = (canvasCartaz.width - (img.width * imgScale)) / 2;
+                                imgY = (canvasCartaz.height * 0.42) - (img.height * imgScale) / 2;
+                                if (inputZoom) inputZoom.value = imgScale;
+                                drawCartaz();
+                            };
+                            img.src = ev.target.result;
+                        };
+                        reader.readAsDataURL(blob);
+                        e.preventDefault();
+                        break;
+                    }
+                }
+            });
+
+            if (btnColarImagem) {
+                btnColarImagem.addEventListener('click', async () => {
+                    try {
+                        const clipboardItems = await navigator.clipboard.read();
+                        for (const clipboardItem of clipboardItems) {
+                            const imageTypes = clipboardItem.types.filter(type => type.startsWith('image/'));
+                            if (imageTypes.length > 0) {
+                                const blob = await clipboardItem.getType(imageTypes[0]);
+                                const reader = new FileReader();
+                                reader.onload = (ev) => {
+                                    const img = new Image();
+                                    img.onload = () => {
+                                        customImg = img;
+                                        imgScale = (canvasCartaz.width * 0.75) / img.width;
+                                        imgX = (canvasCartaz.width - (img.width * imgScale)) / 2;
+                                        imgY = (canvasCartaz.height * 0.42) - (img.height * imgScale) / 2;
+                                        if (inputZoom) inputZoom.value = imgScale;
+                                        drawCartaz();
+                                    };
+                                    img.src = ev.target.result;
+                                };
+                                reader.readAsDataURL(blob);
+                                return;
+                            }
+                        }
+                        alert("Nenhuma imagem encontrada na área de transferência.");
+                    } catch (err) {
+                        alert("Erro ao colar imagem. Verifique se você deu permissão ao navegador ou tente enviar o arquivo manualmente.");
+                    }
+                });
+            }
+
+            if (inputZoom) {
+                inputZoom.addEventListener('input', (e) => {
+                    imgScale = parseFloat(e.target.value);
+                    drawCartaz();
+                });
+            }
+
+            function getPointerPos(e) {
+                const rect = canvasCartaz.getBoundingClientRect();
+                const scaleX = canvasCartaz.width / rect.width;
+                const scaleY = canvasCartaz.height / rect.height;
+                let cx = e.clientX;
+                let cy = e.clientY;
+                if (e.touches && e.touches.length > 0) {
+                    cx = e.touches[0].clientX;
+                    cy = e.touches[0].clientY;
+                }
+                return {
+                    x: (cx - rect.left) * scaleX,
+                    y: (cy - rect.top) * scaleY
+                };
+            }
+
+            const startDrag = (e) => {
+                isDragging = true;
+                const pos = getPointerPos(e);
+                startX = pos.x - imgX;
+                startY = pos.y - imgY;
+                if (e.type === 'touchstart' && e.cancelable) e.preventDefault();
+            };
+            const onDrag = (e) => {
+                if (!isDragging) return;
+                const pos = getPointerPos(e);
+                imgX = pos.x - startX;
+                imgY = pos.y - startY;
+                drawCartaz();
+                if (e.type === 'touchmove' && e.cancelable) e.preventDefault();
+            };
+            const endDrag = () => isDragging = false;
+
+            canvasCartaz.addEventListener('mousedown', startDrag);
+            canvasCartaz.addEventListener('mousemove', onDrag);
+            window.addEventListener('mouseup', endDrag);
+            canvasCartaz.addEventListener('touchstart', startDrag, {passive: false});
+            canvasCartaz.addEventListener('touchmove', onDrag, {passive: false});
+            window.addEventListener('touchend', endDrag);
+
+            if (btnCopiarCartaz) {
+                btnCopiarCartaz.addEventListener('click', () => {
+                    canvasCartaz.toBlob(blob => {
+                        try {
+                            const item = new ClipboardItem({ "image/png": blob });
+                            navigator.clipboard.write([item]).then(() => {
+                                const original = btnCopiarCartaz.textContent;
+                                btnCopiarCartaz.textContent = "✅ Copiado!";
+                                btnCopiarCartaz.style.backgroundColor = "#4caf50";
+                                btnCopiarCartaz.style.color = "#fff";
+                                setTimeout(() => {
+                                    btnCopiarCartaz.textContent = original;
+                                    btnCopiarCartaz.style.backgroundColor = "";
+                                    btnCopiarCartaz.style.color = "";
+                                }, 2000);
+                            }).catch(() => alert('Seu navegador não suporta copiar imagens diretamente. Use o botão de baixar.'));
+                        } catch (err) {
+                            alert('Erro ao tentar copiar a imagem.');
+                        }
+                    }, "image/png");
+                });
+            }
+
+            if (btnBaixarCartaz) {
+                btnBaixarCartaz.addEventListener('click', () => {
+                    const url = canvasCartaz.toDataURL("image/png");
+                    const link = document.createElement("a");
+                    let nomeDownload = inputCartazNome && inputCartazNome.value.trim() !== '' ? inputCartazNome.value.trim() : 'Cartaz';
+                    link.download = nomeDownload + ".png";
+                    link.href = url;
+                    link.click();
+                    
+                    const original = btnBaixarCartaz.textContent;
+                    btnBaixarCartaz.textContent = "✅ Baixado!";
+                    btnBaixarCartaz.style.backgroundColor = "#2196f3";
+                    btnBaixarCartaz.style.color = "#fff";
+                    setTimeout(() => {
+                        btnBaixarCartaz.textContent = original;
+                        btnBaixarCartaz.style.backgroundColor = "";
+                        btnBaixarCartaz.style.color = "";
+                    }, 2000);
+                });
+            }
+        }
 
         const listaFrutas = [
             {nome: "Ame Ame no Mi (Fruta do Melaço)", valor: 1200000000},
