@@ -3710,15 +3710,26 @@ function initGallerySort() {
             const idTextB = idNodeB ? idNodeB.textContent.trim() : (b.querySelector('.gallery-id') ? b.querySelector('.gallery-id').textContent.trim() : '');
 
             if (sortType.startsWith('title')) {
-                if (titleA === '???' && titleB !== '???') return 1;
-                if (titleB === '???' && titleA !== '???') return -1;
+                const isUnknownA = titleA.includes('???');
+                const isUnknownB = titleB.includes('???');
+
+                if (isUnknownA && !isUnknownB) return 1;
+                if (!isUnknownA && isUnknownB) return -1;
+                
                 if (sortType === 'title-az') return titleA.localeCompare(titleB, 'pt-BR');
                 return titleB.localeCompare(titleA, 'pt-BR');
             }
 
             if (sortType.startsWith('sub')) {
-                const rankA = subA === '???' ? 3 : (subA === 'IA' ? 2 : (subA === 'OC' ? 1 : 0));
-                const rankB = subB === '???' ? 3 : (subB === 'IA' ? 2 : (subB === 'OC' ? 1 : 0));
+                const isUnknownA = subA.includes('???');
+                const isUnknownB = subB.includes('???');
+                const isIaA = subA.replace(/[^A-Za-z]/g, '') === 'IA';
+                const isIaB = subB.replace(/[^A-Za-z]/g, '') === 'IA';
+                const isOcA = subA.replace(/[^A-Za-z]/g, '') === 'OC';
+                const isOcB = subB.replace(/[^A-Za-z]/g, '') === 'OC';
+
+                const rankA = isUnknownA ? 3 : (isIaA ? 2 : (isOcA ? 1 : 0));
+                const rankB = isUnknownB ? 3 : (isIaB ? 2 : (isOcB ? 1 : 0));
                 
                 if (rankA !== rankB) return rankA - rankB;
                 if (sortType === 'sub-az') return subA.localeCompare(subB, 'pt-BR');
