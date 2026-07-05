@@ -3689,28 +3689,73 @@ if (document.readyState === 'loading') {
 function initGallerySort() {
     if (!window.location.pathname.includes('aparencias.html')) return;
 
+    const select = document.getElementById('sort-gallery');
     const grid = document.querySelector('.gallery-grid');
     if (!grid) return;
 
-    const items = Array.from(grid.querySelectorAll('.gallery-item'));
-    if (items.length === 0) return;
+    function sortGallery() {
+        const items = Array.from(grid.querySelectorAll('.gallery-item'));
+        const sortType = select ? select.value : 'title-az';
 
-    items.sort((a, b) => {
-        const titleElA = a.querySelector('.gallery-title');
-        const titleElB = b.querySelector('.gallery-title');
-        
-        if (!titleElA || !titleElB) return 0;
+        items.sort((a, b) => {
+            const titleA = a.querySelector('.gallery-title') ? a.querySelector('.gallery-title').textContent.trim() : '';
+            const titleB = b.querySelector('.gallery-title') ? b.querySelector('.gallery-title').textContent.trim() : '';
+            
+            const subA = a.querySelector('.gallery-subtitle') ? a.querySelector('.gallery-subtitle').textContent.trim() : '';
+            const subB = b.querySelector('.gallery-subtitle') ? b.querySelector('.gallery-subtitle').textContent.trim() : '';
+            
+            const idNodeA = a.querySelector('.gallery-id a');
+            const idTextA = idNodeA ? idNodeA.textContent.trim() : (a.querySelector('.gallery-id') ? a.querySelector('.gallery-id').textContent.trim() : '');
+            const idNodeB = b.querySelector('.gallery-id a');
+            const idTextB = idNodeB ? idNodeB.textContent.trim() : (b.querySelector('.gallery-id') ? b.querySelector('.gallery-id').textContent.trim() : '');
 
-        const nameA = titleElA.textContent.trim().toLowerCase();
-        const nameB = titleElB.textContent.trim().toLowerCase();
+            if (sortType.startsWith('title')) {
+                if (titleA === '???' && titleB !== '???') return 1;
+                if (titleB === '???' && titleA !== '???') return -1;
+                if (sortType === 'title-az') return titleA.localeCompare(titleB, 'pt-BR');
+                return titleB.localeCompare(titleA, 'pt-BR');
+            }
 
-        if (nameA === '???' && nameB !== '???') return 1;
-        if (nameB === '???' && nameA !== '???') return -1;
+            if (sortType.startsWith('sub')) {
+                const rankA = subA === '???' ? 3 : (subA === 'IA' ? 2 : (subA === 'OC' ? 1 : 0));
+                const rankB = subB === '???' ? 3 : (subB === 'IA' ? 2 : (subB === 'OC' ? 1 : 0));
+                
+                if (rankA !== rankB) return rankA - rankB;
+                if (sortType === 'sub-az') return subA.localeCompare(subB, 'pt-BR');
+                return subB.localeCompare(subA, 'pt-BR');
+            }
 
-        return nameA.localeCompare(nameB, 'pt-BR');
-    });
+            if (sortType.startsWith('id')) {
+                const getVal = (str) => {
+                    const match = str.match(/\d+/);
+                    if (!match) return 99999;
+                    const num = parseInt(match[0], 10);
+                    if (num === 0) return -1;
+                    if (num === 9999) return 99998;
+                    return num;
+                };
 
-    items.forEach(item => grid.appendChild(item));
+                const valA = getVal(idTextA);
+                const valB = getVal(idTextB);
+
+                const rankIdA = valA === -1 ? -1 : (valA === 99999 ? 2 : (valA === 99998 ? 1 : 0));
+                const rankIdB = valB === -1 ? -1 : (valB === 99999 ? 2 : (valB === 99998 ? 1 : 0));
+
+                if (rankIdA !== 0 || rankIdB !== 0) {
+                    if (rankIdA !== rankIdB) return rankIdA - rankIdB;
+                }
+
+                if (sortType === 'id-desc') return valB - valA;
+                return valA - valB;
+            }
+            return 0;
+        });
+
+        items.forEach(item => grid.appendChild(item));
+    }
+
+    if (select) select.addEventListener('change', sortGallery);
+    sortGallery();
 }
 
 // ==========================================
@@ -3767,13 +3812,17 @@ if (document.readyState === 'loading') {
             const parent = img.parentElement;
             
             let baseFileName = 'imagem-new-seas';
-            try {
-                let decodedSrc = decodeURIComponent(img.src);
-                let possibleName = decodedSrc.split('/').pop().split('?')[0];
-                if (possibleName && possibleName.length > 0) {
-                    baseFileName = possibleName;
-                }
-            } catch(err) {}
+            if (img.alt && img.alt.trim() !== '') {
+                baseFileName = img.alt.trim();
+            } else {
+                try {
+                    let decodedSrc = decodeURIComponent(img.src);
+                    let possibleName = decodedSrc.split('/').pop().split('?')[0];
+                    if (possibleName && possibleName.length > 0) {
+                        baseFileName = possibleName;
+                    }
+                } catch(err) {}
+            }
             
             let btnCopy = parent.querySelector('.injected-copy-img-btn');
             let btnDownload = parent.querySelector('.injected-download-img-btn');
