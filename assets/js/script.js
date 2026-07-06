@@ -4184,6 +4184,7 @@ window.donosDeAkuma = {
     "Hemo Hemo no Mi": "Sakazuki Choso",
     "Hie Hie no Mi": "Astarion D. Emiri",
     "Hito Hito no Mi, Modelo: O Anfitrião [Original do RPG]": "Alastor",
+    "Hito Hito no Mi, Modelo: Daibutsu": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Hito Hito no Mi, Modelo: Estátua [Original do RPG]": "David The Statue",
     "Hobi Hobi no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Horo Horo no Mi": "???",
@@ -4217,6 +4218,7 @@ window.donosDeAkuma = {
     "Uta Uta no Mi": "???",
     "Yami Yami no Mi": "Andrial D. Oran",
     "Yomi Yomi no Mi": "La Muerte",
+    "Yuki Yuki no Mi": "???",
     "Zou Zou no Mi, Modelo: Mamute": "Serm D'yos",
     "Zushi Zushi no Mi": "Sorum"
 };
