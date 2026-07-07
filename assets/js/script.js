@@ -4189,6 +4189,7 @@ window.donosDeAkuma = {
     "Hobi Hobi no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Horo Horo no Mi": "???",
     "Inu Inu no Mi, Modelo: Cérbero [Original do RPG]": "Dante Salvatore",
+    "Inu Inu no Mi, Modelo: Raposa de Nove Caudas": "Makima Laufey",
     "Kaze Kaze no Mi": "Donquixote Druig",
     "Kobu Kobu no Mi": "Ernesto Cruz",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
