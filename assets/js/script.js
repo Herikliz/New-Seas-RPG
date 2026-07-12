@@ -4216,7 +4216,6 @@ window.donosDeAkuma = {
     "Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]": "Genma Gan",
     "Tori Tori no Mi, Modelo: Pássaro de Gelo [Original do RPG]": "Alexander Pierce",
     "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "???",
-    "Toro Toro no Mi": "Hyun",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
     "Uta Uta no Mi": "???",
     "Yami Yami no Mi": "Andrial D. Oran",
