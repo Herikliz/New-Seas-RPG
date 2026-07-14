@@ -4191,6 +4191,7 @@ window.donosDeAkuma = {
     "Hone Hone no Mi": "???",
     "Horo Horo no Mi": "???",
     "Inu Inu no Mi, Modelo: Cérbero [Original do RPG]": "Dante Salvatore",
+    "Inu Inu no Mi, Modelo: Ōkuchi no Makami": "Yuu D'Couteau",
     "Inu Inu no Mi, Modelo: Raposa de Nove Caudas": "Makima Laufey",
     "Kage Kage no Mi": "???",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
