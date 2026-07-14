@@ -5048,18 +5048,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initLinhagensAutomacao() {
     if (!window.location.pathname.includes('linhagens.html') && !window.location.pathname.includes('racas.html')) return;
+    
+    if (!document.getElementById('admin-vaga-style')) {
+        const style = document.createElement('style');
+        style.id = 'admin-vaga-style';
+        style.innerHTML = `
+            @keyframes rainbowText {
+                0% { color: #ff0000; }
+                15% { color: #ff7f00; }
+                30% { color: #ffff00; }
+                45% { color: #00ff00; }
+                60% { color: #0000ff; }
+                75% { color: #4b0082; }
+                90% { color: #8b00ff; }
+                100% { color: #ff0000; }
+            }
+            .admin-vaga-rainbow {
+                animation: rainbowText 5s linear infinite;
+                font-weight: bold;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
     const vagasHeaders = Array.from(document.querySelectorAll('h4.highlight-text, h5.highlight-text')).filter(h => h.textContent.includes('Vagas'));
     vagasHeaders.forEach(header => {
         let ul = header.nextElementSibling;
         while (ul && ul.tagName !== 'UL' && ul.tagName !== 'H4' && ul.tagName !== 'H5') {
             ul = ul.nextElementSibling;
         }
+        
         if (ul && ul.tagName === 'UL') {
-            const lis = Array.from(ul.querySelectorAll('li'));
-            const totalVagas = lis.length;
+            if (ul.dataset.processado === "true") return;
+            ul.dataset.processado = "true";
+
+            const allLis = Array.from(ul.querySelectorAll('li'));
+            
+            const adminLiNode = allLis.find(li => li.classList.contains('vaga-admin'));
+            let adminName = '&nbsp;';
+            if (adminLiNode) {
+                const text = adminLiNode.textContent.trim();
+                if (text !== '' && text !== String.fromCharCode(160)) {
+                    adminName = text;
+                }
+            }
+
+            const normalLis = allLis.filter(li => !li.classList.contains('vaga-admin'));
+            const totalVagas = normalLis.length;
             const ocupados = [];
             const livres = [];
-            lis.forEach(li => {
+            
+            normalLis.forEach(li => {
                 const textoLimpo = li.textContent.trim();
                 if (textoLimpo === '' || textoLimpo === String.fromCharCode(160) || li.innerHTML.trim() === '&nbsp;') {
                     livres.push(li);
@@ -5067,14 +5106,42 @@ function initLinhagensAutomacao() {
                     ocupados.push(li);
                 }
             });
+            
             ocupados.sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim(), 'pt-BR'));
             header.textContent = `Vagas ${ocupados.length}/${totalVagas}:`;
+            
             ul.innerHTML = '';
             ocupados.forEach(li => ul.appendChild(li));
             livres.forEach(li => ul.appendChild(li));
+
+            if (adminName !== '&nbsp;') {
+                const adminHeader = document.createElement(header.tagName);
+                adminHeader.className = header.className;
+                adminHeader.classList.add('admin-vaga-rainbow');
+                adminHeader.style.cssText = header.style.cssText;
+                adminHeader.textContent = `Vaga de ADM:`;
+                
+                const adminUl = document.createElement('ul');
+                adminUl.style.cssText = ul.style.cssText;
+                
+                const adminLi = document.createElement('li');
+                if (normalLis.length > 0) {
+                    adminLi.style.cssText = normalLis[0].style.cssText;
+                } else {
+                    adminLi.style.marginBottom = '8px';
+                }
+                
+                adminLi.innerHTML = adminName; 
+                
+                adminUl.appendChild(adminLi);
+                
+                ul.parentNode.insertBefore(adminHeader, ul.nextSibling);
+                adminHeader.parentNode.insertBefore(adminUl, adminHeader.nextSibling);
+            }
         }
     });
 }
+
 function initProcuradosCopy() {
     if (!window.location.pathname.includes('procurados.html') && !window.location.pathname.includes('aparencias.html')) return;
     
