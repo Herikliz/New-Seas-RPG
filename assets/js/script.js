@@ -2083,6 +2083,41 @@ document.addEventListener('DOMContentLoaded', () => {
         const preResultadoCacada = document.getElementById('resultadoCacada');
         const btnCopiarCacada = document.getElementById('btn-copiar-resultado-cacada');
 
+        if (inputRecompensaCacada) {
+            fetch('cacadas.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const cards = doc.querySelectorAll('.bounty-card');
+                    inputRecompensaCacada.innerHTML = '<option value="" disabled selected>Selecione um procurado...</option>';
+                    
+                    let procurados = [];
+                    cards.forEach(card => {
+                        const nameEl = card.querySelector('.bounty-name');
+                        const valueEl = card.querySelector('.bounty-value');
+                        if (nameEl && valueEl) {
+                            procurados.push({
+                                nome: nameEl.textContent.trim(),
+                                recompensa: valueEl.textContent.replace(/\D/g, '')
+                            });
+                        }
+                    });
+                    
+                    procurados.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+                    
+                    procurados.forEach(p => {
+                        const option = document.createElement('option');
+                        option.value = p.recompensa;
+                        option.textContent = p.nome;
+                        inputRecompensaCacada.appendChild(option);
+                    });
+                })
+                .catch(err => {
+                    inputRecompensaCacada.innerHTML = '<option value="" disabled selected>Erro ao carregar procurados</option>';
+                });
+        }
+
         function atualizarCamposNarradores() {
             let qtd = parseInt(inputNarradores.value, 10);
             if (isNaN(qtd) || qtd < 1) qtd = 1;
@@ -2120,10 +2155,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (inputNarradores) {
             inputNarradores.addEventListener('input', atualizarCamposNarradores);
+            atualizarCamposNarradores();
         }
 
         function gerarTextoCacada() {
-            if (!inputRecompensaCacada) return;
+            if (!inputRecompensaCacada || inputRecompensaCacada.value === "") return;
             
             let valorInput = inputRecompensaCacada.value.replace(/\D/g, '');
             let recompensaBuscada = parseInt(valorInput, 10) || 0;
@@ -2144,7 +2180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (checkHakiCacada.checked) pontosJogador += calcHakiAkuma;
             if (checkAkumaCacada.checked) pontosJogador += calcHakiAkuma;
 
-            let textoFinal = "```Recompensas da Caçada:\n";
+            let textoFinal = "\`\`\`Recompensas da Caçada:\n";
             
             if (check40kCacada.checked) {
                 textoFinal += "Pontos Livres: " + formatarNum(pontosJogador) + "\n";
@@ -2154,7 +2190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (checkAkumaCacada.checked) textoFinal += "Pontos de Akuma no Mi: " + formatarNum(calcHakiAkuma) + "\n";
             }
             
-            textoFinal += "Berries: ฿" + formatarNum(recompensaBuscada) + "```\n\n";
+            textoFinal += "Berries: ฿" + formatarNum(recompensaBuscada) + "\`\`\`\n\n";
 
             let qtdNarradores = parseInt(inputNarradores.value, 10) || 1;
             
@@ -2206,13 +2242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (inputRecompensaCacada) {
-            inputRecompensaCacada.addEventListener('input', function() {
-                let valor = this.value.replace(/\D/g, '');
-                if (valor !== '') {
-                    this.value = formatarNum(parseInt(valor, 10));
-                }
-                gerarTextoCacada();
-            });
+            inputRecompensaCacada.addEventListener('change', gerarTextoCacada);
         }
         
         if (checkHakiCacada) checkHakiCacada.addEventListener('change', gerarTextoCacada);
