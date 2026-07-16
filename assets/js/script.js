@@ -2074,6 +2074,175 @@ document.addEventListener('DOMContentLoaded', () => {
             return num.toLocaleString('pt-BR');
         }
 
+        const inputRecompensaCacada = document.getElementById('recompensaCacada');
+        const checkHakiCacada = document.getElementById('checkHakiCacada');
+        const checkAkumaCacada = document.getElementById('checkAkumaCacada');
+        const check40kCacada = document.getElementById('check40kCacada');
+        const inputNarradores = document.getElementById('narradoresCacada');
+        const containerNarradores = document.getElementById('container-nomes-narradores');
+        const preResultadoCacada = document.getElementById('resultadoCacada');
+        const btnCopiarCacada = document.getElementById('btn-copiar-resultado-cacada');
+
+        function atualizarCamposNarradores() {
+            let qtd = parseInt(inputNarradores.value, 10);
+            if (isNaN(qtd) || qtd < 1) qtd = 1;
+            
+            containerNarradores.innerHTML = '';
+            
+            if (qtd === 1) {
+                containerNarradores.innerHTML = `
+                    <div class="input-group">
+                        <label for="nomeNarrador1">Nome do Narrador</label>
+                        <input type="text" id="nomeNarrador1" placeholder="Nome do Narrador" class="nome-narrador">
+                    </div>
+                `;
+            } else {
+                for (let i = 1; i <= qtd; i++) {
+                    containerNarradores.innerHTML += `
+                        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                            <div class="input-group" style="flex: 2; margin-bottom: 0;">
+                                <label for="nomeNarrador${i}">Nome do Narrador ${i}</label>
+                                <input type="text" id="nomeNarrador${i}" placeholder="Nome do Narrador" class="nome-narrador">
+                            </div>
+                            <div class="input-group" style="flex: 1; margin-bottom: 0;">
+                                <label for="qtdNarracoes${i}">Narrações Feitas</label>
+                                <input type="number" id="qtdNarracoes${i}" value="1" min="1" class="qtd-narracoes" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            
+            const inputs = containerNarradores.querySelectorAll('input');
+            inputs.forEach(input => input.addEventListener('input', gerarTextoCacada));
+            gerarTextoCacada();
+        }
+
+        if (inputNarradores) {
+            inputNarradores.addEventListener('input', atualizarCamposNarradores);
+        }
+
+        function gerarTextoCacada() {
+            if (!inputRecompensaCacada) return;
+            
+            let valorInput = inputRecompensaCacada.value.replace(/\D/g, '');
+            let recompensaBuscada = parseInt(valorInput, 10) || 0;
+            
+            let pontosBase = 0;
+            if (recompensaBuscada <= 49999999) pontosBase = 300;
+            else if (recompensaBuscada <= 99999999) pontosBase = 500;
+            else if (recompensaBuscada <= 199999999) pontosBase = 800;
+            else if (recompensaBuscada <= 299999999) pontosBase = 1000;
+            else if (recompensaBuscada <= 499999999) pontosBase = 1200;
+            else if (recompensaBuscada <= 699999999) pontosBase = 1500;
+            else if (recompensaBuscada <= 999999999) pontosBase = 2000;
+            else pontosBase = 2500;
+
+            const calcHakiAkuma = Math.floor(pontosBase / 2);
+            
+            let pontosJogador = pontosBase;
+            if (checkHakiCacada.checked) pontosJogador += calcHakiAkuma;
+            if (checkAkumaCacada.checked) pontosJogador += calcHakiAkuma;
+
+            let textoFinal = "```Recompensas da Caçada:\n";
+            
+            if (check40kCacada.checked) {
+                textoFinal += "Pontos Livres: " + formatarNum(pontosJogador) + "\n";
+            } else {
+                textoFinal += "Pontos de Atributo: " + formatarNum(pontosBase) + "\n";
+                if (checkHakiCacada.checked) textoFinal += "Pontos de Haki: " + formatarNum(calcHakiAkuma) + "\n";
+                if (checkAkumaCacada.checked) textoFinal += "Pontos de Akuma no Mi: " + formatarNum(calcHakiAkuma) + "\n";
+            }
+            
+            textoFinal += "Berries: ฿" + formatarNum(recompensaBuscada) + "```\n\n";
+
+            let qtdNarradores = parseInt(inputNarradores.value, 10) || 1;
+            
+            if (qtdNarradores === 1) {
+                let nomeNarrador = document.getElementById('nomeNarrador1') ? document.getElementById('nomeNarrador1').value.trim() : '';
+                if (nomeNarrador === '') nomeNarrador = "Narrador";
+                
+                let pontosNarrador = Math.floor(pontosJogador / 2);
+                let berriesNarrador = Math.floor(recompensaBuscada / 2);
+                
+                textoFinal += `\`\`\`Recompensas da Narração (${nomeNarrador}):\nPode escolher entre\n`;
+                textoFinal += `- ${formatarNum(pontosNarrador)} pontos livres e ฿${formatarNum(berriesNarrador)}\n`;
+                textoFinal += `- ${formatarNum(pontosJogador)} pontos livres\n`;
+                textoFinal += `- ฿${formatarNum(recompensaBuscada)}\`\`\``;
+            } else {
+                let totalNarracoes = 0;
+                let dadosNarradores = [];
+                
+                for (let i = 1; i <= qtdNarradores; i++) {
+                    let nome = document.getElementById(`nomeNarrador${i}`) ? document.getElementById(`nomeNarrador${i}`).value.trim() : '';
+                    if (nome === '') nome = `Narrador ${i}`;
+                    
+                    let narracoes = document.getElementById(`qtdNarracoes${i}`) ? parseInt(document.getElementById(`qtdNarracoes${i}`).value, 10) : 1;
+                    if (isNaN(narracoes) || narracoes < 1) narracoes = 1;
+                    
+                    totalNarracoes += narracoes;
+                    dadosNarradores.push({ nome: nome, narracoes: narracoes });
+                }
+                
+                dadosNarradores.forEach((narrador, index) => {
+                    let porcentagem = narrador.narracoes / totalNarracoes;
+                    
+                    let ptsOpc1 = Math.floor((pontosJogador / 2) * porcentagem);
+                    let berOpc1 = Math.floor((recompensaBuscada / 2) * porcentagem);
+                    let ptsOpc2 = Math.floor(pontosJogador * porcentagem);
+                    let berOpc3 = Math.floor(recompensaBuscada * porcentagem);
+                    
+                    textoFinal += `\`\`\`Recompensas da Narração (${narrador.nome}):\nPode escolher entre\n`;
+                    textoFinal += `- ${formatarNum(ptsOpc1)} pontos livres e ฿${formatarNum(berOpc1)}\n`;
+                    textoFinal += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
+                    textoFinal += `- ฿${formatarNum(berOpc3)}\`\`\``;
+                    
+                    if (index < dadosNarradores.length - 1) textoFinal += "\n\n";
+                });
+            }
+
+            preResultadoCacada.textContent = textoFinal;
+            preResultadoCacada.style.display = 'block';
+        }
+
+        if (inputRecompensaCacada) {
+            inputRecompensaCacada.addEventListener('input', function() {
+                let valor = this.value.replace(/\D/g, '');
+                if (valor !== '') {
+                    this.value = formatarNum(parseInt(valor, 10));
+                }
+                gerarTextoCacada();
+            });
+        }
+        
+        if (checkHakiCacada) checkHakiCacada.addEventListener('change', gerarTextoCacada);
+        if (checkAkumaCacada) checkAkumaCacada.addEventListener('change', gerarTextoCacada);
+        if (check40kCacada) check40kCacada.addEventListener('change', gerarTextoCacada);
+
+        if (btnCopiarCacada) {
+            btnCopiarCacada.addEventListener('click', () => {
+                if (!preResultadoCacada.textContent) return;
+                if (btnCopiarCacada.dataset.copying) return;
+                btnCopiarCacada.dataset.copying = "true";
+                window.copiarTextoUniversal(preResultadoCacada.textContent).then(() => {
+                    let originalText = btnCopiarCacada.textContent;
+                    let originalBg = btnCopiarCacada.style.backgroundColor;
+                    let originalColor = btnCopiarCacada.style.color;
+
+                    btnCopiarCacada.textContent = "Texto Copiado!";
+                    btnCopiarCacada.style.backgroundColor = "#4caf50";
+                    btnCopiarCacada.style.color = "#fff";
+                    
+                    setTimeout(() => {
+                        btnCopiarCacada.textContent = originalText;
+                        btnCopiarCacada.style.backgroundColor = originalBg;
+                        btnCopiarCacada.style.color = originalColor;
+                        delete btnCopiarCacada.dataset.copying;
+                    }, 1000);
+                });
+            });
+        }
+
         function gerarTextoRecompensa() {
             let valorInput = inputBase.value.replace(/\D/g, '');
             let valorBase = parseInt(valorInput, 10) || 0;
