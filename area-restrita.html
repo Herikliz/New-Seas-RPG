@@ -50,16 +50,38 @@
                     <div class="toggle-content">
                         <div class="admin-generator-box" id="admin-generator-cacada">
                             <div class="input-group">
-                                <label for="recompensaCacada">Procurado Caçado</label>
-                                <select id="recompensaCacada">
-                                    <option value="" disabled selected>Carregando procurados...</option>
-                                </select>
+                                <label id="label-procurados-cacados">Procurado Caçado</label>
+                                <div id="container-procurados" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                                    <div class="procurado-row" style="display: flex; gap: 10px;">
+                                        <select class="select-procurado" style="flex: 2;">
+                                            <option value="" disabled selected>Carregando procurados...</option>
+                                        </select>
+                                        <input type="text" class="input-procurado-manual" placeholder="Procurado (Manual)" style="flex: 2; display: none;">
+                                        <input type="text" class="input-valor-manual" placeholder="Recompensa (฿)" style="flex: 1; display: none;">
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 10px;">
+                                    <button id="btn-add-procurado" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
+                                    <button id="btn-rem-procurado" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
+                                </div>
                             </div>
-
-                            <div class="admin-checkbox-group">
-                                <label><input type="checkbox" id="checkHakiCacada"> Tem Haki?</label>
-                                <label><input type="checkbox" id="checkAkumaCacada"> Tem Fruta?</label>
-                                <label><input type="checkbox" id="check40kCacada"> Tem 40.000 pontos ou mais?</label>
+                            
+                            <div class="input-group" style="margin-top: 15px;">
+                                <label id="label-jogadores-cacadores">Jogador Caçador</label>
+                                <div id="container-jogadores-cacada" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                                    <div class="jogador-row" style="border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);">
+                                        <input type="text" class="nome-jogador-cacada" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
+                                        <div class="admin-checkbox-group" style="margin-bottom: 0;">
+                                            <label><input type="checkbox" class="check-haki-cacada"> Tem Haki?</label>
+                                            <label><input type="checkbox" class="check-akuma-cacada"> Tem Fruta?</label>
+                                            <label><input type="checkbox" class="check-40k-cacada"> Tem 40.000 pontos ou mais?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 10px;">
+                                    <button id="btn-add-jogador-cacada" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
+                                    <button id="btn-rem-jogador-cacada" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
+                                </div>
                             </div>
 
                             <div class="input-group">

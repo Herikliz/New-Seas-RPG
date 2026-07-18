@@ -2102,48 +2102,193 @@ document.addEventListener('DOMContentLoaded', () => {
             return num.toLocaleString('pt-BR');
         }
 
-        const inputRecompensaCacada = document.getElementById('recompensaCacada');
-        const checkHakiCacada = document.getElementById('checkHakiCacada');
-        const checkAkumaCacada = document.getElementById('checkAkumaCacada');
-        const check40kCacada = document.getElementById('check40kCacada');
         const inputNarradores = document.getElementById('narradoresCacada');
         const containerNarradores = document.getElementById('container-nomes-narradores');
         const preResultadoCacada = document.getElementById('resultadoCacada');
         const btnCopiarCacada = document.getElementById('btn-copiar-resultado-cacada');
+        const btnAddProcurado = document.getElementById('btn-add-procurado');
+        const btnRemProcurado = document.getElementById('btn-rem-procurado');
+        const containerProcurados = document.getElementById('container-procurados');
+        const btnAddJogadorCacada = document.getElementById('btn-add-jogador-cacada');
+        const btnRemJogadorCacada = document.getElementById('btn-rem-jogador-cacada');
+        const containerJogadoresCacada = document.getElementById('container-jogadores-cacada');
 
-        if (inputRecompensaCacada) {
+        let listaProcuradosCache = [];
+
+        function atualizarEventosProcurado(row) {
+            const select = row.querySelector('.select-procurado');
+            const inputManual = row.querySelector('.input-procurado-manual');
+            const inputValor = row.querySelector('.input-valor-manual');
+
+            select.addEventListener('change', function() {
+                if (this.value === 'manual') {
+                    inputManual.style.display = 'block';
+                    inputValor.style.display = 'block';
+                } else {
+                    inputManual.style.display = 'none';
+                    inputValor.style.display = 'none';
+                    inputManual.value = '';
+                    inputValor.value = '';
+                }
+                gerarTextoCacada();
+            });
+
+            inputManual.addEventListener('input', gerarTextoCacada);
+            inputValor.addEventListener('input', function(e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                if (valor !== '') {
+                    e.target.value = formatarNum(parseInt(valor, 10));
+                } else {
+                    e.target.value = '';
+                }
+                gerarTextoCacada();
+            });
+        }
+
+        function popularSelect(select) {
+            select.innerHTML = '<option value="" disabled selected>Selecione um procurado...</option>';
+            listaProcuradosCache.forEach(p => {
+                const option = document.createElement('option');
+                option.value = p.recompensa;
+                option.textContent = p.nome;
+                select.appendChild(option);
+            });
+            const optionManual = document.createElement('option');
+            optionManual.value = 'manual';
+            optionManual.textContent = '✏️ Inserir Manualmente';
+            select.appendChild(optionManual);
+        }
+
+        if (containerProcurados) {
             fetch('cacadas.html')
                 .then(response => response.text())
                 .then(html => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
                     const cards = doc.querySelectorAll('.bounty-card');
-                    inputRecompensaCacada.innerHTML = '<option value="" disabled selected>Selecione um procurado...</option>';
                     
-                    let procurados = [];
                     cards.forEach(card => {
                         const nameEl = card.querySelector('.bounty-name');
                         const valueEl = card.querySelector('.bounty-value');
                         if (nameEl && valueEl) {
-                            procurados.push({
+                            listaProcuradosCache.push({
                                 nome: nameEl.textContent.trim(),
                                 recompensa: valueEl.textContent.replace(/\D/g, '')
                             });
                         }
                     });
                     
-                    procurados.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+                    listaProcuradosCache.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
                     
-                    procurados.forEach(p => {
-                        const option = document.createElement('option');
-                        option.value = p.recompensa;
-                        option.textContent = p.nome;
-                        inputRecompensaCacada.appendChild(option);
-                    });
+                    const firstSelect = containerProcurados.querySelector('.select-procurado');
+                    if (firstSelect) {
+                        popularSelect(firstSelect);
+                        atualizarEventosProcurado(containerProcurados.querySelector('.procurado-row'));
+                    }
                 })
                 .catch(err => {
-                    inputRecompensaCacada.innerHTML = '<option value="" disabled selected>Erro ao carregar procurados</option>';
+                    const firstSelect = containerProcurados.querySelector('.select-procurado');
+                    if (firstSelect) firstSelect.innerHTML = '<option value="" disabled selected>Erro ao carregar procurados</option>';
                 });
+                
+            if (btnAddProcurado) {
+                btnAddProcurado.addEventListener('click', () => {
+                    const novaRow = document.createElement('div');
+                    novaRow.className = 'procurado-row';
+                    novaRow.style.cssText = 'display: flex; gap: 10px;';
+                    novaRow.innerHTML = `
+                        <select class="select-procurado" style="flex: 2;"></select>
+                        <input type="text" class="input-procurado-manual" placeholder="Procurado (Manual)" style="flex: 2; display: none;">
+                        <input type="text" class="input-valor-manual" placeholder="Recompensa (฿)" style="flex: 1; display: none;">
+                    `;
+                    containerProcurados.appendChild(novaRow);
+                    popularSelect(novaRow.querySelector('.select-procurado'));
+                    atualizarEventosProcurado(novaRow);
+                    gerarTextoCacada();
+                });
+            }
+
+            function atualizarLabelsCacada() {
+                const qtdP = containerProcurados.querySelectorAll('.procurado-row').length;
+                const labelP = document.getElementById('label-procurados-cacados');
+                if (labelP) labelP.textContent = qtdP > 1 ? "Procurados Caçados" : "Procurado Caçado";
+
+                const qtdJ = containerJogadoresCacada.querySelectorAll('.jogador-row').length;
+                const labelJ = document.getElementById('label-jogadores-cacadores');
+                if (labelJ) labelJ.textContent = qtdJ > 1 ? "Jogadores Caçadores" : "Jogador Caçador";
+            }
+
+            if (btnAddProcurado) {
+                btnAddProcurado.addEventListener('click', () => {
+                    const novaRow = document.createElement('div');
+                    novaRow.className = 'procurado-row';
+                    novaRow.style.cssText = 'display: flex; gap: 10px;';
+                    novaRow.innerHTML = `
+                        <select class="select-procurado" style="flex: 2;"></select>
+                        <input type="text" class="input-procurado-manual" placeholder="Procurado (Manual)" style="flex: 2; display: none;">
+                        <input type="text" class="input-valor-manual" placeholder="Recompensa (฿)" style="flex: 1; display: none;">
+                    `;
+                    containerProcurados.appendChild(novaRow);
+                    popularSelect(novaRow.querySelector('.select-procurado'));
+                    atualizarEventosProcurado(novaRow);
+                    atualizarLabelsCacada();
+                    gerarTextoCacada();
+                });
+            }
+
+            if (btnRemProcurado) {
+                btnRemProcurado.addEventListener('click', () => {
+                    const rows = containerProcurados.querySelectorAll('.procurado-row');
+                    if (rows.length > 1) {
+                        containerProcurados.removeChild(rows[rows.length - 1]);
+                        atualizarLabelsCacada();
+                        gerarTextoCacada();
+                    }
+                });
+            }
+        }
+        
+        function attachJogadorEvents(row) {
+            row.querySelector('.nome-jogador-cacada').addEventListener('input', gerarTextoCacada);
+            row.querySelector('.check-haki-cacada').addEventListener('change', gerarTextoCacada);
+            row.querySelector('.check-akuma-cacada').addEventListener('change', gerarTextoCacada);
+            row.querySelector('.check-40k-cacada').addEventListener('change', gerarTextoCacada);
+        }
+
+        if (btnAddJogadorCacada) {
+            btnAddJogadorCacada.addEventListener('click', () => {
+                const novaRow = document.createElement('div');
+                novaRow.className = 'jogador-row';
+                novaRow.style.cssText = 'border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);';
+                novaRow.innerHTML = `
+                    <input type="text" class="nome-jogador-cacada" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
+                    <div class="admin-checkbox-group" style="margin-bottom: 0;">
+                        <label><input type="checkbox" class="check-haki-cacada"> Tem Haki?</label>
+                        <label><input type="checkbox" class="check-akuma-cacada"> Tem Fruta?</label>
+                        <label><input type="checkbox" class="check-40k-cacada"> Tem 40.000 pontos ou mais?</label>
+                    </div>
+                `;
+                containerJogadoresCacada.appendChild(novaRow);
+                attachJogadorEvents(novaRow);
+                if (typeof atualizarLabelsCacada === 'function') atualizarLabelsCacada();
+                gerarTextoCacada();
+            });
+        }
+
+        if (btnRemJogadorCacada) {
+            btnRemJogadorCacada.addEventListener('click', () => {
+                const rows = containerJogadoresCacada.querySelectorAll('.jogador-row');
+                if (rows.length > 1) {
+                    containerJogadoresCacada.removeChild(rows[rows.length - 1]);
+                    if (typeof atualizarLabelsCacada === 'function') atualizarLabelsCacada();
+                    gerarTextoCacada();
+                }
+            });
+        }
+
+        if (containerJogadoresCacada) {
+            const firstRow = containerJogadoresCacada.querySelector('.jogador-row');
+            if (firstRow) attachJogadorEvents(firstRow);
         }
 
         function atualizarCamposNarradores() {
@@ -2187,95 +2332,163 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function gerarTextoCacada() {
-            if (!inputRecompensaCacada || inputRecompensaCacada.value === "") return;
+            if (!containerProcurados) return;
             
-            let valorInput = inputRecompensaCacada.value.replace(/\D/g, '');
-            let recompensaBuscada = parseInt(valorInput, 10) || 0;
-            
-            let pontosBase = 0;
-            if (recompensaBuscada <= 49999999) pontosBase = 300;
-            else if (recompensaBuscada <= 99999999) pontosBase = 500;
-            else if (recompensaBuscada <= 199999999) pontosBase = 800;
-            else if (recompensaBuscada <= 299999999) pontosBase = 1000;
-            else if (recompensaBuscada <= 499999999) pontosBase = 1200;
-            else if (recompensaBuscada <= 699999999) pontosBase = 1500;
-            else if (recompensaBuscada <= 999999999) pontosBase = 2000;
-            else pontosBase = 2500;
+            const rows = containerProcurados.querySelectorAll('.procurado-row');
+            let algumProcuradoValido = false;
+            let temDuplicata = false;
+            let procuradosSelecionados = [];
 
-            const calcHakiAkuma = Math.floor(pontosBase / 2);
-            
-            let pontosJogador = pontosBase;
-            if (checkHakiCacada.checked) pontosJogador += calcHakiAkuma;
-            if (checkAkumaCacada.checked) pontosJogador += calcHakiAkuma;
+            let blocosTexto = [];
 
-            let textoFinal = "\`\`\`Recompensas da Caçada:\n";
-            
-            if (check40kCacada.checked) {
-                textoFinal += "Pontos Livres: " + formatarNum(pontosJogador) + "\n";
-            } else {
-                textoFinal += "Pontos de Atributo: " + formatarNum(pontosBase) + "\n";
-                if (checkHakiCacada.checked) textoFinal += "Pontos de Haki: " + formatarNum(calcHakiAkuma) + "\n";
-                if (checkAkumaCacada.checked) textoFinal += "Pontos de Akuma no Mi: " + formatarNum(calcHakiAkuma) + "\n";
+            rows.forEach(row => {
+                const select = row.querySelector('.select-procurado');
+                if (select.value !== 'manual' && select.value !== '') {
+                    const nomeSelect = select.options[select.selectedIndex].text;
+                    if (procuradosSelecionados.includes(nomeSelect)) temDuplicata = true;
+                    procuradosSelecionados.push(nomeSelect);
+                }
+            });
+
+            if (temDuplicata) {
+                preResultadoCacada.textContent = "Erro: Você não pode escolher o mesmo procurado duas vezes (exceto manualmente).";
+                preResultadoCacada.style.color = "#f44336";
+                preResultadoCacada.style.display = 'block';
+                return;
             }
-            
-            textoFinal += "Berries: ฿" + formatarNum(recompensaBuscada) + "\`\`\`\n\n";
+
+            preResultadoCacada.style.color = "var(--text-color)";
+
+            let jogadoresData = [];
+            if (containerJogadoresCacada) {
+                containerJogadoresCacada.querySelectorAll('.jogador-row').forEach(row => {
+                    let nome = row.querySelector('.nome-jogador-cacada').value.trim();
+                    if (nome === '') nome = 'Jogador';
+                    let hasHaki = row.querySelector('.check-haki-cacada').checked;
+                    let hasAkuma = row.querySelector('.check-akuma-cacada').checked;
+                    let is40k = row.querySelector('.check-40k-cacada').checked;
+                    jogadoresData.push({ nome, hasHaki, hasAkuma, is40k });
+                });
+            }
+            if (jogadoresData.length === 0) jogadoresData.push({ nome: "Jogador", hasHaki: false, hasAkuma: false, is40k: false });
+            let numJogadores = jogadoresData.length;
 
             let qtdNarradores = parseInt(inputNarradores.value, 10) || 1;
+            let totalNarracoes = 0;
+            let dadosNarradores = [];
             
             if (qtdNarradores === 1) {
                 let nomeNarrador = document.getElementById('nomeNarrador1') ? document.getElementById('nomeNarrador1').value.trim() : '';
                 if (nomeNarrador === '') nomeNarrador = "Narrador";
-                
-                let pontosNarrador = Math.floor(pontosJogador / 2);
-                let berriesNarrador = Math.floor(recompensaBuscada / 2);
-                
-                textoFinal += `\`\`\`Recompensas da Narração (${nomeNarrador}):\nPode escolher entre\n`;
-                textoFinal += `- ${formatarNum(pontosNarrador)} pontos livres e ฿${formatarNum(berriesNarrador)}\n`;
-                textoFinal += `- ${formatarNum(pontosJogador)} pontos livres\n`;
-                textoFinal += `- ฿${formatarNum(recompensaBuscada)}\`\`\``;
+                dadosNarradores.push({ nome: nomeNarrador, narracoes: 1 });
+                totalNarracoes = 1;
             } else {
-                let totalNarracoes = 0;
-                let dadosNarradores = [];
-                
                 for (let i = 1; i <= qtdNarradores; i++) {
                     let nome = document.getElementById(`nomeNarrador${i}`) ? document.getElementById(`nomeNarrador${i}`).value.trim() : '';
                     if (nome === '') nome = `Narrador ${i}`;
-                    
                     let narracoes = document.getElementById(`qtdNarracoes${i}`) ? parseInt(document.getElementById(`qtdNarracoes${i}`).value, 10) : 1;
                     if (isNaN(narracoes) || narracoes < 1) narracoes = 1;
-                    
                     totalNarracoes += narracoes;
                     dadosNarradores.push({ nome: nome, narracoes: narracoes });
                 }
-                
-                dadosNarradores.forEach((narrador, index) => {
-                    let porcentagem = narrador.narracoes / totalNarracoes;
-                    
-                    let ptsOpc1 = Math.floor((pontosJogador / 2) * porcentagem);
-                    let berOpc1 = Math.floor((recompensaBuscada / 2) * porcentagem);
-                    let ptsOpc2 = Math.floor(pontosJogador * porcentagem);
-                    let berOpc3 = Math.floor(recompensaBuscada * porcentagem);
-                    
-                    textoFinal += `\`\`\`Recompensas da Narração (${narrador.nome}):\nPode escolher entre\n`;
-                    textoFinal += `- ${formatarNum(ptsOpc1)} pontos livres e ฿${formatarNum(berOpc1)}\n`;
-                    textoFinal += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
-                    textoFinal += `- ฿${formatarNum(berOpc3)}\`\`\``;
-                    
-                    if (index < dadosNarradores.length - 1) textoFinal += "\n\n";
-                });
             }
 
-            preResultadoCacada.textContent = textoFinal;
+            rows.forEach(row => {
+                const select = row.querySelector('.select-procurado');
+                const inputManual = row.querySelector('.input-procurado-manual');
+                const inputValor = row.querySelector('.input-valor-manual');
+                
+                let rec = 0;
+                let nomeProcurado = "Desconhecido";
+                
+                if (select.value === 'manual') {
+                    let val = inputValor.value.replace(/\D/g, '');
+                    rec = parseInt(val, 10) || 0;
+                    nomeProcurado = inputManual.value.trim() !== '' ? inputManual.value.trim() : 'Procurado Manual';
+                } else if (select.value !== "") {
+                    rec = parseInt(select.value, 10) || 0;
+                    nomeProcurado = select.options[select.selectedIndex].text;
+                }
+                
+                if (rec > 0) {
+                    algumProcuradoValido = true;
+                    
+                    let ptsBase = 0;
+                    if (rec <= 49999999) ptsBase = 300;
+                    else if (rec <= 99999999) ptsBase = 500;
+                    else if (rec <= 199999999) ptsBase = 800;
+                    else if (rec <= 299999999) ptsBase = 1000;
+                    else if (rec <= 499999999) ptsBase = 1200;
+                    else if (rec <= 699999999) ptsBase = 1500;
+                    else if (rec <= 999999999) ptsBase = 2000;
+                    else ptsBase = 2500;
+                    
+                    let bonusHakiAkuma = Math.floor(ptsBase / 2);
+                    let berriesPorJogador = Math.floor(rec / numJogadores);
+                    let restoBerries = rec % numJogadores;
+
+                    let textoBloco = `\`\`\`Recompensas pela Caçada contra ${nomeProcurado}:\n`;
+                    let pontosTotaisDessaCacadaParaNarradores = 0;
+                    
+                    jogadoresData.forEach((j, index) => {
+                        let ptsJogador = ptsBase;
+                        if (j.hasHaki) ptsJogador += bonusHakiAkuma;
+                        if (j.hasAkuma) ptsJogador += bonusHakiAkuma;
+                        
+                        pontosTotaisDessaCacadaParaNarradores += ptsJogador;
+
+                        let berriesDeste = berriesPorJogador;
+                        if (index === 0) berriesDeste += restoBerries;
+                        
+                        textoBloco += `Recompensas do Jogador (${j.nome}):\n`;
+                        if (j.is40k) {
+                            textoBloco += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+                        } else {
+                            textoBloco += `Pontos de Atributo: ${formatarNum(ptsBase)}\n`;
+                            if (j.hasHaki) textoBloco += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
+                            if (j.hasAkuma) textoBloco += `Pontos de Akuma no Mi: ${formatarNum(bonusHakiAkuma)}\n`;
+                        }
+                        textoBloco += `Berries: ฿${formatarNum(berriesDeste)}\n\n`;
+                    });
+
+                    // Encontra a maior pontuação individual entre os jogadores desta caçada
+                    let maiorPtsJogador = 0;
+                    jogadoresData.forEach(j => {
+                        let ptsJogador = ptsBase;
+                        if (j.hasHaki) ptsJogador += bonusHakiAkuma;
+                        if (j.hasAkuma) ptsJogador += bonusHakiAkuma;
+                        if (ptsJogador > maiorPtsJogador) maiorPtsJogador = ptsJogador;
+                    });
+
+                    dadosNarradores.forEach((narrador, index) => {
+                        let porcentagem = narrador.narracoes / totalNarracoes;
+                        
+                        let ptsOpc1 = Math.floor((maiorPtsJogador / 2) * porcentagem);
+                        let berOpc1 = Math.floor((rec / 2) * porcentagem);
+                        let ptsOpc2 = Math.floor(maiorPtsJogador * porcentagem);
+                        let berOpc3 = Math.floor(rec * porcentagem);
+                        
+                        textoBloco += `Recompensas da Narração (${narrador.nome}):\nPode escolher entre\n`;
+                        textoBloco += `- ${formatarNum(ptsOpc1)} pontos livres e ฿${formatarNum(berOpc1)}\n`;
+                        textoBloco += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
+                        textoBloco += `- ฿${formatarNum(berOpc3)}`;
+                        
+                        if (index < dadosNarradores.length - 1) textoBloco += "\n\n";
+                    });
+
+                    textoBloco += "\`\`\`";
+                    blocosTexto.push(textoBloco);
+                }
+            });
+
+            if (!algumProcuradoValido) {
+                preResultadoCacada.style.display = 'none';
+                return;
+            }
+
+            preResultadoCacada.textContent = blocosTexto.join("\n\n-----\n\n");
             preResultadoCacada.style.display = 'block';
         }
-
-        if (inputRecompensaCacada) {
-            inputRecompensaCacada.addEventListener('change', gerarTextoCacada);
-        }
-        
-        if (checkHakiCacada) checkHakiCacada.addEventListener('change', gerarTextoCacada);
-        if (checkAkumaCacada) checkAkumaCacada.addEventListener('change', gerarTextoCacada);
-        if (check40kCacada) check40kCacada.addEventListener('change', gerarTextoCacada);
 
         if (btnCopiarCacada) {
             btnCopiarCacada.addEventListener('click', () => {
