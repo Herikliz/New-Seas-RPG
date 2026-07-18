@@ -4419,6 +4419,7 @@ window.donosDeAkuma = {
     "Mira Mira no Mi": "Bloqueada",
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Mori Mori no Mi": "???",
     "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre": "MahaD Mnaj",
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
     "Ope Ope no Mi": "Morgana Du'lor",
