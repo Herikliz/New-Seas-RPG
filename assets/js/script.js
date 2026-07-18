@@ -874,6 +874,7 @@ function runAtributosCalc() {
     }
     
     let velPontosEl = document.getElementById('vel-corp-pontos');
+    let velDistanciaEl = document.getElementById('vel-distancia');
     if (velPontosEl) {
         let velPontosRaw = velPontosEl.value.replace(/\D/g, '');
         let velPontos = velPontosRaw ? parseInt(velPontosRaw, 10) : 0;
@@ -885,10 +886,19 @@ function runAtributosCalc() {
         let outMs = document.getElementById('out-vel-ms');
         let outKmh = document.getElementById('out-vel-kmh');
         let outMach = document.getElementById('out-vel-mach');
+        let outTempo = document.getElementById('out-vel-tempo');
         
         if (outMs) outMs.innerText = ms.toLocaleString('pt-BR', { maximumFractionDigits: 2 });
         if (outKmh) outKmh.innerText = kmh.toLocaleString('pt-BR', { maximumFractionDigits: 2 });
         if (outMach) outMach.innerText = mach.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+        
+        if (velDistanciaEl && outTempo) {
+            let distRaw = velDistanciaEl.value.replace(/\D/g, '');
+            let dist = distRaw ? parseInt(distRaw, 10) : 0;
+            let tempoSegundos = dist > 0 ? dist / ms : 0;
+            let label = (tempoSegundos >= 1 && tempoSegundos < 2) ? "segundo" : "segundos";
+            outTempo.innerText = tempoSegundos.toLocaleString('pt-BR', { maximumFractionDigits: 2 }) + " " + label;
+        }
     }
 }
 

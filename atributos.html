@@ -118,11 +118,17 @@
                                 <label>Pontos de Velocidade Corporal:</label>
                                 <input type="text" id="vel-corp-pontos" class="auto-calc" placeholder="Ex: 5.000">
                             </div>
+
+                            <div class="input-group">
+                                <label>Distância a Percorrer (Metros):</label>
+                                <input type="text" id="vel-distancia" class="auto-calc" placeholder="Ex: 125">
+                            </div>
                             
                             <div class="result-display" style="display: flex; flex-direction: column; gap: 10px; background-color: transparent; color: var(--text-color); border: 2px solid var(--sidebar-border); box-shadow: none; text-align: left;">
                                 <div><span style="color: var(--accent-color); font-weight: bold;">Metros por segundo:</span> <span id="out-vel-ms">5</span> m/s</div>
                                 <div><span style="color: var(--accent-color); font-weight: bold;">Quilômetros por hora:</span> <span id="out-vel-kmh">18</span> km/h</div>
-                                <div><span style="color: var(--accent-color); font-weight: bold;">Mach (Velocidade do Som):</span> <span id="out-vel-mach">0.01</span> Mach</div>
+                                <div><span style="color: var(--accent-color); font-weight: bold;">Velocidade do Som:</span> <span id="out-vel-mach">0.01</span> Mach</div>
+                                <div><span style="color: var(--accent-color); font-weight: bold;">Tempo Estimado:</span> <span id="out-vel-tempo">0 segundos</span></div>
                             </div>
                         </div>
                     </div>
@@ -164,7 +170,7 @@
                     <p style="margin-bottom: 15px;">A velocidade e o alcance de ataques com armas dependem do atributo principal (<strong>Força ou Destreza</strong>) investido e do tipo de armamento escolhido. Utilize o painel abaixo para encontrar as capacidades exatas do seu armamento.</p>
 
                     <div class="calc-box">
-                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de Velocidade e Alcance</h4>
+                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de Alcance e Velocidade</h4>
                         
                         <div class="input-group">
                             <label>Atributo Total (Força ou Destreza + Buffs):</label>
