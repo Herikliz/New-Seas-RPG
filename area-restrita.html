@@ -107,6 +107,86 @@
 
                 <div class="rank-box">
                     <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
+                        RECOMPENSAS DE DOMINAÇÃO <span class="toggle-icon">▼</span>
+                    </h2>
+                    
+                    <div class="toggle-content">
+                        <div class="admin-generator-box" id="admin-generator-dominacao">
+                            <div class="input-group">
+                                <label for="selectIlhaDominacao">Ilha Dominada</label>
+                                <select id="selectIlhaDominacao" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    <option value="" disabled selected>Carregando ilhas...</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group" id="container-ilha-manual-dom" style="display: none;">
+                                <input type="text" id="inputIlhaManualDom" placeholder="Nome da Ilha (Manual)" style="margin-bottom: 10px;">
+                                <select id="selectMarManualDom" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    <option value="East Blue">East Blue</option>
+                                    <option value="South Blue">South Blue</option>
+                                    <option value="West Blue">West Blue</option>
+                                    <option value="North Blue">North Blue</option>
+                                    <option value="Paraíso">Paraíso</option>
+                                    <option value="Calm Belt">Calm Belt</option>
+                                    <option value="Novo Mundo">Novo Mundo</option>
+                                </select>
+                            </div>
+
+                            <div class="admin-checkbox-group" style="margin-bottom: 15px; align-items: center; display: flex; gap: 10px;">
+                                <label style="flex: 1;"><input type="checkbox" id="checkGanhouPtsDom" checked> Recebe Pontos?</label>
+                                <input type="text" id="inputPtsDom" placeholder="Pontos (ver limites do Mar)" style="flex: 2; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                            </div>
+
+                            <div class="admin-checkbox-group" style="margin-bottom: 15px; align-items: center; display: flex; gap: 10px;">
+                                <label style="flex: 1;"><input type="checkbox" id="checkGanhouBerriesDom" checked> Recebe Berries?</label>
+                                <input type="text" id="inputBerriesDom" placeholder="Berries (ver limites do Mar)" style="flex: 2; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                            </div>
+
+                            <div class="admin-checkbox-group" style="margin-bottom: 20px;">
+                                <label><input type="checkbox" id="checkGanhouNPCDom" checked> Recebe NPCs Comuns?</label>
+                            </div>
+
+                            <div class="input-group" style="margin-top: 15px;">
+                                <label id="label-jogadores-dominacao">Jogador Dominador</label>
+                                <div id="container-jogadores-dominacao" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                                    <div class="jogador-row-dom" style="border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);">
+                                        <input type="text" class="nome-jogador-dominacao" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
+                                        <div class="admin-checkbox-group" style="margin-bottom: 0;">
+                                            <label><input type="checkbox" class="check-haki-dominacao"> Tem Haki?</label>
+                                            <label><input type="checkbox" class="check-akuma-dominacao"> Tem Fruta?</label>
+                                            <label><input type="checkbox" class="check-40k-dominacao"> Tem 40.000 pontos ou mais?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 10px;">
+                                    <button id="btn-add-jogador-dominacao" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
+                                    <button id="btn-rem-jogador-dominacao" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="narradoresDominacao">Número de Narradores</label>
+                                <input type="number" id="narradoresDominacao" value="1" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                            </div>
+
+                            <div id="container-nomes-narradores-dominacao">
+                                <div class="input-group">
+                                    <label for="nomeNarradorDom1">Nome do Narrador</label>
+                                    <input type="text" id="nomeNarradorDom1" placeholder="Nome do Narrador" class="nome-narrador-dom">
+                                </div>
+                            </div>
+
+                            <div class="output-container">
+                                <pre id="resultadoDominacao" class="active" style="display: none;"></pre>
+                            </div>
+
+                            <button id="btn-copiar-resultado-dominacao" class="btn-admin">Copiar Resultado</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
                         RECOMPENSAS DE EXTRA-NARRADA <span class="toggle-icon">▼</span>
                     </h2>
                     

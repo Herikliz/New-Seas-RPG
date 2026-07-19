@@ -2451,7 +2451,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         textoBloco += `Berries: ฿${formatarNum(berriesDeste)}\n\n`;
                     });
 
-                    // Encontra a maior pontuação individual entre os jogadores desta caçada
                     let maiorPtsJogador = 0;
                     jogadoresData.forEach(j => {
                         let ptsJogador = ptsBase;
@@ -2488,6 +2487,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             preResultadoCacada.textContent = blocosTexto.join("\n\n-----\n\n");
             preResultadoCacada.style.display = 'block';
+            preResultadoCacada.parentElement.style.display = 'block';
         }
 
         if (btnCopiarCacada) {
@@ -2509,6 +2509,451 @@ document.addEventListener('DOMContentLoaded', () => {
                         btnCopiarCacada.style.backgroundColor = originalBg;
                         btnCopiarCacada.style.color = originalColor;
                         delete btnCopiarCacada.dataset.copying;
+                    }, 1000);
+                });
+            });
+        }
+
+        const selectIlhaDom = document.getElementById('selectIlhaDominacao');
+        const containerIlhaManualDom = document.getElementById('container-ilha-manual-dom');
+        const inputIlhaManualDom = document.getElementById('inputIlhaManualDom');
+        const selectMarManualDom = document.getElementById('selectMarManualDom');
+        
+        const checkGanhouPtsDom = document.getElementById('checkGanhouPtsDom');
+        const inputPtsDom = document.getElementById('inputPtsDom');
+        const checkGanhouBerriesDom = document.getElementById('checkGanhouBerriesDom');
+        const inputBerriesDom = document.getElementById('inputBerriesDom');
+        const checkGanhouNPCDom = document.getElementById('checkGanhouNPCDom');
+
+        const inputNarradoresDom = document.getElementById('narradoresDominacao');
+        const containerNarradoresDom = document.getElementById('container-nomes-narradores-dominacao');
+        const preResultadoDominacao = document.getElementById('resultadoDominacao');
+        const btnCopiarDominacao = document.getElementById('btn-copiar-resultado-dominacao');
+        const btnAddJogadorDom = document.getElementById('btn-add-jogador-dominacao');
+        const btnRemJogadorDom = document.getElementById('btn-rem-jogador-dominacao');
+        const containerJogadoresDom = document.getElementById('container-jogadores-dominacao');
+
+        if (selectIlhaDom && typeof bancoDeIlhas !== 'undefined') {
+            selectIlhaDom.innerHTML = '<option value="" disabled selected>Selecione a ilha...</option>';
+            for (const [mar, ilhas] of Object.entries(bancoDeIlhas)) {
+                if (mar === "Ilhas Sem Localização Exata") continue;
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = mar;
+                
+                let ilhasSorted = [...ilhas].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+                ilhasSorted.forEach(ilha => {
+                    const opt = document.createElement('option');
+                    opt.value = ilha.nome;
+                    opt.dataset.mar = mar;
+                    opt.textContent = ilha.nome;
+                    optgroup.appendChild(opt);
+                });
+                selectIlhaDom.appendChild(optgroup);
+            }
+            
+            const optManual = document.createElement('option');
+            optManual.value = 'manual';
+            optManual.textContent = '✏️ Inserir Manualmente';
+            selectIlhaDom.appendChild(optManual);
+        }
+
+        function atualizarLimitesDom(mar) {
+            let ptsText = "";
+            let berText = "";
+            if (mar.includes("Blue")) {
+                ptsText = "Entre 1.500 e 2.500";
+                berText = "Entre 30.000.000 e 50.000.000";
+            } else if (mar === "Paraíso") {
+                ptsText = "Entre 2.500 e 3.500";
+                berText = "Entre 50.000.000 e 100.000.000";
+            } else if (mar === "Calm Belt") {
+                ptsText = "Entre 3.500 e 4.500";
+                berText = "Variável (Defina o valor)";
+            } else if (mar === "Novo Mundo") {
+                ptsText = "Entre 4.500 e 5.500";
+                berText = "Entre 100.000.000 e 150.000.000";
+            } else {
+                ptsText = "Defina os pontos";
+                berText = "Defina as berries";
+            }
+            if (inputPtsDom) inputPtsDom.placeholder = ptsText;
+            if (inputBerriesDom) inputBerriesDom.placeholder = berText;
+        }
+
+        if (selectIlhaDom) {
+            selectIlhaDom.addEventListener('change', function() {
+                if (this.value === 'manual') {
+                    if (containerIlhaManualDom) containerIlhaManualDom.style.display = 'block';
+                    if (selectMarManualDom) atualizarLimitesDom(selectMarManualDom.value);
+                } else {
+                    if (containerIlhaManualDom) containerIlhaManualDom.style.display = 'none';
+                    const selectedOpt = this.options[this.selectedIndex];
+                    atualizarLimitesDom(selectedOpt.dataset.mar);
+                }
+                gerarTextoDominacao();
+            });
+        }
+
+        if (selectMarManualDom) selectMarManualDom.addEventListener('change', function() {
+            atualizarLimitesDom(this.value);
+            gerarTextoDominacao();
+        });
+
+        if (inputIlhaManualDom) inputIlhaManualDom.addEventListener('input', gerarTextoDominacao);
+        
+        if (inputPtsDom) {
+            inputPtsDom.addEventListener('input', function(e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                if (valor !== '') {
+                    let num = parseInt(valor, 10);
+                    if (selectIlhaDom && selectIlhaDom.value !== "") {
+                        let mar = selectIlhaDom.value === 'manual' ? selectMarManualDom.value : selectIlhaDom.options[selectIlhaDom.selectedIndex].dataset.mar;
+                        let maxPts = Infinity;
+                        if (mar.includes("Blue")) maxPts = 2500;
+                        else if (mar === "Paraíso") maxPts = 3500;
+                        else if (mar === "Calm Belt") maxPts = 4500;
+                        else if (mar === "Novo Mundo") maxPts = 5500;
+                        
+                        if (num > maxPts) num = maxPts;
+                    }
+                    e.target.value = formatarNum(num);
+                } else {
+                    e.target.value = '';
+                }
+                gerarTextoDominacao();
+            });
+            inputPtsDom.addEventListener('blur', function(e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                if (valor !== '') {
+                    let num = parseInt(valor, 10);
+                    if (selectIlhaDom && selectIlhaDom.value !== "") {
+                        let mar = selectIlhaDom.value === 'manual' ? selectMarManualDom.value : selectIlhaDom.options[selectIlhaDom.selectedIndex].dataset.mar;
+                        let minPts = 0;
+                        if (mar.includes("Blue")) minPts = 1500;
+                        else if (mar === "Paraíso") minPts = 2500;
+                        else if (mar === "Calm Belt") minPts = 3500;
+                        else if (mar === "Novo Mundo") minPts = 4500;
+                        
+                        if (num < minPts) {
+                            e.target.value = formatarNum(minPts);
+                            gerarTextoDominacao();
+                        }
+                    }
+                }
+            });
+        }
+        
+        if (inputBerriesDom) {
+            inputBerriesDom.addEventListener('input', function(e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                if (valor !== '') {
+                    let num = parseInt(valor, 10);
+                    if (selectIlhaDom && selectIlhaDom.value !== "") {
+                        let mar = selectIlhaDom.value === 'manual' ? selectMarManualDom.value : selectIlhaDom.options[selectIlhaDom.selectedIndex].dataset.mar;
+                        let maxBer = Infinity;
+                        if (mar.includes("Blue")) maxBer = 50000000;
+                        else if (mar === "Paraíso") maxBer = 100000000;
+                        else if (mar === "Novo Mundo") maxBer = 150000000;
+                        
+                        if (maxBer !== Infinity && num > maxBer) num = maxBer;
+                    }
+                    e.target.value = formatarNum(num);
+                } else {
+                    e.target.value = '';
+                }
+                gerarTextoDominacao();
+            });
+            inputBerriesDom.addEventListener('blur', function(e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                if (valor !== '') {
+                    let num = parseInt(valor, 10);
+                    if (selectIlhaDom && selectIlhaDom.value !== "") {
+                        let mar = selectIlhaDom.value === 'manual' ? selectMarManualDom.value : selectIlhaDom.options[selectIlhaDom.selectedIndex].dataset.mar;
+                        let minBer = 0;
+                        if (mar.includes("Blue")) minBer = 30000000;
+                        else if (mar === "Paraíso") minBer = 50000000;
+                        else if (mar === "Novo Mundo") minBer = 100000000;
+                        
+                        if (num < minBer) {
+                            e.target.value = formatarNum(minBer);
+                            gerarTextoDominacao();
+                        }
+                    }
+                }
+            });
+        }
+        
+        if (checkGanhouPtsDom) checkGanhouPtsDom.addEventListener('change', function() {
+            if (inputPtsDom) {
+                inputPtsDom.disabled = !this.checked;
+                if (!this.checked) inputPtsDom.value = '';
+            }
+            gerarTextoDominacao();
+        });
+        if (checkGanhouBerriesDom) checkGanhouBerriesDom.addEventListener('change', function() {
+            if (inputBerriesDom) {
+                inputBerriesDom.disabled = !this.checked;
+                if (!this.checked) inputBerriesDom.value = '';
+            }
+            gerarTextoDominacao();
+        });
+        if (checkGanhouNPCDom) checkGanhouNPCDom.addEventListener('change', gerarTextoDominacao);
+
+        function atualizarLabelsDominacao() {
+            const qtdJ = containerJogadoresDom.querySelectorAll('.jogador-row-dom').length;
+            const labelJ = document.getElementById('label-jogadores-dominacao');
+            if (labelJ) labelJ.textContent = qtdJ > 1 ? "Jogadores Dominadores" : "Jogador Dominador";
+        }
+
+        function attachJogadorDomEvents(row) {
+            row.querySelector('.nome-jogador-dominacao').addEventListener('input', gerarTextoDominacao);
+            row.querySelector('.check-haki-dominacao').addEventListener('change', gerarTextoDominacao);
+            row.querySelector('.check-akuma-dominacao').addEventListener('change', gerarTextoDominacao);
+            row.querySelector('.check-40k-dominacao').addEventListener('change', gerarTextoDominacao);
+        }
+
+        if (btnAddJogadorDom) {
+            btnAddJogadorDom.addEventListener('click', () => {
+                const novaRow = document.createElement('div');
+                novaRow.className = 'jogador-row-dom';
+                novaRow.style.cssText = 'border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);';
+                novaRow.innerHTML = `
+                    <input type="text" class="nome-jogador-dominacao" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
+                    <div class="admin-checkbox-group" style="margin-bottom: 0;">
+                        <label><input type="checkbox" class="check-haki-dominacao"> Tem Haki?</label>
+                        <label><input type="checkbox" class="check-akuma-dominacao"> Tem Fruta?</label>
+                        <label><input type="checkbox" class="check-40k-dominacao"> Tem 40.000 pontos ou mais?</label>
+                    </div>
+                `;
+                containerJogadoresDom.appendChild(novaRow);
+                attachJogadorDomEvents(novaRow);
+                if (typeof atualizarLabelsDominacao === 'function') atualizarLabelsDominacao();
+                gerarTextoDominacao();
+            });
+        }
+
+        if (btnRemJogadorDom) {
+            btnRemJogadorDom.addEventListener('click', () => {
+                const rows = containerJogadoresDom.querySelectorAll('.jogador-row-dom');
+                if (rows.length > 1) {
+                    containerJogadoresDom.removeChild(rows[rows.length - 1]);
+                    if (typeof atualizarLabelsDominacao === 'function') atualizarLabelsDominacao();
+                    gerarTextoDominacao();
+                }
+            });
+        }
+
+        if (containerJogadoresDom) {
+            const firstRow = containerJogadoresDom.querySelector('.jogador-row-dom');
+            if (firstRow) attachJogadorDomEvents(firstRow);
+        }
+
+        function atualizarCamposNarradoresDom() {
+            let qtd = parseInt(inputNarradoresDom.value, 10);
+            if (isNaN(qtd) || qtd < 1) qtd = 1;
+            
+            containerNarradoresDom.innerHTML = '';
+            
+            if (qtd === 1) {
+                containerNarradoresDom.innerHTML = `
+                    <div class="input-group">
+                        <label for="nomeNarradorDom1">Nome do Narrador</label>
+                        <input type="text" id="nomeNarradorDom1" placeholder="Nome do Narrador" class="nome-narrador-dom">
+                    </div>
+                `;
+            } else {
+                for (let i = 1; i <= qtd; i++) {
+                    containerNarradoresDom.innerHTML += `
+                        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                            <div class="input-group" style="flex: 2; margin-bottom: 0;">
+                                <label for="nomeNarradorDom${i}">Nome do Narrador ${i}</label>
+                                <input type="text" id="nomeNarradorDom${i}" placeholder="Nome do Narrador" class="nome-narrador-dom">
+                            </div>
+                            <div class="input-group" style="flex: 1; margin-bottom: 0;">
+                                <label for="qtdNarracoesDom${i}">Narrações Feitas</label>
+                                <input type="number" id="qtdNarracoesDom${i}" value="1" min="1" class="qtd-narracoes-dom" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            
+            const inputs = containerNarradoresDom.querySelectorAll('input');
+            inputs.forEach(input => input.addEventListener('input', gerarTextoDominacao));
+            gerarTextoDominacao();
+        }
+
+        if (inputNarradoresDom) {
+            inputNarradoresDom.addEventListener('input', atualizarCamposNarradoresDom);
+            atualizarCamposNarradoresDom();
+        }
+
+        function gerarTextoDominacao() {
+            if (!selectIlhaDom || selectIlhaDom.value === "") return;
+
+            let mar = selectIlhaDom.value === 'manual' ? selectMarManualDom.value : selectIlhaDom.options[selectIlhaDom.selectedIndex].dataset.mar;
+            let nomeIlha = selectIlhaDom.value === 'manual' ? inputIlhaManualDom.value.trim() : selectIlhaDom.value;
+            if (!nomeIlha) nomeIlha = "Ilha Desconhecida";
+
+            let minPts = 0, maxPts = Infinity;
+            let minBer = 0, maxBer = Infinity;
+            let npcBase = 0;
+
+            if (mar.includes("Blue")) {
+                minPts = 1500; maxPts = 2500; minBer = 30000000; maxBer = 50000000; npcBase = 100;
+            } else if (mar === "Paraíso") {
+                minPts = 2500; maxPts = 3500; minBer = 50000000; maxBer = 100000000; npcBase = 250;
+            } else if (mar === "Calm Belt") {
+                minPts = 3500; maxPts = 4500; minBer = 0; maxBer = Infinity; npcBase = 300;
+            } else if (mar === "Novo Mundo") {
+                minPts = 4500; maxPts = 5500; minBer = 100000000; maxBer = 150000000; npcBase = 500;
+            }
+
+            let pts = 0;
+            if (checkGanhouPtsDom.checked) {
+                pts = parseInt(inputPtsDom.value.replace(/\D/g, ''), 10) || 0;
+                if (pts < minPts) pts = minPts;
+                if (pts > maxPts) pts = maxPts;
+            }
+
+            let ber = 0;
+            if (checkGanhouBerriesDom.checked) {
+                ber = parseInt(inputBerriesDom.value.replace(/\D/g, ''), 10) || 0;
+                if (ber < minBer) ber = minBer;
+                if (maxBer !== Infinity && ber > maxBer) ber = maxBer;
+            }
+
+            let npcFinal = checkGanhouNPCDom.checked ? npcBase : 0;
+
+            let jogadoresData = [];
+            if (containerJogadoresDom) {
+                containerJogadoresDom.querySelectorAll('.jogador-row-dom').forEach(row => {
+                    let nome = row.querySelector('.nome-jogador-dominacao').value.trim();
+                    if (nome === '') nome = 'Jogador';
+                    let hasHaki = row.querySelector('.check-haki-dominacao').checked;
+                    let hasAkuma = row.querySelector('.check-akuma-dominacao').checked;
+                    let is40k = row.querySelector('.check-40k-dominacao').checked;
+                    jogadoresData.push({ nome, hasHaki, hasAkuma, is40k });
+                });
+            }
+            if (jogadoresData.length === 0) jogadoresData.push({ nome: "Jogador", hasHaki: false, hasAkuma: false, is40k: false });
+            let numJogadores = jogadoresData.length;
+
+            let qtdNarradores = parseInt(inputNarradoresDom.value, 10) || 1;
+            let totalNarracoes = 0;
+            let dadosNarradores = [];
+            
+            if (qtdNarradores === 1) {
+                let nomeNarrador = document.getElementById('nomeNarradorDom1') ? document.getElementById('nomeNarradorDom1').value.trim() : '';
+                if (nomeNarrador === '') nomeNarrador = "Narrador";
+                dadosNarradores.push({ nome: nomeNarrador, narracoes: 1 });
+                totalNarracoes = 1;
+            } else {
+                for (let i = 1; i <= qtdNarradores; i++) {
+                    let nome = document.getElementById(`nomeNarradorDom${i}`) ? document.getElementById(`nomeNarradorDom${i}`).value.trim() : '';
+                    if (nome === '') nome = `Narrador ${i}`;
+                    let narracoes = document.getElementById(`qtdNarracoesDom${i}`) ? parseInt(document.getElementById(`qtdNarracoesDom${i}`).value, 10) : 1;
+                    if (isNaN(narracoes) || narracoes < 1) narracoes = 1;
+                    totalNarracoes += narracoes;
+                    dadosNarradores.push({ nome: nome, narracoes: narracoes });
+                }
+            }
+
+            let textoFinal = `\`\`\`Recompensas pela Dominação de ${nomeIlha}:\n`;
+            let maiorPtsJogador = 0;
+            
+            let berriesPorJogador = Math.floor(ber / numJogadores);
+            let restoBerries = ber % numJogadores;
+
+            jogadoresData.forEach((j, index) => {
+                let ptsJogador = pts;
+                let bonusHakiAkuma = Math.floor(pts / 2);
+                
+                if (j.hasHaki) ptsJogador += bonusHakiAkuma;
+                if (j.hasAkuma) ptsJogador += bonusHakiAkuma;
+                
+                if (ptsJogador > maiorPtsJogador) maiorPtsJogador = ptsJogador;
+
+                textoFinal += `Recompensas do Jogador (${j.nome}):\n`;
+                
+                if (checkGanhouPtsDom.checked) {
+                    if (j.is40k) {
+                        textoFinal += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+                    } else {
+                        textoFinal += `Pontos de Atributo: ${formatarNum(pts)}\n`;
+                        if (j.hasHaki) textoFinal += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
+                        if (j.hasAkuma) textoFinal += `Pontos de Akuma no Mi: ${formatarNum(bonusHakiAkuma)}\n`;
+                    }
+                }
+                
+                if (checkGanhouBerriesDom.checked) {
+                    let berriesDeste = berriesPorJogador;
+                    if (index === 0) berriesDeste += restoBerries;
+                    
+                    if (mar === 'Calm Belt' && ber === 0 && inputBerriesDom.value.replace(/\D/g, '') === "") {
+                        textoFinal += `Berries: Variável (Definido pelo ADM avaliador)\n`;
+                    } else {
+                        textoFinal += `Berries: ฿${formatarNum(berriesDeste)}\n`;
+                    }
+                }
+                
+                if (checkGanhouNPCDom.checked && npcFinal > 0) {
+                    textoFinal += `NPCs Comuns Recebidos: ${formatarNum(npcFinal)} NPCs\n`;
+                }
+                
+                textoFinal += `\n`;
+            });
+
+            dadosNarradores.forEach((narrador, index) => {
+                let porcentagem = narrador.narracoes / totalNarracoes;
+                
+                let ptsOpc1 = Math.floor((maiorPtsJogador / 2) * porcentagem);
+                let berOpc1 = Math.floor((ber / 2) * porcentagem);
+                let ptsOpc2 = Math.floor(maiorPtsJogador * porcentagem);
+                let berOpc3 = Math.floor(ber * porcentagem);
+                
+                textoFinal += `Recompensas da Narração (${narrador.nome}):\nPode escolher entre\n`;
+                
+                if (mar === 'Calm Belt' && ber === 0 && inputBerriesDom.value.replace(/\D/g, '') === "") {
+                    textoFinal += `- ${formatarNum(ptsOpc1)} pontos livres e ฿Variável\n`;
+                    textoFinal += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
+                    textoFinal += `- ฿Variável`;
+                } else {
+                    textoFinal += `- ${formatarNum(ptsOpc1)} pontos livres e ฿${formatarNum(berOpc1)}\n`;
+                    textoFinal += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
+                    textoFinal += `- ฿${formatarNum(berOpc3)}`;
+                }
+                
+                if (index < dadosNarradores.length - 1) textoFinal += "\n\n";
+            });
+
+            textoFinal += "\`\`\`";
+
+            preResultadoDominacao.textContent = textoFinal;
+            preResultadoDominacao.style.display = 'block';
+            preResultadoDominacao.parentElement.style.display = 'block';
+            preResultadoDominacao.classList.add('active');
+        }
+
+        if (btnCopiarDominacao) {
+            btnCopiarDominacao.addEventListener('click', () => {
+                if (!preResultadoDominacao.textContent) return;
+                if (btnCopiarDominacao.dataset.copying) return;
+                btnCopiarDominacao.dataset.copying = "true";
+                window.copiarTextoUniversal(preResultadoDominacao.textContent).then(() => {
+                    let originalText = btnCopiarDominacao.textContent;
+                    let originalBg = btnCopiarDominacao.style.backgroundColor;
+                    let originalColor = btnCopiarDominacao.style.color;
+
+                    btnCopiarDominacao.textContent = "Texto Copiado!";
+                    btnCopiarDominacao.style.backgroundColor = "#4caf50";
+                    btnCopiarDominacao.style.color = "#fff";
+                    
+                    setTimeout(() => {
+                        btnCopiarDominacao.textContent = originalText;
+                        btnCopiarDominacao.style.backgroundColor = originalBg;
+                        btnCopiarDominacao.style.color = originalColor;
+                        delete btnCopiarDominacao.dataset.copying;
                     }, 1000);
                 });
             });
@@ -4632,7 +5077,6 @@ window.donosDeAkuma = {
     "Horo Horo no Mi": "???",
     "Inu Inu no Mi, Modelo: Cérbero [Original do RPG]": "Dante Salvatore",
     "Inu Inu no Mi, Modelo: Ōkuchi no Makami": "Yuu D'Couteau",
-    "Inu Inu no Mi, Modelo: Raposa de Nove Caudas": "Makima Laufey",
     "Kage Kage no Mi": "???",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
     "Kumo Kumo no Mi": "???",
