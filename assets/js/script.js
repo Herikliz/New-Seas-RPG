@@ -928,13 +928,65 @@ function runEstaminaCalc() {
     let elGastoDano = document.getElementById('res-gasto-dano');
     if (elGastoDano) elGastoDano.innerText = gastoDano.toLocaleString('pt-BR');
 
-    let hakiArm = getCalcVal('calc-haki-arm');
-    let hakiObs = getCalcVal('calc-haki-obs');
-    let gastoHaki = (hakiArm * 300) + (hakiObs * 200);
+    let subtotalAcao = gastoBuff + gastoVel + gastoDano;
+    let percHaki = 0;
+    let fixoHaki = 0;
+
+    let selArm = document.getElementById('calc-haki-arm-select');
+    if (selArm) {
+        if (selArm.value === 'invisivel') percHaki += 5;
+        else if (selArm.value === 'visivel') percHaki += 10;
+        else if (selArm.value === 'emissao') percHaki += 25;
+        else if (selArm.value === 'avancado') percHaki += 50;
+        else if (selArm.value === 'fullbody') percHaki += 75;
+    }
+
+    let selObs = document.getElementById('calc-haki-obs-select');
+    let inpMetros = document.getElementById('calc-haki-obs-metros');
+    if (selObs) {
+        if (inpMetros) {
+            if (selObs.value === 'basica') {
+                inpMetros.style.display = 'block';
+                fixoHaki += parseInt(inpMetros.value.replace(/\D/g, ''), 10) || 0;
+            } else {
+                inpMetros.style.display = 'none';
+            }
+        }
+        if (selObs.value === 'intencao') fixoHaki += 500;
+        else if (selObs.value === 'premonicao') fixoHaki += 750;
+        else if (selObs.value === 'avancado') percHaki += 50;
+    }
+
+    let selRei = document.getElementById('calc-haki-rei-select');
+    if (selRei) {
+        if (selRei.value === 'dominacao') fixoHaki += Math.floor(estaminaTotal * 0.02);
+        else if (selRei.value === 'incapacitacao') fixoHaki += Math.floor(estaminaTotal * 0.05);
+        else if (selRei.value === 'assassinato') percHaki += 25;
+        else if (selRei.value === 'pressao') percHaki += 50;
+        else if (selRei.value === 'infusao') percHaki += 90;
+    }
+
+    let gastoHakiPerc = Math.floor(subtotalAcao * (percHaki / 100));
+    let gastoHaki = gastoHakiPerc + fixoHaki;
+    
     let elGastoHaki = document.getElementById('res-gasto-haki');
     if (elGastoHaki) elGastoHaki.innerText = gastoHaki.toLocaleString('pt-BR');
 
-    let gastoTotal = gastoBuff + gastoVel + gastoDano + gastoHaki;
+    let gastoTotal = subtotalAcao + gastoHaki;
+    let reducaoPerc = getCalcVal('calc-reducao');
+    let desconto = 0;
+    
+    if (reducaoPerc > 0) {
+        desconto = Math.floor(gastoTotal * (reducaoPerc / 100));
+        gastoTotal -= desconto;
+    }
+    
+    let elGastoReducao = document.getElementById('res-gasto-reducao');
+    if (elGastoReducao) {
+        if (desconto > 0) elGastoReducao.innerText = "-" + desconto.toLocaleString('pt-BR');
+        else elGastoReducao.innerText = "0";
+    }
+
     let elGastoTotal = document.getElementById('res-gasto-total');
     if (elGastoTotal) elGastoTotal.innerText = gastoTotal.toLocaleString('pt-BR');
 

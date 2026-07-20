@@ -92,7 +92,7 @@
                 </h2>
                 <div class="toggle-content rank-box">
                     <ul style="margin-left: 20px; margin-bottom: 15px;">
-                        <li style="margin-bottom: 15px;"><strong>Armamento e Observação:</strong> A cada cena com o Haki do Armamento ativo, você gasta 300 de sua Estamina, e gasta 200 de Estamina a cada turno com Haki da Observação ativo. Caso mantenha os dois ativos ao mesmo tempo vai gastar 500 por turno.</li>
+                        <li style="margin-bottom: 15px;"><strong>Haki:</strong> O uso contínuo de Haki exige maior esforço dependendo da técnica. Verifique a descrição de cada Haki na página correspondente para os valores exatos.</li>
                         <li style="margin-bottom: 15px;"><strong>Akuma no Mi:</strong> Obviamente caso tenha e use uma Akuma no Mi pra atacar ou para auxiliar em um ataque ela contará na soma de Estamina gasta por dano.</li>
                     </ul>
                 </div>
@@ -121,12 +121,41 @@
                             <input type="text" id="calc-dano" class="auto-calc" placeholder="Ex: 7.000">
                         </div>
                         <div class="calc-input-group">
-                            <label>Cenas com Armamento Ativo:</label>
-                            <input type="text" id="calc-haki-arm" class="auto-calc" placeholder="Ex: 1">
+                            <label>Haki do Armamento:</label>
+                            <select id="calc-haki-arm-select" class="auto-calc" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b0bec5%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095a17.6%2017.6%200%200%200%205.5-12.8c0-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto;">
+                                <option value="nenhum">Nenhum</option>
+                                <option value="invisivel">Invisível (+5%)</option>
+                                <option value="visivel">Visível (+10%)</option>
+                                <option value="emissao">Emissão (+25%)</option>
+                                <option value="avancado">Avançado (+50%)</option>
+                                <option value="fullbody">Full Body (+75%)</option>
+                            </select>
+                        </div>
+                        <div class="calc-input-group" style="position: relative;">
+                            <label>Haki da Observação:</label>
+                            <select id="calc-haki-obs-select" class="auto-calc" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b0bec5%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095a17.6%2017.6%200%200%200%205.5-12.8c0-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto;">
+                                <option value="nenhum">Nenhum</option>
+                                <option value="basica">Básica (1 por metro)</option>
+                                <option value="intencao">Intenção (Fixo: 500)</option>
+                                <option value="premonicao">Premonição (Fixo: 750)</option>
+                                <option value="avancado">Avançado (+50%)</option>
+                            </select>
+                            <input type="text" id="calc-haki-obs-metros" class="auto-calc" placeholder="Distância (Metros)" style="display: none; margin-top: 10px; width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none;">
                         </div>
                         <div class="calc-input-group">
-                            <label>Turnos com Observação Ativo:</label>
-                            <input type="text" id="calc-haki-obs" class="auto-calc" placeholder="Ex: 2">
+                            <label>Haki do Rei:</label>
+                            <select id="calc-haki-rei-select" class="auto-calc" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b0bec5%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095a17.6%2017.6%200%200%200%205.5-12.8c0-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto;">
+                                <option value="nenhum">Nenhum</option>
+                                <option value="dominacao">Dominação (2% Estamina Máx)</option>
+                                <option value="incapacitacao">Incapacitação (5% Estamina Máx)</option>
+                                <option value="assassinato">Assassinato de Observação (+25%)</option>
+                                <option value="pressao">Pressão (+50%)</option>
+                                <option value="infusao">Infusão (+90%)</option>
+                            </select>
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Redução de Gasto (%):</label>
+                            <input type="text" id="calc-reducao" class="auto-calc" placeholder="Ex: 10">
                         </div>
                     </div>
                     
@@ -138,6 +167,7 @@
                         <p>Gasto por Velocidade: <span id="res-gasto-vel" style="color: #ff4c4c;">0</span></p>
                         <p>Gasto por Dano: <span id="res-gasto-dano" style="color: #ff4c4c;">0</span></p>
                         <p>Gasto por Haki: <span id="res-gasto-haki" style="color: #ff4c4c;">0</span></p>
+                        <p>Redução Aplicada: <span id="res-gasto-reducao" style="color: #4caf50;">0</span></p>
                         
                         <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--sidebar-border);">
                             <p style="font-size: 22px; font-weight: bold;">Estamina Gasta Total: <span id="res-gasto-total" style="color: #ff4c4c;">0</span></p>
