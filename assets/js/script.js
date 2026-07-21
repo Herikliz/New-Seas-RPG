@@ -4364,7 +4364,7 @@ function iniciarSistemaDeAbas() {
                 imgElement.className = "jornal-page-image";
                 
                 imgElement.onerror = function() {
-                    imgElement.outerHTML = `<div class="img-placeholder" style="width: 100%;">Imagem não encontrada.<br><br>Avise ao <a href="https://wa.link/b6zcmn" target="_blank">Herikliz</a> que a imagem não está aqui, e ele a colocará assim que possível.</div>`;
+                    imgElement.outerHTML = `<div class="img-placeholder" style="width: 100%;">Imagem não encontrada.<br><br>Avise o <a href="https://wa.link/b6zcmn" target="_blank">ADM Herikliz</a> que a imagem não está aqui, e ele a colocará assim que possível.</div>`;
                 };
 
                 if (direcaoAnimacao === 'forward') {
