@@ -4627,79 +4627,82 @@ function initGallerySort() {
     if (!window.location.pathname.includes('aparencias.html')) return;
 
     const select = document.getElementById('sort-gallery');
-    const grid = document.querySelector('.gallery-grid');
-    if (!grid) return;
+    const grids = document.querySelectorAll('.gallery-grid');
+    if (grids.length === 0) return;
 
     function sortGallery() {
-        const items = Array.from(grid.querySelectorAll('.gallery-item'));
         const sortType = select ? select.value : 'title-az';
 
-        items.sort((a, b) => {
-            const titleA = a.querySelector('.gallery-title') ? a.querySelector('.gallery-title').textContent.trim() : '';
-            const titleB = b.querySelector('.gallery-title') ? b.querySelector('.gallery-title').textContent.trim() : '';
-            
-            const subA = a.querySelector('.gallery-subtitle') ? a.querySelector('.gallery-subtitle').textContent.trim() : '';
-            const subB = b.querySelector('.gallery-subtitle') ? b.querySelector('.gallery-subtitle').textContent.trim() : '';
-            
-            const idNodeA = a.querySelector('.gallery-id a');
-            const idTextA = idNodeA ? idNodeA.textContent.trim() : (a.querySelector('.gallery-id') ? a.querySelector('.gallery-id').textContent.trim() : '');
-            const idNodeB = b.querySelector('.gallery-id a');
-            const idTextB = idNodeB ? idNodeB.textContent.trim() : (b.querySelector('.gallery-id') ? b.querySelector('.gallery-id').textContent.trim() : '');
+        grids.forEach(grid => {
+            const items = Array.from(grid.querySelectorAll('.gallery-item'));
 
-            if (sortType.startsWith('title')) {
-                const isUnknownA = titleA.includes('???');
-                const isUnknownB = titleB.includes('???');
-
-                if (isUnknownA && !isUnknownB) return 1;
-                if (!isUnknownA && isUnknownB) return -1;
+            items.sort((a, b) => {
+                const titleA = a.querySelector('.gallery-title') ? a.querySelector('.gallery-title').textContent.trim() : '';
+                const titleB = b.querySelector('.gallery-title') ? b.querySelector('.gallery-title').textContent.trim() : '';
                 
-                if (sortType === 'title-az') return titleA.localeCompare(titleB, 'pt-BR');
-                return titleB.localeCompare(titleA, 'pt-BR');
-            }
-
-            if (sortType.startsWith('sub')) {
-                const isUnknownA = subA.includes('???');
-                const isUnknownB = subB.includes('???');
-                const isIaA = subA.replace(/[^A-Za-z]/g, '') === 'IA';
-                const isIaB = subB.replace(/[^A-Za-z]/g, '') === 'IA';
-                const isOcA = subA.replace(/[^A-Za-z]/g, '') === 'OC';
-                const isOcB = subB.replace(/[^A-Za-z]/g, '') === 'OC';
-
-                const rankA = isUnknownA ? 3 : (isIaA ? 2 : (isOcA ? 1 : 0));
-                const rankB = isUnknownB ? 3 : (isIaB ? 2 : (isOcB ? 1 : 0));
+                const subA = a.querySelector('.gallery-subtitle') ? a.querySelector('.gallery-subtitle').textContent.trim() : '';
+                const subB = b.querySelector('.gallery-subtitle') ? b.querySelector('.gallery-subtitle').textContent.trim() : '';
                 
-                if (rankA !== rankB) return rankA - rankB;
-                if (sortType === 'sub-az') return subA.localeCompare(subB, 'pt-BR');
-                return subB.localeCompare(subA, 'pt-BR');
-            }
+                const idNodeA = a.querySelector('.gallery-id a');
+                const idTextA = idNodeA ? idNodeA.textContent.trim() : (a.querySelector('.gallery-id') ? a.querySelector('.gallery-id').textContent.trim() : '');
+                const idNodeB = b.querySelector('.gallery-id a');
+                const idTextB = idNodeB ? idNodeB.textContent.trim() : (b.querySelector('.gallery-id') ? b.querySelector('.gallery-id').textContent.trim() : '');
 
-            if (sortType.startsWith('id')) {
-                const getVal = (str) => {
-                    const match = str.match(/\d+/);
-                    if (!match) return 99999;
-                    const num = parseInt(match[0], 10);
-                    if (num === 0) return -1;
-                    if (num === 9999) return 99998;
-                    return num;
-                };
+                if (sortType.startsWith('title')) {
+                    const isUnknownA = titleA.includes('???');
+                    const isUnknownB = titleB.includes('???');
 
-                const valA = getVal(idTextA);
-                const valB = getVal(idTextB);
-
-                const rankIdA = valA === -1 ? -1 : (valA === 99999 ? 2 : (valA === 99998 ? 1 : 0));
-                const rankIdB = valB === -1 ? -1 : (valB === 99999 ? 2 : (valB === 99998 ? 1 : 0));
-
-                if (rankIdA !== 0 || rankIdB !== 0) {
-                    if (rankIdA !== rankIdB) return rankIdA - rankIdB;
+                    if (isUnknownA && !isUnknownB) return 1;
+                    if (!isUnknownA && isUnknownB) return -1;
+                    
+                    if (sortType === 'title-az') return titleA.localeCompare(titleB, 'pt-BR');
+                    return titleB.localeCompare(titleA, 'pt-BR');
                 }
 
-                if (sortType === 'id-desc') return valB - valA;
-                return valA - valB;
-            }
-            return 0;
-        });
+                if (sortType.startsWith('sub')) {
+                    const isUnknownA = subA.includes('???');
+                    const isUnknownB = subB.includes('???');
+                    const isIaA = subA.replace(/[^A-Za-z]/g, '') === 'IA';
+                    const isIaB = subB.replace(/[^A-Za-z]/g, '') === 'IA';
+                    const isOcA = subA.replace(/[^A-Za-z]/g, '') === 'OC';
+                    const isOcB = subB.replace(/[^A-Za-z]/g, '') === 'OC';
 
-        items.forEach(item => grid.appendChild(item));
+                    const rankA = isUnknownA ? 3 : (isIaA ? 2 : (isOcA ? 1 : 0));
+                    const rankB = isUnknownB ? 3 : (isIaB ? 2 : (isOcB ? 1 : 0));
+                    
+                    if (rankA !== rankB) return rankA - rankB;
+                    if (sortType === 'sub-az') return subA.localeCompare(subB, 'pt-BR');
+                    return subB.localeCompare(subA, 'pt-BR');
+                }
+
+                if (sortType.startsWith('id')) {
+                    const getVal = (str) => {
+                        const match = str.match(/\d+/);
+                        if (!match) return 99999;
+                        const num = parseInt(match[0], 10);
+                        if (num === 0) return -1;
+                        if (num === 9999) return 99998;
+                        return num;
+                    };
+
+                    const valA = getVal(idTextA);
+                    const valB = getVal(idTextB);
+
+                    const rankIdA = valA === -1 ? -1 : (valA === 99999 ? 2 : (valA === 99998 ? 1 : 0));
+                    const rankIdB = valB === -1 ? -1 : (valB === 99999 ? 2 : (valB === 99998 ? 1 : 0));
+
+                    if (rankIdA !== 0 || rankIdB !== 0) {
+                        if (rankIdA !== rankIdB) return rankIdA - rankIdB;
+                    }
+
+                    if (sortType === 'id-desc') return valB - valA;
+                    return valA - valB;
+                }
+                return 0;
+            });
+
+            items.forEach(item => grid.appendChild(item));
+        });
     }
 
     if (select) select.addEventListener('change', sortGallery);
@@ -5129,16 +5132,16 @@ window.donosDeAkuma = {
     "Horo Horo no Mi": "???",
     "Inu Inu no Mi, Modelo: Cérbero [Original do RPG]": "Dante Salvatore",
     "Inu Inu no Mi, Modelo: Ōkuchi no Makami": "Yuu D'Couteau",
-    "Kage Kage no Mi": "???",
+    "Kage Kage no Mi": "Noctis",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
-    "Kumo Kumo no Mi": "???",
+    "Kumo Kumo no Mi": "Caelus",
     "Magu Magu no Mi": "Bloqueada",
     "Maki Maki no Mi": "???",
     "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mira Mira no Mi": "Bloqueada",
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Mori Mori no Mi": "???",
+    "Mori Mori no Mi": "Valkar",
     "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre": "MahaD Mnaj",
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
     "Ope Ope no Mi": "Morgana Du'lor",
@@ -5155,7 +5158,7 @@ window.donosDeAkuma = {
     "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Tori Tori no Mi, Modelo: Fênix": "Kozuki Shingen",
     "Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]": "Genma Gan",
-    "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "???",
+    "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "Thoriel",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
     "Uta Uta no Mi": "???",
     "Yami Yami no Mi": "Andrial D. Oran",
@@ -6093,7 +6096,7 @@ function initProcuradosCopy() {
 
         function attachIconIfNeeded(wrapper) {
             let wText = wrapper.textContent.trim();
-            if (wText !== '' && wText !== 'OC' && wText !== 'IA') {
+            if (wText !== '' && wText !== 'OC' && wText !== 'IA' && wText !== 'Aparência Desconhecida') {
                 const icon = document.createElement('span');
                 icon.className = 'bounty-copy-icon';
                 icon.innerHTML = '📋';
