@@ -5116,6 +5116,7 @@ window.donosDeAkuma = {
     "Baku Baku no Mi": "Rhaast",
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
+    "Chikyū Chikyū no Mi": "Karaya",
     "Chiyu Chiyu no Mi": "Tontatta",
     "Doa Doa no Mi": "Chester",
     "Fude Fude no Mi": "Thomeraux Gan",
