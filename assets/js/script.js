@@ -2164,6 +2164,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnAddJogadorCacada = document.getElementById('btn-add-jogador-cacada');
         const btnRemJogadorCacada = document.getElementById('btn-rem-jogador-cacada');
         const containerJogadoresCacada = document.getElementById('container-jogadores-cacada');
+        const checkNarradorVenceuCacada = document.getElementById('checkNarradorVenceuCacada');
+
+        if (checkNarradorVenceuCacada) checkNarradorVenceuCacada.addEventListener('change', gerarTextoCacada);
 
         let listaProcuradosCache = [];
 
@@ -2482,27 +2485,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     let textoBloco = `\`\`\`Recompensas pela Caçada contra ${nomeProcurado}:\n`;
                     let pontosTotaisDessaCacadaParaNarradores = 0;
                     
-                    jogadoresData.forEach((j, index) => {
-                        let ptsJogador = ptsBase;
-                        if (j.hasHaki) ptsJogador += bonusHakiAkuma;
-                        if (j.hasAkuma) ptsJogador += bonusHakiAkuma;
-                        
-                        pontosTotaisDessaCacadaParaNarradores += ptsJogador;
-
-                        let berriesDeste = berriesPorJogador;
-                        if (index === 0) berriesDeste += restoBerries;
-                        
-                        textoBloco += `Recompensas do Jogador (${j.nome}):\n`;
-                        if (j.is40k) {
-                            textoBloco += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
-                        } else {
-                            textoBloco += `Pontos de Atributo: ${formatarNum(ptsBase)}\n`;
-                            if (j.hasHaki) textoBloco += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
-                            if (j.hasAkuma) textoBloco += `Pontos de Akuma no Mi: ${formatarNum(bonusHakiAkuma)}\n`;
-                        }
-                        textoBloco += `Berries: ฿${formatarNum(berriesDeste)}\n\n`;
-                    });
-
                     let maiorPtsJogador = 0;
                     jogadoresData.forEach(j => {
                         let ptsJogador = ptsBase;
@@ -2511,21 +2493,58 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (ptsJogador > maiorPtsJogador) maiorPtsJogador = ptsJogador;
                     });
 
-                    dadosNarradores.forEach((narrador, index) => {
-                        let porcentagem = narrador.narracoes / totalNarracoes;
-                        
-                        let ptsOpc1 = Math.floor((maiorPtsJogador / 2) * porcentagem);
-                        let berOpc1 = Math.floor((rec / 2) * porcentagem);
-                        let ptsOpc2 = Math.floor(maiorPtsJogador * porcentagem);
-                        let berOpc3 = Math.floor(rec * porcentagem);
-                        
-                        textoBloco += `Recompensas da Narração (${narrador.nome}):\nPode escolher entre\n`;
-                        textoBloco += `- ${formatarNum(ptsOpc1)} pontos livres e ฿${formatarNum(berOpc1)}\n`;
-                        textoBloco += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
-                        textoBloco += `- ฿${formatarNum(berOpc3)}`;
-                        
-                        if (index < dadosNarradores.length - 1) textoBloco += "\n\n";
-                    });
+                    let narradorVenceu = checkNarradorVenceuCacada && checkNarradorVenceuCacada.checked;
+
+                    if (narradorVenceu) {
+                        textoBloco += `Recompensas dos Jogadores: Nenhuma (Narrador Venceu)\n\n`;
+                        dadosNarradores.forEach((narrador, index) => {
+                            let porcentagem = narrador.narracoes / totalNarracoes;
+                            let ptsNarrador = Math.floor(maiorPtsJogador * porcentagem);
+                            let berNarrador = Math.floor(rec * porcentagem);
+                            
+                            textoBloco += `Recompensas da Narração (${narrador.nome}):\n`;
+                            textoBloco += `- ${formatarNum(ptsNarrador)} pontos livres e ฿${formatarNum(berNarrador)}`;
+                            
+                            if (index < dadosNarradores.length - 1) textoBloco += "\n\n";
+                        });
+                    } else {
+                        jogadoresData.forEach((j, index) => {
+                            let ptsJogador = ptsBase;
+                            if (j.hasHaki) ptsJogador += bonusHakiAkuma;
+                            if (j.hasAkuma) ptsJogador += bonusHakiAkuma;
+                            
+                            pontosTotaisDessaCacadaParaNarradores += ptsJogador;
+
+                            let berriesDeste = berriesPorJogador;
+                            if (index === 0) berriesDeste += restoBerries;
+                            
+                            textoBloco += `Recompensas do Jogador (${j.nome}):\n`;
+                            if (j.is40k) {
+                                textoBloco += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+                            } else {
+                                textoBloco += `Pontos de Atributo: ${formatarNum(ptsBase)}\n`;
+                                if (j.hasHaki) textoBloco += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
+                                if (j.hasAkuma) textoBloco += `Pontos de Akuma no Mi: ${formatarNum(bonusHakiAkuma)}\n`;
+                            }
+                            textoBloco += `Berries: ฿${formatarNum(berriesDeste)}\n\n`;
+                        });
+
+                        dadosNarradores.forEach((narrador, index) => {
+                            let porcentagem = narrador.narracoes / totalNarracoes;
+                            
+                            let ptsOpc1 = Math.floor((maiorPtsJogador / 2) * porcentagem);
+                            let berOpc1 = Math.floor((rec / 2) * porcentagem);
+                            let ptsOpc2 = Math.floor(maiorPtsJogador * porcentagem);
+                            let berOpc3 = Math.floor(rec * porcentagem);
+                            
+                            textoBloco += `Recompensas da Narração (${narrador.nome}):\nPode escolher entre\n`;
+                            textoBloco += `- ${formatarNum(ptsOpc1)} pontos livres e ฿${formatarNum(berOpc1)}\n`;
+                            textoBloco += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
+                            textoBloco += `- ฿${formatarNum(berOpc3)}`;
+                            
+                            if (index < dadosNarradores.length - 1) textoBloco += "\n\n";
+                        });
+                    }
 
                     textoBloco += "\`\`\`";
                     blocosTexto.push(textoBloco);
@@ -2576,6 +2595,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkGanhouBerriesDom = document.getElementById('checkGanhouBerriesDom');
         const inputBerriesDom = document.getElementById('inputBerriesDom');
         const checkGanhouNPCDom = document.getElementById('checkGanhouNPCDom');
+        const checkNarradorVenceuDom = document.getElementById('checkNarradorVenceuDom');
+
+        if (checkNarradorVenceuDom) checkNarradorVenceuDom.addEventListener('change', gerarTextoDominacao);
 
         const inputNarradoresDom = document.getElementById('narradoresDominacao');
         const containerNarradoresDom = document.getElementById('container-nomes-narradores-dominacao');
@@ -2917,67 +2939,93 @@ document.addEventListener('DOMContentLoaded', () => {
             let berriesPorJogador = Math.floor(ber / numJogadores);
             let restoBerries = ber % numJogadores;
 
-            jogadoresData.forEach((j, index) => {
+            jogadoresData.forEach(j => {
                 let ptsJogador = pts;
                 let bonusHakiAkuma = Math.floor(pts / 2);
-                
                 if (j.hasHaki) ptsJogador += bonusHakiAkuma;
                 if (j.hasAkuma) ptsJogador += bonusHakiAkuma;
-                
                 if (ptsJogador > maiorPtsJogador) maiorPtsJogador = ptsJogador;
+            });
 
-                textoFinal += `Recompensas do Jogador (${j.nome}):\n`;
-                
-                if (checkGanhouPtsDom.checked) {
-                    if (j.is40k) {
-                        textoFinal += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+            let narradorVenceu = checkNarradorVenceuDom && checkNarradorVenceuDom.checked;
+
+            if (narradorVenceu) {
+                textoFinal += `Recompensas dos Jogadores: Nenhuma (Narrador Venceu)\n\n`;
+                dadosNarradores.forEach((narrador, index) => {
+                    let porcentagem = narrador.narracoes / totalNarracoes;
+                    let ptsNarrador = Math.floor(maiorPtsJogador * porcentagem);
+                    let berNarrador = Math.floor(ber * porcentagem);
+                    
+                    textoFinal += `Recompensas da Narração (${narrador.nome}):\n`;
+                    if (mar === 'Calm Belt' && ber === 0 && inputBerriesDom.value.replace(/\D/g, '') === "") {
+                        textoFinal += `- ${formatarNum(ptsNarrador)} pontos livres e ฿Variável`;
                     } else {
-                        textoFinal += `Pontos de Atributo: ${formatarNum(pts)}\n`;
-                        if (j.hasHaki) textoFinal += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
-                        if (j.hasAkuma) textoFinal += `Pontos de Akuma no Mi: ${formatarNum(bonusHakiAkuma)}\n`;
+                        textoFinal += `- ${formatarNum(ptsNarrador)} pontos livres e ฿${formatarNum(berNarrador)}`;
                     }
-                }
-                
-                if (checkGanhouBerriesDom.checked) {
-                    let berriesDeste = berriesPorJogador;
-                    if (index === 0) berriesDeste += restoBerries;
+                    
+                    if (index < dadosNarradores.length - 1) textoFinal += "\n\n";
+                });
+            } else {
+                jogadoresData.forEach((j, index) => {
+                    let ptsJogador = pts;
+                    let bonusHakiAkuma = Math.floor(pts / 2);
+                    
+                    if (j.hasHaki) ptsJogador += bonusHakiAkuma;
+                    if (j.hasAkuma) ptsJogador += bonusHakiAkuma;
+
+                    textoFinal += `Recompensas do Jogador (${j.nome}):\n`;
+                    
+                    if (checkGanhouPtsDom.checked) {
+                        if (j.is40k) {
+                            textoFinal += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+                        } else {
+                            textoFinal += `Pontos de Atributo: ${formatarNum(pts)}\n`;
+                            if (j.hasHaki) textoFinal += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
+                            if (j.hasAkuma) textoFinal += `Pontos de Akuma no Mi: ${formatarNum(bonusHakiAkuma)}\n`;
+                        }
+                    }
+                    
+                    if (checkGanhouBerriesDom.checked) {
+                        let berriesDeste = berriesPorJogador;
+                        if (index === 0) berriesDeste += restoBerries;
+                        
+                        if (mar === 'Calm Belt' && ber === 0 && inputBerriesDom.value.replace(/\D/g, '') === "") {
+                            textoFinal += `Berries: Variável (Definido pelo ADM avaliador)\n`;
+                        } else {
+                            textoFinal += `Berries: ฿${formatarNum(berriesDeste)}\n`;
+                        }
+                    }
+                    
+                    if (checkGanhouNPCDom.checked && npcFinal > 0) {
+                        textoFinal += `NPCs Comuns Recebidos: ${formatarNum(npcFinal)} NPCs\n`;
+                    }
+                    
+                    textoFinal += `\n`;
+                });
+
+                dadosNarradores.forEach((narrador, index) => {
+                    let porcentagem = narrador.narracoes / totalNarracoes;
+                    
+                    let ptsOpc1 = Math.floor((maiorPtsJogador / 2) * porcentagem);
+                    let berOpc1 = Math.floor((ber / 2) * porcentagem);
+                    let ptsOpc2 = Math.floor(maiorPtsJogador * porcentagem);
+                    let berOpc3 = Math.floor(ber * porcentagem);
+                    
+                    textoFinal += `Recompensas da Narração (${narrador.nome}):\nPode escolher entre\n`;
                     
                     if (mar === 'Calm Belt' && ber === 0 && inputBerriesDom.value.replace(/\D/g, '') === "") {
-                        textoFinal += `Berries: Variável (Definido pelo ADM avaliador)\n`;
+                        textoFinal += `- ${formatarNum(ptsOpc1)} pontos livres e ฿Variável\n`;
+                        textoFinal += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
+                        textoFinal += `- ฿Variável`;
                     } else {
-                        textoFinal += `Berries: ฿${formatarNum(berriesDeste)}\n`;
+                        textoFinal += `- ${formatarNum(ptsOpc1)} pontos livres e ฿${formatarNum(berOpc1)}\n`;
+                        textoFinal += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
+                        textoFinal += `- ฿${formatarNum(berOpc3)}`;
                     }
-                }
-                
-                if (checkGanhouNPCDom.checked && npcFinal > 0) {
-                    textoFinal += `NPCs Comuns Recebidos: ${formatarNum(npcFinal)} NPCs\n`;
-                }
-                
-                textoFinal += `\n`;
-            });
-
-            dadosNarradores.forEach((narrador, index) => {
-                let porcentagem = narrador.narracoes / totalNarracoes;
-                
-                let ptsOpc1 = Math.floor((maiorPtsJogador / 2) * porcentagem);
-                let berOpc1 = Math.floor((ber / 2) * porcentagem);
-                let ptsOpc2 = Math.floor(maiorPtsJogador * porcentagem);
-                let berOpc3 = Math.floor(ber * porcentagem);
-                
-                textoFinal += `Recompensas da Narração (${narrador.nome}):\nPode escolher entre\n`;
-                
-                if (mar === 'Calm Belt' && ber === 0 && inputBerriesDom.value.replace(/\D/g, '') === "") {
-                    textoFinal += `- ${formatarNum(ptsOpc1)} pontos livres e ฿Variável\n`;
-                    textoFinal += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
-                    textoFinal += `- ฿Variável`;
-                } else {
-                    textoFinal += `- ${formatarNum(ptsOpc1)} pontos livres e ฿${formatarNum(berOpc1)}\n`;
-                    textoFinal += `- ${formatarNum(ptsOpc2)} pontos livres\n`;
-                    textoFinal += `- ฿${formatarNum(berOpc3)}`;
-                }
-                
-                if (index < dadosNarradores.length - 1) textoFinal += "\n\n";
-            });
+                    
+                    if (index < dadosNarradores.length - 1) textoFinal += "\n\n";
+                });
+            }
 
             textoFinal += "\`\`\`";
 
@@ -5112,7 +5160,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // SORTEADOR DE AKUMA NO MI E DONOS
 // ==========================================
 window.donosDeAkuma = {
-    "Awa Awa no Mi": "Iwoye Zhuo",
     "Baku Baku no Mi": "Rhaast",
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
@@ -5136,7 +5183,7 @@ window.donosDeAkuma = {
     "Kage Kage no Mi": "Noctis",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
     "Kumo Kumo no Mi": "Caelus",
-    "Magu Magu no Mi": "Bloqueada",
+    "Magu Magu no Mi": "Cheung Po Tsai",
     "Maki Maki no Mi": "???",
     "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mira Mira no Mi": "Bloqueada",
