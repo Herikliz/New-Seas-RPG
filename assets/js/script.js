@@ -5190,7 +5190,6 @@ window.donosDeAkuma = {
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mori Mori no Mi": "Valkar",
-    "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre": "MahaD Mnaj",
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
     "Ope Ope no Mi": "Morgana Du'lor",
     "Pamu Pamu no Mi": "Bakugo",
@@ -5200,6 +5199,7 @@ window.donosDeAkuma = {
     "Ryū Ryū no Mi, Modelo: Kirin": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Shiku Shiku no Mi": "???",
     "Soru Soru no Mi": "Kozuki Ryōshū",
+    "Sube Sube no Mi": "Iroh",
     "Suji Suji no Mi": "???",
     "Suna Suna no Mi": "BladeHawk",
     "Susu Susu no Mi": "Iori",
@@ -5212,7 +5212,6 @@ window.donosDeAkuma = {
     "Yami Yami no Mi": "Andrial D. Oran",
     "Yomi Yomi no Mi": "La Muerte",
     "Yuki Yuki no Mi": "???",
-    "Zou Zou no Mi, Modelo: Mamute": "Serm D'yos",
     "Zushi Zushi no Mi": "Sorum"
 };
 
