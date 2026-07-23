@@ -1295,39 +1295,7 @@ if (mapGrids.length > 0) {
         <div class="input-group">
             <label>Meio de Transporte</label>
             <select id="barco">
-                <option value="0" disabled selected>Selecione...</option>
-                <optgroup label="Barcos Civis">
-                    <option value="12">Bote (12h/q)</option>
-                    <option value="10">Barco Pesqueiro (10h/q)</option>
-                    <option value="8">Escuna (8h/q)</option>
-                    <option value="8">Brigue (8h/q)</option>
-                    <option value="7">Caravela (7h/q)</option>
-                    <option value="6">Fragata (6h/q)</option>
-                    <option value="5">Gran General (5h/q)</option>
-                </optgroup>
-                <optgroup label="Marinha/Governo">
-                    <option value="9">C-15 Kenpachi (9h/q)</option>
-                    <option value="7">Z-10 Perci (7h/q)</option>
-                    <option value="6">B-47 Hajime (6h/q)</option>
-                    <option value="5">T-33 Apollo (5h/q)</option>
-                    <option value="4">K-55 Mereoleona (4h/q)</option>
-                    <option value="3">A-1 Atlas (3h/q)</option>
-                </optgroup>
-                <optgroup label="Especiais">
-                    <option value="2">Pérola Negra (2h/q)</option>
-                    <option value="5">Holandês Voador (5h/q)</option>
-                    <option value="4">Vingança da Rainha Ana (4h/q)</option>
-                    <option value="4">Silent Mary (4h/q)</option>
-                    <option value="4">Pequod (4h/q)</option>
-                </optgroup>
-                <optgroup label="Individual">
-                    <option value="18">Nado Comum (18h/q)</option>
-                    <option value="11">Nado Tritão/Sereiano (11h/q)</option>
-                    <option value="5">Voo (5h/q)</option>
-                </optgroup>
-                <optgroup label="Outros">
-                    <option value="custom">Personalizado</option>
-                </optgroup>
+                <option value="0" disabled selected>Carregando barcos...</option>
             </select>
             <input type="number" id="tempo-custom" placeholder="Horas por quadrado" min="1" style="display: none; margin-top: 10px; width: 100%; padding: 10px; border-radius: var(--border-radius); border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif; box-sizing: border-box;">
         </div>
@@ -1347,6 +1315,79 @@ if (mapGrids.length > 0) {
 
     const inputQuadrados = document.getElementById('quadrados');
     const selectBarco = document.getElementById('barco');
+
+    if (selectBarco) {
+        fetch('loja-de-barcos.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                selectBarco.innerHTML = '<option value="0" disabled selected>Selecione...</option>';
+                
+                const sections = [
+                    { title: 'NORMAIS', label: 'Barcos Civis' },
+                    { title: 'NAVIOS DO GOVERNO', label: 'Marinha/Governo' },
+                    { title: 'NAVIOS DA VANGUARDA', label: 'Vanguarda Popular Revolucionária' },
+                    { title: 'NAVIOS ESPECIAIS', label: 'Especiais' }
+                ];
+
+                sections.forEach(sec => {
+                    const sectionTitleEl = Array.from(doc.querySelectorAll('h2.title-quantico')).find(h => h.textContent.includes(sec.title));
+                    if (sectionTitleEl) {
+                        const contentDiv = sectionTitleEl.nextElementSibling;
+                        if (contentDiv && contentDiv.classList.contains('toggle-content')) {
+                            const optgroup = document.createElement('optgroup');
+                            optgroup.label = sec.label;
+                            
+                            const boatTitles = contentDiv.querySelectorAll('h4.highlight-text');
+                            boatTitles.forEach(boatTitle => {
+                                const boatName = boatTitle.textContent.trim();
+                                let speed = 0;
+                                const uls = boatTitle.parentElement.querySelectorAll('ul');
+                                uls.forEach(ul => {
+                                    const lis = ul.querySelectorAll('li');
+                                    lis.forEach(li => {
+                                        if (li.textContent.includes('Velocidade:')) {
+                                            const match = li.textContent.match(/Velocidade:\s*(\d+)/);
+                                            if (match && match[1]) speed = parseInt(match[1]);
+                                        }
+                                    });
+                                });
+                                
+                                if (speed > 0) {
+                                    const option = document.createElement('option');
+                                    option.value = speed;
+                                    option.textContent = `${boatName} (${speed}h/q)`;
+                                    optgroup.appendChild(option);
+                                }
+                            });
+                            
+                            if (optgroup.children.length > 0) {
+                                selectBarco.appendChild(optgroup);
+                            }
+                        }
+                    }
+                });
+
+                const individualGroup = document.createElement('optgroup');
+                individualGroup.label = "Individual";
+                individualGroup.innerHTML = `
+                    <option value="18">Nado Comum (18h/q)</option>
+                    <option value="11">Nado Tritão/Sereiano (11h/q)</option>
+                    <option value="5">Voo (5h/q)</option>
+                `;
+                selectBarco.appendChild(individualGroup);
+
+                const outrosGroup = document.createElement('optgroup');
+                outrosGroup.label = "Outros";
+                outrosGroup.innerHTML = `<option value="custom">Personalizado</option>`;
+                selectBarco.appendChild(outrosGroup);
+            })
+            .catch(err => {
+                selectBarco.innerHTML = '<option value="0" disabled selected>Erro ao carregar barcos</option>';
+            });
+    }
     const tempoCustomInput = document.getElementById('tempo-custom');
     const checkboxTimoneiro = document.getElementById('timoneiro');
     const timoneiroContainer = document.getElementById('timoneiro-container');
