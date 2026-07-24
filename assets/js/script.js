@@ -5832,6 +5832,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {nome: "Ryū Ryū no Mi, Modelo: Kirin", valor: 2500000000},
             {nome: "Ryū Ryū no Mi, Modelo: Paquicefalossauro", valor: 1000000000},
             {nome: "Ryū Ryū no Mi, Modelo: Pteranodonte", valor: 1700000000},
+            {nome: "Ryū Ryū no Mi, Modelo: Tiranossauro Rex", valor: 1950000000},
             {nome: "Ryū Ryū no Mi, Modelo: Triceratops", valor: 1000000000},
             {nome: "Sabi Sabi no Mi (Fruta da Ferrugem)", valor: 400000000},
             {nome: "Sara Sara no Mi, Modelo: Axolote", valor: 180000000},
