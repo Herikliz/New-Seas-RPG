@@ -5782,7 +5782,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {nome: "Mera Mera no Mi (Fruta das Chamas)", valor: 1500000000},
             {nome: "Mero Mero no Mi (Fruta do Amor)", valor: 2000000000},
             {nome: "Mini Mini no Mi (Fruta da Diminuição Corporal)", valor: 300000000},
-            {nome: "Mira Mira no Mi (Fruta dos Espelhos)", valor: 1300000000},
+            {nome: "Mira Mira no Mi (Fruta dos Espelhos)", valor: 950000000},
             {nome: "Moa Moa no Mi (Fruta do Aumento)", valor: 1000000000},
             {nome: "Mochi Mochi no Mi (Fruta do Bolo de Arroz)", valor: 1000000000},
             {nome: "Modo Modo no Mi (Fruta do Retorno)", valor: 3900000000},
