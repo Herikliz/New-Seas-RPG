@@ -5253,7 +5253,7 @@ window.donosDeAkuma = {
     "Uta Uta no Mi": "???",
     "Yami Yami no Mi": "Andrial D. Oran",
     "Yomi Yomi no Mi": "La Muerte",
-    "Yuki Yuki no Mi": "???",
+    "Yuki Yuki no Mi": "Anne Bonney",
     "Zushi Zushi no Mi": "Sorum"
 };
 
