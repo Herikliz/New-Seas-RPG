@@ -5395,7 +5395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 const nomeRaw = inputCartazNome ? inputCartazNome.value.toUpperCase().trim() : '';
-                const nome = nomeRaw.replace(/\./g, '').replace(/\s+/g, '●');
+                const nome = nomeRaw.replace(/[\.,]/g, '').replace(/\s+/g, '●');
                 let recompensa = inputCartazRecompensa ? inputCartazRecompensa.value : '';
                 if (recompensa) recompensa += '–';
 
