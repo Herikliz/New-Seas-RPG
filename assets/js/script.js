@@ -6303,12 +6303,26 @@ window.copiarTextoDoSubmundo = function() {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    function normalizeText(node) {
-        if (node.nodeType === 3) {
-            node.nodeValue = node.nodeValue.normalize("NFC");
-        } else {
-            node.childNodes.forEach(normalizeText);
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @font-face { font-family: 'Quantico'; src: local('Arial'); unicode-range: U+01CE, U+030C, U+02C7; }
+        @font-face { font-family: 'Comfortaa'; src: local('Arial'); unicode-range: U+01CE, U+030C, U+02C7; }
+    `;
+    document.head.appendChild(style);
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    const nodesToReplace = [];
+    let node;
+    
+    while (node = walker.nextNode()) {
+        if (/[ǎ\u030C\u02C7]/.test(node.nodeValue)) {
+            nodesToReplace.push(node);
         }
     }
-    normalizeText(document.body);
+    
+    nodesToReplace.forEach(textNode => {
+        const span = document.createElement("span");
+        span.innerHTML = textNode.nodeValue.replace(/a?[\u030C\u02C7]|ǎ/g, '<span style="font-family: Arial, Helvetica, sans-serif !important; display: inline-block;">ǎ</span>');
+        textNode.parentNode.replaceChild(span, textNode);
+    });
 });
