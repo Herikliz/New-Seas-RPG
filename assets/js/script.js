@@ -5250,6 +5250,7 @@ window.donosDeAkuma = {
     "Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]": "Genma Gan",
     "Tori Tori no Mi, Modelo: Pássaro de Gelo [Original do RPG]": "Bloqueada",
     "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "Thoriel",
+    "Uma Uma no Mi": "Mǎ",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
     "Uta Uta no Mi": "???",
     "Yami Yami no Mi": "Andrial D. Oran",
@@ -6300,3 +6301,14 @@ window.copiarTextoDoSubmundo = function() {
         }, 1500);
     });
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+    function normalizeText(node) {
+        if (node.nodeType === 3) {
+            node.nodeValue = node.nodeValue.normalize("NFC");
+        } else {
+            node.childNodes.forEach(normalizeText);
+        }
+    }
+    normalizeText(document.body);
+});
