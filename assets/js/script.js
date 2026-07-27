@@ -5228,6 +5228,7 @@ window.donosDeAkuma = {
     "Magu Magu no Mi": "Cheung Po Tsai",
     "Maki Maki no Mi": "???",
     "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Mira Mira no Mi": "Bastian Locke",
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mori Mori no Mi": "Valkar",
