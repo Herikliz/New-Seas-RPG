@@ -5205,7 +5205,7 @@ window.donosDeAkuma = {
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
     "Chikyū Chikyū no Mi": "Karaya",
-    "Chiyu Chiyu no Mi": "Tontatta",
+    "Chiyu Chiyu no Mi": "Bloqueada",
     "Doa Doa no Mi": "Chester",
     "Fude Fude no Mi": "Thomeraux Gan",
     "Goro Goro no Mi": "Edward Belmont",
@@ -5255,8 +5255,7 @@ window.donosDeAkuma = {
     "Uta Uta no Mi": "???",
     "Yami Yami no Mi": "Andrial D. Oran",
     "Yomi Yomi no Mi": "La Muerte",
-    "Yuki Yuki no Mi": "Anne Bonney",
-    "Zushi Zushi no Mi": "Sorum"
+    "Yuki Yuki no Mi": "Anne Bonney"
 };
 
 document.addEventListener('DOMContentLoaded', () => {
