@@ -5208,6 +5208,7 @@ window.donosDeAkuma = {
     "Chiyu Chiyu no Mi": "Bloqueada",
     "Doa Doa no Mi": "Chester",
     "Fude Fude no Mi": "Thomeraux Gan",
+    "Fuwa Fuwa no Mi": "Satoshi Fujiwara",
     "Goro Goro no Mi": "Edward Belmont",
     "Gura Gura no Mi": "Sakazuki Itadori",
     "Hebi Hebi no Mi, Modelo: Kaijū [Original do RPG]": "Raidjinn Le Laufey",
