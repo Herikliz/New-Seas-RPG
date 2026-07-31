@@ -5221,7 +5221,6 @@ window.donosDeAkuma = {
     "Horo Horo no Mi": "???",
     "Inu Inu no Mi, Modelo: Cérbero [Original do RPG]": "Dante Salvatore",
     "Inu Inu no Mi, Modelo: Ōkuchi no Makami": "Yuu D'Couteau",
-    "Ito Ito no Mi": "Charlotte Buddha",
     "Kage Kage no Mi": "Noctis",
     "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Toshio Kumo-rui",
     "Kumo Kumo no Mi": "Caelus",
