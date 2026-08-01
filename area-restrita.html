@@ -421,6 +421,108 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="rank-box">
+                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
+                        BATALHA NAVAL <span class="toggle-icon">▼</span>
+                    </h2>
+                    
+                    <div class="toggle-content">
+                        <div class="admin-generator-box" id="admin-generator-batalha">
+                            <p style="text-align: center; margin-bottom: 15px; color: var(--text-color); font-family: 'Comfortaa', sans-serif;">Preencha a quantidade de cada prêmio (Máximo total somado: 81). O restante será preenchido com "Espaço em branco" (⭕).</p>
+                            
+                            <div class="output-container" style="display: block; margin-bottom: 15px;">
+                                <pre id="resultado-batalha-board" style="margin-bottom: 0; font-size: 18px; line-height: 1.4;"></pre>
+                            </div>
+
+                            <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                                <button id="btn-randomizar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">🎲 Randomizar</button>
+                                <button id="btn-copiar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Batalha Naval</button>
+                                <button id="btn-copiar-tabela-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Tabela</button>
+                            </div>
+
+                            <div style="text-align: center; margin-bottom: 15px; font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--text-color);">
+                                Total: <span id="batalha-total">0</span> / 81
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>⚜️ Rei</label>
+                                    <input type="number" class="batalha-input" data-id="rei" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🧑‍🧑‍🧒 50 NPCs</label>
+                                    <input type="number" class="batalha-input" data-id="npc50" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🧑‍🧑‍🧒‍🧒 100 NPCs</label>
+                                    <input type="number" class="batalha-input" data-id="npc100" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🚹 NPC Especial</label>
+                                    <input type="number" class="batalha-input" data-id="esp" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🪙 25M</label>
+                                    <input type="number" class="batalha-input" data-id="25m" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>💸 75M</label>
+                                    <input type="number" class="batalha-input" data-id="75m" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>💰 150M</label>
+                                    <input type="number" class="batalha-input" data-id="150m" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🆓 Vale Treino</label>
+                                    <input type="number" class="batalha-input" data-id="treino" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🆕 Vale Redistribuição</label>
+                                    <input type="number" class="batalha-input" data-id="redis" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🆒 Vale Navegação</label>
+                                    <input type="number" class="batalha-input" data-id="nav" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>❌ Perde Tudo</label>
+                                    <input type="number" class="batalha-input" data-id="perde" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>♻️ Roubar</label>
+                                    <input type="number" class="batalha-input" data-id="roubar" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🚤 Escuna</label>
+                                    <input type="number" class="batalha-input" data-id="escuna" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🛥️ Brigue</label>
+                                    <input type="number" class="batalha-input" data-id="brigue" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🛳️ Caravela</label>
+                                    <input type="number" class="batalha-input" data-id="caravela" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🔪 Meitō</label>
+                                    <input type="number" class="batalha-input" data-id="meito" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🍆 Zoan</label>
+                                    <input type="number" class="batalha-input" data-id="zoan" min="0" max="81" placeholder="0">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label>🍑 Paramecia</label>
+                                    <input type="number" class="batalha-input" data-id="para" min="0" max="81" placeholder="0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>

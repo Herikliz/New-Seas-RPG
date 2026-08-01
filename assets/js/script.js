@@ -6301,6 +6301,169 @@ window.copiarTextoDoSubmundo = function() {
     });
 };
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.includes('area-restrita')) {
+        const containerBatalha = document.getElementById('admin-generator-batalha');
+        if (containerBatalha) {
+            const inputs = containerBatalha.querySelectorAll('.batalha-input');
+            const boardEl = document.getElementById('resultado-batalha-board');
+            const totalEl = document.getElementById('batalha-total');
+            const btnRandomizar = document.getElementById('btn-randomizar-batalha');
+            const btnCopiarBatalha = document.getElementById('btn-copiar-batalha');
+            const btnCopiarTabela = document.getElementById('btn-copiar-tabela-batalha');
+
+            const animais = ['🐶','🦆','🐭','🐼','🐯','🐸','🐷','🐒','🐔'];
+            const itens = [
+                { id: 'rei', emoji: '⚜️', text: 'Rei - 250 pontos e 150M' },
+                { id: 'npc50', emoji: '🧑‍🧑‍🧒', text: '50 NPCs Comuns' },
+                { id: 'npc100', emoji: '🧑‍🧑‍🧒‍🧒', text: '100 NPCs Comuns' },
+                { id: 'esp', emoji: '🚹', text: 'NPC Especial' },
+                { id: '25m', emoji: '🪙', text: '25M' },
+                { id: '75m', emoji: '💸', text: '75M' },
+                { id: '150m', emoji: '💰', text: '150M' },
+                { id: 'treino', emoji: '🆓', text: 'Vale Treino' },
+                { id: 'redis', emoji: '🆕', text: 'Vale Redistribuição' },
+                { id: 'nav', emoji: '🆒', text: 'Vale Navegação' },
+                { id: 'perde', emoji: '❌', text: 'Perde tudo' },
+                { id: 'roubar', emoji: '♻️', text: 'Roubar' },
+                { id: 'escuna', emoji: '🚤', text: 'Escuna' },
+                { id: 'brigue', emoji: '🛥️', text: 'Brigue' },
+                { id: 'caravela', emoji: '🛳️', text: 'Caravela' },
+                { id: 'meito', emoji: '🔪', text: 'Meitō' },
+                { id: 'zoan', emoji: '🍆', text: 'Zoan' },
+                { id: 'para', emoji: '🍑', text: 'Paramecia' }
+            ];
+
+            function getValores() {
+                let total = 0;
+                let list = [];
+                inputs.forEach(inp => {
+                    let v = parseInt(inp.value, 10) || 0;
+                    total += v;
+                    if (v > 0) {
+                        let itemDef = itens.find(i => i.id === inp.dataset.id);
+                        if (itemDef) {
+                            for(let i=0; i<v; i++) list.push(itemDef.emoji);
+                        }
+                    }
+                });
+                return { total, list };
+            }
+
+            function renderBoard() {
+                const { total, list } = getValores();
+                totalEl.textContent = total;
+                totalEl.style.color = "var(--text-color)";
+                boardEl.style.color = "var(--text-color)";
+
+                if (total === 0) {
+                    let board = "0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9⃣\n";
+                    for (let i = 0; i < 9; i++) {
+                        board += animais[i] + "⬛⬛⬛⬛⬛⬛⬛⬛⬛\n";
+                    }
+                    boardEl.textContent = board.trim();
+                    return;
+                }
+
+                let fullList = [...list];
+                while (fullList.length < 81) {
+                    fullList.push('⭕');
+                }
+
+                for (let i = fullList.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [fullList[i], fullList[j]] = [fullList[j], fullList[i]];
+                }
+
+                let board = "0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9⃣\n";
+                let index = 0;
+                for (let i = 0; i < 9; i++) {
+                    board += animais[i] + fullList.slice(index, index + 9).join('') + "\n";
+                    index += 9;
+                }
+                boardEl.textContent = board.trim();
+            }
+
+            inputs.forEach(inp => inp.addEventListener('input', () => {
+                let totalOthers = 0;
+                inputs.forEach(other => {
+                    if (other !== inp) {
+                        totalOthers += parseInt(other.value, 10) || 0;
+                    }
+                });
+                
+                let maxAllowed = 81 - totalOthers;
+                if (maxAllowed < 0) maxAllowed = 0;
+                
+                let val = parseInt(inp.value, 10);
+                if (!isNaN(val)) {
+                    if (val > maxAllowed) {
+                        inp.value = maxAllowed;
+                    } else if (val < 0) {
+                        inp.value = 0;
+                    }
+                }
+                
+                renderBoard();
+            }));
+            btnRandomizar.addEventListener('click', renderBoard);
+
+            btnCopiarBatalha.addEventListener('click', () => {
+                if (btnCopiarBatalha.dataset.copying) return;
+                window.copiarTextoUniversal(boardEl.textContent).then(() => {
+                    let orig = btnCopiarBatalha.textContent;
+                    btnCopiarBatalha.textContent = "✅ Copiado!";
+                    btnCopiarBatalha.style.background = "#4caf50";
+                    btnCopiarBatalha.style.color = "#fff";
+                    btnCopiarBatalha.dataset.copying = "true";
+                    setTimeout(() => {
+                        btnCopiarBatalha.textContent = orig;
+                        btnCopiarBatalha.style.background = "";
+                        btnCopiarBatalha.style.color = "";
+                        delete btnCopiarBatalha.dataset.copying;
+                    }, 1500);
+                });
+            });
+
+            btnCopiarTabela.addEventListener('click', () => {
+                if (btnCopiarTabela.dataset.copying) return;
+                
+                let tabela = "";
+                inputs.forEach(inp => {
+                    let v = parseInt(inp.value, 10) || 0;
+                    if (v > 0) {
+                        let itemDef = itens.find(i => i.id === inp.dataset.id);
+                        if (itemDef) {
+                            tabela += itemDef.emoji + " " + itemDef.text + "\n";
+                        }
+                    }
+                });
+                if (tabela === "") {
+                    tabela = "Nenhum item adicionado à tabela.";
+                } else {
+                    tabela += "⭕ Espaço em branco";
+                }
+
+                window.copiarTextoUniversal(tabela).then(() => {
+                    let orig = btnCopiarTabela.textContent;
+                    btnCopiarTabela.textContent = "✅ Copiado!";
+                    btnCopiarTabela.style.background = "#4caf50";
+                    btnCopiarTabela.style.color = "#fff";
+                    btnCopiarTabela.dataset.copying = "true";
+                    setTimeout(() => {
+                        btnCopiarTabela.textContent = orig;
+                        btnCopiarTabela.style.background = "";
+                        btnCopiarTabela.style.color = "";
+                        delete btnCopiarTabela.dataset.copying;
+                    }, 1500);
+                });
+            });
+
+            renderBoard();
+        }
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const style = document.createElement('style');
     style.innerHTML = `
