@@ -6460,6 +6460,155 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             renderBoard();
+
+            // ==========================================
+            // Lógica dos Resultados dos Jogadores
+            // ==========================================
+            const containerJogadoresBatalha = document.getElementById('container-batalha-jogadores');
+            const btnAddJogadorBatalha = document.getElementById('btn-add-jogador-batalha');
+            const btnCopiarResultadosJogadores = document.getElementById('btn-copiar-resultados-jogadores');
+
+            if (btnAddJogadorBatalha && containerJogadoresBatalha) {
+                btnAddJogadorBatalha.addEventListener('click', () => {
+                    const row = document.createElement('div');
+                    row.className = 'batalha-jogador-row';
+                    row.style.cssText = 'display: flex; gap: 10px;';
+                    row.innerHTML = `
+                        <input type="text" class="batalha-jogador-nome" placeholder="Nome do Jogador" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                        <input type="text" class="batalha-jogador-emojis" placeholder="Emojis (Ex: 🪙🆒🆕🆓💸)" style="flex: 2; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                        <button class="btn-remover-jogador-batalha btn-clear-admin" style="margin: 0; padding: 10px 15px; width: auto;">❌</button>
+                    `;
+                    containerJogadoresBatalha.appendChild(row);
+                    row.querySelector('.btn-remover-jogador-batalha').addEventListener('click', () => {
+                        row.remove();
+                    });
+                });
+
+                const initialRemBtn = containerJogadoresBatalha.querySelector('.btn-remover-jogador-batalha');
+                if (initialRemBtn) {
+                    initialRemBtn.addEventListener('click', (e) => {
+                        e.target.closest('.batalha-jogador-row').remove();
+                    });
+                }
+            }
+
+            if (containerJogadoresBatalha) {
+                containerJogadoresBatalha.addEventListener('input', (e) => {
+                    if (e.target.classList.contains('batalha-jogador-emojis')) {
+                        let val = e.target.value.replace(/👑/g, '⚜️');
+                        let validos = ['⚜️','🧑‍🧑‍🧒‍🧒','🧑‍🧑‍🧒','🚹','🪙','💸','💰','🆓','🆕','🆒','❌','♻️','🚤','🛥️','🛳️','🔪','🍆','🍑'];
+                        let resultado = '';
+                        while (val.length > 0) {
+                            let achou = false;
+                            for (let v of validos) {
+                                if (val.startsWith(v)) {
+                                    resultado += v;
+                                    val = val.slice(v.length);
+                                    achou = true;
+                                    break;
+                                }
+                            }
+                            if (!achou) {
+                                let charLen = val.codePointAt(0) > 0xFFFF ? 2 : 1;
+                                val = val.slice(charLen);
+                            }
+                        }
+                        e.target.value = resultado;
+                    }
+                });
+            }
+
+            if (btnCopiarResultadosJogadores) {
+                btnCopiarResultadosJogadores.addEventListener('click', () => {
+                    if (btnCopiarResultadosJogadores.dataset.copying) return;
+                    
+                    const rows = containerJogadoresBatalha.querySelectorAll('.batalha-jogador-row');
+                    let resultados = [];
+                    
+                    const oldCopiar = window.copiarTextoUniversal;
+                    window.copiarTextoUniversal = function(texto) {
+                        window.copiarTextoUniversal = oldCopiar;
+                        if (!texto.includes("*RECOMPENSAS DO EVENTO:*")) {
+                            texto = "*RECOMPENSAS DO EVENTO:*\n" + texto;
+                        }
+                        texto = texto.replace(/฿?(\d{1,3}(?:\.\d{3}){2,})/g, "฿$1");
+                        return oldCopiar(texto);
+                    };
+
+                    const mapRecompensas = [
+                        { e: '⚜️', m: 150000000, t: '250 pontos' },
+                        { e: '🧑‍🧑‍🧒‍🧒', m: 0, t: '100 NPCs Comuns' },
+                        { e: '🧑‍🧑‍🧒', m: 0, t: '50 NPCs Comuns' },
+                        { e: '🚹', m: 0, t: 'NPC Especial' },
+                        { e: '🪙', m: 25000000, t: null },
+                        { e: '💸', m: 75000000, t: null },
+                        { e: '💰', m: 150000000, t: null },
+                        { e: '🆓', m: 0, t: 'Vale Treino' },
+                        { e: '🆕', m: 0, t: 'Vale Redistribuição' },
+                        { e: '🆒', m: 0, t: 'Vale Navegação' },
+                        { e: '❌', m: 0, t: 'Perde tudo' },
+                        { e: '♻️', m: 0, t: 'Roubar' },
+                        { e: '🚤', m: 0, t: 'Escuna' },
+                        { e: '🛥️', m: 0, t: 'Brigue' },
+                        { e: '🛳️', m: 0, t: 'Caravela' },
+                        { e: '🔪', m: 0, t: 'Meitō' },
+                        { e: '🍆', m: 0, t: 'Zoan' },
+                        { e: '🍑', m: 0, t: 'Paramecia' }
+                    ];
+
+                    rows.forEach(row => {
+                        let nome = row.querySelector('.batalha-jogador-nome').value.trim();
+                        let emojisStr = row.querySelector('.batalha-jogador-emojis').value.trim();
+                        if (!nome) return;
+                        
+                        let money = 0;
+                        let items = [];
+                        
+                        mapRecompensas.forEach(m => {
+                            while (emojisStr.indexOf(m.e) !== -1) {
+                                emojisStr = emojisStr.replace(m.e, '');
+                                if (m.m) money += m.m;
+                                if (m.t) items.push(m.t);
+                            }
+                        });
+                        
+                        items.sort((a, b) => a.localeCompare(b, 'pt-BR'));
+                        
+                        let partes = [];
+                        if (money > 0) {
+                            partes.push(money.toLocaleString('pt-BR'));
+                        }
+                        partes = partes.concat(items);
+                        
+                        let strRecompensas = partes.length > 0 ? `[${partes.join(' | ')}]` : "[Nenhuma Recompensa]";
+                        
+                        resultados.push({
+                            nome: nome,
+                            texto: `- *${nome}:* ${strRecompensas}`
+                        });
+                    });
+
+                    if (resultados.length === 0) return;
+
+                    resultados.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+                    
+                    const textoCopiar = resultados.map(r => r.texto).join('\n');
+
+                    window.copiarTextoUniversal(textoCopiar).then(() => {
+                        let orig = btnCopiarResultadosJogadores.textContent;
+                        btnCopiarResultadosJogadores.textContent = "✅ Copiado!";
+                        btnCopiarResultadosJogadores.style.background = "#4caf50";
+                        btnCopiarResultadosJogadores.style.color = "#fff";
+                        btnCopiarResultadosJogadores.dataset.copying = "true";
+                        setTimeout(() => {
+                            btnCopiarResultadosJogadores.textContent = orig;
+                            btnCopiarResultadosJogadores.style.background = "";
+                            btnCopiarResultadosJogadores.style.color = "";
+                            delete btnCopiarResultadosJogadores.dataset.copying;
+                        }, 1500);
+                    });
+                });
+            }
         }
     }
 });

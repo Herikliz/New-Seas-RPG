@@ -519,6 +519,23 @@
                                     <input type="number" class="batalha-input" data-id="para" min="0" max="81" placeholder="0">
                                 </div>
                             </div>
+                            
+                            <hr style="border: 1px dashed var(--sidebar-border); margin: 30px 0;">
+                            <h3 style="text-align: center; color: var(--accent-color); font-family: 'Quantico', sans-serif; margin-bottom: 20px;">Resultados dos Jogadores</h3>
+                            
+                            <div id="container-batalha-jogadores" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
+                                <div class="batalha-jogador-row" style="display: flex; gap: 10px;">
+                                    <input type="text" class="batalha-jogador-nome" placeholder="Nome do Jogador" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    <input type="text" class="batalha-jogador-emojis" placeholder="Emojis (Ex: 🪙🆒🆕🆓💸)" style="flex: 2; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    <button class="btn-remover-jogador-batalha btn-clear-admin" style="margin: 0; padding: 10px 15px; width: auto;">❌</button>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <button id="btn-add-jogador-batalha" class="btn-admin" style="margin-top: 0; padding: 8px; flex: 1; min-width: 150px;">➕ Adicionar Jogador</button>
+                                <button id="btn-copiar-resultados-jogadores" class="btn-admin" style="margin-top: 0; padding: 8px; flex: 1; min-width: 150px;">📋 Copiar Resultados</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
