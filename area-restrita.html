@@ -26,520 +26,477 @@
             </section>
 
             <div class="geo-layout">
+                
+                <!-- EVENTOS -->
                 <div class="rank-box">
-                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
-                        SORTEADOR DE TIPO SANGUÍNEO <span class="toggle-icon">▼</span>
+                    <h2 class="title-quantico rank-title toggle-title collapsed" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
+                        EVENTOS <span class="toggle-icon">▼</span>
                     </h2>
-                    
-                    <div class="toggle-content">
+                    <div class="toggle-content collapsed">
                         <div class="admin-generator-box">
-                            <button id="btn-sortear-sangue" class="btn-admin">Sortear Tipo Sanguíneo</button>
-                            <div class="output-container" style="display: none;" id="container-resultado-sangue">
-                                <pre id="resultado-sangue" style="margin-bottom: 15px;"></pre>
-                                <button id="btn-copiar-sangue" class="btn-admin" style="margin-top: 0;">Copiar Resultado</button>
+                            <div class="input-group">
+                                <select id="select-eventos" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease; margin-bottom: 20px;">
+                                    <option value="batalha-naval">Batalha Naval</option>
+                                </select>
+                            </div>
+
+                            <div id="container-eventos-batalha-naval" class="category-section-eventos">
+                                <div id="admin-generator-batalha">
+                                    <div class="input-group" style="max-width: 300px; margin: 0 auto 15px auto; text-align: center;">
+                                        <label>Quantidade de Jogadores</label>
+                                        <input type="number" id="batalha-qtd-jogadores" min="2" max="10" value="7" style="text-align: center;">
+                                    </div>
+                                    <p style="text-align: center; margin-bottom: 15px; color: var(--text-color); font-family: 'Comfortaa', sans-serif;">Preencha a quantidade de cada prêmio. O restante será preenchido com "Espaço em branco" (⭕).</p>
+                                    
+                                    <div class="output-container" style="display: block; margin-bottom: 15px;">
+                                        <pre id="resultado-batalha-board" style="margin-bottom: 0; font-size: 18px; line-height: 1.4;"></pre>
+                                    </div>
+
+                                    <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                                        <button id="btn-randomizar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">🎲 Randomizar</button>
+                                        <button id="btn-copiar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Batalha Naval</button>
+                                        <button id="btn-copiar-tabela-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Tabela Informativa</button>
+                                    </div>
+
+                                    <div style="text-align: center; margin-bottom: 15px; font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--text-color);">
+                                        Total: <span id="batalha-total">0</span> / <span id="batalha-max">81</span>
+                                    </div>
+
+                                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                                        <div class="input-group" style="margin-bottom: 0;"><label>⚜️ Rei</label><input type="number" class="batalha-input" data-id="rei" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🧑‍🧑‍🧒 50 NPCs</label><input type="number" class="batalha-input" data-id="npc50" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🧑‍🧑‍🧒‍🧒 100 NPCs</label><input type="number" class="batalha-input" data-id="npc100" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🚹 Especial</label><input type="number" class="batalha-input" data-id="esp" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🪙 25M</label><input type="number" class="batalha-input" data-id="25m" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>💸 75M</label><input type="number" class="batalha-input" data-id="75m" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>💰 150M</label><input type="number" class="batalha-input" data-id="150m" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🆓 Treino</label><input type="number" class="batalha-input" data-id="treino" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🆕 Redis.</label><input type="number" class="batalha-input" data-id="redis" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🆒 Nav.</label><input type="number" class="batalha-input" data-id="nav" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>❌ Perde Tudo</label><input type="number" class="batalha-input" data-id="perde" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>♻️ Roubar</label><input type="number" class="batalha-input" data-id="roubar" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🚤 Escuna</label><input type="number" class="batalha-input" data-id="escuna" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🛥️ Brigue</label><input type="number" class="batalha-input" data-id="brigue" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🛳️ Caravela</label><input type="number" class="batalha-input" data-id="caravela" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🔪 Meitō</label><input type="number" class="batalha-input" data-id="meito" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🍆 Zoan</label><input type="number" class="batalha-input" data-id="zoan" min="0" max="81" placeholder="0"></div>
+                                        <div class="input-group" style="margin-bottom: 0;"><label>🍑 Paramecia</label><input type="number" class="batalha-input" data-id="para" min="0" max="81" placeholder="0"></div>
+                                    </div>
+                                    
+                                    <hr style="border: 1px dashed var(--sidebar-border); margin: 30px 0;">
+                                    <h3 style="text-align: center; color: var(--accent-color); font-family: 'Quantico', sans-serif; margin-bottom: 20px;">Resultados dos Jogadores</h3>
+                                    
+                                    <div id="container-batalha-jogadores" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
+                                        <div class="batalha-jogador-row" style="display: flex; gap: 10px;">
+                                            <input type="text" class="batalha-jogador-nome" placeholder="Nome do Jogador" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                            <input type="text" class="batalha-jogador-emojis" placeholder="Emojis (Ex: 🪙🆒🆕🆓💸)" style="flex: 2; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                            <button class="btn-remover-jogador-batalha btn-clear-admin" style="margin: 0; padding: 10px 15px; width: auto;">❌</button>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                        <button id="btn-add-jogador-batalha" class="btn-admin" style="margin-top: 0; padding: 8px; flex: 1; min-width: 150px;">➕ Adicionar Jogador</button>
+                                        <button id="btn-copiar-resultados-jogadores" class="btn-admin" style="margin-top: 0; padding: 8px; flex: 1; min-width: 150px;">📋 Copiar Resultados</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- RECOMPENSAS -->
                 <div class="rank-box">
-                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
-                        RECOMPENSAS DE CAÇADA <span class="toggle-icon">▼</span>
+                    <h2 class="title-quantico rank-title toggle-title collapsed" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
+                        RECOMPENSAS <span class="toggle-icon">▼</span>
                     </h2>
                     
-                    <div class="toggle-content">
-                        <div class="admin-generator-box" id="admin-generator-cacada">
+                    <div class="toggle-content collapsed">
+                        <div class="admin-generator-box">
                             <div class="input-group">
-                                <label id="label-procurados-cacados">Procurado Caçado</label>
-                                <div id="container-procurados" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
-                                    <div class="procurado-row" style="display: flex; gap: 10px;">
-                                        <select class="select-procurado" style="flex: 2;">
-                                            <option value="" disabled selected>Carregando procurados...</option>
+                                <select id="select-recompensas" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease; margin-bottom: 20px;">
+                                    <option value="cacada">Caçadas</option>
+                                    <option value="dominacao">Dominações</option>
+                                    <option value="extra-narrada">Extra-Narrada</option>
+                                </select>
+                            </div>
+
+                            <div id="container-recompensas-cacada" class="category-section-recompensas">
+                                <div id="admin-generator-cacada">
+                                    <div class="input-group">
+                                        <label id="label-procurados-cacados">Procurado Caçado</label>
+                                        <div id="container-procurados" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                                            <div class="procurado-row" style="display: flex; gap: 10px;">
+                                                <select class="select-procurado" style="flex: 2;">
+                                                    <option value="" disabled selected>Carregando procurados...</option>
+                                                </select>
+                                                <input type="text" class="input-procurado-manual" placeholder="Procurado (Manual)" style="flex: 2; display: none;">
+                                                <input type="text" class="input-valor-manual" placeholder="Recompensa (฿)" style="flex: 1; display: none;">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 10px;">
+                                            <button id="btn-add-procurado" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
+                                            <button id="btn-rem-procurado" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="input-group" style="margin-top: 15px;">
+                                        <label id="label-jogadores-cacadores">Jogador Caçador</label>
+                                        <div id="container-jogadores-cacada" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                                            <div class="jogador-row" style="border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);">
+                                                <input type="text" class="nome-jogador-cacada" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
+                                                <div class="admin-checkbox-group" style="margin-bottom: 0;">
+                                                    <label><input type="checkbox" class="check-haki-cacada"> Tem Haki?</label>
+                                                    <label><input type="checkbox" class="check-akuma-cacada"> Tem Fruta?</label>
+                                                    <label><input type="checkbox" class="check-40k-cacada"> Tem 40.000 pontos ou mais?</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 10px;">
+                                            <button id="btn-add-jogador-cacada" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
+                                            <button id="btn-rem-jogador-cacada" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="admin-checkbox-group" style="margin-bottom: 15px;">
+                                        <label><input type="checkbox" id="checkNarradorVenceuCacada"> Narrador Venceu?</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="narradoresCacada">Número de Narradores</label>
+                                        <input type="number" id="narradoresCacada" value="1" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    </div>
+
+                                    <div id="container-nomes-narradores">
+                                        <div class="input-group">
+                                            <label for="nomeNarrador1">Nome do Narrador</label>
+                                            <input type="text" id="nomeNarrador1" placeholder="Nome do Narrador" class="nome-narrador">
+                                        </div>
+                                    </div>
+
+                                    <div class="output-container">
+                                        <pre id="resultadoCacada" class="active" style="display: none;"></pre>
+                                    </div>
+
+                                    <button id="btn-copiar-resultado-cacada" class="btn-admin">Copiar Resultado</button>
+                                </div>
+                            </div>
+                            
+                            <div id="container-recompensas-dominacao" class="category-section-recompensas" style="display: none;">
+                                <div id="admin-generator-dominacao">
+                                    <div class="input-group">
+                                        <label for="selectIlhaDominacao">Ilha Dominada</label>
+                                        <select id="selectIlhaDominacao" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                            <option value="" disabled selected>Carregando ilhas...</option>
                                         </select>
-                                        <input type="text" class="input-procurado-manual" placeholder="Procurado (Manual)" style="flex: 2; display: none;">
-                                        <input type="text" class="input-valor-manual" placeholder="Recompensa (฿)" style="flex: 1; display: none;">
                                     </div>
-                                </div>
-                                <div style="display: flex; gap: 10px;">
-                                    <button id="btn-add-procurado" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
-                                    <button id="btn-rem-procurado" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
-                                </div>
-                            </div>
-                            
-                            <div class="input-group" style="margin-top: 15px;">
-                                <label id="label-jogadores-cacadores">Jogador Caçador</label>
-                                <div id="container-jogadores-cacada" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
-                                    <div class="jogador-row" style="border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);">
-                                        <input type="text" class="nome-jogador-cacada" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
-                                        <div class="admin-checkbox-group" style="margin-bottom: 0;">
-                                            <label><input type="checkbox" class="check-haki-cacada"> Tem Haki?</label>
-                                            <label><input type="checkbox" class="check-akuma-cacada"> Tem Fruta?</label>
-                                            <label><input type="checkbox" class="check-40k-cacada"> Tem 40.000 pontos ou mais?</label>
+
+                                    <div class="input-group" id="container-ilha-manual-dom" style="display: none;">
+                                        <input type="text" id="inputIlhaManualDom" placeholder="Nome da Ilha (Manual)" style="margin-bottom: 10px;">
+                                        <select id="selectMarManualDom" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                            <option value="East Blue">East Blue</option>
+                                            <option value="South Blue">South Blue</option>
+                                            <option value="West Blue">West Blue</option>
+                                            <option value="North Blue">North Blue</option>
+                                            <option value="Paraíso">Paraíso</option>
+                                            <option value="Calm Belt">Calm Belt</option>
+                                            <option value="Novo Mundo">Novo Mundo</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="admin-checkbox-group" style="margin-bottom: 15px; align-items: center; display: flex; gap: 10px;">
+                                        <label style="flex: 1;"><input type="checkbox" id="checkGanhouPtsDom" checked> Recebe Pontos?</label>
+                                        <input type="text" id="inputPtsDom" placeholder="Pontos (ver limites do Mar)" style="flex: 2; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    </div>
+
+                                    <div class="admin-checkbox-group" style="margin-bottom: 15px; align-items: center; display: flex; gap: 10px;">
+                                        <label style="flex: 1;"><input type="checkbox" id="checkGanhouBerriesDom" checked> Recebe Berries?</label>
+                                        <input type="text" id="inputBerriesDom" placeholder="Berries (ver limites do Mar)" style="flex: 2; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    </div>
+
+                                    <div class="admin-checkbox-group" style="margin-bottom: 20px;">
+                                        <label><input type="checkbox" id="checkGanhouNPCDom" checked> Recebe NPCs Comuns?</label>
+                                    </div>
+
+                                    <div class="input-group" style="margin-top: 15px;">
+                                        <label id="label-jogadores-dominacao">Jogador Dominador</label>
+                                        <div id="container-jogadores-dominacao" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                                            <div class="jogador-row-dom" style="border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);">
+                                                <input type="text" class="nome-jogador-dominacao" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
+                                                <div class="admin-checkbox-group" style="margin-bottom: 0;">
+                                                    <label><input type="checkbox" class="check-haki-dominacao"> Tem Haki?</label>
+                                                    <label><input type="checkbox" class="check-akuma-dominacao"> Tem Fruta?</label>
+                                                    <label><input type="checkbox" class="check-40k-dominacao"> Tem 40.000 pontos ou mais?</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 10px;">
+                                            <button id="btn-add-jogador-dominacao" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
+                                            <button id="btn-rem-jogador-dominacao" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
                                         </div>
                                     </div>
-                                </div>
-                                <div style="display: flex; gap: 10px;">
-                                    <button id="btn-add-jogador-cacada" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
-                                    <button id="btn-rem-jogador-cacada" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
-                                </div>
-                            </div>
 
-                            <div class="admin-checkbox-group" style="margin-bottom: 15px;">
-                                <label><input type="checkbox" id="checkNarradorVenceuCacada"> Narrador Venceu?</label>
-                            </div>
+                                    <div class="admin-checkbox-group" style="margin-bottom: 15px;">
+                                        <label><input type="checkbox" id="checkNarradorVenceuDom"> Narrador Venceu?</label>
+                                    </div>
 
-                            <div class="input-group">
-                                <label for="narradoresCacada">Número de Narradores</label>
-                                <input type="number" id="narradoresCacada" value="1" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                            </div>
+                                    <div class="input-group">
+                                        <label for="narradoresDominacao">Número de Narradores</label>
+                                        <input type="number" id="narradoresDominacao" value="1" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    </div>
 
-                            <div id="container-nomes-narradores">
-                                <div class="input-group">
-                                    <label for="nomeNarrador1">Nome do Narrador</label>
-                                    <input type="text" id="nomeNarrador1" placeholder="Nome do Narrador" class="nome-narrador">
-                                </div>
-                            </div>
-
-                            <div class="output-container">
-                                <pre id="resultadoCacada" class="active" style="display: none;"></pre>
-                            </div>
-
-                            <button id="btn-copiar-resultado-cacada" class="btn-admin">Copiar Resultado</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="rank-box">
-                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
-                        RECOMPENSAS DE DOMINAÇÃO <span class="toggle-icon">▼</span>
-                    </h2>
-                    
-                    <div class="toggle-content">
-                        <div class="admin-generator-box" id="admin-generator-dominacao">
-                            <div class="input-group">
-                                <label for="selectIlhaDominacao">Ilha Dominada</label>
-                                <select id="selectIlhaDominacao" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                                    <option value="" disabled selected>Carregando ilhas...</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group" id="container-ilha-manual-dom" style="display: none;">
-                                <input type="text" id="inputIlhaManualDom" placeholder="Nome da Ilha (Manual)" style="margin-bottom: 10px;">
-                                <select id="selectMarManualDom" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                                    <option value="East Blue">East Blue</option>
-                                    <option value="South Blue">South Blue</option>
-                                    <option value="West Blue">West Blue</option>
-                                    <option value="North Blue">North Blue</option>
-                                    <option value="Paraíso">Paraíso</option>
-                                    <option value="Calm Belt">Calm Belt</option>
-                                    <option value="Novo Mundo">Novo Mundo</option>
-                                </select>
-                            </div>
-
-                            <div class="admin-checkbox-group" style="margin-bottom: 15px; align-items: center; display: flex; gap: 10px;">
-                                <label style="flex: 1;"><input type="checkbox" id="checkGanhouPtsDom" checked> Recebe Pontos?</label>
-                                <input type="text" id="inputPtsDom" placeholder="Pontos (ver limites do Mar)" style="flex: 2; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                            </div>
-
-                            <div class="admin-checkbox-group" style="margin-bottom: 15px; align-items: center; display: flex; gap: 10px;">
-                                <label style="flex: 1;"><input type="checkbox" id="checkGanhouBerriesDom" checked> Recebe Berries?</label>
-                                <input type="text" id="inputBerriesDom" placeholder="Berries (ver limites do Mar)" style="flex: 2; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                            </div>
-
-                            <div class="admin-checkbox-group" style="margin-bottom: 20px;">
-                                <label><input type="checkbox" id="checkGanhouNPCDom" checked> Recebe NPCs Comuns?</label>
-                            </div>
-
-                            <div class="input-group" style="margin-top: 15px;">
-                                <label id="label-jogadores-dominacao">Jogador Dominador</label>
-                                <div id="container-jogadores-dominacao" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
-                                    <div class="jogador-row-dom" style="border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);">
-                                        <input type="text" class="nome-jogador-dominacao" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
-                                        <div class="admin-checkbox-group" style="margin-bottom: 0;">
-                                            <label><input type="checkbox" class="check-haki-dominacao"> Tem Haki?</label>
-                                            <label><input type="checkbox" class="check-akuma-dominacao"> Tem Fruta?</label>
-                                            <label><input type="checkbox" class="check-40k-dominacao"> Tem 40.000 pontos ou mais?</label>
+                                    <div id="container-nomes-narradores-dominacao">
+                                        <div class="input-group">
+                                            <label for="nomeNarradorDom1">Nome do Narrador</label>
+                                            <input type="text" id="nomeNarradorDom1" placeholder="Nome do Narrador" class="nome-narrador-dom">
                                         </div>
                                     </div>
-                                </div>
-                                <div style="display: flex; gap: 10px;">
-                                    <button id="btn-add-jogador-dominacao" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
-                                    <button id="btn-rem-jogador-dominacao" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
-                                </div>
-                            </div>
 
-                            <div class="admin-checkbox-group" style="margin-bottom: 15px;">
-                                <label><input type="checkbox" id="checkNarradorVenceuDom"> Narrador Venceu?</label>
-                            </div>
+                                    <div class="output-container">
+                                        <pre id="resultadoDominacao" class="active" style="display: none;"></pre>
+                                    </div>
 
-                            <div class="input-group">
-                                <label for="narradoresDominacao">Número de Narradores</label>
-                                <input type="number" id="narradoresDominacao" value="1" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                            </div>
-
-                            <div id="container-nomes-narradores-dominacao">
-                                <div class="input-group">
-                                    <label for="nomeNarradorDom1">Nome do Narrador</label>
-                                    <input type="text" id="nomeNarradorDom1" placeholder="Nome do Narrador" class="nome-narrador-dom">
+                                    <button id="btn-copiar-resultado-dominacao" class="btn-admin">Copiar Resultado</button>
                                 </div>
                             </div>
 
-                            <div class="output-container">
-                                <pre id="resultadoDominacao" class="active" style="display: none;"></pre>
-                            </div>
+                            <div id="container-recompensas-extra-narrada" class="category-section-recompensas" style="display: none;">
+                                <div id="admin-generator-extra">
+                                    <div class="input-group">
+                                        <label for="pontosBase">Pontos de Atributo</label>
+                                        <input type="text" id="pontosBase" placeholder="Ex: 2.000">
+                                    </div>
 
-                            <button id="btn-copiar-resultado-dominacao" class="btn-admin">Copiar Resultado</button>
+                                    <div class="admin-checkbox-group">
+                                        <label><input type="checkbox" id="checkHaki"> Tem Haki?</label>
+                                        <label><input type="checkbox" id="checkAkuma"> Tem Fruta?</label>
+                                        <label><input type="checkbox" id="check40k"> Tem 40.000 pontos ou mais?</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label>Barco Conquistado</label>
+                                        <div class="admin-checkbox-group" id="radios-barco">
+                                            <label><input type="radio" name="barco" value="Bote"> Bote</label>
+                                            <label><input type="radio" name="barco" value="Barco Pesqueiro"> Barco Pesqueiro</label>
+                                            <label><input type="radio" name="barco" value="Escuna"> Escuna</label>
+                                            <label><input type="radio" name="barco" value="Brigue"> Brigue</label>
+                                            <label><input type="radio" name="barco" value="Caravela"> Caravela</label>
+                                        </div>
+                                        <button class="btn-clear-admin" id="btn-clear-barco">Desmarcar Barco</button>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="linhagem">Linhagem Descoberta</label>
+                                        <select id="linhagem">
+                                            <option value="">Nenhuma</option>
+                                            <option value="Augur">Augur</option>
+                                            <option value="Barnum">Barnum</option>
+                                            <option value="Beckman">Beckman</option>
+                                            <option value="Boa">Boa</option>
+                                            <option value="Capone">Capone</option>
+                                            <option value="Charlotte">Charlotte</option>
+                                            <option value="Chinjao">Chinjao</option>
+                                            <option value="D.">D.</option>
+                                            <option value="Donquixote">Donquixote</option>
+                                            <option value="Dracule">Dracule</option>
+                                            <option value="Drole">Drole</option>
+                                            <option value="Família do Sol">Família do Sol</option>
+                                            <option value="Figarland">Figarland</option>
+                                            <option value="Gan">Gan</option>
+                                            <option value="Kong">Kong</option>
+                                            <option value="Kozuki">Kozuki</option>
+                                            <option value="Kurozumi">Kurozumi</option>
+                                            <option value="Laufey">Laufey</option>
+                                            <option value="Mokomo">Mokomo</option>
+                                            <option value="Nefertari">Nefertari</option>
+                                            <option value="Neptune">Neptune</option>
+                                            <option value="Newgate">Newgate</option>
+                                            <option value="Nico">Nico</option>
+                                            <option value="Sakazuki">Sakazuki</option>
+                                            <option value="Silvers">Silvers</option>
+                                            <option value="Tom">Tom</option>
+                                            <option value="Vega">Vega</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="npcNome">NPC Especial</label>
+                                        <input type="text" id="npcNome" placeholder="Nome do NPC">
+                                    </div>
+
+                                    <div class="output-container">
+                                        <pre id="resultado" class="active"></pre>
+                                    </div>
+
+                                    <button id="btn-copiar-resultado" class="btn-admin">Copiar Resultado</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- STAFF -->
                 <div class="rank-box">
-                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
-                        RECOMPENSAS DE EXTRA-NARRADA <span class="toggle-icon">▼</span>
+                    <h2 class="title-quantico rank-title toggle-title collapsed" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
+                        STAFF <span class="toggle-icon">▼</span>
                     </h2>
                     
-                    <div class="toggle-content">
-                        <div class="admin-generator-box" id="admin-generator-extra">
-                        <div class="input-group">
-                            <label for="pontosBase">Pontos de Atributo</label>
-                            <input type="text" id="pontosBase" placeholder="Ex: 2.000">
-                        </div>
-
-                        <div class="admin-checkbox-group">
-                            <label><input type="checkbox" id="checkHaki"> Tem Haki?</label>
-                            <label><input type="checkbox" id="checkAkuma"> Tem Fruta?</label>
-                            <label><input type="checkbox" id="check40k"> Tem 40.000 pontos ou mais?</label>
-                        </div>
-
-                        <div class="input-group">
-                            <label>Barco Conquistado</label>
-                            <div class="admin-checkbox-group" id="radios-barco">
-                                <label><input type="radio" name="barco" value="Bote"> Bote</label>
-                                <label><input type="radio" name="barco" value="Barco Pesqueiro"> Barco Pesqueiro</label>
-                                <label><input type="radio" name="barco" value="Escuna"> Escuna</label>
-                                <label><input type="radio" name="barco" value="Brigue"> Brigue</label>
-                                <label><input type="radio" name="barco" value="Caravela"> Caravela</label>
-                            </div>
-                            <button class="btn-clear-admin" id="btn-clear-barco">Desmarcar Barco</button>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="linhagem">Linhagem Descoberta</label>
-                            <select id="linhagem">
-                                <option value="">Nenhuma</option>
-                                <option value="Augur">Augur</option>
-                                <option value="Barnum">Barnum</option>
-                                <option value="Beckman">Beckman</option>
-                                <option value="Boa">Boa</option>
-                                <option value="Capone">Capone</option>
-                                <option value="Charlotte">Charlotte</option>
-                                <option value="Chinjao">Chinjao</option>
-                                <option value="D.">D.</option>
-                                <option value="Donquixote">Donquixote</option>
-                                <option value="Dracule">Dracule</option>
-                                <option value="Drole">Drole</option>
-                                <option value="Família do Sol">Família do Sol</option>
-                                <option value="Figarland">Figarland</option>
-                                <option value="Gan">Gan</option>
-                                <option value="Kong">Kong</option>
-                                <option value="Kozuki">Kozuki</option>
-                                <option value="Kurozumi">Kurozumi</option>
-                                <option value="Laufey">Laufey</option>
-                                <option value="Mokomo">Mokomo</option>
-                                <option value="Nefertari">Nefertari</option>
-                                <option value="Neptune">Neptune</option>
-                                <option value="Newgate">Newgate</option>
-                                <option value="Nico">Nico</option>
-                                <option value="Sakazuki">Sakazuki</option>
-                                <option value="Silvers">Silvers</option>
-                                <option value="Tom">Tom</option>
-                                <option value="Vega">Vega</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="npcNome">NPC Especial</label>
-                            <input type="text" id="npcNome" placeholder="Nome do NPC">
-                        </div>
-
-                        <div class="output-container">
-                            <pre id="resultado" class="active"></pre>
-                        </div>
-
-                        <button id="btn-copiar-resultado" class="btn-admin">Copiar Resultado</button>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="rank-box">
-                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
-                        SORTEADOR DE AKUMA NO MI <span class="toggle-icon">▼</span>
-                    </h2>
-                    
-                    <div class="toggle-content">
+                    <div class="toggle-content collapsed">
                         <div class="admin-generator-box">
-                            <div class="calc-grid">
-                                <div class="input-group">
-                                    <label for="sorteio-min">Valor Mínimo</label>
-                                    <input type="text" id="sorteio-min" value="" placeholder="Ex: 100.000.000">
-                                </div>
-                                <div class="input-group">
-                                    <label for="sorteio-max">Valor Máximo</label>
-                                    <input type="text" id="sorteio-max" value="" placeholder="Preenchido automaticamente">
-                                </div>
+                            <div class="input-group">
+                                <select id="select-staff" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease; margin-bottom: 20px;">
+                                    <option value="cartaz">Cartaz de Procurado</option>
+                                    <option value="akuma">Sorteador de Akuma no Mi</option>
+                                    <option value="sangue">Sorteador de Tipo Sanguíneo</option>
+                                </select>
                             </div>
-                            <div class="calc-grid">
-                                <div class="input-group">
-                                    <label>Quantidade de Frutas (Mín - Máx)</label>
-                                    <div style="display: flex; gap: 10px;">
-                                        <input type="number" id="sorteio-qtd-min" value="1" min="1" max="20" placeholder="Mín" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                                        <input type="number" id="sorteio-qtd-max" value="1" min="1" max="20" placeholder="Máx" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+
+                            <div id="container-staff-cartaz" class="category-section-staff">
+                                <div style="text-align: center;">
+                                    <style>
+                                        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+                                        
+                                        .cartaz-container {
+                                            position: relative;
+                                            width: 100%;
+                                            max-width: 350px;
+                                            margin: 0 auto 20px auto;
+                                            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                                            border-radius: 4px;
+                                            overflow: hidden;
+                                            background: #e4d5b7;
+                                        }
+                                        #cartaz-canvas {
+                                            width: 100%;
+                                            height: auto;
+                                            display: block;
+                                            cursor: grab;
+                                        }
+                                        #cartaz-canvas:active {
+                                            cursor: grabbing;
+                                        }
+                                    </style>
+
+                                    <div class="cartaz-container">
+                                        <canvas id="cartaz-canvas" width="700" height="914"></canvas>
+                                    </div>
+                                    
+                                    <div class="input-group" style="text-align: left;">
+                                        <label for="cartaz-upload">Imagem de Fundo (Envie, cole com Ctrl+V ou use o botão. Mova tocando no cartaz)</label>
+                                        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch;">
+                                            <input type="file" id="cartaz-upload" accept="image/*" style="padding: 8px; flex: 1; min-width: 140px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); cursor: pointer;">
+                                            <button id="btn-colar-imagem" class="btn-admin" style="margin: 0; flex: 1; min-width: 140px; padding: 10px; white-space: nowrap;">📋 Colar Imagem</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="input-group" style="text-align: left;">
+                                        <label style="margin-bottom: 5px; display: block;">Ajuste da Imagem:</label>
+                                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                            <span style="font-size: 14px; min-width: 45px;">Zoom:</span>
+                                            <input type="range" id="cartaz-zoom" min="0.01" max="5" step="0.01" value="1" style="flex: 1;">
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                                            <span style="font-size: 14px; min-width: 45px;">Largura:</span>
+                                            <input type="number" id="cartaz-img-w" style="width: 80px; padding: 5px; border: 1px solid var(--sidebar-border); border-radius: 4px; background: var(--sidebar-bg); color: var(--text-color);">
+                                            <span style="font-size: 14px;">Altura:</span>
+                                            <input type="number" id="cartaz-img-h" style="width: 80px; padding: 5px; border: 1px solid var(--sidebar-border); border-radius: 4px; background: var(--sidebar-bg); color: var(--text-color);">
+                                            <label style="font-size: 14px; display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                                                <input type="checkbox" id="cartaz-lock-ratio" checked> Proporção
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group" style="text-align: left;">
+                                        <label for="cartaz-nome">Nome do Procurado</label>
+                                        <input type="text" id="cartaz-nome" placeholder="Ex: Monkey D. Luffy">
+                                    </div>
+                                    
+                                    <div class="input-group" style="text-align: left;">
+                                        <label for="cartaz-recompensa">Recompensa</label>
+                                        <input type="text" id="cartaz-recompensa" placeholder="Ex: 30.000.000">
+                                    </div>
+
+                                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                        <button id="btn-copiar-cartaz" class="btn-admin" style="flex: 1; margin: 0;">📋 Copiar Cartaz</button>
+                                        <button id="btn-baixar-cartaz" class="btn-admin" style="flex: 1; margin: 0;">📥 Baixar Cartaz</button>
                                     </div>
                                 </div>
-                                <div class="input-group">
-                                    <label for="sorteio-ilha-manual">Ilha (Opcional: Ignora Sorteio)</label>
-                                    <input type="text" id="sorteio-ilha-manual" placeholder="Se preenchido, não sorteia">
-                                </div>
                             </div>
-                            <div class="calc-grid">
-                                <div class="input-group">
-                                    <label for="sorteio-mar">Sortear Ilha: Filtro de Mar</label>
-                                    <select id="sorteio-mar">
-                                        <option value="Qualquer">Qualquer Mar</option>
-                                        <option value="East Blue">East Blue</option>
-                                        <option value="West Blue">West Blue</option>
-                                        <option value="North Blue">North Blue</option>
-                                        <option value="South Blue">South Blue</option>
-                                        <option value="Paraíso">Paraíso</option>
-                                        <option value="Novo Mundo">Novo Mundo</option>
-                                        <option value="Calm Belt">Calm Belt</option>
-                                    </select>
-                                </div>
-                                <div class="input-group">
-                                    <label for="sorteio-faccao">Sortear Ilha: Filtro de Afiliação</label>
-                                    <select id="sorteio-faccao">
-                                        <option value="Qualquer">Qualquer Afiliação</option>
-                                        <option value="marinha">Governo Mundial / Marinha</option>
-                                        <option value="pirata">Pirata</option>
-                                        <option value="revolucionaria">Revolucionária</option>
-                                        <option value="independente">Independente</option>
-                                        <option value="misto">Misto</option>
-                                        <option value="despovoada">Despovoada</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="admin-checkbox-group" style="margin-top: 5px; margin-bottom: 20px;">
-                                <label><input type="checkbox" id="sorteio-incluir-donos"> Incluir Frutas com donos (ou perdidas) no sorteio</label>
-                            </div>
-                            
-                            <button id="btn-sortear-akuma" class="btn-admin">Sortear Frutas</button>
-                            <button id="btn-sorteio-semanal" class="btn-admin">Sorteio Semanal Rápido</button>
-                            
-                            <div class="output-container" style="display: none;" id="container-resultado-sorteio">
-                                <pre id="resultado-sorteio" style="margin-bottom: 15px;"></pre>
-                                <button id="btn-copiar-sorteio" class="btn-admin" style="margin-top: 0;">Copiar Resultado</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="rank-box">
-                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
-                        GERADOR DE CARTAZ DE PROCURADO <span class="toggle-icon">▼</span>
-                    </h2>
-                    
-                    <div class="toggle-content">
-                        <div class="admin-generator-box" style="text-align: center;">
-                            <style>
-                                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+                            <div id="container-staff-akuma" class="category-section-staff" style="display: none;">
+                                <div class="calc-grid">
+                                    <div class="input-group">
+                                        <label for="sorteio-min">Valor Mínimo</label>
+                                        <input type="text" id="sorteio-min" value="" placeholder="Ex: 100.000.000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="sorteio-max">Valor Máximo</label>
+                                        <input type="text" id="sorteio-max" value="" placeholder="Preenchido automaticamente">
+                                    </div>
+                                </div>
+                                <div class="calc-grid">
+                                    <div class="input-group">
+                                        <label>Quantidade de Frutas (Mín - Máx)</label>
+                                        <div style="display: flex; gap: 10px;">
+                                            <input type="number" id="sorteio-qtd-min" value="1" min="1" max="20" placeholder="Mín" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                            <input type="number" id="sorteio-qtd-max" value="1" min="1" max="20" placeholder="Máx" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="sorteio-ilha-manual">Ilha (Opcional: Ignora Sorteio)</label>
+                                        <input type="text" id="sorteio-ilha-manual" placeholder="Se preenchido, não sorteia">
+                                    </div>
+                                </div>
+                                <div class="calc-grid">
+                                    <div class="input-group">
+                                        <label for="sorteio-mar">Sortear Ilha: Filtro de Mar</label>
+                                        <select id="sorteio-mar">
+                                            <option value="Qualquer">Qualquer Mar</option>
+                                            <option value="East Blue">East Blue</option>
+                                            <option value="West Blue">West Blue</option>
+                                            <option value="North Blue">North Blue</option>
+                                            <option value="South Blue">South Blue</option>
+                                            <option value="Paraíso">Paraíso</option>
+                                            <option value="Novo Mundo">Novo Mundo</option>
+                                            <option value="Calm Belt">Calm Belt</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="sorteio-faccao">Sortear Ilha: Filtro de Afiliação</label>
+                                        <select id="sorteio-faccao">
+                                            <option value="Qualquer">Qualquer Afiliação</option>
+                                            <option value="marinha">Governo Mundial / Marinha</option>
+                                            <option value="pirata">Pirata</option>
+                                            <option value="revolucionaria">Revolucionária</option>
+                                            <option value="independente">Independente</option>
+                                            <option value="misto">Misto</option>
+                                            <option value="despovoada">Despovoada</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 
-                                .cartaz-container {
-                                    position: relative;
-                                    width: 100%;
-                                    max-width: 350px;
-                                    margin: 0 auto 20px auto;
-                                    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-                                    border-radius: 4px;
-                                    overflow: hidden;
-                                    background: #e4d5b7;
-                                }
-                                #cartaz-canvas {
-                                    width: 100%;
-                                    height: auto;
-                                    display: block;
-                                    cursor: grab;
-                                }
-                                #cartaz-canvas:active {
-                                    cursor: grabbing;
-                                }
-                            </style>
-
-                            <div class="cartaz-container">
-                                <canvas id="cartaz-canvas" width="700" height="914"></canvas>
-                            </div>
-                            
-                            <div class="input-group" style="text-align: left;">
-                                <label for="cartaz-upload">Imagem de Fundo (Envie, cole com Ctrl+V ou use o botão. Mova tocando no cartaz)</label>
-                                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch;">
-                                    <input type="file" id="cartaz-upload" accept="image/*" style="padding: 8px; flex: 1; min-width: 140px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); cursor: pointer;">
-                                    <button id="btn-colar-imagem" class="btn-admin" style="margin: 0; flex: 1; min-width: 140px; padding: 10px; white-space: nowrap;">📋 Colar Imagem</button>
+                                <div class="admin-checkbox-group" style="margin-top: 5px; margin-bottom: 20px;">
+                                    <label><input type="checkbox" id="sorteio-incluir-donos"> Incluir Frutas com donos (ou perdidas) no sorteio</label>
                                 </div>
-                            </div>
-                            
-                            <div class="input-group" style="text-align: left;">
-                                <label style="margin-bottom: 5px; display: block;">Ajuste da Imagem:</label>
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                                    <span style="font-size: 14px; min-width: 45px;">Zoom:</span>
-                                    <input type="range" id="cartaz-zoom" min="0.01" max="5" step="0.01" value="1" style="flex: 1;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                                    <span style="font-size: 14px; min-width: 45px;">Largura:</span>
-                                    <input type="number" id="cartaz-img-w" style="width: 80px; padding: 5px; border: 1px solid var(--sidebar-border); border-radius: 4px; background: var(--sidebar-bg); color: var(--text-color);">
-                                    <span style="font-size: 14px;">Altura:</span>
-                                    <input type="number" id="cartaz-img-h" style="width: 80px; padding: 5px; border: 1px solid var(--sidebar-border); border-radius: 4px; background: var(--sidebar-bg); color: var(--text-color);">
-                                    <label style="font-size: 14px; display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                                        <input type="checkbox" id="cartaz-lock-ratio" checked> Proporção
-                                    </label>
+                                
+                                <button id="btn-sortear-akuma" class="btn-admin">Sortear Frutas</button>
+                                <button id="btn-sorteio-semanal" class="btn-admin">Sorteio Semanal Rápido</button>
+                                
+                                <div class="output-container" style="display: none;" id="container-resultado-sorteio">
+                                    <pre id="resultado-sorteio" style="margin-bottom: 15px;"></pre>
+                                    <button id="btn-copiar-sorteio" class="btn-admin" style="margin-top: 0;">Copiar Resultado</button>
                                 </div>
                             </div>
 
-                            <div class="input-group" style="text-align: left;">
-                                <label for="cartaz-nome">Nome do Procurado</label>
-                                <input type="text" id="cartaz-nome" placeholder="Ex: Monkey D. Luffy">
-                            </div>
-                            
-                            <div class="input-group" style="text-align: left;">
-                                <label for="cartaz-recompensa">Recompensa</label>
-                                <input type="text" id="cartaz-recompensa" placeholder="Ex: 30.000.000">
-                            </div>
-
-                            <div style="display: flex; gap: 10px; margin-top: 10px;">
-                                <button id="btn-copiar-cartaz" class="btn-admin" style="flex: 1; margin: 0;">📋 Copiar Cartaz</button>
-                                <button id="btn-baixar-cartaz" class="btn-admin" style="flex: 1; margin: 0;">📥 Baixar Cartaz</button>
+                            <div id="container-staff-sangue" class="category-section-staff" style="display: none;">
+                                <button id="btn-sortear-sangue" class="btn-admin">Sortear Tipo Sanguíneo</button>
+                                <div class="output-container" style="display: none;" id="container-resultado-sangue">
+                                    <pre id="resultado-sangue" style="margin-bottom: 15px;"></pre>
+                                    <button id="btn-copiar-sangue" class="btn-admin" style="margin-top: 0;">Copiar Resultado</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="rank-box">
-                    <h2 class="title-quantico rank-title toggle-title" style="font-size: 26px; border: none; padding: 0; margin-top: 30px; cursor: pointer;">
-                        BATALHA NAVAL <span class="toggle-icon">▼</span>
-                    </h2>
-                    
-                    <div class="toggle-content">
-                        <div class="admin-generator-box" id="admin-generator-batalha">
-                            <p style="text-align: center; margin-bottom: 15px; color: var(--text-color); font-family: 'Comfortaa', sans-serif;">Preencha a quantidade de cada prêmio (Máximo total somado: 81). O restante será preenchido com "Espaço em branco" (⭕).</p>
-                            
-                            <div class="output-container" style="display: block; margin-bottom: 15px;">
-                                <pre id="resultado-batalha-board" style="margin-bottom: 0; font-size: 18px; line-height: 1.4;"></pre>
-                            </div>
-
-                            <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                                <button id="btn-randomizar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">🎲 Randomizar</button>
-                                <button id="btn-copiar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Batalha Naval</button>
-                                <button id="btn-copiar-tabela-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Tabela</button>
-                            </div>
-
-                            <div style="text-align: center; margin-bottom: 15px; font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--text-color);">
-                                Total: <span id="batalha-total">0</span> / 81
-                            </div>
-
-                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>⚜️ Rei</label>
-                                    <input type="number" class="batalha-input" data-id="rei" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🧑‍🧑‍🧒 50 NPCs</label>
-                                    <input type="number" class="batalha-input" data-id="npc50" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🧑‍🧑‍🧒‍🧒 100 NPCs</label>
-                                    <input type="number" class="batalha-input" data-id="npc100" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🚹 NPC Especial</label>
-                                    <input type="number" class="batalha-input" data-id="esp" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🪙 25M</label>
-                                    <input type="number" class="batalha-input" data-id="25m" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>💸 75M</label>
-                                    <input type="number" class="batalha-input" data-id="75m" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>💰 150M</label>
-                                    <input type="number" class="batalha-input" data-id="150m" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🆓 Vale Treino</label>
-                                    <input type="number" class="batalha-input" data-id="treino" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🆕 Vale Redistribuição</label>
-                                    <input type="number" class="batalha-input" data-id="redis" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🆒 Vale Navegação</label>
-                                    <input type="number" class="batalha-input" data-id="nav" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>❌ Perde Tudo</label>
-                                    <input type="number" class="batalha-input" data-id="perde" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>♻️ Roubar</label>
-                                    <input type="number" class="batalha-input" data-id="roubar" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🚤 Escuna</label>
-                                    <input type="number" class="batalha-input" data-id="escuna" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🛥️ Brigue</label>
-                                    <input type="number" class="batalha-input" data-id="brigue" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🛳️ Caravela</label>
-                                    <input type="number" class="batalha-input" data-id="caravela" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🔪 Meitō</label>
-                                    <input type="number" class="batalha-input" data-id="meito" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🍆 Zoan</label>
-                                    <input type="number" class="batalha-input" data-id="zoan" min="0" max="81" placeholder="0">
-                                </div>
-                                <div class="input-group" style="margin-bottom: 0;">
-                                    <label>🍑 Paramecia</label>
-                                    <input type="number" class="batalha-input" data-id="para" min="0" max="81" placeholder="0">
-                                </div>
-                            </div>
-                            
-                            <hr style="border: 1px dashed var(--sidebar-border); margin: 30px 0;">
-                            <h3 style="text-align: center; color: var(--accent-color); font-family: 'Quantico', sans-serif; margin-bottom: 20px;">Resultados dos Jogadores</h3>
-                            
-                            <div id="container-batalha-jogadores" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
-                                <div class="batalha-jogador-row" style="display: flex; gap: 10px;">
-                                    <input type="text" class="batalha-jogador-nome" placeholder="Nome do Jogador" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                                    <input type="text" class="batalha-jogador-emojis" placeholder="Emojis (Ex: 🪙🆒🆕🆓💸)" style="flex: 2; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
-                                    <button class="btn-remover-jogador-batalha btn-clear-admin" style="margin: 0; padding: 10px 15px; width: auto;">❌</button>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                                <button id="btn-add-jogador-batalha" class="btn-admin" style="margin-top: 0; padding: 8px; flex: 1; min-width: 150px;">➕ Adicionar Jogador</button>
-                                <button id="btn-copiar-resultados-jogadores" class="btn-admin" style="margin-top: 0; padding: 8px; flex: 1; min-width: 150px;">📋 Copiar Resultados</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </main>

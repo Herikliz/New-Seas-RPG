@@ -5262,6 +5262,17 @@ window.donosDeAkuma = {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('area-restrita')) {
+        ['eventos', 'recompensas', 'staff'].forEach(cat => {
+            const selectEl = document.getElementById('select-' + cat);
+            if (selectEl) {
+                selectEl.addEventListener('change', (e) => {
+                    document.querySelectorAll('.category-section-' + cat).forEach(sec => sec.style.display = 'none');
+                    const target = document.getElementById('container-' + cat + '-' + e.target.value);
+                    if (target) target.style.display = 'block';
+                });
+            }
+        });
+
         const btnSortearSangue = document.getElementById('btn-sortear-sangue');
         const containerResultadoSangue = document.getElementById('container-resultado-sangue');
         const preResultadoSangue = document.getElementById('resultado-sangue');
@@ -6310,11 +6321,34 @@ document.addEventListener('DOMContentLoaded', () => {
             const inputs = containerBatalha.querySelectorAll('.batalha-input');
             const boardEl = document.getElementById('resultado-batalha-board');
             const totalEl = document.getElementById('batalha-total');
+            const maxEl = document.getElementById('batalha-max');
+            const qtdJogadoresInput = document.getElementById('batalha-qtd-jogadores');
             const btnRandomizar = document.getElementById('btn-randomizar-batalha');
             const btnCopiarBatalha = document.getElementById('btn-copiar-batalha');
             const btnCopiarTabela = document.getElementById('btn-copiar-tabela-batalha');
 
-            const animais = ['🐶','🦆','🐭','🐼','🐯','🐸','🐷','🐒','🐔'];
+            const animais = ['🐶','🦆','🐭','🐼','🐯','🐸','🐷','🐒','🐔','🦊'];
+            const emojisColunas = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟','🅰️','🅱️'];
+            
+            const configBatalha = {
+                2: { r: 4, c: 6, total: 24 },
+                3: { r: 6, c: 6, total: 36 },
+                4: { r: 6, c: 8, total: 48 },
+                5: { r: 6, c: 10, total: 60 },
+                6: { r: 8, c: 9, total: 72 },
+                7: { r: 9, c: 9, total: 81 },
+                8: { r: 9, c: 10, total: 90 },
+                9: { r: 9, c: 12, total: 108 },
+                10: { r: 10, c: 12, total: 120 }
+            };
+
+            function getMaxConfig() {
+                let j = parseInt(qtdJogadoresInput.value, 10) || 7;
+                if (j < 2) j = 2;
+                if (j > 10) j = 10;
+                return configBatalha[j];
+            }
+
             const itens = [
                 { id: 'rei', emoji: '⚜️', text: 'Rei - 250 pontos e 150M' },
                 { id: 'npc50', emoji: '🧑‍🧑‍🧒', text: '50 NPCs Comuns' },
@@ -6353,22 +6387,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             function renderBoard() {
+                const cfg = getMaxConfig();
+                maxEl.textContent = cfg.total;
+                
                 const { total, list } = getValores();
                 totalEl.textContent = total;
                 totalEl.style.color = "var(--text-color)";
                 boardEl.style.color = "var(--text-color)";
 
+                let headerRow = "0️⃣";
+                for (let c = 0; c < cfg.c; c++) {
+                    headerRow += emojisColunas[c];
+                }
+                headerRow += "\n";
+
                 if (total === 0) {
-                    let board = "0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9⃣\n";
-                    for (let i = 0; i < 9; i++) {
-                        board += animais[i] + "⬛⬛⬛⬛⬛⬛⬛⬛⬛\n";
+                    let board = headerRow;
+                    for (let i = 0; i < cfg.r; i++) {
+                        board += animais[i] + "⬛".repeat(cfg.c) + "\n";
                     }
                     boardEl.textContent = board.trim();
                     return;
                 }
 
                 let fullList = [...list];
-                while (fullList.length < 81) {
+                while (fullList.length < cfg.total) {
                     fullList.push('⭕');
                 }
 
@@ -6377,16 +6420,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     [fullList[i], fullList[j]] = [fullList[j], fullList[i]];
                 }
 
-                let board = "0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9⃣\n";
+                let board = headerRow;
                 let index = 0;
-                for (let i = 0; i < 9; i++) {
-                    board += animais[i] + fullList.slice(index, index + 9).join('') + "\n";
-                    index += 9;
+                for (let i = 0; i < cfg.r; i++) {
+                    board += animais[i] + fullList.slice(index, index + cfg.c).join('') + "\n";
+                    index += cfg.c;
                 }
                 boardEl.textContent = board.trim();
             }
 
+            if (qtdJogadoresInput) {
+                qtdJogadoresInput.addEventListener('input', () => {
+                    let val = parseInt(qtdJogadoresInput.value, 10);
+                    if (val < 2) qtdJogadoresInput.value = 2;
+                    if (val > 10) qtdJogadoresInput.value = 10;
+                    
+                    const cfg = getMaxConfig();
+                    let currentTotal = getValores().total;
+                    if (currentTotal > cfg.total) {
+                        inputs.forEach(inp => inp.value = ''); 
+                    }
+                    renderBoard();
+                });
+            }
+
             inputs.forEach(inp => inp.addEventListener('input', () => {
+                const cfg = getMaxConfig();
                 let totalOthers = 0;
                 inputs.forEach(other => {
                     if (other !== inp) {
@@ -6394,7 +6453,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 
-                let maxAllowed = 81 - totalOthers;
+                let maxAllowed = cfg.total - totalOthers;
                 if (maxAllowed < 0) maxAllowed = 0;
                 
                 let val = parseInt(inp.value, 10);
