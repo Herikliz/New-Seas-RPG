@@ -3141,7 +3141,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             let pontosNpc = Math.floor(valorBase / 2);
-            textoFinal += "\nPontos dos NPCs: " + formatarNum(pontosNpc);
+            if (check40k.checked && (checkHaki.checked || checkAkuma.checked)) {
+                textoFinal += "\nPontos Recebidos pelos NPCs Especiais: " + formatarNum(pontosNpc);
+            }
 
             textoFinal += "\u0060\u0060\u0060";
             
