@@ -6589,8 +6589,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const oldCopiar = window.copiarTextoUniversal;
                     window.copiarTextoUniversal = function(texto) {
                         window.copiarTextoUniversal = oldCopiar;
-                        if (!texto.includes("*RECOMPENSAS DO EVENTO:*")) {
-                            texto = "*RECOMPENSAS DO EVENTO:*\n" + texto;
+                        if (!texto.includes("*RECOMPENSAS DA BATALHA NAVAL:*")) {
+                            texto = "*RECOMPENSAS DA BATALHA NAVAL:*\n" + texto;
                         }
                         texto = texto.replace(/฿?(\d{1,3}(?:\.\d{3}){2,})/g, "฿$1");
                         return oldCopiar(texto);
