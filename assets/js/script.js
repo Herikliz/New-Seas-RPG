@@ -2184,6 +2184,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkHaki = document.getElementById('checkHaki');
         const checkAkuma = document.getElementById('checkAkuma');
         const check40k = document.getElementById('check40k');
+        const selectExtraMar = document.getElementById('extra-mar');
+        const lbl40kExtra = document.getElementById('lbl-40k-extra');
+
+        if (selectExtraMar) {
+            selectExtraMar.addEventListener('change', () => {
+                if (selectExtraMar.value === 'blues') {
+                    lbl40kExtra.textContent = "Tem 20.000 pontos ou mais?";
+                } else {
+                    lbl40kExtra.textContent = "Tem 40.000 pontos ou mais?";
+                }
+                gerarTextoRecompensa();
+            });
+        }
         const selectLinhagem = document.getElementById('linhagem');
         const inputNpc = document.getElementById('npcNome');
         const radiosBarco = document.querySelectorAll('input[name="barco"]');
@@ -2224,6 +2237,28 @@ document.addEventListener('DOMContentLoaded', () => {
             const inputManual = row.querySelector('.input-procurado-manual');
             const inputValor = row.querySelector('.input-valor-manual');
 
+            function atualizarLabels40kCacada() {
+                let isBlues = false;
+                const containerProcurados = document.getElementById('container-procurados');
+                if (containerProcurados) {
+                    const rows = containerProcurados.querySelectorAll('.procurado-row');
+                    rows.forEach(r => {
+                        const sel = r.querySelector('.select-procurado');
+                        if (sel && sel.value !== '' && sel.value !== 'manual') {
+                            const opt = sel.options[sel.selectedIndex];
+                            if (opt && opt.parentElement && opt.parentElement.label && opt.parentElement.label.includes('Blue')) {
+                                isBlues = true;
+                            }
+                        }
+                    });
+                }
+                const text = isBlues ? "Tem 20.000 pontos ou mais?" : "Tem 40.000 pontos ou mais?";
+                const containerJogadoresCacada = document.getElementById('container-jogadores-cacada');
+                if (containerJogadoresCacada) {
+                    containerJogadoresCacada.querySelectorAll('.lbl-40k-cacada').forEach(lbl => lbl.textContent = text);
+                }
+            }
+
             select.addEventListener('change', function() {
                 if (this.value === 'manual') {
                     inputManual.style.display = 'block';
@@ -2234,6 +2269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     inputManual.value = '';
                     inputValor.value = '';
                 }
+                atualizarLabels40kCacada();
                 gerarTextoCacada();
             });
 
@@ -2399,6 +2435,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (rows.length > 1) {
                         containerProcurados.removeChild(rows[rows.length - 1]);
                         atualizarLabelsCacada();
+                        atualizarLabels40kCacada();
                         gerarTextoCacada();
                     }
                 });
@@ -2422,12 +2459,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="admin-checkbox-group" style="margin-bottom: 0;">
                         <label><input type="checkbox" class="check-haki-cacada"> Tem Haki?</label>
                         <label><input type="checkbox" class="check-akuma-cacada"> Tem Fruta?</label>
-                        <label><input type="checkbox" class="check-40k-cacada"> Tem 40.000 pontos ou mais?</label>
+                        <label><input type="checkbox" class="check-40k-cacada"> <span class="lbl-40k-cacada">Tem 40.000 pontos ou mais?</span></label>
                     </div>
                 `;
                 containerJogadoresCacada.appendChild(novaRow);
                 attachJogadorEvents(novaRow);
                 if (typeof atualizarLabelsCacada === 'function') atualizarLabelsCacada();
+                if (typeof atualizarLabels40kCacada === 'function') atualizarLabels40kCacada();
                 gerarTextoCacada();
             });
         }
@@ -2620,9 +2658,26 @@ document.addEventListener('DOMContentLoaded', () => {
                             let berriesDeste = berriesPorJogador;
                             if (index === 0) berriesDeste += restoBerries;
                             
+                            let isBluesCacada = false;
+                            const rProcurados = containerProcurados.querySelectorAll('.procurado-row');
+                            rProcurados.forEach(r => {
+                                const sel = r.querySelector('.select-procurado');
+                                if (sel && sel.value !== '' && sel.value !== 'manual') {
+                                    const opt = sel.options[sel.selectedIndex];
+                                    if (opt && opt.parentElement && opt.parentElement.label && opt.parentElement.label.includes('Blue')) {
+                                        isBluesCacada = true;
+                                    }
+                                }
+                            });
+
                             textoBloco += `Recompensas do Jogador (${j.nome}):\n`;
                             if (j.is40k) {
-                                textoBloco += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+                                if (isBluesCacada) {
+                                    if (j.hasHaki) textoBloco += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
+                                    if (j.hasAkuma) textoBloco += `Pontos de Akuma no Mi: ${formatarNum(bonusHakiAkuma)}\n`;
+                                } else {
+                                    textoBloco += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+                                }
                             } else {
                                 textoBloco += `Pontos de Atributo: ${formatarNum(ptsBase)}\n`;
                                 if (j.hasHaki) textoBloco += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
@@ -2756,6 +2811,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (inputBerriesDom) inputBerriesDom.placeholder = berText;
         }
 
+        function atualizarLabels40kDom() {
+            let isBlues = false;
+            if (selectIlhaDom && selectIlhaDom.value !== "") {
+                let mar = selectIlhaDom.value === 'manual' ? selectMarManualDom.value : selectIlhaDom.options[selectIlhaDom.selectedIndex].dataset.mar;
+                if (mar && mar.includes('Blue')) isBlues = true;
+            }
+            const text = isBlues ? "Tem 20.000 pontos ou mais?" : "Tem 40.000 pontos ou mais?";
+            if (containerJogadoresDom) {
+                containerJogadoresDom.querySelectorAll('.lbl-40k-dom').forEach(lbl => lbl.textContent = text);
+            }
+        }
+
         if (selectIlhaDom) {
             selectIlhaDom.addEventListener('change', function() {
                 if (this.value === 'manual') {
@@ -2766,12 +2833,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     const selectedOpt = this.options[this.selectedIndex];
                     atualizarLimitesDom(selectedOpt.dataset.mar);
                 }
+                atualizarLabels40kDom();
                 gerarTextoDominacao();
             });
         }
 
         if (selectMarManualDom) selectMarManualDom.addEventListener('change', function() {
             atualizarLimitesDom(this.value);
+            atualizarLabels40kDom();
             gerarTextoDominacao();
         });
 
@@ -2898,12 +2967,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="admin-checkbox-group" style="margin-bottom: 0;">
                         <label><input type="checkbox" class="check-haki-dominacao"> Tem Haki?</label>
                         <label><input type="checkbox" class="check-akuma-dominacao"> Tem Fruta?</label>
-                        <label><input type="checkbox" class="check-40k-dominacao"> Tem 40.000 pontos ou mais?</label>
+                        <label><input type="checkbox" class="check-40k-dominacao"> <span class="lbl-40k-dom">Tem 40.000 pontos ou mais?</span></label>
                     </div>
                 `;
                 containerJogadoresDom.appendChild(novaRow);
                 attachJogadorDomEvents(novaRow);
                 if (typeof atualizarLabelsDominacao === 'function') atualizarLabelsDominacao();
+                if (typeof atualizarLabels40kDom === 'function') atualizarLabels40kDom();
                 gerarTextoDominacao();
             });
         }
@@ -3079,7 +3149,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     if (checkGanhouPtsDom.checked) {
                         if (j.is40k) {
-                            textoFinal += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+                            if (mar.includes("Blue")) {
+                                if (j.hasHaki) textoFinal += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
+                                if (j.hasAkuma) textoFinal += `Pontos de Akuma no Mi: ${formatarNum(bonusHakiAkuma)}\n`;
+                            } else {
+                                textoFinal += `Pontos Livres: ${formatarNum(ptsJogador)}\n`;
+                            }
                         } else {
                             textoFinal += `Pontos de Atributo: ${formatarNum(pts)}\n`;
                             if (j.hasHaki) textoFinal += `Pontos de Haki: ${formatarNum(bonusHakiAkuma)}\n`;
@@ -3177,8 +3252,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (checkHaki.checked) pontosLivres += calcHakiAkuma;
             if (checkAkuma.checked) pontosLivres += calcHakiAkuma;
 
+            const selectExtraMar = document.getElementById('extra-mar');
+            const isBluesExtra = selectExtraMar && selectExtraMar.value === 'blues';
+
             if (check40k.checked) {
-                textoFinal += "Pontos Livres: " + formatarNum(pontosLivres) + "\n";
+                if (isBluesExtra) {
+                    if (checkHaki.checked) {
+                        textoFinal += "Pontos de Haki: " + formatarNum(calcHakiAkuma) + "\n";
+                    }
+                    if (checkAkuma.checked) {
+                        textoFinal += "Pontos de Akuma no Mi: " + formatarNum(calcHakiAkuma) + "\n";
+                    }
+                } else {
+                    textoFinal += "Pontos Livres: " + formatarNum(pontosLivres) + "\n";
+                }
             } else {
                 textoFinal += "Pontos de Atributo: " + formatarNum(valorBase) + "\n";
                 if (checkHaki.checked) {

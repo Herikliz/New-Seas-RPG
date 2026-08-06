@@ -147,7 +147,7 @@
                                                 <div class="admin-checkbox-group" style="margin-bottom: 0;">
                                                     <label><input type="checkbox" class="check-haki-cacada"> Tem Haki?</label>
                                                     <label><input type="checkbox" class="check-akuma-cacada"> Tem Fruta?</label>
-                                                    <label><input type="checkbox" class="check-40k-cacada"> Tem 40.000 pontos ou mais?</label>
+                                                    <label><input type="checkbox" class="check-40k-cacada"> <span class="lbl-40k-cacada">Tem 40.000 pontos ou mais?</span></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -225,7 +225,7 @@
                                                 <div class="admin-checkbox-group" style="margin-bottom: 0;">
                                                     <label><input type="checkbox" class="check-haki-dominacao"> Tem Haki?</label>
                                                     <label><input type="checkbox" class="check-akuma-dominacao"> Tem Fruta?</label>
-                                                    <label><input type="checkbox" class="check-40k-dominacao"> Tem 40.000 pontos ou mais?</label>
+                                                    <label><input type="checkbox" class="check-40k-dominacao"> <span class="lbl-40k-dom">Tem 40.000 pontos ou mais?</span></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -266,10 +266,18 @@
                                         <input type="text" id="pontosBase" placeholder="Ex: 2.000">
                                     </div>
 
+                                    <div class="input-group">
+                                        <label for="extra-mar">Mar Atual</label>
+                                        <select id="extra-mar" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                            <option value="outros">Paraíso / Novo Mundo / Calm Belt</option>
+                                            <option value="blues">Blues (East, West, North, South)</option>
+                                        </select>
+                                    </div>
+
                                     <div class="admin-checkbox-group">
                                         <label><input type="checkbox" id="checkHaki"> Tem Haki?</label>
                                         <label><input type="checkbox" id="checkAkuma"> Tem Fruta?</label>
-                                        <label><input type="checkbox" id="check40k"> Tem 40.000 pontos ou mais?</label>
+                                        <label><input type="checkbox" id="check40k"> <span id="lbl-40k-extra">Tem 40.000 pontos ou mais?</span></label>
                                     </div>
 
                                     <div class="input-group">
