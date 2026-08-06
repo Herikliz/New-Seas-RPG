@@ -2209,7 +2209,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (checkNarradorVenceuCacada) checkNarradorVenceuCacada.addEventListener('change', gerarTextoCacada);
 
-        let listaProcuradosCache = [];
+        let listaProcuradosCache = {
+            "North Blue": [],
+            "South Blue": [],
+            "East Blue": [],
+            "West Blue": [],
+            "Paraíso": [],
+            "Novo Mundo": [],
+            "Calm Belt": []
+        };
 
         function atualizarEventosProcurado(row) {
             const select = row.querySelector('.select-procurado');
@@ -2243,12 +2251,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function popularSelect(select) {
             select.innerHTML = '<option value="" disabled selected>Selecione um procurado...</option>';
-            listaProcuradosCache.forEach(p => {
-                const option = document.createElement('option');
-                option.value = p.recompensa;
-                option.textContent = p.nome;
-                select.appendChild(option);
+            
+            const ordemMares = ["North Blue", "South Blue", "East Blue", "West Blue", "Paraíso", "Novo Mundo", "Calm Belt"];
+            
+            ordemMares.forEach(mar => {
+                if (listaProcuradosCache[mar]) {
+                    const optgroup = document.createElement('optgroup');
+                    optgroup.label = mar;
+                    
+                    if (listaProcuradosCache[mar].length > 0) {
+                        listaProcuradosCache[mar].forEach(p => {
+                            const option = document.createElement('option');
+                            option.value = p.recompensa;
+                            option.textContent = p.nome;
+                            optgroup.appendChild(option);
+                        });
+                    } else if (mar === "Calm Belt") {
+                        const option = document.createElement('option');
+                        option.disabled = true;
+                        option.textContent = 'Nenhum procurado';
+                        optgroup.appendChild(option);
+                    }
+                    
+                    if (optgroup.children.length > 0) {
+                        select.appendChild(optgroup);
+                    }
+                }
             });
+
+            Object.keys(listaProcuradosCache).forEach(mar => {
+                if (!ordemMares.includes(mar) && listaProcuradosCache[mar].length > 0) {
+                    const optgroup = document.createElement('optgroup');
+                    optgroup.label = mar;
+                    listaProcuradosCache[mar].forEach(p => {
+                        const option = document.createElement('option');
+                        option.value = p.recompensa;
+                        option.textContent = p.nome;
+                        optgroup.appendChild(option);
+                    });
+                    select.appendChild(optgroup);
+                }
+            });
+
             const optionManual = document.createElement('option');
             optionManual.value = 'manual';
             optionManual.textContent = '✏️ Inserir Manualmente';
@@ -2261,20 +2305,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(html => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
-                    const cards = doc.querySelectorAll('.bounty-card');
                     
-                    cards.forEach(card => {
-                        const nameEl = card.querySelector('.bounty-name');
-                        const valueEl = card.querySelector('.bounty-value');
-                        if (nameEl && valueEl) {
-                            listaProcuradosCache.push({
-                                nome: nameEl.textContent.trim(),
-                                recompensa: valueEl.textContent.replace(/\D/g, '')
-                            });
+                    doc.querySelectorAll('.bounty-grid').forEach(grid => {
+                        const dataSea = grid.getAttribute('data-sea');
+                        let seaName = "Outros";
+                        if (dataSea === "north-blue") seaName = "North Blue";
+                        else if (dataSea === "south-blue") seaName = "South Blue";
+                        else if (dataSea === "east-blue") seaName = "East Blue";
+                        else if (dataSea === "west-blue") seaName = "West Blue";
+                        else if (dataSea === "grand-line" || dataSea === "paraiso") seaName = "Paraíso";
+                        else if (dataSea === "novo-mundo") seaName = "Novo Mundo";
+                        else if (dataSea === "calm-belt") seaName = "Calm Belt";
+
+                        if (!listaProcuradosCache[seaName]) {
+                            listaProcuradosCache[seaName] = [];
                         }
+                        
+                        grid.querySelectorAll('.bounty-card').forEach(card => {
+                            const nameEl = card.querySelector('.bounty-name');
+                            const valueEl = card.querySelector('.bounty-value');
+                            if (nameEl && valueEl) {
+                                listaProcuradosCache[seaName].push({
+                                    nome: nameEl.textContent.trim(),
+                                    recompensa: valueEl.textContent.replace(/\D/g, '')
+                                });
+                            }
+                        });
                     });
                     
-                    listaProcuradosCache.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+                    Object.keys(listaProcuradosCache).forEach(mar => {
+                        listaProcuradosCache[mar].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+                    });
                     
                     const firstSelect = containerProcurados.querySelector('.select-procurado');
                     if (firstSelect) {
