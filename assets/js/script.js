@@ -900,6 +900,14 @@ function runAtributosCalc() {
             outTempo.innerText = tempoSegundos.toLocaleString('pt-BR', { maximumFractionDigits: 2 }) + " " + label;
         }
     }
+
+    let destPtsEl = document.getElementById('destruicao-pontos');
+    let outDest = document.getElementById('out-destruicao');
+    if (destPtsEl && outDest) {
+        let destPts = getCalcVal('destruicao-pontos');
+        let area = (destPts / 1000) * 5;
+        outDest.innerText = area.toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+    }
 }
 
 // ==========================================
@@ -5380,7 +5388,7 @@ window.donosDeAkuma = {
     "Mira Mira no Mi": "Bastian Locke",
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Mori Mori no Mi": "Valkar",
+    "Mori Mori no Mi": "Bastarion",
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
     "Ope Ope no Mi": "Morgana Du'lor",
     "Pamu Pamu no Mi": "Bakugo",
