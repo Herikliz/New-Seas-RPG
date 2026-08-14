@@ -6489,26 +6489,37 @@ document.addEventListener('DOMContentLoaded', () => {
             const btnCopiarBatalha = document.getElementById('btn-copiar-batalha');
             const btnCopiarTabela = document.getElementById('btn-copiar-tabela-batalha');
 
-            const animais = ['🐶','🦆','🐭','🐼','🐯','🐸','🐷','🐒','🐔','🦊'];
+            const animais = [
+                '🐶','🦆','🐭','🐼','🐯','🐸','🐷','🐒','🐔','🦊',
+                '🐺','🐴','🦓','🦌','🐮','🐗','🦇','🐻','🐨','🦘',
+                '🦡','🐦','🐧','🦅','🦉','🦄','🐲','🦖','🦕','🐢'
+            ];
             const emojisColunas = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟','🅰️','🅱️'];
             
-            const configBatalha = {
-                2: { r: 4, c: 6, total: 24 },
-                3: { r: 6, c: 6, total: 36 },
-                4: { r: 6, c: 8, total: 48 },
-                5: { r: 6, c: 10, total: 60 },
-                6: { r: 8, c: 9, total: 72 },
-                7: { r: 9, c: 9, total: 81 },
-                8: { r: 9, c: 10, total: 90 },
-                9: { r: 9, c: 12, total: 108 },
-                10: { r: 10, c: 12, total: 120 }
-            };
-
             function getMaxConfig() {
                 let j = parseInt(qtdJogadoresInput.value, 10) || 7;
                 if (j < 2) j = 2;
-                if (j > 10) j = 10;
-                return configBatalha[j];
+                if (j > 30) j = 30;
+
+                const baseConfig = {
+                    2: { r: 4, c: 6 },
+                    3: { r: 6, c: 6 },
+                    4: { r: 6, c: 8 },
+                    5: { r: 6, c: 10 },
+                    6: { r: 8, c: 9 },
+                    7: { r: 9, c: 9 },
+                    8: { r: 9, c: 10 },
+                    9: { r: 9, c: 12 },
+                    10: { r: 10, c: 12 }
+                };
+
+                if (j <= 10) {
+                    let cfg = baseConfig[j];
+                    return { r: cfg.r, c: cfg.c, total: cfg.r * cfg.c };
+                } else {
+                    let linhas = 10 + (j - 10);
+                    return { r: linhas, c: 12, total: linhas * 12 };
+                }
             }
 
             const itens = [
@@ -6595,7 +6606,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 qtdJogadoresInput.addEventListener('input', () => {
                     let val = parseInt(qtdJogadoresInput.value, 10);
                     if (val < 2) qtdJogadoresInput.value = 2;
-                    if (val > 10) qtdJogadoresInput.value = 10;
+                    if (val > 30) qtdJogadoresInput.value = 30;
                     
                     const cfg = getMaxConfig();
                     let currentTotal = getValores().total;
