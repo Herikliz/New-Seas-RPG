@@ -325,7 +325,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 <ul class="sub-menu">
                     <li><a href="aparencias.html">APARÊNCIAS</a></li>
                     <li><a href="classes.html">CLASSES</a></li>
-                    <li><a href="estilos-de-luta.html">ESTILOS DE LUTA</a></li>
+                    <li>
+                        <a href="estilos-de-luta.html" class="toggle-btn">ESTILOS DE LUTA <span class="arrow">▼</span></a>
+                        <ul class="sub-menu" style="margin-left: 10px; background-color: rgba(0,0,0,0.05);">
+                            <li><a href="tecnicas.html">TÉCNICAS</a></li>
+                        </ul>
+                    </li>
                     <li><a href="habilidades-unicas.html">HABILIDADES ÚNICAS</a></li>
                     <li><a href="linhagens.html">LINHAGENS</a></li>
                     <li><a href="racas.html">RAÇAS</a></li>
@@ -406,6 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li>
                 <a href="jornal.html" class="toggle-btn">JORNAL <span class="arrow">▼</span></a>
                 <ul class="sub-menu">
+                    <li><a href="jornais-promocionais.html">JORNAIS PROMOCIONAIS</a></li>
                     <li><a href="procurados.html">PROCURADOS</a></li>
                     <li><a href="imperadores-dos-mares.html">IMPERADORES DOS MARES</a></li>
                 </ul>
@@ -3619,7 +3625,7 @@ const recursosDasIlhas = {
     "Rakesh": ["Carvalho", "Materiais de Criadores 1", "Materiais de Criadores 2", "Ferro"],
     "Reino de Atlantis": ["Carvalho", "Materiais de Criadores 1", "Kairoseki"],
     "Reino Lulusia": ["Carvalho", "Pinheiro", "Materiais de Criadores 1", "Unobtainium"],
-    "Reino Negro de Drum": ["Pinheiro", "Materiais de Criadores 1", "Wapometal"],
+    "Reino Negro de Drum": ["Pinheiro", "Materiais de Criadores 1"],
     "Risky Red": ["Pinheiro", "Pau-Brasil", "Materiais de Criadores 1", "Materiais de Criadores 2", "Mithril"],
     "Roshwan": ["Pinheiro", "Materiais de Criadores 1", "Ferro"],
     "Rubeck": ["Carvalho", "Pinheiro", "Materiais de Criadores 1", "Materiais de Criadores 2", "Ferro"],
@@ -3766,15 +3772,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // RESISTÊNCIA - LOJA DE FERREIROS E ESCUDOS
 // ==========================================
 const minerioHp = {
-    'Adamantium': 10000,
     'Aço Carbono': 2000,
+    'Adamantium': 10000,
     'Beskar': 4000,
     'Ferro': 1000,
-    'Mithril': 8000,
-    'Unobtainium': 3500,
-    'Vibranium': 15000,
     'Kairoseki': '???',
-    'Wapometal': '???'
+    'Mithril': 8000,
+    'Rhaastmetal': '???',
+    'Unobtainium': 3500,
+    'Vibranium': 15000
 };
 
 function carregarHpDosMinerios() {
@@ -3797,16 +3803,16 @@ document.addEventListener('DOMContentLoaded', carregarHpDosMinerios);
 // PREÇOS - LOJA DE FERREIROS
 // ==========================================
 const minerioPrices = {
-    'adamantium': 500000000,
     'aco-carbono': 60000000,
+    'adamantium': 500000000,
+    'barra-damasco': null,
     'beskar': 300000000,
     'ferro': 40000000,
-    'mithril': 400000000,
-    'unobtainium': 150000000,
-    'vibranium': 500000000,
     'kairoseki': 4000000000,
-    'wapometal': null,
-    'barra-damasco': null
+    'mithril': 400000000,
+    'Rhaastmetal': null,
+    'unobtainium': 150000000,
+    'vibranium': 500000000
 };
 
 function formatPriceBR(value) {
@@ -3899,7 +3905,7 @@ function iniciarSistemaDeAbas() {
 
         <div class="input-group">
             <label>Metal Principal</label>
-            <select id="calc-metal">` + optionsHTML + `<option value="damasco">Barra Damasco</option><option value="wapometal">Wapometal</option></select>
+            <select id="calc-metal">` + optionsHTML + `<option value="damasco">Barra Damasco</option><option value="Rhaastmetal">Rhaastmetal</option></select>
         </div>
 
         <div class="input-group" id="calc-peso-container">
@@ -3947,7 +3953,7 @@ function iniciarSistemaDeAbas() {
         function calcular() {
             const selecao = selectMetal.value;
 
-            if (selecao === 'wapometal') {
+            if (selecao === 'Rhaastmetal') {
                 pesoContainer.style.display = 'block';
                 damascoContainer.style.display = 'none';
                 spanResultado.textContent = 'Total: ???';
@@ -3997,15 +4003,15 @@ function iniciarSistemaDeAbas() {
 
 (function() {
     const mineriosEscudo = {
-        "Adamantium": { preco10kg: 500000000, hp: minerioHp['Adamantium'] },
         "Aço Carbono": { preco10kg: 60000000, hp: minerioHp['Aço Carbono'] },
+        "Adamantium": { preco10kg: 500000000, hp: minerioHp['Adamantium'] },
         "Beskar": { preco10kg: 300000000, hp: minerioHp['Beskar'] },
         "Ferro": { preco10kg: 40000000, hp: minerioHp['Ferro'] },
-        "Mithril": { preco10kg: 400000000, hp: minerioHp['Mithril'] },
-        "Unobtainium": { preco10kg: 150000000, hp: minerioHp['Unobtainium'] },
-        "Vibranium": { preco10kg: 500000000, hp: minerioHp['Vibranium'] },
         "Kairoseki": { preco10kg: 4000000000, hp: minerioHp['Kairoseki'] },
-        "Wapometal": { preco10kg: '???', hp: minerioHp['Wapometal'] }
+        "Mithril": { preco10kg: 400000000, hp: minerioHp['Mithril'] },
+        "Rhaastmetal": { preco10kg: '???', hp: minerioHp['Rhaastmetal'] },
+        "Unobtainium": { preco10kg: 150000000, hp: minerioHp['Unobtainium'] },
+        "Vibranium": { preco10kg: 500000000, hp: minerioHp['Vibranium'] }
     };
 
     function initCalculadoraEscudos() {

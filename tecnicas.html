@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnicas - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico">TÉCNICAS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p style="margin-bottom: 15px;">Técnicas são habilidades avançadas derivadas dos Estilos de Luta e Akuma no Mi. Para usá-las, o personagem precisa atingir requisitos específicos e realizar a quantidade de treinos indicada na página do seu Estilo de Luta. Quando ativadas em combate, elas concedem os bônus informados, ampliando consideravelmente o potencial ofensivo, defensivo ou de movimentação do lutador.</p>
+                
+                <p style="margin-bottom: 25px;"><strong>As técnicas presentes nesta página são apenas as técnicas básicas que podem ser aprendidas por absolutamente todos os personagens que possuem o Estilo de Luta apropriado, mesmo sem possuir um professor para ensinar.</strong> É possível criar sua própria técnica e enviar para os ADMs avaliarem. É você mesmo quem decide os buffs das técnicas (seguindo as regras abaixo); o trabalho dos ADMs é apenas aprovar ou negar o balanceamento.</p>
+                
+                <div class="rank-box" style="text-align: left; padding: 25px; border-color: var(--accent-color);">
+                    <h2 class="title-quantico" style="font-size: 24px; text-align: center; color: var(--accent-color); margin-bottom: 20px;">CRIANDO SUAS PRÓPRIAS TÉCNICAS</h2>
+                    <p style="margin-bottom: 15px;">Para quem quer criar técnicas de estilo de luta, vocês devem seguir uma lógica simples. Cada estilo de luta consegue suportar o seguinte limite de buffs:</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 20px; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;"><strong>2 Técnicas com 25% de buff total:</strong> Essas técnicas DEVEM ocasionar um debuff de 10% em algum atributo no turno seguinte.</li>
+                        <li style="margin-bottom: 8px;"><strong>4 Técnicas com 20% de buff total.</strong></li>
+                        <li style="margin-bottom: 8px;"><strong>6 Técnicas com 15% de buff total.</strong></li>
+                        <li style="margin-bottom: 8px;"><strong>8 Técnicas que dão 10% ou menos.</strong></li>
+                    </ul>
+                    
+                    <p style="margin-bottom: 15px;"><i>Observação: Os buffs de técnica sempre devem ser múltiplos de cinco.</i></p>
+                    
+                    <p style="margin-bottom: 15px;">Você pode ter no máximo <strong>20 técnicas QUE POSSUEM BUFF por Estilo de Luta</strong>. Isso totaliza 80 técnicas com buff, caso você tenha 4 estilos de luta.</p>
+                    
+                    <p style="margin-bottom: 0;">Regras são regras, mas sempre prezaremos pela criatividade. O limite máximo absoluto que você pode pegar de buff numa técnica é <strong>30%</strong>, mas ela precisa ter contra-condições severas ou um jeito muito específico de ser utilizada (como no caso do King Punch). Esse tipo de técnica suprema é <strong>única por PERSONAGEM</strong>. Assim, o máximo absoluto que um personagem pode ter é de 81 técnicas no total.</p>
+                </div>
+
+                <p class="highlight-text text-center"><a href="https://herikliz.github.io/New-Seas-RPG-Ficha/" target="_blank" style="color: inherit; text-decoration: none;">CLIQUE AQUI PARA TER ACESSO À FICHA AUTOMÁTICA</a></p>
+            </section>
+
+            <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+                <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+            </div>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    BLACK CAT <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Shakushi</h4>
+                        <p style="margin-bottom: 15px;">Essa habilidade consiste em movimentos extremamente rápidos, a ponto de o usuário se tornar praticamente invisível aos olhos comuns. Durante a execução, ele se desloca em alta velocidade por todo o campo de batalha, desferindo golpes de forma indiscriminada e caótica. A técnica é tão intensa que o próprio usuário perde o controle sobre seus ataques, atingindo aliados e inimigos sem distinção.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 5.000 pontos em Velocidade.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +20% em Velocidade.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    COMBATE GIGANTE <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Hakoku</h4>
+                        <p style="margin-bottom: 15px;">Hakoku, que significa literalmente "Nação Guerreira", é uma técnica devastadora inspirada pelos gigantes guerreiros de Elbaf. Utilizando toda a sua força, os usuários invocam o "código guerreiro" e desferem golpes poderosos com suas armas, criando feixes de ar comprimido que cortam tudo em seu caminho, incluindo o próprio oceano. A técnica exige uma quantidade imensa de energia, o que pode resultar na destruição das armas utilizadas, especialmente se estiverem enferrujadas ou desgastadas. Os feixes de ar gerados têm uma cor distinta para cada guerreiro. A única coisa que os feixes não conseguem perfurar é um ser que os Gigantes de Elbaf conhecem como "A Serpente Manchada de Sangue".</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 10.000 pontos em Força.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +25% em Força.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    JAO KUN DŌ <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Stell Shins V1</h4>
+                        <p style="margin-bottom: 15px;">O Stell Shins V1 é a primeira fase de uma técnica de endurecimento das canelas, onde o usuário fortalece suas pernas ao ponto de poder usar chutes devastadores sem sofrer danos. Com treinos intensivos focados na resistência e na força, o usuário desenvolve canelas tão duras quanto aço, permitindo golpes incrivelmente poderosos e defensivos.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 5.000 pontos em Força.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +15% em Força.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Stell Shins V2</h4>
+                        <p style="margin-bottom: 15px;">O Stell Shins V2 é a evolução avançada da técnica Stell Shins, onde o usuário não só endurece ainda mais as canelas, mas também aprimora a velocidade e a precisão dos chutes. Neste nível, os golpes não só são incrivelmente fortes, mas também rápidos e difíceis de prever, tornando o usuário uma ameaça ainda maior em combate.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 10.000 pontos em Força.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +20% em Força e +10% em Velocidade.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    PERNA NEGRA <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Diable Jambe V1</h4>
+                        <p style="margin-bottom: 15px;">O Diable Jambe V1 é uma técnica na qual o usuário aquece a perna a uma temperatura extrema, tornando-a vermelha e emitindo calor intenso. Essa habilidade é ativada através da paixão fervorosa pela culinária, que simboliza a chama ardente no coração do cozinheiro. Respeitando um código de honra que proíbe o uso das mãos para golpear, o usuário canaliza sua dedicação e amor pela arte culinária, transformando esses sentimentos em uma arma poderosa. Com o Diable Jambe V1, os chutes são devastadores, capazes de causar queimaduras e danos significativos ao oponente. É importante que a paixão dos cozinheiros pela culinária seja explícita na cena, pois eles queimam essa paixão e amor devido ao seu código de honra.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 5.000 pontos em Força.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +15% em Força.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Diable Jambe V2</h4>
+                        <p style="margin-bottom: 15px;">O Diable Jambe V2 é uma evolução avançada da técnica original, onde o usuário pode incendiar suas pernas com um fogo muito mais intenso, sem a necessidade de girar para ativar a habilidade. Além disso, o usuário pode inflamar ambas as pernas rapidamente. Essa técnica reflete a paixão e a dedicação extremas do cozinheiro pela culinária, canalizando esses sentimentos em uma chama poderosa que envolve suas pernas. Respeitando o mesmo código de honra de não usar as mãos para golpear, o Diable Jambe V2 transforma a paixão culinária em uma arma letal, permitindo chutes devastadores e incrivelmente poderosos.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 10.000 pontos em Força.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +20% em Força.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Sky Walk | Blue Walk</h4>
+                        <p style="margin-bottom: 15px;">O Sky Walk é uma técnica ágil e avançada que permite ao usuário caminhar e saltar no ar, quase como se estivesse voando. Desenvolvido inicialmente como uma manobra de evasão e mobilidade superior, o Sky Walk possibilita movimentação rápida e em várias direções, dando uma vantagem estratégica significativa em combate. O Blue Walk, uma variação desta técnica, permite ao usuário se mover em alta velocidade debaixo d'água, tornando-se quase invisível devido à velocidade e à pressão da água. Ambas as técnicas exigem um controle absoluto dos músculos das pernas e uma capacidade de resposta rápida.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 7.000 pontos em Força.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +15% em Velocidade.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    PUNCH STYLE <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">King Punch</h4>
+                        <p style="margin-bottom: 15px;">O King Punch é uma técnica de soco incrivelmente poderosa, considerada uma das mais devastadoras no arsenal de qualquer lutador. Para dominar essa habilidade, o usuário deve passar por um rigoroso treinamento que inclui fortalecimentos físicos intensivos e um foco profundo na concentração de energia. Esta técnica só pode ser aprendida e executada no ambiente desafiador do Paraíso ou do Novo Mundo, onde as condições extremas forjam a verdadeira força. Ao executar o King Punch, o usuário canaliza toda a sua força e energia em um único golpe, capaz de causar destruição massiva e incapacitar oponentes formidáveis com um único soco.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 10.000 pontos em Força. Precisa estar no Paraíso ou no Novo Mundo.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +30% em Força se carregar por dois turnos e +60% se carregar por 4.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    ROKUSHIKI <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Geppo</h4>
+                        <p style="margin-bottom: 15px;">Geppo é uma técnica avançada de movimento que permite ao usuário saltar no ar, praticamente andando sobre ele. Utilizando impulsos rápidos com os pés, o usuário pode se mover em qualquer direção no ar, permitindo manobras evasivas e ataques aéreos.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> +15% em Velocidade.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Kami-e</h4>
+                        <p style="margin-bottom: 15px;">Kami-e é uma técnica de evasão que permite ao usuário tornar seu corpo tão leve e flexível quanto uma folha de papel, desviando de ataques com graça e facilidade. Ao relaxar completamente os músculos, o usuário pode evitar golpes mortais com movimentos fluidos e suaves.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Exclusividade:</strong> Exclusivo para Agentes Cipher Pol.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> +15% em Reflexo.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Rankyaku</h4>
+                        <p style="margin-bottom: 15px;">Rankyaku é uma técnica de ataque à distância que utiliza chutes rápidos e poderosos para criar lâminas de ar cortante. Essas lâminas são capazes de cortar através de objetos e oponentes com facilidade.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Exclusividade:</strong> Exclusivo para Agentes Cipher Pol.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> +15% em Destreza e +10% em Dano.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Shigan</h4>
+                        <p style="margin-bottom: 15px;">Shigan é uma técnica de ataque que transforma os dedos do usuário em armas letais, capazes de perfurar o corpo do oponente com um simples toque. Ao concentrar toda a força em um ponto pequeno, o usuário pode causar danos significativos com extrema precisão.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> +15% em Destreza ou Força.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Soru</h4>
+                        <p style="margin-bottom: 15px;">Soru é uma técnica de movimento ultra-rápido que permite ao usuário se mover tão rápido que se torna invisível aos olhos comuns. Utilizando uma série de passos rápidos, o usuário pode cobrir grandes distâncias instantaneamente, tornando-se difícil de atingir.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> +20% em Velocidade.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Tekkai</h4>
+                        <p style="margin-bottom: 15px;">Tekkai é uma técnica defensiva que endurece os músculos do corpo, tornando-os tão duros quanto ferro. Ao utilizar essa habilidade, o usuário pode resistir a ataques físicos com pouco ou nenhum dano.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> +20% em Resistência.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Rokuōgan</h4>
+                        <p style="margin-bottom: 15px;">Rokuōgan é a técnica suprema do Rokushiki, exigindo o domínio completo de todas as outras habilidades do conjunto. Concentrando uma quantidade massiva de energia entre as mãos, o usuário libera um ataque devastador capaz de causar graves danos internos ao oponente, mesmo à distância, atravessando defesas e barreiras. Esta técnica reflete a fusão perfeita de força, precisão e controle energético, demonstrando a habilidade física e a disciplina do usuário, que deve estar em um estado físico e mental excepcional para enfrentar os desafios mais formidáveis do Paraíso ou do Novo Mundo.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 3 treinos. É necessário que já tenha aprendido todas as outras 6 técnicas principais e que alguém que já saiba ela te ensine, seja um jogador ou um NPC.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> +20% em Dano e Ignora 10% de Resistência do Inimigo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    SUMÔ <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Harite (Palmada de Impacto)</h4>
+                        <p style="margin-bottom: 15px;">Tapa e socos desferidos com tamanha força que são capazes de lançar inimigos pelos ares, muitas vezes criando pressão de ar e ondas de choque.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Requisito:</strong> 5.000 pontos em Força.</li>
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Essa técnica dá ao usuário +25% em Força.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title" style="font-size: 32px; text-align: center; color: var(--accent-color); margin-bottom: 25px; cursor: pointer;">
+                    SWORD STYLE <span class="toggle-icon">▼</span>
+                </h2>
+                
+                <div class="toggle-content rank-box">
+                    <div style="margin-bottom: 0;">
+                        <h4 class="highlight-text" style="text-align: center; margin-bottom: 15px;">Empunhadura Dupla</h4>
+                        <p style="margin-bottom: 15px;">Uma técnica avançada onde o usuário segura uma espada com as duas mãos para maximizar a força de impacto em um único golpe brutal.</p>
+                        <ul style="margin-left: 40px;">
+                            <li style="margin-bottom: 8px;"><strong>Efeito:</strong> Foco em poder bruto de ataque. (A ser definido o buff específico).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
