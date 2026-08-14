@@ -6488,6 +6488,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const btnRandomizar = document.getElementById('btn-randomizar-batalha');
             const btnCopiarBatalha = document.getElementById('btn-copiar-batalha');
             const btnCopiarTabela = document.getElementById('btn-copiar-tabela-batalha');
+            const btnPreencherAuto = document.getElementById('btn-preencher-auto');
+            const containerAuto = document.getElementById('container-auto-porcentagem');
+            const inputAutoPerc = document.getElementById('auto-porcentagem');
+            const btnAplicarAuto = document.getElementById('btn-aplicar-auto');
 
             const animais = [
                 '🐶','🦆','🐭','🐼','🐯','🐸','🐷','🐒','🐔','🦊',
@@ -6533,6 +6537,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { id: 'treino', emoji: '🆓', text: 'Vale Treino' },
                 { id: 'redis', emoji: '🆕', text: 'Vale Redistribuição' },
                 { id: 'nav', emoji: '🆒', text: 'Vale Navegação' },
+                { id: 'linhagem', emoji: '🆙', text: 'Vale Linhagem' },
                 { id: 'perde', emoji: '❌', text: 'Perde tudo' },
                 { id: 'roubar', emoji: '♻️', text: 'Roubar' },
                 { id: 'escuna', emoji: '🚤', text: 'Escuna' },
@@ -6692,6 +6697,112 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 1500);
                 });
             });
+
+            if (btnPreencherAuto) {
+                btnPreencherAuto.addEventListener('click', () => {
+                    containerAuto.style.display = containerAuto.style.display === 'none' ? 'block' : 'none';
+                });
+            }
+
+            if (btnAplicarAuto) {
+                btnAplicarAuto.addEventListener('click', () => {
+                    let perc = parseInt(inputAutoPerc.value, 10);
+                    if (isNaN(perc) || perc < 1) perc = 1;
+                    if (perc > 100) perc = 100;
+
+                    const cfg = getMaxConfig();
+                    const totalSlots = cfg.total;
+                    let targetFill = Math.floor(totalSlots * (perc / 100));
+
+                    inputs.forEach(inp => inp.value = '');
+
+                    if (targetFill <= 0) {
+                        renderBoard();
+                        return;
+                    }
+
+                    let counts = {
+                        rei: 0, npc50: 0, npc100: 0, esp: 0,
+                        '25m': 0, '75m': 0, '150m': 0,
+                        treino: 0, redis: 0, nav: 0, linhagem: 0,
+                        perde: 0, roubar: 0,
+                        escuna: 0, brigue: 0, caravela: 0,
+                        meito: 0, zoan: 0, para: 0
+                    };
+
+                    let originalTarget = Math.floor(totalSlots * (perc / 100));
+
+                    // Garantir pelo menos 1 de cada (se a porcentagem permitir)
+                    for (let id in counts) {
+                        if (targetFill > 0) {
+                            counts[id] = 1;
+                            targetFill--;
+                        }
+                    }
+
+                    let qtd5Perc = Math.floor(originalTarget * 0.05);
+                    if (qtd5Perc < 1 && originalTarget >= 20) qtd5Perc = 1;
+
+                    // Como já colocamos 1 de cada na etapa anterior, adicionamos apenas o excedente para bater a cota de 5%
+                    let extraPerdeRoubar = Math.max(0, qtd5Perc - 1);
+
+                    if (extraPerdeRoubar > 0) {
+                        let toAddPerde = Math.min(extraPerdeRoubar, targetFill);
+                        counts['perde'] += toAddPerde;
+                        targetFill -= toAddPerde;
+                    }
+                    if (extraPerdeRoubar > 0) {
+                        let toAddRoubar = Math.min(extraPerdeRoubar, targetFill);
+                        counts['roubar'] += toAddRoubar;
+                        targetFill -= toAddRoubar;
+                    }
+
+                    if (targetFill > 0) {
+                        // Pesos lógicos aplicados (maior peso = mais quantidade)
+                        const weights = [
+                            { id: '25m', w: 20 },
+                            { id: 'npc50', w: 20 },
+                            { id: 'escuna', w: 15 },
+                            { id: '75m', w: 10 },
+                            { id: 'npc100', w: 10 },
+                            { id: 'brigue', w: 8 },
+                            { id: '150m', w: 5 },
+                            { id: 'caravela', w: 4 },
+                            { id: 'esp', w: 1.5 },
+                            { id: 'treino', w: 1.5 },
+                            { id: 'redis', w: 1.5 },
+                            { id: 'nav', w: 1.5 },
+                            { id: 'linhagem', w: 1.5 }
+                        ];
+
+                        let totalWeight = weights.reduce((sum, item) => sum + item.w, 0);
+                        let currentRem = targetFill;
+
+                        for (let item of weights) {
+                            let share = Math.floor(currentRem * (item.w / totalWeight));
+                            if (share > targetFill) share = targetFill;
+                            counts[item.id] += share;
+                            targetFill -= share;
+                        }
+
+                        let weightIndex = 0;
+                        while (targetFill > 0) {
+                            counts[weights[weightIndex].id]++;
+                            targetFill--;
+                            weightIndex = (weightIndex + 1) % weights.length;
+                        }
+                    }
+
+                    for (let id in counts) {
+                        if (counts[id] > 0) {
+                            let inp = document.querySelector(`.batalha-input[data-id="${id}"]`);
+                            if (inp) inp.value = counts[id];
+                        }
+                    }
+
+                    renderBoard();
+                });
+            }
 
             renderBoard();
 
