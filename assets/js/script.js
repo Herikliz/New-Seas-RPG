@@ -7216,8 +7216,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             let inp = r.querySelector('.batalha-jogador-emojis');
                             let tks = parseTokens(inp.value);
                             let inv = getInv(tks);
-                            if (inv.length > 0) {
-                                targets.push({ row: r, nome: nome, input: inp, tokens: tks, inv: inv });
+                            
+                            let stealableInv = inv.filter(item => item.resolved !== '♻️');
+
+                            if (stealableInv.length > 0) {
+                                targets.push({ row: r, nome: nome, input: inp, tokens: tks, inv: stealableInv });
                             }
                         });
 
@@ -7277,8 +7280,37 @@ document.addEventListener('DOMContentLoaded', () => {
                                         target.tokens.splice(selectedInvItem.index, 1);
                                         target.input.value = isActive ? target.tokens.join('; ') : target.tokens.join('');
                                         
+                                        let oldThiefToken = thiefTokens[thiefItem.index];
                                         thiefTokens[thiefItem.index] = selectedInvItem.token;
                                         thiefInput.value = isActive ? thiefTokens.join('; ') : thiefTokens.join('');
+                                        
+                                        let allRows = Array.from(document.querySelectorAll('.batalha-jogador-row'));
+                                        let namelessRow = allRows.find(r => r.querySelector('.batalha-jogador-nome').value.trim() === "");
+                                        
+                                        if (!namelessRow) {
+                                            const containerJogadoresBatalha = document.getElementById('container-batalha-jogadores');
+                                            namelessRow = document.createElement('div');
+                                            namelessRow.className = 'batalha-jogador-row';
+                                            namelessRow.style.cssText = 'display: flex; gap: 10px; align-items: center;';
+                                            namelessRow.innerHTML = `
+                                                <button class="btn-mover-cima-jogador btn-admin" style="margin: 0; padding: 10px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Mover para cima">⬆️</button>
+                                                <button class="btn-mover-baixo-jogador btn-admin" style="margin: 0; padding: 10px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Mover para baixo">⬇️</button>
+                                                <input type="text" class="batalha-jogador-nome" placeholder="Nome do Jogador" value="" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                                <input type="text" class="batalha-jogador-emojis" placeholder="Emojis (Ex: 🪙🆒🆕🆓💸)" value="" style="flex: 2; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                                <button class="btn-roubar-jogador btn-admin" style="margin: 0; padding: 10px 15px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Usar Roubar">♻️</button>
+                                                <button class="btn-remover-jogador-batalha btn-clear-admin" style="margin: 0; padding: 10px 15px; width: auto;">❌</button>
+                                            `;
+                                            containerJogadoresBatalha.appendChild(namelessRow);
+                                        }
+
+                                        let namelessInput = namelessRow.querySelector('.batalha-jogador-emojis');
+                                        let currentNamelessVal = namelessInput.value.trim();
+                                        if (isActive) {
+                                            if (currentNamelessVal && !currentNamelessVal.endsWith(';')) currentNamelessVal += '; ';
+                                            namelessInput.value = currentNamelessVal + oldThiefToken;
+                                        } else {
+                                            namelessInput.value = currentNamelessVal + oldThiefToken;
+                                        }
                                         
                                         modal2.remove();
                                         if (isActive && typeof syncBoardFromInputs === 'function') {
