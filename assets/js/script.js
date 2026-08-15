@@ -6492,6 +6492,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const containerAuto = document.getElementById('container-auto-porcentagem');
             const inputAutoPerc = document.getElementById('auto-porcentagem');
             const btnAplicarAuto = document.getElementById('btn-aplicar-auto');
+            const btnTelaJogador = document.getElementById('btn-tela-jogador');
+            const btnCopiarResultadoAtual = document.getElementById('btn-copiar-resultado-atual');
+
+            let boardState = { active: false, started: false, grid: [], revealed: [] };
 
             const animais = [
                 '🐶','🦆','🐭','🐼','🐯','🐸','🐷','🐒','🐔','🦊',
@@ -6564,7 +6568,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return { total, list };
             }
 
-            function renderBoard() {
+            function gerarGrid() {
                 const cfg = getMaxConfig();
                 maxEl.textContent = cfg.total;
                 
@@ -6572,21 +6576,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 totalEl.textContent = total;
                 totalEl.style.color = "var(--text-color)";
                 boardEl.style.color = "var(--text-color)";
-
-                let headerRow = "0️⃣";
-                for (let c = 0; c < cfg.c; c++) {
-                    headerRow += emojisColunas[c];
-                }
-                headerRow += "\n";
-
-                if (total === 0) {
-                    let board = headerRow;
-                    for (let i = 0; i < cfg.r; i++) {
-                        board += animais[i] + "⬛".repeat(cfg.c) + "\n";
-                    }
-                    boardEl.textContent = board.trim();
-                    return;
-                }
 
                 let fullList = [...list];
                 while (fullList.length < cfg.total) {
@@ -6598,17 +6587,78 @@ document.addEventListener('DOMContentLoaded', () => {
                     [fullList[i], fullList[j]] = [fullList[j], fullList[i]];
                 }
 
-                let board = headerRow;
+                boardState.grid = [];
+                boardState.revealed = [];
+                
+                let headerRow = ['0️⃣'];
+                for (let c = 0; c < cfg.c; c++) headerRow.push(emojisColunas[c]);
+                boardState.grid.push(headerRow);
+                boardState.revealed.push(new Array(cfg.c + 1).fill(true));
+
                 let index = 0;
-                for (let i = 0; i < cfg.r; i++) {
-                    board += animais[i] + fullList.slice(index, index + cfg.c).join('') + "\n";
-                    index += cfg.c;
+                for (let r = 0; r < cfg.r; r++) {
+                    let row = [animais[r]];
+                    let revRow = [true];
+                    for (let c = 0; c < cfg.c; c++) {
+                        row.push(total === 0 ? '⬛' : fullList[index]);
+                        revRow.push(false);
+                        index++;
+                    }
+                    boardState.grid.push(row);
+                    boardState.revealed.push(revRow);
                 }
-                boardEl.textContent = board.trim();
+            }
+
+            function renderBoard() {
+                if (boardState.grid.length === 0) gerarGrid();
+
+                let html = "";
+                for (let r = 0; r < boardState.grid.length; r++) {
+                    for (let c = 0; c < boardState.grid[r].length; c++) {
+                        let emoji = boardState.grid[r][c];
+                        let isHidden = boardState.active && r > 0 && c > 0 && !boardState.revealed[r][c];
+                        if (isHidden) emoji = '⬛';
+                        
+                        html += `<span class="batalha-celula" data-r="${r}" data-c="${c}" style="display:inline-block; width:30px; text-align:center; font-size:18px; cursor:${isHidden ? 'pointer' : 'default'};">${emoji}</span>`;
+                    }
+                    html += "<br>";
+                }
+                boardEl.innerHTML = html;
+            }
+
+            function checkReset() {
+                if (boardState.active && boardState.started) {
+                    return confirm("O jogo será reiniciado se você alterar a tabela. Deseja continuar?");
+                }
+                return true;
+            }
+
+            function updateTelaJogadorUI() {
+                if (boardState.active) {
+                    btnTelaJogador.innerHTML = '🛑 Parar Tela do Jogador';
+                    btnTelaJogador.style.backgroundColor = '#d32f2f';
+                    btnTelaJogador.style.borderColor = '#d32f2f';
+                    btnCopiarResultadoAtual.style.display = 'inline-block';
+                } else {
+                    btnTelaJogador.innerHTML = '👁️ Tela do Jogador';
+                    btnTelaJogador.style.backgroundColor = '#2196F3';
+                    btnTelaJogador.style.borderColor = '#2196F3';
+                    btnCopiarResultadoAtual.style.display = 'none';
+                }
             }
 
             if (qtdJogadoresInput) {
-                qtdJogadoresInput.addEventListener('input', () => {
+                let oldVal = qtdJogadoresInput.value;
+                qtdJogadoresInput.addEventListener('focus', () => oldVal = qtdJogadoresInput.value);
+                qtdJogadoresInput.addEventListener('change', () => {
+                    if (!checkReset()) {
+                        qtdJogadoresInput.value = oldVal;
+                        return;
+                    }
+                    boardState.started = false;
+                    boardState.active = false;
+                    updateTelaJogadorUI();
+
                     let val = parseInt(qtdJogadoresInput.value, 10);
                     if (val < 2) qtdJogadoresInput.value = 2;
                     if (val > 30) qtdJogadoresInput.value = 30;
@@ -6618,38 +6668,68 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (currentTotal > cfg.total) {
                         inputs.forEach(inp => inp.value = ''); 
                     }
+                    gerarGrid();
                     renderBoard();
                 });
             }
 
-            inputs.forEach(inp => inp.addEventListener('input', () => {
-                const cfg = getMaxConfig();
-                let totalOthers = 0;
-                inputs.forEach(other => {
-                    if (other !== inp) {
-                        totalOthers += parseInt(other.value, 10) || 0;
+            inputs.forEach(inp => {
+                let oldVal = inp.value;
+                inp.addEventListener('focus', () => oldVal = inp.value);
+                inp.addEventListener('change', () => {
+                    if (!checkReset()) {
+                        inp.value = oldVal;
+                        return;
                     }
+                    boardState.started = false;
+                    boardState.active = false;
+                    updateTelaJogadorUI();
+
+                    const cfg = getMaxConfig();
+                    let totalOthers = 0;
+                    inputs.forEach(other => {
+                        if (other !== inp) {
+                            totalOthers += parseInt(other.value, 10) || 0;
+                        }
+                    });
+                    
+                    let maxAllowed = cfg.total - totalOthers;
+                    if (maxAllowed < 0) maxAllowed = 0;
+                    
+                    let val = parseInt(inp.value, 10);
+                    if (!isNaN(val)) {
+                        if (val > maxAllowed) {
+                            inp.value = maxAllowed;
+                        } else if (val < 0) {
+                            inp.value = 0;
+                        }
+                    }
+                    
+                    gerarGrid();
+                    renderBoard();
                 });
-                
-                let maxAllowed = cfg.total - totalOthers;
-                if (maxAllowed < 0) maxAllowed = 0;
-                
-                let val = parseInt(inp.value, 10);
-                if (!isNaN(val)) {
-                    if (val > maxAllowed) {
-                        inp.value = maxAllowed;
-                    } else if (val < 0) {
-                        inp.value = 0;
-                    }
-                }
-                
+            });
+
+            btnRandomizar.addEventListener('click', () => {
+                if (!checkReset()) return;
+                boardState.started = false;
+                boardState.active = false;
+                updateTelaJogadorUI();
+                gerarGrid();
                 renderBoard();
-            }));
-            btnRandomizar.addEventListener('click', renderBoard);
+            });
 
             btnCopiarBatalha.addEventListener('click', () => {
                 if (btnCopiarBatalha.dataset.copying) return;
-                window.copiarTextoUniversal(boardEl.textContent).then(() => {
+                
+                let boardText = boardState.grid.map((row, r) => row.map((emoji, c) => {
+                    if (boardState.active && r > 0 && c > 0 && !boardState.revealed[r][c]) {
+                        return '⬛';
+                    }
+                    return emoji;
+                }).join('')).join('\n');
+                
+                window.copiarTextoUniversal(boardText).then(() => {
                     let orig = btnCopiarBatalha.textContent;
                     btnCopiarBatalha.textContent = "✅ Copiado!";
                     btnCopiarBatalha.style.background = "#4caf50";
@@ -6706,6 +6786,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (btnAplicarAuto) {
                 btnAplicarAuto.addEventListener('click', () => {
+                    if (!checkReset()) return;
+                    boardState.started = false;
+                    boardState.active = false;
+                    updateTelaJogadorUI();
+
                     let perc = parseInt(inputAutoPerc.value, 10);
                     if (isNaN(perc) || perc < 1) perc = 1;
                     if (perc > 100) perc = 100;
@@ -6717,6 +6802,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     inputs.forEach(inp => inp.value = '');
 
                     if (targetFill <= 0) {
+                        gerarGrid();
                         renderBoard();
                         return;
                     }
@@ -6732,7 +6818,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     let originalTarget = Math.floor(totalSlots * (perc / 100));
 
-                    // Garantir pelo menos 1 de cada (se a porcentagem permitir)
                     for (let id in counts) {
                         if (targetFill > 0) {
                             counts[id] = 1;
@@ -6743,7 +6828,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     let qtd5Perc = Math.floor(originalTarget * 0.05);
                     if (qtd5Perc < 1 && originalTarget >= 20) qtd5Perc = 1;
 
-                    // Como já colocamos 1 de cada na etapa anterior, adicionamos apenas o excedente para bater a cota de 5%
                     let extraPerdeRoubar = Math.max(0, qtd5Perc - 1);
 
                     if (extraPerdeRoubar > 0) {
@@ -6758,7 +6842,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     if (targetFill > 0) {
-                        // Pesos lógicos aplicados (maior peso = mais quantidade)
                         const weights = [
                             { id: '25m', w: 20 },
                             { id: 'npc50', w: 20 },
@@ -6800,10 +6883,219 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
 
+                    gerarGrid();
                     renderBoard();
                 });
             }
 
+            if (btnTelaJogador) {
+                btnTelaJogador.addEventListener('click', () => {
+                    if (boardState.active) {
+                        if (boardState.started) {
+                            if (!confirm("Isso irá encerrar o modo tela do jogador e revelar tudo. Continuar?")) return;
+                        }
+                        boardState.active = false;
+                        boardState.started = false;
+                    } else {
+                        boardState.active = true;
+                        boardState.started = false;
+                        if (boardState.revealed.length === 0) gerarGrid();
+                        for (let r = 1; r < boardState.revealed.length; r++) {
+                            for (let c = 1; c < boardState.revealed[r].length; c++) {
+                                boardState.revealed[r][c] = false;
+                            }
+                        }
+                    }
+                    updateTelaJogadorUI();
+                    renderBoard();
+                });
+            }
+
+            function syncBoardFromInputs() {
+                if (!boardState.active || boardState.grid.length === 0) return;
+                
+                for (let r = 1; r < boardState.revealed.length; r++) {
+                    for (let c = 1; c < boardState.revealed[r].length; c++) {
+                        boardState.revealed[r][c] = false;
+                    }
+                }
+                
+                const rows = document.querySelectorAll('.batalha-jogador-emojis');
+                rows.forEach(input => {
+                    let str = input.value;
+                    let parts = str.split(';').map(s => s.trim()).filter(s => s);
+                    for (let pt of parts) {
+                        let r = -1, c = -1;
+                        for (let i = 0; i < animais.length; i++) {
+                            if (pt.includes(animais[i])) r = i + 1;
+                        }
+                        for (let i = 0; i < emojisColunas.length; i++) {
+                            if (pt.includes(emojisColunas[i])) c = i + 1;
+                        }
+                        if (r !== -1 && c !== -1 && boardState.revealed[r] && boardState.revealed[r][c] !== undefined) {
+                            boardState.revealed[r][c] = true;
+                        }
+                    }
+                });
+                
+                renderBoard();
+            }
+
+            function resolveCoords(str) {
+                let parts = str.split(';').map(s => s.trim()).filter(s => s);
+                let res = [];
+                for (let pt of parts) {
+                    let r = -1, c = -1;
+                    for (let i = 0; i < animais.length; i++) {
+                        if (pt.includes(animais[i])) r = i + 1;
+                    }
+                    for (let i = 0; i < emojisColunas.length; i++) {
+                        if (pt.includes(emojisColunas[i])) c = i + 1;
+                    }
+                    
+                    let emoji = pt;
+                    if (r !== -1 && c !== -1 && boardState.grid[r] && boardState.grid[r][c]) {
+                        emoji = boardState.grid[r][c];
+                    }
+                    
+                    // Lógica do Perde Tudo (limpa o que havia ganho) e Nada (ignora o emoji)
+                    if (emoji === '❌') {
+                        res = [];
+                    } else if (emoji !== '⭕') {
+                        res.push(emoji); 
+                    }
+                }
+                return res.join('');
+            }
+
+            if (btnCopiarResultadoAtual) {
+                btnCopiarResultadoAtual.addEventListener('click', () => {
+                    if (btnCopiarResultadoAtual.dataset.copying) return;
+
+                    let txt = "";
+                    for (let r = 0; r < boardState.grid.length; r++) {
+                        for (let c = 0; c < boardState.grid[r].length; c++) {
+                            let emoji = boardState.grid[r][c];
+                            if (boardState.active && r > 0 && c > 0 && !boardState.revealed[r][c]) {
+                                emoji = '⬛';
+                            }
+                            txt += emoji;
+                        }
+                        txt += "\n";
+                    }
+                    txt += "\n";
+
+                    const rows = containerJogadoresBatalha.querySelectorAll('.batalha-jogador-row');
+                    let count = 1;
+                    rows.forEach(row => {
+                        let nome = row.querySelector('.batalha-jogador-nome').value.trim();
+                        if (nome) {
+                            let coords = row.querySelector('.batalha-jogador-emojis').value.trim();
+                            let emjs = resolveCoords(coords);
+                            txt += `${count}. ${nome}: ${emjs}\n`;
+                            count++;
+                        }
+                    });
+
+                    window.copiarTextoUniversal(txt.trim()).then(() => {
+                        let orig = btnCopiarResultadoAtual.textContent;
+                        btnCopiarResultadoAtual.textContent = "✅ Copiado!";
+                        btnCopiarResultadoAtual.style.background = "#4caf50";
+                        btnCopiarResultadoAtual.dataset.copying = "true";
+                        setTimeout(() => {
+                            btnCopiarResultadoAtual.textContent = orig;
+                            btnCopiarResultadoAtual.style.background = "#9C27B0";
+                            delete btnCopiarResultadoAtual.dataset.copying;
+                        }, 1500);
+                    });
+                });
+            }
+
+            boardEl.addEventListener('click', (e) => {
+                if (!boardState.active) return;
+                const cell = e.target.closest('.batalha-celula');
+                if (!cell) return;
+                
+                const r = parseInt(cell.dataset.r);
+                const c = parseInt(cell.dataset.c);
+                if (r === 0 || c === 0 || boardState.revealed[r][c]) return;
+
+                const rows = Array.from(document.querySelectorAll('.batalha-jogador-row'));
+                const jogadores = rows.map((row, i) => ({
+                    idx: i,
+                    nome: row.querySelector('.batalha-jogador-nome').value.trim(),
+                    input: row.querySelector('.batalha-jogador-emojis')
+                })).filter(j => j.nome !== "");
+
+                const coordName = animais[r-1] + emojisColunas[c-1];
+
+                const modalHtml = `
+                <div id="batalha-modal-jogadores" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:999999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);">
+                    <div style="background:var(--sidebar-bg);padding:30px;border:2px solid var(--accent-color);border-radius:12px;text-align:center;max-width:400px;width:90%;">
+                        <h3 style="color:var(--accent-color);margin-bottom:20px;font-family:'Quantico',sans-serif;">Para quem vai a coordenada ${coordName}?</h3>
+                        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:15px;max-height:30vh;overflow-y:auto;padding-right:5px;">
+                            ${jogadores.length > 0 ? jogadores.map(j => `<button class="btn-selecionar-jog" data-idx="${j.idx}" style="padding:12px;background:var(--bg-color);border:1px solid var(--sidebar-border);color:var(--text-color);cursor:pointer;border-radius:6px;font-family:'Comfortaa',sans-serif;font-weight:bold;transition:border-color 0.2s;">${j.nome}</button>`).join('') : '<p style="color:var(--text-color);font-size:14px;margin:0;">Nenhum jogador na lista.</p>'}
+                        </div>
+                        <div style="display:flex; gap:10px; margin-bottom:20px;">
+                            <input type="text" id="novo-jogador-nome-modal" placeholder="Ou digite o nome..." style="flex:1; padding:10px; border-radius:6px; border:1px solid var(--sidebar-border); background:var(--bg-color); color:var(--text-color); font-family:'Comfortaa',sans-serif;">
+                            <button id="btn-add-jog-modal" class="btn-admin" style="margin:0; padding:10px; width:auto;">➕ Dar</button>
+                        </div>
+                        <button id="btn-cancelar-modal-jog" class="btn-clear-admin" style="margin:0;width:100%;">Cancelar</button>
+                    </div>
+                </div>`;
+
+                document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+                document.querySelectorAll('.btn-selecionar-jog').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const idx = parseInt(this.dataset.idx);
+                        const targetInput = rows[idx].querySelector('.batalha-jogador-emojis');
+                        
+                        let currentVal = targetInput.value.trim();
+                        if (currentVal && !currentVal.endsWith(';')) currentVal += '; ';
+                        targetInput.value = currentVal + coordName;
+
+                        boardState.revealed[r][c] = true;
+                        boardState.started = true;
+                        syncBoardFromInputs();
+                        renderBoard();
+
+                        document.getElementById('batalha-modal-jogadores').remove();
+                    });
+                });
+
+                document.getElementById('btn-add-jog-modal').addEventListener('click', () => {
+                    const novoNome = document.getElementById('novo-jogador-nome-modal').value.trim();
+                    if (!novoNome) return;
+
+                    const containerJogadoresBatalha = document.getElementById('container-batalha-jogadores');
+                    const newRow = document.createElement('div');
+                    newRow.className = 'batalha-jogador-row';
+                    newRow.style.cssText = 'display: flex; gap: 10px; align-items: center;';
+                    newRow.innerHTML = `
+                        <button class="btn-mover-cima-jogador btn-admin" style="margin: 0; padding: 10px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Mover para cima">⬆️</button>
+                        <button class="btn-mover-baixo-jogador btn-admin" style="margin: 0; padding: 10px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Mover para baixo">⬇️</button>
+                        <input type="text" class="batalha-jogador-nome" placeholder="Nome do Jogador" value="${novoNome}" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                        <input type="text" class="batalha-jogador-emojis" placeholder="Emojis (Ex: 🪙🆒🆕🆓💸)" value="${coordName}" style="flex: 2; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                        <button class="btn-roubar-jogador btn-admin" style="margin: 0; padding: 10px 15px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Usar Roubar">♻️</button>
+                        <button class="btn-remover-jogador-batalha btn-clear-admin" style="margin: 0; padding: 10px 15px; width: auto;">❌</button>
+                    `;
+                    containerJogadoresBatalha.appendChild(newRow);
+
+                    boardState.revealed[r][c] = true;
+                    boardState.started = true;
+                    syncBoardFromInputs();
+                    renderBoard();
+
+                    document.getElementById('batalha-modal-jogadores').remove();
+                });
+
+                document.getElementById('btn-cancelar-modal-jog').addEventListener('click', () => {
+                    document.getElementById('batalha-modal-jogadores').remove();
+                });
+            });
+
+            gerarGrid();
             renderBoard();
 
             // ==========================================
@@ -6817,48 +7109,218 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnAddJogadorBatalha.addEventListener('click', () => {
                     const row = document.createElement('div');
                     row.className = 'batalha-jogador-row';
-                    row.style.cssText = 'display: flex; gap: 10px;';
+                    row.style.cssText = 'display: flex; gap: 10px; align-items: center;';
                     row.innerHTML = `
+                        <button class="btn-mover-cima-jogador btn-admin" style="margin: 0; padding: 10px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Mover para cima">⬆️</button>
+                        <button class="btn-mover-baixo-jogador btn-admin" style="margin: 0; padding: 10px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Mover para baixo">⬇️</button>
                         <input type="text" class="batalha-jogador-nome" placeholder="Nome do Jogador" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
                         <input type="text" class="batalha-jogador-emojis" placeholder="Emojis (Ex: 🪙🆒🆕🆓💸)" style="flex: 2; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                        <button class="btn-roubar-jogador btn-admin" style="margin: 0; padding: 10px 15px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Usar Roubar">♻️</button>
                         <button class="btn-remover-jogador-batalha btn-clear-admin" style="margin: 0; padding: 10px 15px; width: auto;">❌</button>
                     `;
                     containerJogadoresBatalha.appendChild(row);
-                    row.querySelector('.btn-remover-jogador-batalha').addEventListener('click', () => {
-                        row.remove();
-                    });
                 });
-
-                const initialRemBtn = containerJogadoresBatalha.querySelector('.btn-remover-jogador-batalha');
-                if (initialRemBtn) {
-                    initialRemBtn.addEventListener('click', (e) => {
-                        e.target.closest('.batalha-jogador-row').remove();
-                    });
-                }
             }
 
             if (containerJogadoresBatalha) {
-                containerJogadoresBatalha.addEventListener('input', (e) => {
-                    if (e.target.classList.contains('batalha-jogador-emojis')) {
-                        let val = e.target.value.replace(/👑/g, '⚜️');
-                        let validos = ['⚜️','🧑‍🧑‍🧒‍🧒','🧑‍🧑‍🧒','🚹','🪙','💸','💰','🆓','🆕','🆒','❌','♻️','🚤','🛥️','🛳️','🔪','🍆','🍑'];
-                        let resultado = '';
-                        while (val.length > 0) {
-                            let achou = false;
-                            for (let v of validos) {
-                                if (val.startsWith(v)) {
-                                    resultado += v;
-                                    val = val.slice(v.length);
-                                    achou = true;
-                                    break;
+                containerJogadoresBatalha.addEventListener('click', (e) => {
+                    const row = e.target.closest('.batalha-jogador-row');
+                    if (!row) return;
+
+                    if (e.target.closest('.btn-remover-jogador-batalha')) {
+                        row.remove();
+                        if (typeof syncBoardFromInputs === 'function') syncBoardFromInputs();
+                    } else if (e.target.closest('.btn-mover-cima-jogador')) {
+                        const prev = row.previousElementSibling;
+                        if (prev && prev.classList.contains('batalha-jogador-row')) {
+                            row.parentNode.insertBefore(row, prev);
+                        }
+                    } else if (e.target.closest('.btn-mover-baixo-jogador')) {
+                        const next = row.nextElementSibling;
+                        if (next && next.classList.contains('batalha-jogador-row')) {
+                            row.parentNode.insertBefore(next, row);
+                        }
+                    } else if (e.target.closest('.btn-roubar-jogador')) {
+                        const isActive = boardState.active;
+                        
+                        function parseTokens(str) {
+                            if (isActive) {
+                                return str.split(';').map(s => s.trim()).filter(s => s);
+                            } else {
+                                let val = str;
+                                let validos = ['⚜️','🧑‍🧑‍🧒‍🧒','🧑‍🧑‍🧒','🚹','🪙','💸','💰','🆓','🆕','🆒','🆙','❌','♻️','🚤','🛥️','🛳️','🔪','🍆','🍑'];
+                                let tokens = [];
+                                while (val.length > 0) {
+                                    let achou = false;
+                                    for (let v of validos) {
+                                        if (val.startsWith(v)) {
+                                            tokens.push(v);
+                                            val = val.slice(v.length);
+                                            achou = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!achou) {
+                                        let charLen = val.codePointAt(0) > 0xFFFF ? 2 : 1;
+                                        tokens.push(val.slice(0, charLen));
+                                        val = val.slice(charLen);
+                                    }
                                 }
-                            }
-                            if (!achou) {
-                                let charLen = val.codePointAt(0) > 0xFFFF ? 2 : 1;
-                                val = val.slice(charLen);
+                                return tokens;
                             }
                         }
-                        e.target.value = resultado;
+
+                        function resolveSingle(pt) {
+                            if (!isActive) return pt;
+                            let r = -1, c = -1;
+                            for (let i = 0; i < animais.length; i++) {
+                                if (pt.includes(animais[i])) r = i + 1;
+                            }
+                            for (let i = 0; i < emojisColunas.length; i++) {
+                                if (pt.includes(emojisColunas[i])) c = i + 1;
+                            }
+                            if (r !== -1 && c !== -1 && boardState.grid[r] && boardState.grid[r][c]) {
+                                return boardState.grid[r][c];
+                            }
+                            return pt;
+                        }
+
+                        function getInv(tokens) {
+                            let inv = [];
+                            for (let i = 0; i < tokens.length; i++) {
+                                let res = resolveSingle(tokens[i]);
+                                if (res === '❌') {
+                                    inv = [];
+                                } else if (res !== '⭕' && res !== '') {
+                                    inv.push({ token: tokens[i], resolved: res, index: i });
+                                }
+                            }
+                            return inv;
+                        }
+
+                        let thiefInput = row.querySelector('.batalha-jogador-emojis');
+                        let thiefTokens = parseTokens(thiefInput.value);
+                        let thiefInv = getInv(thiefTokens);
+
+                        let thiefItem = thiefInv.find(i => i.resolved === '♻️');
+                        if (!thiefItem) {
+                            alert('Você não tem nenhum ♻️ válido neste momento.');
+                            return;
+                        }
+
+                        const allRows = Array.from(document.querySelectorAll('.batalha-jogador-row'));
+                        let targets = [];
+                        allRows.forEach(r => {
+                            if (r === row) return;
+                            let nome = r.querySelector('.batalha-jogador-nome').value.trim() || 'Desconhecido';
+                            let inp = r.querySelector('.batalha-jogador-emojis');
+                            let tks = parseTokens(inp.value);
+                            let inv = getInv(tks);
+                            if (inv.length > 0) {
+                                targets.push({ row: r, nome: nome, input: inp, tokens: tks, inv: inv });
+                            }
+                        });
+
+                        if (targets.length === 0) {
+                            alert('Nenhum outro jogador possui itens válidos para serem roubados neste momento.');
+                            return;
+                        }
+
+                        const mapNomes = {
+                            '⚜️': 'Rei', '🧑‍🧑‍🧒‍🧒': '100 NPCs', '🧑‍🧑‍🧒': '50 NPCs', '🚹': 'NPC Especial', '🪙': '25M', '💸': '75M', '💰': '150M',
+                            '🆓': 'Treino', '🆕': 'Redistribuição', '🆒': 'Navegação', '🆙': 'Linhagem', '♻️': 'Roubar', '🚤': 'Escuna', '🛥️': 'Brigue', '🛳️': 'Caravela', '🔪': 'Meitō', '🍆': 'Zoan', '🍑': 'Paramecia'
+                        };
+
+                        const modal1 = document.createElement('div');
+                        modal1.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:999999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);';
+                        modal1.innerHTML = `
+                            <div style="background:var(--sidebar-bg);padding:30px;border:2px solid var(--accent-color);border-radius:12px;text-align:center;max-width:400px;width:90%;">
+                                <h3 style="color:var(--accent-color);margin-bottom:20px;font-family:'Quantico',sans-serif;">De quem você quer roubar?</h3>
+                                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;max-height:40vh;overflow-y:auto;padding-right:5px;">
+                                    ${targets.map((t, i) => `<button class="btn-escolher-alvo" data-idx="${i}" style="padding:12px;background:var(--bg-color);border:1px solid var(--sidebar-border);color:var(--text-color);cursor:pointer;border-radius:6px;font-family:'Comfortaa',sans-serif;font-weight:bold;transition:border-color 0.2s;">${t.nome} (${t.inv.length} itens)</button>`).join('')}
+                                </div>
+                                <button id="btn-cancelar-roubo" class="btn-clear-admin" style="margin:0;width:100%;">Cancelar</button>
+                            </div>
+                        `;
+                        document.body.appendChild(modal1);
+
+                        document.getElementById('btn-cancelar-roubo').addEventListener('click', () => modal1.remove());
+
+                        modal1.querySelectorAll('.btn-escolher-alvo').forEach(btn => {
+                            btn.addEventListener('click', function() {
+                                modal1.remove();
+                                let target = targets[parseInt(this.dataset.idx)];
+                                
+                                const modal2 = document.createElement('div');
+                                modal2.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:999999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);';
+                                modal2.innerHTML = `
+                                    <div style="background:var(--sidebar-bg);padding:30px;border:2px solid var(--accent-color);border-radius:12px;text-align:center;max-width:400px;width:90%;">
+                                        <h3 style="color:var(--accent-color);margin-bottom:20px;font-family:'Quantico',sans-serif;">O que deseja roubar de ${target.nome}?</h3>
+                                        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;max-height:40vh;overflow-y:auto;padding-right:5px;">
+                                            ${target.inv.map((item, i) => {
+                                                let nomeDoItem = mapNomes[item.resolved] || item.resolved;
+                                                let displayStr = isActive ? `${item.token} (${nomeDoItem})` : nomeDoItem;
+                                                return `<button class="btn-escolher-item" data-idx="${i}" style="padding:12px;background:var(--bg-color);border:1px solid var(--sidebar-border);color:var(--text-color);cursor:pointer;border-radius:6px;font-family:'Comfortaa',sans-serif;font-weight:bold;transition:border-color 0.2s;">${item.resolved} ${displayStr}</button>`;
+                                            }).join('')}
+                                        </div>
+                                        <button id="btn-cancelar-item" class="btn-clear-admin" style="margin:0;width:100%;">Cancelar</button>
+                                    </div>
+                                `;
+                                document.body.appendChild(modal2);
+
+                                document.getElementById('btn-cancelar-item').addEventListener('click', () => modal2.remove());
+
+                                modal2.querySelectorAll('.btn-escolher-item').forEach(btnItem => {
+                                    btnItem.addEventListener('click', function() {
+                                        let selectedInvItem = target.inv[parseInt(this.dataset.idx)];
+                                        
+                                        target.tokens.splice(selectedInvItem.index, 1);
+                                        target.input.value = isActive ? target.tokens.join('; ') : target.tokens.join('');
+                                        
+                                        thiefTokens[thiefItem.index] = selectedInvItem.token;
+                                        thiefInput.value = isActive ? thiefTokens.join('; ') : thiefTokens.join('');
+                                        
+                                        modal2.remove();
+                                        if (isActive && typeof syncBoardFromInputs === 'function') {
+                                            syncBoardFromInputs();
+                                        }
+                                    });
+                                });
+                            });
+                        });
+                    }
+                });
+
+                containerJogadoresBatalha.addEventListener('input', (e) => {
+                    if (e.target.classList.contains('batalha-jogador-emojis')) {
+                        if (boardState.active) {
+                            let val = e.target.value;
+                            val = val.replace(/[, \.\-]+/g, '; ');
+                            val = val.replace(/;+/g, ';');
+                            val = val.replace(/; ;/g, '; ');
+                            e.target.value = val;
+                            syncBoardFromInputs(); // Atualiza as casas da Batalha Naval automaticamente
+                        } else {
+                            let val = e.target.value.replace(/👑/g, '⚜️');
+                            let validos = ['⚜️','🧑‍🧑‍🧒‍🧒','🧑‍🧑‍🧒','🚹','🪙','💸','💰','🆓','🆕','🆒','🆙','❌','♻️','🚤','🛥️','🛳️','🔪','🍆','🍑'];
+                            let resultado = '';
+                            while (val.length > 0) {
+                                let achou = false;
+                                for (let v of validos) {
+                                    if (val.startsWith(v)) {
+                                        resultado += v;
+                                        val = val.slice(v.length);
+                                        achou = true;
+                                        break;
+                                    }
+                                }
+                                if (!achou) {
+                                    let charLen = val.codePointAt(0) > 0xFFFF ? 2 : 1;
+                                    val = val.slice(charLen);
+                                }
+                            }
+                            e.target.value = resultado;
+                        }
                     }
                 });
             }
@@ -6881,24 +7343,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
 
                     const mapRecompensas = [
-                        { e: '⚜️', m: 150000000, t: '250 pontos' },
-                        { e: '🧑‍🧑‍🧒‍🧒', m: 0, t: '100 NPCs Comuns' },
-                        { e: '🧑‍🧑‍🧒', m: 0, t: '50 NPCs Comuns' },
-                        { e: '🚹', m: 0, t: 'NPC Especial' },
-                        { e: '🪙', m: 25000000, t: null },
-                        { e: '💸', m: 75000000, t: null },
-                        { e: '💰', m: 150000000, t: null },
-                        { e: '🆓', m: 0, t: 'Vale Treino' },
-                        { e: '🆕', m: 0, t: 'Vale Redistribuição' },
-                        { e: '🆒', m: 0, t: 'Vale Navegação' },
-                        { e: '❌', m: 0, t: 'Perde tudo' },
-                        { e: '♻️', m: 0, t: 'Roubar' },
-                        { e: '🚤', m: 0, t: 'Escuna' },
-                        { e: '🛥️', m: 0, t: 'Brigue' },
-                        { e: '🛳️', m: 0, t: 'Caravela' },
-                        { e: '🔪', m: 0, t: 'Meitō' },
-                        { e: '🍆', m: 0, t: 'Zoan' },
-                        { e: '🍑', m: 0, t: 'Paramecia' }
+                        { e: '⚜️', m: 150000000, p: 250 },
+                        { e: '🧑‍🧑‍🧒‍🧒', n: 100 },
+                        { e: '🧑‍🧑‍🧒', n: 50 },
+                        { e: '🚹', id: 'especial', s: 'NPC Especial', pl: 'NPCs Especiais' },
+                        { e: '🪙', m: 25000000 },
+                        { e: '💸', m: 75000000 },
+                        { e: '💰', m: 150000000 },
+                        { e: '🆓', id: 'treino', s: 'Vale Treino', pl: 'Vales Treino' },
+                        { e: '🆕', id: 'redis', s: 'Vale Redistribuição', pl: 'Vales Redistribuição' },
+                        { e: '🆒', id: 'nav', s: 'Vale Navegação', pl: 'Vales Navegação' },
+                        { e: '🆙', id: 'linhagem', s: 'Vale Linhagem', pl: 'Vales Linhagem' },
+                        { e: '❌', reset: true },
+                        { e: '♻️', id: 'roubar', s: 'Roubar', pl: 'Roubar' },
+                        { e: '🚤', id: 'escuna', s: 'Escuna', pl: 'Escunas' },
+                        { e: '🛥️', id: 'brigue', s: 'Brigue', pl: 'Brigues' },
+                        { e: '🛳️', id: 'caravela', s: 'Caravela', pl: 'Caravelas' },
+                        { e: '🔪', id: 'meito', s: 'Meitō', pl: 'Meitōs' },
+                        { e: '🍆', id: 'zoan', s: 'Zoan', pl: 'Zoans' },
+                        { e: '🍑', id: 'para', s: 'Paramecia', pl: 'Paramecias' }
                     ];
 
                     rows.forEach(row => {
@@ -6906,16 +7369,60 @@ document.addEventListener('DOMContentLoaded', () => {
                         let emojisStr = row.querySelector('.batalha-jogador-emojis').value.trim();
                         if (!nome) return;
                         
+                        if (typeof boardState !== 'undefined' && boardState.active) {
+                            emojisStr = resolveCoords(emojisStr);
+                        } else {
+                            emojisStr = emojisStr.replace(/⭕/g, ''); 
+                        }
+
                         let money = 0;
-                        let items = [];
-                        
-                        mapRecompensas.forEach(m => {
-                            while (emojisStr.indexOf(m.e) !== -1) {
-                                emojisStr = emojisStr.replace(m.e, '');
-                                if (m.m) money += m.m;
-                                if (m.t) items.push(m.t);
+                        let points = 0;
+                        let npcs = 0;
+                        let counts = {};
+
+                        let i = 0;
+                        while (i < emojisStr.length) {
+                            let found = false;
+                            for (let m of mapRecompensas) {
+                                if (emojisStr.startsWith(m.e, i)) {
+                                    found = true;
+                                    if (m.reset) {
+                                        money = 0;
+                                        points = 0;
+                                        npcs = 0;
+                                        counts = {};
+                                    } else {
+                                        if (m.m) money += m.m;
+                                        if (m.p) points += m.p;
+                                        if (m.n) npcs += m.n;
+                                        if (m.id) counts[m.id] = (counts[m.id] || 0) + 1;
+                                    }
+                                    i += m.e.length;
+                                    break;
+                                }
                             }
-                        });
+                            if (!found) {
+                                let charLen = emojisStr.codePointAt(i) > 0xFFFF ? 2 : 1;
+                                i += charLen;
+                            }
+                        }
+                        
+                        let items = [];
+                        if (npcs > 0) items.push(`${npcs.toLocaleString('pt-BR')} NPCs Comuns`);
+                        if (points > 0) items.push(`${points.toLocaleString('pt-BR')} pontos`);
+                        
+                        for (let m of mapRecompensas) {
+                            if (m.id && counts[m.id] > 0) {
+                                let qtd = counts[m.id];
+                                if (qtd === 1) {
+                                    if (m.id === 'roubar') items.push(`1x Roubar`);
+                                    else items.push(m.s);
+                                } else {
+                                    if (m.id === 'roubar') items.push(`${qtd}x Roubar`);
+                                    else items.push(`${qtd} ${m.pl}`);
+                                }
+                            }
+                        }
                         
                         items.sort((a, b) => a.localeCompare(b, 'pt-BR'));
                         

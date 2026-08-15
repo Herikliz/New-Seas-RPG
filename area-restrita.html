@@ -67,8 +67,10 @@
 
                                     <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
                                         <button id="btn-randomizar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">🎲 Randomizar</button>
-                                        <button id="btn-copiar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Batalha Naval</button>
-                                        <button id="btn-copiar-tabela-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Tabela Informativa</button>
+                                        <button id="btn-copiar-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Batalha</button>
+                                        <button id="btn-copiar-tabela-batalha" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Tabela</button>
+                                        <button id="btn-tela-jogador" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px; background-color: #2196F3; border-color: #2196F3; color: #fff;">👁️ Tela do Jogador</button>
+                                        <button id="btn-copiar-resultado-atual" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px; display: none; background-color: #9C27B0; border-color: #9C27B0; color: #fff;">📋 Copiar Resultado Atual</button>
                                     </div>
 
                                     <div style="text-align: center; margin-bottom: 15px; font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--text-color);">
@@ -101,9 +103,12 @@
                                     <h3 style="text-align: center; color: var(--accent-color); font-family: 'Quantico', sans-serif; margin-bottom: 20px;">Resultados dos Jogadores</h3>
                                     
                                     <div id="container-batalha-jogadores" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
-                                        <div class="batalha-jogador-row" style="display: flex; gap: 10px;">
+                                        <div class="batalha-jogador-row" style="display: flex; gap: 10px; align-items: center;">
+                                            <button class="btn-mover-cima-jogador btn-admin" style="margin: 0; padding: 10px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Mover para cima">⬆️</button>
+                                            <button class="btn-mover-baixo-jogador btn-admin" style="margin: 0; padding: 10px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Mover para baixo">⬇️</button>
                                             <input type="text" class="batalha-jogador-nome" placeholder="Nome do Jogador" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
                                             <input type="text" class="batalha-jogador-emojis" placeholder="Emojis (Ex: 🪙🆒🆕🆓💸)" style="flex: 2; padding: 12px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                            <button class="btn-roubar-jogador btn-admin" style="margin: 0; padding: 10px 15px; width: auto; background-color: transparent; border-color: var(--sidebar-border);" title="Usar Roubar">♻️</button>
                                             <button class="btn-remover-jogador-batalha btn-clear-admin" style="margin: 0; padding: 10px 15px; width: auto;">❌</button>
                                         </div>
                                     </div>
