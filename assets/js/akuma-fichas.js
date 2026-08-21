@@ -3,41 +3,40 @@ window.fichasAkuma = {
              Ficha de Akuma no Mi
             🍑RPG - New Seas🍑
 *____________________________________*
-: ᐕ  Nome:
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ XXXX XXXX no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia/Paramecia/Zoan 
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌𝚊̃𝚘:
 > : ᓩ 
-
-: ᐕ Tipo:
-> : ᓩ Logia. 
-
-: ᐕ Descricao:
-> : ᓩ O usuário pode se transformar em gelo e manipular o frio, liberando grandes quantidades pelo campo e até mesmo congelando os alvos.
-
 *_____________________________________*
-: ᐕ Atributos: 500 
-  : ᓩ Alcance: 0
-    : ᓩ Potência : 0
-      : ᓩ Velocidade: 0
-        : ᓩ Durabilidade: 500
+: ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 𝟻𝟶𝟶 
+  : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+    : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊 : 0
+      : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+        : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 𝟻𝟶𝟶
 
 : ᓩ Porcentagem de Controle: 1.25% 
-: ᓩ Porcentagem de resistência: *90%* (fixo)
-: ᓩ Dano adicional: controle%×potência *+90%*
+: ᓩ Porcentagem de resistência: 0% (fixo)
+: ᓩ Dano adicional: controle%×potência
 (Força ou destreza)
-: ᓩ Velocidade adicional: controle%×velocidade *+90% = Somente sobre o gelo.* 
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,7
+: ᓩ Velocidade adicional: controle%×velocidade 
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
 *____________________________________*
-  : ᐕ Vantagens:
-> : ᓩ A fruta é especialmente vantajosa pela sua versatilidade, servindo tanto para imobilizar alvos com congelamento superficial quanto para destruí-los com frio extremo.
+  : ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ 
 
-  : ᐕ Desvantagens:
-> : ᓩ Fraquezas padrões de Akuma no Mi. Ao contrário de outras Logias, o usuário pode ser atingido fisicamente, pois o gelo é sólido. Calor intenso (fogo/magma), Haki de Armamento forte (20% de Diferença entre Espírito e Akuma) e Haki do Rei.
+  : ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Fraquezas padrões de Akuma no Mi.
 *____________________________________*
 
-  : ᐕ Técnicas:
-> : ᓩ 6 treinos para dominar cada técnica.
+  : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 2 treinos para dominar cada técnica.
 *_____________________________________*
 
-  : ᐕ Observações:
+  : ᐕ 𝙾𝚋𝚜𝚎𝚛𝚟𝚊𝚌𝚘̃𝚎𝚜:
 > : ᓩ Alcance: Até onde seus poderes alcançam, como efeitos colaterais e até mesmo rajadas ou projéteis. Cada fruta possui um multiplicador diferente, varia para cada tipo de poder. Ao dividir por 20 e depois multiplicar com seu multiplicador, dará o resultado final
 
 > : ᓩ Potência: Servido para duas diferentes formas. Comumente esse atributo vai medir o dano causado pela sua fruta. Mas para algumas exceções de fruta, ele servirá para os cálculos controle%+potência ou controle%×potência listado mais abaixo. 
