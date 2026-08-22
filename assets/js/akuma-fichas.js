@@ -55,12 +55,12 @@ Ficha de Akuma no Mi
 
 *—————————————————————————*
 
-> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 1.000
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
 > : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
 > : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
-> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 1.000
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Porcentagem de Resistência: 30%
 : ᓩ Dano Adicional: (Controle% da Potência)+35%
@@ -95,16 +95,16 @@ Ficha de Akuma no Mi
 > : ᓩ Logia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ A Chikyū Chikyū no Mi é uma Akuma no Mi do tipo Logia que permite ao seu usuário gerar, controlar e se transformar em terra, tornando-o uma Pessoa-Terra.
+> : ᓩ A Chikyū Chikyū no Mi é uma Akuma no Mi do tipo Logia que permite ao seu usuário gerar, controlar e se transformar em terra, tornando-o uma pessoa-terra.
 
 *—————————————————————————*
 
-> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 23.500
-> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 6.500
-> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 6.500
-> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 6.500
-> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 4.000
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 58,75%
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Porcentagem de Resistência: 90%
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
@@ -160,7 +160,6 @@ Ficha de Akuma no Mi
 > : ᓩ Apesar de ser capaz de curar as partes do corpo, não pode criá-las a partir do nada;
 > : ᓩ Para curar é requerido que as lágrimas do usuário toquem o destinatário;
 > : ᓩ Essa Fruta não tem nenhuma capacidade ofensiva;
-> : ᓩ Fraquezas padrão de Akuma no Mi;
 > : ᓩ Fraquezas padrão de Akuma no Mi.
 
 *————————————————————————*
@@ -227,11 +226,11 @@ Ficha de Akuma no Mi
 
 *—————————————————————————*
 
-> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 1.000
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
 > : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
-> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 1.000
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 3,33%
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
 
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+50%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
@@ -268,12 +267,12 @@ Ficha de Akuma no Mi
 
 *—————————————————————————*
 
-> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 1.000
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
 > : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
 > : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
-> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 1.000
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Porcentagem de Resistência: 0%
 : ᓩ Dano Adicional: (Controle% da Potência)+85%
@@ -462,14 +461,16 @@ Ficha de Akuma no Mi
 
 *—————————————————————————*
 
-> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 1.000
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
 > : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
 > : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
-> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 1.000
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
 : ᓩ Dano Adicional: (Controle% da Potência)+70%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
@@ -477,9 +478,7 @@ Ficha de Akuma no Mi
 *————————————————————————*
 
 : ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
-> : ᓩ Poder emitir grandes ondas de radiação e bastante resistente na sua forma completa;
-> : ᓩ Ao entrar na Forma Híbrida, recebe Porcentagem de Resistência de 35%;
-> : ᓩ Ao entrar na Forma Completa, recebe Porcentagem de Resistência de 70%.
+> : ᓩ Poder emitir grandes ondas de radiação e bastante resistente na sua forma completa.
 
 : ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
 > : ᓩ O tamanho limita sua locomoção e seus golpes afetam seus companheiros;
@@ -514,7 +513,7 @@ Ficha de Akuma no Mi
 
 : ᓩ Porcentagem de Resistência: 65%
 : ᓩ Dano Adicional: (Controle% da Potência)+35%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+50%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 
 *————————————————————————*
@@ -549,12 +548,12 @@ Ficha de Akuma no Mi
 
 *—————————————————————————*
 
-> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 40.000
-> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 10.000
-> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 10.000
-> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 10.000
-> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 10.000
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 100%
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Porcentagem de Resistência: 90%
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
@@ -626,16 +625,446 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Horo Horo no Mi": `???`,
-    "Inu Inu no Mi, Modelo: Cérbero": `Dante Salvatore`,
-    "Inu Inu no Mi, Modelo: Ōkuchi no Makami": `Yuu D'Couteau`,
-    "Ito Ito no Mi": `Morgana D. Everhart`,
-    "Kage Kage no Mi": `Noctis`,
-    "Kumo Kumo no Mi": `Caelus`,
+    "Horo Horo no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Horo Horo no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Dá a habilidade de criar vários fantasmas que causam depressão e tristeza no inimigo, além da habilidade de criar uma projeção astral e criar um fantasma explosivo.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 50%
+: ᓩ Dano Adicional: (Controle% da Potência)+50%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Criação de fantasmas intangíveis que causam depressão extrema ou explosão;
+> : ᓩ Capacidade de projeção astral do usuário.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Ineficácia contra indivíduos naturalmente pessimistas ou deprimidos;
+> : ᓩ Durante a projeção, o corpo físico fica vulnerável e imóvel;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
+    "Inu Inu no Mi, Modelo: Cérbero": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Inu Inu no Mi, Modelo: Cérbero
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário transformar-se em um cão gigante de três cabeças.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,6
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Ela concede força física extrema, garras afiadas e três cabeças funcionais.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Tamanho o deixa limitado em ambientes apertados;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Inu Inu no Mi, Modelo: Ōkuchi no Makami": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Inu Inu no Mi, Modelo: Ōkuchi no Makami
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário se transforme no lendário Ōkuchi no Makami, o deus-lobo guardião de Wano. Além do enorme aumento de atributos físicos característico das Zoans Míticas, a Fruta concede o poder de criar, manipular e revestir o corpo com gelo sagrado, utilizando-o tanto para combate quanto para defesa.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode criar, manipular e disparar gelo sagrado na forma de rajadas, projéteis, pilares, paredes e plataformas;
+> : ᓩ Pode revestir partes do corpo ou todo o corpo com gelo, aumentando sua defesa, criando uma armadura de gelo ao seu redor com HP igual à sua Potência (só pode usar uma vez a cada 3 turnos);
+> : ᓩ É capaz de congelar parcialmente o ambiente, dificultando a movimentação dos adversários e controlando o campo de batalha;
+> : ᓩ Seu sopro gélido pode congelar rapidamente grandes áreas e atingir múltiplos alvos;
+> : ᓩ A Forma Completa concede resistência natural a baixíssimas temperaturas e reduz drasticamente os efeitos de ataques baseados em gelo ou frio (-20% de Dano de ataques de gelo/frio).
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Ambientes extremamente quentes ou ataques contínuos baseados em fogo enfraquecem o gelo criado, reduzindo sua resistência e acelerando seu derretimento (ataques de fogo causam +30% de dano contra sua armadura de gelo);
+> : ᓩ Embora possa criar gelo, o usuário não é imune a ataques de calor extremo, magma ou explosões intensas;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Ito Ito no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Ito Ito no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário criar e controlar fios extremamente pequenos, invisíveis a olho nu, que são super afiados, capazes de decepar facilmente a perna de um gigante.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Permite gerar e manipular fios extremamente finos e resistentes;
+> : ᓩ Esta Fruta é considerada extremamente versátil e poderosa, oferecendo vantagens ofensivas, defensivas e de mobilidade.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Os fios falham contra um Haki do Armamento forte (diferença de 20% entre Potência e Armamento);
+> : ᓩ A mobilidade no céu, _Sora no Michi_, exige nuvens;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Kage Kage no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Kage Kage no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário manipule e controle sombras livremente, incluindo sua própria sombra e as sombras do ambiente. Também concede a capacidade de roubar sombras de outros seres vivos, utilizá-las para criar servos ou incorporá-las temporariamente ao próprio corpo para ampliar seu poder.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode manifestar e controlar sua própria sombra, transformando-a em uma entidade física chamada Doppelman, capaz de atacar, defender e agir de forma independente;
+> : ᓩ O Doppelman pode alterar livremente sua forma e tamanho, criando lâminas, lanças, tentáculos, escudos e diversas construções feitas de sombra;
+> : ᓩ O usuário pode trocar instantaneamente de posição com sua própria sombra, utilizando essa habilidade tanto para locomoção quanto para desviar de ataques;
+> : ᓩ O Doppelman possui as mesmas fraquezas à água do mar e kairoseki que um usuário de Akuma no Mi, seu HP é igual à Potência, e se for atingido e chegar a 0 HP, fica inutilizável e intangível por 1 turno, não podendo fazer nada;
+> : ᓩ O usuário é capaz de capturar a sombra de seres vivos e removê-la de seus corpos, o usuário só consegue fazer isso com pessoas que tenham uma diferença negativa de 5.000 de Espírito e ele precisa ter derrotado ou imobilizado essa pessoa, usando um objeto cortante para cortar e arrancar sua sombra. A vítima perde sua sombra, entra em um estado de extrema vulnerabilidade à luz solar e não pode ser fotografada ou refletida em espelhos e fica com apenas 65% dos seus atributos físicos (Haki e Akuma no Mi continuam 100%);
+> : ᓩ As sombras roubadas podem ser implantadas em cadáveres, criando zumbis que herdam as habilidades de combate, técnicas, personalidade e estilo de luta do dono original da sombra, tendo 35% dos atributos do dono da sombra, com exceção dos seus poderes de Akuma no Mi e Haki;
+> : ᓩ O usuário pode absorver sombras em seu próprio corpo, aumentando drasticamente sua Destreza/Força, Velocidade, Resistência e poder destrutivo durante um curto período. Essa habilidade pode ser usada de duas formas distintas, absorvendo a sombra de um NPC Especial ou jogador ganhando 30% dos atributos do mesmo por 3 turnos (após esse período as sombras retornam aos donos) ou consumindo a sombra de NPCs Comuns, ganhando um bônus máximo de 15.000 de atributos que devem ser distribuídos igualmente entre 3 atributos. Cada NPC Comum equivale a 50 pontos, precisando de 300 sombras pra atingir os 15.000;
+> : ᓩ As sombras podem ser utilizadas para prender, cortar, perfurar, agarrar e controlar o campo de batalha, tornando a Fruta extremamente versátil tanto em combate direto quanto em suporte.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A maioria das técnicas depende da existência de sombras preexistentes;
+> : ᓩ Ambientes excessivamente iluminados ou situações em que não existam sombras limitam drasticamente o potencial da Fruta;
+> : ᓩ Zumbis criados com sombras de indivíduos muito fortes são difíceis de controlar, podendo manter traços da personalidade original ou até desobedecer ordens se confrontados com fatos sobre o dono da sombra;
+> : ᓩ Alimentar um zumbi com sal faz com que a sombra seja imediatamente purificada e retorne ao seu verdadeiro dono. Quanto maior o zumbi, maior a quantidade de sal necessária;
+> : ᓩ Se o corpo que abriga uma sombra for completamente destruído, a sombra retorna automaticamente ao seu proprietário original;
+> : ᓩ As sombras absorvidas pelo usuário permanecem em seu corpo por tempo limitado. Após esse período, retornam aos seus donos (Tempo = Durabilidade);
+> : ᓩ Existe um limite para a quantidade de sombras que o usuário consegue absorver, ultrapassar esse limite pode causar perda de controle de poderes, podendo o levar a inconsciência;
+> : ᓩ O Doppelman protege automaticamente seu usuário, porém pode ser enganado por ataques surpresa, distrações ou emboscadas;
+> : ᓩ A Fruta não manipula sombras de objetos inanimados, apenas sombras pertencentes a seres vivos;
+> : ᓩ A dependência excessiva de zumbis e sombras para lutar pode reduzir a capacidade de combate direto do próprio usuário ao longo do tempo, caso ele negligencie seu treinamento físico;
+> : ᓩ Controlar as sombras exige concentração;
+> : ᓩ Se a vítima que perdeu a sombra for exposto à luz do sol, ele começará a evaporar, qualquer personagem que ficar 3 turnos exposto à luz do sol após ter sua sombra roubada desaparecerá. Caso o dono da sombra desapareça ou morra, o zumbi que estava com sua sombra automaticamente morre;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Kumo Kumo no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Kumo Kumo no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ O usuário pode se transformar em nuvem. Permite que o usuário crie, manipule e se transforme em nuvens, seu corpo torna-se completamente composto por massas de nuvens, concedendo intangibilidade contra ataques sem Haki. Além da manipulação climática limitada, como conseguir controlar as nuvens para cobrir o céu. O usuário pode alterar a densidade das nuvens para fins ofensivos, defensivos e de locomoção, muito similar a Moku Moku no Mi.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode criar, expandir e manipular nuvens livremente;
+> : ᓩ Pode transformar seu corpo parcial ou totalmente em nuvens, tornando-se intangível contra ataques sem Haki;
+> : ᓩ É capaz de condensar nuvens para criar plataformas sólidas, barreiras, braços gigantes ou outras estruturas temporárias;
+> : ᓩ Pode produzir bancos de neblina e nuvens densas para bloquear a visão, esconder aliados ou controlar o campo de batalha;
+> : ᓩ Consegue voar livremente utilizando suas próprias nuvens;
+> : ᓩ As nuvens criadas ou controlas pelo usuário não permitem criar raios ou fazer chover, porém podem ser combinadas com a Arte do Tempo para maior potencial.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Ventos extremamente fortes podem dispersar as nuvens, reduzindo seu controle sobre grandes áreas, ambientes fechados prejudicam seu alcance (alcance cai para 1.4x);
+> : ᓩ Habilidades capazes de dissipar ou controlar fenômenos climáticos podem neutralizar parte de suas técnicas;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Magu Magu no Mi": `Cheung Po Tsai`,
-    "Maki Maki no Mi": `???`,
-    "Mera Mera no Mi": `Calamitas Donquixote`,
-    "Mira Mira no Mi": `Bastian Locke`,
+    "Maki Maki no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Maki Maki no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário sele objetos, armas, ataques e até partes do cenário em pergaminhos especiais criados pela própria Fruta. Da mesma forma, pode desenrolá-los instantaneamente, liberando tudo o que foi armazenado. A Maki Maki no Mi é uma Fruta extremamente versátil, voltada para suporte, estratégia e preparação de combate.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Dano Adicional: (Controle% da Potência)+35%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 0,1
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode criar pergaminhos especiais capazes de selar objetos inanimados de praticamente qualquer tamanho, desde que estejam dentro do limite de atributos da Fruta;
+> : ᓩ Objetos selados podem ser invocados instantaneamente ao desenrolar o pergaminho;
+> : ᓩ Pode armazenar armas, munições, ferramentas, suprimentos, embarcações pequenas e outros equipamentos para transporte rápido;
+> : ᓩ Técnicas previamente preparadas podem ser seladas em pergaminhos e liberadas posteriormente, desde que tenham sido produzidas pelo próprio usuário ou por aliados que permitiram o selamento da técnica;
+> : ᓩ Pode criar múltiplos pergaminhos ao mesmo tempo, permitindo grande versatilidade em combate;
+> : ᓩ Os pergaminhos possuem elevada resistência enquanto estiverem energizados pela Fruta;
+> : ᓩ O usuário pode desfazer um selo a qualquer momento, recuperando o conteúdo armazenado;
+> : ᓩ Consegue criar clones visuais do próprio usuário, que servem para confundir o oponente, mas são apenas ilusões que se dissipam se tocadas.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A Fruta não pode selar seres vivos;
+> : ᓩ A Fruta só consegue armazenar objetos do tamanho do seu Alcance;
+> : ᓩ Se um pergaminho for completamente destruído antes de sua abertura, o conteúdo armazenado poderá ser perdido ou liberado de forma descontrolada, conforme decisão da narração;
+> : ᓩ O processo de selamento exige contato direto entre o pergaminho e o alvo;
+> : ᓩ Caso o usuário fique inconsciente, pergaminhos ativos que dependam de manutenção constante podem ser desfeitos;
+> : ᓩ Para selar ataques dentro de pergaminhos, será considerado a seguinte conta, para selar um ataque, a Potência do usuário será somada com 40% da sua Destreza, se o resultado for maior que o dano do ataque, o mesmo será selado;
+> : ᓩ Só é possível ter um ataque selado por vez;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
+    "Mera Mera no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Mera Mera no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário criar, controlar e transformar seu corpo em fogo. O usuário torna-se capaz de produzir chamas livremente a partir de seu corpo, manipulá-las em diferentes formas e intensidades e utilizar o próprio fogo tanto ofensivamente quanto defensivamente. Por possuir a natureza de uma Logia, o corpo do usuário pode se transformar em chamas, permitindo que ataques físicos convencionais atravessem seu corpo sem causar danos, desde que não estejam revestidos com Haki ou possuam alguma propriedade capaz de afetar diretamente o fogo, como água ou fumaça.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Concede ao usuário controle completo sobre o fogo produzido por seu próprio poder, permitindo criar, moldar, expandir e direcionar chamas livremente;
+> : ᓩ O usuário pode transformar partes ou todo o seu corpo em fogo, adquirindo as propriedades de uma Logia e tornando-se imune a ataques físicos convencionais que não possuam Haki ou alguma característica capaz de interagir com seu elemento;
+> : ᓩ Essa transformação permite que golpes atravessem o corpo sem causar danos enquanto o usuário mantém sua forma elemental, além de possibilitar que ele altere sua própria forma através das chamas para evitar ataques;
+> : ᓩ O fogo pode ser utilizado de maneira extremamente versátil, podendo assumir a forma de rajadas, ondas, esferas, colunas, paredes e explosões;
+> : ᓩ Quanto maior a Potência da Fruta, maior será a intensidade térmica das chamas e sua capacidade de queimar, derreter ou destruir materiais;
+> : ᓩ O usuário também pode concentrar o fogo em ataques específicos para aumentar seu poder destrutivo ou expandi-lo por uma área maior para atingir diversos adversários simultaneamente;
+> : ᓩ A Fruta também proporciona excelente mobilidade;
+> : ᓩ O usuário pode utilizar explosões e propulsão das chamas para impulsionar seu corpo, realizar saltos extremamente longos, mudar rapidamente de direção e até mesmo permanecer no ar durante determinados movimentos.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O fogo pode ser prejudicado por determinadas condições ambientais;
+> : ᓩ Grandes quantidades de água, ambientes extremamente úmidos ou técnicas especializadas em apagar ou suprimir chamas podem reduzir a eficiência do poder. Isso não significa que qualquer contato com água simplesmente anule a Fruta, mas condições capazes de retirar calor ou extinguir grandes quantidades de fogo podem dificultar consideravelmente seu uso;
+> : ᓩ O usuário também precisa controlar cuidadosamente a intensidade de suas chamas;
+> : ᓩ Uma quantidade excessiva de fogo pode incendiar o próprio ambiente, colocando aliados e estruturas importantes em perigo;
+> : ᓩ Em locais fechados, o uso indiscriminado da Fruta pode consumir oxigênio, gerar fumaça e transformar o ambiente em uma área perigosa até mesmo para o próprio usuário;
+> : ᓩ Tem desvantagens contra coisas mais quentes como o magma ou raios, e suas chamas são anuladas quando em contato com fumaça;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Mira Mira no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Mira Mira no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário criar, manipular e controlar espelhos, além de acessar a Dimensão dos Espelhos, um espaço paralelo conectado a todos os espelhos existentes criados pelo usuário. A Fruta pode ser utilizada para transporte, emboscadas, espionagem, defesa e combate, tornando o usuário extremamente versátil.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+
+: ᓩ Porcentagem de Resistência: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+0%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode criar espelhos de diversos tamanhos e formatos em qualquer superfície sólida e lisa;
+> : ᓩ Pode entrar e sair livremente da Dimensão dos Espelhos, utilizando qualquer espelho conectado que foi criado pelo usuário como entrada ou saída;
+> : ᓩ É capaz de transportar pessoas, objetos e aliados através da Dimensão dos Espelhos;
+> : ᓩ Pode manipular espelhos para criar barreiras, plataformas, prisões e escudos extremamente resistentes;
+> : ᓩ Os espelhos podem refletir ataques de energia, projéteis ou feixes, desde que a diferença de poder não ultrapasse a Potência do espelho;
+> : ᓩ O usuário pode observar o mundo exterior através dos espelhos conectados à Dimensão dos Espelhos, sendo excelente para reconhecimento e espionagem;
+> : ᓩ Pode surgir inesperadamente de qualquer espelho dentro de seu alcance, tornando emboscadas e fugas extremamente eficientes;
+> : ᓩ Os espelhos podem ser moldados em lâminas, estilhaços ou outras estruturas cortantes para combate, mas esses perdem a capacidade de acessar a Dimensão dos Espelhos por terem sido quebrados.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Para utilizar a Dimensão dos Espelhos, deve existir ao menos um espelho que sirva como ponto de entrada ou saída;
+> : ᓩ Espelhos destruídos deixam de servir como portais imediatamente;
+> : ᓩ Espelhos criados pela Fruta possuem resistência limitada, podendo ser destruídos por ataques suficientemente fortes ou revestidos com Haki;
+> : ᓩ Caso todos os espelhos acessíveis sejam destruídos, o deslocamento pela Dimensão dos Espelhos fica severamente limitado;
+> : ᓩ Ataques de grande área podem destruir múltiplos espelhos simultaneamente, reduzindo as opções de mobilidade do usuário;
+> : ᓩ Embora a Dimensão dos Espelhos seja segura, permanecer nela por longos períodos não concede qualquer recuperação física adicional;
+> : ᓩ Se o usuário ficar inconsciente, todas as pessoas aprisionadas na Dimensão dos Espelhos dos espelhos conseguem sair;
+> : ᓩ Usuários do Haki do Rei aprisionados conseguem afetar o usuário mesmo de dentro da Dimensão dos Espelhos;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Mochi Mochi no Mi": `Hikaru Chinjao`,
     "Mori Mori no Mi": `Bastarion`,
     "Nikyu Nikyu no Mi": `Takenozo Mazatsugu Opera O`,
@@ -671,6 +1100,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (selectFichaAkuma && displayFichaAkuma) {
         
+        let isGenerating = false;
+        let isParsing = false;
+
         // Criação dinâmica do container da Ficha Vazia para manter o HTML principal limpo
         const containerFichaVazia = document.createElement('div');
         containerFichaVazia.id = 'container-ficha-vazia';
@@ -796,9 +1228,22 @@ document.addEventListener('DOMContentLoaded', () => {
         selectFichaAkuma.addEventListener('change', function() {
             if (this.value === 'Ficha Vazia') {
                 containerFichaVazia.style.display = 'block';
+
+                // Transforma o DisplayFicha em um campo de texto editável colável e seguro 
+                try { displayFichaAkuma.contentEditable = "plaintext-only"; } 
+                catch(e) { displayFichaAkuma.contentEditable = "true"; }
+                
+                displayFichaAkuma.style.outline = "2px dashed var(--accent-color)";
+                displayFichaAkuma.style.outlineOffset = "4px";
+
                 setTimeout(atualizarFichaVazia, 10);
             } else {
                 containerFichaVazia.style.display = 'none';
+
+                // Desativa edição e reseta as caixinhas
+                displayFichaAkuma.contentEditable = "false";
+                displayFichaAkuma.style.outline = "none";
+
                 inputNomeVazia.value = ''; 
                 inputModeloVazia.value = '';
                 selectTipoVazia.value = ''; 
@@ -815,6 +1260,113 @@ document.addEventListener('DOMContentLoaded', () => {
                 selectTreinosVazia.value = '';
             }
         });
+
+        // -------------------------------------------------------------
+        // LEITOR/PARSER (Texto colado -> Caixas)
+        // -------------------------------------------------------------
+        displayFichaAkuma.addEventListener('input', function() {
+            if (selectFichaAkuma.value !== 'Ficha Vazia' || isGenerating) return;
+            isParsing = true;
+            parseFichaVazia();
+            isParsing = false;
+        });
+
+        function parseFichaVazia() {
+            let texto = displayFichaAkuma.innerText || displayFichaAkuma.textContent;
+
+            // Extrair Nome e Modelo
+            let mNome = texto.match(/>\s*:\s*ᓩ\s*(.*?)\s*no Mi(?:,\s*Modelo:\s*(.*))?/);
+            if (mNome) {
+                let nomeBase = mNome[1].split(' ')[0];
+                inputNomeVazia.value = nomeBase.trim();
+                if (mNome[2]) {
+                    inputModeloVazia.value = mNome[2].trim();
+                } else {
+                    inputModeloVazia.value = '';
+                }
+            } else {
+                inputNomeVazia.value = '';
+            }
+
+            // Extrair Tipo
+            let mTipo = texto.match(/:\s*ᐕ\s*𝚃𝚒𝚙𝚘:\n>\s*:\s*ᓩ\s*(.*)/);
+            if (mTipo) {
+                let t = mTipo[1].trim();
+                let optionExists = Array.from(selectTipoVazia.options).some(o => o.value === t);
+                if (optionExists) selectTipoVazia.value = t;
+            }
+            containerModeloVazia.style.display = selectTipoVazia.value.includes('Zoan') ? '' : 'none';
+
+            // Extrair Descrição
+            let mDesc = texto.match(/:\s*ᐕ\s*𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:\n>\s*:\s*ᓩ\s*(.*)/);
+            if (mDesc) inputDescVazia.value = mDesc[1].trim();
+
+            // Extrair Atributos e Caixas Marcadas
+            let mAlcance = texto.match(/>\s*:\s*ᓩ\s*𝙰𝚕𝚌𝚊𝚗𝚌𝚎:\s*([\d\.]+)/);
+            if (mAlcance) { valAlcance.value = mAlcance[1]; chkAlcance.checked = true; } else { chkAlcance.checked = false; }
+
+            let mPot = texto.match(/>\s*:\s*ᓩ\s*𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊:\s*([\d\.]+)/);
+            if (mPot) { valPotencia.value = mPot[1]; chkPotencia.checked = true; } else { chkPotencia.checked = false; }
+
+            let mVel = texto.match(/>\s*:\s*ᓩ\s*𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎:\s*([\d\.]+)/);
+            if (mVel) { valVelocidade.value = mVel[1]; chkVelocidade.checked = true; } else { chkVelocidade.checked = false; }
+
+            let mDur = texto.match(/>\s*:\s*ᓩ\s*𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎:\s*([\d\.]+)/);
+            if (mDur) { valDurabilidade.value = mDur[1]; chkDurabilidade.checked = true; } else { chkDurabilidade.checked = false; }
+
+            // Extrair Resistência e Bônus
+            let mResZoan = texto.match(/>\s*—\s*Forma Completa:\s*(\d+)%/);
+            if (mResZoan) {
+                valResistencia.value = mResZoan[1];
+            } else {
+                let mRes = texto.match(/:\s*ᓩ\s*Porcentagem de Resistência:\s*(\d+)%/);
+                if (mRes) valResistencia.value = mRes[1];
+            }
+
+            let mDano = texto.match(/:\s*ᓩ\s*Dano Adicional:.*?\+(\d+)%/);
+            if (mDano) valDanoAdic.value = mDano[1];
+
+            let mVelAdic = texto.match(/:\s*ᓩ\s*Velocidade Adicional:.*?\+(\d+)%/);
+            if (mVelAdic) valVelAdic.value = mVelAdic[1];
+
+            let mMult = texto.match(/:\s*ᓩ\s*Multiplicador de Alcance:.*?×\s*([\d,]+)/);
+            if (mMult) valMultAlcance.value = mMult[1];
+
+            // Extrair Treinos Necessários
+            let mTreino = texto.match(/:\s*ᐕ\s*𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:\n>\s*:\s*ᓩ\s*([\w\d]+)\s*treinos?\s*para/);
+            if (mTreino && mTreino[1] !== 'X') selectTreinosVazia.value = mTreino[1];
+
+            // Extrair Vantagens (Lê as linhas até encontrar a próxima seção)
+            let mVan = texto.match(/:\s*ᐕ\s*𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:\n([\s\S]*?)(?=\n\n|\n\*|\n:\s*ᐕ)/);
+            if (mVan) {
+                let lines = mVan[1].split('\n').map(l => l.replace(/>\s*:\s*ᓩ\s*/g, '').replace(/[.;]+$/, '').trim()).filter(l => l.length > 0);
+                inputVantagens.value = lines.join('\n');
+            }
+
+            // Extrair Desvantagens (Garante ignorar a linha padrão)
+            let mDesv = texto.match(/:\s*ᐕ\s*𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:\n([\s\S]*?)(?=\n\n|\n\*|\n:\s*ᐕ|$)/);
+            if (mDesv) {
+                let lines = mDesv[1].split('\n').map(l => l.replace(/>\s*:\s*ᓩ\s*/g, '').replace(/[.;]+$/, '').trim()).filter(l => l.length > 0 && !l.includes('Fraquezas padrão de Akuma no Mi'));
+                inputDesvantagens.value = lines.join('\n');
+            }
+
+            // UI: Ajusta o display dos itens secundários baseados nos atributos lidos
+            valResistencia.parentElement.style.display = chkPotencia.checked ? '' : 'none';
+            valDanoAdic.parentElement.style.display = chkPotencia.checked ? '' : 'none';
+            valVelAdic.parentElement.style.display = chkVelocidade.checked ? '' : 'none';
+            valMultAlcance.parentElement.style.display = chkAlcance.checked ? '' : 'none';
+
+            // UI: Expansão das Textareas
+            [inputDescVazia, inputVantagens, inputDesvantagens].forEach(el => {
+                el.style.height = 'auto';
+                el.style.height = (el.scrollHeight + 2) + 'px';
+            });
+        }
+
+
+        // -------------------------------------------------------------
+        // CONSTRUTOR (Caixas -> Texto)
+        // -------------------------------------------------------------
 
         // Modifica o texto em tempo real (Nome, Modelo e Tipo)
         inputNomeVazia.addEventListener('input', function() {
@@ -907,11 +1459,12 @@ document.addEventListener('DOMContentLoaded', () => {
             inp.addEventListener('input', formatarEAtualizarAtributo);
             inp.addEventListener('blur', blurAtributo);
         });
-        valResistencia.addEventListener('blur', blurAtributo);
         valMultAlcance.addEventListener('blur', blurMultAlcance);
 
         function atualizarFichaVazia() {
             if (selectFichaAkuma.value !== 'Ficha Vazia') return;
+            if (isParsing) return;
+            isGenerating = true;
 
             // Tratamento do Tipo e Visibilidade da caixa "Modelo"
             let tipoVal = selectTipoVazia.value || "";
@@ -1064,7 +1617,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Substitui ou remove as linhas dependentes da Potência
             if (chkPotencia.checked) {
-                fichaAtualizada = fichaAtualizada.replace(': ᓩ Porcentagem de Resistência: 0%', `: ᓩ Porcentagem de Resistência: ${strResistencia}%`);
+                if (tipoVal.includes('Zoan')) {
+                    let resNum = parseInt(strResistencia, 10) || 0;
+                    let resHibrida = Math.floor(resNum / 2); // Metade arredondada para baixo
+                    let strZoanRes = `: ᓩ Porcentagem de Resistência: 0%\n> — Forma Híbrida: ${resHibrida}%\n> — Forma Completa: ${resNum}%`;
+                    fichaAtualizada = fichaAtualizada.replace(': ᓩ Porcentagem de Resistência: 0%', strZoanRes);
+                } else {
+                    fichaAtualizada = fichaAtualizada.replace(': ᓩ Porcentagem de Resistência: 0%', `: ᓩ Porcentagem de Resistência: ${strResistencia}%`);
+                }
                 fichaAtualizada = fichaAtualizada.replace(': ᓩ Dano Adicional: (Controle% da Potência)+0%', `: ᓩ Dano Adicional: (Controle% da Potência)+${strDanoAdic}%`);
             } else {
                 // Ao desmarcar, a quebra de linha (\n) é removida para que não fique um buraco na ficha
@@ -1090,11 +1650,13 @@ document.addEventListener('DOMContentLoaded', () => {
             fichaAtualizada = fichaAtualizada.replace(': ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:\n> : ᓩ ', `: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:\n${vantagensText}`);
             fichaAtualizada = fichaAtualizada.replace(': ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:\n> : ᓩ Fraquezas padrão de Akuma no Mi.', `: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:\n${desvText}`);
 
-            // Substitui "Treinos Necessários"
+            // Substitui "Treinos Necessários" ajustando a palavra treino/treinos
             let palavraTreino = (strTreinos === "1") ? "treino" : "treinos";
             fichaAtualizada = fichaAtualizada.replace(': ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:\n> : ᓩ X treinos para dominar cada técnica.', `: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:\n> : ᓩ ${strTreinos} ${palavraTreino} para dominar cada técnica.`);
 
             displayFichaAkuma.textContent = fichaAtualizada;
+            
+            setTimeout(() => { isGenerating = false; }, 10);
         }
     }
 });
