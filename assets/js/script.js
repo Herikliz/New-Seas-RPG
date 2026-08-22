@@ -1,6 +1,4 @@
-// ==========================================
-// INJEÇÃO GLOBAL DE FAVICON
-// ==========================================
+// Injeção Global de Favicon
 (function injectFavicon() {
     const link = document.createElement('link');
     link.rel = 'icon';
@@ -9,9 +7,7 @@
     document.head.appendChild(link);
 })();
 
-// ==========================================
-// INJEÇÃO GLOBAL DE ESTILOS
-// ==========================================
+// Injeção Global de Estilos
 (function injectGlobalStyles() {
     const globalStyles = `
 /* ==========================================
@@ -134,9 +130,7 @@ body.dark-mode .calc-box { box-shadow: 0 4px 15px rgba(156, 39, 176, 0.15); }
     });
 })();
 
-// ==========================================
-// FUNÇÃO GLOBAL DE CÓPIA (COMPATÍVEL COM IOS)
-// ==========================================
+// Função Global de Cópia
 window.copiarTextoUniversal = function(texto) {
     return new Promise((resolve, reject) => {
         function fallbackCopy() {
@@ -183,9 +177,7 @@ window.copiarTextoUniversal = function(texto) {
     });
 };
 
-// ==========================================
-// INICIALIZAÇÃO
-// ==========================================
+// Inicialização
 if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 }
@@ -244,9 +236,7 @@ if (window.location.pathname.endsWith('area-restrita.html') || window.location.p
     }, 0);
 }
 
-// ==========================================
-// TEMAS
-// ==========================================
+// Temas
 const presetThemes = {
     claro: { bg: '#f0f8ff', text: '#2d3748', sidebar: '#ffffff', border: '#e2e8f0', link: '#4a5568', hoverBg: '#edf2f7', accent: '#d32f2f', btnText: '#ffffff', areaBg: '#ffffff', areaBorder: '#cbd5e0', subMenu: '#f8fafc' },
     escuro: { bg: '#121212', text: '#e0e0e0', sidebar: '#1e1e1e', border: '#333333', link: '#b0b0b0', hoverBg: '#2d3748', accent: '#f1c40f', btnText: '#121212', areaBg: '#1a1a1a', areaBorder: '#4a5568', subMenu: '#1a1a1a' },
@@ -260,9 +250,7 @@ const presetThemes = {
     ouro: { bg: '#000000', text: '#fef08a', sidebar: '#1a1a1a', border: '#ca8a04', link: '#fde047', hoverBg: '#333333', accent: '#eab308', btnText: '#000000', areaBg: '#000000', areaBorder: '#a16207', subMenu: '#1a1a1a' }
 };
 
-// ==========================================
-// CARREGAMENTO DE TEMAS
-// ==========================================
+// Carregamento de Temas
 function applyTheme(themeObj) {
     const root = document.documentElement;
     root.style.setProperty('--bg-color', themeObj.bg);
@@ -292,9 +280,7 @@ function loadSavedTheme() {
 }
 loadSavedTheme();
 
-// ==========================================
-// SIDEBAR E MENU DE NAVEGAÇÃO
-// ==========================================
+// Menu de Navegação
 document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo(0, 0);
 
@@ -749,9 +735,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ==========================================
-// FUNÇÕES AUXILIARES PARA CÁLCULOS
-// ==========================================
+// Funções Auxiliares para Cálculos
 function formatCalcInput(inputField) {
     if (inputField.tagName.toLowerCase() !== 'input' || inputField.type !== 'text') return;
     let val = inputField.value.replace(/\D/g, '');
@@ -763,9 +747,7 @@ function formatCalcInput(inputField) {
     inputField.value = num.toLocaleString('pt-BR');
 }
 
-// ==========================================
-// SISTEMA DE CÁLCULO DE ATRIBUTOS
-// ==========================================
+// Cálculo de Atributos
 function getCalcVal(elementId) {
     let el = document.getElementById(elementId);
     if (!el) return 0;
@@ -916,9 +898,7 @@ function runAtributosCalc() {
     }
 }
 
-// ==========================================
-// SISTEMA DE CÁLCULO DE ESTAMINA
-// ==========================================
+// Cálculo de Estamina
 function runEstaminaCalc() {
     if (!document.getElementById('calc-res')) return;
 
@@ -1031,9 +1011,7 @@ document.addEventListener('DOMContentLoaded', () => {
     runEstaminaCalc();
 });
 
-// ==========================================
-// SISTEMA DE CENAS
-// ==========================================
+// Sistema de Cenas
 function updateSceneStats(textarea) {
     if (!textarea) return;
     let sceneTxt = textarea.value;
@@ -1102,9 +1080,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ==========================================
-// SISTEMA DE TRABALHO
-// ==========================================
+// Sistema de Trabalho
 function formatarEVerificar(el) {
     let valor = el.value.replace(/\D/g, "");
     el.value = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -1290,9 +1266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ==========================================
-// SISTEMA DE GEOGRAFIA E NAVEGAÇÃO
-// ==========================================
+// Geografia e Navegação
 const mapGrids = document.querySelectorAll('.grid-overlay');
 if (mapGrids.length > 0) {
     const calcContainer = document.getElementById('calculadora-rota-container');
@@ -2109,9 +2083,7 @@ if (mapGrids.length > 0) {
     checkboxTimoneiro.addEventListener('change', calcularTempo);
 }
 
-// ==========================================
-// SISTEMA GEO WRITER
-// ==========================================
+// Geo Writer
 function updateGeoWriterStats(box) {
     if (!box) return;
     let textarea = box.querySelector('textarea');
@@ -3392,9 +3364,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ==========================================
-// BANCO DE DADOS - ILHAS E REGIÕES
-// ==========================================
+// Banco de Dados: Ilhas
 const bancoDeIlhas = {
     "East Blue": [
         { nome: "Base da Marinha G-03", afiliacaoTexto: "Governo Mundial/Marinha", afiliacaoClasse: "marinha", descricao: `<p style="margin-bottom: 15px;">Uma base flutuante da Marinha estrategicamente posicionada para patrulhar as águas próximas e responder rapidamente a ameaças piratas.</p>` },
@@ -3531,9 +3501,7 @@ const bancoDeIlhas = {
     ]
 };
 
-// ==========================================
-// BANCO DE DADOS - RECURSOS E MATERIAIS
-// ==========================================
+// Banco De Dados: Recursos e Materiais das Ilhas
 const recursosDasIlhas = {
     "Amazon Lily": ["Carvalho", "Pau-Brasil", "Pinheiro", "Materiais de Criadores 1", "Unobtainium", "Vibranium"],
     "Applenine": ["Pinheiro", "Materiais de Criadores 1", "Unobtainium"],
@@ -3658,9 +3626,7 @@ const recursosDasIlhas = {
     "Zou": ["Carvalho", "Pinheiro"]
 };
 
-// ==========================================
-// FUNÇÕES DE RENDERIZAÇÃO DINÂMICA
-// ==========================================
+// Renderização Dinâmica
 function renderizarIlhasDinamicas() {
     const container = document.getElementById('island-container');
     if (!container || !container.hasAttribute('data-mar')) return;
@@ -3700,9 +3666,7 @@ function renderizarIlhasDinamicas() {
     }
 }
 
-// ==========================================
-// CARREGAMENTO DE LOCAIS DE MATERIAIS
-// ==========================================
+// Carregamento de Locais de Materiais
 function carregarLocaisDeMateriais() {
     const elementosMaterial = document.querySelectorAll('.locais-material');
     if (elementosMaterial.length === 0) return;
@@ -3768,9 +3732,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ==========================================
-// RESISTÊNCIA - LOJA DE FERREIROS E ESCUDOS
-// ==========================================
+// Loja de Ferreiros e Escudos
 const minerioHp = {
     'Aço Carbono': 2000,
     'Adamantium': 10000,
@@ -3799,9 +3761,7 @@ function carregarHpDosMinerios() {
 
 document.addEventListener('DOMContentLoaded', carregarHpDosMinerios);
 
-// ==========================================
-// PREÇOS - LOJA DE FERREIROS
-// ==========================================
+// Loja de Ferreiros: Preços
 const minerioPrices = {
     'aco-carbono': 60000000,
     'adamantium': 500000000,
@@ -3830,9 +3790,7 @@ function populateMinerioPrices() {
 
 document.addEventListener('DOMContentLoaded', populateMinerioPrices);
 
-// ==========================================
-// SISTEMA DE ABAS COM RETRAÇÃO E EXPANSÃO
-// ==========================================
+// Abas com Retração e Expansão
 function iniciarSistemaDeAbas() {
     document.querySelectorAll('.toggle-title').forEach(title => {
         const newTitle = title.cloneNode(true);
@@ -3848,9 +3806,7 @@ function iniciarSistemaDeAbas() {
     });
 }
 
-// ==========================================
-// CALCULADORA DE MINÉRIOS
-// ==========================================
+// Calculadora de Minérios
 (function() {
     const mineriosDisplay = {
         'aco-carbono': 'Aço Carbono',
@@ -4748,9 +4704,7 @@ function iniciarSistemaDeAbas() {
     }
 })();
 
-// ==========================================
-// ORDENAÇÃO DE PROCURADOS
-// ==========================================
+// Ordenação de Procurados
 function initBountySort() {
     const select = document.getElementById('sort-bounties');
     const grid = document.querySelector('.bounty-grid');
@@ -4790,9 +4744,7 @@ function initBountySort() {
 
 if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initBountySort); } else { initBountySort(); }
 
-// ==========================================
-// EXIBIÇÃO DE DONOS DAS AKUMA NO MI NA PÁGINA
-// ==========================================
+// Donos das Akuma no Mi
 function exibirDonosAkuma() {
     if (!window.location.pathname.includes('akuma-no-mi.html') && !window.location.pathname.endsWith('akuma-no-mi.html')) return;
 
@@ -4873,9 +4825,7 @@ if (document.readyState === 'loading') {
     exibirDonosAkuma(); 
 }
 
-// ==========================================
-// ORDENAÇÃO DE APARÊNCIAS
-// ==========================================
+// Ordenação de Aparências
 function initGallerySort() {
     if (!window.location.pathname.includes('aparencias.html')) return;
 
@@ -4962,9 +4912,7 @@ function initGallerySort() {
     sortGallery();
 }
 
-// ==========================================
-// MÚLTIPLAS IMAGENS NA GALERIA
-// ==========================================
+// Múltiplas Imagens
 function initGalleryMultipleImages() {
     if (!window.location.pathname.includes('aparencias.html')) return;
 
@@ -5361,9 +5309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (calcTipoFerimento) calcTipoFerimento.addEventListener('change', updateHpLimite);
 });
 
-// ==========================================
-// SORTEADOR DE AKUMA NO MI E DONOS
-// ==========================================
+// Sorteador de Akuma no Mi e Donos
 window.donosDeAkuma = {
     "Baku Baku no Mi": "Rhaast",
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
@@ -7024,7 +6970,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         emoji = boardState.grid[r][c];
                     }
                     
-                    // Lógica do Perde Tudo (limpa o que havia ganho) e Nada (ignora o emoji)
                     if (emoji === '❌') {
                         res = [];
                     } else if (emoji !== '⭕') {
@@ -7164,9 +7109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gerarGrid();
             renderBoard();
 
-            // ==========================================
-            // Lógica dos Resultados dos Jogadores
-            // ==========================================
+            // Resultados dos Jogadores
             const containerJogadoresBatalha = document.getElementById('container-batalha-jogadores');
             const btnAddJogadorBatalha = document.getElementById('btn-add-jogador-batalha');
             const btnCopiarResultadosJogadores = document.getElementById('btn-copiar-resultados-jogadores');
@@ -7397,7 +7340,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             val = val.replace(/;+/g, ';');
                             val = val.replace(/; ;/g, '; ');
                             e.target.value = val;
-                            syncBoardFromInputs(); // Atualiza as casas da Batalha Naval automaticamente
+                            syncBoardFromInputs();
                         } else {
                             let val = e.target.value.replace(/👑/g, '⚜️');
                             let validos = ['⚜️','🧑‍🧑‍🧒‍🧒','🧑‍🧑‍🧒','🚹','🪙','💸','💰','🆓','🆕','🆒','🆙','❌','♻️','🚤','🛥️','🛳️','🔪','🍆','🍑'];
