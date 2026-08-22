@@ -1065,18 +1065,483 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Mochi Mochi no Mi": `Hikaru Chinjao`,
-    "Mori Mori no Mi": `Bastarion`,
-    "Nikyu Nikyu no Mi": `Takenozo Mazatsugu Opera O`,
-    "Ope Ope no Mi": `Morgana Du'lor`,
+    "Mochi Mochi no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Mochi Mochi no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia Especial
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Ela permite ao usuário criar, controlar e se transformar em mochi (uma massa tradicional japonesa feita de arroz glutinoso).
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,7
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Permite ao usuário criar, manipular e transformar seu próprio corpo em mochi;
+> : ᓩ Embora seja uma Paramecia, o usuário pode se liquefazer ou remodelar para desviar de ataques físicos, conferindo uma esquiva comparável às Frutas do tipo Logia;
+> : ᓩ O usuário pode esticar seus membros, criar membros extras e se expandir para desferir golpes pesados à distância;
+> : ᓩ O mochi é extremamente pegajoso, o que permite imobilizar inimigos facilmente, e sua densidade é capaz de bloquear balas e projéteis.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O mochi perde a capacidade de grudar e prender os oponentes se for encharcado com água ou outros líquidos, permitindo que inimigos se libertem facilmente;
+> : ᓩ Como é uma massa feita de arroz, o mochi criado pelo usuário pode ser comido por outras pessoas se não estiver sendo ativamente manipulado ou endurecido com Haki;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Mori Mori no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Mori Mori no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário criar, controlar e transformar seu corpo em vegetação, tornando-se um verdadeiro homem-floresta. A Fruta concede domínio sobre árvores, raízes, cipós, folhas, flores e demais formas de vida vegetal, além da capacidade de absorver nutrientes e líquidos de outros seres vivos através de raízes e vinhas.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Pode criar e controlar árvores, raízes, cipós, galhos, espinhos, folhas e flores livremente dentro do alcance da Fruta;
+> : ᓩ É capaz de fazer plantas crescerem rapidamente, alterando completamente o terreno ao seu redor;
+> : ᓩ Raízes e cipós podem prender, perfurar ou esmagar adversários, além de absorver água e nutrientes de seus corpos, enfraquecendo-os gradativamente;
+> : ᓩ Pode regenerar partes do corpo utilizando sua própria vegetação, desde que não tenha sofrido danos causados por Haki ou kairoseki;
+> : ᓩ O usuário pode deslocar seu corpo através de raízes e árvores conectadas ao solo, reaparecendo em outro ponto dentro do alcance;
+> : ᓩ Ambientes ricos em vegetação ampliam significativamente a velocidade de crescimento das plantas e a eficiência das técnicas (Alcance sobe pra 2.5x);
+> : ᓩ Cria plantas que liberam um pólen que faz com que qualquer um com uma diferença negativa de 10.000 de Espírito desmaie por 1 turno.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O fogo é a principal fraqueza natural da Fruta;
+> : ᓩ Técnicas baseadas em altas temperaturas queimam rapidamente a vegetação criada e dificultam sua regeneração;
+> : ᓩ Ambientes áridos ou com pouca umidade reduzem a velocidade de crescimento das plantas e tornam a absorção de nutrientes menos eficiente;
+> : ᓩ Embora possa absorver líquidos de outros seres vivos, essa habilidade exige contato físico com raízes, cipós ou galhos;
+> : ᓩ Técnicas que destroem completamente a vegetação com Haki impedem sua regeneração imediata;
+> : ᓩ O excesso de fogo contínuo pode reduzir drasticamente o controle do usuário sobre o campo de batalha;
+> : ᓩ Assim como a Hie Hie no Mi, não tem a capacidade de ficar intangível;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Nikyu Nikyu no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Nikyu Nikyu no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta concede ao usuário a habilidade de repelir qualquer coisa por meio de almofadas semelhantes às de patas, permanentemente manifestadas nas palmas de suas mãos, tornando-o uma pessoa-pata.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Esta habilidade concede o poder de repelir absolutamente qualquer coisa. O canal para isso são almofadas macias, semelhantes a patas com cinco dedos, manifestadas permanentemente nas palmas das mãos do usuário;
+> : ᓩ Essas palmas são totalmente invulneráveis e funcionam como escudos absolutos. Elas podem desviar fogo, lâminas e impactos colossais sem que o portador sofra qualquer dano, bastando apenas tocá-los;
+> : ᓩ Como as marcas são permanentes, é comum que o usuário utilize luvas no dia a dia. Para ativar a repulsão, basta o mero toque, dispensando qualquer movimento brusco ou de força física por parte do portador;
+> : ᓩ A repulsão ignora a composição da matéria. Pode-se repelir alvos tangíveis, como o próprio corpo ou grandes estruturas, e até gases, como o ar;
+> : ᓩ Elementos imateriais e biológicos, como fantasmas, dor, exaustão e memórias, também podem ser extraídos. Ao repelir coisas intangíveis, elas assumem a forma de bolhas de energia transparentes;
+> : ᓩ Quando a dor ou a memória de alguém é expelida, a bolha resultante não voa para longe, mas fica pairando próxima à origem. Qualquer indivíduo que tocar nessa bolha absorverá o seu conteúdo instantaneamente;
+> : ᓩ As bolhas contendo memórias são cópias exatas e podem durar anos se preservadas com cuidado, sem que o doador original perca suas próprias lembranças;
+> : ᓩ Ofensivamente, o usuário pode repelir o ar em velocidades próximas à da luz. Isso gera ondas de choque perfurantes ou imensas bombas de ar supercomprimido de altíssima letalidade;
+> : ᓩ É possível repelir o próprio corpo para viajar distâncias colossais em segundos. Embora pareça teletransporte, é apenas um deslocamento físico em velocidade imperceptível aos olhos.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário permanece sujeito às fraquezas aquáticas e às vulnerabilidades padrões que acompanham os portadores desse tipo de poder;
+> : ᓩ A defesa absoluta só funciona se as mãos estiverem livres e puderem reagir a tempo. Ataques surpresa ou membros imobilizados deixam o usuário totalmente vulnerável, tornando o uso de armaduras uma precaução bem-vinda;
+> : ᓩ O deslocamento em altíssima velocidade só pode ter como destino locais que o usuário já visitou previamente. Não é possível viajar para coordenadas desconhecidas;
+> : ᓩ A trajetória do voo não é imaterial. Qualquer obstáculo natural ou arquitetônico no caminho causará uma violenta colisão. Além disso, viagens muito longas tornam-se penosas se o usuário estiver fisicamente esgotado;
+> : ᓩ Embora o poder consiga remover a dor e o cansaço, ele é incapaz de curar ou repelir doenças crônicas ou infecciosas;
+> : ᓩ A dor e a fadiga encapsuladas em bolhas possuem um prazo de validade invisível. Se ninguém as absorver voluntariamente, todo o sofrimento retornará ao corpo original;
+> : ᓩ Como as bolhas de memória transferem seu conteúdo e desaparecem ao menor toque, acidentes podem fazer com que informações confidenciais parem na mente de pessoas indesejadas;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Ope Ope no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Ope Ope no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Confere ao usuário a capacidade de criar uma área esférica chamada "Room", onde ele pode manipular tudo dentro dela.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Suas vantagens incluem curas milagrosas, cirurgias complexas e controle espacial total.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O alto consumo de energia vital do usuário;
+> : ᓩ A limitação de atuar apenas dentro da área da "Room";
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Oto Oto no Mi": `Yoruzen`,
-    "Pamu Pamu no Mi": `Bakugo`,
-    "Pika Pika no Mi": `Rhaizen D. Aether`,
+    "Pamu Pamu no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Pamu Pamu no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário infle qualquer parte do próprio corpo ou objetos inanimados/inorgânicos que toque, aumentando drasticamente seu tamanho. Ao atingir o limite de expansão, o alvo pode explodir.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Dano Adicional: (Controle% da Potência)+50%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 0,1
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O portador possui a capacidade de inflar qualquer membro ou área do seu próprio corpo, transformando-a em uma estrutura semelhante a um balão que detona ao seu comando;
+> : ᓩ Esse poder também se estende a objetos inanimados que sejam tocados. O material alvo tem seu volume multiplicado de forma drástica antes de culminar em uma detonação;
+> : ᓩ O usuário conta com proteção absoluta contra as explosões geradas por sua própria habilidade, garantindo segurança ao utilizar o poder a curta distância;
+> : ᓩ Antes do momento da explosão, os materiais expandidos ganham grande versatilidade no campo de batalha. Eles podem ser posicionados como barricadas defensivas, escudos improvisados ou plataformas temporárias de locomoção;
+> : ᓩ Além da manipulação do ambiente, os objetos inflados podem ser arremessados contra adversários, atuando como projéteis de altíssimo poder destrutivo.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O poder de expansão é estritamente limitado à matéria inanimada. Com exceção do próprio usuário, a habilidade não surte qualquer efeito em outros seres vivos;
+> : ᓩ Alvos compostos por materiais de alta densidade ou grande durabilidade exigem um tempo consideravelmente maior e um controle rigoroso para atingirem o ponto crítico de detonação;
+> : ᓩ Se o objeto em expansão for destruído por forças externas antes de atingir o seu limite de inflação, o acúmulo de energia se dissipa e a explosão é inteiramente anulada;
+> : ᓩ De maneira semelhante, caso a superfície do alvo seja perfurada durante o processo, o objeto perderá pressão instantaneamente, desinflando até retornar ao seu estado original;
+> : ᓩ O tamanho máximo do objeto afetado está atrelado à capacidade atual do usuário. Estruturas massivas exigem foco prolongado e um investimento de tempo significativamente maior para serem preenchidas;
+> : ᓩ A habilidade exige contato ininterrupto para a canalização do efeito. Se o portador soltar o item antes de finalizar o processo, a expansão é revertida e o objeto começa a desinflar;
+> : ᓩ A manutenção do poder é ativamente vinculada ao estado mental do portador. Caso o usuário seja nocauteado ou perca a consciência, todos os alvos inflados perdem a estabilidade, esvaziando-se imediatamente e neutralizando qualquer risco de explosão;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
+    "Pika Pika no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Pika Pika no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ O usuário pode se transformar, atirar e moldar a luz (atinge a velocidade da luz apenas para movimentações curtas).
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A aptidão central desta habilidade permite ao portador gerar, manipular e converter a própria estrutura celular em luz pura, tornando-se intangível a ataques comuns;
+> : ᓩ A transformação luminosa concede uma velocidade de deslocamento insuperável. O usuário é capaz de realizar viagens e reposicionamentos praticamente instantâneos;
+> : ᓩ Os ataques baseados na emissão de luz não causam apenas impacto, mas possuem uma capacidade perfurante e destrutiva devastadora, capaz de atravessar matérias altamente resistentes;
+> : ᓩ A habilidade proporciona um domínio absoluto em combates de longa distância. O portador pode emitir rajadas intensas, feixes diretos e disparos de energia altamente concentrada contra seus alvos.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A maior fraqueza do deslocamento em velocidade máxima é a sua restrição geométrica. Para viajar na velocidade da luz, o usuário é forçado a se mover em trajetórias perfeitamente lineares, o que torna seus movimentos fisicamente óbvios;
+> : ᓩ Por causa da linearidade dos ataques e dos movimentos, oponentes que possuam reflexos sobre-humanos, instintos apurados ou habilidades de precognição (leitura de intenções) são capazes de calcular o ponto de chegada e contra-atacar, anulando a vantagem da velocidade;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Rokku Rokku no Mi": `Lexa`,
-    "Ryū Ryū no Mi, Modelo: Dragão Ocidental": `Galan'd Von Antares`,
-    "Shiku Shiku no Mi": `???`,
-    "Soru Soru no Mi": `Kozuki Ryōshū`,
-    "Sube Sube no Mi": `Iroh`,
+    "Ryū Ryū no Mi, Modelo: Dragão Ocidental": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Ryū Ryū no Mi, Modelo: Dragão Ocidental
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Concede ao usuário a habilidade de se transformar em um lagarto alado colossal com 1.000 metros de comprimento, capaz de voar, soltar fogo e dominar os céus, o dragão possui 4 patas e um par de asas em suas costas.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A transformação concede ao usuário uma durabilidade física extraordinária, garantida por uma couraça espessa de escamas draconianas que funcionam como uma armadura natural altamente impenetrável;
+> : ᓩ O portador adquire a capacidade de dominar os céus, sendo capaz de alçar voo e navegar pelo ar graças ao desenvolvimento de um par de asas gigantescas e poderosas;
+> : ᓩ A habilidade oferece um potencial ofensivo avassalador desde o momento em que é despertada. Mesmo sem um controle refinado ou treinamento extenso, o usuário já é capaz de conjurar e expelir rajadas de fogo devastadoras diretamente pela boca.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A forma completa e massiva da criatura exige vastas áreas abertas para operar com eficiência. Em ambientes fechados, subterrâneos ou estreitos, a mobilidade do portador torna-se drasticamente prejudicada;
+> : ᓩ O tamanho colossal da transformação atua como uma faca de dois gumes. O imenso volume corporal não permite esquivas rápidas e cria múltiplos pontos de vulnerabilidade espalhados pela estrutura da criatura, facilitando acertos por parte de adversários ágeis;
+> : ᓩ A locomoção aérea está estritamente condicionada à integridade física e estrutural das asas. Caso essas extremidades sofram danos severos ou perfurações, o usuário perde imediatamente a capacidade de voar, ficando restrito ao solo;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Shiku Shiku no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Shiku Shiku no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta concede ao usuário a capacidade de gerar e espalhar doenças de forma intencional, criando enfermidades com efeitos variados e muitas vezes absurdos, como transformações físicas ou debilitações súbitas. As doenças podem se propagar rapidamente entre os alvos, mesmo sem contato direto, permitindo ao usuário enfraquecer grupos inteiros com facilidade. Além disso, essas enfermidades não seguem necessariamente as leis naturais, podendo ser moldadas conforme a vontade do usuário, o que torna seus efeitos imprevisíveis e extremamente perigosos em combate.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Dano Adicional: (Controle% da Potência)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário possui o poder de inocular e proliferar uma vasta gama de patologias em seus adversários, desde enfermidades debilitantes comuns até condições altamente exóticas;
+> : ᓩ Entre as afecções mais singulares geradas por este poder, é possível induzir mutações biológicas drásticas no organismo alvo, incluindo a alteração instantânea de gênero anatômico;
+> : ᓩ As doenças manifestadas possuem uma taxa de transmissão alarmante. Elas se espalham em ritmo epidêmico, contaminando grupos inteiros de inimigos em questão de instantes;
+> : ᓩ A habilidade permite afligir os alvos sem qualquer necessidade de contato físico. Isso cria uma barreira invisível de infecção, dificultando imensamente as investidas de lutadores focados em combate corpo a corpo;
+> : ᓩ Mesmo os adversários mais resistentes e fisicamente imponentes podem ser subjugados. O poder enfraquece os alvos com dores crônicas ou fadiga severa, sendo capaz de reverter o cenário de uma batalha desfavorável.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A eficácia das doenças encontra seu limite na resistência interior do adversário. Indivíduos com um domínio excepcionalmente avançado sobre sua própria força de vontade e energia vital conseguem resistir à infecção;
+> : ᓩ Quando o alvo exerce essa manifestação de poder e energia em alto nível, ele não apenas se torna imune às novas afecções, mas também é capaz de anular e curar instantaneamente as doenças que já haviam sido aplicadas ao seu corpo;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Soru Soru no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Soru Soru no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Dá ao usuário o poder de manipular almas. Com isso, é possível extrair partes da alma de alguém, diminuindo assim o tempo de vida da pessoa. Ao consumir essas partes, o usuário prolonga sua própria vida. Essas partes de alma também podem ser depositadas em objetos inanimados, dando-lhes vida. A presença da alma do usuário causa grande temor em várias espécies.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A aptidão central desta habilidade concede ao usuário o poder absoluto de interagir com a própria essência vital de outros seres vivos;
+> : ᓩ O portador é capaz de arrancar fragmentos ou até a totalidade da alma de humanos e criaturas. Na prática, isso permite que o usuário roube o tempo de vida de seus alvos de forma direta;
+> : ᓩ A energia vital extraída não se perde; ela pode ser manipulada e inserida em objetos inanimados, animais ou até mesmo elementos da natureza, dando origem a entidades vivas e conscientes que servem ao usuário.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A capacidade de extrair a alma e a expectativa de vida não é incondicional. Ela exige que o alvo sinta medo, intimidação ou ao menos um forte apego à própria vida perante a presença do usuário;
+> : ᓩ Indivíduos dotados de extrema convicção e que não demonstram absolutamente nenhum pavor diante do portador tornam-se perfeitamente imunes à extração de suas almas, anulando o ataque principal;
+> : ᓩ As entidades criadas através da infusão de almas herdaram emoções e podem ser facilmente intimidadas. Oponentes com forte presença dominadora ou que não sintam medo conseguem subjugar essas criações;
+> : ᓩ Além das limitações mentais, os seres criados a partir das almas continuam submissos às leis da física. Eles carregam as fraquezas lógicas de sua composição estrutural, sofrendo desvantagens elementais claras em combate;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Sube Sube no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Sube Sube no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o corpo do usuário se torne extremamente liso, eliminando quase todo o atrito sobre sua pele. Como resultado, ataques físicos tendem a escorregar pelo corpo do usuário, enquanto seus movimentos tornam-se muito mais fluidos e velozes. Além disso, o usuário pode deslizar sobre praticamente qualquer superfície com enorme facilidade.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 10%
+: ᓩ Dano Adicional: (Controle% da Potência)+0%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O corpo do usuário adquire uma textura perfeitamente lisa e escorregadia, eliminando quase toda a resistência tátil com objetos e superfícies;
+> : ᓩ Graças a essa superfície, a grande maioria dos ataques físicos direto,  com exceção de disparos de fogo e cortes especializados,  tende a escorregar inofensivamente pela pele, anulando ou minimizando drasticamente o impacto recebido;
+> : ᓩ A ausência de atrito permite ao portador patinar em alta velocidade sobre variados tipos de terreno. É possível deslizar facilmente pelo solo, paredes inclinadas, gelo e até mesmo sobre lâminas d'água rasas;
+> : ᓩ Essa locomoção atípica amplia consideravelmente a mobilidade do usuário, garantindo uma aceleração superior, esquivas rápidas e a capacidade de realizar mudanças de direção de forma muito mais abrupta;
+> : ᓩ Técnicas clássicas de contenção, como agarrões e chaves articulares, perdem totalmente a eficácia. O corpo do portador escorrega facilmente das mãos e braços de qualquer oponente comum;
+> : ᓩ Ao arremessar itens, o usuário não gera atrito inicial com a palma da mão. Isso reduz a resistência e confere um bônus mecânico que aumenta visivelmente a velocidade inicial de qualquer projétil lançado;
+> : ᓩ Como efeito passivo, o corpo do usuário repele completamente qualquer tipo de sujeira. Lama, poeira e detritos não conseguem aderir à pele, escorrendo de forma automática.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Oponentes capazes de revestir seus golpes com força de vontade avançada ou energia vital de endurecimento ignoram totalmente a proteção escorregadia, atingindo o corpo do portador com força total;
+> : ᓩ A pele lisa não oferece defesa contra ataques elementais ou de área. O usuário continua sofrendo dano integral de explosões, ondas de choque, calor extremo e descargas elétricas;
+> : ᓩ A falta natural de atrito se torna um grave problema quando é necessário manter-se firme em um único lugar. Ficar parado em terrenos íngremes ou realizar ações de força que exijam tração nos pés é um grande desafio;
+> : ᓩ Durante deslocamentos em velocidades extremas, a ausência de "freios" naturais pode fazer com que o usuário perca o controle da própria inércia, tornando a navegação em terrenos muito irregulares perigosa;
+> : ᓩ Embora imunizado contra agarrões corporais diretos, o portador ainda pode ser neutralizado por armadilhas de ambiente. Estruturas que isolem o corpo por completo, como casulos, amarras de correntes densas ou redes feitas de materiais aderentes, ainda conseguem restringir sua movimentação;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Suji Suji no Mi": `???`,
     "Suke Suke no Mi": `Kamish`,
     "Suna Suna no Mi": `BladeHawk`,
