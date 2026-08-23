@@ -301,6 +301,48 @@ Ficha de Akuma no Mi
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
     "Gasu Gasu no Mi": `Pietro`,
+    "Genso Genso no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Genso Genso no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Dá ao usuário a habilidade de criar ilusões vívidas e envolventes.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,6
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Permite criar ilusões extremamente realistas, capazes de afetar visão, audição e percepção do alvo;
+> : ᓩ Alta versatilidade em combate, espionagem e manipulação psicológica.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Ilusões não causam dano físico direto sem apoio externo;
+> : ᓩ Usuários com Haki da Observação elevado podem perceber inconsistências ou resistir às ilusões;
+> : ᓩ Alto foco mental é necessário;
+> : ᓩ Distrações ou dano intenso podem desfazer técnicas ativas;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Gomu Gomu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -568,6 +610,48 @@ Ficha de Akuma no Mi
 : ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
 > : ᓩ Ao contrário de outras Logia, o usuário pode ser atingido fisicamente, pois o gelo é sólido;
 > : ᓩ Calor intenso (fogo/magma), Haki do Armamento forte (20% de diferença entre Espírito e Fruta) e Haki do Rei são counters do gelo;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Hito Hito no Mi, Modelo: Daibutsu": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Hito Hito no Mi, Modelo: Daibutsu
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário transformar-se em um Buda dourado gigante, aumentando drasticamente a força física, durabilidade e permitindo a criação de ondas de choque poderosas com golpes de palma.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Aumento extremo de força física, alta durabilidade e a habilidade de gerar ondas de choque devastadoras.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A transformação cria uma estátua dourada gigantesca, tornando impossível passar despercebido ou agir furtivamente;
 > : ᓩ Fraquezas padrão de Akuma no Mi.
 
 *————————————————————————*
@@ -861,6 +945,88 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Kaze Kaze no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Kaze Kaze no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta concede ao usuário a habilidade de criar, manipular e se tornar vento, tornando-se uma pessoa-vento.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+80%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 3,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Permite gerar, manipular e se tornar vento, assim como reproduzir qualquer fenômeno meteorológico que dependa de ventos.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Kobu Kobu no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Kobu Kobu no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ A Kobu Kobu no Mi é uma Akuma no Mi do tipo Paramecia, que permite ao usuário incentivar e reunir pessoas a despertar seu potencial latente para lutar.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Dano Adicional: (Controle% da Potência)+0%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A maior força desta Fruta é a capacidade de aumentar a força física de outras pessoas simplesmente incentivando-as;
+> : ᓩ O usuário pode encorajar e fortalecer várias pessoas de uma só vez, permitindo que elas transformem grupos inteiros de pessoas comuns em poderosos combatentes, possivelmente mudando a maré da batalha.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Sua eficácia na batalha depende em grande parte das metas fortalecidas que estão dispostas a ajudar o usuário, já que o incentivo é o máximo que o usuário pode fazer para influenciar as ações de seus alvos, e os alvos devem tomar a decisão de lutar por conta própria;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Kumo Kumo no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -908,6 +1074,52 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Kumo Kumo no Mi, Modelo: _Rosamygale grauvogeli_
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Ancestral
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário se transformar em uma versão híbrida ou completa de uma _Rosamygale grauvogeli_, uma espécie antiga de aranha. Na Forma Híbrida o usuário adquire a característica de ficar com 6 braços. Na forma completa permite se transformar em uma aranha de tamanho equivalente ao usuário.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 10%
+> — Forma Completa: 20%
+: ᓩ Dano Adicional: (Controle% da Potência)+20%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,4
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário possui 2 pares de braços adicionais na Forma Híbrida;
+> : ᓩ Permite andar pelas paredes e pelo teto;
+> : ᓩ Capacidade de produzir teias como uma aranha pelas pontas dos dedos, extremamente grudentas;
+> : ᓩ Secreta um veneno pelas patas da frente capaz de causar dormência nos inimigos.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ As teias criadas por essa Akuma no Mi são altamente inflamáveis (isso também pode ser considerado uma vantagem) e também são muito vulneráveis a baixas temperaturas, se tornando quebradiças e perdendo a utilidade;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Magu Magu no Mi": `Cheung Po Tsai`,
     "Maki Maki no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
@@ -1829,6 +2041,45 @@ Ficha de Akuma no Mi
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
     "Uta Uta no Mi": `???`,
+    "Wapu Wapu no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Wapu Wapu no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ A Wapu Wapu no Mi é uma Akuma no Mi do tipo Paramecia que permite ao usuário teletransportar a si mesmo ou outras pessoas de um lugar para outro.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 6
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode se deslocar de um lugar para outro instantaneamente, bem como teletransportar outras pessoas depois de tocá-las.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Sem o domínio da habilidade, o alcance do teletransporte é relativamente limitado (100 metros a cada 500 pontos em Alcance);
+> : ᓩ O usuário pode percorrer distâncias maiores com treinamento, embora não se saiba se ele conseguirá superar totalmente a limitação de alcance;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Yami Yami no Mi": `Andrial D. Oran`,
     "Yomi Yomi no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
