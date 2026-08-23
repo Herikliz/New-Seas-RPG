@@ -1543,19 +1543,376 @@ Ficha de Akuma no Mi
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
     "Suji Suji no Mi": `???`,
-    "Suke Suke no Mi": `Kamish`,
-    "Suna Suna no Mi": `BladeHawk`,
+    "Suke Suke no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Suke Suke no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário tornar seu corpo completamente invisível, incluindo roupas e objetos que esteja carregando ou tocando. Além disso, o usuário pode estender a invisibilidade para outras pessoas e objetos através do contato físico, criando inúmeras possibilidades de espionagem, infiltração e combate surpresa. A invisibilidade não altera as propriedades físicas do usuário: ele continua possuindo corpo, massa, som, cheiro e temperatura. O verdadeiro poder da fruta está em eliminar sua presença visual.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 5%
+
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O portador desta habilidade é capaz de tornar o seu próprio corpo completamente invisível, ocultando-se de forma absoluta do campo de visão de qualquer adversário;
+> : ᓩ Toda vestimenta, armamento ou equipamento que estiver sob posse direta e em contato físico com o usuário também é perfeitamente ocultado aos olhos nus;
+> : ᓩ O poder de camuflagem pode ser estendido a terceiros. Ao tocar em outras pessoas, o portador consegue torná-las invisíveis, permitindo estratégias conjuntas de furtividade.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A ocultação visual não torna o corpo intangível ou incorpóreo. O portador continua com massa física e sofrerá danos normalmente caso o oponente lance ataques na direção correta;
+> : ᓩ Adversários dotados de instintos aguçados ou técnicas de percepção espiritual avançada conseguem sentir a presença, a posição e a intenção do usuário, anulando a vantagem da invisibilidade;
+> : ᓩ O poder atua exclusivamente sobre a luz e a visão, não silenciando o corpo. O barulho de passos, o ritmo da respiração ou o choque de armas continuam revelando a localização exata do portador;
+> : ᓩ A interação do corpo com o ambiente não é camuflada. Marcas de pegadas no chão, poeira levantada, deslocamento de fumaça, além de manchas de sangue, água ou lama aderidas à pele, denunciam imediatamente a presença do indivíduo;
+> : ᓩ O odor natural do corpo não é suprimido durante o uso da habilidade. Animais treinados ou oponentes com um olfato excepcionalmente sensível conseguem rastrear o usuário com facilidade;
+> : ᓩ Para manter a invisibilidade sobre objetos muito grandes ou sobre outras pessoas, é estritamente necessário manter o contato físico constante. Assim que o toque é rompido, o alvo volta a ser visível instantaneamente;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
+    "Suna Suna no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Suna Suna no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ É uma Akuma no Mi do tipo Logia que permite ao usuário criar, controlar e se transformar em areia à vontade.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 75%
+: ᓩ Dano Adicional: (Controle% da Potência)+75%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+75%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O corpo do usuário adquire a capacidade de se transformar totalmente em areia, tornando-se imune a ataques físicos convencionais, que simplesmente atravessam sua estrutura granular sem causar qualquer dano;
+> : ᓩ Através do contato direto, o portador consegue absorver e drenar impiedosamente a umidade de qualquer matéria física, sendo capaz de desidratar adversários de forma letal e ressecar objetos ou terrenos;
+> : ᓩ A habilidade oferece um controle ambiental em larga escala, permitindo a geração de fenômenos climáticos extremos e desastres naturais, como tempestades de areia devastadoras e areia movediça;
+> : ᓩ Ao manter contato com o solo arenoso, o usuário desenvolve uma percepção tátil altamente sensível, conseguindo detectar vibrações sutis e rastrear a movimentação de inimigos espalhados pelo terreno.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O elemento manipulado perde instantaneamente a sua fluidez e capacidade de dispersão assim que entra em contato com água ou qualquer outro tipo de líquido, aglutinando-se de forma pesada e sólida;
+> : ᓩ Caso o corpo do usuário seja umedecido, seja por água, sangue ou suor do próprio adversário, a intangibilidade natural é totalmente anulada. Sob essas circunstâncias, ele não consegue evitar impactos e torna-se vulnerável a ataques físicos comuns;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Susu Susu no Mi": `Iori`,
-    "Tori Tori no Mi, Modelo: Fênix": `Kozuki Shingen`,
-    "Tori Tori no Mi, Modelo: Pássaro de Cinzas": `Genma Gan`,
-    "Tori Tori no Mi, Modelo: Thunderbird": `Thoriel`,
+    "Tori Tori no Mi, Modelo: Fênix": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Tori Tori no Mi, Modelo: Fênix
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ O usuário é capaz de gerar chamas azuis especiais que não queimam com calor comum, mas possuem propriedades regenerativas poderosas.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O portador é capaz de curar ferimentos de forma quase instantânea através da geração de chamas azuis, promovendo uma regeneração celular extremamente acelerada e constante durante o combate;
+> : ᓩ O fogo produzido por essa habilidade difere substancialmente do fogo comum, manifestando-se essencialmente como ondas de impacto cinético em vez de promover a incineração e a combustão dos alvos;
+> : ᓩ A natureza da transformação confere uma propriedade de reestruturação corporal que torna o usuário virtualmente invulnerável a ataques físicos diretos, regenerando o tecido atingido no mesmo instante em que é danificado;
+> : ᓩ A manifestação das chamas corporais permite ao usuário assumir características aviárias, garantindo-lhe a plena capacidade de alçar voo com imensa agilidade e dominar o espaço aéreo.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O processo contínuo de cura celular cobra um preço altíssimo do organismo do portador. A regeneração consome ativamente a sua energia vital, drenando o dobro de sua resistência física a cada ferimento curado, o que inviabiliza batalhas de exaustão muito prolongadas;
+> : ᓩ Como as chamas azuis carecem das propriedades térmicas para queimar, derreter ou incendiar materiais e oponentes, o potencial ofensivo e destrutivo bruto da habilidade é consideravelmente reduzido em comparação com habilidades baseadas em chamas convencionais;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Tori Tori no Mi, Modelo: Pássaro de Cinzas": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Tori Tori no Mi, Modelo: Pássaro de Cinzas
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário se transforme em um lendário Pássaro de Cinzas, uma ave envolta por cinzas vulcânicas e brasas adormecidas. Suas asas espalham nuvens de cinzas capazes de sufocar, cegar e devastar o ambiente. Na Forma Completa é imune a ataques sem Haki, simulando uma Logia, como a Fênix.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário possui a capacidade de gerar, expandir e manipular nuvens de cinzas vulcânicas extremamente finas, moldando-as de acordo com a sua vontade no campo de batalha;
+> : ᓩ A primeira forma de utilização envolve as cinzas escaldantes. Sendo recém-expelidas, elas carregam um calor intenso e pequenas partículas de rocha, sendo perfeitamente capazes de causar queimaduras severas, ofuscar a visão e prejudicar gravemente a respiração dos inimigos;
+> : ᓩ A segunda forma ocorre quando o material perde o seu calor original, transformando-se em cinzas mortas. Nesse estágio, a poeira fica densa e altamente abrasiva, sendo ideal para erguer barreiras físicas protetoras, corroer engrenagens e mecanismos, além de encobrir os rastros do usuário;
+> : ᓩ Essas mesmas cinzas resfriadas podem ser dispersadas em larga escala para gerar tempestades de poeira sufocantes, cujo objetivo é esgotar lentamente o suprimento de ar dos adversários e controlar amplas zonas de combate;
+> : ᓩ A manipulação contínua das correntes de cinzas e do próprio peso corporal concede ao portador a habilidade de alçar voo, garantindo-lhe excelente mobilidade aérea;
+> : ᓩ Ao assumir a sua forma elementar completa, o usuário adquire propriedades de intangibilidade. Com isso, ele passa a ignorar ataques físicos convencionais, que simplesmente atravessam o seu corpo sem lhe causar qualquer ferimento.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O potencial destrutivo e o volume máximo de material que pode ser controlado dependem diretamente da umidade do ambiente, sendo a habilidade muito mais eficiente em locais quentes e secos;
+> : ᓩ Condições climáticas naturais mais extremas, como chuvas intensas e ventanias fortes, dispersam o elemento com facilidade e reduzem de maneira drástica a autoridade do portador sobre o material espalhado;
+> : ᓩ Habilidades adversárias ou técnicas externas que tenham como foco a purificação, filtragem ou rápida ventilação do ar conseguem anular a eficácia das cinzas, limpando rapidamente o cenário do confronto;
+> : ᓩ Quando submetido a essas condições climáticas desfavoráveis, ou caso se encontre encurralado em ambientes excessivamente fechados, o alcance operacional da habilidade sofre uma redução bastante severa;
+> : ᓩ A exposição a grandes volumes de água altera instantaneamente a estrutura química das cinzas. O pó leve e solto transforma-se em uma massa aglutinada, compacta e pesada, tornando a sua manipulação inviável e interrompendo os ataques do portador;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Tori Tori no Mi, Modelo: Thunderbird": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Tori Tori no Mi, Modelo: Thunderbird
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário se transforme em um pássaro de raios que pode controlar tempestades. A Forma Completa é imune a ataques sem Haki, simulando uma Logia, como a Fênix.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário detém a capacidade de gerar, expandir e manipular tempestades em uma ampla área, alterando drasticamente as condições climáticas ao seu redor de acordo com a sua vontade;
+> : ᓩ Essa habilidade permite a manifestação de nuvens densas e altamente carregadas de energia, das quais o portador consegue convocar intensas descargas elétricas e raios diretamente contra os seus alvos;
+> : ᓩ As densas massas de nuvens podem ser utilizadas de forma tática, servindo como uma espessa cortina de fumaça natural para ocultar a presença do usuário e facilitar emboscadas ou fugas;
+> : ᓩ O controle absoluto sobre o clima e as formações nubladas concede ao indivíduo a plena capacidade de alçar voo, proporcionando uma excelente mobilidade e domínio do espaço aéreo;
+> : ᓩ Ao assumir a sua forma elemental completa, o corpo do portador adquire propriedades de intangibilidade. Com isso, ele passa a ignorar ataques físicos convencionais, que atravessam a sua estrutura sem causar qualquer ferimento.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O potencial destrutivo máximo não pode ser alcançado de imediato. A formação de tempestades de grandes proporções e de alta letalidade exige um tempo considerável de preparação, impedindo que os maiores ataques climáticos surjam de forma instantânea;
+> : ᓩ A eficácia da manipulação climática é severamente prejudicada quando o portador se encontra em ambientes fechados ou subterrâneos. Sob essas restrições espaciais, o controle e o alcance da habilidade sofrem uma redução bastante significativa;
+> : ᓩ A natureza elétrica dos ataques torna a habilidade suscetível à física do ambiente. Materiais altamente condutores e grandes estruturas metálicas presentes no cenário atraem os raios gerados, desviando a trajetória dos golpes e permitindo que sejam usados como para-raios pelos adversários;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Uma Uma no Mi": `Mǎ`,
-    "Uo Uo no Mi, Modelo: Carpa Seiryū": `Keigo Kiyosaki`,
+    "Uo Uo no Mi, Modelo: Carpa Seiryū": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Uo Uo no Mi, Modelo: Carpa Seiryū
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário se transforme no lendário Seiryū, ou Dragão Azul, podendo controlar nuvens carregadas, lançar raios, voar, e soltar fogo pela boca. Possui escamas sob a pele mesmo sem estar transformado.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário detém a capacidade de gerar, expandir e manipular tempestades em uma ampla área, alterando drasticamente as condições climáticas ao seu redor de acordo com a sua vontade;
+> : ᓩ Essa habilidade permite a manifestação de nuvens densas e altamente carregadas de energia, das quais o portador consegue convocar intensas descargas elétricas e raios diretamente contra os seus alvos;
+> : ᓩ As densas massas de nuvens podem ser utilizadas de forma tática, servindo como uma espessa cortina de fumaça natural para ocultar a presença do usuário e facilitar emboscadas ou fugas;
+> : ᓩ O controle absoluto sobre o clima e as formações nubladas concede ao indivíduo a plena capacidade de alçar voo, proporcionando uma excelente mobilidade e domínio do espaço aéreo;
+> : ᓩ Ao assumir a sua forma elemental completa, o corpo do portador adquire propriedades de intangibilidade. Com isso, ele passa a ignorar ataques físicos convencionais, que atravessam a sua estrutura sem causar qualquer ferimento.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O potencial destrutivo máximo não pode ser alcançado de imediato. A formação de tempestades de grandes proporções e de alta letalidade exige um tempo considerável de preparação, impedindo que os maiores ataques climáticos surjam de forma instantânea;
+> : ᓩ A eficácia da manipulação climática é severamente prejudicada quando o portador se encontra em ambientes fechados ou subterrâneos. Sob essas restrições espaciais, o controle e o alcance da habilidade sofrem uma redução bastante significativa;
+> : ᓩ A natureza elétrica dos ataques torna a habilidade suscetível à física do ambiente. Materiais altamente condutores e grandes estruturas metálicas presentes no cenário atraem os raios gerados, desviando a trajetória dos golpes e permitindo que sejam usados como para-raios pelos adversários;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Uta Uta no Mi": `???`,
     "Yami Yami no Mi": `Andrial D. Oran`,
-    "Yomi Yomi no Mi": `La Muerte`,
+    "Yomi Yomi no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Yomi Yomi no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Fortalece a alma do usuário a ponto de ele ressuscitar após sua primeira morte, permitindo-lhe viver uma segunda vez e usar várias outras habilidades baseadas na alma.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+
+: ᓩ Porcentagem de Resistência: 50%
+: ᓩ Dano Adicional: (Controle% da Potência)+35%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A principal capacidade desta habilidade é conceder uma segunda chance de vida ao usuário, permitindo que a sua alma retorne ao plano físico após o seu primeiro falecimento;
+> : ᓩ Esse retorno proporciona uma forma de imortalidade condicional, garantindo que a essência vital do portador permaneça ativa, consciente e operante até que ele sofra uma segunda morte.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O poder de ressurreição é um evento de uso único e exclusivo. Caso o usuário venha a ser destruído ou sofra uma morte fatal por uma segunda vez, o processo se torna totalmente irreversível;
+> : ᓩ Após a ressurreição, o receptáculo físico do portador perde a sua capacidade natural de regeneração biológica. Qualquer dano estrutural, ferimento severo ou estado de decomposição sofrido pelo corpo não poderá ser curado da mesma forma que ocorreria em um organismo vivo convencional;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Yuki Yuki no Mi": `Anne Bonney`,
-    "Zushi Zushi no Mi": `Sorum`
+    "Zushi Zushi no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Zushi Zushi no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário manipular a gravidade em torno de um local escolhido, enviando forças gravitacionais.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O portador adquire um controle absoluto sobre as leis da gravidade, permitindo-lhe dominar e remodelar drasticamente as condições e o cenário do campo de batalha à sua vontade;
+> : ᓩ Através dessa manipulação direcional, é possível alterar a força de atração física livremente, conseguindo afundar adversários contra o solo sob pressões esmagadoras, erguer objetos e estruturas colossais no ar ou repelir elementos com uma força invisível avassaladora.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Como a manipulação gravitacional atua sobre zonas espaciais amplas em vez de alvos únicos e isolados, a habilidade oferece um risco de dano colateral muito alto caso o portador esteja no mesmo ambiente de impacto;
+> : ᓩ A aplicação de forças esmagadoras ou repulsivas pode afetar e ferir o próprio usuário se ele compartilhar o espaço afetado, exigindo um posicionamento estratégico rigoroso e um distanciamento seguro para não ser esmagado pela sua própria técnica;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`
 };
 
 // Ficha Vazia
