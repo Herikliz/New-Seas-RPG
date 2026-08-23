@@ -843,6 +843,60 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Inu Inu no Mi, Modelo: Raposa de Nove Caudas": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Inu Inu no Mi, Modelo: Raposa de Nove Caudas
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário se transforme na lendária Raposa de Nove Caudas. Além das transformações Zoan convencionais, concede a habilidade de assumir perfeitamente a aparência física e a voz de outras pessoas, tornando-a uma das Frutas mais perigosas para infiltração, espionagem e manipulação. Sua natureza também fortalece significativamente os atributos físicos do usuários, além de ser capaz de copiar a aparência das vestes do alvo. Possuem habilidades de manipular fogo, criar ilusões e teletransporte.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode assumir perfeitamente a aparência, voz e características físicas de outra pessoa, desde que a conheça ou tenha observado sua aparência;
+> : ᓩ As transformações são completas, incluindo altura, peso, cabelos, rosto e roupas aparentes criadas pela habilidade da Fruta, tornando extremamente difícil distinguir o disfarce apenas pela aparência;
+> : ᓩ Poderes de fogo, podendo revestir suas garras e caudas com chamas, além de cuspir fogo;
+> : ᓩ Consegue criar ilusões para confundir seus alvos;
+> : ᓩ Consegue se teletransportar ao seu Alcance.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ É necessário ter tido contato físico com o alvo para copiar sua aparência, e a aparência das roupas também será a aparência da roupa que o alvo usava quando foi tocado;
+> : ᓩ Embora a transformação copie perfeitamente a aparência física, ela não copia memórias, personalidade, Haki, habilidades, maneira de lutar ou poderes da pessoa imitada;
+> : ᓩ Usuários de Haki da Observação Avançado ou indivíduos muito próximos do alvo podem perceber inconsistências no comportamento;
+> : ᓩ As nove caudas ficam aparentes quando transformada em outra pessoa, necessitando serem escondidas de outro jeito;
+> : ᓩ As suas ilusões só funcionam com pessoas que tenham 5.000 em Espírito a menos que o usuário, as ilusões são como miragens, não afetando os sentidos dos alvos além da visão;
+> : ᓩ Só consegue se teletransportar uma vez por turno, e após o uso tem que esperar um turno pra usar novamente;
+> : ᓩ Enquanto transformada, seja na forma Híbrida, Completa ou imitando alguém, sua esfera Hoshi no Tama, que é a fonte de seu poder, fica escondida entre suas caudas. Essa esfera carrega sua essência e se alguém capturar essa esfera terá o direito de lhe dar uma ordem, porém essa ordem não pode lhe causar dor física ou levar a morte, de maneira direta ou indireta. Para capturar a esfera é necessário saber seu nome verdadeiro (terá que escolher um nome para definir sua essência, e esse nome deve ser diferente do seu nome normal de personagem). Obrigatoriamente alguém vivo deve saber este nome, seja jogador ou NPC, para existir um vínculo de essência;
+> : ᓩ Se alguém descobrir e capturar a esfera, deve dar uma ordem imediatamente, após isso esquecerá o nome, e a mesma pessoa não pode capturar a esfera duas vezes seguidas;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Ito Ito no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1375,6 +1429,48 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Ancestral
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Garante a habilidade de se transformar em um tigre-dente-de-sabre completo ou híbrido.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 10%
+> — Forma Completa: 20%
+: ᓩ Dano Adicional: (Controle% da Potência)+20%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Os caninos alongados e extremamente afiados são ideais para perfurações profundas e dilaceração, permitindo que o usuário cause danos severos em oponentes e objetos.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Nikyu Nikyu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2121,6 +2217,52 @@ Ficha de Akuma no Mi
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
     "Yuki Yuki no Mi": `Anne Bonney`,
+    "Zou Zou no Mi, Modelo: Mamute": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Zou Zou no Mi, Modelo: Mamute
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Ancestral
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Garante a habilidade de se transformar em um mamute completo ou híbrido.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 10%
+> — Forma Completa: 20%
+: ᓩ Dano Adicional: (Controle% da Potência)+20%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Grande resistência;
+> : ᓩ Pode usar a tromba como um membro adicional para ataques;
+> : ᓩ O usuário fica com 15 metros de altura (caso ele seja maior que isso na forma base, como Mamute terá o mesmo tamanho).
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Em locais fechados, sua Forma Completa restringe muito sua mobilidade;
+> : ᓩ Seu tamanho acaba o deixando vulnerável em diversas partes de sua estrutura;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Zushi Zushi no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
