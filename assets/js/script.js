@@ -5951,6 +5951,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {nome: "Poke Poke no Mi (Fruta do Bolso)", valor: 650000000},
             {nome: "Rako Rako no Mi", valor: 180000000},
             {nome: "Rashin Rashin no Mi (Fruta da Bússola)", valor: 700000000},
+            {nome: "Rēzā Rēzā no Mi (Fruta do Laser)", valor: 2300000000},
             {nome: "Riki Riki no Mi (Fruta da Força)", valor: 1000000000},
             {nome: "Rokku Rokku no Mi (Fruta da Fechadura)", valor: 3200000000},
             {nome: "Ryū Ryū no Mi, Modelo: Alossauro", valor: 1950000000},
