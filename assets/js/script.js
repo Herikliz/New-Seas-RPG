@@ -5312,6 +5312,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Sorteador de Akuma no Mi e Donos
 window.donosDeAkuma = {
     "Baku Baku no Mi": "Rhaast",
+    "Bari Bari no Mi": "???",
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
     "Chikyū Chikyū no Mi": "Karaya",
@@ -5340,6 +5341,7 @@ window.donosDeAkuma = {
     "Kumo Kumo no Mi": "Caelus",
     "Magu Magu no Mi": "Cheung Po Tsai",
     "Maki Maki no Mi": "???",
+    "Memo Memo no Mi": "Uta Utahime",
     "Mera Mera no Mi": "Calamitas Donquixote",
     "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mira Mira no Mi": "Bastian Locke",
@@ -5354,6 +5356,8 @@ window.donosDeAkuma = {
     "Rokku Rokku no Mi": "Lexa",
     "Ryū Ryū no Mi, Modelo: Dragão Ocidental [Original do RPG]": "Galan'd Von Antares",
     "Ryū Ryū no Mi, Modelo: Kirin": "🔒FRUTA PERDIDA PELO MUNDO🔒",
+    "Ryū Ryū no Mi, Modelo: Pteranodonte": "???",
+    "Ryū Ryū no Mi, Modelo: Tiranossauro Rex [Original do RPG]": "???",
     "Shiku Shiku no Mi": "???",
     "Soru Soru no Mi": "Kozuki Ryōshū",
     "Sube Sube no Mi": "Iroh",

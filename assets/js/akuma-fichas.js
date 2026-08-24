@@ -2037,6 +2037,57 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Tori Tori no Mi, Modelo: Pássaro de Gelo": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ  𝙽𝚘𝚖𝚎:
+> : ᓩ Tori Tori no Mi, Modelo: Pássaro de Gelo
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite que o usuário se transforme em um pássaro azul que pode controlar geadas. A Forma Completa é imune a ataques sem Haki, simulando uma Logia, como a Fênix.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode criar, expandir e manipular geadas;
+> : ᓩ Capacidade de voar;
+> : ᓩ Na Forma Completa é imune a ataques físicos, como uma Logia;
+> : ᓩ As geadas são formadas com a umidade do ar em baixas temperaturas, criado dois tipos de geada, a Branca e a Negra;
+> : ᓩ *Geada Branca:* Ocorre em condições de maior umidade do ar. O vapor d'água congela sobre a superfície dos objetos, formando uma fina camada visível de cristais de gelo;
+> : ᓩ *Geada Negra:* Ocorre sob condições de baixa umidade e ventos moderados a fortes, não há formação de cristais de gelo visíveis; em vez disso, o frio extremo e os ventos congelam a seiva dentro das plantas, causando a morte e escurecimento dos tecidos vegetais (necrose).
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Apesar de poder criar geadas, seu poder máximo exige tempo e condições climáticas favoráveis;
+> : ᓩ Seu poder consiste em diminuir a temperatura do ar;
+> : ᓩ Em locais fechados ou de baixa umidade, sua capacidade climática é reduzida (Alcance cai pra 1,4x);
+> : ᓩ Objetos ou poderes capazes de gerar grandes quantidades de calor lhe dão desvantagens;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Tori Tori no Mi, Modelo: Thunderbird": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
