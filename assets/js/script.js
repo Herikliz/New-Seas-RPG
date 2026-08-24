@@ -5364,7 +5364,7 @@ window.donosDeAkuma = {
     "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Tori Tori no Mi, Modelo: Fênix": "Kozuki Shingen",
     "Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]": "Genma Gan",
-    "Tori Tori no Mi, Modelo: Pássaro de Gelo [Original do RPG]": "Bloqueada",
+    "Tori Tori no Mi, Modelo: Pássaro de Gelo [Original do RPG]": "Figarland Damir",
     "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "Thoriel",
     "Uma Uma no Mi": "Mǎ",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
