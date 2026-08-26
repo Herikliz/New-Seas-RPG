@@ -82,7 +82,7 @@ Ficha de Akuma no Mi
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
     "Batto Batto no Mi, Modelo: Vampiro": `Astarion Ancunín`,
-    "Buku Buku no Mi": `Patchouli Quazar`,
+    "Buku Buku no Mi": `Buku Buku no Mi`,
     "Bari Bari no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -292,7 +292,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Fude Fude no Mi": `Thomeraux Gan`,
+    "Fude Fude no Mi": `Fude Fude no Mi`,
     "Fuwa Fuwa no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -342,7 +342,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Gasu Gasu no Mi": `Pietro`,
+    "Gasu Gasu no Mi": `Gasu Gasu no Mi`,
     "Genso Genso no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1255,7 +1255,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Magu Magu no Mi": `Cheung Po Tsai`,
+    "Magu Magu no Mi": `Magu Magu no Mi`,
     "Maki Maki no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1812,7 +1812,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Oto Oto no Mi": `Yoruzen`,
+    "Oto Oto no Mi": `Oto Oto no Mi`,
     "Pamu Pamu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1950,7 +1950,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Rokku Rokku no Mi": `Lexa`,
+    "Rokku Rokku no Mi": `Rokku Rokku no Mi`,
     "Ryū Ryū no Mi, Modelo: Dragão Ocidental": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2550,7 +2550,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Uma Uma no Mi": `Mǎ`,
+    "Toro Toro no Mi": `Toro Toro no Mi`,
+    "Uma Uma no Mi": `Uma Uma no Mi`,
     "Uo Uo no Mi, Modelo: Carpa Seiryū": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2640,7 +2641,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Yami Yami no Mi": `Andrial D. Oran`,
+    "Yami Yami no Mi": `Yami Yami no Mi`,
     "Yomi Yomi no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2680,7 +2681,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Yuki Yuki no Mi": `Anne Bonney`,
+    "Yuki Yuki no Mi": `Yuki Yuki no Mi`,
     "Zou Zou no Mi, Modelo: Mamute": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
