@@ -1288,9 +1288,16 @@ if (mapGrids.length > 0) {
             <input type="number" id="tempo-custom" placeholder="Horas por quadrado" min="1" style="display: none; margin-top: 10px; width: 100%; padding: 10px; border-radius: var(--border-radius); border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif; box-sizing: border-box;">
         </div>
 
-        <div class="input-group checkbox-group" id="timoneiro-container">
-            <input type="checkbox" id="timoneiro">
-            <label for="timoneiro">Com Timoneiro (-50% tempo)</label>
+        <div class="input-group checkbox-group" id="timoneiro-container" style="display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="timoneiro" style="width: auto; height: auto; padding: 0; margin: 0; cursor: pointer;">
+            <span style="font-family: 'Comfortaa', sans-serif; font-size: 14px; font-weight: bold; color: var(--text-color); cursor: default;">Com Timoneiro (-50% tempo)</span>
+        </div>
+
+        <button id="btn-vale-nav" class="btn-toggle-nav" data-status="nao" style="width: 100%; margin-bottom: 10px;">Usar Vale Navegação</button>
+        <div id="vale-nav-container" style="display: none; margin-bottom: 10px; padding: 10px; border: 1px dashed var(--sidebar-border); border-radius: 8px;">
+            <label style="display: block; font-family: 'Quantico', sans-serif; font-size: 14px; color: var(--text-color); margin-bottom: 5px;">Quantidade de Vales</label>
+            <input type="number" id="qtd-vales" value="1" min="1" style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif; box-sizing: border-box; margin-bottom: 10px;">
+            <div id="vales-selects-container" style="display: flex; flex-direction: column; gap: 8px;"></div>
         </div>
 
         <div class="resultado-nav" id="resultadoTexto">Tempo Total: 0h</div>
@@ -1300,6 +1307,140 @@ if (mapGrids.length > 0) {
     </div>
         `;
     }
+
+    window.mapKeyToName = {
+        'north-blue': 'North Blue',
+        'east-blue': 'East Blue',
+        'calm-belt-north': 'Calm Belt (North Blue)',
+        'calm-belt-east': 'Calm Belt (East Blue)',
+        'novo-mundo': 'Novo Mundo',
+        'paraiso': 'Paraíso',
+        'calm-belt-west': 'Calm Belt (West Blue)',
+        'calm-belt-south': 'Calm Belt (South Blue)',
+        'west-blue': 'West Blue',
+        'south-blue': 'South Blue'
+    };
+
+    window.getMaresNaRota = function() {
+        let mares = [];
+        if (!window.rotaSelecionada) return mares;
+        window.rotaSelecionada.forEach(cell => {
+            let index = parseInt(cell.dataset.index);
+            let group = cell.dataset.group;
+            let mapKey = "";
+            
+            if (group === 'left' || group === 'right') {
+                if (index === 0 && group === 'left') mapKey = 'north-blue';
+                else if (index === 0 && group === 'right') mapKey = 'east-blue';
+                else if (index === 1 && group === 'left') mapKey = 'calm-belt-north';
+                else if (index === 1 && group === 'right') mapKey = 'calm-belt-east';
+                else if (index === 2 && group === 'left') mapKey = 'novo-mundo';
+                else if (index === 2 && group === 'right') mapKey = 'paraiso';
+                else if (index === 3 && group === 'left') mapKey = 'calm-belt-west';
+                else if (index === 3 && group === 'right') mapKey = 'calm-belt-south';
+                else if (index === 4 && group === 'left') mapKey = 'west-blue';
+                else if (index === 4 && group === 'right') mapKey = 'south-blue';
+            } else {
+                if (group === 'north-blue-page') mapKey = 'north-blue';
+                else if (group === 'east-blue-page') mapKey = 'east-blue';
+                else if (group === 'west-blue-page') mapKey = 'west-blue';
+                else if (group === 'south-blue-page') mapKey = 'south-blue';
+                else if (group === 'novo-mundo-page') mapKey = 'novo-mundo';
+                else if (group === 'paraiso-page') mapKey = 'paraiso';
+                else if (group === 'calm-belt-page') {
+                    if (index === 0) mapKey = 'calm-belt-north';
+                    else if (index === 1) mapKey = 'calm-belt-east';
+                    else if (index === 2) mapKey = 'calm-belt-west';
+                    else if (index === 3) mapKey = 'calm-belt-south';
+                }
+            }
+            
+            let seaName = window.mapKeyToName[mapKey];
+            if (seaName && !mares.includes(seaName)) {
+                mares.push(seaName);
+            }
+        });
+        return mares;
+    };
+
+    window.atualizarValesUI = function() {
+        const container = document.getElementById('vale-nav-container');
+        const inputQtd = document.getElementById('qtd-vales');
+        const selectsContainer = document.getElementById('vales-selects-container');
+        
+        if (!container || !inputQtd || !selectsContainer) return;
+
+        let mares = window.getMaresNaRota();
+        
+        if (mares.length === 0) {
+            inputQtd.max = 1;
+            selectsContainer.innerHTML = '';
+            return;
+        }
+
+        inputQtd.max = mares.length;
+        if (parseInt(inputQtd.value) > mares.length) {
+            inputQtd.value = mares.length;
+        }
+        
+        let qtd = parseInt(inputQtd.value) || 1;
+        
+        let selectedValues = [];
+        selectsContainer.querySelectorAll('select').forEach(sel => selectedValues.push(sel.value));
+
+        selectsContainer.innerHTML = '';
+        
+        for (let i = 0; i < qtd; i++) {
+            let sel = document.createElement('select');
+            sel.style.cssText = "width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--sidebar-border); background: var(--bg-color); color: var(--text-color); font-family: 'Comfortaa', sans-serif; box-sizing: border-box;";
+            sel.innerHTML = '<option value="" disabled selected>Selecione um Mar...</option>';
+            mares.forEach(mar => {
+                let opt = document.createElement('option');
+                opt.value = mar;
+                opt.textContent = mar;
+                sel.appendChild(opt);
+            });
+            if (selectedValues[i] && mares.includes(selectedValues[i])) {
+                sel.value = selectedValues[i];
+            }
+            sel.addEventListener('change', window.calcularTempoObj ? window.calcularTempoObj : () => {});
+            selectsContainer.appendChild(sel);
+        }
+    };
+
+    setTimeout(() => {
+        const btnValeNav = document.getElementById('btn-vale-nav');
+        if (btnValeNav) {
+            btnValeNav.addEventListener('click', function() {
+                let status = this.getAttribute('data-status');
+                const container = document.getElementById('vale-nav-container');
+                if (status === 'nao') {
+                    this.setAttribute('data-status', 'sim');
+                    this.style.background = 'var(--accent-color)';
+                    this.style.color = 'var(--bg-color)';
+                    container.style.display = 'block';
+                } else {
+                    this.setAttribute('data-status', 'nao');
+                    this.style.background = '';
+                    this.style.color = '';
+                    container.style.display = 'none';
+                }
+                window.atualizarValesUI();
+                if (window.calcularTempoObj) window.calcularTempoObj();
+            });
+        }
+        const inputQtdVales = document.getElementById('qtd-vales');
+        if (inputQtdVales) {
+            inputQtdVales.addEventListener('input', function() {
+                let max = parseInt(this.max) || 1;
+                let val = parseInt(this.value);
+                if (val > max) this.value = max;
+                if (val < 1) this.value = 1;
+                window.atualizarValesUI();
+                if (window.calcularTempoObj) window.calcularTempoObj();
+            });
+        }
+    }, 100);
 
     const inputQuadrados = document.getElementById('quadrados');
     const selectBarco = document.getElementById('barco');
@@ -1539,16 +1680,31 @@ if (mapGrids.length > 0) {
         let mapKey = "";
         index = parseInt(index);
         
-        if (index === 0 && group === 'left') mapKey = 'north-blue';
-        else if (index === 0 && group === 'right') mapKey = 'east-blue';
-        else if (index === 1 && group === 'left') mapKey = 'calm-belt-north';
-        else if (index === 1 && group === 'right') mapKey = 'calm-belt-east';
-        else if (index === 2 && group === 'left') mapKey = 'novo-mundo';
-        else if (index === 2 && group === 'right') mapKey = 'paraiso';
-        else if (index === 3 && group === 'left') mapKey = 'calm-belt-west';
-        else if (index === 3 && group === 'right') mapKey = 'calm-belt-south';
-        else if (index === 4 && group === 'left') mapKey = 'west-blue';
-        else if (index === 4 && group === 'right') mapKey = 'south-blue';
+        if (group === 'left' || group === 'right') {
+            if (index === 0 && group === 'left') mapKey = 'north-blue';
+            else if (index === 0 && group === 'right') mapKey = 'east-blue';
+            else if (index === 1 && group === 'left') mapKey = 'calm-belt-north';
+            else if (index === 1 && group === 'right') mapKey = 'calm-belt-east';
+            else if (index === 2 && group === 'left') mapKey = 'novo-mundo';
+            else if (index === 2 && group === 'right') mapKey = 'paraiso';
+            else if (index === 3 && group === 'left') mapKey = 'calm-belt-west';
+            else if (index === 3 && group === 'right') mapKey = 'calm-belt-south';
+            else if (index === 4 && group === 'left') mapKey = 'west-blue';
+            else if (index === 4 && group === 'right') mapKey = 'south-blue';
+        } else {
+            if (group === 'north-blue-page') mapKey = 'north-blue';
+            else if (group === 'east-blue-page') mapKey = 'east-blue';
+            else if (group === 'west-blue-page') mapKey = 'west-blue';
+            else if (group === 'south-blue-page') mapKey = 'south-blue';
+            else if (group === 'novo-mundo-page') mapKey = 'novo-mundo';
+            else if (group === 'paraiso-page') mapKey = 'paraiso';
+            else if (group === 'calm-belt-page') {
+                if (index === 0) mapKey = 'calm-belt-north';
+                else if (index === 1) mapKey = 'calm-belt-east';
+                else if (index === 2) mapKey = 'calm-belt-west';
+                else if (index === 3) mapKey = 'calm-belt-south';
+            }
+        }
         
         if (!ilhasCoordenadas[mapKey]) return "Alto-Mar";
         for (const [ilha, coords] of Object.entries(ilhasCoordenadas[mapKey])) {
@@ -1605,6 +1761,7 @@ if (mapGrids.length > 0) {
 
     function atualizarContagemQuadrados() {
         inputQuadrados.value = window.rotaSelecionada.length;
+        if (window.atualizarValesUI) window.atualizarValesUI();
         calcularTempo();
     }
 
@@ -1645,6 +1802,7 @@ if (mapGrids.length > 0) {
         });
         window.rotaSelecionada = [];
         inputQuadrados.value = "0";
+        if (window.atualizarValesUI) window.atualizarValesUI();
         calcularTempo();
     }
 
@@ -1737,6 +1895,8 @@ if (mapGrids.length > 0) {
     });
 
     function calcularTempo() {
+        window.calcularTempoObj = calcularTempo;
+
         const quadrados = parseInt(inputQuadrados.value) || 0;
         let tempoPorQuadrado = 0;
         let isIndividual = false;
@@ -1757,8 +1917,58 @@ if (mapGrids.length > 0) {
             timoneiroContainer.style.display = 'flex';
         }
 
+        let ignoredSeas = [];
+        const btnVale = document.getElementById('btn-vale-nav');
+        if (btnVale && btnVale.getAttribute('data-status') === 'sim') {
+            const selectsContainer = document.getElementById('vales-selects-container');
+            if (selectsContainer) {
+                selectsContainer.querySelectorAll('select').forEach(sel => {
+                    if (sel.value && !ignoredSeas.includes(sel.value)) ignoredSeas.push(sel.value);
+                });
+            }
+        }
+
         if (quadrados > 1 && tempoPorQuadrado > 0) {
-            let horasTotais = quadrados * tempoPorQuadrado;
+            let squaresToCount = 0;
+            
+            window.rotaSelecionada.forEach(cell => {
+                let index = parseInt(cell.dataset.index);
+                let group = cell.dataset.group;
+                let mapKey = "";
+                
+                if (group === 'left' || group === 'right') {
+                    if (index === 0 && group === 'left') mapKey = 'north-blue';
+                    else if (index === 0 && group === 'right') mapKey = 'east-blue';
+                    else if (index === 1 && group === 'left') mapKey = 'calm-belt-north';
+                    else if (index === 1 && group === 'right') mapKey = 'calm-belt-east';
+                    else if (index === 2 && group === 'left') mapKey = 'novo-mundo';
+                    else if (index === 2 && group === 'right') mapKey = 'paraiso';
+                    else if (index === 3 && group === 'left') mapKey = 'calm-belt-west';
+                    else if (index === 3 && group === 'right') mapKey = 'calm-belt-south';
+                    else if (index === 4 && group === 'left') mapKey = 'west-blue';
+                    else if (index === 4 && group === 'right') mapKey = 'south-blue';
+                } else {
+                    if (group === 'north-blue-page') mapKey = 'north-blue';
+                    else if (group === 'east-blue-page') mapKey = 'east-blue';
+                    else if (group === 'west-blue-page') mapKey = 'west-blue';
+                    else if (group === 'south-blue-page') mapKey = 'south-blue';
+                    else if (group === 'novo-mundo-page') mapKey = 'novo-mundo';
+                    else if (group === 'paraiso-page') mapKey = 'paraiso';
+                    else if (group === 'calm-belt-page') {
+                        if (index === 0) mapKey = 'calm-belt-north';
+                        else if (index === 1) mapKey = 'calm-belt-east';
+                        else if (index === 2) mapKey = 'calm-belt-west';
+                        else if (index === 3) mapKey = 'calm-belt-south';
+                    }
+                }
+                
+                let seaName = window.mapKeyToName ? window.mapKeyToName[mapKey] : "";
+                if (!ignoredSeas.includes(seaName)) {
+                    squaresToCount++;
+                }
+            });
+
+            let horasTotais = squaresToCount * tempoPorQuadrado;
             
             if (checkboxTimoneiro.checked) {
                 horasTotais = horasTotais / 2;
@@ -1821,7 +2031,18 @@ if (mapGrids.length > 0) {
                 nomeLocalFim = window.obterNomeLocal(lastCell.dataset.group, lastCell.dataset.index, lastCell.dataset.coord);
             }
 
-            resultadoTexto.innerHTML = `De: ${nomeLocalInicio} ➔ Para: ${nomeLocalFim}<br>Chegada: ${stringData}<br><small>Duração: ${textoDuracao}${infoEstamina}</small>`;
+            let valesDisplay = "";
+            if (ignoredSeas.length > 0) {
+                let orderedIgnoredSeas = window.getMaresNaRota().filter(mar => ignoredSeas.includes(mar));
+                if (orderedIgnoredSeas.length === 1) {
+                    valesDisplay = `<br><span style="color: #4caf50; font-size: 14px;">Vale Navegação: [${orderedIgnoredSeas[0]}]</span>`;
+                } else if (orderedIgnoredSeas.length > 1) {
+                    let lastSea = orderedIgnoredSeas.pop();
+                    valesDisplay = `<br><span style="color: #4caf50; font-size: 14px;">Vales Navegação: [${orderedIgnoredSeas.join('], [')}] e [${lastSea}]</span>`;
+                }
+            }
+
+            resultadoTexto.innerHTML = `De: ${nomeLocalInicio} ➔ Para: ${nomeLocalFim}<br>Chegada: ${stringData}<br><small>Duração: ${textoDuracao}${infoEstamina}${valesDisplay}</small>`;
         } else {
             resultadoTexto.innerHTML = `Tempo Total: 0h (Você está parado)`;
         }
@@ -1852,7 +2073,56 @@ if (mapGrids.length > 0) {
             isIndividual = selectBarco.options[selectBarco.selectedIndex].parentNode.label === "Individual";
         }
         
-        let horasTotais = quadrados * tempoPorQuadrado;
+        let ignoredSeas = [];
+        const btnVale = document.getElementById('btn-vale-nav');
+        if (btnVale && btnVale.getAttribute('data-status') === 'sim') {
+            const selectsContainer = document.getElementById('vales-selects-container');
+            if (selectsContainer) {
+                selectsContainer.querySelectorAll('select').forEach(sel => {
+                    if (sel.value && !ignoredSeas.includes(sel.value)) ignoredSeas.push(sel.value);
+                });
+            }
+        }
+        
+        let squaresToCount = 0;
+        window.rotaSelecionada.forEach(cell => {
+            let index = parseInt(cell.dataset.index);
+            let group = cell.dataset.group;
+            let mapKey = "";
+            
+            if (group === 'left' || group === 'right') {
+                if (index === 0 && group === 'left') mapKey = 'north-blue';
+                else if (index === 0 && group === 'right') mapKey = 'east-blue';
+                else if (index === 1 && group === 'left') mapKey = 'calm-belt-north';
+                else if (index === 1 && group === 'right') mapKey = 'calm-belt-east';
+                else if (index === 2 && group === 'left') mapKey = 'novo-mundo';
+                else if (index === 2 && group === 'right') mapKey = 'paraiso';
+                else if (index === 3 && group === 'left') mapKey = 'calm-belt-west';
+                else if (index === 3 && group === 'right') mapKey = 'calm-belt-south';
+                else if (index === 4 && group === 'left') mapKey = 'west-blue';
+                else if (index === 4 && group === 'right') mapKey = 'south-blue';
+            } else {
+                if (group === 'north-blue-page') mapKey = 'north-blue';
+                else if (group === 'east-blue-page') mapKey = 'east-blue';
+                else if (group === 'west-blue-page') mapKey = 'west-blue';
+                else if (group === 'south-blue-page') mapKey = 'south-blue';
+                else if (group === 'novo-mundo-page') mapKey = 'novo-mundo';
+                else if (group === 'paraiso-page') mapKey = 'paraiso';
+                else if (group === 'calm-belt-page') {
+                    if (index === 0) mapKey = 'calm-belt-north';
+                    else if (index === 1) mapKey = 'calm-belt-east';
+                    else if (index === 2) mapKey = 'calm-belt-west';
+                    else if (index === 3) mapKey = 'calm-belt-south';
+                }
+            }
+            
+            let seaName = window.mapKeyToName ? window.mapKeyToName[mapKey] : "";
+            if (!ignoredSeas.includes(seaName)) {
+                squaresToCount++;
+            }
+        });
+
+        let horasTotais = squaresToCount * tempoPorQuadrado;
         if (!isIndividual && checkboxTimoneiro.checked) {
             horasTotais = horasTotais / 2;
         }
@@ -1906,8 +2176,19 @@ if (mapGrids.length > 0) {
         }
 
         let relatorio = `*Saindo de:* ${nomeLocalInicio} [${stringSaida}]\n`;
-        relatorio += `*Destino Final:* ${nomeLocalFim} [${stringChegada}]\n\n`;
-        relatorio += `*Meio de Transporte:* ${nomeBarco}\n\n`;
+        relatorio += `*Destino Final:* ${nomeLocalFim} [${stringChegada}]\n`;
+        
+        if (ignoredSeas.length > 0) {
+            let orderedIgnoredSeas = window.getMaresNaRota().filter(mar => ignoredSeas.includes(mar));
+            if (orderedIgnoredSeas.length === 1) {
+                relatorio += `*Detalhe:* Vale Navegação usado no [${orderedIgnoredSeas[0]}]\n`;
+            } else if (orderedIgnoredSeas.length > 1) {
+                let lastSea = orderedIgnoredSeas.pop();
+                relatorio += `*Detalhe:* Vales Navegação usados no [${orderedIgnoredSeas.join('], [')}] e [${lastSea}]\n`;
+            }
+        }
+        
+        relatorio += `\n*Meio de Transporte:* ${nomeBarco}\n\n`;
         
         if (isIndividual) {
             relatorio += `*Custo de Estamina:* ${estaminaTotal}\n`;
