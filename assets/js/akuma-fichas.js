@@ -39,6 +39,11 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ X treinos para dominar cada técnica.`,
+    "Ame Ame no Mi": ``,
+    "Ami Ami no Mi": ``,
+    "Aro Aro no Mi": ``,
+    "Ato Ato no Mi": ``,
+    "Awa Awa no Mi": ``,
     "Baku Baku no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -81,8 +86,148 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Batto Batto no Mi, Modelo: Vampiro": `Astarion Ancunín`,
-    "Buku Buku no Mi": `Buku Buku no Mi`,
+    "Bane Bane no Mi": ``,
+    "Bara Bara no Mi": ``,
+    "Bata Bata no Mi": ``,
+    "Batto Batto no Mi, Modelo: Vampiro": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Batto Batto no Mi, Modelo: Vampiro
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário se transformar em um lorde vampírico ou em uma perigosa forma híbrida de pessoa-vampiro à vontade, concedendo asas ágeis para voar pela noite, um radar de ecolocalização natural, além de habilidades profanas de regeneração sombria e o poder de roubar a juventude e a força vital de suas vítimas.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+80%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,4
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Concede o radar da ecolocalização, emitindo ondas sonoras que rebatem no ambiente e voltam aos ouvidos do usuário, o que significa que ele jamais ficará cego; ele pode rastrear inimigos escondidos, lutar perfeitamente na escuridão total e ignorar ilusões visuais;
+> : ᓩ Oferece um domínio perfeito da furtividade e do combate aéreo, permitindo realizar manobras de voo acrobáticas em alta velocidade sem emitir o menor som do bater de asas;
+> : ᓩ Garante a habilidade de sugar o sangue e a energia vital dos inimigos através da mordida, o que drena a força e o tempo de vida do oponente ao mesmo tempo em que regenera completamente o vigor do usuário, fechando feridas graves e até mesmo restaurando sua juventude para ignorar o envelhecimento (pode escolher entre sugar os anos de vida ou a Estamina, com a regeneração em si mesmo sendo numa proporção 1:1);
+> : ᓩ Permite a conjuração e manipulação de energias sombrias, possibilitando criar enxames ilusórios de morcegos escuros para desorientar as vítimas ou encobrir o campo de batalha em uma atmosfera noturna densa e intimidadora.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A audição ultrassensível necessária para que o radar de ecolocalização funcione perfeitamente se torna o seu maior calcanhar de Aquiles; o usuário sofre danos internos severos e pode ser completamente atordoado ou paralisado de dor por ataques sonoros de alta frequência, gritos muito altos ou explosões ensurdecedoras disparadas a queima-roupa;
+> : ᓩ Possui vulnerabilidade à claridade e ao calor extremo; embora a luz do sol mundana não vá desintegrá-lo instantaneamente, lutar sob luz solar, fogo direto ou habilidades de luz ofuscantes enfraquece suas capacidades regenerativas passivas, causa ardência na pele e atrapalha sua visão sensível que é naturalmente adaptada para operar nas sombras. Também recebe x2 mais dano quando exposto;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Batto Batto no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Batto Batto no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário se transformar em um morcego completo ou em uma forma híbrida de pessoa-morcego à vontade, concedendo asas ágeis para voar pela noite, presas afiadas e uma audição extremamente sensível que funciona como um radar natural.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 7%
+> — Forma Completa: 15%
+: ᓩ Dano Adicional: (Controle% da Potência)+10%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Oferece um domínio perfeito do combate noturno e da furtividade, permitindo voar sem fazer nenhum ruído e atacar oponentes de surpresa em locais escuros e fechados;
+> : ᓩ Concede o radar da ecolocalização, o que significa que o usuário jamais ficará cego em combate. Ele pode mapear a área, enxergar através de ilusões visuais e rastrear alvos com precisão mesmo na escuridão total.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A audição ultrassensível necessária para a ecolocalização é uma faca de dois gumes: o usuário sofre danos severos e pode ser atordoado facilmente por ataques sonoros de alta frequência ou explosões ensurdecedoras;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 2 treinos para dominar cada técnica.`,
+    "Beri Beri no Mi": ``,
+    "Beta Beta no Mi": ``,
+    "Bijo Bijo no Mi": ``,
+    "Bisu Bisu no Mi": ``,
+    "Bomu Bomu no Mi": ``,
+    "Buki Buki no Mi": ``,
+    "Buku Buku no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Buku Buku no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário manipular livros de diversas formas mágicas e físicas, tornando-se uma pessoa-livro capaz de aprisionar seres vivos dentro de páginas, levitar livros como plataformas de voo e manifestar os elementos contidos nas histórias para atacar os oponentes em dimensões alternativas perfeitamente controladas.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 35%
+: ᓩ Dano Adicional: (Controle% da Potência)+35%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+45%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O usuário pode prender seres vivos dentro das páginas de seus livros, funcionando como uma cela perpétua onde as vítimas não envelhecem e de onde não podem escapar por conta própria;
+> : ᓩ Permite puxar a mente e o corpo dos inimigos para dentro de uma dimensão ilusória no mundo dos livros, onde o usuário dita as regras do cenário e pode usar o ambiente da história para atacá-los psicologicamente e fisicamente;
+> : ᓩ Garante alta versatilidade de suporte e defesa no mundo real, permitindo usar as páginas como barricadas quase indestrutíveis e levitar sobre tomos mágicos para se manter fora do alcance dos ataques terrestres.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Como toda a mecânica do poder envolve papel, capas e livros literais, qualquer ataque de chamas, magma ou explosões intensas queimará instantaneamente os construtos, anulando as defesas e podendo libertar acidentalmente todos os prisioneiros das páginas;
+> : ᓩ Se os livros mágicos ficarem encharcados, as páginas murcham, pesam e perdem toda a sua capacidade estrutural, anulando o voo, a capacidade de aprisionar ou de bloquear ataques;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Bari Bari no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -95,7 +240,7 @@ Ficha de Akuma no Mi
 > : ᓩ Paramecia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ A Bari Bari no Mi é uma Akuma no Mi do tipo Paramecia que concede ao usuário a capacidade de gerar barreiras extremamente resistentes cruzando os dedos, criando defesas sólidas e invisíveis ou visíveis que bloqueiam a passagem de objetos e impactos.
+> : ᓩ Essa Fruta concede ao usuário a capacidade de gerar barreiras extremamente resistentes cruzando os dedos, criando defesas sólidas e invisíveis ou visíveis que bloqueiam a passagem de objetos e impactos.
 
 *—————————————————————————*
 
@@ -137,7 +282,7 @@ Ficha de Akuma no Mi
 > : ᓩ Logia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ A Chikyū Chikyū no Mi é uma Akuma no Mi do tipo Logia que permite ao seu usuário gerar, controlar e se transformar em terra, tornando-o uma pessoa-terra.
+> : ᓩ Essa Fruta permite ao seu usuário gerar, controlar e se transformar em terra, tornando-o uma pessoa-terra.
 
 *—————————————————————————*
 
@@ -178,7 +323,7 @@ Ficha de Akuma no Mi
 > : ᓩ Paramecia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ A Chiyu Chiyu no Mi é uma Akuma no Mi do tipo Paramecia, que concede ao usuário a capacidade de curar qualquer ferido através do uso de líquido que vem do corpo do usuário como lágrimas.
+> : ᓩ Essa Fruta concede ao usuário a capacidade de curar qualquer ferido através do uso de líquido que vem do corpo do usuário como lágrimas.
 
 *—————————————————————————*
 
@@ -208,6 +353,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Choki Choki no Mi": ``,
     "Deka Deka no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -252,6 +398,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Dero Dero no Mi": ``,
     "Doa Doa no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -292,7 +439,51 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Fude Fude no Mi": `Fude Fude no Mi`,
+    "Doku Doku no Mi": ``,
+    "Doru Doru no Mi": ``,
+    "Fude Fude no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Fude Fude no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário criar tinta e usar um pincel (ou o próprio dedo) para desenhar qualquer coisa e trazer essas ilustrações à vida de forma tridimensional, tornando-se uma pessoa-desenhista capaz de conjurar armas, comida e até exércitos de animais de tinta que obedecem aos seus comandos.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Oferece uma versatilidade quase infinita baseada na criatividade; se o usuário precisar de uma escada, de um guarda-chuva, de uma espada afiada ou de um pássaro de montaria, basta desenhar e o problema estará resolvido;
+> : ᓩ Permite lutar em extrema vantagem numérica, já que o usuário pode desenhar dezenas de soldados ou bestas de tinta que agem de forma independente para flanquear e cercar os oponentes de forma segura;
+> : ᓩ Os desenhos podem ter propriedades físicas úteis, como comida que, apesar de ter um gosto horrível de tinta, é capaz de nutrir perfeitamente o corpo e salvar aliados da fome, ou chamas de tinta que iluminam o escuro sem queimar.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Como as criações são feitas estritamente de tinta animada, se elas tomarem chuva, caírem num rio ou forem molhadas por ataques inimigos, elas derretem e são apagadas instantaneamente;
+> : ᓩ O poder é totalmente dependente da habilidade artística do usuário. Desenhos mal feitos, trêmulos ou desproporcionais resultarão em criaturas fracas, lentas e com defeitos estruturais graves, reduzindo muito a utilidade da técnica, assim sendo necessário ser um Artista para tirar o melhor proveito da Fruta;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Fuku Fuku no Mi": ``,
     "Fuwa Fuwa no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -342,7 +533,54 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Gasu Gasu no Mi": `Gasu Gasu no Mi`,
+    "Gabu Gabu no Mi": ``,
+    "Gama Gama no Mi": ``,
+    "Gasha Gasha no Mi": ``,
+    "Gasu Gasu no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Gasu Gasu no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário criar, controlar e se transformar em gases de diversos tipos e composições, tornando-se uma pessoa de gás capaz de envenenar oponentes, criar explosões altamente voláteis e manipular a atmosfera ao seu redor para sufocar quem chegar perto.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Dano Adicional: (Controle% da Potência)+95%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+105%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Garante intangibilidade Logia passiva, permitindo que ataques físicos apenas atravessem os gases do seu corpo, enquanto inimigos que tentarem combate corpo a corpo se expõem imediatamente ao envenenamento;
+> : ᓩ O usuário pode simplesmente remover todo o ar respirável, asfixiando os inimigos instantaneamente, apagando incêndios e anulando habilidades que dependam de oxigênio para funcionar (como fogo);
+> : ᓩ Permite a criação de gases mortais, corrosivos, paralisantes ou alucinógenos, atacando os oponentes de forma interna, o que ignora completamente escudos e armaduras convencionais.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Vulnerabilidade a ventanias e correntes de ar intensas. Habilidades que gerem tornados ou rajadas fortes de vento podem dispersar a fumaça e os gases tóxicos rapidamente, limpando a área e forçando o usuário a se reformar longe do alvo;
+> : ᓩ Risco de autoignição indesejada: ao usar gases altamente inflamáveis, qualquer faísca acidental no campo de batalha (até mesmo gerada pelo atrito de lâminas inimigas) pode causar uma explosão prematura que destrói a própria nuvem do usuário antes da hora;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Gatsu Gatsu no Mi": ``,
     "Genso Genso no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -385,6 +623,9 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Giro Giro no Mi": ``,
+    "Gocha Gocha no Mi": ``,
+    "Goe Goe no Mi": ``,
     "Gomu Gomu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -488,6 +729,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Goru Goru no Mi": ``,
     "Gura Gura no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -529,6 +771,51 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Guru Guru no Mi": ``,
+    "Gutsu Gutsu no Mi": ``,
+    "Hana Hana no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Hana Hana no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário fazer florescer partes do próprio corpo em absolutamente qualquer superfície visível, seja no chão, em paredes, ou até mesmo diretamente no corpo dos inimigos, tornando-se uma pessoa-flor capaz de imobilizar múltiplos alvos instantaneamente e atacar de ângulos impossíveis.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 50%
+: ᓩ Dano Adicional: (Controle% da Potência)+50%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Os ataques brotam diretamente no corpo do alvo, tornando a evasão praticamente impossível. O inimigo não tem tempo de desviar antes de ser agarrado, o que é perfeito para imobilizações, desarmamentos e estrangulamentos repentinos;
+> : ᓩ É uma das habilidades mais completas para espionagem e utilidade; o usuário pode brotar olhos e ouvidos em salas trancadas para reunir informações vitais, ou criar redes e pontes feitas de dezenas de braços para salvar aliados de quedas;
+> : ᓩ Permite a criação de construtos corporais criativos e gigantescos, fundindo membros para formar pernas titânicas que pisoteiam o cenário, mãos gigantes para bloquear navios, ou até mesmo asas feitas de braços para planar brevemente pelo ar.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Qualquer corte, queimadura, golpe ou impacto sofrido pelos membros brotados é transferido e sentido imediatamente pelo corpo real do usuário, tornando habilidades de área dos inimigos extremamente perigosas;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
+    "Hebi Hebi no Mi, Modelo: Anaconda": ``,
+    "Hebi Hebi no Mi, Modelo: Cobra-Real": ``,
     "Hebi Hebi no Mi, Modelo: Kaijū": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -572,6 +859,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Hebi Hebi no Mi, Modelo: Yamata no Orochi": ``,
     "Hemo Hemo no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -658,6 +946,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Hira Hira no Mi": ``,
+    "Hiso Hiso no Mi": ``,
     "Hito Hito no Mi, Modelo: Daibutsu": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -700,8 +990,50 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Hito Hito no Mi, Modelo: Estátua": `David The Statue`,
-    "Hito Hito no Mi, Modelo: O Anfitrião": `Alastor`,
+    "Hito Hito no Mi, Modelo: Estátua": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Hito Hito no Mi, Modelo: Estátua
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário transformar-se em uma estátua gigante, aumentando drasticamente a força física e durabilidade.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 35%
+> — Forma Completa: 70%
+: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Aumento extremo de força física, alta durabilidade e a habilidade de gerar ondas de choque devastadoras.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A transformação cria uma estátua gigantesca, tornando impossível passar despercebido ou agir furtivamente;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Hito Hito no Mi, Modelo: O Anfitrião": ``,
     "Hone Hone no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -751,6 +1083,9 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Hito Hito no Mi, Modelo: Ōnyūdō": ``,
+    "Hito Hito no Mi": ``,
+    "Hobi Hobi no Mi": ``,
     "Horo Horo no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -794,6 +1129,11 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Horu Horu no Mi": ``,
+    "Hoya Hoya no Mi": ``,
+    "Inu Inu no Mi, Modelo: Bake-Danuki": ``,
+    "Inu Inu no Mi, Modelo: Cão de Caça": ``,
+    "Inu Inu no Mi, Modelo: Cão-Guaxinim": ``,
     "Inu Inu no Mi, Modelo: Cérbero": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -837,6 +1177,9 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Inu Inu no Mi, Modelo: Chacal": ``,
+    "Inu Inu no Mi, Modelo: Dachshund": ``,
+    "Inu Inu no Mi, Modelo: Lobo": ``,
     "Inu Inu no Mi, Modelo: Ōkuchi no Makami": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -939,6 +1282,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Iro Iro no Mi": ``,
+    "Ishi Ishi no Mi": ``,
     "Ito Ito no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -982,6 +1327,11 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Jake Jake no Mi": ``,
+    "Jara Jara no Mi": ``,
+    "Jiki Jiki no Mi": ``,
+    "Juku Juku no Mi": ``,
+    "Kachi Kachi no Mi": ``,
     "Kage Kage no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1041,6 +1391,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Kama Kama no Mi": ``,
+    "Kame Kame no Mi": ``,
     "Karan Karan no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1124,6 +1476,11 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Kegawa Kegawa no Mi": ``,
+    "Kesshō Kesshō no Mi": ``,
+    "Kibi Kibi no Mi": ``,
+    "Kira Kira no Mi": ``,
+    "Kiro Kiro no Mi": ``,
     "Kobu Kobu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1136,7 +1493,7 @@ Ficha de Akuma no Mi
 > : ᓩ Paramecia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ A Kobu Kobu no Mi é uma Akuma no Mi do tipo Paramecia que transforma quem a come em um verdadeiro símbolo de encorajamento, permitindo despertar instantaneamente a bravura e a força física latente de qualquer pessoa ao seu redor apenas a incentivando, geralmente através de palavras de ordem e do balançar de bandeiras.
+> : ᓩ Essa Fruta transforma quem a come em um verdadeiro símbolo de encorajamento, permitindo despertar instantaneamente a bravura e a força física latente de qualquer pessoa ao seu redor apenas a incentivando, geralmente através de palavras de ordem e do balançar de bandeiras.
 
 *—————————————————————————*
 
@@ -1145,7 +1502,7 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
 
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2,5
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,6
 
 *————————————————————————*
 
@@ -1162,6 +1519,9 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Kon Kon no Mi": ``,
+    "Koro Koro no Mi": ``,
+    "Kuku Kuku no Mi": ``,
     "Kumo Kumo no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1255,7 +1615,9 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Magu Magu no Mi": `Magu Magu no Mi`,
+    "Kuri Kuri no Mi": ``,
+    "Kyubu Kyubu no Mi": ``,
+    "Magu Magu no Mi": ``,
     "Maki Maki no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1308,6 +1670,9 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Mane Mane no Mi": ``,
+    "Masu Masu no Mi": ``,
+    "Mato Mato no Mi": ``,
     "Memo Memo no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1320,7 +1685,7 @@ Ficha de Akuma no Mi
 > : ᓩ Paramecia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ A Memo Memo no Mi é uma Akuma no Mi do tipo Paramecia que permite ao usuário manipular as lembranças das pessoas como se fossem rolos de filme literais, podendo puxar essas memórias de dentro da cabeça do alvo para visualizá-las, cortá-las com uma tesoura para apagar eventos específicos, ou colar novos quadros para inserir memórias completamente falsas.
+> : ᓩ Essa Fruta permite ao usuário manipular as lembranças das pessoas como se fossem rolos de filme literais, podendo puxar essas memórias de dentro da cabeça do alvo para visualizá-las, cortá-las com uma tesoura para apagar eventos específicos, ou colar novos quadros para inserir memórias completamente falsas.
 
 *—————————————————————————*
 
@@ -1399,6 +1764,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Mero Mero no Mi": ``,
+    "Mini Mini no Mi": ``,
     "Mira Mira no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1450,6 +1817,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Moa Moa no Mi": ``,
     "Mochi Mochi no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1495,6 +1863,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Modo Modo no Mi": ``,
+    "Mogu Mogu no Mi": ``,
     "Moku Moku no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1591,6 +1961,10 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Mosa Mosa no Mi": ``,
+    "Muchi Muchi no Mi": ``,
+    "Mushi Mushi no Mi, Modelo: Besouro-Rinoceronte": ``,
+    "Mushi Mushi no Mi, Modelo: Vespa-Mandarina": ``,
     "Nagi Nagi no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1603,7 +1977,7 @@ Ficha de Akuma no Mi
 > : ᓩ Paramecia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ A Nagi Nagi no Mi é uma Akuma no Mi do tipo Paramecia que transforma o usuário em uma pessoa-silenciadora, permitindo-lhe cancelar completamente qualquer tipo de som, seja criando barreiras invisíveis onde nenhum barulho entra ou sai, ou silenciando todas as ações de si mesmo e de outras pessoas ou objetos através do toque.
+> : ᓩ Essa Fruta transforma o usuário em uma pessoa-silenciadora, permitindo-lhe cancelar completamente qualquer tipo de som, seja criando barreiras invisíveis onde nenhum barulho entra ou sai, ou silenciando todas as ações de si mesmo e de outras pessoas ou objetos através do toque.
 
 *—————————————————————————*
 
@@ -1630,6 +2004,11 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Nawa Nawa no Mi": ``,
+    "Neko Neko no Mi, Modelo: Leão": ``,
+    "Neko Neko no Mi, Modelo: Leopardo": ``,
+    "Neko Neko no Mi, Modelo: Onça-Pintada": ``,
+    "Neko Neko no Mi, Modelo: Tigre-de-Bengala": ``,
     "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1672,6 +2051,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Nemu Nemu no Mi": ``,
+    "Netsu Netsu no Mi": ``,
     "Nikyu Nikyu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1727,6 +2108,12 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Noko Noko no Mi": ``,
+    "Nomi Nomi no Mi": ``,
+    "Nori Nori no Mi": ``,
+    "Noro Noro no Mi": ``,
+    "Nui Nui no Mi": ``,
+    "Nuke Nuke no Mi": ``,
     "Numa Numa no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1812,7 +2199,49 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Oto Oto no Mi": `Oto Oto no Mi`,
+    "Ori Ori no Mi": ``,
+    "Oshi Oshi no Mi": ``,
+    "Oto Oto no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Oto Oto no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário transformar qualquer parte do próprio corpo em instrumentos musicais para produzir ondas sonoras, tornando-se uma pessoa-instrumento capaz de canalizar melodias em ataques físicos invisíveis, como explosões, impactos pesados e cortes profundos contra quem ouvir a música.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Seus ataques sonoros são essencialmente inevitáveis e invisíveis. Como o dano é transmitido através do som que chega ao ouvido da vítima, é impossível esquivar de um corte ou explosão olhando para o golpe; se a vítima ouvir a melodia, o dano será aplicado instantaneamente no corpo dela;
+> : ᓩ Oferece uma versatilidade ofensiva suprema à distância, variando entre golpes de impacto concussivos, cortes afiados como espadas e detonações devastadoras apenas trocando o ritmo e o instrumento que está sendo tocado no próprio corpo.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A maior e mais absoluta fraqueza da Fruta é a audição da vítima. Se o inimigo tapar os ouvidos rapidamente antes do golpe, for surdo ou usar abafadores de som, o ataque falha por completo e não surte nenhum efeito, deixando o usuário inútil;
+> : ᓩ O usuário precisa ter seus membros livres para tocar os instrumentos no próprio corpo (como bater no peito, dedilhar o queixo ou soprar os dentes). Se for amarrado, imobilizado ou tiver as mãos presas, ele fica incapacitado de ativar os poderes;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Pamu Pamu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1905,6 +2334,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Pero Pero no Mi": ``,
+    "Peto Peto no Mi": ``,
     "Pika Pika no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1950,7 +2381,53 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Rokku Rokku no Mi": `Rokku Rokku no Mi`,
+    "Poke Poke no Mi": ``,
+    "Rako Rako no Mi": ``,
+    "Rashin Rashin no Mi": ``,
+    "Rēzā Rēzā no Mi": ``,
+    "Riki Riki no Mi": ``,
+    "Rokku Rokku no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Rokku Rokku no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário criar e manipular fechaduras e trancas mágicas, tornando-se uma pessoa-fechadura capaz de selar absolutamente qualquer coisa, desde trancar fisicamente uma porta ou o movimento do corpo de um inimigo, até colocar cadeados em conceitos abstratos como memórias, emoções ou poderes.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Possui a capacidade definitiva de controle e contenção do campo de batalha, podendo trancar o espaço em volta para criar escudos fixos intransponíveis ou travar as pernas e braços dos inimigos, paralisando-os totalmente;
+> : ᓩ Oferece poderes psíquicos e conceituais absurdamente roubados; o usuário pode "trancar" a capacidade de um inimigo de sentir raiva (pacificação), trancar suas memórias de como usar uma técnica, ou até trancar o acesso aos poderes da própria Akuma no Mi da vítima por um tempo;
+> : ᓩ Garante total facilidade de infiltração, já que aquele que pode criar fechaduras em qualquer lugar também domina as que já existem, podendo destrancar qualquer porta, cofre, algema ou selo mágico do mundo.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Como a Fruta possui zero potencial de dano físico direto, lutar sozinho contra oponentes puros de força marcial será extremamente perigoso se o usuário não tiver armas, pois ele poderá no máximo imobilizar o inimigo;
+> : ᓩ O bloqueio de conceitos muito vagos se torna impossível, deve ser específico;
+> : ᓩ Se a Vontade da vítima superar drasticamente o poder do usuário, o cadeado será estilhaçado instantaneamente, causando exaustão no usuário;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Ryū Ryū no Mi, Modelo: Alossauro": ``,
+    "Ryū Ryū no Mi, Modelo: Braquiossauro": ``,
     "Ryū Ryū no Mi, Modelo: Dragão Ocidental": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1998,6 +2475,9 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Ryū Ryū no Mi, Modelo: Espinossauro": ``,
+    "Ryū Ryū no Mi, Modelo: Kirin": ``,
+    "Ryū Ryū no Mi, Modelo: Paquicefalossauro": ``,
     "Ryū Ryū no Mi, Modelo: Pteranodonte": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2010,7 +2490,7 @@ Ficha de Akuma no Mi
 > : ᓩ Zoan Ancestral
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ Essa Fruta do tipo Zoan Ancestral permite ao usuário se transformar em um Pteranodonte completo ou em uma forma híbrida de pessoa-pteranodonte à vontade, concedendo asas poderosas.
+> : ᓩ Essa Fruta permite ao usuário se transformar em um Pteranodonte completo ou em uma forma híbrida de pessoa-pteranodonte à vontade, concedendo asas poderosas.
 
 *—————————————————————————*
 
@@ -2051,7 +2531,7 @@ Ficha de Akuma no Mi
 > : ᓩ Zoan Ancestral
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ Essa Fruta do tipo Zoan Ancestral permite ao usuário se transformar em um Tiranossauro Rex completo ou em uma poderosa forma híbrida de pessoa-tiranossauro, concedendo a temível anatomia do rei dos dinossauros.
+> : ᓩ Essa Fruta permite ao usuário se transformar em um Tiranossauro Rex completo ou em uma poderosa forma híbrida de pessoa-tiranossauro, concedendo a temível anatomia do rei dos dinossauros.
 
 *—————————————————————————*
 
@@ -2082,6 +2562,11 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Ryū Ryū no Mi, Modelo: Triceratops": ``,
+    "Sabi Sabi no Mi": ``,
+    "Sara Sara no Mi, Modelo: Axolote": ``,
+    "Shari Shari no Mi": ``,
+    "Shibo Shibo no Mi": ``,
     "Shiku Shiku no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2126,6 +2611,8 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Shima Shima no Mi": ``,
+    "Shiro Shiro no Mi": ``,
     "Soru Soru no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2221,7 +2708,45 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Suji Suji no Mi": `???`,
+    "Sui Sui no Mi": ``,
+    "Suji Suji no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Suji Suji no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário manipular, expandir e hipertrofiar os próprios músculos à vontade, tornando-se uma pessoa muscular capaz de aumentar drasticamente sua força física, tamanho e densidade corporal para dominar completamente os combates de curta distância.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+
+: ᓩ Porcentagem de Resistência: 80%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Concede uma força física bruta e uma explosão muscular inigualáveis, sendo a ferramenta perfeita para quem busca destruir as defesas dos adversários na trocação direta de golpes;
+> : ᓩ Permite focar o aumento de massa em partes específicas do corpo (como apenas em um braço para um soco concentrado), o que economiza energia e torna as investidas muito imprevisíveis.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Aumentar exageradamente a massa muscular do corpo inteiro de uma só vez transforma o usuário em um alvo gigante e pesado, sacrificando sua capacidade de desviar e tornando-o vulnerável a atiradores ou espadachins rápidos;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Suke Suke no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2275,7 +2800,7 @@ Ficha de Akuma no Mi
 > : ᓩ Logia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ É uma Akuma no Mi do tipo Logia que permite ao usuário criar, controlar e se transformar em areia à vontade.
+> : ᓩ Essa Fruta permite ao usuário criar, controlar e se transformar em areia à vontade.
 
 *—————————————————————————*
 
@@ -2308,13 +2833,14 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Supa Supa no Mi": ``,
     "Susu Susu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
 *————————————————————————*
 
 : ᐕ 𝙽𝚘𝚖𝚎:
-> : ᓩ Pasa Pasa no Mi
+> : ᓩ Susu Susu no Mi
 
 : ᐕ 𝚃𝚒𝚙𝚘:
 > : ᓩ Logia
@@ -2351,6 +2877,13 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Tama Tama no Mi": ``,
+    "Toge Toge no Mi": ``,
+    "Toki Toki no Mi": ``,
+    "Ton Ton no Mi": ``,
+    "Tori Tori no Mi, Modelo: Águia": ``,
+    "Tori Tori no Mi, Modelo: Albatroz": ``,
+    "Tori Tori no Mi, Modelo: Falcão": ``,
     "Tori Tori no Mi, Modelo: Fênix": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2398,6 +2931,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
+    "Tori Tori no Mi, Modelo: Nue": ``,
     "Tori Tori no Mi, Modelo: Pássaro de Cinzas": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2550,8 +3084,95 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Toro Toro no Mi": `Toro Toro no Mi`,
-    "Uma Uma no Mi": `Uma Uma no Mi`,
+    "Toro Toro no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Toro Toro no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário se transformar, criar e controlar um líquido misterioso e aquoso à vontade, tornando-se uma pessoa líquida capaz de fluir livremente por espaços apertados, gerar correntes densas e inundar o campo de batalha com ondas fluidas.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,2
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Garante a intangibilidade passiva das Logia, fazendo com que golpes normais simplesmente espirrem a água do seu corpo, ignorando totalmente danos físicos e cortantes;
+> : ᓩ É perfeita para infiltrações e fugas, já que o corpo completamente fluido consegue escorrer por fechaduras, rachaduras e grades sem a menor dificuldade.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Assim como a Numa Numa no Mi, a natureza física da Fruta a torna vulnerável a confinamento. Se o usuário for sugado para dentro de um jarro de vidro isolado ou um cofre selado, ele não terá espaço para retornar à forma original e ficará preso;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Toro Toro no Mi": ``,
+    "Toshi Toshi no Mi": ``,
+    "Tsutsu Tsutsu no Mi": ``,
+    "Uma Uma no Mi, Modelo: Pégaso": ``,
+    "Uma Uma no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Uma Uma no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário se transformar em um cavalo garanhão completo ou em uma forma híbrida de pessoa-cavalo à vontade, concedendo uma musculatura poderosa, casco rígidos e pernas projetadas para correr em altíssima velocidade e carregar um peso imenso.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 0%
+> — Forma Híbrida: 12%
+> — Forma Completa: 25%
+: ᓩ Dano Adicional: (Controle% da Potência)+20%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Concede uma mobilidade terrestre quase imbatível em planícies, permitindo iniciar e escapar de combates rapidamente, flanquear atiradores com extrema agilidade e saltar grandes obstáculos;
+> : ᓩ Transforma o usuário em uma força bruta formidável de perto, sendo capaz de esmagar escudos de ferro e quebrar ossos humanos facilmente com um único coice bem dado das pernas traseiras musculares;
+> : ᓩ Eleva o vigor e a capacidade de carga a níveis absurdos, permitindo carregar grandes equipamentos pesados ou levar múltiplos aliados em fuga nas costas por dias sem sofrer qualquer tipo de exaustão muscular severa (gasta -20% de Estamina na Forma Completa e -10% na Forma Híbrida).
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Ao entrar em qualquer uma das formas transformadas (híbrida ou completa), o corpo adota proporções grandes e robustas, tornando-se um alvo muito mais fácil de ser atingido por balas de canhão e dificultando lutar ou se esgueirar dentro de edifícios, túneis e espaços apertados;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 2 treinos para dominar cada técnica.`,
     "Uo Uo no Mi, Modelo: Carpa Seiryū": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2601,7 +3222,51 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Uta Uta no Mi": `???`,
+    "Usagi Usagi no Mi": ``,
+    "Ushi Ushi no Mi, Modelo: Bisão": ``,
+    "Ushi Ushi no Mi, Modelo: Girafa": ``,
+    "Ushi Ushi no Mi, Modelo: Rinoceronte": ``,
+    "Uta Uta no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Uta Uta no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário transportar a consciência de qualquer pessoa que escute sua voz para um mundo virtual de sonhos, tornando-se uma pessoa cantora capaz de manipular a realidade, criar objetos e distorcer as leis da física dentro dessa dimensão ilusória de forma quase onipotente.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Dano Adicional: (Controle% da Potência)+0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ É uma habilidade de dominação em área assustadora, permitindo incapacitar e adormecer dezenas ou centenas de oponentes simultaneamente sem precisar levantar um dedo, bastando que eles ouçam a música;
+> : ᓩ Dentro do mundo dos sonhos, o usuário joga com as próprias regras, podendo conjurar exércitos inteiros, mudar o terreno, criar comida e prender os inimigos em correntes indestrutíveis usando apenas a imaginação.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Enquanto as mentes das vítimas estão presas no mundo da música, o corpo físico original do usuário fica no mundo real cantando, completamente vulnerável e indefeso a atiradores ou a oponentes que sejam surdos ou usem abafadores de som para ignorar o poder;
+> : ᓩ Manter a dimensão ativa drena uma quantidade absurda de energia vital e mental; se o usuário ficar cansado demais, desmaiar ou dormir de exaustão no mundo real, o mundo dos sonhos se despedaça na mesma hora e todas as consciências são libertadas;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Wapu Wapu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2614,7 +3279,7 @@ Ficha de Akuma no Mi
 > : ᓩ Paramecia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ A Wapu Wapu no Mi é uma Akuma no Mi do tipo Paramecia que permite ao usuário teletransportar a si mesmo ou outras pessoas de um lugar para outro.
+> : ᓩ Essa Fruta permite ao usuário teletransportar a si mesmo ou outras pessoas de um lugar para outro.
 
 *—————————————————————————*
 
@@ -2641,7 +3306,51 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Yami Yami no Mi": `Yami Yami no Mi`,
+    "Wara Wara no Mi": ``,
+    "Woshu Woshu no Mi": ``,
+    "Yami Yami no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Yami Yami no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário criar e controlar as trevas, tornando-se uma pessoa de escuridão capaz de manipular uma força gravitacional esmagadora que atrai e absorve absolutamente qualquer coisa para um vazio infinito, além de poder anular as habilidades de outras Frutas pelo contato direto.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Dano Adicional: (Controle% da Potência)+105%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,9
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Garante o poder supremo de anular completamente a habilidade de qualquer outra Akuma no Mi, seja Paramecia, Zoan ou Logia, enquanto o usuário mantiver contato físico com o corpo do oponente, tornando as defesas alheias inúteis;
+> : ᓩ A escuridão serve como um buraco negro de armazenamento infinito, podendo engolir destroços de cidades inteiras, fogo, armas e ataques inimigos, para depois expelir tudo de volta com extrema violência.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ É a única Logia conhecida que não concede intangibilidade passiva. O corpo de trevas absorve ativamente os impactos, o que significa que socos, tiros e espadas machucam o usuário normalmente;
+> : ᓩ O poder de absorção inclui a própria dor. O usuário recebe o dano dos ataques inimigos em uma proporção maior e muito mais dolorosa que uma pessoa comum;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Yomi Yomi no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2681,7 +3390,49 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
-    "Yuki Yuki no Mi": `Yuki Yuki no Mi`,
+    "Yuki Yuki no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Yuki Yuki no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário criar, controlar e se transformar em neve à vontade, tornando-se uma pessoa de neve capaz de gerar nevascas intensas para camuflagem, comprimir o gelo em defesas super duras e enfraquecer lentamente os inimigos reduzindo drasticamente a temperatura corporal deles.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+95%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,4
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Garante intangibilidade Logia passiva, permitindo que ataques normais apenas quebrem o corpo em flocos inofensivos de neve que se juntam logo em seguida;
+> : ᓩ Manipulação de temperatura extremamente letal e silenciosa; ao envolver um inimigo na neve, o usuário drena seu calor corporal rapidamente, causando hipotermia severa, lentidão e fazendo o alvo adormecer até a morte sem sentir dor;
+> : ᓩ Mobilidade e furtividade absolutas dentro de ambientes frios ou nevascas criadas, já que o corpo do usuário se mistura com a paisagem, permitindo atacar de todos os lados sem ser visto.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Vulnerabilidade devastadora ao calor extremo e ao fogo. Habilidades com chamas, magma ou explosões intensas derretem a neve instantaneamente, não apenas quebrando as defesas do usuário como também ferindo seu corpo verdadeiro e desativando sua intangibilidade Logia;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Zou Zou no Mi, Modelo: Mamute": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -2728,6 +3479,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
+    "Zou Zou no Mi": ``,
     "Zushi Zushi no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
