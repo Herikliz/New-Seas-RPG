@@ -5633,7 +5633,6 @@ window.donosDeAkuma = {
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
     "Ope Ope no Mi": "Morgana Du'lor",
     "Oto Oto no Mi": "Yoruzen",
-    "Pamu Pamu no Mi": "Bakugo",
     "Pika Pika no Mi": "Rhaizen D. Aether",
     "Rokku Rokku no Mi": "Lexa",
     "Ryū Ryū no Mi, Modelo: Dragão Ocidental [Original do RPG]": "Galan'd Von Antares",
