@@ -1617,7 +1617,50 @@ Ficha de Akuma no Mi
 > : ᓩ 4 treinos para dominar cada técnica.`,
     "Kuri Kuri no Mi": ``,
     "Kyubu Kyubu no Mi": ``,
-    "Magu Magu no Mi": ``,
+    "Magu Magu no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Magu Magu no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Logia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário criar, controlar e se transformar integralmente em magma incandescente à vontade, tornando-se uma pessoa de magma capaz de disparar vulcões, transformar o chão em poços de rocha derretida e incinerar absolutamente tudo o que tocar com um calor extremo e letal.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Porcentagem de Resistência: 105%
+: ᓩ Dano Adicional: (Controle% da Potência)+105%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Garante a intangibilidade Logia passiva com um bônus letal: além de ignorar danos físicos convencionais, qualquer inimigo que tentar desferir um soco limpo, um chute ou um ataque com arma branca sem um Haki absurdamente forte terá seus membros e espadas instantaneamente derretidos pelo calor extremo da lava;
+> : ᓩ Os ataques da Magu Magu no Mi causam ferimentos permanentes, vaporizando gelo, cauterizando órgãos, arrancando membros inteiros e transformando defesas blindadas em escória derretida com extrema facilidade;
+> : ᓩ O usuário pode alterar a temperatura, o clima e a geografia do campo de batalha ao seu redor, transformando um ambiente neutro em uma zona de desastre vulcânica repleta de lagos de magma fervente que impedem totalmente a movimentação terrestre dos oponentes.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ O poder destrutivo, a área de efeito da lava e o calor emanado pelo corpo são tão extremos e difíceis de segurar que lutar perto de aliados se torna um risco gigantesco. Há altíssimas chances de causar dano colateral massivo, derreter o próprio navio ou carbonizar companheiros de equipe por acidente durante o combate;
+> : ᓩ A densidade e o peso natural do magma fazem com que os ataques viajem de forma ligeiramente mais lenta e pesada pelo ar se comparado a elementos rápidos. Isso exige que o usuário seja muito mais um tanque que recebe ataques de frente enquanto destrói o inimigo com força bruta, em vez de focar em esquivas rápidas e golpes ágeis;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Maki Maki no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -3126,7 +3169,6 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Toro Toro no Mi": ``,
     "Toshi Toshi no Mi": ``,
     "Tsutsu Tsutsu no Mi": ``,
     "Uma Uma no Mi, Modelo: Pégaso": ``,
