@@ -624,7 +624,44 @@ Ficha de Akuma no Mi
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 4 treinos para dominar cada técnica.`,
     "Giro Giro no Mi": ``,
-    "Gocha Gocha no Mi": ``,
+    "Gocha Gocha no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Gocha Gocha no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário fundir o próprio corpo com o de outras pessoas ao seu redor, misturando suas massas, forças e habilidades para se transformar em uma gigantesca e poderosa pessoa-amálgama, capaz de usar os membros e características de todos os indivíduos unidos em um único e colossal lutador de força esmagadora.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 5%
+
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Aumenta a força física e o tamanho de acordo com o número de aliados absorvidos, transformando instantaneamente um grupo de combatentes comuns em uma ameaça no nível de um chefe gigante capaz de subjugar inimigos muito mais fortes através da pura vantagem de massa;
+> : ᓩ Permite coordenar dezenas de membros simultaneamente no mesmo corpo; o gigante formado retém os braços, rostos e armas dos fundidos, o que significa que o amálgama, se feito com seres suficientes, pode enxergar em 360 graus, empunhar múltiplas espadas ao mesmo tempo e golpear de vários ângulos sem deixar pontos cegos fáceis;
+> : ᓩ Funciona como a habilidade suprema de resgate e proteção para a equipe. Se um aliado estiver gravemente ferido ou prestes a receber um golpe fatal, o usuário pode fundi-lo ao próprio corpo, escondendo-o dentro da massa colossal da fusão para protegê-lo de receber mais danos.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Dependência absoluta de terceiros. Se o usuário for pego em um combate 1 contra 1 e não tiver nenhum aliado ou pessoa por perto disposta a se fundir com ele, a Fruta não concede absolutamente nenhum bônus de força, defesa ou utilidade, tornando-se um poder inútil quando se está sozinho;
+> : ᓩ A forma colossal transforma o usuário no alvo mais óbvio e fácil de acertar de todo o campo de batalha, sendo impossível se esconder ou desviar de ataques em área, bombardeios de artilharia, tiros de franco-atiradores ou habilidades massivas dos inimigos;
+> : ᓩ Se a forma amálgama receber um dano insuportável e a fusão for desfeita à força pela dor ou inconsciência, o machucado absorvido pelo gigante será distribuído entre os corpos separados, podendo incapacitar ou nocautear a tripulação inteira de uma só vez;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Goe Goe no Mi": ``,
     "Gomu Gomu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
