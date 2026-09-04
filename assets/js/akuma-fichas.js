@@ -2293,29 +2293,34 @@ Ficha de Akuma no Mi
 > : ᓩ Paramecia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ Essa Fruta permite ao usuário transformar qualquer parte do próprio corpo em instrumentos musicais para produzir ondas sonoras, tornando-se uma pessoa-instrumento capaz de canalizar melodias em ataques físicos invisíveis, como explosões, impactos pesados e cortes profundos contra quem ouvir a música.
+> : ᓩ Essa Fruta permite ao usuário transformar partes do próprio corpo em instrumentos musicais, produzindo sons que podem ser convertidos em ataques. Por meio de diferentes melodias e instrumentos, o usuário pode realizar ataques à distância, como explosões, impactos e cortes, cujos efeitos são difíceis de perceber visualmente e podem atingir aqueles que estiverem dentro do alcance do som.
 
 *—————————————————————————*
 
 > : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
 > : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Porcentagem de Resistência: 85%
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 
 *————————————————————————*
 
 : ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
-> : ᓩ Seus ataques sonoros são essencialmente inevitáveis e invisíveis. Como o dano é transmitido através do som que chega ao ouvido da vítima, é impossível esquivar de um corte ou explosão olhando para o golpe; se a vítima ouvir a melodia, o dano será aplicado instantaneamente no corpo dela;
-> : ᓩ Oferece uma versatilidade ofensiva suprema à distância, variando entre golpes de impacto concussivos, cortes afiados como espadas e detonações devastadoras apenas trocando o ritmo e o instrumento que está sendo tocado no próprio corpo.
+> : ᓩ Seus ataques sonoros podem ser difíceis de perceber e prever visualmente, já que o efeito do ataque é produzido por meio do som em vez de um projétil ou golpe convencional;
+> : ᓩ Como determinados ataques são produzidos por meio do som que chega aos ouvidos do alvo, seus efeitos podem ser difíceis de identificar visualmente, tornando mais difícil prever a direção ou a natureza do ataque;
+> : ᓩ Quando o alvo ouve o som utilizado pelo usuário, ele pode ser afetado pelo ataque correspondente, dependendo da técnica utilizada e de suas características;
+> : ᓩ Oferece grande versatilidade ofensiva à distância, permitindo ao usuário produzir diferentes tipos de ataques, incluindo impactos, cortes e explosões, utilizando diferentes instrumentos e melodias produzidos pelo próprio corpo.
 
 : ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
-> : ᓩ A maior e mais absoluta fraqueza da Fruta é a audição da vítima. Se o inimigo tapar os ouvidos rapidamente antes do golpe, for surdo ou usar abafadores de som, o ataque falha por completo e não surte nenhum efeito, deixando o usuário inútil;
-> : ᓩ O usuário precisa ter seus membros livres para tocar os instrumentos no próprio corpo (como bater no peito, dedilhar o queixo ou soprar os dentes). Se for amarrado, imobilizado ou tiver as mãos presas, ele fica incapacitado de ativar os poderes;
+> : ᓩ Uma das principais fraquezas da Fruta é a necessidade de que seus sons alcancem a audição do alvo para que determinadas técnicas produzam seus efeitos;
+> : ᓩ Se o alvo impedir que o som alcance seus ouvidos, por exemplo, tapando os ouvidos ou utilizando algum método de isolamento acústico, poderá evitar os efeitos de técnicas que dependam diretamente da audição. Isso, porém, não impede o usuário de utilizar suas habilidades físicas ou outras técnicas da Fruta que não dependam da audição do alvo;
+> : ᓩ O usuário precisa ser capaz de produzir os sons necessários para utilizar suas técnicas, podendo utilizar diferentes partes do próprio corpo como instrumentos musicais. Impedir seus movimentos ou sua capacidade de produzir sons pode dificultar ou impedir a utilização de determinadas técnicas;
 > : ᓩ Fraquezas padrão de Akuma no Mi.
 
 *————————————————————————*
