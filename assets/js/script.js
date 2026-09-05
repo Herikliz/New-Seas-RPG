@@ -5605,7 +5605,6 @@ window.donosDeAkuma = {
     "Gasu Gasu no Mi": "Pietro",
     "Gocha Gocha no Mi": "Panela",
     "Gomu Gomu no Mi": "Edward T. Bennett",
-    "Goro Goro no Mi": "Edward Belmont",
     "Gura Gura no Mi": "Sakazuki Itadori",
     "Hebi Hebi no Mi, Modelo: Kaijū [Original do RPG]": "Raidjinn Le Laufey",
     "Hemo Hemo no Mi": "Sakazuki Choso",
