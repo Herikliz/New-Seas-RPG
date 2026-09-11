@@ -1108,7 +1108,7 @@ function verificarTrabalho() {
             resultadoEl.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
             resultadoEl.style.border = "1px dashed var(--danger)";
             resultadoEl.style.color = "var(--danger)";
-            resultadoEl.innerHTML = "Amigão, se você tem " + pontos.toLocaleString('pt-BR') + " " + palavraPonto + ", não tem como ter feito o Trabalho Tipo " + feito + ", porque precisa ter no mínimo " + reqPontosFormatados[feito] + " pontos pra fazer ele.";
+            resultadoEl.innerHTML = "Você tem " + pontos.toLocaleString('pt-BR') + " " + palavraPonto + " de acordo com o que foi preenchido, não tem como ter feito o Trabalho Tipo " + feito + ", porque é necessário ter no mínimo " + reqPontosFormatados[feito] + " pontos pra fazer ele.";
             resultadoEl.classList.add("active");
             if (textarea) {
                 textarea.disabled = true;
@@ -2724,9 +2724,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 novaRow.innerHTML = `
                     <input type="text" class="nome-jogador-cacada" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
                     <div class="admin-checkbox-group" style="margin-bottom: 0;">
-                        <label><input type="checkbox" class="check-haki-cacada"> Tem Haki?</label>
-                        <label><input type="checkbox" class="check-akuma-cacada"> Tem Fruta?</label>
-                        <label><input type="checkbox" class="check-40k-cacada"> <span class="lbl-40k-cacada">Tem 40.000 pontos ou mais?</span></label>
+                        <label><input type="checkbox" class="check-haki-cacada" style="width: auto; height: auto; padding: 0;"> Tem Haki?</label>
+                        <label><input type="checkbox" class="check-akuma-cacada" style="width: auto; height: auto; padding: 0;"> Tem Fruta?</label>
+                        <label><input type="checkbox" class="check-40k-cacada" style="width: auto; height: auto; padding: 0;"> <span class="lbl-40k-cacada">Tem 40.000 pontos ou mais?</span></label>
                     </div>
                 `;
                 containerJogadoresCacada.appendChild(novaRow);
@@ -3232,9 +3232,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 novaRow.innerHTML = `
                     <input type="text" class="nome-jogador-dominacao" placeholder="Nome do Jogador" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
                     <div class="admin-checkbox-group" style="margin-bottom: 0;">
-                        <label><input type="checkbox" class="check-haki-dominacao"> Tem Haki?</label>
-                        <label><input type="checkbox" class="check-akuma-dominacao"> Tem Fruta?</label>
-                        <label><input type="checkbox" class="check-40k-dominacao"> <span class="lbl-40k-dom">Tem 40.000 pontos ou mais?</span></label>
+                        <label><input type="checkbox" class="check-haki-dominacao" style="width: auto; height: auto; padding: 0;"> Tem Haki?</label>
+                        <label><input type="checkbox" class="check-akuma-dominacao" style="width: auto; height: auto; padding: 0;"> Tem Fruta?</label>
+                        <label><input type="checkbox" class="check-40k-dominacao" style="width: auto; height: auto; padding: 0;"> <span class="lbl-40k-dom">Tem 40.000 pontos ou mais?</span></label>
                     </div>
                 `;
                 containerJogadoresDom.appendChild(novaRow);
@@ -3557,7 +3557,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let pontosNpc = Math.floor(valorBase / 2);
             if (check40k.checked && (checkHaki.checked || checkAkuma.checked)) {
-                textoFinal += "\nPontos Recebidos pelos NPCs Especiais que você já tinha ANTES dessa Extra: " + formatarNum(pontosNpc);
+                textoFinal += "\nPontos Recebidos pelos NPCs Especiais que você já tinha ANTES dessa Extra-Narrada: " + formatarNum(pontosNpc);
             }
 
             textoFinal += "\u0060\u0060\u0060";
@@ -5664,6 +5664,60 @@ window.donosDeAkuma = {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('area-restrita')) {
+
+        const textoAniv = document.getElementById('textoAniversario');
+        const checkCompartilhou = document.getElementById('checkCompartilhouAniversario');
+        const preResultadoAniv = document.getElementById('resultadoAniversario');
+        const btnCopiarAniv = document.getElementById('btn-copiar-resultado-aniversario');
+
+        function gerarTextoAniversario() {
+            if (!textoAniv || !preResultadoAniv) return;
+            const texto = textoAniv.value.trim();
+
+            if (texto === "") {
+                preResultadoAniv.style.display = 'none';
+                preResultadoAniv.textContent = "";
+                return;
+            }
+
+            let textoFinal = `${texto}\n\n*Recompensas do Aniversariante:*\n* 2.000 pontos\n* 1.500 pontos em Haki e Akuma no Mi (caso possua)\n* ฿1.000.000.000\n* 2 Vales Navegação`;
+
+            if (checkCompartilhou && checkCompartilhou.checked) {
+                textoFinal += `\n\n*Recompensas dos Demais:*\n* 200 pontos\n* 150 pontos em Haki e Akuma no Mi (caso possua)`;
+            }
+
+            preResultadoAniv.textContent = textoFinal;
+            preResultadoAniv.style.display = 'block';
+        }
+
+        if (textoAniv) textoAniv.addEventListener('input', gerarTextoAniversario);
+        if (checkCompartilhou) checkCompartilhou.addEventListener('change', gerarTextoAniversario);
+
+        if (btnCopiarAniv) {
+            btnCopiarAniv.addEventListener('click', () => {
+                if (!preResultadoAniv.textContent) return;
+                if (btnCopiarAniv.dataset.copying) return;
+                btnCopiarAniv.dataset.copying = "true";
+                
+                window.copiarTextoUniversal(preResultadoAniv.textContent).then(() => {
+                    let originalText = btnCopiarAniv.textContent;
+                    let originalBg = btnCopiarAniv.style.backgroundColor;
+                    let originalColor = btnCopiarAniv.style.color;
+
+                    btnCopiarAniv.textContent = "Texto Copiado!";
+                    btnCopiarAniv.style.backgroundColor = "#4caf50";
+                    btnCopiarAniv.style.color = "#fff";
+                    
+                    setTimeout(() => {
+                        btnCopiarAniv.textContent = originalText;
+                        btnCopiarAniv.style.backgroundColor = originalBg;
+                        btnCopiarAniv.style.color = originalColor;
+                        delete btnCopiarAniv.dataset.copying;
+                    }, 1000);
+                });
+            });
+        }
+
         ['eventos', 'recompensas', 'staff', 'coisas-guardadas'].forEach(cat => {
             const selectEl = document.getElementById('select-' + cat);
             if (selectEl) {

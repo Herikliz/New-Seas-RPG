@@ -162,13 +162,30 @@
                         <div class="admin-generator-box">
                             <div class="input-group">
                                 <select id="select-recompensas" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease; margin-bottom: 20px;">
+                                    <option value="aniversario">Aniversário</option>
                                     <option value="cacada">Caçadas</option>
                                     <option value="dominacao">Dominações</option>
                                     <option value="extra-narrada">Extra-Narrada</option>
                                 </select>
                             </div>
 
-                            <div id="container-recompensas-cacada" class="category-section-recompensas">
+                            <div id="container-recompensas-aniversario" class="category-section-recompensas">
+                                <div id="admin-generator-aniversario">
+                                    <div class="input-group">
+                                        <label for="textoAniversario">Texto de Aniversário</label>
+                                        <textarea id="textoAniversario" class="contador-textarea" placeholder="Escreva o texto aqui..." rows="1" style="width: 100%; height: 36px; line-height: 1.5; padding: 6px 12px; resize: none; overflow-y: hidden;" oninput="this.style.height = 'auto'; this.style.height = (this.scrollHeight) + 'px'"></textarea>
+                                    </div>
+                                    <div class="admin-checkbox-group" style="margin-bottom: 15px;">
+                                        <label><input type="checkbox" id="checkCompartilhouAniversario" style="width: auto; height: auto; padding: 0;"> Compartilhou?</label>
+                                    </div>
+                                    <div class="output-container">
+                                        <pre id="resultadoAniversario" class="active" style="display: none;"></pre>
+                                    </div>
+                                    <button id="btn-copiar-resultado-aniversario" class="btn-admin">Copiar Resultado</button>
+                                </div>
+                            </div>
+
+                            <div id="container-recompensas-cacada" class="category-section-recompensas" style="display: none;">
                                 <div id="admin-generator-cacada">
                                     <div class="input-group">
                                         <label id="label-procurados-cacados">Procurado Caçado</label>
@@ -323,9 +340,9 @@
                                     </div>
 
                                     <div class="admin-checkbox-group">
-                                        <label><input type="checkbox" id="checkHaki"> Tem Haki?</label>
-                                        <label><input type="checkbox" id="checkAkuma"> Tem Fruta?</label>
-                                        <label><input type="checkbox" id="check40k"> <span id="lbl-40k-extra">Tem 40.000 pontos ou mais?</span></label>
+                                        <label><input type="checkbox" id="checkHaki" style="width: auto; height: auto; padding: 0;"> Tem Haki?</label>
+                                        <label><input type="checkbox" id="checkAkuma" style="width: auto; height: auto; padding: 0;"> Tem Fruta?</label>
+                                        <label><input type="checkbox" id="check40k" style="width: auto; height: auto; padding: 0;"> <span id="lbl-40k-extra">Tem 40.000 pontos ou mais?</span></label>
                                     </div>
 
                                     <div class="input-group">
