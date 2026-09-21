@@ -5593,7 +5593,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Sorteador de Akuma no Mi e Donos
 window.donosDeAkuma = {
     "Baku Baku no Mi": "Rhaast",
-    "Bari Bari no Mi": "???",
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
     "Chikyū Chikyū no Mi": "Karaya",
