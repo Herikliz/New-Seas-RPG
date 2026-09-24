@@ -412,6 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="descoberta-de-artefatos.html">DESCOBERTA DE ARTEFATOS</a></li>
                     <li><a href="dominacoes.html">DOMINAÇÕES</a></li>
                     <li><a href="investimento.html">INVESTIMENTO</a></li>
+                    <li><a href="medicos.html">MÉDICOS</a></li>
                     <li><a href="sangue.html">SANGUE</a></li>
                 </ul>
             </li>
