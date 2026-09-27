@@ -1978,49 +1978,30 @@ if (mapGrids.length > 0) {
             const agora = new Date();
             const dataChegada = new Date(agora.getTime() + (horasTotais * 60 * 60 * 1000));
             
+            const diaSaida = String(agora.getDate()).padStart(2, '0');
+            const mesSaida = String(agora.getMonth() + 1).padStart(2, '0');
+            const anoSaida = agora.getFullYear();
+            const horaSaida = String(agora.getHours()).padStart(2, '0');
+            const minSaida = String(agora.getMinutes()).padStart(2, '0');
+            const stringSaida = `${horaSaida}h${minSaida} do dia ${diaSaida}/${mesSaida}/${anoSaida}`;
+
             const dia = String(dataChegada.getDate()).padStart(2, '0');
             const mes = String(dataChegada.getMonth() + 1).padStart(2, '0');
             const ano = dataChegada.getFullYear();
             const hora = String(dataChegada.getHours()).padStart(2, '0');
             const minuto = String(dataChegada.getMinutes()).padStart(2, '0');
-            
-            const stringData = `${hora}h${minuto} do dia ${dia}/${mes}/${ano}`;
-
-            const totalMinutos = horasTotais * 60;
-            const totalHorasFloor = Math.floor(totalMinutos / 60);
-            const minutosRestantes = totalMinutos % 60;
-
-            const dias = Math.floor(totalHorasFloor / 24);
-            const horasRestantesDias = totalHorasFloor % 24;
-            
-            let textoDuracaoBase = "";
-            if (dias > 0) {
-                let strDias = dias === 1 ? "1 dia" : dias + " dias";
-                let strHoras = horasRestantesDias === 1 ? "1 hora" : horasRestantesDias + " horas";
-                
-                if (horasRestantesDias === 0 && minutosRestantes === 0) {
-                    textoDuracaoBase = strDias;
-                } else if (minutosRestantes === 0) {
-                    textoDuracaoBase = `${strDias} e ${strHoras}`;
-                } else {
-                    textoDuracaoBase = `${strDias}, ${strHoras} e ${minutosRestantes} minutos`;
-                }
-            } else {
-                let strHoras = totalHorasFloor === 1 ? "1 hora" : totalHorasFloor + " horas";
-                if (minutosRestantes === 0) {
-                    textoDuracaoBase = strHoras;
-                } else {
-                    textoDuracaoBase = `${strHoras} e ${minutosRestantes} minutos`;
-                }
-            }
-
-            let textoFormatadoExtra = `(${totalHorasFloor}h ${minutosRestantes}m)`;
-            let textoDuracao = `${textoDuracaoBase} ${textoFormatadoExtra}`;
+            const stringChegada = `${hora}h${minuto} do dia ${dia}/${mes}/${ano}`;
 
             const estaminaTotal = (quadrados * 2000).toLocaleString('pt-BR');
-            let infoEstamina = "";
-            if (isIndividual) {
-                infoEstamina = `<br>Custo de Estamina: ${estaminaTotal}`;
+            let nomeBarco = selectBarco.options[selectBarco.selectedIndex] ? selectBarco.options[selectBarco.selectedIndex].text : '';
+            
+            if (selectBarco.value === 'custom') {
+                nomeBarco = `Personalizado (${tempoPorQuadrado}h/q)`;
+            }
+
+            let papel = "Navegador";
+            if (!isIndividual && checkboxTimoneiro.checked) {
+                papel = "Timoneiro";
             }
 
             let nomeLocalInicio = "Alto-Mar";
@@ -2032,20 +2013,33 @@ if (mapGrids.length > 0) {
                 nomeLocalFim = window.obterNomeLocal(lastCell.dataset.group, lastCell.dataset.index, lastCell.dataset.coord);
             }
 
-            let valesDisplay = "";
+            let relatorioVisual = `<div style="text-align: left; font-size: 14px; font-family: 'Comfortaa', sans-serif; line-height: 1.6; white-space: pre-wrap;">`;
+            relatorioVisual += `*Saindo de:* ${nomeLocalInicio} [${stringSaida}]\n`;
+            relatorioVisual += `*Destino Final:* ${nomeLocalFim} [${stringChegada}]\n`;
+            
             if (ignoredSeas.length > 0) {
                 let orderedIgnoredSeas = window.getMaresNaRota().filter(mar => ignoredSeas.includes(mar));
                 if (orderedIgnoredSeas.length === 1) {
-                    valesDisplay = `<br><span style="color: #4caf50; font-size: 14px;">Vale Navegação: [${orderedIgnoredSeas[0]}]</span>`;
+                    relatorioVisual += `\n<span style="color: #4caf50;">*Detalhe:* Vale Navegação usado no [${orderedIgnoredSeas[0]}]</span>\n`;
                 } else if (orderedIgnoredSeas.length > 1) {
                     let lastSea = orderedIgnoredSeas.pop();
-                    valesDisplay = `<br><span style="color: #4caf50; font-size: 14px;">Vales Navegação: [${orderedIgnoredSeas.join('], [')}] e [${lastSea}]</span>`;
+                    relatorioVisual += `\n<span style="color: #4caf50;">*Detalhe:* Vales Navegação usados no [${orderedIgnoredSeas.join('], [')}] e [${lastSea}]</span>\n`;
                 }
             }
+            
+            relatorioVisual += `\n*Meio de Transporte:* ${nomeBarco}\n\n`;
+            
+            if (isIndividual) {
+                relatorioVisual += `*Custo de Estamina:* ${estaminaTotal}\n`;
+            }
+            
+            relatorioVisual += `*${papel}:* \n`;
+            relatorioVisual += `*Tripulantes:* \n`;
+            relatorioVisual += `</div>`;
 
-            resultadoTexto.innerHTML = `De: ${nomeLocalInicio} ➔ Para: ${nomeLocalFim}<br>Chegada: ${stringData}<br><small>Duração: ${textoDuracao}${infoEstamina}${valesDisplay}</small>`;
+            resultadoTexto.innerHTML = relatorioVisual;
         } else {
-            resultadoTexto.innerHTML = `Tempo Total: 0h (Você está parado)`;
+            resultadoTexto.innerHTML = `<div style="text-align: center; font-size: 14px; font-family: 'Comfortaa', sans-serif;">Tempo Total: 0h (Você está parado)</div>`;
         }
     }
 
