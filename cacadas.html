@@ -34,34 +34,29 @@
             padding-bottom: 10px;
         }
         .bounty-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr) !important;
+            display: flex !important;
+            flex-wrap: wrap;
             gap: 30px;
             padding: 20px 0;
-            justify-items: center;
+            justify-content: center;
             max-width: 1200px;
             margin: 0 auto 50px auto;
         }
         .bounty-grid .bounty-card {
-            max-width: 350px !important;
-            width: 100%;
-        }
-        .bounty-grid .bounty-card:nth-child(1),
-        .bounty-grid .bounty-card:nth-child(2),
-        .bounty-grid .bounty-card:nth-child(3) {
-            grid-column: span 2;
-        }
-        .bounty-grid .bounty-card:nth-child(4) {
-            grid-column: 2 / span 2;
-        }
-        .bounty-grid .bounty-card:nth-child(5) {
-            grid-column: 4 / span 2;
+            width: 350px !important;
+            max-width: 100%;
         }
         .bounty-location {
             font-family: 'Comfortaa', sans-serif;
             font-size: 14px;
-            margin-top: 8px;
+            margin-top: 12px;
             opacity: 0.9;
+            background-color: rgba(128, 128, 128, 0.05);
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(128, 128, 128, 0.05) 5px, rgba(128, 128, 128, 0.05) 10px);
+            border: 1px dashed var(--sidebar-border);
+            border-radius: 6px;
+            padding: 6px 12px;
+            display: inline-block;
         }
         @media (max-width: 992px) {
             .bounty-grid {
@@ -410,6 +405,61 @@
                             <h3 class="bounty-name">O Agouro</h3>
                             <p class="bounty-value">900.000.000</p>
                             <p class="bounty-location">Foodvalten</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+                <div class="sea-title toggle-title" style="cursor: pointer;"><a>Generais Divinos</a> <span class="toggle-icon">▼</span></div>
+                <div class="toggle-content">
+                    <div class="bounty-grid" data-sea="generais-divinos">
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Generais Divinos\Bastarion.png" alt="Bastarion" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Bastarion</h3>
+                            <p class="bounty-value">3.347.820.000</p>
+                            <p class="bounty-location">Hachinosu {???}</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Generais Divinos\Caelus.png" alt="Caelus" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Caelus</h3>
+                            <p class="bounty-value">1.936.480.000</p>
+                            <p class="bounty-location">Hachinosu {???}</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Generais Divinos\Han.png" alt="Han" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Han</h3>
+                            <p class="bounty-value">1.584.270.000</p>
+                            <p class="bounty-location">Hachinosu {???}</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Generais Divinos\Noctis.png" alt="Noctis" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Noctis</h3>
+                            <p class="bounty-value">4.783.650.000</p>
+                            <p class="bounty-location">Hachinosu {???}</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Generais Divinos\Ossian.png" alt="Ossian" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Ossian</h3>
+                            <p class="bounty-value">2.391.750.000</p>
+                            <p class="bounty-location">Hachinosu {???}</p>
+                        </div>
+                    </div>
+                    <div class="bounty-card">
+                        <img src="assets\imagens\Caçadas\Generais Divinos\Thoriel.png" alt="Thoriel" class="bounty-image">
+                        <div class="bounty-info">
+                            <h3 class="bounty-name">Thoriel {Preso}</h3>
+                            <p class="bounty-value">2.864.390.000</p>
+                            <p class="bounty-location">Hachinosu {???}</p>
                         </div>
                     </div>
                 </div>
