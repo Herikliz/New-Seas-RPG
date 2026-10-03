@@ -22,10 +22,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
 : ᓩ Dano Adicional: (Controle% da Potência)+0%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
 
 *————————————————————————*
 
@@ -67,10 +67,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 25%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+25%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+25%
 
 *————————————————————————*
 
@@ -207,10 +207,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 35%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
 : ᓩ Dano Adicional: (Controle% da Potência)+35%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+45%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+35%
 
 *————————————————————————*
 
@@ -293,10 +293,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,2
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+75%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,2
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -507,10 +507,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
 
 *————————————————————————*
 
@@ -559,10 +559,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
 : ᓩ Dano Adicional: (Controle% da Potência)+95%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+105%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -686,10 +686,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 25%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+25%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+25%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+25%
 
 *————————————————————————*
 
@@ -737,10 +737,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -790,10 +790,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -920,10 +920,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 65%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+35%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+50%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+65%
 
 *————————————————————————*
 
@@ -964,10 +964,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,9
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,9
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -1094,10 +1094,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 20%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
 : ᓩ Dano Adicional: (Controle% da Potência)+20%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+20%
 
 *————————————————————————*
 
@@ -1146,10 +1146,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 50%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
 : ᓩ Dano Adicional: (Controle% da Potência)+50%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+50%
 
 *————————————————————————*
 
@@ -1344,10 +1344,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
 : ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -1392,10 +1392,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
 
 *————————————————————————*
 
@@ -1453,10 +1453,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
 : ᓩ Dano Adicional: (Controle% da Potência)+95%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -1496,10 +1496,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 3,5
 : ᓩ Dano Adicional: (Controle% da Potência)+70%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+80%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 3,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
 
 *————————————————————————*
 
@@ -1582,10 +1582,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -1677,10 +1677,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 105%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+105%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+105%
 
 *————————————————————————*
 
@@ -1814,10 +1814,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -1921,10 +1921,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,7
 : ᓩ Dano Adicional: (Controle% da Potência)+70%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,7
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+70%
 
 *————————————————————————*
 
@@ -1968,10 +1968,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,6
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+100%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,6
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -2011,10 +2011,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -2156,10 +2156,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -2217,10 +2217,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 0,4
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 0,4
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -2260,10 +2260,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
 : ᓩ Dano Adicional: (Controle% da Potência)+70%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+70%
 
 *————————————————————————*
 
@@ -2304,10 +2304,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -2399,10 +2399,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -2444,10 +2444,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -2721,10 +2721,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 85%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -2896,10 +2896,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 75%
-: ᓩ Dano Adicional: (Controle% da Potência)+75%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+75%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -2942,10 +2942,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -3192,10 +3192,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,2
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,2
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -3415,10 +3415,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 0%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,9
 : ᓩ Dano Adicional: (Controle% da Potência)+105%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,9
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
 
 *————————————————————————*
 
@@ -3497,10 +3497,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 90%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,4
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+95%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,4
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
 
@@ -3587,10 +3587,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 70%
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
 : ᓩ Dano Adicional: (Controle% da Potência)+70%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+70%
 
 *————————————————————————*
 
