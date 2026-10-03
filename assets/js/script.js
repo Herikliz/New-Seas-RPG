@@ -5614,6 +5614,7 @@ window.donosDeAkuma = {
     "Inu Inu no Mi, Modelo: Ōkuchi no Makami": "Yuu D'Couteau",
     "Ito Ito no Mi": "Thaddeus Vanderwood",
     "Kage Kage no Mi": "Noctis",
+    "Kaze Kaze no Mi": "Yuka Makoto",
     "Kobu Kobu no Mi": "???",
     "Kumo Kumo no Mi": "Caelus",
     "Magu Magu no Mi": "Cheung Po Tsai",
