@@ -67,9 +67,9 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 30%
-: ᓩ Dano Adicional: (Controle% da Potência)+35%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+30%
+: ᓩ Porcentagem de Resistência: 25%
+: ᓩ Dano Adicional: (Controle% da Potência)+25%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 
 *————————————————————————*
@@ -3373,7 +3373,7 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
 
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+50%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 6
 
 *————————————————————————*
