@@ -3615,7 +3615,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayFichaAkuma = document.getElementById('ficha-akuma-display');
 
     if (selectFichaAkuma && displayFichaAkuma) {
-        
+
         let isGenerating = false;
         let isParsing = false;
 
@@ -3710,7 +3710,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </select>
             </div>
         `;
-        
+
         // Colocando o container logo após o select da Fruta
         selectFichaAkuma.parentElement.insertAdjacentElement('afterend', containerFichaVazia);
 
@@ -3729,15 +3729,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const valVelocidade = document.getElementById('val-velocidade-vazia');
         const chkDurabilidade = document.getElementById('chk-durabilidade-vazia');
         const valDurabilidade = document.getElementById('val-durabilidade-vazia');
-        
+
         const valResistencia = document.getElementById('val-resistencia-vazia');
         const valDanoAdic = document.getElementById('val-dano-adic-vazia');
         const valVelAdic = document.getElementById('val-vel-adic-vazia');
         const valMultAlcance = document.getElementById('val-mult-alcance-vazia');
-        
+
         const inputVantagens = document.getElementById('input-vantagens-vazia');
         const inputDesvantagens = document.getElementById('input-desvantagens-vazia');
-        
+
         const selectTreinosVazia = document.getElementById('select-treinos-vazia');
 
         // Exibe o painel da Ficha Vazia e aciona as modificações ao selecioná-la
@@ -3748,7 +3748,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Transforma o DisplayFicha em um campo de texto editável colável e seguro 
                 try { displayFichaAkuma.contentEditable = "plaintext-only"; } 
                 catch(e) { displayFichaAkuma.contentEditable = "true"; }
-                
+
                 displayFichaAkuma.style.outline = "2px dashed var(--accent-color)";
                 displayFichaAkuma.style.outlineOffset = "4px";
 
@@ -3835,7 +3835,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mResZoan) {
                 valResistencia.value = mResZoan[1];
             } else {
-                let mRes = texto.match(/:\s*ᓩ\s*Porcentagem de Resistência:\s*(\d+)%/);
+                // Modificado para capturar a Resistência quer tenha o texto da fórmula (Controle%...) na frente ou não
+                let mRes = texto.match(/:\s*ᓩ\s*Porcentagem de Resistência:(?:.*\+)?\s*(\d+)%/);
                 if (mRes) valResistencia.value = mRes[1];
             }
 
@@ -3892,7 +3893,7 @@ document.addEventListener('DOMContentLoaded', () => {
         inputModeloVazia.addEventListener('input', atualizarFichaVazia);
         selectTipoVazia.addEventListener('change', atualizarFichaVazia);
         selectTreinosVazia.addEventListener('change', atualizarFichaVazia);
-        
+
         // Impede a quebra de linha ("Enter") na descrição
         inputDescVazia.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
@@ -3997,7 +3998,7 @@ document.addEventListener('DOMContentLoaded', () => {
             valMultAlcance.parentElement.style.display = chkAlcance.checked ? '' : 'none';
 
             let fichaOriginal = window.fichasAkuma['Ficha Vazia'];
-            
+
             // Tratamento do Nome
             let inputVal = inputNomeVazia.value.trim().split(' ')[0]; 
             let palavra = "XXXX";
@@ -4037,7 +4038,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let capLine = l.charAt(0).toUpperCase() + l.slice(1);
                     // Remove pontuações repetidas no final
                     capLine = capLine.replace(/[.;]+$/, '');
-                    
+
                     if (index === vantagensLines.length - 1) {
                         return `> : ᓩ ${capLine}.`;
                     } else {
@@ -4056,7 +4057,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     capLine = capLine.replace(/[.;]+$/, '');
                     return `> : ᓩ ${capLine};`;
                 }).join('\n');
-                
+
                 // Acrescenta a desvantagem padrão obrigatoriamente no final
                 desvText += '\n> : ᓩ Fraquezas padrão de Akuma no Mi.';
             } else {
@@ -4096,7 +4097,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let maxPossivel = boxesAtivas * 10000;
             let porcentagemControle = maxPossivel > 0 ? (somaTotal / maxPossivel) * 100 : 0;
-            
+
             // Formatando o Controle
             let controleFormatado = "";
             if (porcentagemControle % 1 === 0) {
@@ -4113,8 +4114,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let strVelAdic = valVelAdic.value || "0";
             let strMultAlcance = valMultAlcance.value || "1";
             let strTreinos = selectTreinosVazia.value || "X";
-            
-            // Corrige se estiver terminando em `,0` para preview em tempo real e não só no blur
+
+            // Corrige se estiver terminando em \`,0\` para preview em tempo real e não só no blur
             if (strMultAlcance.endsWith(',0')) {
                 strMultAlcance = strMultAlcance.split(',')[0];
             } else if (strMultAlcance.endsWith(',')) {
@@ -4130,21 +4131,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // Substitui o bloco de atributos
             let blocoOriginalAtributos = `> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500\n> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0\n> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0\n> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0\n> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500\n> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%`;
             fichaAtualizada = fichaAtualizada.replace(blocoOriginalAtributos, blocoFinal);
-            
-            // Substitui ou remove as linhas dependentes da Potência
+
+            // Substitui ou remove as linhas dependentes da Potência (Atualizado para o novo template)
             if (chkPotencia.checked) {
                 if (tipoVal.includes('Zoan')) {
                     let resNum = parseInt(strResistencia, 10) || 0;
                     let resHibrida = Math.floor(resNum / 2); // Metade arredondada para baixo
-                    let strZoanRes = `: ᓩ Porcentagem de Resistência: 0%\n> — Forma Híbrida: ${resHibrida}%\n> — Forma Completa: ${resNum}%`;
-                    fichaAtualizada = fichaAtualizada.replace(': ᓩ Porcentagem de Resistência: 0%', strZoanRes);
+                    let strZoanRes = `: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%\n> — Forma Híbrida: ${resHibrida}%\n> — Forma Completa: ${resNum}%`;
+                    fichaAtualizada = fichaAtualizada.replace(': ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%', strZoanRes);
                 } else {
-                    fichaAtualizada = fichaAtualizada.replace(': ᓩ Porcentagem de Resistência: 0%', `: ᓩ Porcentagem de Resistência: ${strResistencia}%`);
+                    fichaAtualizada = fichaAtualizada.replace(': ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%', `: ᓩ Porcentagem de Resistência: (Controle% da Potência)+${strResistencia}%`);
                 }
                 fichaAtualizada = fichaAtualizada.replace(': ᓩ Dano Adicional: (Controle% da Potência)+0%', `: ᓩ Dano Adicional: (Controle% da Potência)+${strDanoAdic}%`);
             } else {
                 // Ao desmarcar, a quebra de linha (\n) é removida para que não fique um buraco na ficha
-                fichaAtualizada = fichaAtualizada.replace('\n: ᓩ Porcentagem de Resistência: 0%', '');
+                fichaAtualizada = fichaAtualizada.replace('\n: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%', '');
                 fichaAtualizada = fichaAtualizada.replace('\n: ᓩ Dano Adicional: (Controle% da Potência)+0%', '');
             }
 
@@ -4171,7 +4172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fichaAtualizada = fichaAtualizada.replace(': ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:\n> : ᓩ X treinos para dominar cada técnica.', `: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:\n> : ᓩ ${strTreinos} ${palavraTreino} para dominar cada técnica.`);
 
             displayFichaAkuma.textContent = fichaAtualizada;
-            
+
             setTimeout(() => { isGenerating = false; }, 10);
         }
     }
