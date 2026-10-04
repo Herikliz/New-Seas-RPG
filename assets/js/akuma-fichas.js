@@ -68,9 +68,9 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
-: ᓩ Dano Adicional: (Controle% da Potência)+25%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
-: ᓩ Porcentagem de Resistência: (Controle% da Potência)+25%
+: ᓩ Dano Adicional: (Controle% da Potência)+35%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+35%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+35%
 
 *————————————————————————*
 
@@ -112,12 +112,12 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 0%
-> — Forma Híbrida: 35%
-> — Forma Completa: 70%
-: ᓩ Dano Adicional: (Controle% da Potência)+80%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,4
+: ᓩ Dano Adicional: (Controle% da Potência)+80%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+80%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
+> — Forma Híbrida: 40%
+> — Forma Completa: 80%
 
 *————————————————————————*
 
@@ -158,11 +158,11 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
 
-: ᓩ Porcentagem de Resistência: 0%
-> — Forma Híbrida: 7%
-> — Forma Completa: 15%
-: ᓩ Dano Adicional: (Controle% da Potência)+10%
+: ᓩ Dano Adicional: (Controle% da Potência)+20%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
+> — Forma Híbrida: 10%
+> — Forma Completa: 20%
 
 *————————————————————————*
 
@@ -209,7 +209,7 @@ Ficha de Akuma no Mi
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
 : ᓩ Dano Adicional: (Controle% da Potência)+35%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+45%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+35%
 : ᓩ Porcentagem de Resistência: (Controle% da Potência)+35%
 
 *————————————————————————*
@@ -250,9 +250,9 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
 
-: ᓩ Porcentagem de Resistência: 85%
-: ᓩ Dano Adicional: (Controle% da Potência)+0%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
+: ᓩ Dano Adicional: (Controle% da Potência)+50%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+50%
 
 *————————————————————————*
 
@@ -295,7 +295,7 @@ Ficha de Akuma no Mi
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,2
 : ᓩ Dano Adicional: (Controle% da Potência)+90%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+75%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
 : ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
@@ -372,13 +372,11 @@ Ficha de Akuma no Mi
 
 > : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
-> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
 
-: ᓩ Porcentagem de Resistência: 85%
-: ᓩ Dano Adicional: (Controle% da Potência)+90%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+60%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -417,11 +415,9 @@ Ficha de Akuma no Mi
 
 > : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
-> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
 
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+50%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
 
 *————————————————————————*
@@ -432,7 +428,6 @@ Ficha de Akuma no Mi
 : ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
 > : ᓩ A falta de poder destrutivo direto no combate;
 > : ᓩ O limite de tempo das portas;
-> : ᓩ O alto consumo de energia para a dimensão de bolso;
 > : ᓩ Fraquezas padrão de Akuma no Mi.
 
 *————————————————————————*
@@ -463,9 +458,9 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
 
-: ᓩ Porcentagem de Resistência: 85%
-: ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -510,7 +505,6 @@ Ficha de Akuma no Mi
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
-: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
 
 *————————————————————————*
 
@@ -560,8 +554,8 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
-: ᓩ Dano Adicional: (Controle% da Potência)+95%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+105%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
 : ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
 
 *————————————————————————*
@@ -599,11 +593,9 @@ Ficha de Akuma no Mi
 
 > : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
-> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
 
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,6
 
 *————————————————————————*
@@ -643,7 +635,6 @@ Ficha de Akuma no Mi
 > : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 5%
-
 
 *————————————————————————*
 
@@ -687,9 +678,9 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
-: ᓩ Dano Adicional: (Controle% da Potência)+25%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+25%
-: ᓩ Porcentagem de Resistência: (Controle% da Potência)+25%
+: ᓩ Dano Adicional: (Controle% da Potência)+35%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+35%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+35%
 
 *————————————————————————*
 
@@ -779,7 +770,7 @@ Ficha de Akuma no Mi
 > : ᓩ Paramecia
 
 : ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ Permite ao usuário criar abalos sísmicos e manipular o espaço, originando terremotos, maremotos e tsunamis.
+> : ᓩ Permite ao usuário criar abalos sísmicos e espaciais, originando terremotos, maremotos e tsunamis.
 
 *—————————————————————————*
 
@@ -791,7 +782,7 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
-: ᓩ Dano Adicional: (Controle% da Potência)+90%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
 : ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
@@ -832,9 +823,9 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
 
-: ᓩ Porcentagem de Resistência: 50%
-: ᓩ Dano Adicional: (Controle% da Potência)+50%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
+: ᓩ Dano Adicional: (Controle% da Potência)+50%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+50%
 
 *————————————————————————*
 
@@ -876,17 +867,17 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
-: ᓩ Porcentagem de Resistência: 0%
-> — Forma Híbrida: 35%
-> — Forma Completa: 70%
-: ᓩ Dano Adicional: (Controle% da Potência)+70%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+: ᓩ Dano Adicional: (Controle% da Potência)+80%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+80%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
+> — Forma Híbrida: 40%
+> — Forma Completa: 80%
 
 *————————————————————————*
 
 : ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
-> : ᓩ Poder emitir grandes ondas de radiação e bastante resistente na sua forma completa.
+> : ᓩ Poder emitir grandes ondas de radiação e bastante resistente na sua Forma Completa.
 
 : ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
 > : ᓩ O tamanho limita sua locomoção e seus golpes afetam seus companheiros;
@@ -896,7 +887,56 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Hebi Hebi no Mi, Modelo: Yamata no Orochi": ``,
+    "Hebi Hebi no Mi, Modelo: Yamata no Orochi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Hebi Hebi no Mi, Modelo: Yamata no Orochi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan Mítica
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário se transformar em Yamata no Orochi, uma lendária serpente de oito cabeças.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
+
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
+: ᓩ Dano Adicional: (Controle% da Potência)+80%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+80%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
+> — Forma Híbrida: 40%
+> — Forma Completa: 80%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Concede ao usuário até oito cabeças independentes, cada uma com um pescoço extremamente longo e capaz de falar por conta própria;
+> : ᓩ Controle sobre a quantidade de cabeças manifestadas simultaneamente (até o limite de 8);
+> : ᓩ Aumento nas habilidades físicas, com mandíbulas incrivelmente fortes capazes de prender e erguer alvos facilmente;
+> : ᓩ Capacidade de atacar em múltiplas direções ao mesmo tempo e alcançar alvos muito mais distantes devido à extensão dos pescoços;
+> : ᓩ Durabilidade incrível na forma completa, permitindo suportar ataques destrutivos como raios;
+> : ᓩ Mesmo que seja decapitado, não morre, pois é necessário arrancar suas oito cabeças.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Impossibilidade de regenerar cabeças que já foram cortadas, perdendo suas "vidas" extras de forma permanente a cada decapitação;
+> : ᓩ Alta vulnerabilidade a ataques de grande escala que consigam decepar múltiplas cabeças simultaneamente, esgotando rapidamente a sobrevida;
+> : ᓩ O tamanho imenso e o grande número de cabeças tornam a forma transformada um alvo extremamente grande, sendo facilmente explorada por inimigos mais ágeis;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 6 treinos para dominar cada técnica.`,
     "Hemo Hemo no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
