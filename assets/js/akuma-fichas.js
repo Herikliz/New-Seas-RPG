@@ -782,7 +782,7 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
-: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Dano Adicional: (Controle% da Potência)+90%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
 : ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
@@ -1281,10 +1281,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Porcentagem de Resistência: 0%
-> — Forma Híbrida: 35%
-> — Forma Completa: 70%
-: ᓩ Dano Adicional: (Controle% da Potência)+70%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+> — Forma Híbrida: 40%
+> — Forma Completa: 80%
+: ᓩ Dano Adicional: (Controle% da Potência)+80%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+80%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1
 
 *————————————————————————*
@@ -2084,6 +2084,47 @@ Ficha de Akuma no Mi
     "Mosa Mosa no Mi": ``,
     "Muchi Muchi no Mi": ``,
     "Mushi Mushi no Mi, Modelo: Besouro-Rinoceronte": ``,
+    "Mushi Mushi no Mi, Modelo: Mosca-Varejeira-Verde": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Mushi Mushi no Mi, Modelo: Mosca-Varejeira-Verde
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Zoan
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Permite ao usuário se transformar total ou parcialmente em uma Mosca-Varejeira-Verde, adquirindo suas características físicas, como asas, visão aprimorada e capacidade de voo, além de aumentar sua velocidade e mobilidade.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚊𝚍𝚎: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+20%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Capacidade de voo;
+> : ᓩ Capacidade de realizar mudanças bruscas de direção durante o voo;
+> : ᓩ Grande agilidade e mobilidade aérea;
+> : ᓩ Visão ampla e percepção aprimorada de movimentos.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A visão extremamente sensível pode ser prejudicada por luzes muito intensas;
+> : ᓩ As asas podem ser danificadas, prejudicando ou impedindo o voo;
+> : ᓩ Grande dependência de espaços que permitam movimentação aérea;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 2 treinos para dominar cada técnica.`,
     "Mushi Mushi no Mi, Modelo: Vespa-Mandarina": ``,
     "Nagi Nagi no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
@@ -2197,9 +2238,9 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
-: ᓩ Dano Adicional: (Controle% da Potência)+90%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+90%
-: ᓩ Porcentagem de Resistência: (Controle% da Potência)+90%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -3321,10 +3362,10 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Porcentagem de Resistência: 0%
-> — Forma Híbrida: 35%
-> — Forma Completa: 70%
-: ᓩ Dano Adicional: (Controle% da Potência)+70%
-: ᓩ Velocidade Adicional: (Controle% da Velocidade)+70%
+> — Forma Híbrida: 40%
+> — Forma Completa: 80%
+: ᓩ Dano Adicional: (Controle% da Potência)+80%
+: ᓩ Velocidade Adicional: (Controle% da Velocidade)+80%
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 2
 
 *————————————————————————*
@@ -3628,9 +3669,9 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,25%
 
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,8
-: ᓩ Dano Adicional: (Controle% da Potência)+70%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+0%
-: ᓩ Porcentagem de Resistência: (Controle% da Potência)+70%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+85%
 
 *————————————————————————*
 

@@ -6256,6 +6256,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {nome: "Mosa Mosa no Mi (Fruta do Crescimento)", valor: 600000000},
             {nome: "Muchi Muchi no Mi (Fruta do Chicote)", valor: 750000000},
             {nome: "Mushi Mushi no Mi, Modelo: Besouro-Rinoceronte", valor: 450000000},
+            {nome: "Mushi Mushi no Mi, Modelo: Mosca-Varejeira-Verde", valor: 350000000},
             {nome: "Mushi Mushi no Mi, Modelo: Vespa-Mandarina", valor: 180000000},
             {nome: "Nagi Nagi no Mi (Fruta do Silêncio)", valor: 300000000},
             {nome: "Nawa Nawa no Mi (Fruta das Cordas)", valor: 250000000},
