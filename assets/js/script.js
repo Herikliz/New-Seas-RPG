@@ -5620,6 +5620,7 @@ window.donosDeAkuma = {
     "Kaze Kaze no Mi": "Starrk Beckman",
     "Kobu Kobu no Mi": "???",
     "Kumo Kumo no Mi": "Caelus",
+    "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Marie Cardona",
     "Magu Magu no Mi": "Cheung Po Tsai",
     "Maki Maki no Mi": "Han",
     "Memo Memo no Mi": "Harvey Dent",
