@@ -866,3 +866,49 @@ body.dark-mode .calc-floating input[readonly] {
         max-height: 8px;
     }
 }
+
+/* ==========================================================================
+   RANKING DE PERSONAGENS (Coisas Guardadas) - ver assets/js/ranking.js
+   ========================================================================== */
+.rk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+.rk-campo { width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: inherit; font-size: 14px; }
+.rk-campo:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); }
+.rk-presets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.rk-presets button { padding: 5px 10px; font-size: 12px; font-weight: bold; cursor: pointer; border-radius: 8px; border: 1px solid var(--sidebar-border); background: transparent; color: var(--text-color); transition: all 0.2s; }
+.rk-presets button:hover { background: var(--accent-color); color: var(--button-text); border-color: var(--accent-color); }
+.rk-toggle { padding: 12px 18px; font-size: 14px; font-weight: bold; cursor: pointer; border-radius: var(--border-radius); border: 2px dashed var(--sidebar-border); background: transparent; color: var(--text-color); transition: all 0.2s; max-width: 100%; }
+.rk-toggle:hover:not(:disabled) { border-color: var(--accent-color); color: var(--accent-color); }
+.rk-toggle.ativo, .rk-toggle.ativo:hover:not(:disabled) { border-style: solid; border-color: var(--accent-color); background: var(--accent-color); color: var(--button-text); }
+.rk-toggle:disabled { opacity: 0.45; cursor: not-allowed; }
+.rk-nota { display: block; margin-top: 8px; font-size: 12px; opacity: 0.8; }
+.rk-filtros { margin: 0 0 20px 0; padding: 12px 16px; border: 1px dashed var(--sidebar-border); border-radius: var(--border-radius); }
+.rk-filtros summary { cursor: pointer; font-weight: bold; color: var(--accent-color); margin-bottom: 4px; }
+.rk-filtros[open] summary { margin-bottom: 15px; }
+.rk-link { background: none; border: none; padding: 0; cursor: pointer; color: var(--accent-color); text-decoration: underline; font-size: 13px; }
+.rk-status { margin-top: 15px; padding: 12px 15px; border-radius: var(--border-radius); border: 1px solid var(--sidebar-border); font-size: 13px; line-height: 1.5; }
+.rk-status.rk-info { border-color: var(--accent-color); }
+.rk-status.rk-ok { border-color: #4caf50; }
+.rk-status.rk-aviso { border-color: #ff9800; }
+.rk-status.rk-erro { border-color: #f44336; color: #f44336; font-weight: bold; }
+.rk-janela { margin: 0 0 12px 0; font-size: 12px; line-height: 1.5; color: var(--text-color); opacity: 0.85; }
+.rk-resumo { font-weight: bold; color: var(--accent-color); margin-bottom: 12px; font-size: 14px; }
+.rk-lista { list-style: none; margin: 0; padding: 0; }
+.rk-item { display: flex; align-items: center; gap: 14px; padding: 12px 14px; margin-bottom: 8px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background: var(--sidebar-bg); }
+.rk-item.rk-podio { border-color: var(--accent-color); }
+.rk-pos { flex: 0 0 48px; text-align: center; font-size: 22px; font-weight: bold; color: var(--accent-color); }
+.rk-centro { flex: 1; min-width: 0; }
+.rk-nome { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.rk-nome strong { overflow-wrap: anywhere; }
+.rk-id { padding: 2px 8px; font-size: 12px; font-weight: bold; border-radius: 8px; border: 1px solid var(--accent-color); color: var(--accent-color); white-space: nowrap; }
+.rk-tag { padding: 2px 8px; font-size: 11px; font-weight: bold; border-radius: 8px; background: var(--link-hover-bg); color: var(--text-color); white-space: nowrap; }
+.rk-tag-empate { background: transparent; border: 1px dashed var(--sidebar-border); }
+.rk-detalhe { margin-top: 3px; font-size: 12px; opacity: 0.75; overflow-wrap: anywhere; }
+.rk-valor { flex: 0 0 auto; font-size: 18px; font-weight: bold; color: var(--accent-color); text-align: right; }
+@media (max-width: 700px) {
+    .rk-grid { grid-template-columns: 1fr; }
+    /* celular: medalha à esquerda; nome, detalhes e pontuacao empilhados a direita */
+    .rk-item { display: grid; grid-template-columns: 44px 1fr; grid-template-areas: "pos centro" "pos valor"; gap: 4px 10px; align-items: start; }
+    .rk-pos { grid-area: pos; flex: none; font-size: 20px; }
+    .rk-centro { grid-area: centro; }
+    .rk-valor { grid-area: valor; text-align: left; }
+}

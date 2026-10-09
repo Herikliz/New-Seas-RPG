@@ -37,6 +37,7 @@
                             <div class="input-group">
                                 <select id="select-coisas-guardadas" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease; margin-bottom: 20px;">
                                     <option value="akuma-fichas">Akuma no Mi</option>
+                                    <option value="ranking">Ranking de Personagens</option>
                                 </select>
                             </div>
                             
@@ -50,6 +51,88 @@
                                 <div id="container-display-ficha" style="display: none; margin-top: 20px;">
                                     <button id="btn-copiar-ficha-akuma" class="btn-admin" style="margin-top: 0; margin-bottom: 15px;">📋 Copiar Ficha</button>
                                     <div id="ficha-akuma-display" style="padding: 20px; background: rgba(0,0,0,0.2); border: 1px solid var(--accent-color); border-radius: 8px; overflow-x: auto; color: var(--text-color); font-family: monospace; white-space: pre-wrap; font-size: 14px; line-height: 1.5;"></div>
+                                </div>
+                            </div>
+
+                            <!-- RANKING DE PERSONAGENS (lógica em assets/js/ranking.js) -->
+                            <div id="container-coisas-guardadas-ranking" class="category-section-coisas-guardadas" style="display: none; text-align: left;">
+                                <div class="rk-grid">
+                                    <div class="input-group">
+                                        <label for="rk-pontuacao">Pontuação</label>
+                                        <select id="rk-pontuacao">
+                                            <option value="total">Total</option>
+                                            <option value="base">Base</option>
+                                            <option value="akuma">Akuma no Mi</option>
+                                            <option value="haki">Haki (Armamento + Observação + Rei)</option>
+                                            <option value="ha">Haki do Armamento</option>
+                                            <option value="ho">Haki da Observação</option>
+                                            <option value="hr">Haki do Rei</option>
+                                            <option value="esp">Espírito</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="rk-top">Quantidade (TOP)</label>
+                                        <input type="number" id="rk-top" class="rk-campo" min="1" max="500" value="10" inputmode="numeric">
+                                        <div class="rk-presets">
+                                            <button type="button" data-top="3">TOP 3</button>
+                                            <button type="button" data-top="5">TOP 5</button>
+                                            <button type="button" data-top="10">TOP 10</button>
+                                            <button type="button" data-top="20">TOP 20</button>
+                                            <button type="button" data-top="50">TOP 50</button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="rk-tipo">Quem entra no ranking</label>
+                                        <select id="rk-tipo">
+                                            <option value="todos">Personagens e NPCs</option>
+                                            <option value="pcs">Somente personagens (sem NPCs)</option>
+                                            <option value="npcs">Somente NPCs</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="rk-ordem">Ordem</label>
+                                        <select id="rk-ordem">
+                                            <option value="desc">Maior → menor</option>
+                                            <option value="asc">Menor → maior</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <button type="button" id="rk-btn-especiais" class="rk-toggle" aria-pressed="false">➕ Incluir IDs NPCS e NPCI</button>
+                                    <small id="rk-nota-especiais" class="rk-nota"></small>
+                                </div>
+
+                                <details class="rk-filtros">
+                                    <summary>🔎 Filtros avançados</summary>
+                                    <div class="rk-grid">
+                                        <div class="input-group"><label for="rk-org">Organização</label><select id="rk-org"><option value="">Todos</option></select></div>
+                                        <div class="input-group"><label for="rk-raca">Raça</label><select id="rk-raca"><option value="">Todos</option></select></div>
+                                        <div class="input-group"><label for="rk-linhagem">Linhagem</label><select id="rk-linhagem"><option value="">Todos</option></select></div>
+                                        <div class="input-group"><label for="rk-classe">Classe</label><select id="rk-classe"><option value="">Todos</option></select></div>
+                                        <div class="input-group"><label for="rk-tripulacao">Tripulação</label><select id="rk-tripulacao"><option value="">Todos</option></select></div>
+                                        <div class="input-group">
+                                            <label for="rk-akuma">Akuma no Mi</label>
+                                            <select id="rk-akuma">
+                                                <option value="">Tanto faz</option>
+                                                <option value="sim">Com Akuma no Mi</option>
+                                                <option value="nao">Sem Akuma no Mi</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group"><label for="rk-nome">Nome contém</label><input type="text" id="rk-nome" class="rk-campo" placeholder="Parte do nome..." autocomplete="off"></div>
+                                        <div class="input-group"><label for="rk-minimo">Pontuação mínima</label><input type="text" id="rk-minimo" class="rk-campo" placeholder="Ex.: 10.000" inputmode="numeric" autocomplete="off"></div>
+                                    </div>
+                                    <button type="button" id="rk-btn-limpar" class="rk-link">Limpar filtros</button>
+                                </details>
+
+                                <p id="rk-aviso-janela" class="rk-janela" style="display: none;"></p>
+                                <button type="button" id="rk-btn-puxar" class="btn-admin" style="margin-top: 0;">🏆 Puxar Ranking</button>
+                                <div id="rk-status" class="rk-status" style="display: none;" role="status" aria-live="polite"></div>
+
+                                <div id="rk-resultado" style="display: none; margin-top: 20px;">
+                                    <div id="rk-resumo" class="rk-resumo"></div>
+                                    <ol id="rk-lista" class="rk-lista"></ol>
+                                    <button type="button" id="rk-btn-copiar" class="btn-admin" style="margin-top: 15px;">📋 Copiar Ranking</button>
                                 </div>
                             </div>
                         </div>
@@ -577,5 +660,6 @@
 
     <script src="assets/js/akuma-fichas.js"></script>
     <script src="assets/js/script.js"></script>
+<script src="assets/js/ranking.js"></script>
 </body>
 </html>
