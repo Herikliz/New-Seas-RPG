@@ -5627,7 +5627,6 @@ window.donosDeAkuma = {
     "Mera Mera no Mi": "Calamitas Donquixote",
     "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mira Mira no Mi": "Bastian Locke",
-    "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mori Mori no Mi": "Bastarion",
     "Nagi Nagi no Mi": "Ask D. Question",
