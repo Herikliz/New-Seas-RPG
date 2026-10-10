@@ -5590,20 +5590,16 @@ window.donosDeAkuma = {
     "Baku Baku no Mi": "Rhaast",
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
-    "Chikyū Chikyū no Mi": "Ra's Al Ghul",
     "Chiyu Chiyu no Mi": "Bloqueada",
     "Deka Deka no Mi": "Valkaria Laufey",
     "Doa Doa no Mi": "Chester",
     "Fude Fude no Mi": "Thomeraux Gan",
     "Fuwa Fuwa no Mi": "Satoshi Fujiwara",
     "Gasu Gasu no Mi": "Pietro",
-    "Gasha Gasha no Mi": "Aze Gan",
     "Gocha Gocha no Mi": "Panela",
     "Gomu Gomu no Mi": "Edward T. Bennett",
-    "Goro Goro no Mi": "Kael Murio",
     "Gura Gura no Mi": "Sakazuki Itadori",
     "Hana Hana no Mi": "Bloqueada",
-    "Hebi Hebi no Mi, Modelo: Anaconda": "Máng Shé",
     "Hebi Hebi no Mi, Modelo: Kaijū [Original do RPG]": "Raidjinn Le Laufey",
     "Hebi Hebi no Mi, Modelo: Yamata no Orochi": "Enk Edwards",
     "Hemo Hemo no Mi": "Sakazuki Choso",
@@ -5618,20 +5614,19 @@ window.donosDeAkuma = {
     "Inu Inu no Mi, Modelo: Ōkuchi no Makami": "Yuu D'Couteau",
     "Ito Ito no Mi": "Thaddeus Vanderwood",
     "Kage Kage no Mi": "Noctis",
-    "Kaze Kaze no Mi": "Starrk Beckman",
+    "Kaze Kaze no Mi": "Yuka Makoto",
     "Kobu Kobu no Mi": "???",
     "Kumo Kumo no Mi": "Caelus",
-    "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli": "Marie Cardona",
     "Magu Magu no Mi": "Cheung Po Tsai",
     "Maki Maki no Mi": "Han",
     "Memo Memo no Mi": "Harvey Dent",
     "Mera Mera no Mi": "Calamitas Donquixote",
     "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mira Mira no Mi": "Bastian Locke",
+    "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mori Mori no Mi": "Bastarion",
     "Nagi Nagi no Mi": "Ask D. Question",
-    "Neko Neko no Mi, Modelo: Leão [Original do RPG]": "Aveline Jackman",
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
     "Nomi Nomi no Mi": "Goetthe Al'mann",
     "Ope Ope no Mi": "Morgana Du'lor",
@@ -5649,14 +5644,13 @@ window.donosDeAkuma = {
     "Supa Supa no Mi": "Ari",
     "Susu Susu no Mi": "Iori",
     "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Tori Tori no Mi, Modelo: Falcão": "Bayek D. Nefertari",
     "Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]": "Genma Gan",
     "Tori Tori no Mi, Modelo: Pássaro de Gelo [Original do RPG]": "Figarland Damir",
     "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "Thoriel",
     "Uma Uma no Mi": "Mǎ",
     "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
     "Uta Uta no Mi": "???",
-    "Wapu Wapu no Mi": "Alucard Augur",
+    "Wapu Wapu no Mi": "Alguém da tripulação do Haille, mas ele ainda não disse quem",
     "Yami Yami no Mi": "Andrial D. Oran",
     "Yomi Yomi no Mi": "La Muerte",
     "Zushi Zushi no Mi": "Sorum"
@@ -6717,7 +6711,7 @@ function initProcuradosCopy() {
 
         function attachIconIfNeeded(wrapper) {
             let wText = wrapper.textContent.trim();
-            if (wText !== '' && wText !== 'OC' && wText !== 'IA' && wText !== 'Aparência Desconhecida') {
+            if (wText !== '' && wText !== 'OC' && wText !== 'IA' && wText !== 'Aparência Desconhecida' && wText !== '???') {
                 const icon = document.createElement('span');
                 icon.className = 'bounty-copy-icon';
                 icon.innerHTML = '📋';
@@ -7849,27 +7843,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @font-face { font-family: 'Quantico'; src: local('Arial'); unicode-range: U+01CE, U+030C, U+02C7; }
-        @font-face { font-family: 'Comfortaa'; src: local('Arial'); unicode-range: U+01CE, U+030C, U+02C7; }
-    `;
-    document.head.appendChild(style);
-
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    const nodesToReplace = [];
-    let node;
-    
-    while (node = walker.nextNode()) {
-        if (/[ǎ\u030C\u02C7]/.test(node.nodeValue)) {
-            nodesToReplace.push(node);
-        }
+// Correção do caractere ǎ: a fonte Quantico não tem esse caractere, então só ele é
+// desenhado em Arial. NÃO declarar @font-face de 'Quantico'/'Comfortaa' aqui: isso fazia todo
+// o texto em peso normal perder a fonte Quantico (só o peso 700 é carregado do Google Fonts).
+function corrigirCaracterCaron(raiz) {
+    const IGNORAR = /^(SCRIPT|STYLE|OPTION|TEXTAREA|TITLE)$/;
+    const walker = document.createTreeWalker(raiz || document.body, NodeFilter.SHOW_TEXT, null, false);
+    const nos = [];
+    let no;
+    while ((no = walker.nextNode())) {
+        const pai = no.parentNode;
+        if (!pai || IGNORAR.test(pai.nodeName)) continue;
+        if (pai.classList && pai.classList.contains('caron-fix')) continue;
+        if (/[\u01CE\u030C\u02C7]/.test(no.nodeValue)) nos.push(no);
     }
-    
-    nodesToReplace.forEach(textNode => {
-        const span = document.createElement("span");
-        span.innerHTML = textNode.nodeValue.replace(/a?[\u030C\u02C7]|ǎ/g, '<span style="font-family: Arial, Helvetica, sans-serif !important; display: inline-block;">ǎ</span>');
-        textNode.parentNode.replaceChild(span, textNode);
+    nos.forEach((textNode) => {
+        const frag = document.createDocumentFragment();
+        // junta "a" + caron combinado (a + U+030C) ou o ǎ pronto num só caractere
+        const partes = textNode.nodeValue.split(/(a?[\u030C\u02C7]|\u01CE)/);
+        partes.forEach((parte, idx) => {
+            if (idx % 2 === 1) {
+                const span = document.createElement('span');
+                span.className = 'caron-fix';
+                span.style.cssText = 'font-family: Arial, Helvetica, sans-serif !important; display: inline-block;';
+                span.textContent = '\u01CE';
+                frag.appendChild(span);
+            } else if (parte) {
+                frag.appendChild(document.createTextNode(parte));
+            }
+        });
+        textNode.parentNode.replaceChild(frag, textNode);
     });
-});
+}
+document.addEventListener("DOMContentLoaded", () => corrigirCaracterCaron());
