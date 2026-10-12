@@ -3036,7 +3036,47 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Supa Supa no Mi": ``,
+    "Supa Supa no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Supa Supa no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta permite ao usuário transformar qualquer parte do seu corpo em lâminas de aço afiadas.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
+
+: ᓩ Dano Adicional: (Controle% da Potência)+50%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+50%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Transforma a pele em aço puro, concedendo uma defesa formidável contra a grande maioria dos golpes físicos comuns;
+> : ᓩ Permite criar lâminas a partir de braços, pernas ou dedos, transformando o corpo inteiro em uma arma letal capaz de fatiar rochas e prédios;
+> : ᓩ Torna o usuário virtualmente imune a cortes de espadas tradicionais ou armas convencionais.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ A defesa extra torna-se inútil contra espadachins de alto nível que dominaram a técnica de cortar aço;
+> : ᓩ Não oferece proteção contra golpes de impacto interno ou ataques elementais (como calor e eletricidade) que ignoram a resistência da superfície;
+> : ᓩ Ataques de calor são mais efetivos porque o aço é um condutor térmico;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Susu Susu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
