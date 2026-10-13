@@ -2928,7 +2928,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
 > : ᓩ O corpo do usuário adquire uma textura perfeitamente lisa e escorregadia, eliminando quase toda a resistência tátil com objetos e superfícies;
-> : ᓩ Graças a essa superfície, a grande maioria dos ataques físicos direto,  com exceção de disparos de fogo e cortes especializados,  tende a escorregar inofensivamente pela pele, anulando ou minimizando drasticamente o impacto recebido;
+> : ᓩ Graças a essa superfície, a grande maioria dos ataques físicos direto, com exceção de disparos de fogo e cortes especializados, tende a escorregar inofensivamente pela pele, anulando ou minimizando drasticamente o impacto recebido;
 > : ᓩ A ausência de atrito permite ao portador patinar em alta velocidade sobre variados tipos de terreno. É possível deslizar facilmente pelo solo, paredes inclinadas, gelo e até mesmo sobre lâminas d'água rasas;
 > : ᓩ Essa locomoção atípica amplia consideravelmente a mobilidade do usuário, garantindo uma aceleração superior, esquivas rápidas e a capacidade de realizar mudanças de direção de forma muito mais abrupta;
 > : ᓩ Técnicas clássicas de contenção, como agarrões e chaves articulares, perdem totalmente a eficácia. O corpo do portador escorrega facilmente das mãos e braços de qualquer oponente comum;
@@ -4986,7 +4986,7 @@ window.precosDeAkuma = [
 window.donosDeAkuma = {
     "Aro Aro no Mi": "???",
     "Baku Baku no Mi": "Rhaast",
-    "Bane Bane no Mi": "???",
+    "Bane Bane no Mi": "???", // Ling Yao
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
     "Chikyū Chikyū no Mi": "Ra's Al Ghul",
@@ -5029,7 +5029,7 @@ window.donosDeAkuma = {
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mori Mori no Mi": "Bastarion",
-    "Mosa Mosa no Mi": "???",              // Narração do Korite
+    "Mosa Mosa no Mi": "???", // Narração do Korite
     "Nagi Nagi no Mi": "Ask D. Question",
     "Neko Neko no Mi, Modelo: Leão": "Aveline Jackman",
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
