@@ -5044,7 +5044,6 @@ window.donosDeAkuma = {
     "Ryū Ryū no Mi, Modelo: Pteranodonte": "Issei Sagawa",
     "Ryū Ryū no Mi, Modelo: Tiranossauro Rex [Original do RPG]": "Atō",
     "Soru Soru no Mi": "Kozuki Ryōshū",
-    "Suji Suji no Mi": "???",              // Narração do Korite
     "Suke Suke no Mi": "Kamish",
     "Suna Suna no Mi": "BladeHawk",
     "Supa Supa no Mi": "Ari",
