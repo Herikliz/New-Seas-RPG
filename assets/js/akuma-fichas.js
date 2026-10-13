@@ -2969,8 +2969,8 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
 
-: ᓩ Porcentagem de Resistência: 80%
-: ᓩ Dano Adicional: (Controle% da Potência)+85%
+: ᓩ Dano Adicional: (Controle% da Potência)+50%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+50%
 
 *————————————————————————*
 
@@ -5029,6 +5029,7 @@ window.donosDeAkuma = {
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mori Mori no Mi": "Bastarion",
+    "Mosa Mosa no Mi": "???",              // Narração do Korite
     "Nagi Nagi no Mi": "Ask D. Question",
     "Neko Neko no Mi, Modelo: Leão": "Aveline Jackman",
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
@@ -5043,12 +5044,14 @@ window.donosDeAkuma = {
     "Ryū Ryū no Mi, Modelo: Pteranodonte": "Issei Sagawa",
     "Ryū Ryū no Mi, Modelo: Tiranossauro Rex [Original do RPG]": "Atō",
     "Soru Soru no Mi": "Kozuki Ryōshū",
+    "Suji Suji no Mi": "???",              // Narração do Korite
     "Suke Suke no Mi": "Kamish",
     "Suna Suna no Mi": "BladeHawk",
     "Supa Supa no Mi": "Ari",
     "Susu Susu no Mi": "Iori",
     "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Tori Tori no Mi, Modelo: Falcão": "Bayek D. Nefertari",
+    "Tori Tori no Mi, Modelo: Nue": "???", // Narração do Korite
     "Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]": "Genma Gan",
     "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "Thoriel",
     "Uma Uma no Mi": "Mǎ",
