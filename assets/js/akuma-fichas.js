@@ -4984,9 +4984,9 @@ window.precosDeAkuma = [
 // Fruta que não estiver na lista abaixo é considerada LIVRE.
 // =============================================================================
 window.donosDeAkuma = {
-    "Aro Aro no Mi": "???",
+    "Aro Aro no Mi": "???", // Nerobasta (Quincas)
     "Baku Baku no Mi": "Rhaast",
-    "Bane Bane no Mi": "???", // Ling Yao
+    "Bane Bane no Mi": "???", // Ling Yao (Leandro Moraes)
     "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
     "Buku Buku no Mi": "Patchouli Quazar",
     "Chikyū Chikyū no Mi": "Ra's Al Ghul",

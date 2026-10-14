@@ -5705,7 +5705,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (inputCartazNome) inputCartazNome.addEventListener('input', drawCartaz);
             if (inputCartazRecompensa) {
                 inputCartazRecompensa.addEventListener('input', (e) => {
-                    formatarNumeroSorteio(e);
+                    // Aceita só números naturais e coloca os pontos (591039213 -> 591.039.213)
+                    const digitos = e.target.value.replace(/\D/g, '').replace(/^0+(?=\d)/, '');
+                    e.target.value = digitos.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
                     drawCartaz();
                 });
             }
