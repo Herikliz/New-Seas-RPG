@@ -38,6 +38,7 @@
                                 <select id="select-coisas-guardadas" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease; margin-bottom: 20px;">
                                     <option value="akuma-fichas">Akuma no Mi</option>
                                     <option value="ranking">Ranking de Personagens</option>
+                                    <option value="herikliz">Herikliz</option>
                                 </select>
                             </div>
                             
@@ -133,6 +134,31 @@
                                     <div id="rk-resumo" class="rk-resumo"></div>
                                     <ol id="rk-lista" class="rk-lista"></ol>
                                     <button type="button" id="rk-btn-copiar" class="btn-admin" style="margin-top: 15px;">📋 Copiar Ranking</button>
+                                </div>
+                            </div>
+
+                            <div id="container-coisas-guardadas-herikliz" class="category-section-coisas-guardadas" style="display: none; text-align: left;">
+                                <h3 class="hk-nome">Herikliz</h3>
+                                <p id="hk-trava" class="rk-status rk-aviso" style="display: block;">🔒 Esta área está bloqueada.</p>
+                                <div id="hk-form" style="display: none;">
+                                    <p class="rk-nota" style="margin: 0 0 15px 0;">Localiza um texto exato em um campo de TODAS as fichas salvas e troca por outro. Primeiro clique em "Localizar" (só mostra, não grava); depois, "Substituir".</p>
+                                    <div class="input-group">
+                                        <label for="hk-campo">Campo</label>
+                                        <input type="text" id="hk-campo" class="rk-campo" placeholder="Ex: alcunhaAtiva" autocomplete="off" spellcheck="false">
+                                        <small class="rk-nota">Nome do campo do personagem (ex.: alcunhaAtiva, raca). Para campos mais fundos use ponto e [] para listas (ex.: info.alcunhasList[].buffs[].stat).</small>
+                                    </div>
+                                    <div class="rk-grid">
+                                        <div class="input-group"><label for="hk-localizar">Localizar</label><input type="text" id="hk-localizar" class="rk-campo" placeholder="Ex: Punho Cavaleiro" autocomplete="off" spellcheck="false"></div>
+                                        <div class="input-group"><label for="hk-substituir">Substituir</label><input type="text" id="hk-substituir" class="rk-campo" placeholder="Ex: Perna Cavaleira" autocomplete="off" spellcheck="false"></div>
+                                    </div>
+                                    <label style="display: flex; align-items: center; gap: 8px; margin: 0 0 15px 0; font-size: 13px; cursor: pointer;"><input type="checkbox" id="hk-especiais" checked style="width: auto; height: auto; padding: 0;"> Incluir também as fichas NPCS e NPCI</label>
+                                    <button type="button" id="hk-btn-localizar" class="btn-admin" style="margin-top: 0;">🔍 Localizar</button>
+                                    <button type="button" id="hk-btn-substituir" class="btn-admin" style="margin-top: 10px;" disabled>✏️ Substituir em todas as fichas</button>
+                                    <div id="hk-status" class="rk-status" style="display: none;" role="status" aria-live="polite"></div>
+                                    <div id="hk-resultado" style="display: none; margin-top: 20px;">
+                                        <div id="hk-resumo" class="rk-resumo"></div>
+                                        <ol id="hk-lista" class="rk-lista"></ol>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -661,5 +687,6 @@
     <script src="assets/js/akuma-fichas.js"></script>
     <script src="assets/js/script.js"></script>
 <script src="assets/js/ranking.js"></script>
+<script src="assets/js/herikliz.js"></script>
 </body>
 </html>

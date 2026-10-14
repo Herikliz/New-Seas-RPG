@@ -919,3 +919,8 @@ body.dark-mode .calc-floating input[readonly] {
     .rk-centro { grid-area: centro; }
     .rk-valor { grid-area: valor; text-align: left; }
 }
+
+/* ===== Herikliz (Coisas Guardadas) ===== */
+.hk-nome { margin: 0 0 14px 0; text-align: center; font-family: 'Quantico', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: 4px; background: linear-gradient(90deg, #ff3d6e, #ffb347, #f9f871, #4cd9a0, #4aa8ff, #b06bff, #ff3d6e); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: hk-cor 6s linear infinite; }
+@keyframes hk-cor { to { background-position: 200% 0; } }
+@media (prefers-reduced-motion: reduce) { .hk-nome { animation: none; } }
