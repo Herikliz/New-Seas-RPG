@@ -2154,7 +2154,49 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Mosa Mosa no Mi": ``,
+    "Mosa Mosa no Mi": `*————————————————————————*
+Ficha de Akuma no Mi
+🍑RPG - New Seas🍑
+*————————————————————————*
+
+: ᐕ 𝙽𝚘𝚖𝚎:
+> : ᓩ Mosa Mosa no Mi
+
+: ᐕ 𝚃𝚒𝚙𝚘:
+> : ᓩ Paramecia
+
+: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
+> : ᓩ Essa Fruta concede ao usuário a habilidade de acelerar o crescimento das plantas e controlá-las conforme seu desejo.
+
+*—————————————————————————*
+
+> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
+> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
+> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
+> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
+> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
+
+: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
+: ᓩ Dano Adicional: (Controle% da Potência)+35%
+: ᓩ Porcentagem de Resistência: (Controle% da Potência)+35%
+
+*————————————————————————*
+
+: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Permite acelerar drasticamente a taxa de crescimento de plantas no ambiente;
+> : ᓩ Concede o controle total sobre a vida vegetal ao redor, permitindo que as plantas sejam usadas para prender e emaranhar inimigos;
+> : ᓩ Oferece capacidades defensivas, utilizando a flora controlada para proteger o usuário contra ataques;
+> : ᓩ Pode ser ampliada através de movimentos específicos (danças) para manipular e acelerar o crescimento de vastas quantidades de plantas simultaneamente em ataques em larga escala.
+
+: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
+> : ᓩ Depende estritamente de fatores ambientais, exigindo que o usuário esteja em um local com vida vegetal pré-existente (como grama) para usar seus poderes;
+> : ᓩ A habilidade é limitada apenas à manipulação da flora ao redor, não sendo possível gerar plantas a partir do próprio corpo ou em superfícies sem contato com vida vegetal;
+> : ᓩ Fraquezas padrão de Akuma no Mi.
+
+*————————————————————————*
+
+: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
+> : ᓩ 4 treinos para dominar cada técnica.`,
     "Muchi Muchi no Mi": ``,
     "Mushi Mushi no Mi, Modelo: Besouro-Rinoceronte": ``,
     "Mushi Mushi no Mi, Modelo: Mosca-Varejeira-Verde": `*————————————————————————*
