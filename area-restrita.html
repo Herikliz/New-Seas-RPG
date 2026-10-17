@@ -275,6 +275,7 @@
                                     <option value="cacada">Caçadas</option>
                                     <option value="dominacao">Dominações</option>
                                     <option value="extra-narrada">Extra-Narrada</option>
+                                    <option value="missao-narrada">Missão Narrada</option>
                                 </select>
                             </div>
 
@@ -510,6 +511,64 @@
                                     </div>
 
                                     <button id="btn-copiar-resultado" class="btn-admin">Copiar Resultado</button>
+                                </div>
+                            </div>
+
+                            <div id="container-recompensas-missao-narrada" class="category-section-recompensas" style="display: none;">
+                                <div id="admin-generator-missao-narrada">
+                                    <div class="input-group">
+                                        <label for="mn-org">Organização</label>
+                                        <select id="mn-org" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                            <option value="governo">Governo Mundial</option>
+                                            <option value="marinha">Marinha</option>
+                                            <option value="vpr">Vanguarda Popular Revolucionária</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="mn-nivel" id="mn-nivel-label">Nível da Missão</label>
+                                        <select id="mn-nivel" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;"></select>
+                                    </div>
+
+                                    <div class="admin-checkbox-group" style="margin-bottom: 15px;">
+                                        <label><input type="checkbox" id="mn-anormalidade" style="width: auto; height: auto; padding: 0;"> Missão de Anormalidade?</label>
+                                    </div>
+
+                                    <div class="input-group" id="mn-ego-box" style="display: none;">
+                                        <label for="mn-ego">Nível dos Equipamentos E.G.O. desbloqueados</label>
+                                        <select id="mn-ego" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;"></select>
+                                    </div>
+
+                                    <div class="input-group" style="margin-top: 15px;">
+                                        <label>Jogadores</label>
+                                        <div id="mn-jogadores" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                                            <div class="mn-jogador-row" style="border: 1px dashed var(--sidebar-border); padding: 15px; border-radius: var(--border-radius);">
+                                                <input type="text" class="mn-nome-jogador" placeholder="Nome do Personagem" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; margin-bottom: 10px;">
+                                                <div class="admin-checkbox-group" style="margin-bottom: 0;">
+                                                    <label><input type="checkbox" class="mn-haki" style="width: auto; height: auto; padding: 0;"> Tem Haki?</label>
+                                                    <label><input type="checkbox" class="mn-akuma" style="width: auto; height: auto; padding: 0;"> Tem Fruta?</label>
+                                                    <label><input type="checkbox" class="mn-40k" style="width: auto; height: auto; padding: 0;"> Tem 40.000 pontos ou mais?</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 10px;">
+                                            <button id="mn-btn-add-jogador" class="btn-admin" style="margin-top: 0; padding: 8px;">➕ Adicionar</button>
+                                            <button id="mn-btn-rem-jogador" class="btn-clear-admin" style="margin-top: 0; padding: 8px;">➖ Remover</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="mn-num-narradores">Número de Narradores</label>
+                                        <input type="number" id="mn-num-narradores" value="1" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;">
+                                    </div>
+
+                                    <div id="mn-nomes-narradores"></div>
+
+                                    <div class="output-container">
+                                        <pre id="mn-resultado" class="active"></pre>
+                                    </div>
+
+                                    <button id="mn-copiar" class="btn-admin">Copiar Resultado</button>
                                 </div>
                             </div>
                         </div>

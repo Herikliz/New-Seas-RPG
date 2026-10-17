@@ -7225,3 +7225,238 @@ function corrigirCaracterCaron(raiz) {
     });
 }
 document.addEventListener("DOMContentLoaded", () => corrigirCaracterCaron());
+
+/* ===== RECOMPENSAS: MISSÃO NARRADA ===== */
+document.addEventListener('DOMContentLoaded', () => {
+    const box = document.getElementById('admin-generator-missao-narrada');
+    if (!box) return;
+
+    const fmt = (n) => n.toLocaleString('pt-BR');
+
+    // Recompensas por rank (termos da Vanguarda Popular Revolucionária).
+    // an = o que a Anormalidade acrescenta (pts, merito, ber) e os níveis de E.G.O. possíveis.
+    const RANKS = {
+        E:   { pts: 500,  merito: 1, ber: 100000000, an: { pts: 300, merito: 1, ber: 50000000,  ego: ['ZAYIN'] } },
+        D:   { pts: 1000, merito: 1, ber: 150000000, an: { pts: 250, merito: 1, ber: 50000000,  ego: ['ZAYIN', 'TETH'] } },
+        C:   { pts: 1500, merito: 2, ber: 200000000, an: { pts: 500, merito: 1, ber: 50000000,  ego: ['TETH'] } },
+        B:   { pts: 2000, merito: 2, ber: 250000000, an: { pts: 500, merito: 2, ber: 100000000, ego: ['TETH', 'WAW'] } },
+        A:   { pts: 2500, merito: 3, ber: 300000000, an: { pts: 500, merito: 2, ber: 100000000, ego: ['WAW'] } },
+        S:   { pts: 3000, merito: 3, ber: 300000000, an: { pts: 250, merito: 2, ber: 50000000,  ego: ['WAW'] } },
+        SS:  { pts: 4000, merito: 3, ber: 300000000, an: { pts: 250, merito: 2, ber: 50000000,  ego: ['WAW'] } },
+        SSS: { pts: 4500, merito: 3, ber: 300000000, an: { pts: 250, merito: 2, ber: 50000000,  ego: ['WAW', 'ALEPH'] } },
+        L:   { pts: 5000, merito: 5, ber: 350000000, an: { pts: 0,   merito: 0, ber: 0,            ego: ['WAW', 'ALEPH'] },
+               permissao: 'Permissão para interagir com todos os equipamentos E.G.O. ALEPH ou menor.' }
+    };
+
+    // Nome de cada nível em cada organização (equivalência pela pontuação recomendada).
+    // Cada lista tem 9 itens, na ordem: E, D, C, B, A, S, SS, SSS, L.
+    const ORGS = {
+        governo: {
+            nome: 'Governo Mundial', rotulo: 'AIGIS',
+            niveis: ['AIGIS 1 ou 2', 'AIGIS 3, 4 ou 5', 'AIGIS 6', 'AIGIS 7', 'AIGIS 8 (menor)', 'AIGIS 8 (maior)', 'AIGIS 9 (menor)', 'AIGIS 9 (maior)', 'AIGIS 0']
+        },
+        marinha: {
+            nome: 'Marinha', rotulo: 'Classe',
+            niveis: ['3ª Classe (menor)', '3ª Classe (maior)', '2ª Classe (menor)', '2ª Classe (maior)', '1ª Classe (menor)', '1ª Classe (maior)', 'Classe Especial (menor)', 'Classe Especial (maior)', 'Confidencial']
+        },
+        vpr: {
+            nome: 'VPR', rotulo: 'Rank',
+            niveis: ['RANK E', 'RANK D', 'RANK C', 'RANK B', 'RANK A', 'RANK S', 'RANK SS', 'RANK SSS', 'RANK L']
+        }
+    };
+    const ORDEM = ['E', 'D', 'C', 'B', 'A', 'S', 'SS', 'SSS', 'L'];
+
+    const selOrg = document.getElementById('mn-org');
+    const selNivel = document.getElementById('mn-nivel');
+    const lblNivel = document.getElementById('mn-nivel-label');
+    const chkAnom = document.getElementById('mn-anormalidade');
+    const egoBox = document.getElementById('mn-ego-box');
+    const selEgo = document.getElementById('mn-ego');
+    const contJog = document.getElementById('mn-jogadores');
+    const btnAdd = document.getElementById('mn-btn-add-jogador');
+    const btnRem = document.getElementById('mn-btn-rem-jogador');
+    const inpNarr = document.getElementById('mn-num-narradores');
+    const contNarr = document.getElementById('mn-nomes-narradores');
+    const pre = document.getElementById('mn-resultado');
+    const btnCopiar = document.getElementById('mn-copiar');
+
+    function montarNiveis() {
+        const org = ORGS[selOrg.value];
+        const idx = selNivel.selectedIndex >= 0 ? selNivel.selectedIndex : 0;
+        selNivel.innerHTML = '';
+        ORDEM.forEach((rk, i) => {
+            const o = document.createElement('option');
+            o.value = rk;
+            o.textContent = org.niveis[i];
+            selNivel.appendChild(o);
+        });
+        selNivel.selectedIndex = idx;
+        lblNivel.textContent = org.rotulo === 'Rank' ? 'Rank da Missão' : (org.rotulo === 'AIGIS' ? 'AIGIS da Missão' : 'Classe da Missão');
+    }
+
+    function montarEgo() {
+        const rank = RANKS[selNivel.value];
+        const anterior = selEgo.value;
+        if (!chkAnom.checked) { egoBox.style.display = 'none'; return; }
+        egoBox.style.display = 'block';
+        selEgo.innerHTML = '';
+        rank.an.ego.forEach((n) => {
+            const o = document.createElement('option');
+            o.value = n; o.textContent = n;
+            selEgo.appendChild(o);
+        });
+        if (rank.an.ego.includes(anterior)) selEgo.value = anterior;
+    }
+
+    function montarNarradores() {
+        let qtd = parseInt(inpNarr.value, 10);
+        if (isNaN(qtd) || qtd < 1) qtd = 1;
+        const estilo = "width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif;";
+        if (qtd === 1) {
+            contNarr.innerHTML = '<div class="input-group"><label for="mn-nome-narrador-1">Nome do Narrador</label><input type="text" id="mn-nome-narrador-1" class="mn-nome-narrador" placeholder="Nome do Narrador"></div>';
+        } else {
+            let h = '';
+            for (let i = 1; i <= qtd; i++) {
+                h += '<div style="display: flex; gap: 10px; margin-bottom: 15px;">' +
+                    '<div class="input-group" style="flex: 2; margin-bottom: 0;"><label for="mn-nome-narrador-' + i + '">Nome do Narrador ' + i + '</label><input type="text" id="mn-nome-narrador-' + i + '" class="mn-nome-narrador" placeholder="Nome do Narrador"></div>' +
+                    '<div class="input-group" style="flex: 1; margin-bottom: 0;"><label for="mn-qtd-narracoes-' + i + '">Narrações Feitas</label><input type="number" id="mn-qtd-narracoes-' + i + '" class="mn-qtd-narracoes" value="1" min="1" style="' + estilo + '"></div>' +
+                    '</div>';
+            }
+            contNarr.innerHTML = h;
+        }
+        contNarr.querySelectorAll('input').forEach((el) => el.addEventListener('input', gerar));
+        gerar();
+    }
+
+    function ligarJogador(row) {
+        row.querySelectorAll('input').forEach((el) => {
+            el.addEventListener('input', gerar);
+            el.addEventListener('change', gerar);
+        });
+    }
+
+    function gerar() {
+        const orgKey = selOrg.value;
+        const org = ORGS[orgKey];
+        const rank = RANKS[selNivel.value];
+        const anom = chkAnom.checked;
+
+        const pts = rank.pts + (anom ? rank.an.pts : 0);
+        const merito = rank.merito + (anom ? rank.an.merito : 0);
+        const ber = rank.ber + (anom ? rank.an.ber : 0);
+        const meritoTxt = merito + (merito === 1 ? ' mérito' : ' méritos');
+
+        const jogadores = [];
+        contJog.querySelectorAll('.mn-jogador-row').forEach((row) => {
+            let nome = row.querySelector('.mn-nome-jogador').value.trim();
+            if (nome === '') nome = 'Nome do Personagem';
+            jogadores.push({
+                nome,
+                haki: row.querySelector('.mn-haki').checked,
+                akuma: row.querySelector('.mn-akuma').checked,
+                is40k: row.querySelector('.mn-40k').checked
+            });
+        });
+        if (jogadores.length === 0) jogadores.push({ nome: 'Nome do Personagem', haki: false, akuma: false, is40k: false });
+
+        const extra = Math.floor(pts / 2);
+        let maiorPts = 0;
+        let texto = '```Recompensas pela Missão [' + org.nome + ']:\n';
+        const blocos = [];
+
+        jogadores.forEach((j) => {
+            let total = pts;
+            if (j.haki) total += extra;
+            if (j.akuma) total += extra;
+            if (total > maiorPts) maiorPts = total;
+
+            let b = 'Recompensas do Jogador (' + j.nome + '):\n';
+            if (j.is40k) {
+                b += 'Pontos Livres: ' + fmt(total) + '\n';
+            } else {
+                b += 'Pontos de Atributo: ' + fmt(pts) + '\n';
+                if (j.haki) b += 'Pontos de Haki: ' + fmt(extra) + '\n';
+                if (j.akuma) b += 'Pontos de Akuma no Mi: ' + fmt(extra) + '\n';
+            }
+            b += 'Berries: ฿' + fmt(ber) + '\n';
+            b += 'Méritos: ' + merito;
+            if (rank.permissao) b += '\n' + rank.permissao + ' Fale com O Eixo para mais informações.';
+            if (anom) b += '\nNovos Equipamentos E.G.O. ' + (selEgo.value || rank.an.ego[0]) + ' desbloqueados. Fale com O Eixo para mais informações.';
+            blocos.push(b);
+        });
+        texto += blocos.join('\n\n');
+
+        let qtd = parseInt(inpNarr.value, 10);
+        if (isNaN(qtd) || qtd < 1) qtd = 1;
+        const narradores = [];
+        let totalNarr = 0;
+        for (let i = 1; i <= qtd; i++) {
+            const elNome = document.getElementById('mn-nome-narrador-' + i);
+            let nome = elNome ? elNome.value.trim() : '';
+            if (nome === '') nome = qtd === 1 ? 'Narrador' : 'Narrador ' + i;
+            const elQtd = document.getElementById('mn-qtd-narracoes-' + i);
+            let n = elQtd ? parseInt(elQtd.value, 10) : 1;
+            if (isNaN(n) || n < 1) n = 1;
+            totalNarr += n;
+            narradores.push({ nome, n });
+        }
+
+        narradores.forEach((nr) => {
+            const pc = nr.n / totalNarr;
+            const p1 = Math.floor((maiorPts / 2) * pc);
+            const b1 = Math.floor((ber / 2) * pc);
+            const p2 = Math.floor(maiorPts * pc);
+            const b3 = Math.floor(ber * pc);
+            texto += '\n\nRecompensas da Narração (' + nr.nome + '):\nPode escolher entre\n';
+            texto += '- ' + fmt(p1) + ' pontos livres e ฿' + fmt(b1) + '\n';
+            texto += '- ' + fmt(p2) + ' pontos livres\n';
+            texto += '- ฿' + fmt(b3);
+        });
+
+        texto += '```';
+        pre.textContent = texto;
+    }
+
+    selOrg.addEventListener('change', () => { montarNiveis(); montarEgo(); gerar(); });
+    selNivel.addEventListener('change', () => { montarEgo(); gerar(); });
+    chkAnom.addEventListener('change', () => { montarEgo(); gerar(); });
+    selEgo.addEventListener('change', gerar);
+    inpNarr.addEventListener('input', montarNarradores);
+
+    const primeira = contJog.querySelector('.mn-jogador-row');
+    const modelo = primeira.cloneNode(true);
+    ligarJogador(primeira);
+    btnAdd.addEventListener('click', () => {
+        const nova = modelo.cloneNode(true);
+        nova.querySelector('.mn-nome-jogador').value = '';
+        nova.querySelectorAll('input[type="checkbox"]').forEach((c) => c.checked = false);
+        contJog.appendChild(nova);
+        ligarJogador(nova);
+        gerar();
+    });
+    btnRem.addEventListener('click', () => {
+        const linhas = contJog.querySelectorAll('.mn-jogador-row');
+        if (linhas.length > 1) { linhas[linhas.length - 1].remove(); gerar(); }
+    });
+
+    btnCopiar.addEventListener('click', () => {
+        if (!pre.textContent || btnCopiar.dataset.copying) return;
+        btnCopiar.dataset.copying = 'true';
+        window.copiarTextoUniversal(pre.textContent).then(() => {
+            const t = btnCopiar.textContent, bg = btnCopiar.style.backgroundColor, cor = btnCopiar.style.color;
+            btnCopiar.textContent = 'Texto Copiado!';
+            btnCopiar.style.backgroundColor = '#4caf50';
+            btnCopiar.style.color = '#fff';
+            setTimeout(() => {
+                btnCopiar.textContent = t;
+                btnCopiar.style.backgroundColor = bg;
+                btnCopiar.style.color = cor;
+                delete btnCopiar.dataset.copying;
+            }, 1000);
+        });
+    });
+
+    montarNiveis();
+    montarEgo();
+    montarNarradores();
+});
