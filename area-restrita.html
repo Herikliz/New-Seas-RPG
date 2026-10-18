@@ -622,9 +622,10 @@
                                     </div>
                                     
                                     <div class="input-group" style="text-align: left;">
-                                        <label for="cartaz-upload">Imagem de Fundo (Envie, cole com Ctrl+V ou use o botão. Mova tocando no cartaz)</label>
+                                        <label>Imagem de Fundo (Envie, cole com Ctrl+V ou use o botão. Mova tocando no cartaz)</label>
                                         <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch;">
-                                            <input type="file" id="cartaz-upload" accept="image/*" style="padding: 8px; flex: 1; min-width: 140px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); cursor: pointer;">
+                                            <input type="file" id="cartaz-upload" accept="image/*" style="display: none;">
+                                            <button type="button" id="btn-escolher-imagem" class="btn-admin" style="margin: 0; flex: 1; min-width: 140px; padding: 10px; white-space: nowrap;" onclick="document.getElementById('cartaz-upload').click()">📁 Escolher Imagem</button>
                                             <button id="btn-colar-imagem" class="btn-admin" style="margin: 0; flex: 1; min-width: 140px; padding: 10px; white-space: nowrap;">📋 Colar Imagem</button>
                                         </div>
                                     </div>
@@ -743,6 +744,7 @@
         </div>
     </main>
 
+    <script src="assets/js/akuma-dados.js"></script>
     <script src="assets/js/akuma-fichas.js"></script>
     <script src="assets/js/script.js"></script>
 <script src="assets/js/ranking.js"></script>

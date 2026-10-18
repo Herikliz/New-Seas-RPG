@@ -570,43 +570,7 @@ Ficha de Akuma no Mi
 > : ᓩ 6 treinos para dominar cada técnica.`,
     "Gabu Gabu no Mi": ``,
     "Gama Gama no Mi": ``,
-    "Gasha Gasha no Mi": `*————————————————————————*
-Ficha de Akuma no Mi
-🍑RPG - New Seas🍑
-*————————————————————————*
-
-: ᐕ 𝙽𝚘𝚖𝚎:
-> : ᓩ Gasha Gasha no Mi
-
-: ᐕ 𝚃𝚒𝚙𝚘:
-> : ᓩ Paramecia
-
-: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ Essa Fruta torna o usuário capaz de criar grandes estruturas mecânicas e embarcações, incluindo submarinos e trajes robóticos que aumentam suas proezas de combate e capacidades de transporte.
-
-*—————————————————————————*
-
-> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
-> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 5%
-
-*————————————————————————*
-
-: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
-> : ᓩ Permite desmontar, fundir e reconfigurar objetos inanimados, como metais e armamentos, para criar armaduras, veículos ou mechas complexos em instantes;
-> : ᓩ Oferece um poder ofensivo e defensivo colossal através da criação de exoesqueletos mecânicos gigantescos e altamente resistentes (cada item deve ter uma ficha própria, não sendo influenciada pela Potência da Fruta, por isso ela não o possui);
-> : ᓩ Garante extrema versatilidade em campos de batalha urbanos ou navais, transformando destroços e a própria artilharia inimiga em um arsenal pessoal contínuo.
-
-: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
-> : ᓩ Depende inteiramente da disponibilidade de materiais inanimados no ambiente, tornando a habilidade principal praticamente inútil em locais desprovidos de sucata, metal ou estruturas artificiais;
-> : ᓩ A criação de construtos colossais sacrifica a discrição e transforma o usuário em um alvo gigante, vulnerável a ataques coordenados de grande escala ou golpes com imenso poder destrutivo e Haki do Armamento Avançado;
-> : ᓩ A destruição de peças estruturais vitais do mecha pode desestabilizar a armadura inteira, forçando o usuário a buscar novos materiais no ambiente para se reconstruir;
-> : ᓩ Fraquezas padrão de Akuma no Mi.
-
-*————————————————————————*
-
-: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
-> : ᓩ 6 treinos para dominar cada técnica.`,
+    "Gasha Gasha no Mi": ``,
     "Gasu Gasu no Mi": `*————————————————————————*
 Ficha de Akuma no Mi
 🍑RPG - New Seas🍑
@@ -1509,7 +1473,6 @@ Ficha de Akuma no Mi
 : ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,5
 : ᓩ Dano Adicional: (Controle% da Potência)+85%
 : ᓩ Velocidade Adicional: (Controle% da Velocidade)+85%
-: ᓩ Porcentagem de Resistência: (Controle% da Potência)+0%
 
 *————————————————————————*
 
@@ -2154,49 +2117,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
 > : ᓩ 6 treinos para dominar cada técnica.`,
-    "Mosa Mosa no Mi": `*————————————————————————*
-Ficha de Akuma no Mi
-🍑RPG - New Seas🍑
-*————————————————————————*
-
-: ᐕ 𝙽𝚘𝚖𝚎:
-> : ᓩ Mosa Mosa no Mi
-
-: ᐕ 𝚃𝚒𝚙𝚘:
-> : ᓩ Paramecia
-
-: ᐕ 𝙳𝚎𝚜𝚌𝚛𝚒𝚌̧𝚊̃𝚘:
-> : ᓩ Essa Fruta concede ao usuário a habilidade de acelerar o crescimento das plantas e controlá-las conforme seu desejo.
-
-*—————————————————————————*
-
-> : ᐕ 𝙰𝚝𝚛𝚒𝚋𝚞𝚝𝚘𝚜: 500
-> : ᓩ 𝙰𝚕𝚌𝚊𝚗𝚌𝚎: 0
-> : ᓩ 𝙿𝚘𝚝𝚎̂𝚗𝚌𝚒𝚊: 0
-> : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
-> : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 1,67%
-
-: ᓩ Multiplicador de Alcance: Alcance ÷ 20 × 1,3
-: ᓩ Dano Adicional: (Controle% da Potência)+35%
-: ᓩ Porcentagem de Resistência: (Controle% da Potência)+35%
-
-*————————————————————————*
-
-: ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
-> : ᓩ Permite acelerar drasticamente a taxa de crescimento de plantas no ambiente;
-> : ᓩ Concede o controle total sobre a vida vegetal ao redor, permitindo que as plantas sejam usadas para prender e emaranhar inimigos;
-> : ᓩ Oferece capacidades defensivas, utilizando a flora controlada para proteger o usuário contra ataques;
-> : ᓩ Pode ser ampliada através de movimentos específicos (danças) para manipular e acelerar o crescimento de vastas quantidades de plantas simultaneamente em ataques em larga escala.
-
-: ᐕ 𝙳𝚎𝚜𝚟𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
-> : ᓩ Depende estritamente de fatores ambientais, exigindo que o usuário esteja em um local com vida vegetal pré-existente (como grama) para usar seus poderes;
-> : ᓩ A habilidade é limitada apenas à manipulação da flora ao redor, não sendo possível gerar plantas a partir do próprio corpo ou em superfícies sem contato com vida vegetal;
-> : ᓩ Fraquezas padrão de Akuma no Mi.
-
-*————————————————————————*
-
-: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:
-> : ᓩ 4 treinos para dominar cada técnica.`,
+    "Mosa Mosa no Mi": ``,
     "Muchi Muchi no Mi": ``,
     "Mushi Mushi no Mi, Modelo: Besouro-Rinoceronte": ``,
     "Mushi Mushi no Mi, Modelo: Mosca-Varejeira-Verde": `*————————————————————————*
@@ -2970,7 +2891,7 @@ Ficha de Akuma no Mi
 
 : ᐕ 𝚅𝚊𝚗𝚝𝚊𝚐𝚎𝚗𝚜:
 > : ᓩ O corpo do usuário adquire uma textura perfeitamente lisa e escorregadia, eliminando quase toda a resistência tátil com objetos e superfícies;
-> : ᓩ Graças a essa superfície, a grande maioria dos ataques físicos direto, com exceção de disparos de fogo e cortes especializados, tende a escorregar inofensivamente pela pele, anulando ou minimizando drasticamente o impacto recebido;
+> : ᓩ Graças a essa superfície, a grande maioria dos ataques físicos direto,  com exceção de disparos de fogo e cortes especializados,  tende a escorregar inofensivamente pela pele, anulando ou minimizando drasticamente o impacto recebido;
 > : ᓩ A ausência de atrito permite ao portador patinar em alta velocidade sobre variados tipos de terreno. É possível deslizar facilmente pelo solo, paredes inclinadas, gelo e até mesmo sobre lâminas d'água rasas;
 > : ᓩ Essa locomoção atípica amplia consideravelmente a mobilidade do usuário, garantindo uma aceleração superior, esquivas rápidas e a capacidade de realizar mudanças de direção de forma muito mais abrupta;
 > : ᓩ Técnicas clássicas de contenção, como agarrões e chaves articulares, perdem totalmente a eficácia. O corpo do portador escorrega facilmente das mãos e braços de qualquer oponente comum;
@@ -3011,8 +2932,8 @@ Ficha de Akuma no Mi
 > : ᓩ 𝙳𝚞𝚛𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍𝚎: 500
 > : ᓩ 𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: 2,50%
 
-: ᓩ Dano Adicional: (Controle% da Potência)+50%
-: ᓩ Porcentagem de Resistência: (Controle% da Potência)+50%
+: ᓩ Porcentagem de Resistência: 80%
+: ᓩ Dano Adicional: (Controle% da Potência)+85%
 
 *————————————————————————*
 
@@ -4407,6 +4328,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let palavraTreino = (strTreinos === "1") ? "treino" : "treinos";
             fichaAtualizada = fichaAtualizada.replace(': ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:\n> : ᓩ X treinos para dominar cada técnica.', `: ᐕ 𝚃𝚎́𝚌𝚗𝚒𝚌𝚊𝚜:\n> : ᓩ ${strTreinos} ${palavraTreino} para dominar cada técnica.`);
 
+            // Se todas as linhas extras (Alcance/Dano/Velocidade/Resistência) foram removidas, sobrava uma linha em branco a mais
+            fichaAtualizada = fichaAtualizada.replace(/(𝙲𝚘𝚗𝚝𝚛𝚘𝚕𝚎: [^\n]*%)\n{3,}/, '$1\n\n');
+
             displayFichaAkuma.textContent = fichaAtualizada;
 
             setTimeout(() => { isGenerating = false; }, 10);
@@ -4801,305 +4725,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-// =============================================================================
-// PREÇOS DAS AKUMA NO MI (em berries). Para mudar um preço ou incluir uma Fruta,
-// edite/adicione uma linha: {nome: "Nome (descrição)", valor: 100000000},
-// =============================================================================
-window.precosDeAkuma = [
-    {nome: "Ame Ame no Mi (Fruta do Melaço)", valor: 1200000000},
-    {nome: "Ami Ami no Mi (Fruta da Rede)", valor: 500000000},
-    {nome: "Aro Aro no Mi (Fruta da Flecha)", valor: 1400000000},
-    {nome: "Ato Ato no Mi (Fruta da Arte)", valor: 900000000},
-    {nome: "Awa Awa no Mi (Fruta do Sabão)", valor: 200000000},
-    {nome: "Baku Baku no Mi (Fruta da Mastigação)", valor: 400000000},
-    {nome: "Bane Bane no Mi (Fruta da Mola)", valor: 700000000},
-    {nome: "Bara Bara no Mi (Fruta dos Pedaços)", valor: 600000000},
-    {nome: "Bari Bari no Mi (Fruta da Barreira)", valor: 850000000},
-    {nome: "Bata Bata no Mi (Fruta da Manteiga)", valor: 350000000},
-    {nome: "Batto Batto no Mi, Modelo: Vampiro", valor: 3200000000},
-    {nome: "Batto Batto no Mi", valor: 500000000},
-    {nome: "Beri Beri no Mi (Fruta da Baga)", valor: 550000000},
-    {nome: "Beta Beta no Mi (Fruta do Muco Explosivo)", valor: 620000000},
-    {nome: "Bijo Bijo no Mi (Fruta da Fantasia)", valor: 850000000},
-    {nome: "Bisu Bisu no Mi (Fruta do Biscoito)", valor: 1000000000},
-    {nome: "Bomu Bomu no Mi (Fruta da Bomba)", valor: 600000000},
-    {nome: "Buki Buki no Mi (Fruta das Armas)", valor: 400000000},
-    {nome: "Buku Buku no Mi (Fruta dos Livros)", valor: 500000000},
-    {nome: "Chikyū Chikyū no Mi (Fruta da Terra)", valor: 1300000000},
-    {nome: "Chiyu Chiyu no Mi (Fruta da Cura)", valor: 900000000},
-    {nome: "Choki Choki no Mi (Fruta da Tesoura)", valor: 300000000},
-    {nome: "Deka Deka no Mi (Fruta da Gigantificação)", valor: 1300000000},
-    {nome: "Dero Dero no Mi (Fruta da Dissolução)", valor: 1300000000},
-    {nome: "Doa Doa no Mi (Fruta da Porta)", valor: 800000000},
-    {nome: "Doku Doku no Mi (Fruta do Veneno)", valor: 2800000000},
-    {nome: "Doru Doru no Mi (Fruta da Cera de Vela)", valor: 400000000},
-    {nome: "Fude Fude no Mi (Fruta da Tinta)", valor: 1200000000},
-    {nome: "Fuku Fuku no Mi (Fruta da Vestimenta)", valor: 100000000},
-    {nome: "Fuwa Fuwa no Mi (Fruta da Levitação)", valor: 1800000000},
-    {nome: "Gabu Gabu no Mi (Fruta da Bebida)", valor: 1100000000},
-    {nome: "Gama Gama no Mi", valor: 160000000},
-    {nome: "Gasha Gasha no Mi (Fruta da Construção)", valor: 1000000000},
-    {nome: "Gasu Gasu no Mi (Fruta do Gás)", valor: 3000000000},
-    {nome: "Gatsu Gatsu no Mi (Fruta dos Pregos)", valor: 1500000000},
-    {nome: "Genso Genso no Mi (Fruta da Ilusão)", valor: 550000000},
-    {nome: "Giro Giro no Mi (Fruta da Visão)", valor: 800000000},
-    {nome: "Gocha Gocha no Mi (Fruta da Fusão)", valor: 600000000},
-    {nome: "Goe Goe no Mi (Fruta da Voz)", valor: 950000000},
-    {nome: "Gomu Gomu no Mi (Fruta da Borracha)", valor: 650000000},
-    {nome: "Goro Goro no Mi (Fruta do Relâmpago)", valor: 2400000000},
-    {nome: "Goru Goru no Mi (Fruta do Ouro)", valor: 1800000000},
-    {nome: "Gura Gura no Mi (Fruta do Terremoto)", valor: 3800000000},
-    {nome: "Guru Guru no Mi (Fruta da Hélice)", valor: 100000000},
-    {nome: "Gutsu Gutsu no Mi (Fruta da Fundição)", valor: 950000000},
-    {nome: "Hana Hana no Mi (Fruta dos Membros)", valor: 700000000},
-    {nome: "Hebi Hebi no Mi, Modelo: Anaconda", valor: 500000000},
-    {nome: "Hebi Hebi no Mi, Modelo: Cobra-Real", valor: 500000000},
-    {nome: "Hebi Hebi no Mi, Modelo: Kaijū", valor: 3800000000},
-    {nome: "Hebi Hebi no Mi, Modelo: Yamata no Orochi", valor: 2200000000},
-    {nome: "Hemo Hemo no Mi (Fruta do Sangue)", valor: 850000000},
-    {nome: "Hie Hie no Mi (Fruta do Frio)", valor: 2900000000},
-    {nome: "Hira Hira no Mi (Fruta da Bandeira)", valor: 450000000},
-    {nome: "Hiso Hiso no Mi (Fruta da Conversa)", valor: 400000000},
-    {nome: "Hito Hito no Mi, Modelo: Daibutsu", valor: 2500000000},
-    {nome: "Hito Hito no Mi, Modelo: Estátua", valor: 2500000000},
-    {nome: "Hito Hito no Mi, Modelo: O Anfitrião", valor: 4134134134},
-    {nome: "Hito Hito no Mi, Modelo: Ōnyūdō", valor: 2200000000},
-    {nome: "Hito Hito no Mi", valor: 300000000},
-    {nome: "Hobi Hobi no Mi (Fruta do Brinquedo)", valor: 1100000000},
-    {nome: "Hone Hone no Mi (Fruta do Osso)", valor: 700000000},
-    {nome: "Horo Horo no Mi (Fruta do Fantasma)", valor: 800000000},
-    {nome: "Horu Horu no Mi (Fruta dos Hormônios)", valor: 800000000},
-    {nome: "Hoya Hoya no Mi (Fruta do Gênio)", valor: 500000000},
-    {nome: "Inu Inu no Mi, Modelo: Bake-Danuki", valor: 2000000000},
-    {nome: "Inu Inu no Mi, Modelo: Cão de Caça", valor: 450000000},
-    {nome: "Inu Inu no Mi, Modelo: Cão-Guaxinim", valor: 450000000},
-    {nome: "Inu Inu no Mi, Modelo: Cérbero", valor: 2300000000},
-    {nome: "Inu Inu no Mi, Modelo: Chacal", valor: 450000000},
-    {nome: "Inu Inu no Mi, Modelo: Dachshund", valor: 150000000},
-    {nome: "Inu Inu no Mi, Modelo: Lobo", valor: 600000000},
-    {nome: "Inu Inu no Mi, Modelo: Ōkuchi no Makami", valor: 3000000000},
-    {nome: "Inu Inu no Mi, Modelo: Raposa de Nove Caudas", valor: 2700000000},
-    {nome: "Iro Iro no Mi (Fruta da Camuflagem)", valor: 400000000},
-    {nome: "Ishi Ishi no Mi (Fruta da Rocha)", valor: 1000000000},
-    {nome: "Ito Ito no Mi (Fruta dos Fios)", valor: 1200000000},
-    {nome: "Jake Jake no Mi (Fruta da Jaqueta)", valor: 120000000},
-    {nome: "Jara Jara no Mi (Fruta das Correntes)", valor: 600000000},
-    {nome: "Jiki Jiki no Mi (Fruta do Magnetismo)", valor: 1400000000},
-    {nome: "Juku Juku no Mi (Fruta do Amadurecimento)", valor: 1100000000},
-    {nome: "Kachi Kachi no Mi (Fruta da Resistência de Ferro)", valor: 800000000},
-    {nome: "Kage Kage no Mi (Fruta da Sombra)", valor: 1400000000},
-    {nome: "Kama Kama no Mi (Fruta da Unha)", valor: 700000000},
-    {nome: "Kame Kame no Mi", valor: 250000000},
-    {nome: "Karan Karan no Mi (Fruta do Metal)", valor: 1200000000},
-    {nome: "Kaze Kaze no Mi (Fruta do Vento)", valor: 1800000000},
-    {nome: "Kegawa Kegawa no Mi (Fruta do Pelo)", valor: 400000000},
-    {nome: "Kesshō Kesshō no Mi (Fruta do Cristal)", valor: 800000000},
-    {nome: "Kibi Kibi no Mi (Fruta do Kibi Dango)", valor: 650000000},
-    {nome: "Kira Kira no Mi (Fruta do Diamante)", valor: 600000000},
-    {nome: "Kiro Kiro no Mi (Fruta do Peso)", valor: 250000000},
-    {nome: "Kobu Kobu no Mi (Fruta do Incentivo)", valor: 300000000},
-    {nome: "Kon Kon no Mi (Fruta do Milho)", valor: 500000000},
-    {nome: "Koro Koro no Mi (Fruta do Giro)", valor: 180000000},
-    {nome: "Kuku Kuku no Mi (Fruta da Comida)", valor: 250000000},
-    {nome: "Kumo Kumo no Mi (Fruta da Nuvem)", valor: 1100000000},
-    {nome: "Kumo Kumo no Mi, Modelo: Rosamygale grauvogeli", valor: 1400000000},
-    {nome: "Kuri Kuri no Mi (Fruta do Creme)", valor: 600000000},
-    {nome: "Kyubu Kyubu no Mi (Fruta dos Cubos)", valor: 890000000},
-    {nome: "Magu Magu no Mi (Fruta do Magma)", valor: 3200000000},
-    {nome: "Maki Maki no Mi (Fruta do Pergaminho)", valor: 850000000},
-    {nome: "Mane Mane no Mi (Fruta da Cópia de Aparência)", valor: 120000000},
-    {nome: "Masu Masu no Mi (Fruta da Massa)", valor: 1200000000},
-    {nome: "Mato Mato no Mi (Fruta do Alvo)", valor: 450000000},
-    {nome: "Memo Memo no Mi (Fruta da Memória)", valor: 750000000},
-    {nome: "Mera Mera no Mi (Fruta das Chamas)", valor: 1500000000},
-    {nome: "Mero Mero no Mi (Fruta do Amor)", valor: 2000000000},
-    {nome: "Mini Mini no Mi (Fruta da Diminuição Corporal)", valor: 300000000},
-    {nome: "Mira Mira no Mi (Fruta dos Espelhos)", valor: 950000000},
-    {nome: "Moa Moa no Mi (Fruta do Aumento)", valor: 1000000000},
-    {nome: "Mochi Mochi no Mi (Fruta do Bolo de Arroz)", valor: 1000000000},
-    {nome: "Modo Modo no Mi (Fruta do Retorno)", valor: 3900000000},
-    {nome: "Mogu Mogu no Mi", valor: 320000000},
-    {nome: "Moku Moku no Mi (Fruta da Fumaça)", valor: 1200000000},
-    {nome: "Mori Mori no Mi (Fruta da Floresta)", valor: 2900000000},
-    {nome: "Mosa Mosa no Mi (Fruta do Crescimento)", valor: 600000000},
-    {nome: "Muchi Muchi no Mi (Fruta do Chicote)", valor: 750000000},
-    {nome: "Mushi Mushi no Mi, Modelo: Besouro-Rinoceronte", valor: 450000000},
-    {nome: "Mushi Mushi no Mi, Modelo: Mosca-Varejeira-Verde", valor: 350000000},
-    {nome: "Mushi Mushi no Mi, Modelo: Vespa-Mandarina", valor: 180000000},
-    {nome: "Nagi Nagi no Mi (Fruta do Silêncio)", valor: 300000000},
-    {nome: "Nawa Nawa no Mi (Fruta das Cordas)", valor: 250000000},
-    {nome: "Neko Neko no Mi, Modelo: Leão", valor: 450000000},
-    {nome: "Neko Neko no Mi, Modelo: Leopardo", valor: 400000000},
-    {nome: "Neko Neko no Mi, Modelo: Onça-Pintada", valor: 500000000},
-    {nome: "Neko Neko no Mi, Modelo: Tigre-de-Bengala", valor: 450000000},
-    {nome: "Neko Neko no Mi, Modelo: Tigre-Dente-de-Sabre", valor: 1600000000},
-    {nome: "Nemu Nemu no Mi (Fruta do Sono)", valor: 450000000},
-    {nome: "Netsu Netsu no Mi (Fruta do Calor)", valor: 550000000},
-    {nome: "Nikyu Nikyu no Mi (Fruta da Pata)", valor: 3000000000},
-    {nome: "Noko Noko no Mi (Fruta do Cogumelo)", valor: 900000000},
-    {nome: "Nomi Nomi no Mi (Fruta do Cérebro)", valor: 200000000},
-    {nome: "Nori Nori no Mi (Fruta da Montaria)", valor: 700000000},
-    {nome: "Noro Noro no Mi (Fruta da Lentidão)", valor: 600000000},
-    {nome: "Nui Nui no Mi (Fruta da Costura)", valor: 370000000},
-    {nome: "Nuke Nuke no Mi (Fruta da Intangibilidade)", valor: 900000000},
-    {nome: "Numa Numa no Mi (Fruta do Pântano)", valor: 1700000000},
-    {nome: "Ope Ope no Mi (Fruta da Operação)", valor: 4600000000},
-    {nome: "Ori Ori no Mi (Fruta da Grade)", valor: 350000000},
-    {nome: "Oshi Oshi no Mi (Fruta da Argila)", valor: 500000000},
-    {nome: "Oto Oto no Mi (Fruta do Som)", valor: 1000000000},
-    {nome: "Pamu Pamu no Mi (Fruta da Explosão)", valor: 800000000},
-    {nome: "Pasa Pasa no Mi (Fruta do Papel)", valor: 1100000000},
-    {nome: "Pero Pero no Mi (Fruta do Doce)", valor: 600000000},
-    {nome: "Peto Peto no Mi (Fruta do Pet)", valor: 800000000},
-    {nome: "Pika Pika no Mi (Fruta da Luz)", valor: 4200000000},
-    {nome: "Poke Poke no Mi (Fruta do Bolso)", valor: 650000000},
-    {nome: "Rako Rako no Mi", valor: 180000000},
-    {nome: "Rashin Rashin no Mi (Fruta da Bússola)", valor: 700000000},
-    {nome: "Rēzā Rēzā no Mi (Fruta do Laser)", valor: 2300000000},
-    {nome: "Riki Riki no Mi (Fruta da Força)", valor: 1000000000},
-    {nome: "Rokku Rokku no Mi (Fruta da Fechadura)", valor: 3200000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Alossauro", valor: 1950000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Braquiossauro", valor: 1550000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Dragão Ocidental", valor: 2700000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Espinossauro", valor: 1950000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Kirin", valor: 2500000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Paquicefalossauro", valor: 1000000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Pteranodonte", valor: 1700000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Tiranossauro Rex", valor: 1950000000},
-    {nome: "Ryū Ryū no Mi, Modelo: Triceratops", valor: 1000000000},
-    {nome: "Sabi Sabi no Mi (Fruta da Ferrugem)", valor: 400000000},
-    {nome: "Sara Sara no Mi, Modelo: Axolote", valor: 180000000},
-    {nome: "Shari Shari no Mi (Fruta da Roda)", valor: 120000000},
-    {nome: "Shibo Shibo no Mi (Fruta do Suco)", valor: 800000000},
-    {nome: "Shiku Shiku no Mi (Fruta da Doença)", valor: 2200000000},
-    {nome: "Shima Shima no Mi (Fruta da Ilha)", valor: 1600000000},
-    {nome: "Shiro Shiro no Mi (Fruta da Fortaleza)", valor: 1200000000},
-    {nome: "Soru Soru no Mi (Fruta da Alma)", valor: 2300000000},
-    {nome: "Sube Sube no Mi (Fruta do Corpo Liso)", valor: 600000000},
-    {nome: "Sui Sui no Mi (Fruta do Nado)", valor: 300000000},
-    {nome: "Suji Suji no Mi (Fruta dos Músculos)", valor: 800000000},
-    {nome: "Suke Suke no Mi (Fruta da Invisibilidade)", valor: 500000000},
-    {nome: "Suna Suna no Mi (Fruta da Areia)", valor: 2000000000},
-    {nome: "Supa Supa no Mi (Fruta das Lâminas)", valor: 700000000},
-    {nome: "Susu Susu no Mi (Fruta da Fuligem)", valor: 1400000000},
-    {nome: "Tama Tama no Mi", valor: 900000000},
-    {nome: "Toge Toge no Mi (Fruta dos Espinhos)", valor: 400000000},
-    {nome: "Toki Toki no Mi (Fruta do Tempo)", valor: 2100000000},
-    {nome: "Ton Ton no Mi (Fruta do Aumento de Peso)", valor: 1000000000},
-    {nome: "Tori Tori no Mi, Modelo: Águia", valor: 350000000},
-    {nome: "Tori Tori no Mi, Modelo: Albatroz", valor: 100000000},
-    {nome: "Tori Tori no Mi, Modelo: Falcão", valor: 350000000},
-    {nome: "Tori Tori no Mi, Modelo: Fênix", valor: 3000000000},
-    {nome: "Tori Tori no Mi, Modelo: Nue", valor: 3000000000},
-    {nome: "Tori Tori no Mi, Modelo: Pássaro de Cinzas", valor: 1800000000},
-    {nome: "Tori Tori no Mi, Modelo: Pássaro de Gelo", valor: 2200000000},
-    {nome: "Tori Tori no Mi, Modelo: Thunderbird", valor: 2400000000},
-    {nome: "Toro Toro no Mi (Fruta do Líquido)", valor: 1200000000},
-    {nome: "Toshi Toshi no Mi (Fruta da Idade)", valor: 800000000},
-    {nome: "Tsutsu Tsutsu no Mi (Fruta do Barril)", valor: 550000000},
-    {nome: "Uma Uma no Mi, Modelo: Pégaso", valor: 2100000000},
-    {nome: "Uma Uma no Mi", valor: 100000000},
-    {nome: "Uo Uo no Mi, Modelo: Carpa Seiryū", valor: 2900000000},
-    {nome: "Usagi Usagi no Mi", valor: 130000000},
-    {nome: "Ushi Ushi no Mi, Modelo: Bisão", valor: 300000000},
-    {nome: "Ushi Ushi no Mi, Modelo: Girafa", valor: 300000000},
-    {nome: "Ushi Ushi no Mi, Modelo: Rinoceronte", valor: 600000000},
-    {nome: "Uta Uta no Mi (Fruta da Canção)", valor: 2400000000},
-    {nome: "Wapu Wapu no Mi (Fruta do Teleporte)", valor: 1900000000},
-    {nome: "Wara Wara no Mi (Fruta da Palha)", valor: 800000000},
-    {nome: "Woshu Woshu no Mi (Fruta da Limpeza)", valor: 120000000},
-    {nome: "Yami Yami no Mi (Fruta da Escuridão)", valor: 4500000000},
-    {nome: "Yomi Yomi no Mi (Fruta do Renascimento)", valor: 750000000},
-    {nome: "Yuki Yuki no Mi (Fruta da Neve)", valor: 1600000000},
-    {nome: "Zou Zou no Mi, Modelo: Mamute", valor: 1800000000},
-    {nome: "Zou Zou no Mi", valor: 500000000},
-    {nome: "Zushi Zushi no Mi (Fruta da Gravidade)", valor: 2600000000}
-];
-
-// =============================================================================
-// DONOS DAS AKUMA NO MI. "Nome da Fruta": "Nome do Dono"
-//   "???"                                   -> tem dono, mas o nome ainda não foi revelado
-//   "Bloqueada"                             -> fora do sorteio; na página não mostra dono
-//   "🔒FRUTA PERDIDA PELO MUNDO🔒"           -> Fruta perdida
-//   "AGORAAGORA"                            -> entra obrigatoriamente no próximo sorteio
-// Fruta que não estiver na lista abaixo é considerada LIVRE.
-// =============================================================================
-window.donosDeAkuma = {
-    "Aro Aro no Mi": "???", // Nerobasta (Quincas)
-    "Baku Baku no Mi": "Rhaast",
-    "Bane Bane no Mi": "???", // Ling Yao (Leandro Moraes)
-    "Batto Batto no Mi, Modelo: Vampiro": "Astarion Ancunín",
-    "Buku Buku no Mi": "Patchouli Quazar",
-    "Chikyū Chikyū no Mi": "Ra's Al Ghul",
-    "Chiyu Chiyu no Mi": "Bloqueada",
-    "Deka Deka no Mi": "Valkaria Laufey",
-    "Doa Doa no Mi": "Chester",
-    "Fude Fude no Mi": "Thomeraux Gan",
-    "Fuwa Fuwa no Mi": "Satoshi Fujiwara",
-    "Gasha Gasha no Mi": "Aze Gan",
-    "Gasu Gasu no Mi": "Pietro",
-    "Gocha Gocha no Mi": "Panela",
-    "Gomu Gomu no Mi": "Edward T. Bennett",
-    "Goro Goro no Mi": "Kael Murio",
-    "Gura Gura no Mi": "Sakazuki Itadori",
-    "Hana Hana no Mi": "Bloqueada",
-    "Hebi Hebi no Mi, Modelo: Anaconda": "Máng Shé",
-    "Hebi Hebi no Mi, Modelo: Kaijū [Original do RPG]": "Raidjinn Le Laufey",
-    "Hebi Hebi no Mi, Modelo: Yamata no Orochi": "Enk Edwards",
-    "Hemo Hemo no Mi": "Sakazuki Choso",
-    "Hie Hie no Mi": "Astarion D. Emiri",
-    "Hito Hito no Mi, Modelo: Daibutsu": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Hito Hito no Mi, Modelo: Estátua [Original do RPG]": "David The Statue",
-    "Hito Hito no Mi, Modelo: O Anfitrião [Original do RPG]": "Alastor",
-    "Hobi Hobi no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Hone Hone no Mi": "Ossian",
-    "Horu Horu no Mi": "Vito Velvet",
-    "Inu Inu no Mi, Modelo: Cérbero [Original do RPG]": "Dante Salvatore",
-    "Inu Inu no Mi, Modelo: Ōkuchi no Makami": "Yuu D'Couteau",
-    "Ito Ito no Mi": "Thaddeus Vanderwood",
-    "Kage Kage no Mi": "Noctis",
-    "Kaze Kaze no Mi": "Starrk Beckman",
-    "Kobu Kobu no Mi": "???",
-    "Kumo Kumo no Mi": "Caelus",
-    "Magu Magu no Mi": "Cheung Po Tsai",
-    "Maki Maki no Mi": "Han",
-    "Memo Memo no Mi": "Harvey Dent",
-    "Mera Mera no Mi": "Calamitas Donquixote",
-    "Mero Mero no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Mira Mira no Mi": "Bastian Locke",
-    "Mochi Mochi no Mi": "Hikaru Chinjao",
-    "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Mori Mori no Mi": "Bastarion",
-    "Mosa Mosa no Mi": "???", // Narração do Korite
-    "Nagi Nagi no Mi": "Ask D. Question",
-    "Neko Neko no Mi, Modelo: Leão": "Aveline Jackman",
-    "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
-    "Nomi Nomi no Mi": "Goetthe Al'mann",
-    "Ope Ope no Mi": "Morgana Du'lor",
-    "Oto Oto no Mi": "Yoruzen",
-    "Pika Pika no Mi": "Rhaizen D. Aether",
-    "Poke Poke no Mi": "Katanasuke Sushimoto",
-    "Rokku Rokku no Mi": "Lexa",
-    "Ryū Ryū no Mi, Modelo: Dragão Ocidental [Original do RPG]": "Galan'd Von Antares",
-    "Ryū Ryū no Mi, Modelo: Kirin": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Ryū Ryū no Mi, Modelo: Pteranodonte": "Issei Sagawa",
-    "Ryū Ryū no Mi, Modelo: Tiranossauro Rex [Original do RPG]": "Atō",
-    "Soru Soru no Mi": "Kozuki Ryōshū",
-    "Suke Suke no Mi": "Kamish",
-    "Suna Suna no Mi": "BladeHawk",
-    "Supa Supa no Mi": "Ari",
-    "Susu Susu no Mi": "Iori",
-    "Toki Toki no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
-    "Tori Tori no Mi, Modelo: Falcão": "Bayek D. Nefertari",
-    "Tori Tori no Mi, Modelo: Nue": "???", // Narração do Korite
-    "Tori Tori no Mi, Modelo: Pássaro de Cinzas [Original do RPG]": "Genma Gan",
-    "Tori Tori no Mi, Modelo: Thunderbird [Original do RPG]": "Thoriel",
-    "Uma Uma no Mi": "Mǎ",
-    "Uo Uo no Mi, Modelo: Carpa Seiryū": "Keigo Kiyosaki",
-    "Uta Uta no Mi": "???",
-    "Wapu Wapu no Mi": "Alucard Augur",
-    "Yami Yami no Mi": "Andrial D. Oran",
-    "Yomi Yomi no Mi": "La Muerte",
-    "Zushi Zushi no Mi": "Sorum"
-};

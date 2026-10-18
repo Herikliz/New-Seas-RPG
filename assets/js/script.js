@@ -183,7 +183,8 @@ if (history.scrollRestoration) {
 }
 window.scrollTo(0, 0);
 
-if (window.location.pathname.endsWith('area-restrita.html') || window.location.pathname.includes('area-restrita')) {
+// Entrada direta sem senha: area-restrita.html#Ben10
+if ((window.location.pathname.endsWith('area-restrita.html') || window.location.pathname.includes('area-restrita')) && window.location.hash !== '#Ben10') {
     const childNodes = Array.from(document.body.children);
     childNodes.forEach(child => child.style.display = 'none');
     const overlay = document.createElement('div');
