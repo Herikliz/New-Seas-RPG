@@ -7461,3 +7461,171 @@ document.addEventListener('DOMContentLoaded', () => {
     montarEgo();
     montarNarradores();
 });
+
+/* ===== EVENTOS: BINGO ===== */
+document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('bingo-grid');
+    if (!grid) return;
+
+    const pre = document.getElementById('bingo-cartela-texto');
+    const aviso = document.getElementById('bingo-aviso-repetidos');
+    const btnRand = document.getElementById('bingo-btn-randomizar');
+    const btnLimpar = document.getElementById('bingo-btn-limpar');
+    const btnCopiar = document.getElementById('bingo-btn-copiar');
+
+    const estiloCelula = "width: 100%; padding: 10px 0; text-align: center; font-family: 'Quantico', monospace; font-size: 18px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); box-sizing: border-box;";
+    const celulas = [];
+    for (let i = 0; i < 25; i++) {
+        const el = document.createElement('input');
+        el.type = 'text';
+        el.inputMode = 'numeric';
+        el.maxLength = 2;
+        el.placeholder = 'x';
+        el.setAttribute('style', estiloCelula);
+        el.addEventListener('input', () => {
+            el.value = el.value.replace(/\D/g, '').slice(0, 2);
+            atualizarCartela();
+        });
+        el.addEventListener('blur', () => {
+            if (el.value.length === 1) el.value = '0' + el.value;
+            atualizarCartela();
+        });
+        grid.appendChild(el);
+        celulas.push(el);
+    }
+
+    const valor = (el) => el.value === '' ? '' : el.value.padStart(2, '0');
+
+    function atualizarCartela() {
+        const vals = celulas.map(valor);
+        const cont = {};
+        vals.forEach(v => { if (v) cont[v] = (cont[v] || 0) + 1; });
+        let repetido = false;
+        celulas.forEach((el, i) => {
+            const rep = vals[i] && cont[vals[i]] > 1;
+            if (rep) repetido = true;
+            el.style.borderColor = rep ? '#f44336' : '';
+        });
+        aviso.style.display = repetido ? 'block' : 'none';
+
+        const linhas = [];
+        for (let r = 0; r < 5; r++) {
+            const linha = vals.slice(r * 5, r * 5 + 5).map(v => v || 'x');
+            linhas.push('║ ' + linha.join(' ║ ') + ' ║');
+        }
+        pre.textContent = '```╔════╦════╦════╦════╦════╗\n' + linhas.join('\n') + '\n╚════╩════╩════╩════╩════╝```';
+    }
+
+    btnRand.addEventListener('click', () => {
+        const todos = Array.from({ length: 100 }, (_, i) => i);
+        for (let i = todos.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [todos[i], todos[j]] = [todos[j], todos[i]];
+        }
+        const escolhidos = todos.slice(0, 25).sort((a, b) => a - b);
+        celulas.forEach((el, i) => { el.value = String(escolhidos[i]).padStart(2, '0'); });
+        atualizarCartela();
+    });
+
+    btnLimpar.addEventListener('click', () => {
+        celulas.forEach(el => { el.value = ''; });
+        atualizarCartela();
+    });
+
+    btnCopiar.addEventListener('click', () => {
+        if (btnCopiar.dataset.copying) return;
+        btnCopiar.dataset.copying = 'true';
+        window.copiarTextoUniversal(pre.textContent).then(() => {
+            const t = btnCopiar.textContent, bg = btnCopiar.style.backgroundColor, cor = btnCopiar.style.color;
+            btnCopiar.textContent = 'Texto Copiado!';
+            btnCopiar.style.backgroundColor = '#4caf50';
+            btnCopiar.style.color = '#fff';
+            setTimeout(() => {
+                btnCopiar.textContent = t;
+                btnCopiar.style.backgroundColor = bg;
+                btnCopiar.style.color = cor;
+                delete btnCopiar.dataset.copying;
+            }, 1000);
+        });
+    });
+
+    atualizarCartela();
+
+    // ---------- Sorteio dos números ----------
+    const btnUm = document.getElementById('bingo-btn-sortear-um');
+    const btnTodos = document.getElementById('bingo-btn-sortear-todos');
+    const btnReiniciar = document.getElementById('bingo-btn-reiniciar');
+    const elUltimo = document.getElementById('bingo-ultimo-num');
+    const elContagem = document.getElementById('bingo-contagem');
+    const elLista = document.getElementById('bingo-sorteados');
+    const CHAVE = 'bingo-sorteados';
+
+    let sorteados = [];
+    try {
+        const salvo = JSON.parse(sessionStorage.getItem(CHAVE) || '[]');
+        if (Array.isArray(salvo)) sorteados = salvo.filter(n => Number.isInteger(n) && n >= 0 && n <= 99);
+    } catch (e) { sorteados = []; }
+
+    const dois = (n) => String(n).padStart(2, '0');
+    const restantes = () => {
+        const saiu = new Set(sorteados);
+        return Array.from({ length: 100 }, (_, i) => i).filter(n => !saiu.has(n));
+    };
+    const guardar = () => { try { sessionStorage.setItem(CHAVE, JSON.stringify(sorteados)); } catch (e) {} };
+
+    function desenhar() {
+        const falta = 100 - sorteados.length;
+        elUltimo.textContent = sorteados.length ? dois(sorteados[sorteados.length - 1]) : '--';
+        elContagem.textContent = sorteados.length;
+        elLista.innerHTML = '';
+        sorteados.forEach((n, i) => {
+            const chip = document.createElement('span');
+            const ultimo = i === sorteados.length - 1;
+            chip.textContent = dois(n);
+            chip.style.cssText = "font-family: 'Quantico', monospace; font-size: 18px; padding: 6px 10px; border-radius: 6px; border: 1px solid " + (ultimo ? 'var(--accent-color)' : 'var(--sidebar-border)') + "; background: var(--sidebar-bg); color: " + (ultimo ? 'var(--accent-color)' : 'var(--text-color)') + "; font-weight: " + (ultimo ? 'bold' : 'normal') + ";";
+            elLista.appendChild(chip);
+        });
+
+        if (falta === 0) {
+            btnUm.textContent = 'Todos os números já saíram';
+        } else if (sorteados.length === 0) {
+            btnUm.textContent = 'Sortear o Primeiro Número';
+        } else if (falta === 1) {
+            btnUm.textContent = 'Sortear o Último Número';
+        } else {
+            btnUm.textContent = 'Sortear o Próximo Número';
+        }
+        btnUm.disabled = falta === 0;
+        btnTodos.disabled = falta === 0;
+        btnUm.style.opacity = btnTodos.style.opacity = falta === 0 ? '0.5' : '';
+        btnUm.style.cursor = btnTodos.style.cursor = falta === 0 ? 'not-allowed' : '';
+    }
+
+    btnUm.addEventListener('click', () => {
+        const rest = restantes();
+        if (rest.length === 0) return;
+        sorteados.push(rest[Math.floor(Math.random() * rest.length)]);
+        guardar();
+        desenhar();
+    });
+
+    btnTodos.addEventListener('click', () => {
+        const rest = restantes();
+        for (let i = rest.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [rest[i], rest[j]] = [rest[j], rest[i]];
+        }
+        sorteados = sorteados.concat(rest);
+        guardar();
+        desenhar();
+    });
+
+    btnReiniciar.addEventListener('click', () => {
+        if (sorteados.length > 0 && !confirm('Reiniciar o sorteio? Todos os números sorteados serão apagados.')) return;
+        sorteados = [];
+        guardar();
+        desenhar();
+    });
+
+    desenhar();
+});

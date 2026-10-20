@@ -175,6 +175,7 @@
                             <div class="input-group">
                                 <select id="select-eventos" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease; margin-bottom: 20px;">
                                     <option value="batalha-naval">Batalha Naval</option>
+                                    <option value="bingo">Bingo</option>
                                 </select>
                             </div>
 
@@ -255,6 +256,47 @@
                                         <button id="btn-add-jogador-batalha" class="btn-admin" style="margin-top: 0; padding: 8px; flex: 1; min-width: 150px;">➕ Adicionar Jogador</button>
                                         <button id="btn-copiar-resultados-jogadores" class="btn-admin" style="margin-top: 0; padding: 8px; flex: 1; min-width: 150px;">📋 Copiar Resultados</button>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div id="container-eventos-bingo" class="category-section-eventos" style="display: none;">
+                                <div id="admin-generator-bingo">
+                                    <h3 style="font-family: 'Quantico', sans-serif; color: var(--accent-color); text-align: center; margin-bottom: 15px;">🎟️ Cartela</h3>
+                                    <p style="text-align: center; margin-bottom: 15px; color: var(--text-color); font-family: 'Comfortaa', sans-serif;">Digite os números de 00 a 99 ou clique em Randomizar. Casas vazias aparecem como x.</p>
+
+                                    <div id="bingo-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-width: 360px; margin: 0 auto 10px auto;"></div>
+                                    <p id="bingo-aviso-repetidos" style="display: none; text-align: center; color: #f44336; font-family: 'Comfortaa', sans-serif; font-size: 14px; margin-bottom: 10px;">⚠️ Há números repetidos na cartela (marcados em vermelho).</p>
+
+                                    <div class="output-container" style="display: block; margin-bottom: 15px;">
+                                        <pre id="bingo-cartela-texto" class="active" style="margin-bottom: 0;"></pre>
+                                    </div>
+
+                                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+                                        <button id="bingo-btn-randomizar" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">🎲 Randomizar Cartela</button>
+                                        <button id="bingo-btn-limpar" class="btn-clear-admin" style="margin-top: 0; flex: 1; min-width: 150px;">🧹 Limpar Cartela</button>
+                                        <button id="bingo-btn-copiar" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 150px;">📋 Copiar Cartela</button>
+                                    </div>
+
+                                    <hr style="border: 1px dashed var(--sidebar-border); margin: 30px 0;">
+
+                                    <h3 style="font-family: 'Quantico', sans-serif; color: var(--accent-color); text-align: center; margin-bottom: 15px;">🎰 Sorteio dos Números</h3>
+
+                                    <div id="bingo-ultimo" style="text-align: center; font-family: 'Quantico', sans-serif; margin-bottom: 15px;">
+                                        <div style="font-size: 14px; color: var(--text-color); opacity: 0.8;">Último número sorteado</div>
+                                        <div id="bingo-ultimo-num" style="font-size: 64px; line-height: 1.1; color: var(--accent-color);">--</div>
+                                    </div>
+
+                                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+                                        <button id="bingo-btn-sortear-um" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 200px;">Sortear o Primeiro Número</button>
+                                        <button id="bingo-btn-sortear-todos" class="btn-admin" style="margin-top: 0; flex: 1; min-width: 200px;">Sortear Todos os Números Restantes</button>
+                                        <button id="bingo-btn-reiniciar" class="btn-clear-admin" style="margin-top: 0; flex: 1; min-width: 150px;">🔄 Reiniciar Sorteio</button>
+                                    </div>
+
+                                    <div style="text-align: center; margin-bottom: 10px; font-family: 'Quantico', sans-serif; font-size: 16px; color: var(--text-color);">
+                                        Sorteados: <span id="bingo-contagem">0</span> / 100
+                                    </div>
+
+                                    <div id="bingo-sorteados" style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 15px;"></div>
                                 </div>
                             </div>
                         </div>
