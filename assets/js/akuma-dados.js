@@ -279,8 +279,6 @@ window.donosDeAkuma = {
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
     "Nomi Nomi no Mi": "Goetthe Al'mann",
     "Ope Ope no Mi": "Morgana Du'lor",
-    "Oto Oto no Mi": "Yoruzen",
-    "Pika Pika no Mi": "Rhaizen D. Aether",
     "Poke Poke no Mi": "Katanasuke Sushimoto",
     "Rokku Rokku no Mi": "Lexa",
     "Ryū Ryū no Mi, Modelo: Dragão Ocidental [Original do RPG]": "Galan'd Von Antares",
