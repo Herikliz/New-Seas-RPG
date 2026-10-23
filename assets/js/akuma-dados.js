@@ -273,7 +273,7 @@ window.donosDeAkuma = {
     "Mochi Mochi no Mi": "Hikaru Chinjao",
     "Modo Modo no Mi": "🔒FRUTA PERDIDA PELO MUNDO🔒",
     "Mori Mori no Mi": "Bastarion",
-    "Mosa Mosa no Mi": "???", // Narração do Korite
+    "Mosa Mosa no Mi": "???", // Kanae Kocho
     "Nagi Nagi no Mi": "Ask D. Question",
     "Neko Neko no Mi, Modelo: Leão": "Aveline Jackman",
     "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
