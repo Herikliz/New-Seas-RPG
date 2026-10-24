@@ -15,7 +15,6 @@ window.donosDeMeito = {
     "Elucidator": "Reh D'Nanryū",
     "Espada Habitadora de Demônios": "🔒ARMA PERDIDA PELO MUNDO🔒",
     "Fêmur": "Morgana Du'lor",
-    "Lâmina Liberta Almas": "Son Uzui",
     "Lança Espiritual Basquias": "Bastarion",
     "Lança Espiritual Chastiefol": "🔒ARMA PERDIDA PELO MUNDO🔒",
     "Lionelle": "BladeHawk",

@@ -241,7 +241,6 @@ window.donosDeAkuma = {
     "Fuwa Fuwa no Mi": "Satoshi Fujiwara",
     "Gasha Gasha no Mi": "Aze Gan",
     "Gasu Gasu no Mi": "Pietro",
-    "Gocha Gocha no Mi": "Panela",
     "Gomu Gomu no Mi": "Edward T. Bennett",
     "Goro Goro no Mi": "Kael Murio",
     "Gura Gura no Mi": "Sakazuki Itadori",
