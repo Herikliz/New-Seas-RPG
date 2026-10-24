@@ -7522,7 +7522,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const j = Math.floor(Math.random() * (i + 1));
             [todos[i], todos[j]] = [todos[j], todos[i]];
         }
-        const escolhidos = todos.slice(0, 25).sort((a, b) => a - b);
+        const escolhidos = todos.slice(0, 25);
         celulas.forEach((el, i) => { el.value = String(escolhidos[i]).padStart(2, '0'); });
         atualizarCartela();
     });
