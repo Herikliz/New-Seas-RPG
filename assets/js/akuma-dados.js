@@ -275,7 +275,6 @@ window.donosDeAkuma = {
     "Mosa Mosa no Mi": "???", // Kanae Kocho
     "Nagi Nagi no Mi": "Ask D. Question",
     "Neko Neko no Mi, Modelo: Leão": "Aveline Jackman",
-    "Nikyu Nikyu no Mi": "Takenozo Mazatsugu Opera O",
     "Nomi Nomi no Mi": "Goetthe Al'mann",
     "Ope Ope no Mi": "Morgana Du'lor",
     "Poke Poke no Mi": "Katanasuke Sushimoto",
